@@ -15,16 +15,23 @@ namespace Horizone.Controllers
 
         public ActionResult About()
         {
-            ViewBag.Message = "Your application description page.";
+            ViewBag.Message = "Equipe HISTOCHTEXT";
 
             return View();
         }
 
         public ActionResult Contact()
         {
-            ViewBag.Message = "Your contact page.";
+            ViewBag.Message = "Nous contact:";
 
             return View();
         }
+        public ActionResult Bibliography()
+        {
+            ViewBag.Message = "Bibliography";
+
+            return View();
+        }
+
     }
 }

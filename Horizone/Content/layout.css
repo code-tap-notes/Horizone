@@ -1,0 +1,121 @@
+﻿/*@charset "utf-8";
+CSS Document */
+*{ margin:0; padding:0}
+body{ font-family:Arial, sans-serif; font-size:12px}
+a{ text-decoration:none}
+ul{ list-style:none}
+.left{ float:left; margin:0 2px}
+.right{ float:right}
+.clear{ clear:both; height:5px; margin:5px 0}
+.title{ margin:5px 0 5px 0}
+.des{ color:#333; margin-top:3px; line-height:140%} 
+.images_news{ width:120px; margin:0 7px 7px 0}
+.tlq{ background:url(../images/bg_dot_gray_3x3.gif) no-repeat left 5px; padding-left:10px; height:auto}
+.tlq a{ color:#999; font-size:11px; font-weight:bold; line-height:140%}
+.tlq a:hover{ color:#900;}
+.xemthem{ color:#666; font-size:11px;}
+.xemthem:hover{ color:#069;}
+.hit{ background:url(../images/icon_title.png) -22px 0 no-repeat; width:2px; height:10px; float:right; color:#900; margin:0 8px 0 0; padding:0 0 0 18px; font-weight:normal; font-size:11px}
+.petitImage {width:60px;height:40px;}
+.moyenImage {
+    width: 120px;
+    height: 90px;
+}
+.GrandImage {
+    width: 240px;
+    height: 180px;
+}
+
+#wrap-vp{ width:1000px; margin:15px auto}
+#header-vp{ height:70px;}
+#logo{ width:300px; float:left; margin-top:5px}
+	
+#menu-vp{ border-bottom:3px solid #CCC; padding:0 0 3px 0px}
+
+#menu-vp ul li{ display:inline;border-right: solid 1px #CCCCCC;}
+#menu-vp ul li a{ color:#333; font-weight:bold; font-size:12px; padding:0 3px 0 3px }
+#menu-vp ul li:last-child{ border-right:none}	
+#menu-vp ul li a:hover{ color:#900}
+	
+#midheader-vp{ margin-top:7px}	
+#midheader-vp #left{ width:30%; float:left; height:20px}	
+#midheader-vp #left ul li a{ background-color:#ECEEED; border-left:4px solid #900; color:#900; font-weight:bold; padding:4px 4px 4px 4px; height:17px; display:block; float:left;}	
+#midheader-vp #left ul li span{background: url("../images/bg_arrow_breakumb_web.gif") no-repeat scroll left top transparent; height:25px; width:13px; float:left}
+#midheader-vp #right{ width:65%; float:right}
+#midheader-vp #right .icon_search_web{border:none;background: url("../images/icon_search_web.gif") no-repeat scroll left top transparent;border-bottom: 1px solid #C0C0C0;border-right: 1px solid #C0C0C0;border-top: 1px solid #C0C0C0;cursor: pointer;float: left;height: 20px;width: 20px; margin-left:-2px}
+#midheader-vp #right .txt_input{background: none repeat scroll 0 0 #FFFFFF; float: left;height: 18px;padding: 0 5px 0 4px;width: 165px;border-bottom: 1px solid #C0C0C0;border-left: 1px solid #C0C0C0;border-top: 1px solid #C0C0C0; float:left}
+#midheader-vp #right .txt_24h{ background:#CCC; color:#333; font-size:12px; height:18px; padding :2px 3px 0 3px}
+	
+#slide-vp{ margin-top:7px; border-bottom:1px solid #CCC; min-height:425px}
+#slide-left{ width:70%; float:left}
+#slideleft-main{ width:71%; float:left}
+#slideleft-main .title a{ color:#900}
+#slideleft-main .title a:hover{ color:#069}
+#slideleft-scroll{ width:25%; float:left; border-left:solid 1px #E2E2E3; border-right:solid 1px #E2E2E3; padding : 2px 5px 2px 5px}
+#slideleft-scroll ul li{ padding: 5px; border-bottom:1px solid #E2E2E3; float:left}
+#slideleft-scroll a{ color:#666}
+	
+#content-vp #content-left{border-right:solid 1px #E2E2E3; width:16%; float:left; padding: 5px; min-height:500px;}
+	#content-vp #content-main{border-right:solid 1px #E2E2E3; width:60%; float:left; padding: 5px; min-height:500px; margin: 0 0 0 5px; }
+	#content-vp #content-right{width:20%; float:left; padding: 5px; min-height:500px;}
+	
+#content-ct #content-left{border-right:solid 1px #E2E2E3; width:51%; float:left; padding: 5px; min-height:500px; margin:7px 0 0 0; font-size:14px}
+	#content-vp #content-main .chitiet{ line-height:150%; margin:0 0 40px 0}
+	#content-vp #content-main .btn_quantam{ background:url(../images/btn_quantam.gif) no-repeat; width:75px; height:20px; float:left}
+	#content-vp #content-main .number_count span{float: left;height: 20px;display: block;background: #f5f5f5;color: #656565;padding: 0 5px 0 3px;
+}
+	#content-vp #content-main #tincungloai{ margin:10px 0 0 0}
+	#content-vp #content-main #tincungloai ul li{ display:inline; width:32%; float: left; margin:10px 7px 0 0}
+	#content-vp #content-main #tincungloai .title a{ color:#900}
+	#content-vp #content-main #tincungloai .title a:hover{ color:#069}
+	#content-vp #content-main #tincungloai ul li a{ color:#333; font-weight:bold}
+	#content-vp #content-main #tincungloai ul li a:hover{ color:#900}
+	#content-vp #content-main #tincungloai ul li img{ width:170px; margin:0 0 5px 0}
+	#content-vp #content-main #tincungloai .title{ font-size:12px; margin-top:10px}
+
+
+#content-vp	#content-right .cat .cat-content .title a{ color:#333}	
+#content-vp #content-right .cat .cat-content .title a:hover{ color:#900}	
+#content-vp #content-right .cat .cat-content .col2{ float:left; clear:both}	
+	
+		#content-vp #content-left .news{ min-height:150px; border-bottom:solid 1px #E2E2E3; padding:10px 0; margin-right:5px}
+		#content-vp #content-left .title a{ color:#333; font-weight:bold}
+		#content-vp #content-left a:hover{ color:#900}
+	
+	#content-vp #content-main .box-cat{ margin-right:5px}
+	#content-vp .cat{ background:url(../images/bg_1x28.gif) repeat-x; height:30px; padding:0 0 0 10px; margin:7px 0 10px 0}
+	#content-vp .main-cat{ width:auto; float:left}
+	#content-vp .main-cat a{ border-top:solid 1px #900; color:#900; font-weight:bold; display:block; height:30px; padding:5px 0 0 10px; font-size:12px}
+	#content-vp #content-main .child-cat{ width:79%; margin:6px 0 0 5px; float:left}
+	#content-vp #content-main .child-cat a{ font-weight:bold; height:30px;  font-size:12px; color:#333; border-right:1px solid #E2E2E3; font-size:11px; padding: 0 3px 0 3px}
+	#content-vp #content-main .cat-content .col1{ width:75%; float:left}
+	#content-vp #content-main .cat-content .col0{ width:100%}
+	#content-ct #content-main .cat-content .col1{ border-bottom:1px solid #E2E2E3; margin:0 0 10px 0}
+	#content-vp #content-main .cat-content .col1 .title a{ color:#333;}
+	#content-vp #content-main .cat-content .col1 .title a:hover{ color:#900;}
+	#content-vp #content-main .cat-content .col2{ width:24%; float:left}
+	
+	#content-vp #content-right img{ margin:1px 5px 5px 1px}
+	
+#thongtin{}
+	.thongtin-title{ background:#F4F4F4; height:30px; color:#900; padding:6px 10px 1px 10px; border-top:1px solid #DEDEDE; border-bottom:1px solid #DEDEDE}	
+	#thongtin .thongtin-title{ font-weight:bold; font-size:14px}
+	.thongtin-content { background:#F4F4F4; min-height:100px; padding:5px 10px}
+	
+#footer{ margin-top: 10px;}	
+	#footer .SetHomePage{ background:url(../images/icon_resonesive.gif) no-repeat; width:20px; height:20px; background-position:0 0; display:inline-block; margin:0 5px 0 5px;}
+	#footer .top {background:url(../images/icon_resonesive.gif) no-repeat; width:20px; height:20px; background-position:-20px 0; display:inline-block; margin:0 5px 0 5px}
+	.thongtin-title .right a{ color:#666; font-weight:bold; margin:3px 5px 1px 1px; display:block; float:left; border-right:solid 1px #E2E2E3; padding:1px 5px }
+	#footer .ulBlockMenu{ width:160px; float:left}
+	#footer .ulBlockMenu a{ color:#333; font-size:12px; font-weight:normal}
+	#footer .ulBlockMenu a:hover{ color:#900;}
+	#footer .ulBlockMenu li{ margin-bottom:5px}
+	#footer .thongtin-content{ height:220px; padding:20px}
+	#footer .lineFmenu{ height:140px}
+	#footer .liFirst a{ font-weight:bold}
+	#footer .ft-bot{ margin:10px 0 10px 0}
+	#footer .bot1, #footer .bot2, #footer .bot3{ float:left}
+	#footer .bot1{ width:23%}
+	#footer .bot2{ width:30%}
+	#footer .bot3{ width:47%; float:right; text-align:right}
+	

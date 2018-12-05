@@ -1,0 +1,58 @@
+﻿@model Horizone.Models.ObjectManuscript
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>ObjectManuscript</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Manuscript)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Manuscript)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.LeafNumber)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LeafNumber)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Material)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Material)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Form)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Form)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NumberOfLine)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NumberOfLine)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

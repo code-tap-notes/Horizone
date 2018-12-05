@@ -1,16 +1,23 @@
 ﻿<!DOCTYPE html>
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@ViewBag.Title - Mon application ASP.NET</title>
+    <title>@ViewBag.Title - HISTOCHTEXT</title>
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
 
+    <link href="~/Content/layout.css" rel="stylesheet" />
 </head>
-<body>
+
+<body background="~/Content/bar_background.png" class="parallax">
+    <div>
+        <img style="margin:25px;margin-top:25px;" src="~/Image/bar.jpg" class="logo" />
+    </div>
+
     <div class="navbar navbar-inverse navbar-fixed-top">
+
         <div class="container">
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
@@ -18,23 +25,64 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                @Html.ActionLink("Nom d'application", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+                @Html.ActionLink("HISTOCHTEXT", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
                     <li>@Html.ActionLink("Accueil", "Index", "Home")</li>
-                    <li>@Html.ActionLink("À propos de", "About", "Home")</li>
+                    <li>@Html.ActionLink("Qui sommes nous", "About", "Home")</li>
                     <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
                 </ul>
                 @Html.Partial("_LoginPartial")
             </div>
         </div>
+        
     </div>
+    <div class="navbar-collapse collapse" style="background-color:black" >
+        <ul class="nav navbar-nav">
+            <li>@Html.ActionLink("TochPhrase", "Index", "Home")</li>
+            <li>@Html.ActionLink("TochStory", "Index", "Home")</li>
+            <li>@Html.ActionLink("Manuscript", "Index", "Home")</li>
+            <li>@Html.ActionLink("Words", "Index", "Home")</li>
+            <li>@Html.ActionLink("News&Blog", "Index", "Home")</li>
+
+            <li>@Html.ActionLink("Bibliography", "Bibliography", "Home")</li>
+            <li>@Html.ActionLink("Help", "Index", "Home")</li>
+            <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Reference <span class="caret"></span></a>
+                <ul class="dropdown-menu">
+                    <li><h4 class="dropdownTitle" style="color:cornflowerblue">Silk Road Projects and Tocharian texts</h4></li>
+                    <li><a href="http://dsr.nii.ac.jp/">Digital Silk Road Project (DSR)</a></li>
+                    <li><a href="http://dsr.nii.ac.jp/toyobunko/">Digital Archive of Toyo Bunko Rare Books</a></li>
+                    <li><a href="http://turfan.bbaw.de/dta/">   Digitales Turfan-Archiv (DTA)</a></li>
+                    <li><a href="http://idp.bl.uk/">The International Dunhuang Project (IDP)</a></li>
+                    <li><a href="http://titus.uni-frankfurt.de/">Thesaurus Indogermanischer Text- und Sprachmaterialien (TITUS)</a></li>
+
+                    <li><h4 class="dropdownTitle" style="color:cornflowerblue">Collections and catalogues</h4></li>
+                    <li><a href="https://staatsbibliothek-berlin.de/die-staatsbibliothek/abteilungen/orient/">Staatsbibliothek zu Berlin – Preußischer Kulturbesitz: Orientabteilung</a></li>
+                    <li><a href="http://www.bbaw.de/forschung/turfanforschung/">Berlin-Brandenburgische Akademie der Wissenschaften: Turfanforschung</a></li>
+                    <li><a href="https://adw-goe.de/forschung/forschungsprojekte-akademienprogramm/kohd/">Katalogisierung der Orientalischen Handschriften in Deutschland (KOHD)</a></li>
+
+                    <li><h4 class="dropdownTitle" style="color:cornflowerblue">Sanskrit and Buddhist texts</h4></li>
+                    <li><a href="https://www.tipitaka.org/">The Pāḷi Tipiṭaka</a></li>
+                    <li><a href="http://www.sacred-texts.com/bud/index.htm">Sacred texts: Buddhism</a></li>
+                    <li><a href="https://www2.hf.uio.no/polyglotta/index.php?page=library&bid=2">Thesaurus Literaturae Buddhicae (TLB)</a></li>
+
+
+
+                </ul>
+            </li>
+            <li class="right"><a href="@Url.Action("index","dashboards",new {area="backoffice" })">O</a> </li>
+            
+        </ul>       
+    </div>
+  
     <div class="container body-content">
+        <hr />
         @RenderBody()
         <hr />
         <footer>
-            <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
+            <p>&copy; @DateTime.Now.Year - Projet HISTOCHTEXT</p>
         </footer>
     </div>
 
@@ -42,4 +90,4 @@
     @Scripts.Render("~/bundles/bootstrap")
     @RenderSection("scripts", required: false)
 </body>
-</html>
+ </html>

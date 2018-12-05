@@ -21,7 +21,7 @@ namespace Horizone.Models
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {
         public ApplicationDbContext()
-            : base("DefaultConnection", throwIfV1Schema: false)
+            : base("Horizone", throwIfV1Schema: false)
         {
         }
 
@@ -29,5 +29,31 @@ namespace Horizone.Models
         {
             return new ApplicationDbContext();
         }
+        protected override void OnModelCreating(DbModelBuilder modelBuilder)
+        {
+            base.OnModelCreating(modelBuilder);
+            modelBuilder.Entity<ApplicationUser>().ToTable("Users");
+            modelBuilder.Entity<IdentityRole>().ToTable("Roles");
+            modelBuilder.Entity<IdentityUserRole>().ToTable("UserRoles");
+            modelBuilder.Entity<IdentityUserClaim>().ToTable("UserClaims");
+            modelBuilder.Entity<IdentityUserLogin>().ToTable("UserLogins");
+        }
+        public DbSet<Client> Clients { get; set; }
+        public DbSet<Colaborateur> Colaborateurs { get; set; }
+        public DbSet<ObjectManuscript> ObjectManuscripts { get; set; }
+        public DbSet<ContactMessage> ContactMessages { get; set; }
+        public DbSet<Comment> Comments { get; set; }
+        public DbSet<DictionaryTocharian> DictionaryTocharians { get; set; }
+        public DbSet<ImageDictionary> ImageDictionarys { get; set; }
+        public DbSet<ImageManuscript> ImageManuscripts { get; set; }
+        public DbSet<ImageNews> ImageNewss { get; set; }
+        public DbSet<Manuscript> Manuscripts { get; set; }
+        public DbSet<News> Newss { get; set; }
+        public DbSet<Provenience> Proveniences { get; set; }
+        public DbSet<TextContent> TextContents { get; set; }
+        public DbSet<TochPhrase> TochPhrases { get; set; }
+        public DbSet<TochStory> TochStorys { get; set; }
+        public DbSet<Topic> Topics { get; set; }
+        public DbSet<Transcription> Transcriptions { get; set; }
     }
 }

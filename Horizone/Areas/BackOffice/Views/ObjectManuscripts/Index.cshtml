@@ -1,0 +1,57 @@
+﻿@model IEnumerable<Horizone.Models.ObjectManuscript>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Manuscript)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.LeafNumber)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Material)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Form)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NumberOfLine)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Manuscript)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.LeafNumber)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Material)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Form)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NumberOfLine)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
+            @Html.ActionLink("Details", "Details", new { id=item.Id }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.Id })
+        </td>
+    </tr>
+}
+
+</table>

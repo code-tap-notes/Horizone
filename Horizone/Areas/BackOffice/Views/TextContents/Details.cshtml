@@ -1,0 +1,58 @@
+﻿@model Horizone.Models.TextContent
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>TextContent</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.TitleOfTheWork)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TitleOfTheWork)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Passage)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Passage)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TextGenre)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TextGenre)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TextSubgenre)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TextSubgenre)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.VerseProse)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.VerseProse)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
