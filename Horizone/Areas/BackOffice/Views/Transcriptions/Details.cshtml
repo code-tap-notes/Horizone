@@ -1,0 +1,50 @@
+﻿@model Horizone.Models.Transcription
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Transcription</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Manuscript.Index)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Manuscript.Index)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TochPhrase.Index)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TochPhrase.Index)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TochStory.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TochStory.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Text)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Text)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
