@@ -30,10 +30,9 @@ namespace Horizone.Controllers
             return View();
         }
         public ActionResult Bibliography()
-        {
-            ViewBag.Message = "Bibliography";
-
-            return View();
+        {           
+                return View(db.Bibliographys.ToList());
+            
         }
         public ActionResult TochStory()
         {

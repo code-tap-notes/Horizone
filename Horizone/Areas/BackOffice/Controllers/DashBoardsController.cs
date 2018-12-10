@@ -13,5 +13,10 @@ namespace Horizone.Areas.BackOffice.Controllers
         {
             return View();
         }
+        public ActionResult Logout()
+        {
+            Session.Remove("ADMINISTRATOR");
+            return RedirectToAction("index", "home", new { area = "" });
+        }
     }
 }

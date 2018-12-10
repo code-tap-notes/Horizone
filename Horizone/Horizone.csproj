@@ -196,8 +196,10 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Areas\BackOffice\BackOfficeAreaRegistration.cs" />
+    <Compile Include="Areas\BackOffice\Controllers\BibliographiesController.cs" />
     <Compile Include="Areas\BackOffice\Controllers\DashBoardsController.cs" />
     <Compile Include="Areas\BackOffice\Controllers\DictionaryTochariansController.cs" />
+    <Compile Include="Areas\BackOffice\Controllers\MainContentsController.cs" />
     <Compile Include="Areas\BackOffice\Controllers\ManuscriptsController.cs" />
     <Compile Include="Areas\BackOffice\Controllers\NewsController.cs" />
     <Compile Include="Areas\BackOffice\Controllers\ObjectManuscriptsController.cs" />
@@ -222,8 +224,17 @@
     <Compile Include="Migrations\201812051721006_Init.Designer.cs">
       <DependentUpon>201812051721006_Init.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201812101359537_addtableBibliography.cs" />
+    <Compile Include="Migrations\201812101359537_addtableBibliography.Designer.cs">
+      <DependentUpon>201812101359537_addtableBibliography.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201812101715235_changencoreBibliography.cs" />
+    <Compile Include="Migrations\201812101715235_changencoreBibliography.Designer.cs">
+      <DependentUpon>201812101715235_changencoreBibliography.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\Bibliography.cs" />
     <Compile Include="Models\Client.cs" />
     <Compile Include="Models\Colaborateur.cs" />
     <Compile Include="Models\Comment.cs" />
@@ -234,6 +245,7 @@
     <Compile Include="Models\ImageDictionary.cs" />
     <Compile Include="Models\ImageManuscript.cs" />
     <Compile Include="Models\ImageNews.cs" />
+    <Compile Include="Models\MainContent.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\Manuscript.cs" />
     <Compile Include="Models\Message.cs" />
@@ -339,6 +351,16 @@
     <Content Include="Areas\BackOffice\Views\News\Details.cshtml" />
     <Content Include="Areas\BackOffice\Views\News\Edit.cshtml" />
     <Content Include="Areas\BackOffice\Views\News\Index.cshtml" />
+    <Content Include="Areas\BackOffice\Views\MainContents\Create.cshtml" />
+    <Content Include="Areas\BackOffice\Views\MainContents\Delete.cshtml" />
+    <Content Include="Areas\BackOffice\Views\MainContents\Details.cshtml" />
+    <Content Include="Areas\BackOffice\Views\MainContents\Edit.cshtml" />
+    <Content Include="Areas\BackOffice\Views\MainContents\Index.cshtml" />
+    <Content Include="Areas\BackOffice\Views\Bibliographies\Create.cshtml" />
+    <Content Include="Areas\BackOffice\Views\Bibliographies\Delete.cshtml" />
+    <Content Include="Areas\BackOffice\Views\Bibliographies\Details.cshtml" />
+    <Content Include="Areas\BackOffice\Views\Bibliographies\Edit.cshtml" />
+    <Content Include="Areas\BackOffice\Views\Bibliographies\Index.cshtml" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\cldr.js" />
     <Content Include="Scripts\cldr\event.js" />
@@ -684,6 +706,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201812051721006_Init.resx">
       <DependentUpon>201812051721006_Init.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201812101359537_addtableBibliography.resx">
+      <DependentUpon>201812101359537_addtableBibliography.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201812101715235_changencoreBibliography.resx">
+      <DependentUpon>201812101715235_changencoreBibliography.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

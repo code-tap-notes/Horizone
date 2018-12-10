@@ -13,8 +13,10 @@ ul{ list-style:none}
 .tlq{ background:url(../images/bg_dot_gray_3x3.gif) no-repeat left 5px; padding-left:10px; height:auto}
 .tlq a{ color:#999; font-size:11px; font-weight:bold; line-height:140%}
 .tlq a:hover{ color:#900;}
-.xemthem{ color:#666; font-size:11px;}
-.xemthem:hover{ color:#069;}
+.learnmore{ color:#666; font-size:11px;}
+.learnmore:hover {
+        color: #069;
+    }
 .hit{ background:url(../images/icon_title.png) -22px 0 no-repeat; width:2px; height:10px; float:right; color:#900; margin:0 8px 0 0; padding:0 0 0 18px; font-weight:normal; font-size:11px}
 .petitImage {width:60px;height:40px;}
 .moyenImage {
@@ -97,15 +99,37 @@ ul{ list-style:none}
 	
 	#content-vp #content-right img{ margin:1px 5px 5px 1px}
 	
-#thongtin{}
-	.thongtin-title{ background:#F4F4F4; height:30px; color:#900; padding:6px 10px 1px 10px; border-top:1px solid #DEDEDE; border-bottom:1px solid #DEDEDE}	
-	#thongtin .thongtin-title{ font-weight:bold; font-size:14px}
-	.thongtin-content { background:#F4F4F4; min-height:100px; padding:5px 10px}
+#info {}
+.info-title {
+    background: #F4F4F4;
+    height: 30px;
+    color: #900;
+    padding: 6px 10px 1px 10px;
+    border-top: 1px solid #DEDEDE;
+    border-bottom: 1px solid #DEDEDE
+}
+#info .info-title {
+    font-weight: bold;
+    font-size: 14px
+}
+.info-content {
+    background: #F4F4F4;
+    min-height: 100px;
+    padding: 5px 10px
+}
 	
 #footer{ margin-top: 10px;}	
-	#footer .SetHomePage{ background:url(../images/icon_resonesive.gif) no-repeat; width:20px; height:20px; background-position:0 0; display:inline-block; margin:0 5px 0 5px;}
-	#footer .top {background:url(../images/icon_resonesive.gif) no-repeat; width:20px; height:20px; background-position:-20px 0; display:inline-block; margin:0 5px 0 5px}
-	.thongtin-title .right a{ color:#666; font-weight:bold; margin:3px 5px 1px 1px; display:block; float:left; border-right:solid 1px #E2E2E3; padding:1px 5px }
+#footer .SetHomePage{ background:url(../images/icon_resonesive.gif) no-repeat; width:20px; height:20px; background-position:0 0; display:inline-block; margin:0 5px 0 5px;}
+#footer .top {background:url(../images/icon_resonesive.gif) no-repeat; width:20px; height:20px; background-position:-20px 0; display:inline-block; margin:0 5px 0 5px}
+.info-title .right a {
+    color: #666;
+    font-weight: bold;
+    margin: 3px 5px 1px 1px;
+    display: block;
+    float: left;
+    border-right: solid 1px #E2E2E3;
+    padding: 1px 5px
+}
 	#footer .ulBlockMenu{ width:160px; float:left}
 	#footer .ulBlockMenu a{ color:#333; font-size:12px; font-weight:normal}
 	#footer .ulBlockMenu a:hover{ color:#900;}

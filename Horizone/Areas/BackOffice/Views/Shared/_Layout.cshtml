@@ -6,8 +6,9 @@
     <title>@ViewBag.Title - My ASP.NET Application</title>
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
+    <link href="~/Content/layout.css" rel="stylesheet" />
 </head>
-<body>
+<body background="~/Content/Background2.jpg" class="parallax">
     <div class="navbar navbar-inverse navbar-fixed-top">
         <div class="container">
             <div class="navbar-header">
@@ -16,10 +17,22 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                @Html.ActionLink("HISTOCHTEXT", "Index", "Dashboards", new { area = "" }, new { @class = "navbar-brand" })
+                @Html.ActionLink("Office", "Index", "Dashboards", new { area = "" }, new { @class = "navbar-brand" })
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Gestion Page Principal <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><h4 class="dropdownTitle">Main Contents </h4></li>
+                            <li><a href="@Url.Action("create", "Maincontents")">Ajouter</a></li>
+                            <li><a href="@Url.Action("index", "Maincontents")">Lister</a></li>
+                            <li><h4 class="dropdownTitle">Bibliographys</h4></li>
+                            <li><a href="@Url.Action("create", "Bibliographies")">Ajouter</a></li>
+                            <li><a href="@Url.Action("index", "Bibliographies")">Lister</a></li>
+
+                        </ul>
+                    </li>
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Gestion Manuscripts <span class="caret"></span></a>
                         <ul class="dropdown-menu">
@@ -58,7 +71,7 @@
                             <li><h4 class="dropdownTitle">News</h4></li>
                             <li><a href="@Url.Action("create", "Newss")">Ajouter</a></li>
                             <li><a href="@Url.Action("index", "Newss")">Lister</a></li>
-                            
+
 
                         </ul>
                     </li>
@@ -74,26 +87,46 @@
                             <li><h4 class="dropdownTitle">Clients</h4></li>
                             <li><a href="@Url.Action("create", "Clients")">Ajouter</a></li>
                             <li><a href="@Url.Action("index", "Clients")">Lister</a></li>
-                            
+
 
                         </ul>
                     </li>
-                   
+
                 </ul>
 
 
 
-                    @Html.Partial("_LoginPartial")
-             </div>
+                @Html.Partial("_LoginPartial")
+            </div>
         </div>
 
     </div>
-                
+    <div class="navbar navbar-inverse navbar" style="background-color:steelblue;">                  
+            <div class="navbar-collapse collapse" >
+                <ul class="nav navbar-nav">                    
+                    <li>@Html.ActionLink("Accueil", "Index", "Home")</li>
+                    <li>@Html.ActionLink("Qui sommes nous", "About", "Home")</li>
+                    <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
+                    <li>@Html.ActionLink("TochPhrase", "TochPhrase", "Home")</li>
+                    <li>@Html.ActionLink("TochStory", "TochStory", "Home")</li>
+                    <li>@Html.ActionLink("Manuscript", "Manuscript", "Home")</li>
+                    <li>@Html.ActionLink("Words", "Word", "Home")</li>
+                    <li>@Html.ActionLink("News&Blog", "News", "Home")</li>
+                    <li>@Html.ActionLink("Bibliography", "Bibliography", "Home")</li>
+                    <li>@Html.ActionLink("Help", "Help", "Home")</li>
+                </ul>
+                <ul class="nav navbar-right">
+                    <li><a href="@Url.Action("Logout","Dashboards")"> <i class="glyphicon glyphicon-log-out"></i></a> </li>
+
+                </ul>
+            </div>                      
+    </div>
+
     <div class="container body-content">
         @RenderBody()
         <hr />
         <footer>
-            <p>&copy; @DateTime.Now.Year - Histochtext</p>
+            <p>&copy; @DateTime.Now.Year - Page Back Ofice Histochtext</p>
         </footer>
     </div>
 

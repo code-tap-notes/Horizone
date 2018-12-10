@@ -6,7 +6,10 @@
 
 <h2>Bibliography</h2>
 
-<
+<p>
+    @Html.ActionLink("Ajouter une Bibliography", "Create", null, new { @class = "btn btn-primary" })
+   
+</p>
 <div id="search">
     <form class="form-group row" action="@Url.Action("Search", "Bibliographies")" method="post" enctype="multipart/form-data">
         <div class="form-group col-md-2">
@@ -28,7 +31,7 @@
             <label for="Title">Mot de recherche </label>
             <input class="form-control" type="text" id="Title" name="search" />
         </div>
-
+        
     </form>
 </div>
 <table class="table">
@@ -51,26 +54,31 @@
         <th></th>
     </tr>
 
-    @foreach (var item in Model)
-    {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Author)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.PublicationDate)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Title)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Journal)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.UlrBibliography)
-            </td>
-           
-        </tr>
-    }
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Author)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PublicationDate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Title)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Journal)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.UlrBibliography)
+        </td>
+        <td>
+        @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
+        @Html.ActionLink("Details", "Details", new { id = item.Id }) |
+        @Html.ActionLink("Delete", "Delete", new { id = item.Id }) 
+            
+       
+        </td>
+    </tr>
+}
 
 </table>

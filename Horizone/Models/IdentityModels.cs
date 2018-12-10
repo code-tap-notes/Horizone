@@ -55,5 +55,7 @@ namespace Horizone.Models
         public DbSet<TochStory> TochStorys { get; set; }
         public DbSet<Topic> Topics { get; set; }
         public DbSet<Transcription> Transcriptions { get; set; }
+        public DbSet<Bibliography> Bibliographys { get; set; }
+        public DbSet<MainContent> MainContents { get; set; }
     }
 }
