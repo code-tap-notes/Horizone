@@ -1,0 +1,49 @@
+
+.soc {
+    display: block;
+    font-size: 0;
+    list-style: none;
+    margin: 0;
+    padding: 10px;  
+    text-align: center;
+}
+
+    .soc li {
+        display: inline-block;
+        margin: 12px;
+        margin: 1.2rem;
+    }
+
+    .soc a, .soc svg {
+        display: block;
+    }
+
+    .soc a {
+        position: relative;
+        height: 96px;
+        height: 9.6rem;
+        width: 96px;
+        width: 9.6rem;
+    }
+
+    .soc svg {
+        height: 30%;
+        width: 30%;
+    }
+
+.icon:hover {
+    border-radius: 100%;
+    color: #0e1a25;
+    fill: #0e1a25;
+    -webkit-transform: scale(1.25);
+    transform: scale(1.25);
+    -webkit-transition: background-color 0.5s, -webkit-transform 0.5s ease-out;
+    transition: background-color 0.5s, -webkit-transform 0.5s ease-out;
+    transition: background-color 0.5s, transform 0.5s ease-out;
+    transition: background-color 0.5s, transform 0.5s ease-out, -webkit-transform 0.5s ease-out;
+}
+
+.icon {
+    color: #456bbd;
+    fill: #456bbd;
+}

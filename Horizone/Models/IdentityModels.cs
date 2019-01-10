@@ -46,7 +46,7 @@ namespace Horizone.Models
         public DbSet<DictionaryTocharian> DictionaryTocharians { get; set; }
         public DbSet<ImageDictionary> ImageDictionarys { get; set; }
         public DbSet<ImageManuscript> ImageManuscripts { get; set; }
-        public DbSet<ImageNews> ImageNewss { get; set; }
+        public DbSet<ImageNews> ImageNews { get; set; }
         public DbSet<Manuscript> Manuscripts { get; set; }
         public DbSet<News> Newss { get; set; }
         public DbSet<Provenience> Proveniences { get; set; }
@@ -57,5 +57,7 @@ namespace Horizone.Models
         public DbSet<Transcription> Transcriptions { get; set; }
         public DbSet<Bibliography> Bibliographys { get; set; }
         public DbSet<MainContent> MainContents { get; set; }
+        public DbSet<Menu> Menus { get; set; }
+        public DbSet<Language> Languages { get; set; }
     }
 }

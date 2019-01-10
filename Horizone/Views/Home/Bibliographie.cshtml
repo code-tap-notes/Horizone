@@ -1,0 +1,69 @@
+﻿@model PagedList.IPagedList<Horizone.Models.Bibliography>
+@using PagedList.Mvc;
+
+@{
+    ViewBag.Title = @StaticResource.Resources.Bibliography;
+}
+
+<h2>@StaticResource.Resources.Bibliography</h2>
+
+
+<div id="search">
+    <form class="form-group row" action="@Url.Action("Search", "Bibliographies")" method="post" enctype="multipart/form-data">
+        <div class="form-group col-md-2">
+            <br />
+            <button type="submit" class="btn btn-info bigBtn"> @StaticResource.Resources.Search </button>
+        </div>
+
+        <div class="form-group col-md-6">
+            <label for="Title"> @StaticResource.Resources.SearchWord </label>
+            <input class="form-control" type="text" id="Title" name="search" />
+        </div>
+
+    </form>
+</div>
+<table class="table">
+    <tr>
+        <th>
+            @StaticResource.Resources.Author
+        </th>
+        <th>
+            @StaticResource.Resources.PublicationDate
+        </th>
+        <th>
+            @StaticResource.Resources.TitleArticle
+        </th>
+        <th>
+            @StaticResource.Resources.Newspaper
+        </th>
+        <th>
+            @StaticResource.Resources.Link
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Author)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PublicationDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Title)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Journal)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.UlrBibliography)
+            </td>
+
+        </tr>
+    }
+
+</table>
+@Html.PagedListPager(Model, page => Url.Action("bibliographie", new { page }))
+

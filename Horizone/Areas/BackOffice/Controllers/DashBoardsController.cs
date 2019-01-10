@@ -1,12 +1,15 @@
-﻿using System;
+﻿using Horizone.Controllers;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 
+
 namespace Horizone.Areas.BackOffice.Controllers
 {
-    public class DashBoardsController : Controller
+    //[Authorize(Roles = "Commercial,Admin")]
+    public class DashBoardsController : BaseController
     {
         // GET: BackOffice/DashBoards
         public ActionResult Index()

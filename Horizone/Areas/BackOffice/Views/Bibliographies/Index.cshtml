@@ -1,84 +1,84 @@
-﻿@model IEnumerable<Horizone.Models.Bibliography>
+﻿@model PagedList.IPagedList<Horizone.Models.Bibliography>
+@using PagedList.Mvc;
 
 @{
-    ViewBag.Title = "Bibliography";
+    ViewBag.Title = @StaticResource.Resources.Bibliography;
 }
 
-<h2>Bibliography</h2>
+<h2>@StaticResource.Resources.Bibliography</h2>
 
-<p>
-    @Html.ActionLink("Ajouter une Bibliography", "Create", null, new { @class = "btn btn-primary" })
-   
-</p>
+
 <div id="search">
+    
     <form class="form-group row" action="@Url.Action("Search", "Bibliographies")" method="post" enctype="multipart/form-data">
-        <div class="form-group col-md-2">
-            <br />
-            <button type="submit" class="btn btn-info bigBtn"> Rechercher</button>
-        </div>
-        <div class="form-group col-md-2">
-            <label for="Auteur"> Auteur :</label>
-            <a> <input type="text" class="form-control" id="Word" name="Word" /> </a> <br />
+            <div class="form-group col-md-2">
+            <br/>
+                @Html.ActionLink(@StaticResource.Resources.Add, "Create", null, new { @class = "btn btn-primary" })
+            
+            </div>
+            <div class="form-group col-md-2">
+                <br />
+                <button type="submit" class="btn btn-info bigBtn"> @StaticResource.Resources.Search</button>
+            </div>
 
-        </div>
+            <div class="form-group col-md-6">
+                <label for="search">@StaticResource.Resources.SearchWord </label>
+                <input class="form-control" type="text" id="search" name="search" />
+            </div>
 
-        <div class="form-group col-md-2">
-            <label for="Date">L'année publication:</label>
-            <input class="form-control" type="number" id="Date" name="Date" />
-        </div>
-
-        <div class="form-group col-md-2">
-            <label for="Title">Mot de recherche </label>
-            <input class="form-control" type="text" id="Title" name="search" />
-        </div>
-        
     </form>
 </div>
+
+
 <table class="table">
+
+    
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.Author)
+           @StaticResource.Resources.Author
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.PublicationDate)
+            @StaticResource.Resources.PublicationDate
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Title)
+            @StaticResource.Resources.TitleArticle
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Journal)
+            @StaticResource.Resources.Newspaper
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.UlrBibliography)
+            @StaticResource.Resources.Link
         </th>
         <th></th>
     </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.Author)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.PublicationDate)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Title)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Journal)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.UlrBibliography)
-        </td>
-        <td>
-        @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
-        @Html.ActionLink("Details", "Details", new { id = item.Id }) |
-        @Html.ActionLink("Delete", "Delete", new { id = item.Id }) 
-            
-       
-        </td>
-    </tr>
-}
+    @foreach (var item in Model)
+    { 
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Author)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PublicationDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Title)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Journal)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.UlrBibliography)
+            </td>
+            <td>
+                @Html.ActionLink(@StaticResource.Resources.Edit, "Edit", new { id = item.Id }, new { @class = "btn btn-info" }) 
+                @Html.ActionLink(@StaticResource.Resources.Details, "Details", new { id = item.Id }, new { @class = "btn btn-info" }) 
+                @Html.ActionLink(@StaticResource.Resources.Delete, "Delete", new { id = item.Id }, new { @class = "btn btn-info" })
+
+
+            </td>
+        </tr>
+    }
 
 </table>
+@Html.PagedListPager(Model,page=>Url.Action("index", new { page}))

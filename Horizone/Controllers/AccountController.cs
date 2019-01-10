@@ -10,10 +10,11 @@ using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
 using Horizone.Models;
 
+
 namespace Horizone.Controllers
 {
     [Authorize]
-    public class AccountController : Controller
+    public class AccountController : BaseController
     {
         private ApplicationSignInManager _signInManager;
         private ApplicationUserManager _userManager;
@@ -133,7 +134,7 @@ namespace Horizone.Controllers
                     return View(model);
             }
         }
-
+        
         //
         // GET: /Account/Register
         [AllowAnonymous]
@@ -141,7 +142,12 @@ namespace Horizone.Controllers
         {
             return View();
         }
-
+        //Add for colaborator
+        [Authorize(Roles = "Admin")]
+        public ActionResult RegisterColaborator()
+        {
+            return View();
+        }
         //
         // POST: /Account/Register
         [HttpPost]
@@ -155,14 +161,31 @@ namespace Horizone.Controllers
                 var result = await UserManager.CreateAsync(user, model.Password);
                 if (result.Succeeded)
                 {
+                    user = UserManager.FindByEmail(model.Email);
+                    if (user.Id != null)
+                    {
+                        var client = new Client
+                        {
+                            EmailDisplay = model.Email,
+                            Title = model.Title,
+                            LastName = model.LastName,
+                            FisrtName = model.FisrtName,
+                            PhoneNumber = model.PhoneNumber,
+                            UserId = user.Id,
+
+                        };
+                        db.Clients.Add(client);
+                        db.SaveChanges();
+                        UserManager.AddToRole(user.Id, "Client");
+                    }
                     await SignInManager.SignInAsync(user, isPersistent:false, rememberBrowser:false);
-                    
+                                       
                     // Pour plus d'informations sur l'activation de la confirmation de compte et de la réinitialisation de mot de passe, visitez https://go.microsoft.com/fwlink/?LinkID=320771
                     // Envoyer un message électronique avec ce lien
                     // string code = await UserManager.GenerateEmailConfirmationTokenAsync(user.Id);
                     // var callbackUrl = Url.Action("ConfirmEmail", "Account", new { userId = user.Id, code = code }, protocol: Request.Url.Scheme);
-                    // await UserManager.SendEmailAsync(user.Id, "Confirmez votre compte", "Confirmez votre compte en cliquant <a href=\"" + callbackUrl + "\">ici</a>");
-
+       
+                    Display("Client enregistré");                             
                     return RedirectToAction("Index", "Home");
                 }
                 AddErrors(result);
@@ -171,6 +194,92 @@ namespace Horizone.Controllers
             // Si nous sommes arrivés là, un échec s’est produit. Réafficher le formulaire
             return View(model);
         }
+        [Authorize(Roles = "Admin")]
+        [HttpPost]
+        [AllowAnonymous]
+        [ValidateAntiForgeryToken]
+        public async Task<ActionResult> RegisterColaborator(RegisterViewModel model)
+        {
+            if (ModelState.IsValid)
+            {
+                var user = new ApplicationUser { UserName = model.Email, Email = model.Email };
+                var result = await UserManager.CreateAsync(user, model.Password);
+                if (result.Succeeded)
+                {
+                    user = UserManager.FindByEmail(model.Email);
+                    if (user.Id != null)
+                    {
+                        var colaborator = new Colaborateur
+                        {
+                            Title = model.Title,
+                            LastName = model.LastName,
+                            FisrtName = model.FisrtName,                            
+                            PhoneNumber = model.PhoneNumber, 
+                            UserId = user.Id
+                        };
+                        db.Colaborateurs.Add(colaborator);
+                        db.SaveChanges();
+                        UserManager.AddToRole(user.Id, "Colaborator");
+                    }
+
+                    await SignInManager.SignInAsync(user, isPersistent: false, rememberBrowser: false);
+
+
+
+                    // Pour plus d'informations sur l'activation de la confirmation de compte et de la réinitialisation de mot de passe, visitez https://go.microsoft.com/fwlink/?LinkID=320771
+                    // Envoyer un message électronique avec ce lien
+                    // string code = await UserManager.GenerateEmailConfirmationTokenAsync(user.Id);
+                    // var callbackUrl = Url.Action("ConfirmEmail", "Account", new { userId = user.Id, code = code }, protocol: Request.Url.Scheme);
+                    // await UserManager.SendEmailAsync(user.Id, "Confirmez votre compte", "Confirmez votre compte en cliquant <a href=\"" + callbackUrl + "\">ici</a>");
+                    Display("Colaborator ajouté");
+
+                    return RedirectToAction("Index", "Dashboard", new { area = "BackOffice" });
+                }
+                AddErrors(result);
+            }
+
+            // Si nous sommes arrivés là, un échec s’est produit. Réafficher le formulaire
+            return View(model);
+        }
+
+        public void GetCurrentUserRole()
+        {
+            string userId = User.Identity.GetUserId();
+            var roles = UserManager.GetRoles(userId);
+
+            if (roles != null)
+            {
+                if (roles.Contains("Admin"))
+                    Session["ROLE"] = "Admin";
+
+                if (roles.Contains("Colaborator"))
+                    Session["ROLE"] = "Colaborator";
+
+                if (roles.Contains("Client"))
+                    Session["ROLE"] = "Client";
+            }
+        }
+
+        [ChildActionOnly]
+        public string GetCurrentUserName()
+        {
+            string userId = User.Identity.GetUserId();
+            var roles = UserManager.GetRoles(userId);
+            // string[] roles = Roles.GetRolesForUser();
+            if (roles == null)
+                return "";
+            if (roles.Contains("Admin"))
+                return "Admin";
+
+            if (roles.Contains("Colaborator"))
+                return GetCurrentColaboratorName();
+
+            if (roles.Contains("Client"))
+                return GetCurrentClientName();
+
+            return "";
+        }
+
 
         //
         // GET: /Account/ConfirmEmail

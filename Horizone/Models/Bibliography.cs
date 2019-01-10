@@ -12,27 +12,30 @@ namespace Horizone.Models
     {
         public int Id { get; set; }
 
-        [Display(Name = "Author name/ Auteur")]
-        [StringLength(150, MinimumLength = 1, ErrorMessage = "Le champ doit avoir de 1 a 40 caracteres / At least 1 Characters")]
+       
+        [Display(Name = "Author", ResourceType = typeof(StaticResource.Resources))]
+        [StringLength(150, MinimumLength = 1, ErrorMessageResourceName = "MinLength", ErrorMessageResourceType = typeof(StaticResource.Resources))]
         public string Author { get; set; }
 
 
-        [Display(Name = "Year of publication")]
-        [StringLength(10, MinimumLength = 1, ErrorMessage = "Le champ doit avoir de 2 a 10 caracteres / At least 2 Characters")]
+        
+        [Display(Name = "PublicationDate", ResourceType = typeof(StaticResource.Resources))]
+        [StringLength(10, MinimumLength = 1, ErrorMessageResourceName = "MinLength", ErrorMessageResourceType = typeof(StaticResource.Resources))]
         public string PublicationDate { get; set; }
 
-
-
-        [Display(Name = "Title / Titre")]
-        [StringLength(500, MinimumLength = 1, ErrorMessage = "Le champ doit avoir de 1 a 250 caracteres / At least 1 Character")]
+        [AllowHtml]
+        [Display(Name = "TitleArticle", ResourceType = typeof(StaticResource.Resources))]
+        [StringLength(500, MinimumLength = 1, ErrorMessageResourceName = "MinLength", ErrorMessageResourceType = typeof(StaticResource.Resources))]
         public string Title { get; set; }
 
-        [Display(Name = "Journal")]
-        [StringLength(500, MinimumLength = 1, ErrorMessage = "Le champ doit avoir de 1 a 100 caracteres / At least 1 Character")]
+        [AllowHtml]
+        [Display(Name = "Newspaper", ResourceType = typeof(StaticResource.Resources))]
+        [StringLength(500, MinimumLength = 1, ErrorMessageResourceName = "MinLength", ErrorMessageResourceType = typeof(StaticResource.Resources))]
         public string Journal { get; set; }
 
-        [Display(Name = "Link")]
-        [StringLength(500, MinimumLength = 1, ErrorMessage = "Le champ doit avoir de 1 a 250 caracteres / At least 1 Character")]
+       
+        [Display(Name = "Link", ResourceType = typeof(StaticResource.Resources))]
+        [StringLength(500, MinimumLength = 1, ErrorMessageResourceName = "MinLength", ErrorMessageResourceType = typeof(StaticResource.Resources))]
         public string UlrBibliography { get; set; }
         
     }

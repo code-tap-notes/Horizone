@@ -23,13 +23,13 @@ namespace Horizone.Models
             }
         }
 
-
-        [Display(Name = "Content")]
-        [StringLength(40, MinimumLength = 1, ErrorMessage = "Le champ doit avoir de 1 a 40 caracteres / At least 1 Character")]
+        [Required(ErrorMessageResourceName = "FieldRequired", ErrorMessageResourceType = typeof(StaticResource.Resources))]
+        [StringLength(500, MinimumLength = 1, ErrorMessageResourceName = "MinLength", ErrorMessageResourceType = typeof(StaticResource.Resources))]
+        [Display(Name = "Content", ResourceType = typeof(StaticResource.Resources))]      
         public string Content { get; set; }
 
 
-        [Display(Name = "Nouvelles / News")]
+        [Display(Name = "News", ResourceType = typeof(StaticResource.Resources))]
         public int NewsId { get; set; }
 
 
@@ -37,8 +37,8 @@ namespace Horizone.Models
         public News News { get; set; }
 
 
-        [Display(Name = "Auteur / Author")]
-        [Required(ErrorMessage = "Le champ {0} est obligatoire. / Field {0} is required")]
+        [Display(Name = "Author", ResourceType = typeof(StaticResource.Resources))]
+        [Required(ErrorMessageResourceName = "FieldRequired", ErrorMessageResourceType = typeof(StaticResource.Resources))]
         public string UserId { get; set; }
 
         [ForeignKey("UserId")]

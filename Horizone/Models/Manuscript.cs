@@ -71,6 +71,7 @@ namespace Horizone.Models
         [Display(Name = "Contenu du texte / Text Content")]  
         public int TextContentId { get; set; }
 
+        [AllowHtml]
         [ForeignKey("TextContentId")]
         public TextContent TextContent { get; set; }
 

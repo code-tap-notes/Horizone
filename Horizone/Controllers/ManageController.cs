@@ -7,11 +7,12 @@ using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
 using Horizone.Models;
+using System.Data.Entity;
 
 namespace Horizone.Controllers
 {
     [Authorize]
-    public class ManageController : Controller
+    public class ManageController : BaseController
     {
         private ApplicationSignInManager _signInManager;
         private ApplicationUserManager _userManager;
@@ -74,7 +75,52 @@ namespace Horizone.Controllers
             };
             return View(model);
         }
+        [Authorize(Roles = "Client")]
+        public ActionResult EditClient()
+        {
+            var user = UserManager.FindByEmail(User.Identity.GetUserName());
 
+            var client = db.Clients.SingleOrDefault(x => x.UserId == user.Id);
+            client.EmailDisplay = user.Email;
+            return View(client);
+        }
+
+        public async Task<ActionResult> IndexBo(ManageMessageId? message)
+        {
+            ViewBag.StatusMessage =
+                message == ManageMessageId.ChangePasswordSuccess ? "Votre mot de passe a été changé."
+                : message == ManageMessageId.SetPasswordSuccess ? "Votre mot de passe a été défini."
+                : message == ManageMessageId.SetTwoFactorSuccess ? "Votre fournisseur d'authentification à 2 facteurs a été défini."
+                : message == ManageMessageId.Error ? "Une erreur s'est produite."
+                : message == ManageMessageId.AddPhoneSuccess ? "Votre numéro de téléphone a été ajouté."
+                : message == ManageMessageId.RemovePhoneSuccess ? "Votre numéro de téléphone a été supprimé."
+                : "";
+
+            var userId = User.Identity.GetUserId();
+            var model = new IndexViewModel
+            {
+                HasPassword = HasPassword(),
+                PhoneNumber = await UserManager.GetPhoneNumberAsync(userId),
+                TwoFactor = await UserManager.GetTwoFactorEnabledAsync(userId),
+                Logins = await UserManager.GetLoginsAsync(userId),
+                BrowserRemembered = await AuthenticationManager.TwoFactorBrowserRememberedAsync(userId)
+            };
+            return View(model);
+        }
+        // POST: FrontClients/Edit/5
+        [HttpPost]
+        [Authorize(Roles = "Client")]
+        public ActionResult EditClient(Client client)
+        {
+            if (ModelState.IsValid)
+            {
+               
+                db.Entry(client).State = EntityState.Modified;
+                db.SaveChanges();
+                return RedirectToAction("Index");
+            }
+            return View();
+        }
         //
         // POST: /Manage/RemoveLogin
         [HttpPost]
@@ -243,7 +289,36 @@ namespace Horizone.Controllers
             AddErrors(result);
             return View(model);
         }
+        [Authorize(Roles = "Commercial,Admin")]
+        public ActionResult ChangePasswordBo()
+        {
+            return View();
+        }
 
+        //
+        // POST: /Manage/ChangePassword
+        [Authorize(Roles = "Commercial,Admin")]
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<ActionResult> ChangePasswordBo(ChangePasswordViewModel model)
+        {
+            if (!ModelState.IsValid)
+            {
+                return View(model);
+            }
+            var result = await UserManager.ChangePasswordAsync(User.Identity.GetUserId(), model.OldPassword, model.NewPassword);
+            if (result.Succeeded)
+            {
+                var user = await UserManager.FindByIdAsync(User.Identity.GetUserId());
+                if (user != null)
+                {
+                    await SignInManager.SignInAsync(user, isPersistent: false, rememberBrowser: false);
+                }
+                return RedirectToAction("IndexBo", new { Message = ManageMessageId.ChangePasswordSuccess });
+            }
+            AddErrors(result);
+            return View(model);
+        }
         //
         // GET: /Manage/SetPassword
         public ActionResult SetPassword()

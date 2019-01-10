@@ -21,6 +21,7 @@ namespace Horizone.Models
         [StringLength(20)]
         public string ContentType { get; set; }
 
+        [AllowHtml]
         [Required(ErrorMessage = "Vous devez choisir une image. / You have to chose one picture")]
         public byte[] Content { get; set; }
 

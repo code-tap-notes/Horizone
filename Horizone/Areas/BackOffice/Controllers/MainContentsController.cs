@@ -7,12 +7,13 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using Horizone.Models;
+using Horizone.Controllers;
 
 namespace Horizone.Areas.BackOffice.Controllers
 {
-    public class MainContentsController : Controller
+    public class MainContentsController : BaseController
     {
-        private ApplicationDbContext db = new ApplicationDbContext();
+        
 
         // GET: BackOffice/MainContents
         public ActionResult Index()
@@ -46,7 +47,7 @@ namespace Horizone.Areas.BackOffice.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,AboutUs,Contact,Title")] MainContent mainContent)
+        public ActionResult Create([Bind(Include = "Id,AboutUs,Contact,Presentation")] MainContent mainContent)
         {
             if (ModelState.IsValid)
             {
@@ -78,7 +79,7 @@ namespace Horizone.Areas.BackOffice.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,AboutUs,Contact,Title")] MainContent mainContent)
+        public ActionResult Edit([Bind(Include = "Id,AboutUs,Contact,Presentation")] MainContent mainContent)
         {
             if (ModelState.IsValid)
             {
@@ -115,13 +116,6 @@ namespace Horizone.Areas.BackOffice.Controllers
             return RedirectToAction("Index");
         }
 
-        protected override void Dispose(bool disposing)
-        {
-            if (disposing)
-            {
-                db.Dispose();
-            }
-            base.Dispose(disposing);
-        }
+       
     }
 }

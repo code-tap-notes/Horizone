@@ -13,7 +13,7 @@ namespace Horizone.Models
         public int Id { get; set; }
 
         [Display(Name = "Title")]
-        [Required(ErrorMessage = "Le champ {0} est obligatoire. / Field {0} is required")]
+        [Required(ErrorMessageResourceName = "FieldRequired", ErrorMessageResourceType = typeof(StaticResource.Resources))]
         [StringLength(40, MinimumLength = 1, ErrorMessage = "Champ doit avoir de 1 a 40 caracteres / At least 1 Character")]
         public string Title { get; set; }
        
@@ -31,13 +31,14 @@ namespace Horizone.Models
           }
 
 
+        [Display(Name = "Contenu ")]
+        [StringLength(40, MinimumLength = 1, ErrorMessage = "Le champ doit avoir de 1 a 40 caracteres / At least 1 Character")]
+        public string ContentFrench { get; set; }
+
         [Display(Name = "Content")]
         [StringLength(40, MinimumLength = 1, ErrorMessage = "Le champ doit avoir de 1 a 40 caracteres / At least 1 Character")]
         public string ContentEnglish { get; set; }
 
-        [Display(Name = "Contenu ")]
-        [StringLength(40, MinimumLength = 1, ErrorMessage = "Le champ doit avoir de 1 a 40 caracteres / At least 1 Character")]
-        public string ContentFrench { get; set; }
 
         [Display(Name = "内容")]
         [StringLength(40, MinimumLength = 1, ErrorMessage = "Le champ doit avoir de 1 a 40 caracteres / At least 1 Character")]

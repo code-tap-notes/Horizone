@@ -7,6 +7,9 @@ using System.Data;
 using System.Data.Entity;
 using System.Net;
 using Horizone.Models;
+using PagedList;
+using Horizone.Common;
+
 namespace Horizone.Controllers
 {
     public class HomeController : BaseController
@@ -22,58 +25,77 @@ namespace Horizone.Controllers
 
             return View();
         }
-
+        // GET: FrontContact/Create
         public ActionResult Contact()
         {
-            ViewBag.Message = "Nous contact:";
-
             return View();
         }
-        public ActionResult Bibliography()
-        {           
-                return View(db.Bibliographys.ToList());
-            
-        }
-        public ActionResult TochStory()
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Contact([Bind(Include = "Id,Title,LastName,FisrtName,Email,PhoneNumber,SendDate,Message,SymbolLanguage")] ContactMessage contactMessage)
         {
-            ViewBag.Message = "TochStory";
-           
+            ViewBag.Message = "Nous contact:";
+          
+            if (ModelState.IsValid)
+            {
+                var currentCulture = Session[CommonConstants.CurrentCulture];
+                contactMessage.SymbolLanguage = currentCulture.ToString();
+                db.ContactMessages.Add(contactMessage);
+                db.SaveChanges();
+                return RedirectToAction("Contact");
+            }
+
+            return View(contactMessage);
+        }
+
+
+        public ActionResult Bibliographie(int page = 1, int pageSize = 6)
+        {
+            return View(db.Bibliographys.OrderBy(x => x.Id).ToPagedList(page, pageSize));
+        }
+
+        [ChildActionOnly]
+        public ActionResult MainMenu()
+        {
+            //return PartialView(db.Menus.ToList());
+            return PartialView();
+        }
+        public ActionResult TochHistoire()
+        {
+                    
                 return View(db.TochStorys.ToList());          
         }
-        public ActionResult Tochphrase()
+        public ActionResult TochPhase()
         {
-            ViewBag.Message = "Tochphrase";
-
+        
             return View(db.TochPhrases.ToList());
         }
-        public ActionResult Word()
+        public ActionResult Vocabulaire()
         {
-            ViewBag.Message = "Word";
             var transcriptions = db.Transcriptions;
             return View(transcriptions.ToList());
            
         }
-        public ActionResult News()
+        public ActionResult Nouvelles()
         {
-            ViewBag.Message = "News";
 
             var newss = db.Newss.Include(n => n.Colaborateur).Include(n => n.Topic);
             return View(newss.ToList());
         }
         // GET: Manuscripts
         public ActionResult Manuscript()
-        {
-            ViewBag.Message = "Manuscript";
+        {           
                        
         var manuscripts = db.Manuscripts;
         return View(manuscripts.ToList());
                        
         }
-        public ActionResult Help()
+        public ActionResult Aide()
         {
-            ViewBag.Message = "How to use web page";
+            ViewBag.Message = "Comment utiliser le site web";
 
             return View();
         }
+
     }
 }

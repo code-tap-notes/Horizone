@@ -12,22 +12,22 @@ namespace Horizone.Models
     {
         public int Id { get; set; }
 
-        [Display(Name = "Sujet")]
-        [Required(ErrorMessage = "Le champ {0} est obligatoire. / Field {0} is required")]
-        [StringLength(40, MinimumLength = 1, ErrorMessage = "Le Sujet doit avoir de 1 a 40 caracteres / At least 1 character")]
+        [Display(Name = "Sujet")]            
+        [Required(ErrorMessageResourceName = "FieldRequired", ErrorMessageResourceType = typeof(StaticResource.Resources))]
+        [StringLength(40, MinimumLength = 1, ErrorMessageResourceName = "MaxLength40", ErrorMessageResourceType = typeof(StaticResource.Resources))]        
         public string NameFrench { get; set; }
 
         [Display(Name = "Topic")]
-        [Required(ErrorMessage = "Le champ {0} est obligatoire. / Field {0} is required")]
-        [StringLength(40, MinimumLength = 1, ErrorMessage = "Le Sujet doit avoir de 1 a 40 caracteres / At least 1 character")]
+        [Required(ErrorMessageResourceName = "FieldRequired", ErrorMessageResourceType = typeof(StaticResource.Resources))]             
+        [StringLength(40, MinimumLength = 1, ErrorMessageResourceName = "MaxLength40", ErrorMessageResourceType = typeof(StaticResource.Resources))]
         public string NameEnglish { get; set; }
 
-        [Display(Name = "话题")]       
-        [StringLength(40, MinimumLength = 1, ErrorMessage = "Le Sujet doit avoir de 1 a 40 caracteres / At least 1 character")]
+        [Display(Name = "话题")]
+        [StringLength(40, MinimumLength = 1, ErrorMessageResourceName = "MaxLength40", ErrorMessageResourceType = typeof(StaticResource.Resources))]
         public string TopicChinese { get; set; }
 
-        [Display(Name = "Thể loại")]       
-        [StringLength(40, MinimumLength = 1, ErrorMessage = "Le Sujet doit avoir de 1 a 40 caracteres / At least 1 character")]
+        [Display(Name = "Thể loại")]
+        [StringLength(40, MinimumLength = 1, ErrorMessageResourceName = "MaxLength40", ErrorMessageResourceType = typeof(StaticResource.Resources))]
         public string TopicVietnam { get; set; }
 
     }

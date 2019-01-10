@@ -9,13 +9,14 @@ namespace Horizone.Models
 {
 	public class Client : Personne
 	{
-        [Required(ErrorMessage = "Le champ {0} est obligatoire. / Field {0} is required")]
+        [Required(ErrorMessageResourceName = "FieldRequired", ErrorMessageResourceType = typeof(StaticResource.Resources))]
+        [StringLength(500, MinimumLength = 1, ErrorMessageResourceName = "MinLength", ErrorMessageResourceType = typeof(StaticResource.Resources))]
         public string UserId { get; set; }
 
         [ForeignKey("UserId")]
         public ApplicationUser ApplicationUser { get; set; }
-      
-        [Display(Name="Email/Username")]
+
+        [Display(Name = "Email", ResourceType = typeof(StaticResource.Resources))]        
         [NotMapped]
         public string EmailDisplay { get; set; }
     }

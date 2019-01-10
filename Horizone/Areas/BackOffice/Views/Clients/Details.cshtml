@@ -1,0 +1,60 @@
+﻿@model Horizone.Models.Client
+
+@{
+    ViewBag.Title = @StaticResource.Resources.Details;
+}
+
+<h2> @StaticResource.Resources.Details</h2>
+
+<div>
+    <h4> @StaticResource.Resources.User</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Title)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Title)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.LastName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LastName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FisrtName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FisrtName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.EmailDisplay)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EmailDisplay)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PhoneNumber)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PhoneNumber)
+        </dd>
+
+      
+
+    </dl>
+</div>
+<p>
+   
+    @Html.ActionLink(@StaticResource.Resources.Return, "Index", null, new { @class = "btn btn-default" })
+</p>

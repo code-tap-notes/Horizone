@@ -1,5 +1,6 @@
 ﻿<!DOCTYPE html>
-<html>
+
+<html lang="@Session[Horizone.Common.CommonConstants.CurrentCulture]"> 
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta charset="utf-8" />
@@ -13,7 +14,7 @@
 
 <body background="~/Content/bar_background.png" class="parallax">
     <div>
-        <img style="margin:25px;margin-top:25px;" src="~/Image/bar.jpg" class="logo" />
+        <img style="margin:25px;margin-top:25px;" src="~/Image/bar1.jpg" class="logo" />
     </div>
 
     <div class="navbar navbar-inverse navbar-fixed-top">
@@ -29,27 +30,37 @@
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("Accueil", "Index", "Home")</li>
-                    <li>@Html.ActionLink("Qui sommes nous", "About", "Home")</li>
-                    <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
+                    <li>@Html.ActionLink(StaticResource.Resources.Home, "Index", "Home")</li>
+                    <li>@Html.ActionLink(StaticResource.Resources.AboutUs, "About", "Home")</li>
+                    <li>@Html.ActionLink(StaticResource.Resources.Contact, "Contact", "Home")</li>
                 </ul>
+
+
+
                 @Html.Partial("_LoginPartial")
             </div>
         </div>
-        
-    </div>
-    <div class="navbar-collapse collapse" style="background-color:black" >
-        <ul class="nav navbar-nav">
-            <li>@Html.ActionLink("TochPhrase", "TochPhrase", "Home")</li>
-            <li>@Html.ActionLink("TochStory", "TochStory", "Home")</li>
-            <li>@Html.ActionLink("Manuscript", "Manuscript", "Home")</li>
-            <li>@Html.ActionLink("Words", "Word", "Home")</li>
-            <li>@Html.ActionLink("News&Blog", "News", "Home")</li>
 
-            <li>@Html.ActionLink("Bibliography", "Bibliography", "Home")</li>
-            <li>@Html.ActionLink("Help", "Help", "Home")</li>
+    </div>
+
+    @*{Html.RenderAction("Mainmenu", "Home");}*@
+    <div class="navbar-collapse collapse" style="background-color:black">
+        <ul class="nav navbar-nav">
+            @*foreach (var item in Model)
+                {
+                    <li>@Html.ActionLink(item.Text, item.Text, "Home")</li>
+                }*@
+
+            <li>@Html.ActionLink(@StaticResource.Resources.TochPhase, "TochPhase", "Home")</li>
+            <li>@Html.ActionLink(@StaticResource.Resources.TochStory, "TochHistoire", "Home")</li>
+            <li>@Html.ActionLink(@StaticResource.Resources.Manuscript, "Manuscript", "Home")</li>
+            <li>@Html.ActionLink(@StaticResource.Resources.Vocabulary, "Vocabulaire", "Home")</li>
+            <li>@Html.ActionLink(@StaticResource.Resources.News_Blog, "Nouvelles", "Home")</li>
+            <li>@Html.ActionLink(@StaticResource.Resources.Bibliography, "Bibliographie", "Home")</li>
+            <li>@Html.ActionLink(@StaticResource.Resources.Help, "Aide", "Home")</li>
+
             <li class="dropdown">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Link <span class="caret"></span></a>
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">@StaticResource.Resources.Link <span class="caret"></span></a>
                 <ul class="dropdown-menu">
                     <li><h4 class="dropdownTitle" style="color:cornflowerblue">Silk Road Projects and Tocharian texts</h4></li>
                     <li><a href="http://dsr.nii.ac.jp/">Digital Silk Road Project (DSR)</a></li>
@@ -69,27 +80,48 @@
                     <li><a href="https://www2.hf.uio.no/polyglotta/index.php?page=library&bid=2">Thesaurus Literaturae Buddhicae (TLB)</a></li>
 
 
-
                 </ul>
             </li>
         </ul>
+        <!--Choice language-->
         <ul class="nav navbar-right">
-            <li ><a href="@Url.Action("index","dashboards",new {area="backoffice" })">☆</a> </li>
+            <li>
 
-        </ul>       
-    </div>
-  
-    <div class="container body-content">
-        <hr />
-        @RenderBody()
-        <hr />
-        <footer>
-            <p>&copy; @DateTime.Now.Year - Projet HISTOCHTEXT</p>
-        </footer>
-    </div>
+            </li>
+            <li>
+                @using (Html.BeginForm("ChangeCulture", "Base"))
+                {
+                    @Html.Hidden("returnUrl", Request.RawUrl)
+                    @Html.DropDownList("ddlCulture", new SelectList(new[] {
+                        new {value="fr",text=StaticResource.Resources.French},
+                        new {value="en",text=StaticResource.Resources.English},
+                        new {value="zh",text=StaticResource.Resources.Chinese},
+                       // new {value="vi",text=StaticResource.Resources.VietNamese},
+                       // new {value="ja",text=StaticResource.Resources.Japanese},
+                       // new {value="de",text=StaticResource.Resources.German},
 
-    @Scripts.Render("~/bundles/jquery")
-    @Scripts.Render("~/bundles/bootstrap")
-    @RenderSection("scripts", required: false)
+
+                    }, "value", "text", Session[Horizone.Common.CommonConstants.CurrentCulture]),new { onchange="this.form.submit();"})
+                }
+            </li>
+        </ul>
+        <ul class="nav navbar-right">
+            <li><a href="@Url.Action("index","dashboards",new {area="backoffice" })">☆</a> </li>
+
+        </ul>
+        </div>
+
+        <div class="container body-content">
+            <hr />
+            @RenderBody()
+            <hr />
+            <footer>
+                <p>&copy; @DateTime.Now.Year - Projet HISTOCHTEXT</p>
+            </footer>
+        </div>
+
+        @Scripts.Render("~/bundles/jquery")
+        @Scripts.Render("~/bundles/bootstrap")
+        @RenderSection("scripts", required: false)
 </body>
- </html>
+</html>

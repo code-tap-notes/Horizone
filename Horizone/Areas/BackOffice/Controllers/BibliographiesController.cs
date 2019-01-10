@@ -6,18 +6,20 @@ using System.Linq;
 using System.Net;
 using System.Web;
 using System.Web.Mvc;
+using Horizone.Controllers;
 using Horizone.Models;
+using PagedList;
 
 namespace Horizone.Areas.BackOffice.Controllers
 {
-    public class BibliographiesController : Controller
+    public class BibliographiesController : BaseController
     {
-        private ApplicationDbContext db = new ApplicationDbContext();
+       
 
         // GET: BackOffice/Bibliographies
-        public ActionResult Index()
+        public ActionResult Index(int page=1,int pageSize=6)
         {
-            return View(db.Bibliographys.ToList());
+            return View(db.Bibliographys.OrderBy(x=>x.Id).ToPagedList(page,pageSize));
         }
 
         // GET: BackOffice/Bibliographies/Details/5
@@ -115,13 +117,43 @@ namespace Horizone.Areas.BackOffice.Controllers
             return RedirectToAction("Index");
         }
 
-        protected override void Dispose(bool disposing)
+
+        // GET: Bibliographies/Search/
+      
+        public ActionResult Search(string search ,string title, string journal)
         {
-            if (disposing)
+           
+
+                IEnumerable<Bibliography> bibliographies = db.Bibliographys;
+
+                if (!string.IsNullOrWhiteSpace(search))
+                {
+                bibliographies = bibliographies.Where(x => x.Author.Contains(search)) ;
+               
+                //bibliographies = bibliographies.Where(x => x.PublicationDate.Contains(search));
+                //bibliographies = bibliographies.Where(x => x.Title.Contains(search));
+                //|| || (x=> x.PublicationDate.Contains(search)
+                //|| x.Journal.Contains(search)
+                //|| x.Title.Contains(search));
+                 }
+            //if (!string.IsNullOrWhiteSpace(title))
+            //    bibliographies = bibliographies.Where(y => y.Title.Contains(title));
+
+
+            //if (!string.IsNullOrWhiteSpace(journal))
+            //    bibliographies = bibliographies.Where(y => y.Journal.Contains(journal));
+
+
+
+
+            if (bibliographies.Count() == 0)
             {
-                db.Dispose();
+                   Display("Aucun résultat");
             }
-            base.Dispose(disposing);
+
+            return View("Search", bibliographies.ToList());
+            
         }
+        
     }
 }

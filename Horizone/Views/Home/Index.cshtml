@@ -1,5 +1,5 @@
 ﻿@{
-    ViewBag.Title = "Home Page";
+    ViewBag.Title = StaticResource.Resources.Home;
 }
 <div class="container body-content">
     <!--Recherche-->
@@ -7,30 +7,25 @@
         <form class="form-group row" action="@Url.Action("Search", "FrontMamuscripts")" method="post" enctype="multipart/form-data">
             <div class="form-group col-md-2">
                 <br />
-                <button type="submit" class="btn btn-info bigBtn"> Rechercher</button>
+                <button type="submit" class="btn btn-info bigBtn"> @StaticResource.Resources.Search </button>
             </div>
             <div class="form-group col-md-2">
-                <label for="Topic">Topic:</label>
+                <label for="Topic">@StaticResource.Resources.Topic</label>
                 <a> <input type="text" class="form-control" id="Word" name="Word" /> </a> <br />
 
             </div>
 
             <div class="form-group col-md-2">
-                <label for="Date">Date Public:</label>
+                <label for="Date">@StaticResource.Resources.PublicationDate</label>
                 <input class="form-control" type="number" id="Date" name="Date" />
             </div>
 
             <div class="form-group col-md-2">
-                <label for="Manuscript">Manuscript</label>
+                <label for="Manuscript">@StaticResource.Resources.Manuscript</label>
                 <input class="form-control" type="text" id="Manuscript" name="search" />
             </div>
 
-            <div class="form-group col-md-4">
-                <br />
-                <button type="submit" class="btn btn-info bigBtn"> English</button>
-                <button type="submit" class="btn btn-info bigBtn"> French</button>
-                <button type="submit" class="btn btn-info bigBtn"> Chinese</button>                
-            </div>
+            
 
         </form>
     </div>

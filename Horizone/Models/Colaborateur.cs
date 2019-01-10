@@ -9,7 +9,8 @@ namespace Horizone.Models
 {
     public class Colaborateur : Personne
     {
-        [Required(ErrorMessage = "Le champ {0} est obligatoire. /Field {0} is required")]
+      
+        [Required(ErrorMessageResourceName = "FieldRequired", ErrorMessageResourceType = typeof(StaticResource.Resources))]       
         public string UserId { get; set; }
 
         [ForeignKey("UserId")]

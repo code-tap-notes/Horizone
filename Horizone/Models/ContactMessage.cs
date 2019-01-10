@@ -13,38 +13,42 @@ namespace Horizone.Models
     {
         public int Id { get; set; }
 
-        [Display(Name = "M/Mme/Mrs/Miss")]
-        [Required(ErrorMessage = "Le champ {0} est obligatoire.  / Field {0} is required")]
-        [StringLength(20, MinimumLength = 1, ErrorMessage = "Le champ doit avoir de 1 à 20 caractères / At least 1 Character")]		
+        [Display(Name = "Title", ResourceType = typeof(StaticResource.Resources))]
+        [Required(ErrorMessageResourceName = "FieldRequired",ErrorMessageResourceType = typeof(StaticResource.Resources))]
+        [StringLength(20, MinimumLength = 1, ErrorMessageResourceName = "MinLength", ErrorMessageResourceType = typeof(StaticResource.Resources))]		
         public string Title { get; set; }
 
-        [Display(Name = "Nom / Last name")]
-        [Required(ErrorMessage = "Le champ {0} est obligatoire.  / Field {0} is required")]
-        [StringLength(30, MinimumLength = 2, ErrorMessage = "Le champ doit avoir de 2 à 30 caractères / At least 2 Character")]	
+        [Display(Name = "Lastname", ResourceType = typeof(StaticResource.Resources))]
+        [Required(ErrorMessageResourceName = "FieldRequired", ErrorMessageResourceType = typeof(StaticResource.Resources))]
+        [StringLength(30, MinimumLength = 2, ErrorMessageResourceName = "MinLength", ErrorMessageResourceType = typeof(StaticResource.Resources))]	
         public string LastName { get; set; }
 
-        [Display(Name = "Prénom / First Name")]
-        [Required(ErrorMessage = "Le champ {0} est obligatoire.  / Field {0} is required")]
-        [StringLength(30, MinimumLength = 2, ErrorMessage = "La prénom doit avoir de 2 à 30 caractères / At least 2 Character")]		
+        [Display(Name = "FisrtName", ResourceType = typeof(StaticResource.Resources))]
+        [Required(ErrorMessageResourceName = "FieldRequired", ErrorMessageResourceType = typeof(StaticResource.Resources))]
+        [StringLength(30, MinimumLength = 2, ErrorMessageResourceName = "MinLength", ErrorMessageResourceType = typeof(StaticResource.Resources))]		
         public string FisrtName { get; set; }
 
         [Required]
-        [Display(Name = "Courrier électronique /Email")]
+        [Display(Name = "Email", ResourceType = typeof(StaticResource.Resources))]
         public string Email { get; set; }
 
-        [Display(Name = "Téléphone ")]       
+        [Display(Name = "PhoneNumber", ResourceType = typeof(StaticResource.Resources))]       
         [RegularExpression(@"^([0-9])*\s*$")]
-        [StringLength(20, MinimumLength = 3, ErrorMessage = "Le champ telephone doit avoir de 3 à 20 caractères / At least 3 Character")]
+        [StringLength(20, MinimumLength = 3, ErrorMessageResourceName = "MinLength", ErrorMessageResourceType = typeof(StaticResource.Resources))]
         public string PhoneNumber { get; set; }
 
-        [Display(Name = "Date envoi / Send date")]
+        [Display(Name = "SendDate", ResourceType = typeof(StaticResource.Resources))]
         [DataType(DataType.DateTime)]
-        [Required(ErrorMessage = "Le champ {0} est obligatoire.  / Field {0} is required")]
+        [Required(ErrorMessageResourceName = "FieldRequired",ErrorMessageResourceType = typeof(StaticResource.Resources))]
         [Column(TypeName ="datetime2")]       
         public DateTime SendDate { get; set; }
 
         [AllowHtml]
         public string Message { get; set; }
+
+        [StringLength(2, MinimumLength = 2)]
+        public string SymbolLanguage  { get; set; }
+
 
     }
 }

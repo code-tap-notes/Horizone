@@ -1,42 +1,42 @@
 ﻿@model Horizone.Models.MainContent
 
 @{
-    ViewBag.Title = "Details";
+    ViewBag.Title = @StaticResource.Resources.Details;
 }
 
-<h2>Details</h2>
+<h2>@StaticResource.Resources.Details</h2>
 
 <div>
-    <h4>MainContent</h4>
+    <h4>@StaticResource.Resources.MainContent</h4>
     <hr />
     <dl class="dl-horizontal">
         <dt>
-            @Html.DisplayNameFor(model => model.AboutUs)
+            @StaticResource.Resources.AboutUs
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.AboutUs)
+            @Html.Raw(Model.AboutUs)
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.Contact)
+            @StaticResource.Resources.Contact
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.Contact)
+            @Html.Raw(Model.Contact)
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.Title)
+            @StaticResource.Resources.Presentation
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.Title)
+            @Html.Raw(Model.Presentation)
         </dd>
 
     </dl>
 </div>
 <p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
-    @Html.ActionLink("Back to List", "Index")
+    @Html.ActionLink(@StaticResource.Resources.Edit, "Edit", new { id = Model.Id }, new { @class = "btn btn-primary" }) |
+    @Html.ActionLink(@StaticResource.Resources.Return, "Index", null, new { @class = "btn btn-default" })
 </p>

@@ -1,8 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
+using System.Threading;
 using System.Web;
 using System.Web.Mvc;
+using Horizone.Common;
 using Horizone.Models;
 using Microsoft.AspNet.Identity;
 
@@ -59,7 +62,7 @@ namespace Horizone.Controllers
             }
         }
 
-        protected string GetCurrentCommercialName()
+        protected string GetCurrentColaboratorName()
         {
             var userId = User.Identity.GetUserId();
             var commercial = db.Colaborateurs.SingleOrDefault(x => x.UserId == userId);
@@ -87,6 +90,32 @@ namespace Horizone.Controllers
             {
                 return "";
             }
+        }
+        //initilizing culture on controller initialization
+        protected override void Initialize(System.Web.Routing.RequestContext requestContext)
+        {
+            base.Initialize(requestContext);
+            if (Session[CommonConstants.CurrentCulture] != null)
+            {
+                Thread.CurrentThread.CurrentCulture = new CultureInfo(Session[CommonConstants.CurrentCulture].ToString());
+                Thread.CurrentThread.CurrentUICulture = new CultureInfo(Session[CommonConstants.CurrentCulture].ToString());
+            }
+            else
+            {
+                Session[CommonConstants.CurrentCulture] = "fr";
+                Thread.CurrentThread.CurrentCulture = new CultureInfo("fr");
+                Thread.CurrentThread.CurrentUICulture = new CultureInfo("fr");
+            }
+        }
+
+        // changing culture
+        public ActionResult ChangeCulture(string ddlCulture, string returnUrl)
+        {
+            Thread.CurrentThread.CurrentCulture = new CultureInfo(ddlCulture);
+            Thread.CurrentThread.CurrentUICulture = new CultureInfo(ddlCulture);
+
+            Session[CommonConstants.CurrentCulture] = ddlCulture;
+            return Redirect(returnUrl);
         }
 
     }

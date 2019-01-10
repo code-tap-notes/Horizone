@@ -14,7 +14,7 @@ namespace Horizone.Models
         public int Id { get; set; }
 
         [DataType(DataType.DateTime)]
-        [Display(Name = "Date Modifier ")]
+        [Display(Name = "DateModifier",ResourceType =typeof(StaticResource.Resources))]
         public DateTime DateModifier
         {
             get
@@ -22,18 +22,20 @@ namespace Horizone.Models
                 return DateTime.Now;
             }
         }
-
-        [Display(Name = "Qui somme nous?")]
-        [StringLength(250, MinimumLength = 1, ErrorMessage = "Le champ doit avoir de 1 a 250 caracteres / At least 1 Characters")]
+        [AllowHtml]
+        [Display(Name = "AboutUs", ResourceType = typeof(StaticResource.Resources))]        
+        [StringLength(1500, MinimumLength = 1, ErrorMessageResourceName = "MinLength", ErrorMessageResourceType = typeof(StaticResource.Resources))]
         public string AboutUs { get; set; }
 
-        [Display(Name = "Contact :")]
-        [StringLength(50, MinimumLength = 1, ErrorMessage = "Le champ doit avoir de 2 a 50 caracteres / At least 2 Characters")]
+        [AllowHtml]
+        [Display(Name = "Contact", ResourceType = typeof(StaticResource.Resources))]
+        [StringLength(1500, MinimumLength = 1, ErrorMessageResourceName = "MinLength", ErrorMessageResourceType = typeof(StaticResource.Resources))]
         public string Contact { get; set; }
 
-        [Display(Name = "Presentation le page:")]
-        [StringLength(250, MinimumLength = 1, ErrorMessage = "Le champ doit avoir de 1 a 250 caracteres / At least 1 Characters")]
-        public string Title { get; set; }
+        [AllowHtml]
+        [Display(Name = "Presentation", ResourceType = typeof(StaticResource.Resources))]
+        [StringLength(1500, MinimumLength = 1, ErrorMessageResourceName = "MinLength", ErrorMessageResourceType = typeof(StaticResource.Resources))]
+        public string Presentation { get; set; }
         
     }
 }
