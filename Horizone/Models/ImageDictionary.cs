@@ -12,8 +12,9 @@ namespace Horizone.Models
 
         public int Id { get; set; }
 
-        [Display(Name = "Nom / Name")]
-        [Required(ErrorMessage = "Le champ {0} est obligatoire./ Field {0} is required")]
+       
+        [Display(Name = "Name", ResourceType = typeof(StaticResource.Resources))]
+        [Required(ErrorMessageResourceName = "FieldRequired", ErrorMessageResourceType = typeof(StaticResource.Resources))]
         [StringLength(150)]
         public string Name { get; set; }
 
@@ -21,11 +22,11 @@ namespace Horizone.Models
         [StringLength(20)]
         public string ContentType { get; set;}
 
-        [Required(ErrorMessage = "Vous devez choisir une image./ you have to chose one picture")]
+        [Required(ErrorMessageResourceName = "FieldRequired", ErrorMessageResourceType = typeof(StaticResource.Resources))]
         public byte[] Content { get; set; } 
 
-        [Display(Name= "DictionaryTocharian")]
-        [Required(ErrorMessage = "Le champ {0} est obligatoire./ Field {0} is required")]
+        [Display(Name= "DictionaryTocharian", ResourceType = typeof(StaticResource.Resources))]
+        [Required(ErrorMessageResourceName = "FieldRequired", ErrorMessageResourceType = typeof(StaticResource.Resources))]
         public int DictionaryTocharianId { get; set; }
 
         [ForeignKey("DictionaryTocharianId")]

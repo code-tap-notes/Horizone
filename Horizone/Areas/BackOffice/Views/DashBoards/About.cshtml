@@ -1,0 +1,29 @@
+﻿@model IEnumerable<Horizone.Models.MainContent>
+@{
+    ViewBag.Title = @StaticResource.Resources.AboutUs;
+}
+
+
+<p>@StaticResource.Resources.Project HISTOCHTEXT</p>
+
+
+<table class="table">
+   
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.Raw(item.AboutUs)
+            </td>
+        </tr>
+    }
+
+</table>
+<div class=" col-lg-3">
+    <ul class="list-group">
+        See also:
+        <li class="list-group-item">@StaticResource.Resources.Team</li>
+        <li class="list-group-item">@StaticResource.Resources.Project</li>
+        <li class="list-group-item">Colaborations</li>
+    </ul>
+</div>

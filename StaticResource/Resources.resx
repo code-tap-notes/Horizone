@@ -153,7 +153,7 @@
   <data name="FieldRequired" xml:space="preserve">
     <value>Le champ {0} est obligatoire.</value>
   </data>
-  <data name="FisrtName" xml:space="preserve">
+  <data name="FirstName" xml:space="preserve">
     <value>Prénom</value>
   </data>
   <data name="French" xml:space="preserve">
@@ -165,7 +165,7 @@
   <data name="Home" xml:space="preserve">
     <value>Page Principal</value>
   </data>
-  <data name="Lastname" xml:space="preserve">
+  <data name="LastName" xml:space="preserve">
     <value>Nom </value>
   </data>
   <data name="Link" xml:space="preserve">
@@ -315,16 +315,67 @@
   <data name="Office" xml:space="preserve">
     <value>Bureau</value>
   </data>
-  <data name="Maxlength1500" xml:space="preserve">
+  <data name="MaxLength1500" xml:space="preserve">
     <value>1-1500 caractères</value>
   </data>
-  <data name="Maxlength20" xml:space="preserve">
+  <data name="MaxLength20" xml:space="preserve">
     <value>Le champ {0}  doit avoir number caractères moins de 20</value>
   </data>
-  <data name="Maxlength30" xml:space="preserve">
+  <data name="MaxLength30" xml:space="preserve">
     <value>Le champ {0}  doit avoir number caractères moins de 30</value>
   </data>
-  <data name="Maxlength40" xml:space="preserve">
+  <data name="MaxLength40" xml:space="preserve">
     <value>Le champ {0}  doit avoir number caractères moins de 40</value>
+  </data>
+  <data name="DateActivity" xml:space="preserve">
+    <value>Date d'activité</value>
+  </data>
+  <data name="Description" xml:space="preserve">
+    <value>Description</value>
+  </data>
+  <data name="NameActivity" xml:space="preserve">
+    <value>Activité</value>
+  </data>
+  <data name="Place" xml:space="preserve">
+    <value>Le lieu</value>
+  </data>
+  <data name="Picture" xml:space="preserve">
+    <value>Image</value>
+  </data>
+  <data name="Language" xml:space="preserve">
+    <value>La langue</value>
+  </data>
+  <data name="CodeIndex" xml:space="preserve">
+    <value>Index de code</value>
+  </data>
+  <data name="DictionaryTocharian" xml:space="preserve">
+    <value>Dictionnaire Tocharian</value>
+  </data>
+  <data name="Editor" xml:space="preserve">
+    <value>Éditeur</value>
+  </data>
+  <data name="Name" xml:space="preserve">
+    <value>Nom</value>
+  </data>
+  <data name="Provenience" xml:space="preserve">
+    <value>La provenance</value>
+  </data>
+  <data name="Repository" xml:space="preserve">
+    <value>Dépôt</value>
+  </data>
+  <data name="Script" xml:space="preserve">
+    <value>Scripte</value>
+  </data>
+  <data name="Shelfmark" xml:space="preserve">
+    <value>Cote bibliothèque</value>
+  </data>
+  <data name="Text" xml:space="preserve">
+    <value>Texte</value>
+  </data>
+  <data name="Message" xml:space="preserve">
+    <value>Message</value>
+  </data>
+  <data name="Content" xml:space="preserve">
+    <value>Contenu</value>
   </data>
 </root>

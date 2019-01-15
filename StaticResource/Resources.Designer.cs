@@ -142,6 +142,15 @@ namespace StaticResource {
         }
         
         /// <summary>
+        ///   Recherche une chaîne localisée semblable à Index de code.
+        /// </summary>
+        public static string CodeIndex {
+            get {
+                return ResourceManager.GetString("CodeIndex", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Recherche une chaîne localisée semblable à Colaborateur.
         /// </summary>
         public static string Colaborator {
@@ -178,6 +187,24 @@ namespace StaticResource {
         }
         
         /// <summary>
+        ///   Recherche une chaîne localisée semblable à Contenu.
+        /// </summary>
+        public static string Content {
+            get {
+                return ResourceManager.GetString("Content", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Date d&apos;activité.
+        /// </summary>
+        public static string DateActivity {
+            get {
+                return ResourceManager.GetString("DateActivity", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Recherche une chaîne localisée semblable à Date Modifier.
         /// </summary>
         public static string DateModifier {
@@ -196,6 +223,15 @@ namespace StaticResource {
         }
         
         /// <summary>
+        ///   Recherche une chaîne localisée semblable à Description.
+        /// </summary>
+        public static string Description {
+            get {
+                return ResourceManager.GetString("Description", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Recherche une chaîne localisée semblable à Détails.
         /// </summary>
         public static string Details {
@@ -205,11 +241,29 @@ namespace StaticResource {
         }
         
         /// <summary>
+        ///   Recherche une chaîne localisée semblable à Dictionnaire Tocharian.
+        /// </summary>
+        public static string DictionaryTocharian {
+            get {
+                return ResourceManager.GetString("DictionaryTocharian", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Recherche une chaîne localisée semblable à Modifier.
         /// </summary>
         public static string Edit {
             get {
                 return ResourceManager.GetString("Edit", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Éditeur.
+        /// </summary>
+        public static string Editor {
+            get {
+                return ResourceManager.GetString("Editor", resourceCulture);
             }
         }
         
@@ -243,9 +297,9 @@ namespace StaticResource {
         /// <summary>
         ///   Recherche une chaîne localisée semblable à Prénom.
         /// </summary>
-        public static string FisrtName {
+        public static string FirstName {
             get {
-                return ResourceManager.GetString("FisrtName", resourceCulture);
+                return ResourceManager.GetString("FirstName", resourceCulture);
             }
         }
         
@@ -304,11 +358,20 @@ namespace StaticResource {
         }
         
         /// <summary>
+        ///   Recherche une chaîne localisée semblable à La langue.
+        /// </summary>
+        public static string Language {
+            get {
+                return ResourceManager.GetString("Language", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Recherche une chaîne localisée semblable à Nom .
         /// </summary>
-        public static string Lastname {
+        public static string LastName {
             get {
-                return ResourceManager.GetString("Lastname", resourceCulture);
+                return ResourceManager.GetString("LastName", resourceCulture);
             }
         }
         
@@ -414,36 +477,45 @@ namespace StaticResource {
         /// <summary>
         ///   Recherche une chaîne localisée semblable à 1-1500 caractères.
         /// </summary>
-        public static string Maxlength1500 {
+        public static string MaxLength1500 {
             get {
-                return ResourceManager.GetString("Maxlength1500", resourceCulture);
+                return ResourceManager.GetString("MaxLength1500", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Recherche une chaîne localisée semblable à Le champ {0}  doit avoir number caractères moins de 20.
         /// </summary>
-        public static string Maxlength20 {
+        public static string MaxLength20 {
             get {
-                return ResourceManager.GetString("Maxlength20", resourceCulture);
+                return ResourceManager.GetString("MaxLength20", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Recherche une chaîne localisée semblable à Le champ {0}  doit avoir number caractères moins de 30.
         /// </summary>
-        public static string Maxlength30 {
+        public static string MaxLength30 {
             get {
-                return ResourceManager.GetString("Maxlength30", resourceCulture);
+                return ResourceManager.GetString("MaxLength30", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Recherche une chaîne localisée semblable à Le champ {0}  doit avoir number caractères moins de 40.
         /// </summary>
-        public static string Maxlength40 {
+        public static string MaxLength40 {
             get {
-                return ResourceManager.GetString("Maxlength40", resourceCulture);
+                return ResourceManager.GetString("MaxLength40", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Message.
+        /// </summary>
+        public static string Message {
+            get {
+                return ResourceManager.GetString("Message", resourceCulture);
             }
         }
         
@@ -453,6 +525,24 @@ namespace StaticResource {
         public static string MinLength {
             get {
                 return ResourceManager.GetString("MinLength", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Nom.
+        /// </summary>
+        public static string Name {
+            get {
+                return ResourceManager.GetString("Name", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Activité.
+        /// </summary>
+        public static string NameActivity {
+            get {
+                return ResourceManager.GetString("NameActivity", resourceCulture);
             }
         }
         
@@ -511,6 +601,24 @@ namespace StaticResource {
         }
         
         /// <summary>
+        ///   Recherche une chaîne localisée semblable à Image.
+        /// </summary>
+        public static string Picture {
+            get {
+                return ResourceManager.GetString("Picture", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Le lieu.
+        /// </summary>
+        public static string Place {
+            get {
+                return ResourceManager.GetString("Place", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Recherche une chaîne localisée semblable à Présentation Projet HISTOCHTEXT.
         /// </summary>
         public static string Presentation {
@@ -529,11 +637,29 @@ namespace StaticResource {
         }
         
         /// <summary>
+        ///   Recherche une chaîne localisée semblable à La provenance.
+        /// </summary>
+        public static string Provenience {
+            get {
+                return ResourceManager.GetString("Provenience", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Recherche une chaîne localisée semblable à Date de publication.
         /// </summary>
         public static string PublicationDate {
             get {
                 return ResourceManager.GetString("PublicationDate", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Dépôt.
+        /// </summary>
+        public static string Repository {
+            get {
+                return ResourceManager.GetString("Repository", resourceCulture);
             }
         }
         
@@ -552,6 +678,15 @@ namespace StaticResource {
         public static string Save {
             get {
                 return ResourceManager.GetString("Save", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Scripte.
+        /// </summary>
+        public static string Script {
+            get {
+                return ResourceManager.GetString("Script", resourceCulture);
             }
         }
         
@@ -601,6 +736,15 @@ namespace StaticResource {
         }
         
         /// <summary>
+        ///   Recherche une chaîne localisée semblable à Cote bibliothèque.
+        /// </summary>
+        public static string Shelfmark {
+            get {
+                return ResourceManager.GetString("Shelfmark", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Recherche une chaîne localisée semblable à S’inscrire.
         /// </summary>
         public static string SignUp {
@@ -615,6 +759,15 @@ namespace StaticResource {
         public static string Team {
             get {
                 return ResourceManager.GetString("Team", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Texte.
+        /// </summary>
+        public static string Text {
+            get {
+                return ResourceManager.GetString("Text", resourceCulture);
             }
         }
         

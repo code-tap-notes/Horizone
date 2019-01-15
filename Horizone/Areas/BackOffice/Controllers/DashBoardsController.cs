@@ -8,7 +8,7 @@ using System.Web.Mvc;
 
 namespace Horizone.Areas.BackOffice.Controllers
 {
-    //[Authorize(Roles = "Commercial,Admin")]
+    [Authorize(Roles = "Colaborator,Admin")]
     public class DashBoardsController : BaseController
     {
         // GET: BackOffice/DashBoards
@@ -21,5 +21,22 @@ namespace Horizone.Areas.BackOffice.Controllers
             Session.Remove("ADMINISTRATOR");
             return RedirectToAction("index", "home", new { area = "" });
         }
+        public ActionResult About()
+        {
+            
+                ViewBag.Message = "Equipe HISTOCHTEXT";
+                return View(db.MainContents.ToList());
+
+        }
+        // GET: FrontContact/Create
+        public ActionResult Contact()
+        {
+            return View();
+        }
+        public ActionResult Help()
+        {
+            return View();
+        }
+
     }
 }

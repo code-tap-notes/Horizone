@@ -18,15 +18,15 @@ namespace Horizone.Models
         [StringLength(20, MinimumLength = 1, ErrorMessageResourceName = "MinLength", ErrorMessageResourceType = typeof(StaticResource.Resources))]		
         public string Title { get; set; }
 
-        [Display(Name = "Lastname", ResourceType = typeof(StaticResource.Resources))]
+        [Display(Name = "LastName", ResourceType = typeof(StaticResource.Resources))]
         [Required(ErrorMessageResourceName = "FieldRequired", ErrorMessageResourceType = typeof(StaticResource.Resources))]
         [StringLength(30, MinimumLength = 2, ErrorMessageResourceName = "MinLength", ErrorMessageResourceType = typeof(StaticResource.Resources))]	
         public string LastName { get; set; }
 
-        [Display(Name = "FisrtName", ResourceType = typeof(StaticResource.Resources))]
+        [Display(Name = "FirstName", ResourceType = typeof(StaticResource.Resources))]
         [Required(ErrorMessageResourceName = "FieldRequired", ErrorMessageResourceType = typeof(StaticResource.Resources))]
         [StringLength(30, MinimumLength = 2, ErrorMessageResourceName = "MinLength", ErrorMessageResourceType = typeof(StaticResource.Resources))]		
-        public string FisrtName { get; set; }
+        public string FirstName { get; set; }
 
         [Required]
         [Display(Name = "Email", ResourceType = typeof(StaticResource.Resources))]

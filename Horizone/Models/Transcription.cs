@@ -12,25 +12,25 @@ namespace Horizone.Models
     {
         public int Id { get; set; }
 
-        [Display(Name = "Text")]
-        [Required(ErrorMessage = "Le champ {0} est obligatoire. / Field {0} is required")]
+        [Display(Name = "Text", ResourceType = typeof(StaticResource.Resources))]
+        [Required(ErrorMessageResourceName = "FieldRequired", ErrorMessageResourceType = typeof(StaticResource.Resources))]
         [StringLength(40, MinimumLength = 1, ErrorMessage = "Le champ doit avoir de 1 a 40 caracteres / At least 1 Character")]
         public string Text { get; set; }
         
-        [Display(Name = "TochStory")]
+        [Display(Name = "TochStory", ResourceType = typeof(StaticResource.Resources))]
         public int TochStoryId { get; set; }
 
         [ForeignKey("TochStoryId")]
         public TochStory TochStory { get; set; }
 
-        [Display(Name = "TochPhrase")]
+        [Display(Name = "TochPhrase", ResourceType = typeof(StaticResource.Resources))]
         public int TochPhraseId { get; set; }
 
         [ForeignKey("TochPhraseId")]
         public TochPhrase TochPhrase { get; set; }
 
 
-        [Display(Name = "Manuscript")]       
+        [Display(Name = "Manuscript", ResourceType = typeof(StaticResource.Resources))]       
         public int ManuscriptId { get; set; }
 
         [ForeignKey("ManuscriptId")]

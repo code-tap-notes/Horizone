@@ -12,8 +12,8 @@ namespace Horizone.Models
     {
         public int Id { get; set; }
 
-        [Display(Name = "Nom /Name")]
-        [Required(ErrorMessage = "Le champ {0} est obligatoire. / Field {0} is required")]
+        [Display(Name = "Name", ResourceType = typeof(StaticResource.Resources))]
+        [Required(ErrorMessageResourceName = "FieldRequired", ErrorMessageResourceType = typeof(StaticResource.Resources))]
         [StringLength(150)]
         public string Name { get; set; }
 
@@ -22,11 +22,11 @@ namespace Horizone.Models
         public string ContentType { get; set; }
 
         [AllowHtml]
-        [Required(ErrorMessage = "Vous devez choisir une image. / You have to chose one picture")]
+        [Required(ErrorMessageResourceName = "FieldRequired", ErrorMessageResourceType = typeof(StaticResource.Resources))]
         public byte[] Content { get; set; }
 
         [Display(Name = "Text in Manuscript")]
-        [Required(ErrorMessage = "Le champ {0} est obligatoire./ Field {0} is required")]
+        [Required(ErrorMessageResourceName = "FieldRequired", ErrorMessageResourceType = typeof(StaticResource.Resources))]
         public int NewsId { get; set; }
 
         [ForeignKey("NewsId")]

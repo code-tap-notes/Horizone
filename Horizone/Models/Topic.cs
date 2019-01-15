@@ -30,5 +30,10 @@ namespace Horizone.Models
         [StringLength(40, MinimumLength = 1, ErrorMessageResourceName = "MaxLength40", ErrorMessageResourceType = typeof(StaticResource.Resources))]
         public string TopicVietnam { get; set; }
 
+        [Display(Name = "Language", ResourceType = typeof(StaticResource.Resources))]
+        public int LanguageId { get; set; }
+
+        [ForeignKey("LanguageId")]
+        public Language Language { get; set; }
     }
 }

@@ -11,7 +11,7 @@
     <hr />
     <dl class="dl-horizontal">
         <dt>
-            @Html.DisplayNameFor(model => model.Author)
+            @StaticResource.Resources.Author
         </dt>
 
         <dd>
@@ -19,7 +19,7 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.PublicationDate)
+            @StaticResource.Resources.PublicationDate
         </dt>
 
         <dd>
@@ -27,7 +27,7 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.Title)
+            @StaticResource.Resources.Title
         </dt>
 
         <dd>
@@ -35,7 +35,7 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.Journal)
+            @StaticResource.Resources.Newspaper
         </dt>
 
         <dd>
@@ -43,7 +43,7 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.UlrBibliography)
+            @StaticResource.Resources.Link
         </dt>
 
         <dd>
@@ -54,5 +54,5 @@
 </div>
 <p>
     @Html.ActionLink(StaticResource.Resources.Edit, "Edit", new { id = Model.Id }, new { @class = "btn btn-info" }) |
-    @Html.ActionLink(StaticResource.Resources.Return, "Index", null, new { @class = "btn btn-default" })
+    @Html.ActionLink(StaticResource.Resources.Return, "Index", null, new { @class = "btn btn-primary" })
 </p>

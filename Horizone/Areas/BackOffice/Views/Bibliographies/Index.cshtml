@@ -62,7 +62,7 @@
                 @Html.DisplayFor(modelItem => item.PublicationDate)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Title)
+                @Html.Raw(item.Title)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Journal)

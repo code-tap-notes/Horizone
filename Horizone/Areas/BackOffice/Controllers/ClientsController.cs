@@ -9,6 +9,7 @@ using System.Web.Mvc;
 
 namespace Horizone.Areas.BackOffice.Controllers
 {
+    [Authorize(Roles = "Colaborator,Admin")]
     public class ClientsController : BaseController
     {
         // GET: BackOffice/Clients

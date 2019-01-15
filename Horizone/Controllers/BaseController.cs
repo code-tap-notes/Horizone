@@ -54,7 +54,7 @@ namespace Horizone.Controllers
             var client = db.Clients.SingleOrDefault(x => x.UserId == userId);
             if (client != null)
             {
-                return client.FisrtName;
+                return client.FirstName;
             }
             else
             {
@@ -65,10 +65,10 @@ namespace Horizone.Controllers
         protected string GetCurrentColaboratorName()
         {
             var userId = User.Identity.GetUserId();
-            var commercial = db.Colaborateurs.SingleOrDefault(x => x.UserId == userId);
-            if (commercial != null)
+            var colaborator = db.Colaborateurs.SingleOrDefault(x => x.UserId == userId);
+            if (colaborator != null)
             {
-                return commercial.FisrtName;
+                return colaborator.FirstName;
             }
             else
             {
@@ -84,7 +84,7 @@ namespace Horizone.Controllers
             var client = db.Clients.SingleOrDefault(x => x.UserId == userId);
             if (client != null)
             {
-                return client.FisrtName;
+                return client.FirstName;
             }
             else
             {

@@ -62,5 +62,12 @@ namespace Horizone.Models
 
         public ICollection<Comment> Comments { get; set; }
         public ICollection<ImageNews> ImageNewss { get; set; }
+        
+
+        [Display(Name = "Language", ResourceType = typeof(StaticResource.Resources))]
+        public int LanguageId { get; set; }
+
+        [ForeignKey("LanguageId")]
+        public Language Language { get; set; }
     }
 }

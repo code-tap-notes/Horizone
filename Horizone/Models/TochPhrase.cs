@@ -12,29 +12,29 @@ namespace Horizone.Models
     {
         public int Id { get; set; }
 
-        [Display(Name = "Index")]
-        [Required(ErrorMessage = "Le champ {0} est obligatoire. / Field {0} is required")]
+        [Display(Name = "CodeIndex", ResourceType = typeof(StaticResource.Resources))]
+        [Required(ErrorMessageResourceName = "FieldRequired", ErrorMessageResourceType = typeof(StaticResource.Resources))]
         [StringLength(40, MinimumLength = 1, ErrorMessage = "Le champ doit avoir de 1 a 40 caracteres / At least 1 Character")]
         public string Index { get; set; }
 
-        [Display(Name = "Nom Story")]
-        [Required(ErrorMessage = "Le champ {0} est obligatoire. / Field {0} is required")]
+        [Display(Name = "Name", ResourceType = typeof(StaticResource.Resources))]
+        [Required(ErrorMessageResourceName = "FieldRequired", ErrorMessageResourceType = typeof(StaticResource.Resources))]
         [StringLength(40, MinimumLength = 1, ErrorMessage = "Le champ doit avoir de 1 a 40 caracteres / At least 1 Character")]
         public string Name { get; set; }
 
         [AllowHtml]
-        [Required(ErrorMessage = "Le champ {0} est obligatoire. / Field {0} is required")]
-        [Display(Name = "Content")]
+        [Required(ErrorMessageResourceName = "FieldRequired", ErrorMessageResourceType = typeof(StaticResource.Resources))]
+        [Display(Name = "Content", ResourceType = typeof(StaticResource.Resources))]
         [StringLength(40, MinimumLength = 1, ErrorMessage = "Le champ doit avoir de 1 a 40 caracteres / At least 1 Character")]
         public string Content { get; set; }
 
-        [Required(ErrorMessage = "Le champ {0} est obligatoire. / Field {0} is required")]
+        [Required(ErrorMessageResourceName = "FieldRequired", ErrorMessageResourceType = typeof(StaticResource.Resources))]
         [Display(Name = "English")]
         [StringLength(40, MinimumLength = 1, ErrorMessage = "Le champ doit avoir de 1 a 40 caracteres / At least 1 Character")]
         public string English { get; set; }
 
 
-        [Required(ErrorMessage = "Le champ {0} est obligatoire. / Field {0} is required")]
+        [Required(ErrorMessageResourceName = "FieldRequired", ErrorMessageResourceType = typeof(StaticResource.Resources))]
         [Display(Name = "Française")]
         [StringLength(40, MinimumLength = 1, ErrorMessage = "Le champ doit avoir de 1 a 40 caracteres / At least 1 Character")]
         public string Francaise { get; set; }
@@ -52,6 +52,7 @@ namespace Horizone.Models
         public string Vietnam { get; set; }
 
         [AllowHtml]
+        [Display(Name = "Description", ResourceType = typeof(StaticResource.Resources))]
         public string Description { get; set; }
     }
 }

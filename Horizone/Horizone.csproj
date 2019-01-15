@@ -202,8 +202,10 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Areas\BackOffice\BackOfficeAreaRegistration.cs" />
+    <Compile Include="Areas\BackOffice\Controllers\ActivitiesController.cs" />
     <Compile Include="Areas\BackOffice\Controllers\BibliographiesController.cs" />
     <Compile Include="Areas\BackOffice\Controllers\ClientsController.cs" />
+    <Compile Include="Areas\BackOffice\Controllers\ColaborateursController.cs" />
     <Compile Include="Areas\BackOffice\Controllers\ContactMessagesController.cs" />
     <Compile Include="Areas\BackOffice\Controllers\DashBoardsController.cs" />
     <Compile Include="Areas\BackOffice\Controllers\DictionaryTochariansController.cs" />
@@ -220,61 +222,23 @@
     <Compile Include="Common\CommonConstants.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\BaseController.cs" />
+    <Compile Include="Controllers\FontBibliographiesController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201812041437536_InitialCreate.cs" />
-    <Compile Include="Migrations\201812041437536_InitialCreate.Designer.cs">
-      <DependentUpon>201812041437536_InitialCreate.cs</DependentUpon>
+    <Compile Include="Migrations\201901151524400_Init.cs" />
+    <Compile Include="Migrations\201901151524400_Init.Designer.cs">
+      <DependentUpon>201901151524400_Init.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201812051721006_Init.cs" />
-    <Compile Include="Migrations\201812051721006_Init.Designer.cs">
-      <DependentUpon>201812051721006_Init.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201812101359537_addtableBibliography.cs" />
-    <Compile Include="Migrations\201812101359537_addtableBibliography.Designer.cs">
-      <DependentUpon>201812101359537_addtableBibliography.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201812101715235_changencoreBibliography.cs" />
-    <Compile Include="Migrations\201812101715235_changencoreBibliography.Designer.cs">
-      <DependentUpon>201812101715235_changencoreBibliography.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201812131617440_addtablemenu.cs" />
-    <Compile Include="Migrations\201812131617440_addtablemenu.Designer.cs">
-      <DependentUpon>201812131617440_addtablemenu.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201812170951000_tableLanguage.cs" />
-    <Compile Include="Migrations\201812170951000_tableLanguage.Designer.cs">
-      <DependentUpon>201812170951000_tableLanguage.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201812171432440_changeLanguages.cs" />
-    <Compile Include="Migrations\201812171432440_changeLanguages.Designer.cs">
-      <DependentUpon>201812171432440_changeLanguages.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201812171439393_changeContacmessage.cs" />
-    <Compile Include="Migrations\201812171439393_changeContacmessage.Designer.cs">
-      <DependentUpon>201812171439393_changeContacmessage.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201812171601548_changedContacmessage.cs" />
-    <Compile Include="Migrations\201812171601548_changedContacmessage.Designer.cs">
-      <DependentUpon>201812171601548_changedContacmessage.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201812191340355_changeruser.cs" />
-    <Compile Include="Migrations\201812191340355_changeruser.Designer.cs">
-      <DependentUpon>201812191340355_changeruser.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201901081120274_changeMainContent.cs" />
-    <Compile Include="Migrations\201901081120274_changeMainContent.Designer.cs">
-      <DependentUpon>201901081120274_changeMainContent.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201901081713393_changemodel.cs" />
-    <Compile Include="Migrations\201901081713393_changemodel.Designer.cs">
-      <DependentUpon>201901081713393_changemodel.cs</DependentUpon>
+    <Compile Include="Migrations\201901151545523_ChangeContactmessage.cs" />
+    <Compile Include="Migrations\201901151545523_ChangeContactmessage.Designer.cs">
+      <DependentUpon>201901151545523_ChangeContactmessage.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\Activity.cs" />
     <Compile Include="Models\Bibliography.cs" />
     <Compile Include="Models\Client.cs" />
     <Compile Include="Models\Colaborateur.cs" />
@@ -325,6 +289,34 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="Image\10.jpg" />
+    <Content Include="Image\11.jpg" />
+    <Content Include="Image\12.jpg" />
+    <Content Include="Image\13.jpg" />
+    <Content Include="Image\14.jpg" />
+    <Content Include="Image\15.jpg" />
+    <Content Include="Image\16.jpg" />
+    <Content Include="Image\17.jpg" />
+    <Content Include="Image\18.jpg" />
+    <Content Include="Image\19.jpg" />
+    <Content Include="Image\1_045609.jpg" />
+    <Content Include="Image\2.jpg" />
+    <Content Include="Image\20.jpg" />
+    <Content Include="Image\21.jpg" />
+    <Content Include="Image\22.jpg" />
+    <Content Include="Image\23.jpg" />
+    <Content Include="Image\24.jpg" />
+    <Content Include="Image\25.jpg" />
+    <Content Include="Image\26.jpg" />
+    <Content Include="Image\27.jpg" />
+    <Content Include="Image\3.jpg" />
+    <Content Include="Image\4-iran.jpg" />
+    <Content Include="Image\4.jpg" />
+    <Content Include="Image\5.jpg" />
+    <Content Include="Image\6.jpg" />
+    <Content Include="Image\7.jpg" />
+    <Content Include="Image\8.jpg" />
+    <Content Include="Image\9.jpg" />
     <Content Include="Image\bar.jpg" />
     <Content Include="Image\bar1.jpg" />
     <Content Include="Image\bar2.jpg" />
@@ -485,6 +477,19 @@
     <Content Include="Areas\BackOffice\Views\ContactMessages\Index.cshtml" />
     <Content Include="Areas\BackOffice\Views\Clients\Details.cshtml" />
     <Content Include="Areas\BackOffice\Views\Clients\Index.cshtml" />
+    <Content Include="Areas\BackOffice\Views\Activities\Create.cshtml" />
+    <Content Include="Areas\BackOffice\Views\Activities\Delete.cshtml" />
+    <Content Include="Areas\BackOffice\Views\Activities\Details.cshtml" />
+    <Content Include="Areas\BackOffice\Views\Activities\Edit.cshtml" />
+    <Content Include="Areas\BackOffice\Views\Activities\Index.cshtml" />
+    <Content Include="Areas\BackOffice\Views\DashBoards\About.cshtml" />
+    <Content Include="Areas\BackOffice\Views\DashBoards\Help.cshtml" />
+    <Content Include="Areas\BackOffice\Views\DashBoards\Contact.cshtml" />
+    <Content Include="Areas\BackOffice\Views\Colaborateurs\Details.cshtml" />
+    <Content Include="Areas\BackOffice\Views\Colaborateurs\Index.cshtml" />
+    <Content Include="Areas\BackOffice\Views\Colaborateurs\Create.cshtml" />
+    <Content Include="Areas\BackOffice\Views\Colaborateurs\Delete.cshtml" />
+    <Content Include="Areas\BackOffice\Views\Colaborateurs\Edit.cshtml" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\cldr.js" />
     <Content Include="Scripts\cldr\event.js" />
@@ -763,6 +768,10 @@
     <Content Include="Scripts\tinymce\skins\lightgray\fonts\tinymce-small.eot" />
     <Content Include="Scripts\tinymce\skins\lightgray\fonts\tinymce-mobile.woff" />
     <Content Include="Scripts\tinymce\langs\readme.md" />
+    <Content Include="Views\Shared\Activity.cshtml" />
+    <Content Include="Views\FontBibliographies\Details.cshtml" />
+    <Content Include="Views\FontBibliographies\Index.cshtml" />
+    <Content Include="Views\FontBibliographies\Search.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -782,48 +791,18 @@
     <Content Include="Scripts\jquery-3.3.1.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201812041437536_InitialCreate.resx">
-      <DependentUpon>201812041437536_InitialCreate.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201812051721006_Init.resx">
-      <DependentUpon>201812051721006_Init.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201812101359537_addtableBibliography.resx">
-      <DependentUpon>201812101359537_addtableBibliography.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201812101715235_changencoreBibliography.resx">
-      <DependentUpon>201812101715235_changencoreBibliography.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201812131617440_addtablemenu.resx">
-      <DependentUpon>201812131617440_addtablemenu.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201812170951000_tableLanguage.resx">
-      <DependentUpon>201812170951000_tableLanguage.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201812171432440_changeLanguages.resx">
-      <DependentUpon>201812171432440_changeLanguages.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201812171439393_changeContacmessage.resx">
-      <DependentUpon>201812171439393_changeContacmessage.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201812171601548_changedContacmessage.resx">
-      <DependentUpon>201812171601548_changedContacmessage.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201812191340355_changeruser.resx">
-      <DependentUpon>201812191340355_changeruser.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201901081120274_changeMainContent.resx">
-      <DependentUpon>201901081120274_changeMainContent.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201901081713393_changemodel.resx">
-      <DependentUpon>201901081713393_changemodel.cs</DependentUpon>
-    </EmbeddedResource>
-  </ItemGroup>
-  <ItemGroup>
     <ProjectReference Include="..\StaticResource\StaticResource.csproj">
       <Project>{0a82a9fd-5a7e-4a31-a482-2549b07e8a4f}</Project>
       <Name>StaticResource</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201901151524400_Init.resx">
+      <DependentUpon>201901151524400_Init.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201901151545523_ChangeContactmessage.resx">
+      <DependentUpon>201901151545523_ChangeContactmessage.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

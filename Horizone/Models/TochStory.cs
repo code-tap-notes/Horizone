@@ -12,19 +12,19 @@ namespace Horizone.Models
     {
         public int Id { get; set; }
 
-        [Display(Name = "Nom d'histoire / Story name")]
-        [Required(ErrorMessage = "Le champ {0} est obligatoire. / Field {0} is required")]
+        [Display(Name = "Name", ResourceType = typeof(StaticResource.Resources))]
+        [Required(ErrorMessageResourceName = "FieldRequired", ErrorMessageResourceType = typeof(StaticResource.Resources))]
         [StringLength(40, MinimumLength = 1, ErrorMessage = "Le champ doit avoir de 1 a 40 caracteres / At least 1 Character")]
         public string Name { get; set; }
 
         [AllowHtml]
-        [Required(ErrorMessage = "Le champ {0} est obligatoire. / Field {0} is required")]
+        [Required(ErrorMessageResourceName = "FieldRequired", ErrorMessageResourceType = typeof(StaticResource.Resources))]
         [Display(Name = "Content")]
         [StringLength(40, MinimumLength = 1, ErrorMessage = "Le champ doit avoir de 1 a 40 caracteres / At least 1 Character")]
         public string ContentEnglish { get; set; }
 
         [AllowHtml]
-        [Required(ErrorMessage = "Le champ {0} est obligatoire. / Field {0} is required")]
+        [Required(ErrorMessageResourceName = "FieldRequired", ErrorMessageResourceType = typeof(StaticResource.Resources))]
         [Display(Name = "Contenu")]
         [StringLength(40, MinimumLength = 1, ErrorMessage = "Le champ doit avoir de 1 a 40 caracteres / At least 1 Character")]
         public string ContentFrancaise { get; set; }

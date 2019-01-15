@@ -22,15 +22,15 @@ namespace Horizone.Models
              		
         [Required(ErrorMessageResourceName = "FieldRequired", ErrorMessageResourceType = typeof(StaticResource.Resources))]
         [StringLength(30, MinimumLength = 2, ErrorMessageResourceName = "MaxLength30", ErrorMessageResourceType = typeof(StaticResource.Resources))]
-        [Display(Name = "Lastname", ResourceType = typeof(StaticResource.Resources))]
+        [Display(Name = "LastName", ResourceType = typeof(StaticResource.Resources))]
         [Index("IX_PersonneUnique", 2, IsUnique = true)]
 		public string LastName { get; set; }
      		
         [Required(ErrorMessageResourceName = "FieldRequired", ErrorMessageResourceType = typeof(StaticResource.Resources))]
         [StringLength(30, MinimumLength = 2, ErrorMessageResourceName = "MaxLength30", ErrorMessageResourceType = typeof(StaticResource.Resources))]
-        [Display(Name = "Firstname", ResourceType = typeof(StaticResource.Resources))]
+        [Display(Name = "FirstName", ResourceType = typeof(StaticResource.Resources))]
         [Index("IX_PersonneUnique", 3, IsUnique = true)]
-		public string FisrtName { get; set; }
+		public string FirstName { get; set; }
          
         [RegularExpression(@"^([0-9])*\s*$",ErrorMessage = "Le champ {0} ne doit contenir que des chiffres")]       
         [Required(ErrorMessageResourceName = "FieldRequired", ErrorMessageResourceType = typeof(StaticResource.Resources))]

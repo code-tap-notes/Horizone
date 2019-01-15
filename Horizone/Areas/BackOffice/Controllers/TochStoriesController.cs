@@ -10,6 +10,7 @@ using Horizone.Models;
 
 namespace Horizone.Areas.BackOffice.Controllers
 {
+    [Authorize(Roles = "Colaborator,Admin")]
     public class TochStoriesController : Controller
     {
         private ApplicationDbContext db = new ApplicationDbContext();

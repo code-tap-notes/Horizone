@@ -13,28 +13,28 @@ namespace Horizone.Models
         public int Id { get; set; }
 
         [Display(Name = "Index")]
-        [Required(ErrorMessage = "Le champ {0} est obligatoire. / Field {0} is required")]
+        [Required(ErrorMessageResourceName = "FieldRequired", ErrorMessageResourceType = typeof(StaticResource.Resources))]
         [StringLength(40, MinimumLength = 1, ErrorMessage = "L'index  doit avoir de 1 a 40 caracteres / At least 1 Character")]
         public string Index { get; set; }
 
-        
-        [Required(ErrorMessage = "Le champ {0} est obligatoire. / Field {0} is required")]
-        [Display(Name = "La langue / Language")]
+
+        [Required(ErrorMessageResourceName = "FieldRequired", ErrorMessageResourceType = typeof(StaticResource.Resources))]
+        [Display(Name = "Language", ResourceType = typeof(StaticResource.Resources))]
         [StringLength(40, MinimumLength = 1, ErrorMessage = "Le champ doit avoir de 1 a 40 caracteres / At least 1 Character")]
         public string Language { get; set; }
 
         
-        [Display(Name = "La scripte / Script")]
+        [Display(Name = "Script", ResourceType = typeof(StaticResource.Resources))]
         [StringLength(40, MinimumLength = 1, ErrorMessage = "Le champ doit avoir de 1 a 40 caracteres / At least 1 Character")]
         public string Script { get; set; }
 
 
-        [Display(Name = "Dépôt / Repository")]
+        [Display(Name = "Repository", ResourceType = typeof(StaticResource.Resources))]
         [StringLength(40, MinimumLength = 1, ErrorMessage = "Le champ doit avoir de 1 a 40 caracteres / At least 1 Character")]
         public string Repository { get; set; }
 
         
-        [Display(Name = "Cote bibliothèque / Shelfmark")]
+        [Display(Name = "Shelfmark", ResourceType = typeof(StaticResource.Resources))]
         [StringLength(40, MinimumLength = 1, ErrorMessage = "Le champ doit avoir de 1 a 40 caracteres / At least 1 Character")]
         public string Shelfmark { get; set; }
        
@@ -54,21 +54,21 @@ namespace Horizone.Models
         [AllowHtml]
         public string Description { get; set; }
 
-        [Display(Name = "Éditeur / Editor ")]
+        [Display(Name = "Editor", ResourceType = typeof(StaticResource.Resources))]
         [StringLength(40, MinimumLength = 1, ErrorMessage = "Le champ doit avoir de 1 a 40 caracteres / At least 1 Character")]
         public string Editor { get; set; }
 
-        [Display(Name = "Bibliographie / Bibliography ")]
+        [Display(Name = "Bibliography", ResourceType = typeof(StaticResource.Resources))]
         [StringLength(40, MinimumLength = 1, ErrorMessage = "Le champ doit avoir de 1 a 40 caracteres / At least 1 Character")]
         public string Bibliography { get; set; }
 
-        [Display(Name = "La provenance / Provenience")]       
+        [Display(Name = "Provenience", ResourceType = typeof(StaticResource.Resources))]       
         public int ProvenienceId { get; set; }
 
         [ForeignKey("ProvenienceId")]
         public Provenience Provenience { get; set; }
 
-        [Display(Name = "Contenu du texte / Text Content")]  
+        [Display(Name = "Content", ResourceType = typeof(StaticResource.Resources))]  
         public int TextContentId { get; set; }
 
         [AllowHtml]

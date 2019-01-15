@@ -1,0 +1,58 @@
+﻿@model Horizone.Models.Activity
+
+@{
+    ViewBag.Title = @StaticResource.Resources.Details;
+}
+
+<h2> @StaticResource.Resources.Details</h2>
+
+<div>
+    <h4> @StaticResource.Resources.Activity</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @StaticResource.Resources.DateActivity
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DateofActivity)
+        </dd>
+
+        <dt>
+            @StaticResource.Resources.Place
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Place)
+        </dd>
+
+        <dt>
+            @StaticResource.Resources.Activity
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NameActivity)
+        </dd>
+
+        <dt>
+            @StaticResource.Resources.Description
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Description)
+        </dd>
+
+        <dt>
+            @StaticResource.Resources.Link
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.UlrActivity)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink(@StaticResource.Resources.Edit, "Edit", new { id = Model.Id }, new { @class = "btn btn-info" })
+    @Html.ActionLink(@StaticResource.Resources.Return, "Index", null, new { @class = "btn btn-primary" })
+</p>

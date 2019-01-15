@@ -11,6 +11,7 @@ using Horizone.Models;
 
 namespace Horizone.Areas.BackOffice.Controllers
 {
+    [Authorize(Roles = "Colaborator,Admin")]
     public class ContactMessagesController : BaseController
     {
         
@@ -47,7 +48,7 @@ namespace Horizone.Areas.BackOffice.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,Title,LastName,FisrtName,Email,PhoneNumber,SendDate,Message,SymbolLanguage")] ContactMessage contactMessage)
+        public ActionResult Create([Bind(Include = "Id,Title,LastName,FirstName,Email,PhoneNumber,SendDate,Message,SymbolLanguage")] ContactMessage contactMessage)
         {
             if (ModelState.IsValid)
             {
@@ -79,7 +80,7 @@ namespace Horizone.Areas.BackOffice.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,Title,LastName,FisrtName,Email,PhoneNumber,SendDate,Message,SymbolLanguage")] ContactMessage contactMessage)
+        public ActionResult Edit([Bind(Include = "Id,Title,LastName,FirstName,Email,PhoneNumber,SendDate,Message,SymbolLanguage")] ContactMessage contactMessage)
         {
             if (ModelState.IsValid)
             {

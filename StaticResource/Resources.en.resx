@@ -153,7 +153,7 @@
   <data name="FieldRequired" xml:space="preserve">
     <value>Field {0} is required</value>
   </data>
-  <data name="FisrtName" xml:space="preserve">
+  <data name="FirstName" xml:space="preserve">
     <value>First Name</value>
   </data>
   <data name="French" xml:space="preserve">
@@ -165,7 +165,7 @@
   <data name="Home" xml:space="preserve">
     <value>Home Page</value>
   </data>
-  <data name="Lastname" xml:space="preserve">
+  <data name="LastName" xml:space="preserve">
     <value>Last name</value>
   </data>
   <data name="Link" xml:space="preserve">
@@ -312,16 +312,67 @@
   <data name="Office" xml:space="preserve">
     <value>Office</value>
   </data>
-  <data name="Maxlength1500" xml:space="preserve">
+  <data name="MaxLength1500" xml:space="preserve">
     <value>1-1500 Characters</value>
   </data>
-  <data name="Maxlength20" xml:space="preserve">
+  <data name="MaxLength20" xml:space="preserve">
     <value>1-20 Characters</value>
   </data>
-  <data name="Maxlength30" xml:space="preserve">
+  <data name="MaxLength30" xml:space="preserve">
     <value>1-30 Characters</value>
   </data>
-  <data name="Maxlength40" xml:space="preserve">
+  <data name="MaxLength40" xml:space="preserve">
     <value>Field {0} has maximal 40 characters</value>
+  </data>
+  <data name="DateActivity" xml:space="preserve">
+    <value>Date of Activity</value>
+  </data>
+  <data name="Description" xml:space="preserve">
+    <value>Description</value>
+  </data>
+  <data name="NameActivity" xml:space="preserve">
+    <value>Name of Activity</value>
+  </data>
+  <data name="Place" xml:space="preserve">
+    <value>Place</value>
+  </data>
+  <data name="Picture" xml:space="preserve">
+    <value>Picture</value>
+  </data>
+  <data name="Language" xml:space="preserve">
+    <value>Language</value>
+  </data>
+  <data name="CodeIndex" xml:space="preserve">
+    <value>Code Index</value>
+  </data>
+  <data name="DictionaryTocharian" xml:space="preserve">
+    <value>Tocharian Dictionary</value>
+  </data>
+  <data name="Editor" xml:space="preserve">
+    <value>Editor</value>
+  </data>
+  <data name="Name" xml:space="preserve">
+    <value>Name</value>
+  </data>
+  <data name="Provenience" xml:space="preserve">
+    <value>Provenience</value>
+  </data>
+  <data name="Repository" xml:space="preserve">
+    <value>Repository</value>
+  </data>
+  <data name="Script" xml:space="preserve">
+    <value>Script</value>
+  </data>
+  <data name="Shelfmark" xml:space="preserve">
+    <value>Shelfmark</value>
+  </data>
+  <data name="Text" xml:space="preserve">
+    <value>Text</value>
+  </data>
+  <data name="Message" xml:space="preserve">
+    <value>Message</value>
+  </data>
+  <data name="Content" xml:space="preserve">
+    <value>Content</value>
   </data>
 </root>

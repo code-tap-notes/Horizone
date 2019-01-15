@@ -1,24 +1,24 @@
 ﻿@model IEnumerable<Horizone.Models.TochPhrase>
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = @StaticResource.Resources.TochPhase;
 }
 
-<h2>Index</h2>
+<h2>@StaticResource.Resources.TochPhase</h2>
 
 <p>
-    @Html.ActionLink("Create New", "Create")
+    @Html.ActionLink(@StaticResource.Resources.Add, "Create")
 </p>
 <table class="table">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.Index)
+            @StaticResource.Resources.CodeIndex
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Name)
+            @StaticResource.Resources.Name
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Content)
+            @StaticResource.Resources.Content
         </th>
         <th>
             @Html.DisplayNameFor(model => model.English)
@@ -36,7 +36,7 @@
             @Html.DisplayNameFor(model => model.Vietnam)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Description)
+            @StaticResource.Resources.Description
         </th>
         <th></th>
     </tr>

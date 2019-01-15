@@ -289,7 +289,7 @@ namespace Horizone.Controllers
             AddErrors(result);
             return View(model);
         }
-        [Authorize(Roles = "Commercial,Admin")]
+        [Authorize(Roles = "Colaborator,Admin")]
         public ActionResult ChangePasswordBo()
         {
             return View();
@@ -297,7 +297,7 @@ namespace Horizone.Controllers
 
         //
         // POST: /Manage/ChangePassword
-        [Authorize(Roles = "Commercial,Admin")]
+        [Authorize(Roles = "Colaborator,Admin")]
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<ActionResult> ChangePasswordBo(ChangePasswordViewModel model)

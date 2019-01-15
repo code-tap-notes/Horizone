@@ -177,7 +177,7 @@
   <data name="FieldRequired" xml:space="preserve">
     <value>{0}字段是必需的。</value>
   </data>
-  <data name="FisrtName" xml:space="preserve">
+  <data name="FirstName" xml:space="preserve">
     <value>名字</value>
   </data>
   <data name="French" xml:space="preserve">
@@ -198,7 +198,7 @@
   <data name="Japanese" xml:space="preserve">
     <value>日本</value>
   </data>
-  <data name="Lastname" xml:space="preserve">
+  <data name="LastName" xml:space="preserve">
     <value>姓</value>
   </data>
   <data name="Link" xml:space="preserve">
@@ -315,16 +315,67 @@
   <data name="Office" xml:space="preserve">
     <value>办公室</value>
   </data>
-  <data name="Maxlength1500" xml:space="preserve">
+  <data name="MaxLength1500" xml:space="preserve">
     <value>1-1500个字符</value>
   </data>
-  <data name="Maxlength20" xml:space="preserve">
+  <data name="MaxLength20" xml:space="preserve">
     <value>1-20个字符</value>
   </data>
-  <data name="Maxlength30" xml:space="preserve">
+  <data name="MaxLength30" xml:space="preserve">
     <value>1-30个字符</value>
   </data>
-  <data name="Maxlength40" xml:space="preserve">
+  <data name="MaxLength40" xml:space="preserve">
     <value>字段{0}最多包含40个字符</value>
+  </data>
+  <data name="DateActivity" xml:space="preserve">
+    <value>活动日期</value>
+  </data>
+  <data name="Description" xml:space="preserve">
+    <value>描述</value>
+  </data>
+  <data name="NameActivity" xml:space="preserve">
+    <value>活动名称</value>
+  </data>
+  <data name="Place" xml:space="preserve">
+    <value>地点</value>
+  </data>
+  <data name="Picture" xml:space="preserve">
+    <value>图片</value>
+  </data>
+  <data name="Language" xml:space="preserve">
+    <value>语言</value>
+  </data>
+  <data name="CodeIndex" xml:space="preserve">
+    <value>代码索引</value>
+  </data>
+  <data name="DictionaryTocharian" xml:space="preserve">
+    <value>字典Tocharian</value>
+  </data>
+  <data name="Editor" xml:space="preserve">
+    <value>编辑</value>
+  </data>
+  <data name="Name" xml:space="preserve">
+    <value>名称</value>
+  </data>
+  <data name="Provenience" xml:space="preserve">
+    <value>La provenance</value>
+  </data>
+  <data name="Repository" xml:space="preserve">
+    <value>知识库</value>
+  </data>
+  <data name="Script" xml:space="preserve">
+    <value>脚本</value>
+  </data>
+  <data name="Shelfmark" xml:space="preserve">
+    <value>Shelfmark</value>
+  </data>
+  <data name="Text" xml:space="preserve">
+    <value>文本</value>
+  </data>
+  <data name="Message" xml:space="preserve">
+    <value>信息</value>
+  </data>
+  <data name="Content" xml:space="preserve">
+    <value>内容</value>
   </data>
 </root>

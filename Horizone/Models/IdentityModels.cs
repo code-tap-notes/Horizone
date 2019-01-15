@@ -59,5 +59,6 @@ namespace Horizone.Models
         public DbSet<MainContent> MainContents { get; set; }
         public DbSet<Menu> Menus { get; set; }
         public DbSet<Language> Languages { get; set; }
+        public DbSet<Activity> Activitys { get; set; }
     }
 }

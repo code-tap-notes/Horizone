@@ -169,7 +169,7 @@ namespace Horizone.Controllers
                             EmailDisplay = model.Email,
                             Title = model.Title,
                             LastName = model.LastName,
-                            FisrtName = model.FisrtName,
+                            FirstName = model.FisrtName,
                             PhoneNumber = model.PhoneNumber,
                             UserId = user.Id,
 
@@ -213,7 +213,7 @@ namespace Horizone.Controllers
                         {
                             Title = model.Title,
                             LastName = model.LastName,
-                            FisrtName = model.FisrtName,                            
+                            FirstName = model.FisrtName,                            
                             PhoneNumber = model.PhoneNumber, 
                             UserId = user.Id
                         };

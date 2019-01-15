@@ -10,7 +10,6 @@ namespace Horizone.Migrations
         public Configuration()
         {
             AutomaticMigrationsEnabled = false;
-            ContextKey = "Horizone.Models.ApplicationDbContext";
         }
 
         protected override void Seed(Horizone.Models.ApplicationDbContext context)

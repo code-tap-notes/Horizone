@@ -18,12 +18,17 @@ namespace Horizone.Controllers
         {
             return View();
         }
+        public ActionResult Maincontent()
+        {
+            
+            return View(db.MainContents.ToList());
+        }
 
         public ActionResult About()
         {
             ViewBag.Message = "Equipe HISTOCHTEXT";
-
-            return View();
+            return View(db.MainContents.ToList());
+           
         }
         // GET: FrontContact/Create
         public ActionResult Contact()
@@ -32,7 +37,7 @@ namespace Horizone.Controllers
         }
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Contact([Bind(Include = "Id,Title,LastName,FisrtName,Email,PhoneNumber,SendDate,Message,SymbolLanguage")] ContactMessage contactMessage)
+        public ActionResult Contact([Bind(Include = "Id,Title,LastName,FirstName,Email,PhoneNumber,SendDate,Message,SymbolLanguage")] ContactMessage contactMessage)
         {
             ViewBag.Message = "Nous contact:";
           
@@ -96,6 +101,10 @@ namespace Horizone.Controllers
 
             return View();
         }
-
+        [ChildActionOnly]
+        public ActionResult Activity()
+        {
+            return PartialView(db.Activitys.OrderByDescending(x => x.DateofActivity).ToList());
+        }
     }
 }

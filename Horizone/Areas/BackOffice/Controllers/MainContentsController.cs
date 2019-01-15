@@ -11,6 +11,7 @@ using Horizone.Controllers;
 
 namespace Horizone.Areas.BackOffice.Controllers
 {
+    [Authorize(Roles = "Colaborator,Admin")]
     public class MainContentsController : BaseController
     {
         

@@ -12,6 +12,7 @@ using PagedList;
 
 namespace Horizone.Areas.BackOffice.Controllers
 {
+    [Authorize(Roles = "Colaborator,Admin")]
     public class BibliographiesController : BaseController
     {
        

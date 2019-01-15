@@ -1,0 +1,66 @@
+﻿@model Horizone.Models.Bibliography
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Details</title>
+</head>
+<body>
+    <div>
+        <h4>Bibliography</h4>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.Author)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.Author)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.PublicationDate)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.PublicationDate)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.Title)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.Title)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.Journal)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.Journal)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.UlrBibliography)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.UlrBibliography)
+            </dd>
+    
+        </dl>
+    </div>
+    <p>
+        @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+</body>
+</html>
