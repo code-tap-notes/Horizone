@@ -25,10 +25,17 @@ namespace Horizone.Controllers
         }
 
         public ActionResult About()
+        {            
+            return View(db.MainContents.ToList());           
+        }
+        public ActionResult AboutUs()
+        {            
+            return View();
+        }
+        public ActionResult Collaboration()
         {
-            ViewBag.Message = "Equipe HISTOCHTEXT";
-            return View(db.MainContents.ToList());
-           
+          
+            return View();
         }
         // GET: FrontContact/Create
         public ActionResult Contact()
@@ -101,6 +108,7 @@ namespace Horizone.Controllers
 
             return View();
         }
+       
         [ChildActionOnly]
         public ActionResult Activity()
         {

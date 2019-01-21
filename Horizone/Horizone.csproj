@@ -285,6 +285,10 @@
     <Content Include="Content\logo2.png" />
     <Content Include="Content\PagedList.css" />
     <Content Include="Content\Social.css" />
+    <Content Include="Equipe\Image\1.jpg" />
+    <Content Include="Equipe\Image\2.jpg" />
+    <Content Include="Equipe\Image\3.jpg" />
+    <Content Include="Equipe\Image\4.jpg" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -490,6 +494,10 @@
     <Content Include="Areas\BackOffice\Views\Colaborateurs\Create.cshtml" />
     <Content Include="Areas\BackOffice\Views\Colaborateurs\Delete.cshtml" />
     <Content Include="Areas\BackOffice\Views\Colaborateurs\Edit.cshtml" />
+    <Content Include="Equipe\CV\CV1.docx" />
+    <Content Include="Equipe\CV\CV2.docx" />
+    <Content Include="Equipe\CV\CV3.docx" />
+    <Content Include="Equipe\CV\CV4.docx" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\cldr.js" />
     <Content Include="Scripts\cldr\event.js" />
@@ -772,6 +780,8 @@
     <Content Include="Views\FontBibliographies\Details.cshtml" />
     <Content Include="Views\FontBibliographies\Index.cshtml" />
     <Content Include="Views\FontBibliographies\Search.cshtml" />
+    <Content Include="Views\Home\AboutUs.cshtml" />
+    <Content Include="Views\Home\Collaboration.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
