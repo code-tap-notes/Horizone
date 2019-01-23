@@ -58,7 +58,8 @@
                 @Html.DisplayFor(modelItem => item.Journal)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.UlrBibliography)
+
+                <a href=@item.UlrBibliography class="btn btn-info">@StaticResource.Resources.LearnMore &raquo;</a>               
             </td>
 
         </tr>

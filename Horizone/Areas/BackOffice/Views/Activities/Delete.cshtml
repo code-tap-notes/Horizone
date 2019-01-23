@@ -4,13 +4,21 @@
     ViewBag.Title = @StaticResource.Resources.Delete;
 }
 
-<h2>@StaticResource.Resources.Delete</h2>
+<h2 > @StaticResource.Resources.Delete</h2>
 
-<h3 class="text-danger">@StaticResource.Resources.AskDelete</h3>
+<h3 class="text-danger"> @StaticResource.Resources.AskDelete</h3>
 <div>
-    <h4>@StaticResource.Resources.Activity</h4>
+    <h4> @StaticResource.Resources.Activity</h4>
     <hr />
     <dl class="dl-horizontal">
+        <dt>
+            @StaticResource.Resources.Language
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Language.Symbol)
+        </dd>
+
         <dt>
             @StaticResource.Resources.DateActivity
         </dt>
@@ -28,7 +36,7 @@
         </dd>
 
         <dt>
-            @StaticResource.Resources.NameActivity
+            @StaticResource.Resources.Activity
         </dt>
 
         <dd>
@@ -51,14 +59,22 @@
             @Html.DisplayFor(model => model.UlrActivity)
         </dd>
 
+        <dt>
+            @StaticResource.Resources.Picture
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Picture)
+        </dd>
+
     </dl>
 
     @using (Html.BeginForm()) {
         @Html.AntiForgeryToken()
 
-        <div class="form-actions no-color">
-            <input type="submit" value="Delete" class="btn btn-danger" /> |
-            @Html.ActionLink(@StaticResource.Resources.Return, "Index", null, new { @class = "btn btn-primary" })
-        </div>
+    <div class="form-actions no-color">
+        <input type="submit" value="Delete" class="btn btn-danger" /> |
+        @Html.ActionLink(@StaticResource.Resources.Return, "Index", null, new { @class = "btn btn-default" })
+    </div>
     }
 </div>

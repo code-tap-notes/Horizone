@@ -163,7 +163,7 @@
     <value>Bonjour  </value>
   </data>
   <data name="Home" xml:space="preserve">
-    <value>Page Principal</value>
+    <value>Page Principale</value>
   </data>
   <data name="LastName" xml:space="preserve">
     <value>Nom </value>
@@ -377,5 +377,41 @@
   </data>
   <data name="Content" xml:space="preserve">
     <value>Contenu</value>
+  </data>
+  <data name="AboutProject" xml:space="preserve">
+    <value>A propos de projet</value>
+  </data>
+  <data name="Aim" xml:space="preserve">
+    <value>Objectif</value>
+  </data>
+  <data name="And" xml:space="preserve">
+    <value>Et</value>
+  </data>
+  <data name="Collaboration" xml:space="preserve">
+    <value>Partenaires</value>
+  </data>
+  <data name="Feedback" xml:space="preserve">
+    <value>Contact pratique</value>
+  </data>
+  <data name="Funding" xml:space="preserve">
+    <value>Le financement</value>
+  </data>
+  <data name="HisTochTextPress" xml:space="preserve">
+    <value>HisTochText dans la presse</value>
+  </data>
+  <data name="LearnMore" xml:space="preserve">
+    <value>Savoir Plus</value>
+  </data>
+  <data name="Programing" xml:space="preserve">
+    <value>Programmation</value>
+  </data>
+  <data name="Publications" xml:space="preserve">
+    <value>Publications</value>
+  </data>
+  <data name="SeeAlso" xml:space="preserve">
+    <value>Savoir également</value>
+  </data>
+  <data name="SendEmail" xml:space="preserve">
+    <value>Envoyer un email</value>
   </data>
 </root>

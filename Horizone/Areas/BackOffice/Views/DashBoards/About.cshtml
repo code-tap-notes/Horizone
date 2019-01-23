@@ -1,29 +1,49 @@
 ﻿@model IEnumerable<Horizone.Models.MainContent>
 @{
-    ViewBag.Title = @StaticResource.Resources.AboutUs;
+    ViewBag.Title = @StaticResource.Resources.AboutProject;
 }
 
 
-<p>@StaticResource.Resources.Project HISTOCHTEXT</p>
+<div class="content">
 
+    <h2> @StaticResource.Resources.AboutProject HISTOCHTEXT </h2>
+    <div class="autocontents">
+        <p>
+            <b>@StaticResource.Resources.Content (s): </b>
+        </p>
 
-<table class="table">
-   
-    @foreach (var item in Model)
-    {
-        <tr>
-            <td>
-                @Html.Raw(item.AboutUs)
-            </td>
-        </tr>
-    }
+        <ul>
+            <li>
+                <a href="#">&diams; @StaticResource.Resources.Aim </a>
+            </li>
+            <li>
+                <a href="#">&diams; @StaticResource.Resources.Funding       </a>
+            </li>
+            <li>
+                <a href="#">&diams; @StaticResource.Resources.Programing</a>
+            </li>
+            <li>
+                <a href="#">&diams; @StaticResource.Resources.Feedback</a>
+            </li>
+            <li>
+                <a href="#">&diams; @StaticResource.Resources.HisTochTextPress</a>
+            </li>
 
-</table>
-<div class=" col-lg-3">
-    <ul class="list-group">
-        See also:
-        <li class="list-group-item">@StaticResource.Resources.Team</li>
-        <li class="list-group-item">@StaticResource.Resources.Project</li>
-        <li class="list-group-item">Colaborations</li>
-    </ul>
+        </ul>
+    </div>
+
+    <div class="autocontents">
+        <p>
+            <b> @StaticResource.Resources.SeeAlso : </b>
+        </p>
+        <ul>
+
+            <li>@Html.ActionLink(StaticResource.Resources.AboutUs, "AboutUs", "Dashboards")</li>
+            <li>@Html.ActionLink(StaticResource.Resources.Collaboration, "Collaboration", "Dashboards")</li>
+            <li>@Html.ActionLink(StaticResource.Resources.Contact, "Contact", "Dashboards")</li>
+        </ul>
+
+    </div>
 </div>
+
+

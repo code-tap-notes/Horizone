@@ -285,6 +285,10 @@
     <Content Include="Content\logo2.png" />
     <Content Include="Content\PagedList.css" />
     <Content Include="Content\Social.css" />
+    <Content Include="Equipe\Image\1.jpg" />
+    <Content Include="Equipe\Image\2.jpg" />
+    <Content Include="Equipe\Image\3.jpg" />
+    <Content Include="Equipe\Image\4.jpg" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -477,11 +481,6 @@
     <Content Include="Areas\BackOffice\Views\ContactMessages\Index.cshtml" />
     <Content Include="Areas\BackOffice\Views\Clients\Details.cshtml" />
     <Content Include="Areas\BackOffice\Views\Clients\Index.cshtml" />
-    <Content Include="Areas\BackOffice\Views\Activities\Create.cshtml" />
-    <Content Include="Areas\BackOffice\Views\Activities\Delete.cshtml" />
-    <Content Include="Areas\BackOffice\Views\Activities\Details.cshtml" />
-    <Content Include="Areas\BackOffice\Views\Activities\Edit.cshtml" />
-    <Content Include="Areas\BackOffice\Views\Activities\Index.cshtml" />
     <Content Include="Areas\BackOffice\Views\DashBoards\About.cshtml" />
     <Content Include="Areas\BackOffice\Views\DashBoards\Help.cshtml" />
     <Content Include="Areas\BackOffice\Views\DashBoards\Contact.cshtml" />
@@ -490,6 +489,16 @@
     <Content Include="Areas\BackOffice\Views\Colaborateurs\Create.cshtml" />
     <Content Include="Areas\BackOffice\Views\Colaborateurs\Delete.cshtml" />
     <Content Include="Areas\BackOffice\Views\Colaborateurs\Edit.cshtml" />
+    <Content Include="Equipe\CV\CV1.docx" />
+    <Content Include="Equipe\CV\CV2.docx" />
+    <Content Include="Equipe\CV\CV3.docx" />
+    <Content Include="Equipe\CV\CV4.docx" />
+    <Content Include="Areas\BackOffice\Views\Activities\Create.cshtml" />
+    <Content Include="Areas\BackOffice\Views\Activities\Delete.cshtml" />
+    <Content Include="Areas\BackOffice\Views\Activities\Details.cshtml" />
+    <Content Include="Areas\BackOffice\Views\Activities\Edit.cshtml" />
+    <Content Include="Areas\BackOffice\Views\Activities\Index.cshtml" />
+    <Content Include="Areas\BackOffice\Views\DashBoards\AboutUs.cshtml" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\cldr.js" />
     <Content Include="Scripts\cldr\event.js" />
@@ -768,10 +777,12 @@
     <Content Include="Scripts\tinymce\skins\lightgray\fonts\tinymce-small.eot" />
     <Content Include="Scripts\tinymce\skins\lightgray\fonts\tinymce-mobile.woff" />
     <Content Include="Scripts\tinymce\langs\readme.md" />
-    <Content Include="Views\Shared\Activity.cshtml" />
     <Content Include="Views\FontBibliographies\Details.cshtml" />
     <Content Include="Views\FontBibliographies\Index.cshtml" />
     <Content Include="Views\FontBibliographies\Search.cshtml" />
+    <Content Include="Views\Home\AboutUs.cshtml" />
+    <Content Include="Views\Home\Collaboration.cshtml" />
+    <Content Include="Views\Home\Activity.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

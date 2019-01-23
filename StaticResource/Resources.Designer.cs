@@ -61,6 +61,15 @@ namespace StaticResource {
         }
         
         /// <summary>
+        ///   Recherche une chaîne localisée semblable à A propos de projet.
+        /// </summary>
+        public static string AboutProject {
+            get {
+                return ResourceManager.GetString("AboutProject", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Recherche une chaîne localisée semblable à Qui somme nous?.
         /// </summary>
         public static string AboutUs {
@@ -84,6 +93,24 @@ namespace StaticResource {
         public static string Add {
             get {
                 return ResourceManager.GetString("Add", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Objectif.
+        /// </summary>
+        public static string Aim {
+            get {
+                return ResourceManager.GetString("Aim", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Et.
+        /// </summary>
+        public static string And {
+            get {
+                return ResourceManager.GetString("And", resourceCulture);
             }
         }
         
@@ -156,6 +183,15 @@ namespace StaticResource {
         public static string Colaborator {
             get {
                 return ResourceManager.GetString("Colaborator", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Partenaires.
+        /// </summary>
+        public static string Collaboration {
+            get {
+                return ResourceManager.GetString("Collaboration", resourceCulture);
             }
         }
         
@@ -286,6 +322,15 @@ namespace StaticResource {
         }
         
         /// <summary>
+        ///   Recherche une chaîne localisée semblable à Contact pratique.
+        /// </summary>
+        public static string Feedback {
+            get {
+                return ResourceManager.GetString("Feedback", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Recherche une chaîne localisée semblable à Le champ {0} est obligatoire..
         /// </summary>
         public static string FieldRequired {
@@ -309,6 +354,15 @@ namespace StaticResource {
         public static string French {
             get {
                 return ResourceManager.GetString("French", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Le financement.
+        /// </summary>
+        public static string Funding {
+            get {
+                return ResourceManager.GetString("Funding", resourceCulture);
             }
         }
         
@@ -340,7 +394,16 @@ namespace StaticResource {
         }
         
         /// <summary>
-        ///   Recherche une chaîne localisée semblable à Page Principal.
+        ///   Recherche une chaîne localisée semblable à HisTochText dans la presse.
+        /// </summary>
+        public static string HisTochTextPress {
+            get {
+                return ResourceManager.GetString("HisTochTextPress", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Page Principale.
         /// </summary>
         public static string Home {
             get {
@@ -372,6 +435,15 @@ namespace StaticResource {
         public static string LastName {
             get {
                 return ResourceManager.GetString("LastName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Savoir Plus.
+        /// </summary>
+        public static string LearnMore {
+            get {
+                return ResourceManager.GetString("LearnMore", resourceCulture);
             }
         }
         
@@ -628,6 +700,15 @@ namespace StaticResource {
         }
         
         /// <summary>
+        ///   Recherche une chaîne localisée semblable à Programmation.
+        /// </summary>
+        public static string Programing {
+            get {
+                return ResourceManager.GetString("Programing", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Recherche une chaîne localisée semblable à Projet.
         /// </summary>
         public static string Project {
@@ -651,6 +732,15 @@ namespace StaticResource {
         public static string PublicationDate {
             get {
                 return ResourceManager.GetString("PublicationDate", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Publications.
+        /// </summary>
+        public static string Publications {
+            get {
+                return ResourceManager.GetString("Publications", resourceCulture);
             }
         }
         
@@ -718,6 +808,15 @@ namespace StaticResource {
         }
         
         /// <summary>
+        ///   Recherche une chaîne localisée semblable à Savoir également.
+        /// </summary>
+        public static string SeeAlso {
+            get {
+                return ResourceManager.GetString("SeeAlso", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Recherche une chaîne localisée semblable à Envoyer.
         /// </summary>
         public static string Send {
@@ -732,6 +831,15 @@ namespace StaticResource {
         public static string SendDate {
             get {
                 return ResourceManager.GetString("SendDate", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Envoyer un email.
+        /// </summary>
+        public static string SendEmail {
+            get {
+                return ResourceManager.GetString("SendEmail", resourceCulture);
             }
         }
         

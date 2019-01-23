@@ -22,11 +22,13 @@ namespace Horizone.Areas.BackOffice.Controllers
             return RedirectToAction("index", "home", new { area = "" });
         }
         public ActionResult About()
-        {
-            
-                ViewBag.Message = "Equipe HISTOCHTEXT";
+        {                       
                 return View(db.MainContents.ToList());
 
+        }
+        public ActionResult AboutUs()
+        {            
+            return View(db.MainContents.ToList());
         }
         // GET: FrontContact/Create
         public ActionResult Contact()

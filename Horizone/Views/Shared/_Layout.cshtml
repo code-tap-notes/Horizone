@@ -32,11 +32,11 @@
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
                     <li>@Html.ActionLink(StaticResource.Resources.Home, "Index", "Home")</li>
-                    <li>@Html.ActionLink(StaticResource.Resources.AboutUs, "About", "Home")</li>
-                    <li>@Html.ActionLink(StaticResource.Resources.Contact, "Contact", "Home")</li>
                 </ul>
+                <ul class="nav navbar-right">
+                    <li><a href="@Url.Action("index","dashboards",new {area="backoffice" })">☆</a> </li>
 
-
+                </ul>
 
                 @Html.Partial("_LoginPartial")
             </div>
@@ -48,15 +48,16 @@
     <div class="navbar-collapse collapse" style="background-color:black">
         <ul class="nav navbar-nav">
             @*foreach (var item in Model)
-                {
-                    <li>@Html.ActionLink(item.Text, item.Text, "Home")</li>
-                }*@
-
+        {
+            <li>@Html.ActionLink(item.Text, item.Text, "Home")</li>
+        }*@
+            <li>@Html.ActionLink(StaticResource.Resources.AboutProject, "About", "Home")</li>
             <li>@Html.ActionLink(@StaticResource.Resources.TochPhase, "TochPhase", "Home")</li>
             <li>@Html.ActionLink(@StaticResource.Resources.TochStory, "TochHistoire", "Home")</li>
             <li>@Html.ActionLink(@StaticResource.Resources.Manuscript, "Manuscript", "Home")</li>
             <li>@Html.ActionLink(@StaticResource.Resources.Vocabulary, "Vocabulaire", "Home")</li>
             <li>@Html.ActionLink(@StaticResource.Resources.News_Blog, "Nouvelles", "Home")</li>
+            <li>@Html.ActionLink(@StaticResource.Resources.Activity, "Activity", "Home")</li>
             <li>@Html.ActionLink(@StaticResource.Resources.Bibliography, "Bibliographie", "Home")</li>
             <li>@Html.ActionLink(@StaticResource.Resources.Help, "Aide", "Home")</li>
 
@@ -106,10 +107,7 @@
                 }
             </li>
         </ul>
-        <ul class="nav navbar-right">
-            <li><a href="@Url.Action("index","dashboards",new {area="backoffice" })">☆</a> </li>
-
-        </ul>
+        
         </div>
 
         <div class="container body-content">

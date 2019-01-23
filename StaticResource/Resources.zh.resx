@@ -378,4 +378,40 @@
   <data name="Content" xml:space="preserve">
     <value>内容</value>
   </data>
+  <data name="AboutProject" xml:space="preserve">
+    <value>关于该项目</value>
+  </data>
+  <data name="Aim" xml:space="preserve">
+    <value>目标</value>
+  </data>
+  <data name="And" xml:space="preserve">
+    <value>和</value>
+  </data>
+  <data name="Collaboration" xml:space="preserve">
+    <value>合作</value>
+  </data>
+  <data name="Feedback" xml:space="preserve">
+    <value>反馈</value>
+  </data>
+  <data name="Funding" xml:space="preserve">
+    <value>资金</value>
+  </data>
+  <data name="HisTochTextPress" xml:space="preserve">
+    <value>HisTochText在媒体上</value>
+  </data>
+  <data name="LearnMore" xml:space="preserve">
+    <value>学到更多</value>
+  </data>
+  <data name="Programing" xml:space="preserve">
+    <value>程序设计</value>
+  </data>
+  <data name="Publications" xml:space="preserve">
+    <value>出版物</value>
+  </data>
+  <data name="SeeAlso" xml:space="preserve">
+    <value>也可以看看</value>
+  </data>
+  <data name="SendEmail" xml:space="preserve">
+    <value>发送电子邮件</value>
+  </data>
 </root>
