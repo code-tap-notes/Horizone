@@ -12,7 +12,7 @@ namespace Horizone.Models
     {
         public int Id { get; set; }
 
-              
+        
         [Display(Name = "DateActivity", ResourceType = typeof(StaticResource.Resources))]
         [Required(ErrorMessageResourceName = "FieldRequired", ErrorMessageResourceType = typeof(StaticResource.Resources))]
         public string DateofActivity { get; set; }

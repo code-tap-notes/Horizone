@@ -11,14 +11,15 @@ using Horizone.Models;
 
 namespace Horizone.Areas.BackOffice.Controllers
 {
-    [Authorize(Roles = "Colaborator,Admin")]
     public class ActivitiesController : BaseController
     {
-       
+      
+
         // GET: BackOffice/Activities
         public ActionResult Index()
         {
-            return View(db.Activitys.OrderByDescending(x => x.DateofActivity).ToList());
+            var activitys = db.Activitys.Include("Language");
+            return View(activitys.ToList());
         }
 
         // GET: BackOffice/Activities/Details/5
@@ -39,6 +40,8 @@ namespace Horizone.Areas.BackOffice.Controllers
         // GET: BackOffice/Activities/Create
         public ActionResult Create()
         {
+            ViewBag.LanguageId = new SelectList(db.Languages, "Id", "Name");
+           
             return View();
         }
 
@@ -47,7 +50,7 @@ namespace Horizone.Areas.BackOffice.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,DateofActivity,Place,NameActivity,Description,UlrActivity")] Activity activity)
+        public ActionResult Create([Bind(Include = "Id,DateofActivity,Place,NameActivity,Description,UlrActivity,Picture,LanguageId")] Activity activity)
         {
             if (ModelState.IsValid)
             {
@@ -56,6 +59,7 @@ namespace Horizone.Areas.BackOffice.Controllers
                 return RedirectToAction("Index");
             }
 
+            ViewBag.LanguageId = new SelectList(db.Languages, "Id", "Name", activity.LanguageId);
             return View(activity);
         }
 
@@ -71,6 +75,7 @@ namespace Horizone.Areas.BackOffice.Controllers
             {
                 return HttpNotFound();
             }
+            ViewBag.LanguageId = new SelectList(db.Languages, "Id", "Name", activity.LanguageId);
             return View(activity);
         }
 
@@ -79,7 +84,7 @@ namespace Horizone.Areas.BackOffice.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,DateofActivity,Place,NameActivity,Description,UlrActivity")] Activity activity)
+        public ActionResult Edit([Bind(Include = "Id,DateofActivity,Place,NameActivity,Description,UlrActivity,Picture,LanguageId")] Activity activity)
         {
             if (ModelState.IsValid)
             {
@@ -87,6 +92,7 @@ namespace Horizone.Areas.BackOffice.Controllers
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
+            ViewBag.LanguageId = new SelectList(db.Languages, "Id", "Name", activity.LanguageId);
             return View(activity);
         }
 
@@ -115,6 +121,6 @@ namespace Horizone.Areas.BackOffice.Controllers
             db.SaveChanges();
             return RedirectToAction("Index");
         }
-       
+        
     }
 }

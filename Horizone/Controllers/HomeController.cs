@@ -108,11 +108,11 @@ namespace Horizone.Controllers
 
             return View();
         }
-       
-        [ChildActionOnly]
+               
         public ActionResult Activity()
         {
-            return PartialView(db.Activitys.OrderByDescending(x => x.DateofActivity).ToList());
+            var activitys = db.Activitys.Include("Language");            
+            return View(activitys.OrderByDescending(x => x.DateofActivity).ToList());
         }
     }
 }

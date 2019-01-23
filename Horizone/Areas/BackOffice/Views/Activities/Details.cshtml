@@ -4,12 +4,20 @@
     ViewBag.Title = @StaticResource.Resources.Details;
 }
 
-<h2> @StaticResource.Resources.Details</h2>
+<h2>@StaticResource.Resources.Details</h2>
 
 <div>
-    <h4> @StaticResource.Resources.Activity</h4>
+    <h4>@StaticResource.Resources.Activity</h4>
     <hr />
     <dl class="dl-horizontal">
+        <dt>
+            @StaticResource.Resources.Language
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Language.Name)
+        </dd>
+
         <dt>
             @StaticResource.Resources.DateActivity
         </dt>
@@ -50,9 +58,17 @@
             @Html.DisplayFor(model => model.UlrActivity)
         </dd>
 
+        <dt>
+            @StaticResource.Resources.Picture
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Picture)
+        </dd>
+
     </dl>
 </div>
 <p>
-    @Html.ActionLink(@StaticResource.Resources.Edit, "Edit", new { id = Model.Id }, new { @class = "btn btn-info" })
-    @Html.ActionLink(@StaticResource.Resources.Return, "Index", null, new { @class = "btn btn-primary" })
+    @Html.ActionLink(StaticResource.Resources.Edit, "Edit", new { id = Model.Id }, new { @class = "btn btn-info" }) |
+    @Html.ActionLink(StaticResource.Resources.Return, "Index", null, new { @class = "btn btn-primary" })
 </p>
