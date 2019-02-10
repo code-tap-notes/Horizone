@@ -225,8 +225,8 @@
   <data name="AskDelete" xml:space="preserve">
     <value>Êtes-vous sûr de vouloir supprimer ceci?</value>
   </data>
-  <data name="Colaborator" xml:space="preserve">
-    <value>Colaborateur</value>
+  <data name="Collaborator" xml:space="preserve">
+    <value>Collaborateur</value>
   </data>
   <data name="Comment" xml:space="preserve">
     <value>Commentaire</value>
@@ -291,7 +291,7 @@
   <data name="Help" xml:space="preserve">
     <value>Aide</value>
   </data>
-  <data name="TochPhase" xml:space="preserve">
+  <data name="TochPhrase" xml:space="preserve">
     <value>TochPhrase</value>
   </data>
   <data name="TochStory" xml:space="preserve">
@@ -364,7 +364,7 @@
     <value>Dépôt</value>
   </data>
   <data name="Script" xml:space="preserve">
-    <value>Scripte</value>
+    <value>Écriture</value>
   </data>
   <data name="Shelfmark" xml:space="preserve">
     <value>Cote bibliothèque</value>
@@ -413,5 +413,287 @@
   </data>
   <data name="SendEmail" xml:space="preserve">
     <value>Envoyer un email</value>
+  </data>
+  <data name="SizeHeight" xml:space="preserve">
+    <value>Taille Hauteur</value>
+  </data>
+  <data name="MaxLength2000" xml:space="preserve">
+    <value>1-2000 Characters</value>
+  </data>
+  <data name="MaxLength500" xml:space="preserve">
+    <value>1-500 caractères</value>
+  </data>
+  <data name="Summary" xml:space="preserve">
+    <value>Résumé</value>
+  </data>
+  <data name="Case" xml:space="preserve">
+    <value>Cas</value>
+  </data>
+  <data name="DerivedFrom" xml:space="preserve">
+    <value>Dérivé de</value>
+  </data>
+  <data name="EquivalentInOther" xml:space="preserve">
+    <value>Équivalent dans une autre langue</value>
+  </data>
+  <data name="EquivalentInTA" xml:space="preserve">
+    <value>Équivalent en TA</value>
+  </data>
+  <data name="Gender" xml:space="preserve">
+    <value>Gender</value>
+  </data>
+  <data name="InternalRootVowel" xml:space="preserve">
+    <value>Voyelle de racine interne</value>
+  </data>
+  <data name="Number" xml:space="preserve">
+    <value>Nombre</value>
+  </data>
+  <data name="Paradigm" xml:space="preserve">
+    <value>Paradigme</value>
+  </data>
+  <data name="Phrase" xml:space="preserve">
+    <value>Phrase</value>
+  </data>
+  <data name="RelatedLexemes" xml:space="preserve">
+    <value>Lexèmes connexes</value>
+  </data>
+  <data name="RootCharacter" xml:space="preserve">
+    <value>Caractère racine</value>
+  </data>
+  <data name="Stem" xml:space="preserve">
+    <value>Radical</value>
+  </data>
+  <data name="StemClass" xml:space="preserve">
+    <value>Class de radical</value>
+  </data>
+  <data name="Voice" xml:space="preserve">
+    <value>Voix</value>
+  </data>
+  <data name="WordClass" xml:space="preserve">
+    <value>Classe de mots</value>
+  </data>
+  <data name="Words" xml:space="preserve">
+    <value>Mots</value>
+  </data>
+  <data name="WordSubClass" xml:space="preserve">
+    <value>Sous-classe de mots</value>
+  </data>
+  <data name="Ablative" xml:space="preserve">
+    <value>Ablative</value>
+  </data>
+  <data name="Allative" xml:space="preserve">
+    <value>Allatif</value>
+  </data>
+  <data name="Causative" xml:space="preserve">
+    <value>Causative</value>
+  </data>
+  <data name="Comitative" xml:space="preserve">
+    <value>Comitative</value>
+  </data>
+  <data name="Conjugation" xml:space="preserve">
+    <value>Conjugaison</value>
+  </data>
+  <data name="Genitive" xml:space="preserve">
+    <value>Génitive</value>
+  </data>
+  <data name="Instrumental" xml:space="preserve">
+    <value>Instrumental</value>
+  </data>
+  <data name="Locative" xml:space="preserve">
+    <value>Locative</value>
+  </data>
+  <data name="Nominate" xml:space="preserve">
+    <value>Nominate</value>
+  </data>
+  <data name="Oblique" xml:space="preserve">
+    <value>Oblique</value>
+  </data>
+  <data name="Perlative" xml:space="preserve">
+    <value>Perlative</value>
+  </data>
+  <data name="PhilologicalCommentary" xml:space="preserve">
+    <value>Commentaire philologique</value>
+  </data>
+  <data name="ScriptAdd" xml:space="preserve">
+    <value>Écriture Détaille</value>
+  </data>
+  <data name="Singular" xml:space="preserve">
+    <value>Singulière</value>
+  </data>
+  <data name="Transcription" xml:space="preserve">
+    <value>Transcription</value>
+  </data>
+  <data name="Transliteration" xml:space="preserve">
+    <value>Translitération</value>
+  </data>
+  <data name="Vocative" xml:space="preserve">
+    <value>Vocative</value>
+  </data>
+  <data name="Visible" xml:space="preserve">
+    <value>Visible</value>
+  </data>
+  <data name="MaxLength10000" xml:space="preserve">
+    <value>1-1500 caractères</value>
+  </data>
+  <data name="Address" xml:space="preserve">
+    <value>Address</value>
+  </data>
+  <data name="PublishedBy" xml:space="preserve">
+    <value>Publié par</value>
+  </data>
+  <data name="Code" xml:space="preserve">
+    <value>Code</value>
+  </data>
+  <data name="Collection" xml:space="preserve">
+    <value>Fonds</value>
+  </data>
+  <data name="ConfirmError" xml:space="preserve">
+    <value>Le nouveau mot de passe et le mot de passe de confirmation ne correspondent pas.</value>
+  </data>
+  <data name="ConfirmPassword" xml:space="preserve">
+    <value>Confirmez le mot de passe</value>
+  </data>
+  <data name="CurrentPassword" xml:space="preserve">
+    <value>Mot de passe actuel</value>
+  </data>
+  <data name="ExpeditionCode" xml:space="preserve">
+    <value>Code d'expédition</value>
+  </data>
+  <data name="Form" xml:space="preserve">
+    <value>La forme</value>
+  </data>
+  <data name="LanguageAdd" xml:space="preserve">
+    <value>Détails d'état de langue</value>
+  </data>
+  <data name="LanguageStage" xml:space="preserve">
+    <value>État de langue</value>
+  </data>
+  <data name="LeafNumber" xml:space="preserve">
+    <value>Numéro de feuilles</value>
+  </data>
+  <data name="MainFindSpot" xml:space="preserve">
+    <value>Lieu de trouvaille principal</value>
+  </data>
+  <data name="Material" xml:space="preserve">
+    <value>Support</value>
+  </data>
+  <data name="MetricForm" xml:space="preserve">
+    <value>Forme métrique</value>
+  </data>
+  <data name="NegativeError" xml:space="preserve">
+    <value>Le Nombre de lignes doit être positif</value>
+  </data>
+  <data name="NewPass" xml:space="preserve">
+    <value>Nouveau mot de passe</value>
+  </data>
+  <data name="NumberOfLine" xml:space="preserve">
+    <value>Nombre de lignes</value>
+  </data>
+  <data name="OnlyLetters" xml:space="preserve">
+    <value>Le champ {0} ne doit contenir que des lettres</value>
+  </data>
+  <data name="OnlyNumbers" xml:space="preserve">
+    <value>Le champ {0} ne doit contenir que des chiffres</value>
+  </data>
+  <data name="Parallel" xml:space="preserve">
+    <value>parallèles</value>
+  </data>
+  <data name="Passage" xml:space="preserve">
+    <value>Passage</value>
+  </data>
+  <data name="SpecificFindSpot" xml:space="preserve">
+    <value>Lieu spécifique de trouvaille</value>
+  </data>
+  <data name="TextGenre" xml:space="preserve">
+    <value>Genre de texte</value>
+  </data>
+  <data name="TextSubgenre" xml:space="preserve">
+    <value>Sous-genre du texte</value>
+  </data>
+  <data name="Tune" xml:space="preserve">
+    <value>Mélodie</value>
+  </data>
+  <data name="Views" xml:space="preserve">
+    <value>Des vues</value>
+  </data>
+  <data name="AlignmentType" xml:space="preserve">
+    <value>Type d’alignement</value>
+  </data>
+  <data name="AvCharPerLigne" xml:space="preserve">
+    <value>Nombre akṣara par ligne</value>
+  </data>
+  <data name="Completeness" xml:space="preserve">
+    <value>Complet</value>
+  </data>
+  <data name="DistanceStringholeLeft" xml:space="preserve">
+    <value>Distance du trou d’enfilage marge gauche</value>
+  </data>
+  <data name="DistanceStringholeRight" xml:space="preserve">
+    <value>Distance du trou d’enfilage marge droite</value>
+  </data>
+  <data name="Format" xml:space="preserve">
+    <value>Format</value>
+  </data>
+  <data name="GeneralState" xml:space="preserve">
+    <value>Etat général</value>
+  </data>
+  <data name="InterruptedLine" xml:space="preserve">
+    <value>Lignes interrompues</value>
+  </data>
+  <data name="Joint" xml:space="preserve">
+    <value>Joint</value>
+  </data>
+  <data name="LayoutManuscript" xml:space="preserve">
+    <value>Mise en page</value>
+  </data>
+  <data name="LineDistance" xml:space="preserve">
+    <value>Interligne</value>
+  </data>
+  <data name="ModuleHeight" xml:space="preserve">
+    <value>Module Hauteur</value>
+  </data>
+  <data name="ModuleWidth" xml:space="preserve">
+    <value>Module Largeur</value>
+  </data>
+  <data name="NibThickness" xml:space="preserve">
+    <value>Largeur du trait</value>
+  </data>
+  <data name="OtherSiglum" xml:space="preserve">
+    <value>Autres Cote</value>
+  </data>
+  <data name="PaperColor" xml:space="preserve">
+    <value>Papier couleur</value>
+  </data>
+  <data name="PaperThickness" xml:space="preserve">
+    <value>Epaisseur du papier</value>
+  </data>
+  <data name="Remark" xml:space="preserve">
+    <value>Remarques supplémentaires</value>
+  </data>
+  <data name="Ruling" xml:space="preserve">
+    <value>Réglure</value>
+  </data>
+  <data name="RulingColor" xml:space="preserve">
+    <value>Couleur de la réglure</value>
+  </data>
+  <data name="RulingDetail" xml:space="preserve">
+    <value>Réglure détail</value>
+  </data>
+  <data name="ScriptManuscript" xml:space="preserve">
+    <value>Ecriture manuscrit</value>
+  </data>
+  <data name="Siglum" xml:space="preserve">
+    <value>Cote</value>
+  </data>
+  <data name="SizeWidth" xml:space="preserve">
+    <value>Taille Largeur</value>
+  </data>
+  <data name="StringholeHeight" xml:space="preserve">
+    <value>Hauteur de la réserve du trou d’enfilage</value>
+  </data>
+  <data name="StringholeWidth" xml:space="preserve">
+    <value>Largeur de la réserve du trou d’enfilage</value>
+  </data>
+  <data name="WritingTool" xml:space="preserve">
+    <value>Outil d’écriture</value>
   </data>
 </root>

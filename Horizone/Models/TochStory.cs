@@ -14,32 +14,28 @@ namespace Horizone.Models
 
         [Display(Name = "Name", ResourceType = typeof(StaticResource.Resources))]
         [Required(ErrorMessageResourceName = "FieldRequired", ErrorMessageResourceType = typeof(StaticResource.Resources))]
-        [StringLength(40, MinimumLength = 1, ErrorMessage = "Le champ doit avoir de 1 a 40 caracteres / At least 1 Character")]
+        [StringLength(500, MinimumLength = 1, ErrorMessageResourceName = "MaxLength500", ErrorMessageResourceType = typeof(StaticResource.Resources))]
         public string Name { get; set; }
 
         [AllowHtml]
         [Required(ErrorMessageResourceName = "FieldRequired", ErrorMessageResourceType = typeof(StaticResource.Resources))]
         [Display(Name = "Content")]
-        [StringLength(40, MinimumLength = 1, ErrorMessage = "Le champ doit avoir de 1 a 40 caracteres / At least 1 Character")]
-        public string ContentEnglish { get; set; }
-
-        [AllowHtml]
-        [Required(ErrorMessageResourceName = "FieldRequired", ErrorMessageResourceType = typeof(StaticResource.Resources))]
-        [Display(Name = "Contenu")]
-        [StringLength(40, MinimumLength = 1, ErrorMessage = "Le champ doit avoir de 1 a 40 caracteres / At least 1 Character")]
-        public string ContentFrancaise { get; set; }
-
-        [AllowHtml]        
-        [Display(Name = "内容")]
-        [StringLength(40, MinimumLength = 1, ErrorMessage = "Le champ doit avoir de 1 a 40 caracteres / At least 1 Character")]
-        public string ContentChinese { get; set; }
-
-        [AllowHtml]       
-        [Display(Name = "Nội dung")]
-        [StringLength(40, MinimumLength = 1, ErrorMessage = "Le champ doit avoir de 1 a 40 caracteres / At least 1 Character")]
-        public string ContentVietnam { get; set; }
-
+        [StringLength(500, MinimumLength = 1, ErrorMessageResourceName = "MaxLength500", ErrorMessageResourceType = typeof(StaticResource.Resources))]
+        public string Content { get; set; }
+        
         [AllowHtml]
         public string Description { get; set; }
+
+        [Display(Name = "Visible", ResourceType = typeof(StaticResource.Resources))]
+        public Boolean Visible { get; set; }
+
+        [Display(Name = "Bibliography", ResourceType = typeof(StaticResource.Resources))]
+        public ICollection<Bibliography> Bibliographys { get; set; }
+
+        [Display(Name = "Language", ResourceType = typeof(StaticResource.Resources))]
+        public int LanguageId { get; set; }
+
+        [ForeignKey("LanguageId")]
+        public Language Language { get; set; }
     }
 }

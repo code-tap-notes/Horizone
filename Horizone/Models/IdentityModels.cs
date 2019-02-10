@@ -39,26 +39,32 @@ namespace Horizone.Models
             modelBuilder.Entity<IdentityUserLogin>().ToTable("UserLogins");
         }
         public DbSet<Client> Clients { get; set; }
-        public DbSet<Colaborateur> Colaborateurs { get; set; }
-        public DbSet<ObjectManuscript> ObjectManuscripts { get; set; }
+        public DbSet<Collaborator> Collaborators { get; set; }
+        public DbSet<Collaboration> Collaborations { get; set; }
+        public DbSet<MaterialManuscript> MaterialManuscripts { get; set; }
         public DbSet<ContactMessage> ContactMessages { get; set; }
         public DbSet<Comment> Comments { get; set; }
         public DbSet<DictionaryTocharian> DictionaryTocharians { get; set; }
         public DbSet<ImageDictionary> ImageDictionarys { get; set; }
         public DbSet<ImageManuscript> ImageManuscripts { get; set; }
         public DbSet<ImageNews> ImageNews { get; set; }
+        public DbSet<ImageCollaboration> ImageCollaborations { get; set; }
         public DbSet<Manuscript> Manuscripts { get; set; }
         public DbSet<News> Newss { get; set; }
-        public DbSet<Provenience> Proveniences { get; set; }
+        public DbSet<OverallDescription> OverallDescriptions { get; set; }
         public DbSet<TextContent> TextContents { get; set; }
         public DbSet<TochPhrase> TochPhrases { get; set; }
         public DbSet<TochStory> TochStorys { get; set; }
         public DbSet<Topic> Topics { get; set; }
-        public DbSet<Transcription> Transcriptions { get; set; }
+        public DbSet<ScriptManuscript> ScriptManuscripts { get; set; }
+        public DbSet<LayoutManuscript> LayoutManuscripts { get; set; }
+        public DbSet<TextLanguage> TextLanguages { get; set; }
         public DbSet<Bibliography> Bibliographys { get; set; }
-        public DbSet<MainContent> MainContents { get; set; }
         public DbSet<Menu> Menus { get; set; }
         public DbSet<Language> Languages { get; set; }
         public DbSet<Activity> Activitys { get; set; }
+        public DbSet<Publication> Publications { get; set; }
+        public DbSet<AboutProject> AboutProjets { get; set; }
+        public DbSet<InThePresse> InthePresses { get; set; }
     }
 }

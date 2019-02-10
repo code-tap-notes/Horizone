@@ -28,14 +28,14 @@ namespace Horizone.Models
     public class SetPasswordViewModel
     {
         [Required]
-        [StringLength(100, ErrorMessage = "Le {0} doit compter au moins {2} caractères.", MinimumLength = 6)]
+        [StringLength(50, MinimumLength = 6, ErrorMessageResourceName = "MaxLength50", ErrorMessageResourceType = typeof(StaticResource.Resources))]
         [DataType(DataType.Password)]
-        [Display(Name = "Nouveau mot de passe")]
+        [Display(Name = "NewPass", ResourceType = typeof(StaticResource.Resources))]
         public string NewPassword { get; set; }
 
         [DataType(DataType.Password)]
-        [Display(Name = "Confirmer le nouveau mot de passe")]
-        [Compare("NewPassword", ErrorMessage = "Le nouveau mot de passe et le mot de passe de confirmation ne correspondent pas.")]
+        [Display(Name = "ConfirmPassword", ResourceType = typeof(StaticResource.Resources))]
+        [Compare("NewPassword", ErrorMessageResourceName = "ConfirmError", ErrorMessageResourceType = typeof(StaticResource.Resources))]
         public string ConfirmPassword { get; set; }
     }
 
@@ -43,18 +43,18 @@ namespace Horizone.Models
     {
         [Required]
         [DataType(DataType.Password)]
-        [Display(Name = "Mot de passe actuel")]
+        [Display(Name = "CurrentPassword", ResourceType = typeof(StaticResource.Resources))]
         public string OldPassword { get; set; }
 
         [Required]
-        [StringLength(100, ErrorMessage = "Le {0} doit compter au moins {2} caractères.", MinimumLength = 6)]
+        [StringLength(50, MinimumLength = 1, ErrorMessageResourceName = "MaxLength50", ErrorMessageResourceType = typeof(StaticResource.Resources))]
         [DataType(DataType.Password)]
-        [Display(Name = "Nouveau mot de passe")]
+        [Display(Name = "NewPass", ResourceType = typeof(StaticResource.Resources))]
         public string NewPassword { get; set; }
 
         [DataType(DataType.Password)]
-        [Display(Name = "Confirmer le nouveau mot de passe")]
-        [Compare("NewPassword", ErrorMessage = "Le nouveau mot de passe et le mot de passe de confirmation ne correspondent pas.")]
+        [Display(Name = "ConfirmPassword", ResourceType = typeof(StaticResource.Resources))]
+        [Compare("NewPassword", ErrorMessageResourceName = "ConfirmError", ErrorMessageResourceType = typeof(StaticResource.Resources))]
         public string ConfirmPassword { get; set; }
     }
 
@@ -62,19 +62,19 @@ namespace Horizone.Models
     {
         [Required]
         [Phone]
-        [Display(Name = "Numéro de téléphone")]
+        [Display(Name = "PhoneNumber", ResourceType = typeof(StaticResource.Resources))]
         public string Number { get; set; }
     }
 
     public class VerifyPhoneNumberViewModel
     {
         [Required]
-        [Display(Name = "Code")]
+        [Display(Name = "Code", ResourceType = typeof(StaticResource.Resources))]
         public string Code { get; set; }
 
         [Required]
         [Phone]
-        [Display(Name = "Numéro de téléphone")]
+        [Display(Name = "PhoneNumber", ResourceType = typeof(StaticResource.Resources))]
         public string PhoneNumber { get; set; }
     }
 

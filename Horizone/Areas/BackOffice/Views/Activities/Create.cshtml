@@ -1,15 +1,12 @@
 ﻿@model Horizone.Models.Activity
-
 @{
     ViewBag.Title = @StaticResource.Resources.Add;
 }
-
 <h2> @StaticResource.Resources.Add</h2>
 
 @using (Html.BeginForm()) 
 {
     @Html.AntiForgeryToken()
-    
 <div class="form-horizontal">
     <h4>Activity</h4>
     <hr />

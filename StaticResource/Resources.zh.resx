@@ -144,7 +144,7 @@
   <data name="Chinese" xml:space="preserve">
     <value>中文</value>
   </data>
-  <data name="Colaborator" xml:space="preserve">
+  <data name="Collaborator" xml:space="preserve">
     <value>合作者</value>
   </data>
   <data name="Comment" xml:space="preserve">
@@ -288,8 +288,8 @@
   <data name="TitleArticle" xml:space="preserve">
     <value>标题文章</value>
   </data>
-  <data name="TochPhase" xml:space="preserve">
-    <value>Toch阶段</value>
+  <data name="TochPhrase" xml:space="preserve">
+    <value>Toch短语</value>
   </data>
   <data name="TochStory" xml:space="preserve">
     <value>Toch故事</value>
@@ -364,7 +364,7 @@
     <value>知识库</value>
   </data>
   <data name="Script" xml:space="preserve">
-    <value>脚本</value>
+    <value>写作</value>
   </data>
   <data name="Shelfmark" xml:space="preserve">
     <value>Shelfmark</value>
@@ -413,5 +413,287 @@
   </data>
   <data name="SendEmail" xml:space="preserve">
     <value>发送电子邮件</value>
+  </data>
+  <data name="MaxLength2000" xml:space="preserve">
+    <value>1-2000个字符</value>
+  </data>
+  <data name="MaxLength500" xml:space="preserve">
+    <value>1-500个字符</value>
+  </data>
+  <data name="Summary" xml:space="preserve">
+    <value>摘要</value>
+  </data>
+  <data name="Case" xml:space="preserve">
+    <value>案件</value>
+  </data>
+  <data name="DerivedFrom" xml:space="preserve">
+    <value>源自</value>
+  </data>
+  <data name="EquivalentInOther" xml:space="preserve">
+    <value>相当于其他语言</value>
+  </data>
+  <data name="EquivalentInTA" xml:space="preserve">
+    <value>相当于TA</value>
+  </data>
+  <data name="Gender" xml:space="preserve">
+    <value>性别</value>
+  </data>
+  <data name="InternalRootVowel" xml:space="preserve">
+    <value>内根元音</value>
+  </data>
+  <data name="Number" xml:space="preserve">
+    <value>数</value>
+  </data>
+  <data name="Paradigm" xml:space="preserve">
+    <value>范例</value>
+  </data>
+  <data name="Phrase" xml:space="preserve">
+    <value>短语</value>
+  </data>
+  <data name="RelatedLexemes" xml:space="preserve">
+    <value>相关的词汇</value>
+  </data>
+  <data name="RootCharacter" xml:space="preserve">
+    <value>根角色</value>
+  </data>
+  <data name="Stem" xml:space="preserve">
+    <value>干</value>
+  </data>
+  <data name="StemClass" xml:space="preserve">
+    <value>干类</value>
+  </data>
+  <data name="Voice" xml:space="preserve">
+    <value>语音</value>
+  </data>
+  <data name="WordClass" xml:space="preserve">
+    <value>词类</value>
+  </data>
+  <data name="Words" xml:space="preserve">
+    <value>话</value>
+  </data>
+  <data name="WordSubClass" xml:space="preserve">
+    <value>Word Subclasse</value>
+  </data>
+  <data name="Ablative" xml:space="preserve">
+    <value>夺格</value>
+  </data>
+  <data name="Allative" xml:space="preserve">
+    <value>Allative</value>
+  </data>
+  <data name="Causative" xml:space="preserve">
+    <value>使役</value>
+  </data>
+  <data name="Comitative" xml:space="preserve">
+    <value>Comitative</value>
+  </data>
+  <data name="Conjugation" xml:space="preserve">
+    <value>共轭</value>
+  </data>
+  <data name="Genitive" xml:space="preserve">
+    <value>所有格</value>
+  </data>
+  <data name="Instrumental" xml:space="preserve">
+    <value>仪器的</value>
+  </data>
+  <data name="Locative" xml:space="preserve">
+    <value>方位</value>
+  </data>
+  <data name="Nominate" xml:space="preserve">
+    <value>提名</value>
+  </data>
+  <data name="Oblique" xml:space="preserve">
+    <value>斜</value>
+  </data>
+  <data name="Perlative" xml:space="preserve">
+    <value>Perlative</value>
+  </data>
+  <data name="PhilologicalCommentary" xml:space="preserve">
+    <value>文献评论</value>
+  </data>
+  <data name="ScriptAdd" xml:space="preserve">
+    <value>写作细节</value>
+  </data>
+  <data name="Singular" xml:space="preserve">
+    <value>单数</value>
+  </data>
+  <data name="Transcription" xml:space="preserve">
+    <value>转录</value>
+  </data>
+  <data name="Transliteration" xml:space="preserve">
+    <value>音译</value>
+  </data>
+  <data name="Vocative" xml:space="preserve">
+    <value>呼</value>
+  </data>
+  <data name="Visible" xml:space="preserve">
+    <value>可见</value>
+  </data>
+  <data name="MaxLength10000" xml:space="preserve">
+    <value>1-10000个字符</value>
+  </data>
+  <data name="Address" xml:space="preserve">
+    <value>地址</value>
+  </data>
+  <data name="PublishedBy" xml:space="preserve">
+    <value>由...出版</value>
+  </data>
+  <data name="Code" xml:space="preserve">
+    <value>代码</value>
+  </data>
+  <data name="Collection" xml:space="preserve">
+    <value>保藏中心</value>
+  </data>
+  <data name="ConfirmError" xml:space="preserve">
+    <value>新密码和确认密码不匹配</value>
+  </data>
+  <data name="ConfirmPassword" xml:space="preserve">
+    <value>确认密码</value>
+  </data>
+  <data name="CurrentPassword" xml:space="preserve">
+    <value>当前密码</value>
+  </data>
+  <data name="ExpeditionCode" xml:space="preserve">
+    <value>探险守则</value>
+  </data>
+  <data name="Form" xml:space="preserve">
+    <value>形成</value>
+  </data>
+  <data name="LanguageAdd" xml:space="preserve">
+    <value>语言阶段详情</value>
+  </data>
+  <data name="LanguageStage" xml:space="preserve">
+    <value>语言状态</value>
+  </data>
+  <data name="LeafNumber" xml:space="preserve">
+    <value>叶数</value>
+  </data>
+  <data name="MainFindSpot" xml:space="preserve">
+    <value>主要查找点</value>
+  </data>
+  <data name="Material" xml:space="preserve">
+    <value>材料</value>
+  </data>
+  <data name="MetricForm" xml:space="preserve">
+    <value>公制表格</value>
+  </data>
+  <data name="NegativeError" xml:space="preserve">
+    <value>领域必须是积极的</value>
+  </data>
+  <data name="NewPass" xml:space="preserve">
+    <value>新密码</value>
+  </data>
+  <data name="NumberOfLine" xml:space="preserve">
+    <value>行数</value>
+  </data>
+  <data name="OnlyLetters" xml:space="preserve">
+    <value>字段{0}应该只包含字母</value>
+  </data>
+  <data name="OnlyNumbers" xml:space="preserve">
+    <value>字段{0}应仅包含数字</value>
+  </data>
+  <data name="Parallel" xml:space="preserve">
+    <value>相似之处</value>
+  </data>
+  <data name="Passage" xml:space="preserve">
+    <value>通道</value>
+  </data>
+  <data name="SpecificFindSpot" xml:space="preserve">
+    <value>具体查找点</value>
+  </data>
+  <data name="TextGenre" xml:space="preserve">
+    <value>文本类型</value>
+  </data>
+  <data name="TextSubgenre" xml:space="preserve">
+    <value>文字子类</value>
+  </data>
+  <data name="Tune" xml:space="preserve">
+    <value>旋律</value>
+  </data>
+  <data name="Views" xml:space="preserve">
+    <value>查看</value>
+  </data>
+  <data name="AlignmentType" xml:space="preserve">
+    <value>对齐类型</value>
+  </data>
+  <data name="AvCharPerLigne" xml:space="preserve">
+    <value>每行数akṣara</value>
+  </data>
+  <data name="Completeness" xml:space="preserve">
+    <value>完整性</value>
+  </data>
+  <data name="DistanceStringholeLeft" xml:space="preserve">
+    <value>距离螺纹孔左边距的距离</value>
+  </data>
+  <data name="DistanceStringholeRight" xml:space="preserve">
+    <value>距离右侧投币口的距离</value>
+  </data>
+  <data name="Format" xml:space="preserve">
+    <value>格式</value>
+  </data>
+  <data name="GeneralState" xml:space="preserve">
+    <value>一般国家</value>
+  </data>
+  <data name="InterruptedLine" xml:space="preserve">
+    <value>中断线</value>
+  </data>
+  <data name="Joint" xml:space="preserve">
+    <value>联合</value>
+  </data>
+  <data name="LayoutManuscript" xml:space="preserve">
+    <value>布局手稿</value>
+  </data>
+  <data name="LineDistance" xml:space="preserve">
+    <value>线距</value>
+  </data>
+  <data name="ModuleHeight" xml:space="preserve">
+    <value>模块高度</value>
+  </data>
+  <data name="ModuleWidth" xml:space="preserve">
+    <value>模块宽度</value>
+  </data>
+  <data name="NibThickness" xml:space="preserve">
+    <value>线宽</value>
+  </data>
+  <data name="OtherSiglum" xml:space="preserve">
+    <value>其他分类标记</value>
+  </data>
+  <data name="PaperColor" xml:space="preserve">
+    <value>彩色纸</value>
+  </data>
+  <data name="PaperThickness" xml:space="preserve">
+    <value>纸张厚度</value>
+  </data>
+  <data name="Remark" xml:space="preserve">
+    <value>备注</value>
+  </data>
+  <data name="Ruling" xml:space="preserve">
+    <value>格的纸</value>
+  </data>
+  <data name="RulingColor" xml:space="preserve">
+    <value>裁决的颜色</value>
+  </data>
+  <data name="RulingDetail" xml:space="preserve">
+    <value>细节锁</value>
+  </data>
+  <data name="ScriptManuscript" xml:space="preserve">
+    <value>脚本手稿</value>
+  </data>
+  <data name="Siglum" xml:space="preserve">
+    <value>分类标记</value>
+  </data>
+  <data name="SizeHeight" xml:space="preserve">
+    <value>尺寸高度</value>
+  </data>
+  <data name="SizeWidth" xml:space="preserve">
+    <value>宽度尺寸</value>
+  </data>
+  <data name="StringholeHeight" xml:space="preserve">
+    <value>螺纹孔储备的高度</value>
+  </data>
+  <data name="StringholeWidth" xml:space="preserve">
+    <value>螺纹孔的供应宽度</value>
+  </data>
+  <data name="WritingTool" xml:space="preserve">
+    <value>写作工具</value>
   </data>
 </root>

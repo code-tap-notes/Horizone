@@ -40,5 +40,7 @@ namespace Horizone.Models
         [ForeignKey("LanguageId")]
         public Language Language { get; set; }
 
+
+
     }
 }

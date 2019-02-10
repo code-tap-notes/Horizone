@@ -18,28 +18,53 @@ namespace Horizone.Controllers
         {
             return View();
         }
-        public ActionResult Maincontent()
-        {
-            
-            return View(db.MainContents.ToList());
-        }
-
+      
         public ActionResult About()
-        {            
-            return View(db.MainContents.ToList());           
+        {                       
+            var aboutProjets = db.AboutProjets.Include(a => a.Language);
+            return View(aboutProjets.ToList());
+        }
+        [ChildActionOnly]
+        public ActionResult Address()
+        {
+            var aboutProjets = db.AboutProjets.Include(a => a.Language);
+            return PartialView(aboutProjets.ToList());
+        }
+        [ChildActionOnly]
+        public ActionResult Presente()
+        {
+            var currentCulture = Session[CommonConstants.CurrentCulture];
+            var symbolLanguage = currentCulture.ToString();
+            var aboutProjets = db.AboutProjets;
+
+            foreach (var item in db.AboutProjets.Include("Language"))
+            {
+                if (item.Language.Symbol == symbolLanguage)
+                    aboutProjets.Add(item);
+                        }
+            
+           return PartialView(aboutProjets.Include(a => a.Language).ToList());
         }
         public ActionResult AboutUs()
-        {            
-            return View();
+        {
+            var collaborations = db.Collaborations;
+            foreach (var item in collaborations)
+                if (item.Team) collaborations.Add(item);
+
+            return View(collaborations.ToList());
+            
         }
         public ActionResult Collaboration()
         {
-          
-            return View();
+            var collaborations = db.Collaborations;
+            foreach (var item in db.Collaborations)
+                if (!item.Team) collaborations.Add(item);
+
+            return View(collaborations.ToList());
         }
         // GET: FrontContact/Create
         public ActionResult Contact()
-        {
+        {            
             return View();
         }
         [HttpPost]
@@ -72,6 +97,7 @@ namespace Horizone.Controllers
             //return PartialView(db.Menus.ToList());
             return PartialView();
         }
+
         public ActionResult TochHistoire()
         {
                     
@@ -84,14 +110,14 @@ namespace Horizone.Controllers
         }
         public ActionResult Vocabulaire()
         {
-            var transcriptions = db.Transcriptions;
-            return View(transcriptions.ToList());
+            var dictionaryTocharians = db.DictionaryTocharians;
+            return View(dictionaryTocharians.ToList());
            
         }
         public ActionResult Nouvelles()
         {
 
-            var newss = db.Newss.Include(n => n.Colaborateur).Include(n => n.Topic);
+            var newss = db.Newss.Include(n => n.Collaborateur).Include(n => n.Topic);
             return View(newss.ToList());
         }
         // GET: Manuscripts
@@ -103,9 +129,7 @@ namespace Horizone.Controllers
                        
         }
         public ActionResult Aide()
-        {
-            ViewBag.Message = "Comment utiliser le site web";
-
+        {           
             return View();
         }
                
@@ -113,6 +137,12 @@ namespace Horizone.Controllers
         {
             var activitys = db.Activitys.Include("Language");            
             return View(activitys.OrderByDescending(x => x.DateofActivity).ToList());
+        }
+        [ChildActionOnly]
+        public ActionResult PageActivity()
+        {
+            var activitys = db.Activitys.Include("Language");
+            return PartialView(activitys.OrderByDescending(x => x.DateofActivity).ToList());
         }
     }
 }

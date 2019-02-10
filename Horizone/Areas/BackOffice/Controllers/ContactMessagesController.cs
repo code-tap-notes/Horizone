@@ -11,7 +11,7 @@ using Horizone.Models;
 
 namespace Horizone.Areas.BackOffice.Controllers
 {
-    [Authorize(Roles = "Colaborator,Admin")]
+    [Authorize(Roles = "Collaborator,Admin")]
     public class ContactMessagesController : BaseController
     {
         

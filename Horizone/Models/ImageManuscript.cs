@@ -23,7 +23,7 @@ namespace Horizone.Models
         [Required(ErrorMessageResourceName = "FieldRequired", ErrorMessageResourceType = typeof(StaticResource.Resources))]
         public byte[] Content { get; set; }
 
-        [Display(Name = "Text in Manuscript")]
+        [Display(Name = "Manuscript",ResourceType = typeof(StaticResource.Resources))]
         [Required(ErrorMessageResourceName = "FieldRequired", ErrorMessageResourceType = typeof(StaticResource.Resources))]
         public int ManuscriptId { get; set; }
 

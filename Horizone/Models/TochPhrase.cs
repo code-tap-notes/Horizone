@@ -12,47 +12,45 @@ namespace Horizone.Models
     {
         public int Id { get; set; }
 
-        [Display(Name = "CodeIndex", ResourceType = typeof(StaticResource.Resources))]
-        [Required(ErrorMessageResourceName = "FieldRequired", ErrorMessageResourceType = typeof(StaticResource.Resources))]
-        [StringLength(40, MinimumLength = 1, ErrorMessage = "Le champ doit avoir de 1 a 40 caracteres / At least 1 Character")]
-        public string Index { get; set; }
-
-        [Display(Name = "Name", ResourceType = typeof(StaticResource.Resources))]
-        [Required(ErrorMessageResourceName = "FieldRequired", ErrorMessageResourceType = typeof(StaticResource.Resources))]
-        [StringLength(40, MinimumLength = 1, ErrorMessage = "Le champ doit avoir de 1 a 40 caracteres / At least 1 Character")]
-        public string Name { get; set; }
-
         [AllowHtml]
         [Required(ErrorMessageResourceName = "FieldRequired", ErrorMessageResourceType = typeof(StaticResource.Resources))]
-        [Display(Name = "Content", ResourceType = typeof(StaticResource.Resources))]
-        [StringLength(40, MinimumLength = 1, ErrorMessage = "Le champ doit avoir de 1 a 40 caracteres / At least 1 Character")]
-        public string Content { get; set; }
+        [Display(Name = "Phrase", ResourceType = typeof(StaticResource.Resources))]
+        [StringLength(200, MinimumLength = 1, ErrorMessageResourceName = "MaxLength200", ErrorMessageResourceType = typeof(StaticResource.Resources))]
+        public string Phrase { get; set; }
 
-        [Required(ErrorMessageResourceName = "FieldRequired", ErrorMessageResourceType = typeof(StaticResource.Resources))]
-        [Display(Name = "English")]
-        [StringLength(40, MinimumLength = 1, ErrorMessage = "Le champ doit avoir de 1 a 40 caracteres / At least 1 Character")]
+        [Display(Name = "English", ResourceType = typeof(StaticResource.Resources))]
+        [StringLength(200, MinimumLength = 1, ErrorMessageResourceName = "MaxLength200", ErrorMessageResourceType = typeof(StaticResource.Resources))]
         public string English { get; set; }
 
-
-        [Required(ErrorMessageResourceName = "FieldRequired", ErrorMessageResourceType = typeof(StaticResource.Resources))]
-        [Display(Name = "Française")]
-        [StringLength(40, MinimumLength = 1, ErrorMessage = "Le champ doit avoir de 1 a 40 caracteres / At least 1 Character")]
+        [Display(Name = "Francaise", ResourceType = typeof(StaticResource.Resources))]
+        [StringLength(200, MinimumLength = 1, ErrorMessageResourceName = "MaxLength200", ErrorMessageResourceType = typeof(StaticResource.Resources))]
         public string Francaise { get; set; }
 
-        [Display(Name = "संस्कृतम्")]
-        [StringLength(40, MinimumLength = 1, ErrorMessage = "Le champ doit avoir de 1 a 40 caracteres / At least 1 Character")]
-        public string Sanskrit { get; set; }
+        [Display(Name = "Chinese", ResourceType = typeof(StaticResource.Resources))]
+        [StringLength(200, MinimumLength = 1, ErrorMessageResourceName = "MaxLength200", ErrorMessageResourceType = typeof(StaticResource.Resources))]
+        public string Chinese { get; set; }
 
-        [Display(Name = "中文")]
-        [StringLength(40, MinimumLength = 1, ErrorMessage = "Le champ doit avoir de 1 a 40 caracteres / At least 1 Character")]
-        public string Chinois { get; set; }
+        [Display(Name = "Language", ResourceType = typeof(StaticResource.Resources))]
+        [StringLength(30, MinimumLength = 1, ErrorMessageResourceName = "MaxLength30", ErrorMessageResourceType = typeof(StaticResource.Resources))]
+        public string Language { get; set; }
 
-        [Display(Name = "Việt Nam")]
-        [StringLength(40, MinimumLength = 1, ErrorMessage = "Le champ doit avoir de 1 a 40 caracteres / At least 1 Character")]
-        public string Vietnam { get; set; }
+        [Display(Name = "DerivedFrom", ResourceType = typeof(StaticResource.Resources))]
+        [StringLength(30, MinimumLength = 1, ErrorMessageResourceName = "MaxLength30", ErrorMessageResourceType = typeof(StaticResource.Resources))]
+        public string DerivedFrom { get; set; }
+
+        [Display(Name = "RelatedLexemes", ResourceType = typeof(StaticResource.Resources))]
+        [StringLength(30, MinimumLength = 1, ErrorMessageResourceName = "MaxLength30", ErrorMessageResourceType = typeof(StaticResource.Resources))]
+        public string RelatedLexemes { get; set; }
 
         [AllowHtml]
         [Display(Name = "Description", ResourceType = typeof(StaticResource.Resources))]
         public string Description { get; set; }
+
+        [Display(Name = "Bibliography", ResourceType = typeof(StaticResource.Resources))]
+        public ICollection<Bibliography> Bibliographys { get; set; }
+
+        [Display(Name = "Visible", ResourceType = typeof(StaticResource.Resources))]
+        public Boolean Visible { get; set; }
+
     }
 }

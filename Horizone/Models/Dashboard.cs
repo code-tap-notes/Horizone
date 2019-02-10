@@ -9,11 +9,8 @@ using System.Web;
 namespace Horizone.Models
 {
     public class Dashboard
-    {
-        
+    {        
         public ICollection<DictionaryTocharian> DictionaryTocharians { get; set; }
-
-        public ICollection<Transcription> Transcriptions { get; set; }
-
+       
     }
 }
