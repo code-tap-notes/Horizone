@@ -12,62 +12,54 @@ namespace Horizone.Models
     {
         public int Id { get; set; }
 
-        [Display(Name = "Title")]
+        [Display(Name = "Title", ResourceType = typeof(StaticResource.Resources))]
         [Required(ErrorMessageResourceName = "FieldRequired", ErrorMessageResourceType = typeof(StaticResource.Resources))]
-        [StringLength(40, MinimumLength = 1, ErrorMessage = "Champ doit avoir de 1 a 40 caracteres / At least 1 Character")]
+        [StringLength(40, MinimumLength = 1, ErrorMessageResourceName = "MaxLength40", ErrorMessageResourceType = typeof(StaticResource.Resources))]
         public string Title { get; set; }
        
 
-        [Display(Name = "Résumé / Summary")]
-        [StringLength(40, MinimumLength = 1, ErrorMessage = "Le champ doit avoir de 1 a 40 caracteres / At least 1 Character")]
+        [Display(Name = "Summary", ResourceType = typeof(StaticResource.Resources))]
+        [StringLength(200, MinimumLength = 1, ErrorMessageResourceName = "MaxLength200", ErrorMessageResourceType = typeof(StaticResource.Resources))]
         public string Summary { get; set; }
 
         [DataType(DataType.DateTime)]                             
-        [Display(Name = "Date ")]        
+        [Display(Name = "DateModifier",ResourceType = typeof(StaticResource.Resources))]        
         public DateTime Date {
             get {
                 return DateTime.Now;
             }
           }
 
-
-        [Display(Name = "Contenu ")]
-        [StringLength(40, MinimumLength = 1, ErrorMessage = "Le champ doit avoir de 1 a 40 caracteres / At least 1 Character")]
-        public string ContentFrench { get; set; }
-
-        [Display(Name = "Content")]
-        [StringLength(40, MinimumLength = 1, ErrorMessage = "Le champ doit avoir de 1 a 40 caracteres / At least 1 Character")]
-        public string ContentEnglish { get; set; }
-
-
-        [Display(Name = "内容")]
-        [StringLength(40, MinimumLength = 1, ErrorMessage = "Le champ doit avoir de 1 a 40 caracteres / At least 1 Character")]
-        public string ContentChinese { get; set; }
+      
+        [Display(Name = "Content",ResourceType = typeof(StaticResource.Resources))]
+        [StringLength(10000, MinimumLength = 1, ErrorMessageResourceName = "MaxLength10000", ErrorMessageResourceType = typeof(StaticResource.Resources))]
+        public string Content{ get; set; }
        
-        [Display(Name = "Des vues / Views ")]
-        [Range(0, 1000, ErrorMessage = "Le Nombre de lignes doit être positif / Field has to be possitive")]
+        [Display(Name = "Views ", ResourceType = typeof(StaticResource.Resources))]
+        [Range(0, 1000, ErrorMessage = ">0")]
         public int View { get; set; }
 
-        [Display(Name = "Sujet / Topic")]
+        [Display(Name = "Topic", ResourceType = typeof(StaticResource.Resources))]
         public int TopicId { get; set; }
 
         [ForeignKey("TopicId")]
         public Topic Topic { get; set; }
 
-        [Display(Name = "Editeur / Editor")]
+        [Display(Name = "PublisgedBy", ResourceType = typeof(StaticResource.Resources))]
         public int ColaborateurId { get; set; }
 
         [ForeignKey("ColaborateurId")]
-        public Colaborateur Colaborateur { get; set; }
+        public Collaborator Collaborateur { get; set; }
 
         public ICollection<Comment> Comments { get; set; }
         public ICollection<ImageNews> ImageNewss { get; set; }
-        
 
         [Display(Name = "Language", ResourceType = typeof(StaticResource.Resources))]
         public int LanguageId { get; set; }
 
         [ForeignKey("LanguageId")]
         public Language Language { get; set; }
+
+      
     }
 }

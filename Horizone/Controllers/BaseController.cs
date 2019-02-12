@@ -62,13 +62,13 @@ namespace Horizone.Controllers
             }
         }
 
-        protected string GetCurrentColaboratorName()
+        protected string GetCurrentCollaboratorName()
         {
             var userId = User.Identity.GetUserId();
-            var colaborator = db.Colaborateurs.SingleOrDefault(x => x.UserId == userId);
-            if (colaborator != null)
+            var collaborator = db.Collaborators.SingleOrDefault(x => x.UserId == userId);
+            if (collaborator != null)
             {
-                return colaborator.FirstName;
+                return collaborator.FirstName;
             }
             else
             {
@@ -78,9 +78,7 @@ namespace Horizone.Controllers
 
         protected string GetCurrentUserRoles()
         {
-            var userId = User.Identity.GetUserId();
-            
-
+            var userId = User.Identity.GetUserId();           
             var client = db.Clients.SingleOrDefault(x => x.UserId == userId);
             if (client != null)
             {

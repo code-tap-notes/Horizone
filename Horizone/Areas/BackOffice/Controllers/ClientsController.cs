@@ -9,17 +9,15 @@ using System.Web.Mvc;
 
 namespace Horizone.Areas.BackOffice.Controllers
 {
-    [Authorize(Roles = "Colaborator,Admin")]
+    [Authorize(Roles = "Collaborator,Admin")]
     public class ClientsController : BaseController
     {
         // GET: BackOffice/Clients
         public ActionResult Index()
         {
             List<Client> clients = db.Clients.ToList();
-            return View(clients);            
-          
+            return View(clients);                      
         }
-
         // GET: BackOffice/Clients/Details/5
         public ActionResult Details(int? id)
         {

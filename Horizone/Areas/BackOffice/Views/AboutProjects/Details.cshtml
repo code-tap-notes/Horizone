@@ -1,0 +1,66 @@
+﻿@model Horizone.Models.AboutProject
+
+@{
+    ViewBag.Title = @StaticResource.Resources.Details;
+}
+
+<h2>@StaticResource.Resources.Details</h2>
+
+<div>
+    <h4>@StaticResource.Resources.AboutProject</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @StaticResource.Resources.Language
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Language.Symbol)
+        </dd>
+
+        <dt>
+            @StaticResource.Resources.Aim
+        </dt>
+
+        <dd>
+            @Html.Raw(Model.Aim)
+        </dd>
+
+        <dt>
+            @StaticResource.Resources.Funding
+        </dt>
+
+        <dd>
+             @Html.Raw(Model.Funding)
+        </dd>
+
+        <dt>
+            @StaticResource.Resources.Programing
+        </dt>
+
+        <dd>
+            @Html.Raw(Model.Programing)
+        </dd>
+
+        <dt>
+            @StaticResource.Resources.Feedback
+        </dt>
+
+        <dd>
+            @Html.Raw(Model.Feedback)
+        </dd>
+
+        <dt>
+            @StaticResource.Resources.Contact
+        </dt>
+
+        <dd>
+            @Html.Raw(Model.Contact)
+        </dd>
+
+    </dl>
+</div>
+<<p>
+    @Html.ActionLink(StaticResource.Resources.Edit, "Edit", new { id = Model.Id }, new { @class = "btn btn-info" }) |
+    @Html.ActionLink(StaticResource.Resources.Return, "Index", null, new { @class = "btn btn-primary" })
+</p>

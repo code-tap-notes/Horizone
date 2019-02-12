@@ -9,9 +9,9 @@ namespace Horizone.Models
     public class Language
     {
         public int Id { get; set; }
-        [StringLength(2, MinimumLength = 2, ErrorMessage = "2 Characters")]
+        [StringLength(20, MinimumLength = 2, ErrorMessageResourceName = "MaxLength20", ErrorMessageResourceType = typeof(StaticResource.Resources))]     
         public string Symbol { get; set; }
-        [StringLength(50, MinimumLength = 2, ErrorMessage = "2-50 Characters")]
+        [StringLength(40, MinimumLength = 1, ErrorMessageResourceName = "MaxLength40", ErrorMessageResourceType = typeof(StaticResource.Resources))]
         public string Name { get; set; }
 
         public bool IsDefault { get; set; }

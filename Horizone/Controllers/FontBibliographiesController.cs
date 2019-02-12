@@ -38,8 +38,6 @@ namespace Horizone.Controllers
 
         public ActionResult Search(string search, string title, string journal)
         {
-
-
             IEnumerable<Bibliography> bibliographies = db.Bibliographys;
 
             if (!string.IsNullOrWhiteSpace(search))
@@ -59,9 +57,6 @@ namespace Horizone.Controllers
             //if (!string.IsNullOrWhiteSpace(journal))
             //    bibliographies = bibliographies.Where(y => y.Journal.Contains(journal));
 
-
-
-
             if (bibliographies.Count() == 0)
             {
                 Display("Aucun résultat");
@@ -70,7 +65,5 @@ namespace Horizone.Controllers
             return View("Search", bibliographies.ToList());
 
         }
-
-
     }
 }

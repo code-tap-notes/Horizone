@@ -142,9 +142,9 @@ namespace Horizone.Controllers
         {
             return View();
         }
-        //Add for colaborator
-        [Authorize(Roles = "Admin")]
-        public ActionResult RegisterColaborator()
+        //Add for collaborator
+        
+        public ActionResult RegisterCollaborator()
         {
             return View();
         }
@@ -194,32 +194,37 @@ namespace Horizone.Controllers
             // Si nous sommes arrivés là, un échec s’est produit. Réafficher le formulaire
             return View(model);
         }
-        [Authorize(Roles = "Admin")]
+        
         [HttpPost]
         [AllowAnonymous]
         [ValidateAntiForgeryToken]
-        public async Task<ActionResult> RegisterColaborator(RegisterViewModel model)
+        public async Task<ActionResult> RegisterCollaborator(RegisterViewModel model)
         {
+            
             if (ModelState.IsValid)
             {
                 var user = new ApplicationUser { UserName = model.Email, Email = model.Email };
-                var result = await UserManager.CreateAsync(user, model.Password);
+                var result = await UserManager.CreateAsync(user, model.Password);               
                 if (result.Succeeded)
                 {
                     user = UserManager.FindByEmail(model.Email);
                     if (user.Id != null)
                     {
-                        var colaborator = new Colaborateur
+                        var roles = UserManager.GetRoles(user.Id);
+                        if (roles.Contains("Collaborator"))
                         {
-                            Title = model.Title,
-                            LastName = model.LastName,
-                            FirstName = model.FisrtName,                            
-                            PhoneNumber = model.PhoneNumber, 
-                            UserId = user.Id
-                        };
-                        db.Colaborateurs.Add(colaborator);
-                        db.SaveChanges();
-                        UserManager.AddToRole(user.Id, "Colaborator");
+                            var collaborator = new Collaborator
+                            {
+                                Title = model.Title,
+                                LastName = model.LastName,
+                                FirstName = model.FisrtName,
+                                PhoneNumber = model.PhoneNumber,
+                                UserId = user.Id
+                            };
+                            db.Collaborators.Add(collaborator);
+                            db.SaveChanges();
+                        }
+                       // UserManager.AddToRole(user.Id, "Collaborator");
                     }
 
                     await SignInManager.SignInAsync(user, isPersistent: false, rememberBrowser: false);
@@ -231,7 +236,7 @@ namespace Horizone.Controllers
                     // string code = await UserManager.GenerateEmailConfirmationTokenAsync(user.Id);
                     // var callbackUrl = Url.Action("ConfirmEmail", "Account", new { userId = user.Id, code = code }, protocol: Request.Url.Scheme);
                     // await UserManager.SendEmailAsync(user.Id, "Confirmez votre compte", "Confirmez votre compte en cliquant <a href=\"" + callbackUrl + "\">ici</a>");
-                    Display("Colaborator ajouté");
+                    Display("Collaborator ajouté");
 
                     return RedirectToAction("Index", "Dashboard", new { area = "BackOffice" });
                 }
@@ -252,8 +257,8 @@ namespace Horizone.Controllers
                 if (roles.Contains("Admin"))
                     Session["ROLE"] = "Admin";
 
-                if (roles.Contains("Colaborator"))
-                    Session["ROLE"] = "Colaborator";
+                if (roles.Contains("Collaborator"))
+                    Session["ROLE"] = "Collaborator";
 
                 if (roles.Contains("Client"))
                     Session["ROLE"] = "Client";
@@ -271,8 +276,8 @@ namespace Horizone.Controllers
             if (roles.Contains("Admin"))
                 return "Admin";
 
-            if (roles.Contains("Colaborator"))
-                return GetCurrentColaboratorName();
+            if (roles.Contains("Collaborator"))
+                return GetCurrentCollaboratorName();
 
             if (roles.Contains("Client"))
                 return GetCurrentClientName();

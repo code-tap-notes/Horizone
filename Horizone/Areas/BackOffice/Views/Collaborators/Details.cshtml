@@ -1,0 +1,54 @@
+﻿@model Horizone.Models.Collaborateur
+
+@{
+    ViewBag.Title = @StaticResource.Resources.Details;
+}
+
+<h2> @StaticResource.Resources.Details</h2>
+
+<div>
+    <h4> @StaticResource.Resources.Collaborator</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @StaticResource.Resources.Title)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Title)
+        </dd>
+
+        <dt>
+            @StaticResource.Resources.LastName
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LastName)
+        </dd>
+
+        <dt>
+            @StaticResource.Resources.FirstName
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FirstName)
+        </dd>
+
+
+
+        <dt>
+            @StaticResource.Resources.PhoneNumber
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PhoneNumber)
+        </dd>
+
+
+
+    </dl>
+</div>
+<p>
+
+    @Html.ActionLink(@StaticResource.Resources.Return, "Index", null, new { @class = "btn btn-default" })
+</p>

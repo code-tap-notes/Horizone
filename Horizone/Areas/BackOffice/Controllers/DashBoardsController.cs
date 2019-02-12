@@ -1,14 +1,17 @@
 ﻿using Horizone.Controllers;
+using Horizone.Models;
+using Microsoft.AspNet.Identity;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
 
 
 namespace Horizone.Areas.BackOffice.Controllers
 {
-    [Authorize(Roles = "Colaborator,Admin")]
+    [Authorize(Roles = "Collaborator,Admin")]    
     public class DashBoardsController : BaseController
     {
         // GET: BackOffice/DashBoards
@@ -22,23 +25,49 @@ namespace Horizone.Areas.BackOffice.Controllers
             return RedirectToAction("index", "home", new { area = "" });
         }
         public ActionResult About()
-        {                       
-                return View(db.MainContents.ToList());
+
+        {
+            var aboutProjets = db.AboutProjets.Include("Language");
+            return View(aboutProjets.ToList());
 
         }
+        [ChildActionOnly]
+        public ActionResult PresenteProjet()
+        {
+            var aboutProjets = db.AboutProjets.Include("Language");
+            return PartialView(aboutProjets.ToList());
+        }
+        [ChildActionOnly]
+        public ActionResult Address()
+        {
+            var aboutProjets = db.AboutProjets.Include("Language");
+            return PartialView(aboutProjets.ToList());
+        }
         public ActionResult AboutUs()
-        {            
-            return View(db.MainContents.ToList());
+        {
+            var collaborations = db.Collaborations;
+            foreach ( var item in collaborations)
+            if (item.Team) collaborations.Add(item);
+       
+            return View(collaborations.ToList());
         }
         // GET: FrontContact/Create
         public ActionResult Contact()
         {
-            return View();
+            var aboutProjets = db.AboutProjets.Include("Language");
+            return View(aboutProjets.ToList());
         }
+        [ChildActionOnly]
+        public ActionResult PageActivity()
+        {
+            var activitys = db.Activitys.Include("Language");
+            return PartialView(activitys.OrderByDescending(x => x.DateofActivity).ToList());
+        }
+
         public ActionResult Help()
         {
             return View();
         }
-
+        
     }
 }

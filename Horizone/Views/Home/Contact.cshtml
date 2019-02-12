@@ -4,10 +4,8 @@
 }
 
 <address>
-    Ecole Practique Des Hautes Etudes - EPHE<br />
-    4-14 rue ferrus, 75014<br />
-    <abbr title="Phone">P:</abbr>
-    0140462095
+    @{Html.RenderAction("Address", "Home"); }
+
 </address>
 
 <address>
@@ -83,7 +81,7 @@
 
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value=" @StaticResource.Resources.Send" class="btn btn--info" />
+                <input type="submit" value=" @StaticResource.Resources.Send" class="btn btn-info" />
                 @Html.ActionLink(StaticResource.Resources.Cancel, "About", null, new { @class = "btn btn-default" })
 
             </div>

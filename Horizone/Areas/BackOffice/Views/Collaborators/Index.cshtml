@@ -1,0 +1,67 @@
+﻿@model IEnumerable<Horizone.Models.Collaborateur>
+
+@{
+    ViewBag.Title = @StaticResource.Resources.Collaborator;
+}
+
+<h2>@StaticResource.Resources.List @StaticResource.Resources.Collaborator</h2>
+
+<table class="table">
+    <tr>
+        <th>
+            @StaticResource.Resources.Title
+        </th>
+        <th>
+            @StaticResource.Resources.LastName
+        </th>
+        <th>
+            @StaticResource.Resources.FirstName
+        </th>
+
+        <th>
+            @StaticResource.Resources.PhoneNumber
+        </th>
+
+
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Title)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.LastName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FirstName)
+            </td>
+
+            <td>
+                @Html.DisplayFor(modelItem => item.PhoneNumber)
+            </td>
+
+        </tr>
+    }
+</table>
+
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+    <script src="~/Scripts/jquery.datetimepicker.js"></script>
+    <script>
+
+        $(function () {
+            $('#dateDebut').datetimepicker({
+                format: 'd/M/Y'
+            });
+            $('#dateFin').datetimepicker({
+                format: 'd/M/Y'
+            });
+            $('#dateDebut').attr('autocomplete', 'off');
+            $('#dateFin').attr('autocomplete', 'off');
+        });
+    </script>
+}

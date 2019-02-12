@@ -37,11 +37,12 @@ namespace Horizone.Models
         public News News { get; set; }
 
 
-        [Display(Name = "Author", ResourceType = typeof(StaticResource.Resources))]
+        [Display(Name = "PublishedBy", ResourceType = typeof(StaticResource.Resources))]
         [Required(ErrorMessageResourceName = "FieldRequired", ErrorMessageResourceType = typeof(StaticResource.Resources))]
         public string UserId { get; set; }
 
         [ForeignKey("UserId")]
         public ApplicationUser ApplicationUser { get; set; }
+       
     }
 }

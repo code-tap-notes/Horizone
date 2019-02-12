@@ -11,13 +11,10 @@ namespace Horizone.Models
     public class Bibliography
     {
         public int Id { get; set; }
-
        
         [Display(Name = "Author", ResourceType = typeof(StaticResource.Resources))]
         [StringLength(150, MinimumLength = 1, ErrorMessageResourceName = "MinLength", ErrorMessageResourceType = typeof(StaticResource.Resources))]
         public string Author { get; set; }
-
-
         
         [Display(Name = "PublicationDate", ResourceType = typeof(StaticResource.Resources))]
         [StringLength(10, MinimumLength = 1, ErrorMessageResourceName = "MinLength", ErrorMessageResourceType = typeof(StaticResource.Resources))]
@@ -32,11 +29,10 @@ namespace Horizone.Models
         [Display(Name = "Newspaper", ResourceType = typeof(StaticResource.Resources))]
         [StringLength(500, MinimumLength = 1, ErrorMessageResourceName = "MinLength", ErrorMessageResourceType = typeof(StaticResource.Resources))]
         public string Journal { get; set; }
-
        
         [Display(Name = "Link", ResourceType = typeof(StaticResource.Resources))]
         [StringLength(500, MinimumLength = 1, ErrorMessageResourceName = "MinLength", ErrorMessageResourceType = typeof(StaticResource.Resources))]
         public string UlrBibliography { get; set; }
-        
+      
     }
 }

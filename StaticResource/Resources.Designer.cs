@@ -61,6 +61,15 @@ namespace StaticResource {
         }
         
         /// <summary>
+        ///   Recherche une chaîne localisée semblable à Ablative.
+        /// </summary>
+        public static string Ablative {
+            get {
+                return ResourceManager.GetString("Ablative", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Recherche une chaîne localisée semblable à A propos de projet.
         /// </summary>
         public static string AboutProject {
@@ -97,11 +106,38 @@ namespace StaticResource {
         }
         
         /// <summary>
+        ///   Recherche une chaîne localisée semblable à Address.
+        /// </summary>
+        public static string Address {
+            get {
+                return ResourceManager.GetString("Address", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Recherche une chaîne localisée semblable à Objectif.
         /// </summary>
         public static string Aim {
             get {
                 return ResourceManager.GetString("Aim", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Type d’alignement.
+        /// </summary>
+        public static string AlignmentType {
+            get {
+                return ResourceManager.GetString("AlignmentType", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Allatif.
+        /// </summary>
+        public static string Allative {
+            get {
+                return ResourceManager.GetString("Allative", resourceCulture);
             }
         }
         
@@ -133,6 +169,15 @@ namespace StaticResource {
         }
         
         /// <summary>
+        ///   Recherche une chaîne localisée semblable à Nombre akṣara par ligne.
+        /// </summary>
+        public static string AvCharPerLigne {
+            get {
+                return ResourceManager.GetString("AvCharPerLigne", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Recherche une chaîne localisée semblable à Bibliographie.
         /// </summary>
         public static string Bibliography {
@@ -160,11 +205,38 @@ namespace StaticResource {
         }
         
         /// <summary>
+        ///   Recherche une chaîne localisée semblable à Cas.
+        /// </summary>
+        public static string Case {
+            get {
+                return ResourceManager.GetString("Case", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Causative.
+        /// </summary>
+        public static string Causative {
+            get {
+                return ResourceManager.GetString("Causative", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Recherche une chaîne localisée semblable à Chinoise.
         /// </summary>
         public static string Chinese {
             get {
                 return ResourceManager.GetString("Chinese", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Code.
+        /// </summary>
+        public static string Code {
+            get {
+                return ResourceManager.GetString("Code", resourceCulture);
             }
         }
         
@@ -178,15 +250,6 @@ namespace StaticResource {
         }
         
         /// <summary>
-        ///   Recherche une chaîne localisée semblable à Colaborateur.
-        /// </summary>
-        public static string Colaborator {
-            get {
-                return ResourceManager.GetString("Colaborator", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Recherche une chaîne localisée semblable à Partenaires.
         /// </summary>
         public static string Collaboration {
@@ -196,11 +259,74 @@ namespace StaticResource {
         }
         
         /// <summary>
+        ///   Recherche une chaîne localisée semblable à Collaborateur.
+        /// </summary>
+        public static string Collaborator {
+            get {
+                return ResourceManager.GetString("Collaborator", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Fonds.
+        /// </summary>
+        public static string Collection {
+            get {
+                return ResourceManager.GetString("Collection", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Comitative.
+        /// </summary>
+        public static string Comitative {
+            get {
+                return ResourceManager.GetString("Comitative", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Recherche une chaîne localisée semblable à Commentaire.
         /// </summary>
         public static string Comment {
             get {
                 return ResourceManager.GetString("Comment", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Complet.
+        /// </summary>
+        public static string Completeness {
+            get {
+                return ResourceManager.GetString("Completeness", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Le nouveau mot de passe et le mot de passe de confirmation ne correspondent pas..
+        /// </summary>
+        public static string ConfirmError {
+            get {
+                return ResourceManager.GetString("ConfirmError", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Confirmez le mot de passe.
+        /// </summary>
+        public static string ConfirmPassword {
+            get {
+                return ResourceManager.GetString("ConfirmPassword", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Conjugaison.
+        /// </summary>
+        public static string Conjugation {
+            get {
+                return ResourceManager.GetString("Conjugation", resourceCulture);
             }
         }
         
@@ -232,6 +358,15 @@ namespace StaticResource {
         }
         
         /// <summary>
+        ///   Recherche une chaîne localisée semblable à Mot de passe actuel.
+        /// </summary>
+        public static string CurrentPassword {
+            get {
+                return ResourceManager.GetString("CurrentPassword", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Recherche une chaîne localisée semblable à Date d&apos;activité.
         /// </summary>
         public static string DateActivity {
@@ -259,6 +394,15 @@ namespace StaticResource {
         }
         
         /// <summary>
+        ///   Recherche une chaîne localisée semblable à Dérivé de.
+        /// </summary>
+        public static string DerivedFrom {
+            get {
+                return ResourceManager.GetString("DerivedFrom", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Recherche une chaîne localisée semblable à Description.
         /// </summary>
         public static string Description {
@@ -282,6 +426,24 @@ namespace StaticResource {
         public static string DictionaryTocharian {
             get {
                 return ResourceManager.GetString("DictionaryTocharian", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Distance du trou d’enfilage marge gauche.
+        /// </summary>
+        public static string DistanceStringholeLeft {
+            get {
+                return ResourceManager.GetString("DistanceStringholeLeft", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Distance du trou d’enfilage marge droite.
+        /// </summary>
+        public static string DistanceStringholeRight {
+            get {
+                return ResourceManager.GetString("DistanceStringholeRight", resourceCulture);
             }
         }
         
@@ -322,6 +484,33 @@ namespace StaticResource {
         }
         
         /// <summary>
+        ///   Recherche une chaîne localisée semblable à Équivalent dans une autre langue.
+        /// </summary>
+        public static string EquivalentInOther {
+            get {
+                return ResourceManager.GetString("EquivalentInOther", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Équivalent en TA.
+        /// </summary>
+        public static string EquivalentInTA {
+            get {
+                return ResourceManager.GetString("EquivalentInTA", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Code d&apos;expédition.
+        /// </summary>
+        public static string ExpeditionCode {
+            get {
+                return ResourceManager.GetString("ExpeditionCode", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Recherche une chaîne localisée semblable à Contact pratique.
         /// </summary>
         public static string Feedback {
@@ -349,6 +538,24 @@ namespace StaticResource {
         }
         
         /// <summary>
+        ///   Recherche une chaîne localisée semblable à La forme.
+        /// </summary>
+        public static string Form {
+            get {
+                return ResourceManager.GetString("Form", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Format.
+        /// </summary>
+        public static string Format {
+            get {
+                return ResourceManager.GetString("Format", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Recherche une chaîne localisée semblable à Française.
         /// </summary>
         public static string French {
@@ -363,6 +570,33 @@ namespace StaticResource {
         public static string Funding {
             get {
                 return ResourceManager.GetString("Funding", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Gender.
+        /// </summary>
+        public static string Gender {
+            get {
+                return ResourceManager.GetString("Gender", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Etat général.
+        /// </summary>
+        public static string GeneralState {
+            get {
+                return ResourceManager.GetString("GeneralState", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Génitive.
+        /// </summary>
+        public static string Genitive {
+            get {
+                return ResourceManager.GetString("Genitive", resourceCulture);
             }
         }
         
@@ -412,11 +646,47 @@ namespace StaticResource {
         }
         
         /// <summary>
+        ///   Recherche une chaîne localisée semblable à Instrumental.
+        /// </summary>
+        public static string Instrumental {
+            get {
+                return ResourceManager.GetString("Instrumental", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Voyelle de racine interne.
+        /// </summary>
+        public static string InternalRootVowel {
+            get {
+                return ResourceManager.GetString("InternalRootVowel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Lignes interrompues.
+        /// </summary>
+        public static string InterruptedLine {
+            get {
+                return ResourceManager.GetString("InterruptedLine", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Recherche une chaîne localisée semblable à Japonaise.
         /// </summary>
         public static string Japanese {
             get {
                 return ResourceManager.GetString("Japanese", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Joint.
+        /// </summary>
+        public static string Joint {
+            get {
+                return ResourceManager.GetString("Joint", resourceCulture);
             }
         }
         
@@ -430,6 +700,24 @@ namespace StaticResource {
         }
         
         /// <summary>
+        ///   Recherche une chaîne localisée semblable à Détails d&apos;état de langue.
+        /// </summary>
+        public static string LanguageAdd {
+            get {
+                return ResourceManager.GetString("LanguageAdd", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à État de langue.
+        /// </summary>
+        public static string LanguageStage {
+            get {
+                return ResourceManager.GetString("LanguageStage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Recherche une chaîne localisée semblable à Nom .
         /// </summary>
         public static string LastName {
@@ -439,11 +727,38 @@ namespace StaticResource {
         }
         
         /// <summary>
+        ///   Recherche une chaîne localisée semblable à Mise en page.
+        /// </summary>
+        public static string LayoutManuscript {
+            get {
+                return ResourceManager.GetString("LayoutManuscript", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Numéro de feuilles.
+        /// </summary>
+        public static string LeafNumber {
+            get {
+                return ResourceManager.GetString("LeafNumber", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Recherche une chaîne localisée semblable à Savoir Plus.
         /// </summary>
         public static string LearnMore {
             get {
                 return ResourceManager.GetString("LearnMore", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Interligne.
+        /// </summary>
+        public static string LineDistance {
+            get {
+                return ResourceManager.GetString("LineDistance", resourceCulture);
             }
         }
         
@@ -471,6 +786,15 @@ namespace StaticResource {
         public static string ListContact {
             get {
                 return ResourceManager.GetString("ListContact", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Locative.
+        /// </summary>
+        public static string Locative {
+            get {
+                return ResourceManager.GetString("Locative", resourceCulture);
             }
         }
         
@@ -511,6 +835,15 @@ namespace StaticResource {
         }
         
         /// <summary>
+        ///   Recherche une chaîne localisée semblable à Lieu de trouvaille principal.
+        /// </summary>
+        public static string MainFindSpot {
+            get {
+                return ResourceManager.GetString("MainFindSpot", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Recherche une chaîne localisée semblable à Gestion Manuscript.
         /// </summary>
         public static string ManagementManuscript {
@@ -547,6 +880,24 @@ namespace StaticResource {
         }
         
         /// <summary>
+        ///   Recherche une chaîne localisée semblable à Support.
+        /// </summary>
+        public static string Material {
+            get {
+                return ResourceManager.GetString("Material", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à 1-1500 caractères.
+        /// </summary>
+        public static string MaxLength10000 {
+            get {
+                return ResourceManager.GetString("MaxLength10000", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Recherche une chaîne localisée semblable à 1-1500 caractères.
         /// </summary>
         public static string MaxLength1500 {
@@ -561,6 +912,15 @@ namespace StaticResource {
         public static string MaxLength20 {
             get {
                 return ResourceManager.GetString("MaxLength20", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à 1-2000 Characters.
+        /// </summary>
+        public static string MaxLength2000 {
+            get {
+                return ResourceManager.GetString("MaxLength2000", resourceCulture);
             }
         }
         
@@ -583,6 +943,15 @@ namespace StaticResource {
         }
         
         /// <summary>
+        ///   Recherche une chaîne localisée semblable à 1-500 caractères.
+        /// </summary>
+        public static string MaxLength500 {
+            get {
+                return ResourceManager.GetString("MaxLength500", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Recherche une chaîne localisée semblable à Message.
         /// </summary>
         public static string Message {
@@ -592,11 +961,38 @@ namespace StaticResource {
         }
         
         /// <summary>
+        ///   Recherche une chaîne localisée semblable à Forme métrique.
+        /// </summary>
+        public static string MetricForm {
+            get {
+                return ResourceManager.GetString("MetricForm", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Recherche une chaîne localisée semblable à Le champ {0}  doit avoir au moins de 2 caractères.
         /// </summary>
         public static string MinLength {
             get {
                 return ResourceManager.GetString("MinLength", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Module Hauteur.
+        /// </summary>
+        public static string ModuleHeight {
+            get {
+                return ResourceManager.GetString("ModuleHeight", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Module Largeur.
+        /// </summary>
+        public static string ModuleWidth {
+            get {
+                return ResourceManager.GetString("ModuleWidth", resourceCulture);
             }
         }
         
@@ -615,6 +1011,24 @@ namespace StaticResource {
         public static string NameActivity {
             get {
                 return ResourceManager.GetString("NameActivity", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Le Nombre de lignes doit être positif.
+        /// </summary>
+        public static string NegativeError {
+            get {
+                return ResourceManager.GetString("NegativeError", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Nouveau mot de passe.
+        /// </summary>
+        public static string NewPass {
+            get {
+                return ResourceManager.GetString("NewPass", resourceCulture);
             }
         }
         
@@ -646,11 +1060,83 @@ namespace StaticResource {
         }
         
         /// <summary>
+        ///   Recherche une chaîne localisée semblable à Largeur du trait.
+        /// </summary>
+        public static string NibThickness {
+            get {
+                return ResourceManager.GetString("NibThickness", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Nominate.
+        /// </summary>
+        public static string Nominate {
+            get {
+                return ResourceManager.GetString("Nominate", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Nombre.
+        /// </summary>
+        public static string Number {
+            get {
+                return ResourceManager.GetString("Number", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Nombre de lignes.
+        /// </summary>
+        public static string NumberOfLine {
+            get {
+                return ResourceManager.GetString("NumberOfLine", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Oblique.
+        /// </summary>
+        public static string Oblique {
+            get {
+                return ResourceManager.GetString("Oblique", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Recherche une chaîne localisée semblable à Bureau.
         /// </summary>
         public static string Office {
             get {
                 return ResourceManager.GetString("Office", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Le champ {0} ne doit contenir que des lettres.
+        /// </summary>
+        public static string OnlyLetters {
+            get {
+                return ResourceManager.GetString("OnlyLetters", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Le champ {0} ne doit contenir que des chiffres.
+        /// </summary>
+        public static string OnlyNumbers {
+            get {
+                return ResourceManager.GetString("OnlyNumbers", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Autres Cote.
+        /// </summary>
+        public static string OtherSiglum {
+            get {
+                return ResourceManager.GetString("OtherSiglum", resourceCulture);
             }
         }
         
@@ -664,11 +1150,83 @@ namespace StaticResource {
         }
         
         /// <summary>
+        ///   Recherche une chaîne localisée semblable à Papier couleur.
+        /// </summary>
+        public static string PaperColor {
+            get {
+                return ResourceManager.GetString("PaperColor", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Epaisseur du papier.
+        /// </summary>
+        public static string PaperThickness {
+            get {
+                return ResourceManager.GetString("PaperThickness", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Paradigme.
+        /// </summary>
+        public static string Paradigm {
+            get {
+                return ResourceManager.GetString("Paradigm", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à parallèles.
+        /// </summary>
+        public static string Parallel {
+            get {
+                return ResourceManager.GetString("Parallel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Passage.
+        /// </summary>
+        public static string Passage {
+            get {
+                return ResourceManager.GetString("Passage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Perlative.
+        /// </summary>
+        public static string Perlative {
+            get {
+                return ResourceManager.GetString("Perlative", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Commentaire philologique.
+        /// </summary>
+        public static string PhilologicalCommentary {
+            get {
+                return ResourceManager.GetString("PhilologicalCommentary", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Recherche une chaîne localisée semblable à Téléphone.
         /// </summary>
         public static string PhoneNumber {
             get {
                 return ResourceManager.GetString("PhoneNumber", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Phrase.
+        /// </summary>
+        public static string Phrase {
+            get {
+                return ResourceManager.GetString("Phrase", resourceCulture);
             }
         }
         
@@ -745,6 +1303,33 @@ namespace StaticResource {
         }
         
         /// <summary>
+        ///   Recherche une chaîne localisée semblable à Publié par.
+        /// </summary>
+        public static string PublishedBy {
+            get {
+                return ResourceManager.GetString("PublishedBy", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Lexèmes connexes.
+        /// </summary>
+        public static string RelatedLexemes {
+            get {
+                return ResourceManager.GetString("RelatedLexemes", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Remarques supplémentaires.
+        /// </summary>
+        public static string Remark {
+            get {
+                return ResourceManager.GetString("Remark", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Recherche une chaîne localisée semblable à Dépôt.
         /// </summary>
         public static string Repository {
@@ -763,6 +1348,42 @@ namespace StaticResource {
         }
         
         /// <summary>
+        ///   Recherche une chaîne localisée semblable à Caractère racine.
+        /// </summary>
+        public static string RootCharacter {
+            get {
+                return ResourceManager.GetString("RootCharacter", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Réglure.
+        /// </summary>
+        public static string Ruling {
+            get {
+                return ResourceManager.GetString("Ruling", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Couleur de la réglure.
+        /// </summary>
+        public static string RulingColor {
+            get {
+                return ResourceManager.GetString("RulingColor", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Réglure détail.
+        /// </summary>
+        public static string RulingDetail {
+            get {
+                return ResourceManager.GetString("RulingDetail", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Recherche une chaîne localisée semblable à Enregistrer.
         /// </summary>
         public static string Save {
@@ -772,11 +1393,29 @@ namespace StaticResource {
         }
         
         /// <summary>
-        ///   Recherche une chaîne localisée semblable à Scripte.
+        ///   Recherche une chaîne localisée semblable à Écriture.
         /// </summary>
         public static string Script {
             get {
                 return ResourceManager.GetString("Script", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Écriture Détaille.
+        /// </summary>
+        public static string ScriptAdd {
+            get {
+                return ResourceManager.GetString("ScriptAdd", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Ecriture manuscrit.
+        /// </summary>
+        public static string ScriptManuscript {
+            get {
+                return ResourceManager.GetString("ScriptManuscript", resourceCulture);
             }
         }
         
@@ -853,11 +1492,101 @@ namespace StaticResource {
         }
         
         /// <summary>
+        ///   Recherche une chaîne localisée semblable à Cote.
+        /// </summary>
+        public static string Siglum {
+            get {
+                return ResourceManager.GetString("Siglum", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Recherche une chaîne localisée semblable à S’inscrire.
         /// </summary>
         public static string SignUp {
             get {
                 return ResourceManager.GetString("SignUp", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Singulière.
+        /// </summary>
+        public static string Singular {
+            get {
+                return ResourceManager.GetString("Singular", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Taille Hauteur.
+        /// </summary>
+        public static string SizeHeight {
+            get {
+                return ResourceManager.GetString("SizeHeight", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Taille Largeur.
+        /// </summary>
+        public static string SizeWidth {
+            get {
+                return ResourceManager.GetString("SizeWidth", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Lieu spécifique de trouvaille.
+        /// </summary>
+        public static string SpecificFindSpot {
+            get {
+                return ResourceManager.GetString("SpecificFindSpot", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Radical.
+        /// </summary>
+        public static string Stem {
+            get {
+                return ResourceManager.GetString("Stem", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Class de radical.
+        /// </summary>
+        public static string StemClass {
+            get {
+                return ResourceManager.GetString("StemClass", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Hauteur de la réserve du trou d’enfilage.
+        /// </summary>
+        public static string StringholeHeight {
+            get {
+                return ResourceManager.GetString("StringholeHeight", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Largeur de la réserve du trou d’enfilage.
+        /// </summary>
+        public static string StringholeWidth {
+            get {
+                return ResourceManager.GetString("StringholeWidth", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Résumé.
+        /// </summary>
+        public static string Summary {
+            get {
+                return ResourceManager.GetString("Summary", resourceCulture);
             }
         }
         
@@ -876,6 +1605,24 @@ namespace StaticResource {
         public static string Text {
             get {
                 return ResourceManager.GetString("Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Genre de texte.
+        /// </summary>
+        public static string TextGenre {
+            get {
+                return ResourceManager.GetString("TextGenre", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Sous-genre du texte.
+        /// </summary>
+        public static string TextSubgenre {
+            get {
+                return ResourceManager.GetString("TextSubgenre", resourceCulture);
             }
         }
         
@@ -900,9 +1647,9 @@ namespace StaticResource {
         /// <summary>
         ///   Recherche une chaîne localisée semblable à TochPhrase.
         /// </summary>
-        public static string TochPhase {
+        public static string TochPhrase {
             get {
-                return ResourceManager.GetString("TochPhase", resourceCulture);
+                return ResourceManager.GetString("TochPhrase", resourceCulture);
             }
         }
         
@@ -925,6 +1672,33 @@ namespace StaticResource {
         }
         
         /// <summary>
+        ///   Recherche une chaîne localisée semblable à Transcription.
+        /// </summary>
+        public static string Transcription {
+            get {
+                return ResourceManager.GetString("Transcription", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Translitération.
+        /// </summary>
+        public static string Transliteration {
+            get {
+                return ResourceManager.GetString("Transliteration", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Mélodie.
+        /// </summary>
+        public static string Tune {
+            get {
+                return ResourceManager.GetString("Tune", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Recherche une chaîne localisée semblable à Utilisateur.
         /// </summary>
         public static string User {
@@ -943,11 +1717,83 @@ namespace StaticResource {
         }
         
         /// <summary>
+        ///   Recherche une chaîne localisée semblable à Des vues.
+        /// </summary>
+        public static string Views {
+            get {
+                return ResourceManager.GetString("Views", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Visible.
+        /// </summary>
+        public static string Visible {
+            get {
+                return ResourceManager.GetString("Visible", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Recherche une chaîne localisée semblable à Vocabulaire.
         /// </summary>
         public static string Vocabulary {
             get {
                 return ResourceManager.GetString("Vocabulary", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Vocative.
+        /// </summary>
+        public static string Vocative {
+            get {
+                return ResourceManager.GetString("Vocative", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Voix.
+        /// </summary>
+        public static string Voice {
+            get {
+                return ResourceManager.GetString("Voice", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Classe de mots.
+        /// </summary>
+        public static string WordClass {
+            get {
+                return ResourceManager.GetString("WordClass", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Mots.
+        /// </summary>
+        public static string Words {
+            get {
+                return ResourceManager.GetString("Words", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Sous-classe de mots.
+        /// </summary>
+        public static string WordSubClass {
+            get {
+                return ResourceManager.GetString("WordSubClass", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Outil d’écriture.
+        /// </summary>
+        public static string WritingTool {
+            get {
+                return ResourceManager.GetString("WritingTool", resourceCulture);
             }
         }
     }

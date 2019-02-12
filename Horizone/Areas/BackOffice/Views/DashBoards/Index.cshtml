@@ -1,5 +1,5 @@
 ﻿@{
-    ViewBag.Title = "Home Page";
+    ViewBag.Title = StaticResource.Resources.Office;
 }
 <div class="container body-content">
     <!--Recherche-->
@@ -32,9 +32,10 @@
     <div id="midheader-vp">
         <div id="right">
             <!--information-->
-            <h3>HISTOCHTEXT</h3>
-            <p>Tocharian is the name given to two closely related languages, Tocharian A and Tocharian B, which form together a subgroup of the Indo-European family of languages. Their decipherment happened in 1908, not too long after significant discoveries of manuscripts in Buddhist sites of the Tarim Basin, on the northern range of the Taklamakan desert, in present-day Xinjiang (China). These Buddhist sites were located near major stages and oases of a part of the ancient Silk Road. They were centers of cult, teaching, pilgrimage, and last but not least, writing and copying of texts. The Tocharian manuscripts were discovered or purchased for the most part during the first two decades of the past century, and they are now kept by various libraries and museums, a majority in Europe (Berlin, London, Paris, St. Petersburg), and several ones in China and Japan (see the survey by Malzahn 2007a). One may distinguish three major centers of writing in the Tocharian area, from west to east: Kucha, Yanqi/Karašahr and Turfan.  Tocharian B manuscripts have been found on this whole northern road, Tocharian A manuscripts only in the intermediate area and in the east. The Pelliot collection, kept in the Bibliothèque nationale de France, Paris, is the second major collection of Tocharian manuscripts, by the number of pieces (around 2,000), after the one kept in the so-called “Turfansammlung” (Berlin, 4,074 THT items, in Tocharian A and Tocharian B). It contains a wide variety of texts,  both  literary  and  non-literary,  most  of  them  having  no  match  in  the  other  collections</p>
+            <h3> @StaticResource.Resources.Project HISTOCHTEXT</h3>
+            @{Html.RenderAction("PresenteProjet", "Dashboards"); }
 
+       
         </div>
 
         <div id="left">
@@ -105,13 +106,10 @@
             </div>
         </div>
         <!--Main-Right-->
-        <div id="slide-right">
-            <h2><a href=""> ACTIVITY </a></h2>
+        <div id="slide-right">          
             <img style="width:90px;height:90px;" src="~/Image/basin.jpg" />
-            <p> Conference au Etat-Unis</p>
-            <img style="width:90px;height:90px;" src="~/Image/Central_Tian_Shan_mountains.jpg" />
-            <p> Conference en Chine </p>
-
+             @{Html.RenderAction("PageActivity", "Dashboards"); }
+                    
         </div>
     </div>
     <!--Page content-->
@@ -160,7 +158,7 @@
         <!--Active-->
         <div id="content-main">
 
-            <h2>PAGES ACTIVE</h2>
+            <h2>@StaticResource.Resources.Activity</h2>
             <nav aria-label="Page navigation">
                 <ul class="pagination">
                     <li>
@@ -168,11 +166,10 @@
                             <span aria-hidden="true">&laquo;</span>
                         </a>
                     </li>
-                    <li><a href="#">1</a></li>
-                    <li><a href="#">2</a></li>
-                    <li><a href="#">3</a></li>
-                    <li><a href="#">4</a></li>
-                    <li><a href="#">5</a></li>
+                    <li>
+                      
+                    </li>
+                    
                     <li>
                         <a href="#" aria-label="Next">
                             <span aria-hidden="true">&raquo;</span>

@@ -202,23 +202,31 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Areas\BackOffice\BackOfficeAreaRegistration.cs" />
+    <Compile Include="Areas\BackOffice\Controllers\AboutProjectsController.cs" />
     <Compile Include="Areas\BackOffice\Controllers\ActivitiesController.cs" />
     <Compile Include="Areas\BackOffice\Controllers\BibliographiesController.cs" />
     <Compile Include="Areas\BackOffice\Controllers\ClientsController.cs" />
-    <Compile Include="Areas\BackOffice\Controllers\ColaborateursController.cs" />
+    <Compile Include="Areas\BackOffice\Controllers\CollaborationsController.cs" />
     <Compile Include="Areas\BackOffice\Controllers\ContactMessagesController.cs" />
     <Compile Include="Areas\BackOffice\Controllers\DashBoardsController.cs" />
-    <Compile Include="Areas\BackOffice\Controllers\DictionaryTochariansController.cs" />
-    <Compile Include="Areas\BackOffice\Controllers\MainContentsController.cs" />
-    <Compile Include="Areas\BackOffice\Controllers\ManuscriptsController.cs" />
-    <Compile Include="Areas\BackOffice\Controllers\NewsController.cs" />
-    <Compile Include="Areas\BackOffice\Controllers\ObjectManuscriptsController.cs" />
-    <Compile Include="Areas\BackOffice\Controllers\ProveniencesController.cs" />
-    <Compile Include="Areas\BackOffice\Controllers\TextContentsController.cs" />
-    <Compile Include="Areas\BackOffice\Controllers\TochPhrasesController.cs" />
-    <Compile Include="Areas\BackOffice\Controllers\TochStoriesController.cs" />
+    <Compile Include="Areas\BackOffice\Controllers\ImageCollaborationsController.cs" />
+    <Compile Include="Areas\BackOffice\Controllers\InThePressesController.cs" />
+    <Compile Include="Areas\BackOffice\Controllers\PublicationsController.cs" />
     <Compile Include="Areas\BackOffice\Controllers\TopicsController.cs" />
-    <Compile Include="Areas\BackOffice\Controllers\TranscriptionsController.cs" />
+    <Compile Include="Migrations\201902071549146_Init.cs" />
+    <Compile Include="Migrations\201902071549146_Init.Designer.cs">
+      <DependentUpon>201902071549146_Init.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201902081033095_changeBibliography.cs" />
+    <Compile Include="Migrations\201902081033095_changeBibliography.Designer.cs">
+      <DependentUpon>201902081033095_changeBibliography.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201902082054458_changetablePublication.cs" />
+    <Compile Include="Migrations\201902082054458_changetablePublication.Designer.cs">
+      <DependentUpon>201902082054458_changetablePublication.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Models\AboutProject.cs" />
     <Compile Include="Common\CommonConstants.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\BaseController.cs" />
@@ -228,43 +236,39 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201901151524400_Init.cs" />
-    <Compile Include="Migrations\201901151524400_Init.Designer.cs">
-      <DependentUpon>201901151524400_Init.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201901151545523_ChangeContactmessage.cs" />
-    <Compile Include="Migrations\201901151545523_ChangeContactmessage.Designer.cs">
-      <DependentUpon>201901151545523_ChangeContactmessage.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Activity.cs" />
     <Compile Include="Models\Bibliography.cs" />
     <Compile Include="Models\Client.cs" />
-    <Compile Include="Models\Colaborateur.cs" />
+    <Compile Include="Models\Collaborator.cs" />
+    <Compile Include="Models\Collaboration.cs" />
     <Compile Include="Models\Comment.cs" />
     <Compile Include="Models\ContactMessage.cs" />
     <Compile Include="Models\Dashboard.cs" />
     <Compile Include="Models\DictionaryTocharian.cs" />
     <Compile Include="Models\IdentityModels.cs" />
+    <Compile Include="Models\ImageCollaboration.cs" />
     <Compile Include="Models\ImageDictionary.cs" />
     <Compile Include="Models\ImageManuscript.cs" />
     <Compile Include="Models\ImageNews.cs" />
+    <Compile Include="Models\InThePresse.cs" />
     <Compile Include="Models\Language.cs" />
-    <Compile Include="Models\MainContent.cs" />
+    <Compile Include="Models\LayoutManuscript.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\Manuscript.cs" />
     <Compile Include="Models\Menu.cs" />
     <Compile Include="Models\Message.cs" />
     <Compile Include="Models\News.cs" />
-    <Compile Include="Models\ObjectManuscript.cs" />
+    <Compile Include="Models\MaterialManuscript.cs" />
     <Compile Include="Models\Personne.cs" />
-    <Compile Include="Models\Provenience.cs" />
+    <Compile Include="Models\OverallDescription.cs" />
+    <Compile Include="Models\Publication.cs" />
     <Compile Include="Models\TextContent.cs" />
+    <Compile Include="Models\TextLanguage.cs" />
     <Compile Include="Models\TochPhrase.cs" />
     <Compile Include="Models\TochStory.cs" />
     <Compile Include="Models\Topic.cs" />
-    <Compile Include="Models\Transcription.cs" />
+    <Compile Include="Models\ScriptManuscript.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
     <Compile Include="Validators\AgeAttribute.cs" />
@@ -342,69 +346,12 @@
     </Content>
     <Content Include="Areas\BackOffice\Views\web.config" />
     <Content Include="Areas\BackOffice\Views\_ViewStart.cshtml" />
-    <Content Include="Areas\BackOffice\Views\Shared\_Layout.cshtml" />
-    <Content Include="Areas\BackOffice\Views\TextContents\Create.cshtml" />
-    <Content Include="Areas\BackOffice\Views\TextContents\Delete.cshtml" />
-    <Content Include="Areas\BackOffice\Views\TextContents\Details.cshtml" />
-    <Content Include="Areas\BackOffice\Views\TextContents\Edit.cshtml" />
-    <Content Include="Areas\BackOffice\Views\TextContents\Index.cshtml" />
-    <Content Include="Areas\BackOffice\Views\Proveniences\Create.cshtml" />
-    <Content Include="Areas\BackOffice\Views\Proveniences\Delete.cshtml" />
-    <Content Include="Areas\BackOffice\Views\Proveniences\Details.cshtml" />
-    <Content Include="Areas\BackOffice\Views\Proveniences\Edit.cshtml" />
-    <Content Include="Areas\BackOffice\Views\Proveniences\Index.cshtml" />
-    <Content Include="Areas\BackOffice\Views\ObjectManuscripts\Create.cshtml" />
-    <Content Include="Areas\BackOffice\Views\ObjectManuscripts\Delete.cshtml" />
-    <Content Include="Areas\BackOffice\Views\ObjectManuscripts\Details.cshtml" />
-    <Content Include="Areas\BackOffice\Views\ObjectManuscripts\Edit.cshtml" />
-    <Content Include="Areas\BackOffice\Views\ObjectManuscripts\Index.cshtml" />
     <Content Include="Areas\BackOffice\Views\Topics\Create.cshtml" />
     <Content Include="Areas\BackOffice\Views\Topics\Delete.cshtml" />
     <Content Include="Areas\BackOffice\Views\Topics\Details.cshtml" />
     <Content Include="Areas\BackOffice\Views\Topics\Edit.cshtml" />
     <Content Include="Areas\BackOffice\Views\Topics\Index.cshtml" />
     <Content Include="Areas\BackOffice\Views\DashBoards\Index.cshtml" />
-    <Content Include="Areas\BackOffice\Views\Manuscripts\Create.cshtml" />
-    <Content Include="Areas\BackOffice\Views\Manuscripts\Delete.cshtml" />
-    <Content Include="Areas\BackOffice\Views\Manuscripts\Details.cshtml" />
-    <Content Include="Areas\BackOffice\Views\Manuscripts\Edit.cshtml" />
-    <Content Include="Areas\BackOffice\Views\Manuscripts\Index.cshtml" />
-    <Content Include="Areas\BackOffice\Views\TochPhrases\Create.cshtml" />
-    <Content Include="Areas\BackOffice\Views\TochPhrases\Delete.cshtml" />
-    <Content Include="Areas\BackOffice\Views\TochPhrases\Details.cshtml" />
-    <Content Include="Areas\BackOffice\Views\TochPhrases\Edit.cshtml" />
-    <Content Include="Areas\BackOffice\Views\TochPhrases\Index.cshtml" />
-    <Content Include="Areas\BackOffice\Views\TochStories\Create.cshtml" />
-    <Content Include="Areas\BackOffice\Views\TochStories\Delete.cshtml" />
-    <Content Include="Areas\BackOffice\Views\TochStories\Details.cshtml" />
-    <Content Include="Areas\BackOffice\Views\TochStories\Edit.cshtml" />
-    <Content Include="Areas\BackOffice\Views\TochStories\Index.cshtml" />
-    <Content Include="Areas\BackOffice\Views\Transcriptions\Create.cshtml" />
-    <Content Include="Areas\BackOffice\Views\Transcriptions\Delete.cshtml" />
-    <Content Include="Areas\BackOffice\Views\Transcriptions\Details.cshtml" />
-    <Content Include="Areas\BackOffice\Views\Transcriptions\Edit.cshtml" />
-    <Content Include="Areas\BackOffice\Views\Transcriptions\Index.cshtml" />
-    <Content Include="Areas\BackOffice\Views\DictionaryTocharians\Create.cshtml" />
-    <Content Include="Areas\BackOffice\Views\DictionaryTocharians\Delete.cshtml" />
-    <Content Include="Areas\BackOffice\Views\DictionaryTocharians\Details.cshtml" />
-    <Content Include="Areas\BackOffice\Views\DictionaryTocharians\Edit.cshtml" />
-    <Content Include="Areas\BackOffice\Views\DictionaryTocharians\Index.cshtml" />
-    <Content Include="Areas\BackOffice\Views\News\Create.cshtml" />
-    <Content Include="Areas\BackOffice\Views\News\Delete.cshtml" />
-    <Content Include="Areas\BackOffice\Views\News\Details.cshtml" />
-    <Content Include="Areas\BackOffice\Views\News\Edit.cshtml" />
-    <Content Include="Areas\BackOffice\Views\News\Index.cshtml" />
-    <Content Include="Areas\BackOffice\Views\MainContents\Create.cshtml" />
-    <Content Include="Areas\BackOffice\Views\MainContents\Delete.cshtml" />
-    <Content Include="Areas\BackOffice\Views\MainContents\Details.cshtml" />
-    <Content Include="Areas\BackOffice\Views\MainContents\Edit.cshtml" />
-    <Content Include="Areas\BackOffice\Views\MainContents\Index.cshtml" />
-    <Content Include="Areas\BackOffice\Views\Bibliographies\Create.cshtml" />
-    <Content Include="Areas\BackOffice\Views\Bibliographies\Delete.cshtml" />
-    <Content Include="Areas\BackOffice\Views\Bibliographies\Details.cshtml" />
-    <Content Include="Areas\BackOffice\Views\Bibliographies\Edit.cshtml" />
-    <Content Include="Areas\BackOffice\Views\Bibliographies\Index.cshtml" />
-    <Content Include="Areas\BackOffice\Views\Bibliographies\Search.cshtml" />
     <Content Include="Content\bootstrap\alerts.less" />
     <Content Include="Content\bootstrap\badges.less" />
     <Content Include="Content\bootstrap\bootstrap.less" />
@@ -484,11 +431,6 @@
     <Content Include="Areas\BackOffice\Views\DashBoards\About.cshtml" />
     <Content Include="Areas\BackOffice\Views\DashBoards\Help.cshtml" />
     <Content Include="Areas\BackOffice\Views\DashBoards\Contact.cshtml" />
-    <Content Include="Areas\BackOffice\Views\Colaborateurs\Details.cshtml" />
-    <Content Include="Areas\BackOffice\Views\Colaborateurs\Index.cshtml" />
-    <Content Include="Areas\BackOffice\Views\Colaborateurs\Create.cshtml" />
-    <Content Include="Areas\BackOffice\Views\Colaborateurs\Delete.cshtml" />
-    <Content Include="Areas\BackOffice\Views\Colaborateurs\Edit.cshtml" />
     <Content Include="Equipe\CV\CV1.docx" />
     <Content Include="Equipe\CV\CV2.docx" />
     <Content Include="Equipe\CV\CV3.docx" />
@@ -499,6 +441,44 @@
     <Content Include="Areas\BackOffice\Views\Activities\Edit.cshtml" />
     <Content Include="Areas\BackOffice\Views\Activities\Index.cshtml" />
     <Content Include="Areas\BackOffice\Views\DashBoards\AboutUs.cshtml" />
+    <Content Include="Areas\BackOffice\Views\AboutProjects\Create.cshtml" />
+    <Content Include="Areas\BackOffice\Views\AboutProjects\Delete.cshtml" />
+    <Content Include="Areas\BackOffice\Views\AboutProjects\Details.cshtml" />
+    <Content Include="Areas\BackOffice\Views\AboutProjects\Edit.cshtml" />
+    <Content Include="Areas\BackOffice\Views\AboutProjects\Index.cshtml" />
+    <Content Include="Areas\BackOffice\Views\ImageCollaborations\Create.cshtml" />
+    <Content Include="Areas\BackOffice\Views\ImageCollaborations\Delete.cshtml" />
+    <Content Include="Areas\BackOffice\Views\ImageCollaborations\Details.cshtml" />
+    <Content Include="Areas\BackOffice\Views\ImageCollaborations\Edit.cshtml" />
+    <Content Include="Areas\BackOffice\Views\ImageCollaborations\Index.cshtml" />
+    <Content Include="Areas\BackOffice\Views\InThePresses\Create.cshtml" />
+    <Content Include="Areas\BackOffice\Views\InThePresses\Delete.cshtml" />
+    <Content Include="Areas\BackOffice\Views\InThePresses\Details.cshtml" />
+    <Content Include="Areas\BackOffice\Views\InThePresses\Edit.cshtml" />
+    <Content Include="Areas\BackOffice\Views\InThePresses\Index.cshtml" />
+    <Content Include="Areas\BackOffice\Views\DashBoards\PresenteProjet.cshtml" />
+    <Content Include="Areas\BackOffice\Views\DashBoards\PageActivity.cshtml" />
+    <Content Include="Areas\BackOffice\Views\Shared\_Layout.cshtml" />
+    <Content Include="Areas\BackOffice\Views\Bibliographies\Create.cshtml" />
+    <Content Include="Areas\BackOffice\Views\Bibliographies\Delete.cshtml" />
+    <Content Include="Areas\BackOffice\Views\Bibliographies\Details.cshtml" />
+    <Content Include="Areas\BackOffice\Views\Bibliographies\Edit.cshtml" />
+    <Content Include="Areas\BackOffice\Views\Bibliographies\Index.cshtml" />
+    <Content Include="Areas\BackOffice\Views\Bibliographies\Search.cshtml" />
+    <Content Include="Areas\BackOffice\Views\Collaborators\Index.cshtml" />
+    <Content Include="Areas\BackOffice\Views\Collaborators\Details.cshtml" />
+    <Content Include="Areas\BackOffice\Views\Publications\Create.cshtml" />
+    <Content Include="Areas\BackOffice\Views\Publications\Delete.cshtml" />
+    <Content Include="Areas\BackOffice\Views\Publications\Details.cshtml" />
+    <Content Include="Areas\BackOffice\Views\Publications\Edit.cshtml" />
+    <Content Include="Areas\BackOffice\Views\Publications\Index.cshtml" />
+    <Content Include="Areas\BackOffice\Views\Collaborations\Create.cshtml" />
+    <Content Include="Areas\BackOffice\Views\Collaborations\Delete.cshtml" />
+    <Content Include="Areas\BackOffice\Views\Collaborations\Details.cshtml" />
+    <Content Include="Areas\BackOffice\Views\Collaborations\Edit.cshtml" />
+    <Content Include="Areas\BackOffice\Views\Collaborations\Index.cshtml" />
+    <Content Include="Areas\BackOffice\Views\Collaborations\Team.cshtml" />
+    <Content Include="Areas\BackOffice\Views\Collaborations\Collaboration.cshtml" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\cldr.js" />
     <Content Include="Scripts\cldr\event.js" />
@@ -783,6 +763,10 @@
     <Content Include="Views\Home\AboutUs.cshtml" />
     <Content Include="Views\Home\Collaboration.cshtml" />
     <Content Include="Views\Home\Activity.cshtml" />
+    <Content Include="Views\Home\Presente.cshtml" />
+    <Content Include="Views\Home\Address.cshtml" />
+    <Content Include="Views\Home\PageActivity.cshtml" />
+    <Content Include="Views\Account\RegisterCollaborator.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -808,11 +792,14 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201901151524400_Init.resx">
-      <DependentUpon>201901151524400_Init.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201902071549146_Init.resx">
+      <DependentUpon>201902071549146_Init.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201901151545523_ChangeContactmessage.resx">
-      <DependentUpon>201901151545523_ChangeContactmessage.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201902081033095_changeBibliography.resx">
+      <DependentUpon>201902081033095_changeBibliography.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201902082054458_changetablePublication.resx">
+      <DependentUpon>201902082054458_changetablePublication.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

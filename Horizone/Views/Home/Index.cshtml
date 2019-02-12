@@ -27,7 +27,8 @@
                 <label for="Manuscript">@StaticResource.Resources.Manuscript</label>
                 <input class="form-control" type="text" id="Manuscript" name="search" />
             </div>
-            <div>                
+
+             <div>                
                 <p>"Insert:   </p>
                 <a href="#">      ä</a>
                 <a href="#"> ā</a>
@@ -42,9 +43,7 @@
                 <a href="#"> ṣ</a>
                 <a href="#"> š</a>
                 <a href="#"> ß"</a>
-            </div>
-
-
+             </div>
 
         </form>
     </div>
@@ -52,92 +51,86 @@
 
     <div id="midheader-vp">        
         <div id="right">
-            <!--information-->
-            <h3>HISTOCHTEXT</h3>
-            <p>Tocharian is the name given to two closely related languages, Tocharian A and Tocharian B, which form together a subgroup of the Indo-European family of languages. Their decipherment happened in 1908, not too long after significant discoveries of manuscripts in Buddhist sites of the Tarim Basin, on the northern range of the Taklamakan desert, in present-day Xinjiang (China). These Buddhist sites were located near major stages and oases of a part of the ancient Silk Road. They were centers of cult, teaching, pilgrimage, and last but not least, writing and copying of texts. The Tocharian manuscripts were discovered or purchased for the most part during the first two decades of the past century, and they are now kept by various libraries and museums, a majority in Europe (Berlin, London, Paris, St. Petersburg), and several ones in China and Japan (see the survey by Malzahn 2007a). One may distinguish three major centers of writing in the Tocharian area, from west to east: Kucha, Yanqi/Karašahr and Turfan.  Tocharian B manuscripts have been found on this whole northern road, Tocharian A manuscripts only in the intermediate area and in the east. The Pelliot collection, kept in the Bibliothèque nationale de France, Paris, is the second major collection of Tocharian manuscripts, by the number of pieces (around 2,000), after the one kept in the so-called “Turfansammlung” (Berlin, 4,074 THT items, in Tocharian A and Tocharian B). It contains a wide variety of texts,  both  literary  and  non-literary,  most  of  them  having  no  match  in  the  other  collections</p>
-
+            <!--Presenter le projet-->
+            <h3> @StaticResource.Resources.Project HISTOCHTEXT</h3>
+            @{Html.RenderAction("Presente", "Home"); }
+        
         </div>
 
         <div id="left">
-            <hr/>
+        <hr/>
 
-            <img class="GrandImage" src="~/Image/China_Tarim.jpg" />
+          <img class="GrandImage" src="~/Image/China_Tarim.jpg" />
 
         </div>
     </div>
-    <div class="clear"></div>
 
-    <!--Last News-->
-    <div id="slide-vp">
-        <h4>Latest News</h4>
-        <div id="slide-left">
+        <div class="clear"></div>
 
-            <div id="slideleft-main">
-                <h2 class="title"><a href="#">Tarim</a> </h2>
-                <img src="~/Image/Central_Tian_Shan_mountains.jpg" /><br />
+        <!--Last News-->
+        <div id="slide-vp">
+            <h4>Latest News</h4>
+            <div id="slide-left">
 
-                <div class="des">
-                    HisTochText aborde la culture bouddhiste.Le Tarim est un fleuve sans embouchure traversant le désert du Taklamakan dans le sud du Xinjiang, une des cinq régions autonomes de République populaire de Chine. Il forme le bassin du Tarim.
+                <div id="slideleft-main">
+                    <h2 class="title"><a href="#">Tarim</a> </h2>
+                    <img src="~/Image/Central_Tian_Shan_mountains.jpg" /><br />
 
-                    Avant l'utilisation massive des eaux du Tarim pour irriguer de
+                    <div class="des">
+                        HisTochText aborde la culture bouddhiste.Le Tarim est un fleuve sans embouchure traversant le désert du Taklamakan dans le sud du Xinjiang, une des cinq régions autonomes de République populaire de Chine. Il forme le bassin du Tarim.
+
+                        Avant l'utilisation massive des eaux du Tarim pour irriguer de
+                    </div>
+                    <p class="tlq"><a href="#">HisTochText aborde la culture bouddhiste</a></p>
+
                 </div>
-                <p class="tlq"><a href="#">HisTochText aborde la culture bouddhiste</a></p>
+                <div id="slideleft-scroll">
+                    <!--Five last news-->
 
+                    <div class="content_scoller width_common">
+                        <ul>
+                            <li>
+                                <div class="title_news">
+                                    <a href="#" class="txt_link"> HisTochText aborde la culture bouddhiste </a>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="title_news">
+                                    <a href="#" class="txt_link"> HisTochText aborde la culture bouddhiste </a>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="title_news">
+                                    <a href="#" class="txt_link"> HisTochText aborde la culture bouddhiste </a>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="title_news">
+                                    <a href="#" class="txt_link"> HisTochText aborde la culture bouddhiste </a>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="title_news">
+                                    <a href="#" class="txt_link"> HisTochText aborde la culture bouddhiste </a>
+                                </div>
+                            </li>
+
+                        </ul>
+                    </div>
+                    <!--Logo Histochtech-->
+                    <div id="gocnhin">
+                        <img class="moyenImage" alt="" src="~/Image/basin.jpg">
+                        <div class="title_news"></div>
+                    </div>
+
+                </div>
             </div>
-            <div id="slideleft-scroll">
-                <!--Five last news-->
-
-                <div class="content_scoller width_common">
-                    <ul>
-                        <li>
-                            <div class="title_news">
-                                <a href="#" class="txt_link"> HisTochText aborde la culture bouddhiste </a>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="title_news">
-                                <a href="#" class="txt_link"> HisTochText aborde la culture bouddhiste </a>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="title_news">
-                                <a href="#" class="txt_link"> HisTochText aborde la culture bouddhiste </a>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="title_news">
-                                <a href="#" class="txt_link"> HisTochText aborde la culture bouddhiste </a>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="title_news">
-                                <a href="#" class="txt_link"> HisTochText aborde la culture bouddhiste </a>
-                            </div>
-                        </li>
-
-                    </ul>
-                </div>
-                <!--Logo Histochtech-->
-                <div id="gocnhin">
-                    <img class="moyenImage" alt="" src="~/Image/basin.jpg">
-                    <div class="title_news"></div>
-                </div>
-
+            <!--Main-Right-->
+            <div id="slide-right">
+                <img style="width:90px;height:90px;" src="~/Image/basin.jpg" />
+                @{Html.RenderAction("PageActivity", "Home"); }
             </div>
-        </div>
-        <!--Main-Right-->
-        <div id="slide-right">
-            @*{Html.RenderAction("Activity", "Home");}*@
-            <h2> ACTIVITY </h2>
-            <p> g n gh g ghn  h gtt rty -rya"r' eytj jhk dt et hj  s et yj kekgo q fg jqsjg </p>
-            <img style="width:90px;height:90px;" src="~/Image/10.jpg" />
-            <p> g n gh g ghn  h gtt rty -rya"r' eytj jhk dt et hj  s et yj kekgo q fg jqsjg </p>
-            <img style="width:90px;height:90px;" src="~/Image/11.jpg" />
-            <p> g n gh g ghn  h gtt rty -rya"r' eytj jhk dt et hj  s et yj kekgo q fg jqsjg </p>
-            <img style="width:90px;height:90px;" src="~/Image/19.jpg" />
-            <p> g n gh g ghn  h gtt rty -rya"r' eytj jhk dt et hj  s et yj kekgo q fg jqsjg </p>
-            <img style="width:90px;height:90px;" src="~/Image/21.jpg" />
-        </div>
+    </div>
   <!--Page content--> 
 
     <div id="content-vp">
@@ -192,11 +185,10 @@
                             <span aria-hidden="true">&laquo;</span>
                         </a>
                     </li>
-                    <li><a href="#">1</a></li>
-                    <li><a href="#">2</a></li>
-                    <li><a href="#">3</a></li>
-                    <li><a href="#">4</a></li>
-                    <li><a href="#">5</a></li>
+                    <li>
+                      
+                    </li>
+                    
                     <li>
                         <a href="#" aria-label="Next">
                             <span aria-hidden="true">&raquo;</span>
@@ -222,8 +214,6 @@
                                 <h3 class="title"><a href="#"> Tocharian A </a></h3>
                                 <img class="images_news" src="~/Image/Tocharian.jpg" align="left" />
                                 <div class="des">hgjhjkjk </div>
-
-
                                 <div class="clear"></div>
 
                             </div>

@@ -12,24 +12,11 @@ namespace Horizone.Models
     {
         public int Id { get; set; }
 
-        [Display(Name = "Sujet")]            
-        [Required(ErrorMessageResourceName = "FieldRequired", ErrorMessageResourceType = typeof(StaticResource.Resources))]
-        [StringLength(40, MinimumLength = 1, ErrorMessageResourceName = "MaxLength40", ErrorMessageResourceType = typeof(StaticResource.Resources))]        
-        public string NameFrench { get; set; }
-
-        [Display(Name = "Topic")]
+        [Display(Name = "Topic", ResourceType = typeof(StaticResource.Resources))]
         [Required(ErrorMessageResourceName = "FieldRequired", ErrorMessageResourceType = typeof(StaticResource.Resources))]             
         [StringLength(40, MinimumLength = 1, ErrorMessageResourceName = "MaxLength40", ErrorMessageResourceType = typeof(StaticResource.Resources))]
-        public string NameEnglish { get; set; }
-
-        [Display(Name = "话题")]
-        [StringLength(40, MinimumLength = 1, ErrorMessageResourceName = "MaxLength40", ErrorMessageResourceType = typeof(StaticResource.Resources))]
-        public string TopicChinese { get; set; }
-
-        [Display(Name = "Thể loại")]
-        [StringLength(40, MinimumLength = 1, ErrorMessageResourceName = "MaxLength40", ErrorMessageResourceType = typeof(StaticResource.Resources))]
-        public string TopicVietnam { get; set; }
-
+        public string TopicName { get; set; }
+              
         [Display(Name = "Language", ResourceType = typeof(StaticResource.Resources))]
         public int LanguageId { get; set; }
 
