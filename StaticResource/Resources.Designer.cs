@@ -367,6 +367,15 @@ namespace StaticResource {
         }
         
         /// <summary>
+        ///   Recherche une chaîne localisée semblable à Nom du CV.
+        /// </summary>
+        public static string CVName {
+            get {
+                return ResourceManager.GetString("CVName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Recherche une chaîne localisée semblable à Date d&apos;activité.
         /// </summary>
         public static string DateActivity {
@@ -525,6 +534,15 @@ namespace StaticResource {
         public static string FieldRequired {
             get {
                 return ResourceManager.GetString("FieldRequired", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Fichier.
+        /// </summary>
+        public static string File {
+            get {
+                return ResourceManager.GetString("File", resourceCulture);
             }
         }
         
@@ -1695,6 +1713,15 @@ namespace StaticResource {
         public static string Tune {
             get {
                 return ResourceManager.GetString("Tune", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Télécharger.
+        /// </summary>
+        public static string Upload {
+            get {
+                return ResourceManager.GetString("Upload", resourceCulture);
             }
         }
         

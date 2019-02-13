@@ -696,4 +696,13 @@
   <data name="WritingTool" xml:space="preserve">
     <value>Outil d’écriture</value>
   </data>
+  <data name="File" xml:space="preserve">
+    <value>Fichier</value>
+  </data>
+  <data name="Upload" xml:space="preserve">
+    <value>Télécharger</value>
+  </data>
+  <data name="CVName" xml:space="preserve">
+    <value>Nom du CV</value>
+  </data>
 </root>

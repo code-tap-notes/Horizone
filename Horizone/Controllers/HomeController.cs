@@ -18,7 +18,8 @@ namespace Horizone.Controllers
         {
             return View();
         }
-      
+        
+
         public ActionResult About()
         {                       
             var aboutProjets = db.AboutProjets.Include(a => a.Language);
@@ -47,11 +48,12 @@ namespace Horizone.Controllers
         }
         public ActionResult AboutUs()
         {
+                                      
             var collaborations = db.Collaborations;
             foreach (var item in collaborations)
                 if (item.Team) collaborations.Add(item);
 
-            return View(collaborations.ToList());
+            return View(collaborations.Include("Publications").Include("ImageCollaborations").ToList());
             
         }
         public ActionResult Collaboration()
@@ -60,7 +62,7 @@ namespace Horizone.Controllers
             foreach (var item in db.Collaborations)
                 if (!item.Team) collaborations.Add(item);
 
-            return View(collaborations.ToList());
+            return View(collaborations.Include("Publications").Include("ImageCollaborations").ToList());
         }
         // GET: FrontContact/Create
         public ActionResult Contact()

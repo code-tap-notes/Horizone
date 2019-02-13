@@ -8,7 +8,7 @@
 <h2>@StaticResource.Resources.Details</h2>
 
 <div>
-    <h4>@StaticResource.Resources.Collaboration</h4>
+    
     <hr />
     <dl class="dl-horizontal">
         <dt>
@@ -40,7 +40,7 @@
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.Summary)
+            @Html.Raw(Model.Summary)
         </dd>
 
         <dt>
@@ -73,12 +73,19 @@
         <dd>
             @Html.DisplayFor(model => model.Visible)
         </dd>
-        <dd>
-            @Html.DisplayFor(model => model.Publications)
-        </dd>
-        <dt>           
-            @Html.Raw(Model.Publications.First().Title)
+        
+        <dt>
+            <p>  @StaticResource.Resources.Publications</p> 
         </dt>
+        <dd>
+            <table class="table table-striped">
+                @foreach (var item in Model.Publications)
+                {
+                    <tr><td>@item.Title</td></tr>
+                }
+
+            </table>
+        </dd>
     </dl>
 </div>
 <p>

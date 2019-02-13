@@ -693,4 +693,13 @@
   <data name="WritingTool" xml:space="preserve">
     <value>Writing Tool</value>
   </data>
+  <data name="File" xml:space="preserve">
+    <value>File</value>
+  </data>
+  <data name="Upload" xml:space="preserve">
+    <value>Upload</value>
+  </data>
+  <data name="CVName" xml:space="preserve">
+    <value>CV Name</value>
+  </data>
 </root>

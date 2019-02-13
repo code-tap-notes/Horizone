@@ -30,7 +30,7 @@ namespace Horizone.Models
         public int CollaborationId { get; set; }
 
         [ForeignKey("CollaborationId")]
-        public Collaboration Colaboration { get; set; }
-        
+        public Collaboration Collaboration { get; set; }
+               
     }
 }

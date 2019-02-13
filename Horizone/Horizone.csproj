@@ -209,7 +209,6 @@
     <Compile Include="Areas\BackOffice\Controllers\CollaborationsController.cs" />
     <Compile Include="Areas\BackOffice\Controllers\ContactMessagesController.cs" />
     <Compile Include="Areas\BackOffice\Controllers\DashBoardsController.cs" />
-    <Compile Include="Areas\BackOffice\Controllers\ImageCollaborationsController.cs" />
     <Compile Include="Areas\BackOffice\Controllers\InThePressesController.cs" />
     <Compile Include="Areas\BackOffice\Controllers\PublicationsController.cs" />
     <Compile Include="Areas\BackOffice\Controllers\TopicsController.cs" />
@@ -224,6 +223,10 @@
     <Compile Include="Migrations\201902082054458_changetablePublication.cs" />
     <Compile Include="Migrations\201902082054458_changetablePublication.Designer.cs">
       <DependentUpon>201902082054458_changetablePublication.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201902121738426_changecollaboration.cs" />
+    <Compile Include="Migrations\201902121738426_changecollaboration.Designer.cs">
+      <DependentUpon>201902121738426_changecollaboration.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AboutProject.cs" />
@@ -446,11 +449,6 @@
     <Content Include="Areas\BackOffice\Views\AboutProjects\Details.cshtml" />
     <Content Include="Areas\BackOffice\Views\AboutProjects\Edit.cshtml" />
     <Content Include="Areas\BackOffice\Views\AboutProjects\Index.cshtml" />
-    <Content Include="Areas\BackOffice\Views\ImageCollaborations\Create.cshtml" />
-    <Content Include="Areas\BackOffice\Views\ImageCollaborations\Delete.cshtml" />
-    <Content Include="Areas\BackOffice\Views\ImageCollaborations\Details.cshtml" />
-    <Content Include="Areas\BackOffice\Views\ImageCollaborations\Edit.cshtml" />
-    <Content Include="Areas\BackOffice\Views\ImageCollaborations\Index.cshtml" />
     <Content Include="Areas\BackOffice\Views\InThePresses\Create.cshtml" />
     <Content Include="Areas\BackOffice\Views\InThePresses\Delete.cshtml" />
     <Content Include="Areas\BackOffice\Views\InThePresses\Details.cshtml" />
@@ -800,6 +798,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201902082054458_changetablePublication.resx">
       <DependentUpon>201902082054458_changetablePublication.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201902121738426_changecollaboration.resx">
+      <DependentUpon>201902121738426_changecollaboration.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

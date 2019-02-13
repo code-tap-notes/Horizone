@@ -33,7 +33,7 @@ namespace Horizone.Models
         [StringLength(500, MinimumLength = 1, ErrorMessageResourceName = "MaxLength500", ErrorMessageResourceType = typeof(StaticResource.Resources))]
         public string Summary { get; set; }
 
-        [Display(Name = "CV")]
+        [Display(Name = "CVName")]
         [StringLength(500, MinimumLength = 1, ErrorMessageResourceName = "MaxLength500", ErrorMessageResourceType = typeof(StaticResource.Resources))]
         public string CV { get; set; }
 
@@ -51,7 +51,6 @@ namespace Horizone.Models
 
         [Display(Name = "Visible", ResourceType = typeof(StaticResource.Resources))]
         public Boolean Visible { get; set; }
-
 
     }
 }

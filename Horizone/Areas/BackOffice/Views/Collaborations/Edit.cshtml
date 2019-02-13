@@ -3,145 +3,166 @@
 @{
     ViewBag.Title = @StaticResource.Resources.Edit;
 }
+<div class="detail">
+  <h2>@StaticResource.Resources.Edit</h2>
+  <div class="row container-fluid">
+    <div class="col-md-6">
+      @using (Html.BeginForm())
+       {
+           @Html.AntiForgeryToken()
+           <div class="form-horizontal">
+            <hr />
+                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                @Html.HiddenFor(model => model.Id)
 
-<h2>@StaticResource.Resources.Edit</h2>
-
-@using (Html.BeginForm())
-{
-    @Html.AntiForgeryToken()
-
-    <div class="form-horizontal">
-        <h4>@StaticResource.Resources.Collaboration</h4>
-        <hr />
-        <div class="col-md-6">
-            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-            @Html.HiddenFor(model => model.Id)
-
-            <div class="form-group">
-                @Html.LabelFor(model => model.Title, htmlAttributes: new { @class = "control-label col-md-2" })
-                <div class="col-md-10">
-                    @Html.EditorFor(model => model.Title, new { htmlAttributes = new { @class = "form-control" } })
-                    @Html.ValidationMessageFor(model => model.Title, "", new { @class = "text-danger" })
-                </div>
-            </div>
-
-            <div class="form-group">
-                @Html.LabelFor(model => model.LastName, htmlAttributes: new { @class = "control-label col-md-2" })
-                <div class="col-md-10">
-                    @Html.EditorFor(model => model.LastName, new { htmlAttributes = new { @class = "form-control" } })
-                    @Html.ValidationMessageFor(model => model.LastName, "", new { @class = "text-danger" })
-                </div>
-            </div>
-
-            <div class="form-group">
-                @Html.LabelFor(model => model.FirstName, htmlAttributes: new { @class = "control-label col-md-2" })
-                <div class="col-md-10">
-                    @Html.EditorFor(model => model.FirstName, new { htmlAttributes = new { @class = "form-control" } })
-                    @Html.ValidationMessageFor(model => model.FirstName, "", new { @class = "text-danger" })
-                </div>
-            </div>
-
-            <div class="form-group">
-                @Html.LabelFor(model => model.Summary, htmlAttributes: new { @class = "control-label col-md-2" })
-                <div class="col-md-10">
-                    @Html.EditorFor(model => model.Summary, new { htmlAttributes = new { @class = "form-control" } })
-                    @Html.ValidationMessageFor(model => model.Summary, "", new { @class = "text-danger" })
-                </div>
-            </div>
-
-            <div class="form-group">
-                @Html.LabelFor(model => model.CV, htmlAttributes: new { @class = "control-label col-md-2" })
-                <div class="col-md-10">
-                    @Html.EditorFor(model => model.CV, new { htmlAttributes = new { @class = "form-control" } })
-                    @Html.ValidationMessageFor(model => model.CV, "", new { @class = "text-danger" })
-                </div>
-            </div>
-
-            <div class="form-group">
-                @Html.LabelFor(model => model.Email, htmlAttributes: new { @class = "control-label col-md-2" })
-                <div class="col-md-10">
-                    @Html.EditorFor(model => model.Email, new { htmlAttributes = new { @class = "form-control" } })
-                    @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
-                </div>
-            </div>
-
-            <div class="form-group">
-                @Html.LabelFor(model => model.Team, htmlAttributes: new { @class = "control-label col-md-2" })
-                <div class="col-md-10">
-                    <div class="checkbox">
-                        @Html.EditorFor(model => model.Team)
-                        @Html.ValidationMessageFor(model => model.Team, "", new { @class = "text-danger" })
-                    </div>
-                </div>
-            </div>
-
-            <div class="form-group">
-                @Html.LabelFor(model => model.Visible, htmlAttributes: new { @class = "control-label col-md-2" })
-                <div class="col-md-10">
-                    <div class="checkbox">
-                        @Html.EditorFor(model => model.Visible)
-                        @Html.ValidationMessageFor(model => model.Visible, "", new { @class = "text-danger" })
-                    </div>
-                </div>
-            </div>
-            <div class="form-group">
-                <label class="control-label col-md-2">Publications</label>
-                <div class="col-md-10">
-                    @Html.ListBox("PublicationId", (MultiSelectList)ViewBag.Publications, new { @class = "form-control" })
-
-                </div>
-            </div>
-
-            <div class="form-group">
-                <div class="col-md-offset-2 col-md-10">
-                    <input type="submit" value=@StaticResource.Resources.Save class="btn btn-primary" />
-                    @Html.ActionLink(@StaticResource.Resources.Return, "Index", null, new { @class = "btn btn-default" })
-                </div>
-            </div>
-        </div>
-        <div class="col-md-6">
-            <h3>Images</h3>
-            Les images doivent etre de resolution 600x400
-            <form action="@Url.Action("AddPicture", "Collaborations")" method="post" enctype="multipart/form-data">
-
-                @Html.HiddenFor(x => x.Id)
                 <div class="form-group">
-                    <label for="if">Fichier</label>
-                    <input type="file" id="if" name="picture" />
+                    @Html.LabelFor(model => model.Title, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.Title, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.Title, "", new { @class = "text-danger" })
+                    </div>
                 </div>
-                <button type="submit" class="btn btn-info"> Ajouter</button>
-            </form>
-            <div class="row">
-                @if (Model.ImageCollaborations != null)
-                {
-                    foreach (var picture in Model.ImageCollaborations)
-                    {
-                        <div class="col-md-2" id="@picture.Id">
-                            <img src="data:@picture.ContentType;base64,@Convert.ToBase64String(picture.Content)" class="img-thumbnail" />
-                            <p><a id="delete" class="delete" href="@Url.Action("DeletePicture", "Colaborations", new {id=picture.CollaborationId, iddestination=picture.Id })"> <i class="glyphicon glyphicon-trash"></i> </a></p>
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.LastName, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.LastName, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.LastName, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.FirstName, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.FirstName, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.FirstName, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.Summary, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.Summary, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.Summary, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.CV, htmlAttributes: new { @class = "control-label col-md-2" })                    
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.CV, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.CV, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.Email, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.Email, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.Team, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        <div class="checkbox">
+                            @Html.EditorFor(model => model.Team)
+                            @Html.ValidationMessageFor(model => model.Team, "", new { @class = "text-danger" })
                         </div>
-                    }
-                }
-            </div>
-        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.Visible, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        <div class="checkbox">
+                            @Html.EditorFor(model => model.Visible)
+                            @Html.ValidationMessageFor(model => model.Visible, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label col-md-2">Publications</label>
+                    <div class="col-md-10">
+                        @Html.ListBox("PublicationId", (MultiSelectList)ViewBag.Publications, new { @class = "form-control" })
+
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="col-md-offset-2 col-md-10">
+                        <input type="submit" value=@StaticResource.Resources.Save class="btn btn-primary" />
+                        @Html.ActionLink(@StaticResource.Resources.Return, "Index", null, new { @class = "btn btn-default" })
+                    </div>
+                </div>
+           </div>
+        }
     </div>
-}
 
+    <div class="col-md-6">
+        <h3>@StaticResource.Resources.Upload CV</h3>
+        <form action="@Url.Action("UpLoadCv", "Collaborations")" method="post" enctype="multipart/form-data">
 
-@section Scripts {
-    @Scripts.Render("~/bundles/jqueryval")
-    <script>
+            @Html.HiddenFor(x => x.Id)
+            <div>
+                @Html.TextBox("file", "", new { type = "file" })
+                <button type="submit" value="Save" class="btn btn-info">@StaticResource.Resources.Add</button>                               
+            </div>
+
+        </form>
+        <h3>@StaticResource.Resources.Picture</h3>
+        <form action="@Url.Action("AddPicture", "Collaborations")" method="post" enctype="multipart/form-data">
+
+            @Html.HiddenFor(x => x.Id)
+            <div class="form-group">
+                <label for="if">@StaticResource.Resources.File</label>
+                <input type="file" id="if" name="picture" />
+            </div>
+            <button type="submit" class="btn btn-info">@StaticResource.Resources.Add</button>
+        </form>
+        <div class="row">
+            @if (Model.ImageCollaborations != null)
+            {
+                foreach (var picture in Model.ImageCollaborations)
+                {
+                    <div class="col-md-2" id="@picture.Id">
+                        <img src="data:@picture.ContentType;base64,@Convert.ToBase64String(picture.Content)" class="img-thumbnail" />
+                        <p><a id="delete" class="delete" href="@Url.Action("DeletePicture", "Collaborations", new {id=picture.Id, idcollaboration=picture.CollaborationId })"> <i class="glyphicon glyphicon-trash"></i> </a></p>
+                    </div>
+                }
+            }
+        </div>
+
+    </div>
+    </div>
+</div>
+    @section Scripts {
+        @Scripts.Render("~/bundles/jqueryval")
+        <script>
         $(function () {
             //$.setLocale('fr');
-
             tinymce.init({ selector: '#Summary', lang: 'fr' });
         });
-
         const btn = document.querySelector('#delete');
         btn.addEventListener('click', ev => {
-            if (confirm("Voulez-vous supprimer cette photo ?") == false) {
+            if (confirm("Voulez-vous supprimer cette photo ?") === false) {
                 ev.preventDefault();
             }
         });
-    </script>
-}
+          $('a.delete').click(function () {
+                var idPicture = $(this).data("id");
+                //alert(idPicture);
+                $.ajax({
+                    url: '@Url.Action("deletePicture", "Collaborations")',
+                    type: 'POST',
+                    dataType: 'json',
+                    data: { id: idPicture },
+                    success: function (obj) {
+                        alert("l'image " + obj.Name + " a été supprimée.");
+                        $("#div-" + idPicture).fadeOut();
+                    }
+                });
+            });
+        </script>
+    }
