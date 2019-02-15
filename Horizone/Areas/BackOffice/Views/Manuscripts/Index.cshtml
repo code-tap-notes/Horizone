@@ -1,0 +1,48 @@
+﻿@model PagedList.IPagedList<Horizone.Models.Manuscript>
+@using PagedList.Mvc;
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @StaticResource.Resources.Manuscript
+        </th>
+        <th>
+            @StaticResource.Resources.OtherSiglum
+        </th>
+        <th>
+            @StaticResource.Resources.Language
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Index)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.OverallDescription.OtherSiglum)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TextLanguage.Language)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
+            @Html.ActionLink("Details", "Details", new { id = item.Id }) |
+            @Html.ActionLink("Delete", "Delete", new { id = item.Id })
+        </td>
+    </tr>
+    }
+
+</table>
+@Html.PagedListPager(Model, page => Url.Action("index", new { page }))
+

@@ -1,0 +1,135 @@
+﻿@model Horizone.Models.Manuscript
+
+@{
+    ViewBag.Title = "Details";
+}
+<div class="content">
+
+    <h2> @StaticResource.Resources.Details </h2>
+    <div class="autocontents">
+        <ul>
+            <li>
+                @Html.DisplayNameFor(model => model.Index)
+            </li>
+            <li>
+                @Html.DisplayFor(model => model.Index)
+            </li>
+        </ul>
+        <p>
+            <b> @StaticResource.Resources.SeeAlso : </b>
+        </p>
+        <ul>
+
+            <li><a href="@Url.Action("Details","LayoutManuscripts",new { id = Model.LayoutManuscriptId })">@StaticResource.Resources.LayoutManuscript</a></li>
+            <li><a href="@Url.Action("Details","OverallDescriptions",new { id = Model.OverallDescriptionId })">@StaticResource.Resources.OverallDescription</a></li>
+            <li><a href="@Url.Action("Details","ScriptManuscripts",new { id = Model.ScriptManuscriptId })">@StaticResource.Resources.ScriptManuscript</a></li>
+            <li><a href="@Url.Action("Details","TextContents",new { id = Model.TextContentId })">@StaticResource.Resources.TextContent</a></li>
+            <li><a href="@Url.Action("Details","TextLanguages",new { id = Model.TextLanguageId })">@StaticResource.Resources.TextLanguage</a></li>
+            <li> <a href="@Url.Action("Details","MaterialManuscripts",new { id = Model.MaterialManuscriptId })">@StaticResource.Resources.Material</a></li>
+        </ul>
+    </div>
+    <div class="autocontents">
+       
+        <ul>
+            <li>
+                @StaticResource.Resources.Manuscript
+            </li>
+            <li>
+                @if (Model.ImageManuscripts?.Count > 0)
+                {
+                    foreach (var item in Model.ImageManuscripts)
+                    {
+                        <img src="data:@item.ContentType;base64,@Convert.ToBase64String(item.Content)" alt="Photo" style="width:100%" />
+                    }
+                }
+            </li>
+        </ul>
+        <ul>
+            <li>
+                @Html.DisplayNameFor(model => model.Transliteration)
+            </li>
+            <li>
+                @Html.Raw(Model.Transliteration)
+            </li>
+        </ul>
+        <ul>
+            <li>
+                @Html.DisplayNameFor(model => model.Transcription)
+            </li>
+            <li>
+                @Html.Raw(Model.Transcription)
+            </li>
+        </ul>
+        
+        <ul>
+            <li>
+                @Html.DisplayNameFor(model => model.English)
+            </li>
+            <li>
+                @Html.Raw(Model.English)
+            </li>
+        </ul>
+        
+        <ul>
+            <li>
+                @Html.DisplayNameFor(model => model.Francaise)
+            </li>
+            <li>
+                @Html.Raw(Model.Francaise)
+            </li>
+        </ul>
+       
+        <ul>
+            <li>
+                @Html.DisplayNameFor(model => model.Chinese)
+            </li>
+            <li>
+                @Html.Raw(Model.Chinese)
+            </li>
+        </ul>
+       
+        <ul>
+            <li>
+                @Html.DisplayNameFor(model => model.Editor)
+            </li>
+            <li>
+                @Html.DisplayFor(model => model.Editor)
+            </li>
+        </ul>
+        
+        <ul>
+            <li>
+                @Html.DisplayNameFor(model => model.References)
+            </li>
+            <li>
+                @Html.DisplayFor(model => model.References)
+            </li>
+        </ul>
+        
+        <ul>
+            <li>
+                @Html.DisplayNameFor(model => model.PhilologicalCommentary)
+            </li>
+            <li>
+                @Html.Raw(Model.PhilologicalCommentary)
+            </li>
+        </ul>
+        
+        <ul>
+            <li>
+                @Html.DisplayNameFor(model => model.Visible)
+            </li>
+            <li>
+                @Html.DisplayFor(model => model.Visible)
+            </li>
+        </ul>
+          
+        
+    </div>
+</div>
+    <div>
+            <p>
+                @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+                @Html.ActionLink("Back to List", "Index")
+            </p>
+    </div>

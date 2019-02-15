@@ -50,7 +50,7 @@ namespace Horizone.Areas.BackOffice.Controllers
             foreach ( var item in collaborations)
             if (item.Team) collaborations.Add(item);
        
-            return View(collaborations.ToList());
+            return View(collaborations.Include("Publications").Include("ImageCollaborations").ToList());
         }
         // GET: FrontContact/Create
         public ActionResult Contact()
@@ -69,6 +69,18 @@ namespace Horizone.Areas.BackOffice.Controllers
         {
             return View();
         }
-        
+        [ChildActionOnly]
+        public ActionResult InPresse()
+        {
+
+            var menus = db.Menus;
+
+            foreach (var item in db.Menus)
+            {
+                if (item.Order == 4)
+                    menus.Add(item);
+            }
+            return PartialView(menus.ToList());
+        }
     }
 }

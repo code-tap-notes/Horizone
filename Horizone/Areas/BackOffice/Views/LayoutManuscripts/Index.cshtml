@@ -1,0 +1,111 @@
+﻿@model IEnumerable<Horizone.Models.LayoutManuscript>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.SizeHeight)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Completeness)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SizeWidth)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NumberOfLine)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.LineDistance)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Format)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Ruling)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.RulingColor)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.RulingDetail)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.StringholeHeight)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.StringholeWidth)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DistanceStringholeRight)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DistanceStringholeLeft)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.InterruptedLine)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.SizeHeight)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Completeness)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SizeWidth)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NumberOfLine)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.LineDistance)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Format)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Ruling)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.RulingColor)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.RulingDetail)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.StringholeHeight)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.StringholeWidth)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DistanceStringholeRight)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DistanceStringholeLeft)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.InterruptedLine)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
+            @Html.ActionLink("Details", "Details", new { id=item.Id }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.Id })
+        </td>
+    </tr>
+}
+
+</table>

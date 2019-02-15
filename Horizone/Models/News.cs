@@ -14,12 +14,10 @@ namespace Horizone.Models
 
         [Display(Name = "Title", ResourceType = typeof(StaticResource.Resources))]
         [Required(ErrorMessageResourceName = "FieldRequired", ErrorMessageResourceType = typeof(StaticResource.Resources))]
-        [StringLength(40, MinimumLength = 1, ErrorMessageResourceName = "MaxLength40", ErrorMessageResourceType = typeof(StaticResource.Resources))]
         public string Title { get; set; }
        
 
         [Display(Name = "Summary", ResourceType = typeof(StaticResource.Resources))]
-        [StringLength(200, MinimumLength = 1, ErrorMessageResourceName = "MaxLength200", ErrorMessageResourceType = typeof(StaticResource.Resources))]
         public string Summary { get; set; }
 
         [DataType(DataType.DateTime)]                             
@@ -32,11 +30,10 @@ namespace Horizone.Models
 
       
         [Display(Name = "Content",ResourceType = typeof(StaticResource.Resources))]
-        [StringLength(10000, MinimumLength = 1, ErrorMessageResourceName = "MaxLength10000", ErrorMessageResourceType = typeof(StaticResource.Resources))]
         public string Content{ get; set; }
        
         [Display(Name = "Views ", ResourceType = typeof(StaticResource.Resources))]
-        [Range(0, 1000, ErrorMessage = ">0")]
+        [Range(0, 10000, ErrorMessage = ">0")]
         public int View { get; set; }
 
         [Display(Name = "Topic", ResourceType = typeof(StaticResource.Resources))]

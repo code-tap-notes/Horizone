@@ -65,6 +65,6 @@ namespace Horizone.Models
         public DbSet<Activity> Activitys { get; set; }
         public DbSet<Publication> Publications { get; set; }
         public DbSet<AboutProject> AboutProjets { get; set; }
-        public DbSet<InThePresse> InthePresses { get; set; }
+        
     }
 }

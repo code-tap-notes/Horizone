@@ -209,8 +209,15 @@
     <Compile Include="Areas\BackOffice\Controllers\CollaborationsController.cs" />
     <Compile Include="Areas\BackOffice\Controllers\ContactMessagesController.cs" />
     <Compile Include="Areas\BackOffice\Controllers\DashBoardsController.cs" />
-    <Compile Include="Areas\BackOffice\Controllers\InThePressesController.cs" />
+    <Compile Include="Areas\BackOffice\Controllers\LayoutManuscriptsController.cs" />
+    <Compile Include="Areas\BackOffice\Controllers\ManuscriptsController.cs" />
+    <Compile Include="Areas\BackOffice\Controllers\MaterialManuscriptsController.cs" />
+    <Compile Include="Areas\BackOffice\Controllers\MenusController.cs" />
+    <Compile Include="Areas\BackOffice\Controllers\OverallDescriptionsController.cs" />
     <Compile Include="Areas\BackOffice\Controllers\PublicationsController.cs" />
+    <Compile Include="Areas\BackOffice\Controllers\ScriptManuscriptsController.cs" />
+    <Compile Include="Areas\BackOffice\Controllers\TextContentsController.cs" />
+    <Compile Include="Areas\BackOffice\Controllers\TextLanguagesController.cs" />
     <Compile Include="Areas\BackOffice\Controllers\TopicsController.cs" />
     <Compile Include="Migrations\201902071549146_Init.cs" />
     <Compile Include="Migrations\201902071549146_Init.Designer.cs">
@@ -227,6 +234,18 @@
     <Compile Include="Migrations\201902121738426_changecollaboration.cs" />
     <Compile Include="Migrations\201902121738426_changecollaboration.Designer.cs">
       <DependentUpon>201902121738426_changecollaboration.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201902141724036_delInthepress.cs" />
+    <Compile Include="Migrations\201902141724036_delInthepress.Designer.cs">
+      <DependentUpon>201902141724036_delInthepress.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201902141940317_changerequired.cs" />
+    <Compile Include="Migrations\201902141940317_changerequired.Designer.cs">
+      <DependentUpon>201902141940317_changerequired.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201902142008403_changeleght.cs" />
+    <Compile Include="Migrations\201902142008403_changeleght.Designer.cs">
+      <DependentUpon>201902142008403_changeleght.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AboutProject.cs" />
@@ -254,7 +273,6 @@
     <Compile Include="Models\ImageDictionary.cs" />
     <Compile Include="Models\ImageManuscript.cs" />
     <Compile Include="Models\ImageNews.cs" />
-    <Compile Include="Models\InThePresse.cs" />
     <Compile Include="Models\Language.cs" />
     <Compile Include="Models\LayoutManuscript.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
@@ -434,10 +452,6 @@
     <Content Include="Areas\BackOffice\Views\DashBoards\About.cshtml" />
     <Content Include="Areas\BackOffice\Views\DashBoards\Help.cshtml" />
     <Content Include="Areas\BackOffice\Views\DashBoards\Contact.cshtml" />
-    <Content Include="Equipe\CV\CV1.docx" />
-    <Content Include="Equipe\CV\CV2.docx" />
-    <Content Include="Equipe\CV\CV3.docx" />
-    <Content Include="Equipe\CV\CV4.docx" />
     <Content Include="Areas\BackOffice\Views\Activities\Create.cshtml" />
     <Content Include="Areas\BackOffice\Views\Activities\Delete.cshtml" />
     <Content Include="Areas\BackOffice\Views\Activities\Details.cshtml" />
@@ -449,11 +463,6 @@
     <Content Include="Areas\BackOffice\Views\AboutProjects\Details.cshtml" />
     <Content Include="Areas\BackOffice\Views\AboutProjects\Edit.cshtml" />
     <Content Include="Areas\BackOffice\Views\AboutProjects\Index.cshtml" />
-    <Content Include="Areas\BackOffice\Views\InThePresses\Create.cshtml" />
-    <Content Include="Areas\BackOffice\Views\InThePresses\Delete.cshtml" />
-    <Content Include="Areas\BackOffice\Views\InThePresses\Details.cshtml" />
-    <Content Include="Areas\BackOffice\Views\InThePresses\Edit.cshtml" />
-    <Content Include="Areas\BackOffice\Views\InThePresses\Index.cshtml" />
     <Content Include="Areas\BackOffice\Views\DashBoards\PresenteProjet.cshtml" />
     <Content Include="Areas\BackOffice\Views\DashBoards\PageActivity.cshtml" />
     <Content Include="Areas\BackOffice\Views\Shared\_Layout.cshtml" />
@@ -477,6 +486,48 @@
     <Content Include="Areas\BackOffice\Views\Collaborations\Index.cshtml" />
     <Content Include="Areas\BackOffice\Views\Collaborations\Team.cshtml" />
     <Content Include="Areas\BackOffice\Views\Collaborations\Collaboration.cshtml" />
+    <Content Include="Areas\BackOffice\Views\Menus\Create.cshtml" />
+    <Content Include="Areas\BackOffice\Views\Menus\Delete.cshtml" />
+    <Content Include="Areas\BackOffice\Views\Menus\Details.cshtml" />
+    <Content Include="Areas\BackOffice\Views\Menus\Edit.cshtml" />
+    <Content Include="Areas\BackOffice\Views\Menus\Index.cshtml" />
+    <Content Include="Areas\BackOffice\Views\DashBoards\InPresse.cshtml" />
+    <Content Include="Areas\BackOffice\Views\Menus\Link.cshtml" />
+    <Content Include="Areas\BackOffice\Views\LayoutManuscripts\Create.cshtml" />
+    <Content Include="Areas\BackOffice\Views\LayoutManuscripts\Delete.cshtml" />
+    <Content Include="Areas\BackOffice\Views\LayoutManuscripts\Details.cshtml" />
+    <Content Include="Areas\BackOffice\Views\LayoutManuscripts\Edit.cshtml" />
+    <Content Include="Areas\BackOffice\Views\LayoutManuscripts\Index.cshtml" />
+    <Content Include="Areas\BackOffice\Views\Manuscripts\Create.cshtml" />
+    <Content Include="Areas\BackOffice\Views\Manuscripts\Delete.cshtml" />
+    <Content Include="Areas\BackOffice\Views\Manuscripts\Details.cshtml" />
+    <Content Include="Areas\BackOffice\Views\Manuscripts\Edit.cshtml" />
+    <Content Include="Areas\BackOffice\Views\Manuscripts\Index.cshtml" />
+    <Content Include="Areas\BackOffice\Views\OverallDescriptions\Create.cshtml" />
+    <Content Include="Areas\BackOffice\Views\OverallDescriptions\Delete.cshtml" />
+    <Content Include="Areas\BackOffice\Views\OverallDescriptions\Details.cshtml" />
+    <Content Include="Areas\BackOffice\Views\OverallDescriptions\Edit.cshtml" />
+    <Content Include="Areas\BackOffice\Views\OverallDescriptions\Index.cshtml" />
+    <Content Include="Areas\BackOffice\Views\TextContents\Create.cshtml" />
+    <Content Include="Areas\BackOffice\Views\TextContents\Delete.cshtml" />
+    <Content Include="Areas\BackOffice\Views\TextContents\Details.cshtml" />
+    <Content Include="Areas\BackOffice\Views\TextContents\Edit.cshtml" />
+    <Content Include="Areas\BackOffice\Views\TextContents\Index.cshtml" />
+    <Content Include="Areas\BackOffice\Views\TextLanguages\Create.cshtml" />
+    <Content Include="Areas\BackOffice\Views\TextLanguages\Delete.cshtml" />
+    <Content Include="Areas\BackOffice\Views\TextLanguages\Details.cshtml" />
+    <Content Include="Areas\BackOffice\Views\TextLanguages\Edit.cshtml" />
+    <Content Include="Areas\BackOffice\Views\TextLanguages\Index.cshtml" />
+    <Content Include="Areas\BackOffice\Views\MaterialManuscripts\Create.cshtml" />
+    <Content Include="Areas\BackOffice\Views\MaterialManuscripts\Delete.cshtml" />
+    <Content Include="Areas\BackOffice\Views\MaterialManuscripts\Details.cshtml" />
+    <Content Include="Areas\BackOffice\Views\MaterialManuscripts\Edit.cshtml" />
+    <Content Include="Areas\BackOffice\Views\MaterialManuscripts\Index.cshtml" />
+    <Content Include="Areas\BackOffice\Views\ScriptManuscripts\Create.cshtml" />
+    <Content Include="Areas\BackOffice\Views\ScriptManuscripts\Delete.cshtml" />
+    <Content Include="Areas\BackOffice\Views\ScriptManuscripts\Details.cshtml" />
+    <Content Include="Areas\BackOffice\Views\ScriptManuscripts\Edit.cshtml" />
+    <Content Include="Areas\BackOffice\Views\ScriptManuscripts\Index.cshtml" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\cldr.js" />
     <Content Include="Scripts\cldr\event.js" />
@@ -765,6 +816,7 @@
     <Content Include="Views\Home\Address.cshtml" />
     <Content Include="Views\Home\PageActivity.cshtml" />
     <Content Include="Views\Account\RegisterCollaborator.cshtml" />
+    <Content Include="Views\Home\Presse.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -801,6 +853,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201902121738426_changecollaboration.resx">
       <DependentUpon>201902121738426_changecollaboration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201902141724036_delInthepress.resx">
+      <DependentUpon>201902141724036_delInthepress.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201902141940317_changerequired.resx">
+      <DependentUpon>201902141940317_changerequired.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201902142008403_changeleght.resx">
+      <DependentUpon>201902142008403_changeleght.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

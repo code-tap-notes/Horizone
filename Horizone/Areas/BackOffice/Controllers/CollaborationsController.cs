@@ -187,7 +187,7 @@ namespace Horizone.Areas.BackOffice.Controllers
                     string filePath = Path.Combine(Server.MapPath("~/Equipe"), fileName);
                     file.SaveAs(filePath);
                 }
-                Display( "Upload file successfully");
+                Display( "Upload file successfully");                               
                 return RedirectToAction("edit", "Collaborations", new { id = id });
             }
             catch
@@ -196,6 +196,23 @@ namespace Horizone.Areas.BackOffice.Controllers
                 return RedirectToAction("edit", "Collaborations", new { id = id });
             }
         }
+        private List<string> GetFiles()
+        {
+            var dir = new System.IO.DirectoryInfo(Server.MapPath("~/ "));
+            System.IO.FileInfo[] fileNames = dir.GetFiles("*.*");
+            List<string> items = new List<string>();
+            foreach (var file in fileNames)
+            {
+                items.Add(file.Name);
+            }
+            return items;
+        }
+        public FileResult DownLoad(string cvName, int id)
+        {
+            var fullPath = "~/Equipe/" +id+"-"+ cvName;
+            return File(fullPath, "application/CV-Download", Path.GetFileName(fullPath));
+        }
+
 
         // GET
         public ActionResult DeletePicture(int id, int idcollaboration)

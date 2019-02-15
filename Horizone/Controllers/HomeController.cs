@@ -9,6 +9,7 @@ using System.Net;
 using Horizone.Models;
 using PagedList;
 using Horizone.Common;
+using System.IO;
 
 namespace Horizone.Controllers
 {
@@ -87,6 +88,11 @@ namespace Horizone.Controllers
             return View(contactMessage);
         }
 
+        public FileResult DownLoad(string cvName, int id)
+        {
+            var fullPath = "~/Equipe/" + id + "-" + cvName;
+            return File(fullPath, "application/CV-Download", Path.GetFileName(fullPath));
+        }
 
         public ActionResult Bibliographie(int page = 1, int pageSize = 6)
         {
@@ -96,8 +102,14 @@ namespace Horizone.Controllers
         [ChildActionOnly]
         public ActionResult MainMenu()
         {
-            //return PartialView(db.Menus.ToList());
-            return PartialView();
+            return PartialView(db.Menus.ToList());
+           
+        }
+        [ChildActionOnly]
+        public ActionResult Presse()
+        {
+            return PartialView(db.Menus.ToList());
+
         }
 
         public ActionResult TochHistoire()

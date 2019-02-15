@@ -289,10 +289,10 @@
     <value>标题文章</value>
   </data>
   <data name="TochPhrase" xml:space="preserve">
-    <value>Toch短语</value>
+    <value>吐火罗短语</value>
   </data>
   <data name="TochStory" xml:space="preserve">
-    <value>Toch故事</value>
+    <value>吐火罗故事</value>
   </data>
   <data name="Topic" xml:space="preserve">
     <value>话题</value>
@@ -704,5 +704,17 @@
   </data>
   <data name="CVName" xml:space="preserve">
     <value>简历名称</value>
+  </data>
+  <data name="OverallDescription" xml:space="preserve">
+    <value>总体描述</value>
+  </data>
+  <data name="Textcontent" xml:space="preserve">
+    <value>文字内容</value>
+  </data>
+  <data name="TextLanguage" xml:space="preserve">
+    <value>文字语言</value>
+  </data>
+  <data name="References" xml:space="preserve">
+    <value>参考</value>
   </data>
 </root>

@@ -107,7 +107,19 @@
             @Html.HiddenFor(x => x.Id)
             <div>
                 @Html.TextBox("file", "", new { type = "file" })
-                <button type="submit" value="Save" class="btn btn-info">@StaticResource.Resources.Add</button>                               
+
+                <button type="submit" value="Save" class="btn btn-info">@StaticResource.Resources.Add</button>                
+                <table>
+                    <tr>
+                        <th> @StaticResource.Resources.CVName </th>
+                        <th> Link </th>
+                    </tr>
+                    <tr>
+                            <td>@Model.CV </td>
+                            <td>@Html.ActionLink("DownLoad", "Collaborations", new { cvName = Model.CV }) </td>
+                    </tr>
+                </table>
+                    
             </div>
 
         </form>

@@ -1,0 +1,69 @@
+﻿@model IEnumerable<Horizone.Models.ScriptManuscript>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.AlignmentType)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ModuleWidth)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ModuleHeight)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AvCharPerLigne)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NibThickness)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Script)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ScriptAdd)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.AlignmentType)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ModuleWidth)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ModuleHeight)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.AvCharPerLigne)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NibThickness)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Script)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ScriptAdd)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
+            @Html.ActionLink("Details", "Details", new { id=item.Id }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.Id })
+        </td>
+    </tr>
+}
+
+</table>

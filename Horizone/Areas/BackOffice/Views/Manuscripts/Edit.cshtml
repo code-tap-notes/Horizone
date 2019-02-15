@@ -1,0 +1,222 @@
+﻿@model Horizone.Models.Manuscript
+
+@{
+    ViewBag.Title = "Edit";
+}
+<div class="detail">
+    <h2>Edit</h2>
+    <div class="row container-fluid">
+        <div class="col-md-6">
+            @using (Html.BeginForm())
+            {
+                @Html.AntiForgeryToken()
+
+                <div class="form-horizontal">
+                    
+                    <hr />
+                    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                    @Html.HiddenFor(model => model.Id)
+
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.Index, htmlAttributes: new { @class = "control-label col-md-2" })
+                        <div class="col-md-10">
+                            @Html.EditorFor(model => model.Index, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.Index, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.Transliteration, htmlAttributes: new { @class = "control-label col-md-2" })
+                        <div class="col-md-10">
+                            @Html.EditorFor(model => model.Transliteration, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.Transliteration, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.Transcription, htmlAttributes: new { @class = "control-label col-md-2" })
+                        <div class="col-md-10">
+                            @Html.EditorFor(model => model.Transcription, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.Transcription, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.English, htmlAttributes: new { @class = "control-label col-md-2" })
+                        <div class="col-md-10">
+                            @Html.EditorFor(model => model.English, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.English, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.Francaise, htmlAttributes: new { @class = "control-label col-md-2" })
+                        <div class="col-md-10">
+                            @Html.EditorFor(model => model.Francaise, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.Francaise, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.Chinese, htmlAttributes: new { @class = "control-label col-md-2" })
+                        <div class="col-md-10">
+                            @Html.EditorFor(model => model.Chinese, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.Chinese, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.Editor, htmlAttributes: new { @class = "control-label col-md-2" })
+                        <div class="col-md-10">
+                            @Html.EditorFor(model => model.Editor, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.Editor, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.References, htmlAttributes: new { @class = "control-label col-md-2" })
+                        <div class="col-md-10">
+                            @Html.EditorFor(model => model.References, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.References, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.PhilologicalCommentary, htmlAttributes: new { @class = "control-label col-md-2" })
+                        <div class="col-md-10">
+                            @Html.EditorFor(model => model.PhilologicalCommentary, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.PhilologicalCommentary, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.ScriptManuscriptId, "ScriptManuscriptId", htmlAttributes: new { @class = "control-label col-md-2" })
+                        <div class="col-md-10">
+                            @Html.DropDownList("ScriptManuscriptId", null, htmlAttributes: new { @class = "form-control" })
+                            @Html.ValidationMessageFor(model => model.ScriptManuscriptId, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.TextContentId, "TextContentId", htmlAttributes: new { @class = "control-label col-md-2" })
+                        <div class="col-md-10">
+                            @Html.DropDownList("TextContentId", null, htmlAttributes: new { @class = "form-control" })
+                            @Html.ValidationMessageFor(model => model.TextContentId, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.MaterialManuscriptId, "MaterialManuscriptId", htmlAttributes: new { @class = "control-label col-md-2" })
+                        <div class="col-md-10">
+                            @Html.DropDownList("MaterialManuscriptId", null, htmlAttributes: new { @class = "form-control" })
+                            @Html.ValidationMessageFor(model => model.MaterialManuscriptId, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.OverallDescriptionId, "OverallDescriptionId", htmlAttributes: new { @class = "control-label col-md-2" })
+                        <div class="col-md-10">
+                            @Html.DropDownList("OverallDescriptionId", null, htmlAttributes: new { @class = "form-control" })
+                            @Html.ValidationMessageFor(model => model.OverallDescriptionId, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.LayoutManuscriptId, "LayoutManuscriptId", htmlAttributes: new { @class = "control-label col-md-2" })
+                        <div class="col-md-10">
+                            @Html.DropDownList("LayoutManuscriptId", null, htmlAttributes: new { @class = "form-control" })
+                            @Html.ValidationMessageFor(model => model.LayoutManuscriptId, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.TextLanguageId, "TextLanguageId", htmlAttributes: new { @class = "control-label col-md-2" })
+                        <div class="col-md-10">
+                            @Html.DropDownList("TextLanguageId", null, htmlAttributes: new { @class = "form-control" })
+                            @Html.ValidationMessageFor(model => model.TextLanguageId, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.Visible, htmlAttributes: new { @class = "control-label col-md-2" })
+                        <div class="col-md-10">
+                            <div class="checkbox">
+                                @Html.EditorFor(model => model.Visible)
+                                @Html.ValidationMessageFor(model => model.Visible, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="col-md-offset-2 col-md-10">
+                            <input type="submit" value=@StaticResource.Resources.Save class="btn btn-primary" />
+                            @Html.ActionLink(@StaticResource.Resources.Return, "Index", null, new { @class = "btn btn-default" })
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+
+        <div class="col-md-6">                       
+            <h3>@StaticResource.Resources.Picture</h3>
+            <form action="@Url.Action("AddPicture", "Manuscripts")" method="post" enctype="multipart/form-data">
+
+                @Html.HiddenFor(x => x.Id)
+                <div class="form-group">
+                    <label for="if">@StaticResource.Resources.File</label>
+                    <input type="file" id="if" name="picture" />
+                </div>
+                <button type="submit" class="btn btn-info">@StaticResource.Resources.Add</button>
+            </form>
+            <div class="row">
+                @if (Model.ImageManuscripts != null)
+                {
+                    foreach (var picture in Model.ImageManuscripts)
+                    {
+                        <div class="col-md-2" id="@picture.Id">
+                            <img src="data:@picture.ContentType;base64,@Convert.ToBase64String(picture.Content)" class="img-thumbnail" />
+                            <p><a id="delete" class="delete" href="@Url.Action("DeletePicture", "Manuscripts", new {id=picture.Id, idmanuscript=picture.ManuscriptId })"> <i class="glyphicon glyphicon-trash"></i> </a></p>
+                        </div>
+                    }
+                }
+            </div>
+
+        </div>
+
+    </div>
+</div>
+
+    @section Scripts {
+        @Scripts.Render("~/bundles/jqueryval")
+        @Scripts.Render("~/bundles/jquery")
+        <script>
+        $(function () {
+            tinymce.init({ selector: '#Transliteration' });
+            tinymce.init({ selector: '#Transcription' });
+            tinymce.init({ selector: '#English' });
+            tinymce.init({ selector: '#Francaise' });
+            tinymce.init({ selector: '#Chinese' });
+            tinymce.init({ selector: '#PhilologicalCommentary' });
+        });
+        const btn = document.querySelector('#delete');
+        btn.addEventListener('click', ev => {
+            if (confirm("Voulez-vous supprimer cette photo ?") === false) {
+                ev.preventDefault();
+            }
+        });
+          $('a.delete').click(function () {
+                var idPicture = $(this).data("id");
+                //alert(idPicture);
+                $.ajax({
+                    url: '@Url.Action("deletePicture", "Manuscripts")',
+                    type: 'POST',
+                    dataType: 'json',
+                    data: { id: idPicture },
+                    success: function (obj) {
+                        alert("l'image " + obj.Name + " a été supprimée.");
+                        $("#div-" + idPicture).fadeOut();
+                    }
+                });
+            });
+        </script>
+    }

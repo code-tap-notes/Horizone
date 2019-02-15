@@ -702,4 +702,19 @@
   <data name="CVName" xml:space="preserve">
     <value>CV Name</value>
   </data>
+  <data name="OverallDescription" xml:space="preserve">
+    <value>Overall Description</value>
+  </data>
+  <data name="Textcontent" xml:space="preserve">
+    <value>Text content</value>
+  </data>
+  <data name="TextLanguage" xml:space="preserve">
+    <value>Text Language</value>
+  </data>
+  <data name="References" xml:space="preserve">
+    <value>References</value>
+  </data>
+  <data name="z" xml:space="preserve">
+    <value />
+  </data>
 </root>

@@ -14,37 +14,32 @@ namespace Horizone.Models
 
         [Display(Name = "Index")]
         [Required(ErrorMessageResourceName = "FieldRequired", ErrorMessageResourceType = typeof(StaticResource.Resources))]
-        [StringLength(40, MinimumLength = 1, ErrorMessageResourceName = "MaxLength40", ErrorMessageResourceType = typeof(StaticResource.Resources))]
         public string Index { get; set; }
 
+        [AllowHtml]
         [Display(Name = "Transliteration", ResourceType = typeof(StaticResource.Resources))]
-        [StringLength(10000, MinimumLength = 1, ErrorMessageResourceName = "MaxLength10000", ErrorMessageResourceType = typeof(StaticResource.Resources))]
         public string Transliteration { get; set; }
 
-
+        [AllowHtml]
         [Display(Name = "Transcription", ResourceType = typeof(StaticResource.Resources))]
-        [StringLength(10000, MinimumLength = 1, ErrorMessageResourceName = "MaxLength10000", ErrorMessageResourceType = typeof(StaticResource.Resources))]
         public string Transcription { get; set; }
 
-
+        [AllowHtml]
         [Display(Name = "English", ResourceType = typeof(StaticResource.Resources))]
-        [StringLength(2000, MinimumLength = 1, ErrorMessageResourceName = "MaxLength2000", ErrorMessageResourceType = typeof(StaticResource.Resources))]
         public string English { get; set; }
 
-        [Display(Name = "Francaise", ResourceType = typeof(StaticResource.Resources))]
-        [StringLength(2000, MinimumLength = 1, ErrorMessageResourceName = "MaxLength2000", ErrorMessageResourceType = typeof(StaticResource.Resources))]
+        [AllowHtml]
+        [Display(Name = "French", ResourceType = typeof(StaticResource.Resources))]
         public string Francaise { get; set; }
 
+        [AllowHtml]
         [Display(Name = "Chinese", ResourceType = typeof(StaticResource.Resources))]
-        [StringLength(2000, MinimumLength = 1, ErrorMessageResourceName = "MaxLength2000", ErrorMessageResourceType = typeof(StaticResource.Resources))]
         public string Chinese { get; set; }
 
         [Display(Name = "Editor", ResourceType = typeof(StaticResource.Resources))]
-        [StringLength(500, MinimumLength = 1, ErrorMessageResourceName = "MaxLength500", ErrorMessageResourceType = typeof(StaticResource.Resources))]
         public string Editor { get; set; }
        
         [Display(Name = "References", ResourceType = typeof(StaticResource.Resources))]
-        [StringLength(2000, MinimumLength = 1, ErrorMessageResourceName = "MaxLength2000", ErrorMessageResourceType = typeof(StaticResource.Resources))]
         public string References { get; set; }
 
         [AllowHtml]

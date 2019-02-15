@@ -1159,6 +1159,15 @@ namespace StaticResource {
         }
         
         /// <summary>
+        ///   Recherche une chaîne localisée semblable à Description générale.
+        /// </summary>
+        public static string OverallDescription {
+            get {
+                return ResourceManager.GetString("OverallDescription", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Recherche une chaîne localisée semblable à Page Nouvelles.
         /// </summary>
         public static string PageNews {
@@ -1326,6 +1335,15 @@ namespace StaticResource {
         public static string PublishedBy {
             get {
                 return ResourceManager.GetString("PublishedBy", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Références.
+        /// </summary>
+        public static string References {
+            get {
+                return ResourceManager.GetString("References", resourceCulture);
             }
         }
         
@@ -1627,11 +1645,29 @@ namespace StaticResource {
         }
         
         /// <summary>
+        ///   Recherche une chaîne localisée semblable à Contenu du texte.
+        /// </summary>
+        public static string TextContent {
+            get {
+                return ResourceManager.GetString("TextContent", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Recherche une chaîne localisée semblable à Genre de texte.
         /// </summary>
         public static string TextGenre {
             get {
                 return ResourceManager.GetString("TextGenre", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Langue du texte.
+        /// </summary>
+        public static string TextLanguage {
+            get {
+                return ResourceManager.GetString("TextLanguage", resourceCulture);
             }
         }
         
@@ -1821,6 +1857,15 @@ namespace StaticResource {
         public static string WritingTool {
             get {
                 return ResourceManager.GetString("WritingTool", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à .
+        /// </summary>
+        public static string z {
+            get {
+                return ResourceManager.GetString("z", resourceCulture);
             }
         }
     }

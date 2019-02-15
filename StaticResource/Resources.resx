@@ -705,4 +705,19 @@
   <data name="CVName" xml:space="preserve">
     <value>Nom du CV</value>
   </data>
+  <data name="OverallDescription" xml:space="preserve">
+    <value>Description générale</value>
+  </data>
+  <data name="TextContent" xml:space="preserve">
+    <value>Contenu du texte</value>
+  </data>
+  <data name="TextLanguage" xml:space="preserve">
+    <value>Langue du texte</value>
+  </data>
+  <data name="References" xml:space="preserve">
+    <value>Références</value>
+  </data>
+  <data name="z" xml:space="preserve">
+    <value />
+  </data>
 </root>

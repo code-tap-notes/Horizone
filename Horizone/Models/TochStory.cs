@@ -20,7 +20,6 @@ namespace Horizone.Models
         [AllowHtml]
         [Required(ErrorMessageResourceName = "FieldRequired", ErrorMessageResourceType = typeof(StaticResource.Resources))]
         [Display(Name = "Content")]
-        [StringLength(500, MinimumLength = 1, ErrorMessageResourceName = "MaxLength500", ErrorMessageResourceType = typeof(StaticResource.Resources))]
         public string Content { get; set; }
         
         [AllowHtml]
