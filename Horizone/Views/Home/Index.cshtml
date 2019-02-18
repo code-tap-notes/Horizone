@@ -10,128 +10,113 @@
                 <button type="submit" class="btn btn-info bigBtn"> @StaticResource.Resources.Search </button>
             </div>
 
-
-
             <div class="form-group col-md-2">
-                <label for="Topic">@StaticResource.Resources.Topic</label>
-                <a> <input type="text" class="form-control" id="Word" name="Word" /> </a> <br />
-
+                <label for="Topic">@StaticResource.Resources.Words</label>
+                <textarea rows="1" cols="50" type="text" class="form-control" id="WordSearch" name="WordSearch"> </textarea>
             </div>
 
-            <div class="form-group col-md-2">
-                <label for="Date">@StaticResource.Resources.PublicationDate</label>
-                <input class="form-control" type="number" id="Date" name="Date" />
-            </div>
-
-            <div class="form-group col-md-2">
-                <label for="Manuscript">@StaticResource.Resources.Manuscript</label>
-                <input class="form-control" type="text" id="Manuscript" name="search" />
-            </div>
-
-             <div>                
+            <div>
                 <p>"Insert:   </p>
-                <a href="#">      ä</a>
-                <a href="#"> ā</a>
-                <a href="#"> ī</a>
-                <a href="#"> ö</a>
-                <a href="#"> ū</a>
-                <a href="#"> ü</a>
-                <a href="#"> ṅ</a>
-                <a href="#"> ñ</a>
-                <a href="#"> ṃ</a>
-                <a href="#"> ś</a>
-                <a href="#"> ṣ</a>
-                <a href="#"> š</a>
-                <a href="#"> ß"</a>
-             </div>
+                <input type="button" value="ā" onclick="insertText('WordSearch', 'ā');">
+                <input type="button" value="ä" onclick="insertText('WordSearch', 'ä');">
+                <input type="button" value="ī" onclick="insertText('WordSearch', 'ī');">
+                <input type="button" value="ö" onclick="insertText('WordSearch', 'ö');">
+                <input type="button" value="ū" onclick="insertText('WordSearch', 'ū');">
+                <input type="button" value="ü" onclick="insertText('WordSearch', 'ü');">
+                <input type="button" value="ṅ" onclick="insertText('WordSearch', 'ṅ');">
+                <input type="button" value="ñ" onclick="insertText('WordSearch', 'ñ');">
+                <input type="button" value="ṃ" onclick="insertText('WordSearch', 'ṃ');">
+                <input type="button" value="ś" onclick="insertText('WordSearch', 'ś');">
+                <input type="button" value="ṣ" onclick="insertText('WordSearch', 'ṣ');">
+                <input type="button" value="š" onclick="insertText('WordSearch', 'š');">
+                <input type="button" value="ß" onclick="insertText('WordSearch', 'ß');">
+            </div>
 
         </form>
     </div>
     <!--Information principal-->
 
-    <div id="midheader-vp">        
+    <div id="midheader-vp">
         <div id="right">
             <!--Presenter le projet-->
             <h3> @StaticResource.Resources.Project HISTOCHTEXT</h3>
             @{Html.RenderAction("Presente", "Home"); }
-        
+
         </div>
 
         <div id="left">
-        <hr/>
-
-          <img class="GrandImage" src="~/Image/China_Tarim.jpg" />
-
+            <hr />
+            <img class="GrandImage" src="~/Image/China_Tarim.jpg" />
         </div>
     </div>
 
-        <div class="clear"></div>
+    <div class="clear"></div>
 
-        <!--Last News-->
-        <div id="slide-vp">
-            <h4>Latest News</h4>
-            <div id="slide-left">
+    <!--Last News-->
+    <div id="slide-vp">
+        <h4>Latest News</h4>
+        <div id="slide-left">
 
-                <div id="slideleft-main">
-                    <h2 class="title"><a href="#">Tarim</a> </h2>
-                    <img src="~/Image/Central_Tian_Shan_mountains.jpg" /><br />
+            <div id="slideleft-main">
+                <h2 class="title"><a href="#">Tarim</a> </h2>
+                <img src="~/Image/Central_Tian_Shan_mountains.jpg" /><br />
 
-                    <div class="des">
-                        HisTochText aborde la culture bouddhiste.Le Tarim est un fleuve sans embouchure traversant le désert du Taklamakan dans le sud du Xinjiang, une des cinq régions autonomes de République populaire de Chine. Il forme le bassin du Tarim.
+                <div class="des">
+                    HisTochText aborde la culture bouddhiste.Le Tarim est un fleuve sans embouchure traversant le désert du Taklamakan dans le sud du Xinjiang, une des cinq régions autonomes de République populaire de Chine. Il forme le bassin du Tarim.
 
-                        Avant l'utilisation massive des eaux du Tarim pour irriguer de
-                    </div>
-                    <p class="tlq"><a href="#">HisTochText aborde la culture bouddhiste</a></p>
-
+                    Avant l'utilisation massive des eaux du Tarim pour irriguer de
                 </div>
-                <div id="slideleft-scroll">
-                    <!--Five last news-->
+                <p class="tlq"><a href="#">HisTochText aborde la culture bouddhiste</a></p>
 
-                    <div class="content_scoller width_common">
-                        <ul>
-                            <li>
-                                <div class="title_news">
-                                    <a href="#" class="txt_link"> HisTochText aborde la culture bouddhiste </a>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="title_news">
-                                    <a href="#" class="txt_link"> HisTochText aborde la culture bouddhiste </a>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="title_news">
-                                    <a href="#" class="txt_link"> HisTochText aborde la culture bouddhiste </a>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="title_news">
-                                    <a href="#" class="txt_link"> HisTochText aborde la culture bouddhiste </a>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="title_news">
-                                    <a href="#" class="txt_link"> HisTochText aborde la culture bouddhiste </a>
-                                </div>
-                            </li>
+            </div>
+            <div id="slideleft-scroll">
+                <!--Five last news-->
 
-                        </ul>
-                    </div>
-                    <!--Logo Histochtech-->
-                    <div id="gocnhin">
-                        <img class="moyenImage" alt="" src="~/Image/basin.jpg">
-                        <div class="title_news"></div>
-                    </div>
+                <div class="content_scoller width_common">
+                    <ul>
+                        <li>
+                            <div class="title_news">
+                                <a href="#" class="txt_link"> HisTochText aborde la culture bouddhiste </a>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="title_news">
+                                <a href="#" class="txt_link"> HisTochText aborde la culture bouddhiste </a>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="title_news">
+                                <a href="#" class="txt_link"> HisTochText aborde la culture bouddhiste </a>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="title_news">
+                                <a href="#" class="txt_link"> HisTochText aborde la culture bouddhiste </a>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="title_news">
+                                <a href="#" class="txt_link"> HisTochText aborde la culture bouddhiste </a>
+                            </div>
+                        </li>
 
+                    </ul>
                 </div>
+                <!--Logo Histochtech-->
+                <div id="gocnhin">
+                    <img class="moyenImage" alt="" src="~/Image/basin.jpg">
+                    <div class="title_news"></div>
+                </div>
+
             </div>
-            <!--Main-Right-->
-            <div id="slide-right">
-                <img style="width:90px;height:90px;" src="~/Image/basin.jpg" />
-                @{Html.RenderAction("PageActivity", "Home"); }
-            </div>
+        </div>
+        <!--Main-Right-->
+        <div id="slide-right">
+            <img style="width:90px;height:90px;" src="~/Image/basin.jpg" />
+            @{Html.RenderAction("PageActivity", "Home"); }
+        </div>
     </div>
-  <!--Page content--> 
+    <!--Page content-->
 
     <div id="content-vp">
         <!--Frequntly-->
@@ -186,16 +171,16 @@
                         </a>
                     </li>
                     <li>
-                      
+
                     </li>
-                    
+
                     <li>
                         <a href="#" aria-label="Next">
                             <span aria-hidden="true">&raquo;</span>
                         </a>
                     </li>
                 </ul>
-                
+
             </nav>
 
         </div>
@@ -215,18 +200,14 @@
                                 <img class="images_news" src="~/Image/Tocharian.jpg" align="left" />
                                 <div class="des">hgjhjkjk </div>
                                 <div class="clear"></div>
-
                             </div>
                         </div>
                         <div class="col2">
                             <h3 class="tlq"><a href="#">Tocharian B</a></h3>
                             <h3 class="tlq"><a href="#">Wooden Manuscript </a></h3>
                             <h3 class="tlq"><a href="#">Leaf</a></h3>
-
                         </div>
-
                     </div>
-
                 </div>
 
             </div>
@@ -244,10 +225,7 @@
                                 <h3 class="title"><a href="#"> Story 1 </a></h3>
                                 <img class="images_news" src="~/Image/tarim.jpg" />/" align="left" />
                                 <div class="des">vf,jjjd j dfftt bdfg  </div>
-
-
                                 <div class="clear"></div>
-
                             </div>
                         </div>
                         <div class="col2">
@@ -269,9 +247,6 @@
 
     </div>
 
-   
-    
-    
     <div id="footer">
         <div class="row">
 
@@ -299,19 +274,12 @@
     </div>
 </div>
 
-    @section Scripts {
-        @Scripts.Render("~/bundles/jqueryval")
-        <script src="~/Scripts/jquery.datetimepicker.js"></script>
-        <script>
-
-            $(function () {
-                $('#DepartureDate').datetimepicker({
-                    lang: 'fr',
-                    format: 'd/M/Y'
-                });
-
-                $('#DepartureDate').attr('autocomplete', 'off');
-
-            });
-        </script>
-    }
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+    <script>
+        function insertText(elemID, text) {
+            var elem = document.getElementById(elemID);
+            elem.innerHTML += text;
+        }
+    </script>
+}

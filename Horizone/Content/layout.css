@@ -33,9 +33,16 @@ content {
 .underline {
     border-bottom: solid 1px #6a3416;
 }
-
-
-.learnmore:hover {
+.table_trans th {
+    width: 20px;
+    overflow: auto;
+    font-weight: bold;
+    text-align: left;
+    vertical-align: top;
+    padding: 0px 10px 0px 0px;
+    margin: 0px;
+}
+    .learnmore:hover {
     color: #069;
 }
 .hit{ background:url(../images/icon_title.png) -22px 0 no-repeat; width:2px; height:10px; float:right; color:#900; margin:0 8px 0 0; padding:0 0 0 18px; font-weight:normal; font-size:11px}
