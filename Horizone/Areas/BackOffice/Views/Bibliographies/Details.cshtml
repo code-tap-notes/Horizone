@@ -6,12 +6,13 @@
 
 <h2>@StaticResource.Resources.Details</h2>
 
+<input type="submit" value="Submit" href="javascript:window.print()"> Print This Page
 <div>
     <h4>@StaticResource.Resources.Bibliography</h4>
     <hr />
     <dl class="dl-horizontal">
         <dt>
-            @StaticResource.Resources.Author
+            @Html.DisplayNameFor(model => model.Author)
         </dt>
 
         <dd>
@@ -19,7 +20,7 @@
         </dd>
 
         <dt>
-            @StaticResource.Resources.PublicationDate
+            @Html.DisplayNameFor(model => model.PublicationDate)
         </dt>
 
         <dd>
@@ -27,15 +28,15 @@
         </dd>
 
         <dt>
-            @StaticResource.Resources.Title
+            @Html.DisplayNameFor(model => model.Title)
         </dt>
 
         <dd>
-            @Html.Raw(Model.Title)
+            @Html.DisplayFor(model => model.Title)
         </dd>
 
         <dt>
-            @StaticResource.Resources.Newspaper
+            @Html.DisplayNameFor(model => model.Journal)
         </dt>
 
         <dd>
@@ -43,7 +44,7 @@
         </dd>
 
         <dt>
-            @StaticResource.Resources.Link
+            @Html.DisplayNameFor(model => model.UlrBibliography)
         </dt>
 
         <dd>

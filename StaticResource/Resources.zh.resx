@@ -472,7 +472,7 @@
     <value>话</value>
   </data>
   <data name="WordSubClass" xml:space="preserve">
-    <value>Word Subclasse</value>
+    <value>中学的单词</value>
   </data>
   <data name="Ablative" xml:space="preserve">
     <value>夺格</value>
@@ -716,5 +716,377 @@
   </data>
   <data name="References" xml:space="preserve">
     <value>参考</value>
+  </data>
+  <data name="Abstract" xml:space="preserve">
+    <value>抽象</value>
+  </data>
+  <data name="Adjective" xml:space="preserve">
+    <value>形容词</value>
+  </data>
+  <data name="Adverb" xml:space="preserve">
+    <value>副词</value>
+  </data>
+  <data name="FiniteVerbForm" xml:space="preserve">
+    <value>有限动词形式</value>
+  </data>
+  <data name="Gerundive" xml:space="preserve">
+    <value>动名词</value>
+  </data>
+  <data name="Indeclinable" xml:space="preserve">
+    <value>这些话不会改变</value>
+  </data>
+  <data name="IndeclinableAdjective" xml:space="preserve">
+    <value>不可克服的形容词</value>
+  </data>
+  <data name="Infinitive" xml:space="preserve">
+    <value>不定式</value>
+  </data>
+  <data name="MParticiple" xml:space="preserve">
+    <value>M-参与者</value>
+  </data>
+  <data name="NomenAgentis" xml:space="preserve">
+    <value>代理商的名称</value>
+  </data>
+  <data name="Noun" xml:space="preserve">
+    <value>名词</value>
+  </data>
+  <data name="NtParticiple" xml:space="preserve">
+    <value>nt-参与者</value>
+  </data>
+  <data name="PersonalName" xml:space="preserve">
+    <value>个人姓名</value>
+  </data>
+  <data name="Privative" xml:space="preserve">
+    <value>剥夺</value>
+  </data>
+  <data name="Pronoun" xml:space="preserve">
+    <value>代词</value>
+  </data>
+  <data name="Unknown" xml:space="preserve">
+    <value>未知</value>
+  </data>
+  <data name="VerbalAbstract" xml:space="preserve">
+    <value>口头 抽象</value>
+  </data>
+  <data name="VerbPlusPronounSuffix" xml:space="preserve">
+    <value>动词加代词后缀</value>
+  </data>
+  <data name="Alternant" xml:space="preserve">
+    <value>交互</value>
+  </data>
+  <data name="Dual" xml:space="preserve">
+    <value>双</value>
+  </data>
+  <data name="EquivalentTocharianA" xml:space="preserve">
+    <value>相当于Tocharian A</value>
+  </data>
+  <data name="EquivalentTocharianB" xml:space="preserve">
+    <value>相当于Tocharian B</value>
+  </data>
+  <data name="Feminine" xml:space="preserve">
+    <value>女人</value>
+  </data>
+  <data name="FirstPerson" xml:space="preserve">
+    <value>第一个人</value>
+  </data>
+  <data name="GenitiveFeminineDual" xml:space="preserve">
+    <value>所有格女性化，双</value>
+  </data>
+  <data name="GenitiveFemininePlural" xml:space="preserve">
+    <value>属格 - 女性 - 复数</value>
+  </data>
+  <data name="GenitiveFeminineSingular" xml:space="preserve">
+    <value>所有格女性化的奇异</value>
+  </data>
+  <data name="GenitiveMasculineDual" xml:space="preserve">
+    <value>所有格男性化，双</value>
+  </data>
+  <data name="GenitiveMasculinePlural" xml:space="preserve">
+    <value>所有格男性化，多</value>
+  </data>
+  <data name="GenitiveMasculineSingular" xml:space="preserve">
+    <value>所有格男性化，奇异</value>
+  </data>
+  <data name="LocativeFeminineSingular" xml:space="preserve">
+    <value>处所 - 女性 - 奇异</value>
+  </data>
+  <data name="LocativeMasculineDual" xml:space="preserve">
+    <value>处所男性化，双</value>
+  </data>
+  <data name="LocativeMasculinePlural" xml:space="preserve">
+    <value>处所男性化，复数</value>
+  </data>
+  <data name="LocativeMasculineSingular" xml:space="preserve">
+    <value>处所男性化，奇异</value>
+  </data>
+  <data name="Masculine" xml:space="preserve">
+    <value>男性</value>
+  </data>
+  <data name="Neuter" xml:space="preserve">
+    <value>中性</value>
+  </data>
+  <data name="NominateFeminineDual" xml:space="preserve">
+    <value>提名女性双重</value>
+  </data>
+  <data name="NominateFemininePlural" xml:space="preserve">
+    <value>提名女性复数</value>
+  </data>
+  <data name="NominateFeminineSingular" xml:space="preserve">
+    <value>命名女性奇异</value>
+  </data>
+  <data name="NominateMasculineDual" xml:space="preserve">
+    <value>命名男性双重</value>
+  </data>
+  <data name="NominateMasculinePlural" xml:space="preserve">
+    <value>提名男性多元化</value>
+  </data>
+  <data name="NominateMasculineSingular" xml:space="preserve">
+    <value>命名男性奇异</value>
+  </data>
+  <data name="NoSubClass" xml:space="preserve">
+    <value>没有子类</value>
+  </data>
+  <data name="ObliqueFeminineDual" xml:space="preserve">
+    <value>倾斜的女性双重</value>
+  </data>
+  <data name="ObliqueFemininePlural" xml:space="preserve">
+    <value>斜女性复数</value>
+  </data>
+  <data name="ObliqueFeminineSingular" xml:space="preserve">
+    <value>斜女性多元</value>
+  </data>
+  <data name="ObliqueMasculineDual" xml:space="preserve">
+    <value>倾斜男性双重</value>
+  </data>
+  <data name="ObliqueMasculinePlural" xml:space="preserve">
+    <value>倾斜男性多元化</value>
+  </data>
+  <data name="ObliqueMasculineSingular" xml:space="preserve">
+    <value>倾斜的男性奇异</value>
+  </data>
+  <data name="OtherPronoun" xml:space="preserve">
+    <value>其他代词</value>
+  </data>
+  <data name="Plural" xml:space="preserve">
+    <value>复数</value>
+  </data>
+  <data name="VocativeFeminineDual" xml:space="preserve">
+    <value>呼唤女性双重</value>
+  </data>
+  <data name="VocativeFemininePlural" xml:space="preserve">
+    <value>呼唤女性多元化</value>
+  </data>
+  <data name="VocativeFeminineSingular" xml:space="preserve">
+    <value>呼唤女性奇异</value>
+  </data>
+  <data name="VocativeMasculineDual" xml:space="preserve">
+    <value>呼唤男性双重</value>
+  </data>
+  <data name="VocativeMasculinePlural" xml:space="preserve">
+    <value>呼唤男性多元化</value>
+  </data>
+  <data name="VocativeMasculineSingular" xml:space="preserve">
+    <value>呼唤男性奇异</value>
+  </data>
+  <data name="AblativeFeminineDual" xml:space="preserve">
+    <value>烧蚀女性双重</value>
+  </data>
+  <data name="AblativeFemininePlural" xml:space="preserve">
+    <value>烧灼女性复数</value>
+  </data>
+  <data name="AblativeFeminineSingular" xml:space="preserve">
+    <value>烧蚀女性奇异</value>
+  </data>
+  <data name="AblativeMasculineDual" xml:space="preserve">
+    <value>烧蚀男性化双</value>
+  </data>
+  <data name="AblativeMasculinePlural" xml:space="preserve">
+    <value>消融男性多元化</value>
+  </data>
+  <data name="AblativeMasculineSingular" xml:space="preserve">
+    <value>消融男性单数</value>
+  </data>
+  <data name="AllativeFeminineDual" xml:space="preserve">
+    <value>烧蚀女性双重</value>
+  </data>
+  <data name="AllativeFemininePlural" xml:space="preserve">
+    <value>烧灼女性复数</value>
+  </data>
+  <data name="AllativeFeminineSingular" xml:space="preserve">
+    <value>烧蚀女性奇异</value>
+  </data>
+  <data name="AllativeMasculineDual" xml:space="preserve">
+    <value>相对男性双重</value>
+  </data>
+  <data name="AllativeMasculinePlural" xml:space="preserve">
+    <value>相关男性多元化</value>
+  </data>
+  <data name="AllativeMasculineSingular" xml:space="preserve">
+    <value>相对男性奇异</value>
+  </data>
+  <data name="CausativeFeminineDual" xml:space="preserve">
+    <value>致使女性双重</value>
+  </data>
+  <data name="CausativeFemininePlural" xml:space="preserve">
+    <value>致使女性多元化</value>
+  </data>
+  <data name="CausativeFeminineSingular" xml:space="preserve">
+    <value>激烈的女性奇异</value>
+  </data>
+  <data name="CausativeMasculineDual" xml:space="preserve">
+    <value>致使男性双重</value>
+  </data>
+  <data name="CausativeMasculinePlural" xml:space="preserve">
+    <value>使役男性多元化</value>
+  </data>
+  <data name="CausativeMasculineSingular" xml:space="preserve">
+    <value>男性奇异的因果关系</value>
+  </data>
+  <data name="ComitativeFeminineDual" xml:space="preserve">
+    <value>定性女性双重</value>
+  </data>
+  <data name="ComitativeFemininePlural" xml:space="preserve">
+    <value>定量女性复数</value>
+  </data>
+  <data name="ComitativeFeminineSingular" xml:space="preserve">
+    <value>定性女性奇异</value>
+  </data>
+  <data name="ComitativeMasculineDual" xml:space="preserve">
+    <value>定性男性双重</value>
+  </data>
+  <data name="ComitativeMasculinePlural" xml:space="preserve">
+    <value>定性男性多元化</value>
+  </data>
+  <data name="ComitativeMasculineSingular" xml:space="preserve">
+    <value>定性男性奇异</value>
+  </data>
+  <data name="InstrumentalFeminineDual" xml:space="preserve">
+    <value>乐器女性双重</value>
+  </data>
+  <data name="InstrumentalFemininePlural" xml:space="preserve">
+    <value>乐器女性复数</value>
+  </data>
+  <data name="InstrumentalFeminineSingular" xml:space="preserve">
+    <value>器乐女性奇异</value>
+  </data>
+  <data name="InstrumentalMasculineDual" xml:space="preserve">
+    <value>乐器男性双重</value>
+  </data>
+  <data name="InstrumentalMasculinePlural" xml:space="preserve">
+    <value>器乐男性多元化</value>
+  </data>
+  <data name="InstrumentalMasculineSingular" xml:space="preserve">
+    <value>器乐男性奇异</value>
+  </data>
+  <data name="LocativeFeminineDual" xml:space="preserve">
+    <value>双女性租赁</value>
+  </data>
+  <data name="LocativeFemininePlural" xml:space="preserve">
+    <value>多元女性出租</value>
+  </data>
+  <data name="Occurrence" xml:space="preserve">
+    <value>发生</value>
+  </data>
+  <data name="PerlativeFeminineDual" xml:space="preserve">
+    <value>Perlative 女性双重</value>
+  </data>
+  <data name="PerlativeFemininePlural" xml:space="preserve">
+    <value>Perlative 女性复数</value>
+  </data>
+  <data name="PerlativeFeminineSingular" xml:space="preserve">
+    <value>透明女性奇异</value>
+  </data>
+  <data name="PerlativeMasculineDual" xml:space="preserve">
+    <value>Perlative男性双重</value>
+  </data>
+  <data name="PerlativeMasculinePlural" xml:space="preserve">
+    <value>Perlative多个男性</value>
+  </data>
+  <data name="PerlativeMasculineSingular" xml:space="preserve">
+    <value>男性奇异的关系</value>
+  </data>
+  <data name="PronounSuffix" xml:space="preserve">
+    <value>代名词后缀</value>
+  </data>
+  <data name="TenseMood" xml:space="preserve">
+    <value>紧张和形式</value>
+  </data>
+  <data name="Valency" xml:space="preserve">
+    <value>价</value>
+  </data>
+  <data name="Linguistics" xml:space="preserve">
+    <value>语言学</value>
+  </data>
+  <data name="Person" xml:space="preserve">
+    <value>人士</value>
+  </data>
+  <data name="Term" xml:space="preserve">
+    <value>术语</value>
+  </data>
+  <data name="Positive" xml:space="preserve">
+    <value>字段{0}必须具有正数</value>
+  </data>
+  <data name="TochLanguage" xml:space="preserve">
+    <value>Tocharian语言</value>
+  </data>
+  <data name="ListedPosition" xml:space="preserve">
+    <value>上市地位</value>
+  </data>
+  <data name="OrderOfLink" xml:space="preserve">
+    <value>链接顺序</value>
+  </data>
+  <data name="CaseEn" xml:space="preserve">
+    <value>案例-英语</value>
+  </data>
+  <data name="CaseFr" xml:space="preserve">
+    <value>案例-法语</value>
+  </data>
+  <data name="CaseZh" xml:space="preserve">
+    <value>中国-案例</value>
+  </data>
+  <data name="GenderEn" xml:space="preserve">
+    <value>性别-英语</value>
+  </data>
+  <data name="GenderFr" xml:space="preserve">
+    <value>性别 - 法兰西</value>
+  </data>
+  <data name="GenderZh" xml:space="preserve">
+    <value>性别-中国</value>
+  </data>
+  <data name="NumberEn" xml:space="preserve">
+    <value>号码 - 英语</value>
+  </data>
+  <data name="NumberFr" xml:space="preserve">
+    <value>数字 - 法语</value>
+  </data>
+  <data name="NumberZh" xml:space="preserve">
+    <value>号码 - 中文</value>
+  </data>
+  <data name="PersonEn" xml:space="preserve">
+    <value>人 - 英语</value>
+  </data>
+  <data name="PersonFr" xml:space="preserve">
+    <value>人 - 法国</value>
+  </data>
+  <data name="PersonZh" xml:space="preserve">
+    <value>人 - 中国</value>
+  </data>
+  <data name="WordClassEn" xml:space="preserve">
+    <value>词类 - 英语</value>
+  </data>
+  <data name="WordClassFr" xml:space="preserve">
+    <value>世界级 - 法语</value>
+  </data>
+  <data name="WordClassZh" xml:space="preserve">
+    <value>世界级 - 中国</value>
+  </data>
+  <data name="WordSubClassEn" xml:space="preserve">
+    <value>中学的单词-英语</value>
+  </data>
+  <data name="WordSubClassFr" xml:space="preserve">
+    <value>中学的单词-法国</value>
+  </data>
+  <data name="WordSubClassZh" xml:space="preserve">
+    <value>中学的单词  - 中文</value>
   </data>
 </root>

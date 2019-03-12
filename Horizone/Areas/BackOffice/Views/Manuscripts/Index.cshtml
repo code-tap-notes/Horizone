@@ -1,13 +1,13 @@
 ﻿@model PagedList.IPagedList<Horizone.Models.Manuscript>
 @using PagedList.Mvc;
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = @StaticResource.Resources.Manuscript;
 }
 
-<h2>Index</h2>
+<h2> @StaticResource.Resources.Manuscript</h2>
 
 <p>
-    @Html.ActionLink("Create New", "Create")
+    @Html.ActionLink(@StaticResource.Resources.Add, "Create", null, new { @class = "btn btn-primary" })
 </p>
 <table class="table">
     <tr>
@@ -20,8 +20,15 @@
         <th>
             @StaticResource.Resources.Language
         </th>
+        <th>
+            @StaticResource.Resources.LeafNumber
+        </th>
+        <th>
+            @StaticResource.Resources.NumberOfLine
+        </th>
         <th></th>
     </tr>
+
 
     @foreach (var item in Model)
     {
@@ -30,19 +37,25 @@
             @Html.DisplayFor(modelItem => item.Index)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.OverallDescription.OtherSiglum)
+            @Html.DisplayFor(modelItem => item.OtherSiglum)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.TextLanguage.Language)
+            @Html.DisplayFor(modelItem => item.TochLanguage.Language)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
-            @Html.ActionLink("Details", "Details", new { id = item.Id }) |
-            @Html.ActionLink("Delete", "Delete", new { id = item.Id })
+            @Html.DisplayFor(modelItem => item.LeafNumber)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NumberOfLine)
+        </td>
+
+        <td>
+            @Html.ActionLink(@StaticResource.Resources.Edit, "Edit", new { id = item.Id }, new { @class = "btn btn-info", style = "width:90px" })
+            @Html.ActionLink(@StaticResource.Resources.Details, "Details", new { id = item.Id }, new { @class = "btn btn-info", style = "width:90px" })
+            @Html.ActionLink(@StaticResource.Resources.Delete, "Delete", new { id = item.Id }, new { @class = "btn btn-info", style = "width:90px" })
         </td>
     </tr>
     }
 
 </table>
 @Html.PagedListPager(Model, page => Url.Action("index", new { page }))
-

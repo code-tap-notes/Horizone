@@ -41,30 +41,29 @@ namespace Horizone.Models
         public DbSet<Client> Clients { get; set; }
         public DbSet<Collaborator> Collaborators { get; set; }
         public DbSet<Collaboration> Collaborations { get; set; }
-        public DbSet<MaterialManuscript> MaterialManuscripts { get; set; }
         public DbSet<ContactMessage> ContactMessages { get; set; }
         public DbSet<Comment> Comments { get; set; }
         public DbSet<DictionaryTocharian> DictionaryTocharians { get; set; }
-        public DbSet<ImageDictionary> ImageDictionarys { get; set; }
+        public DbSet<Case> Cases { get; set; }
+        public DbSet<Gender> Genders { get; set; }
+        public DbSet<Number>Numbers { get; set; }
+        public DbSet<Person> Persons { get; set; }
+        public DbSet<WordClass> WordClasses { get; set; }
+        public DbSet<WordSubClass> WordSubClasses { get; set; }
         public DbSet<ImageManuscript> ImageManuscripts { get; set; }
         public DbSet<ImageNews> ImageNews { get; set; }
         public DbSet<ImageCollaboration> ImageCollaborations { get; set; }
         public DbSet<Manuscript> Manuscripts { get; set; }
-        public DbSet<News> Newss { get; set; }
-        public DbSet<OverallDescription> OverallDescriptions { get; set; }
-        public DbSet<TextContent> TextContents { get; set; }
+        public DbSet<News> Newses { get; set; }
         public DbSet<TochPhrase> TochPhrases { get; set; }
         public DbSet<TochStory> TochStorys { get; set; }
         public DbSet<Topic> Topics { get; set; }
-        public DbSet<ScriptManuscript> ScriptManuscripts { get; set; }
-        public DbSet<LayoutManuscript> LayoutManuscripts { get; set; }
-        public DbSet<TextLanguage> TextLanguages { get; set; }
+        public DbSet<TochLanguage> TochLanguages { get; set; }
         public DbSet<Bibliography> Bibliographys { get; set; }
-        public DbSet<Menu> Menus { get; set; }
+        public DbSet<LinkAndPress> LinkAndPresses { get; set; }
         public DbSet<Language> Languages { get; set; }
         public DbSet<Activity> Activitys { get; set; }
         public DbSet<Publication> Publications { get; set; }
-        public DbSet<AboutProject> AboutProjets { get; set; }
-        
+        public DbSet<AboutProject> AboutProjets { get; set; }     
     }
 }

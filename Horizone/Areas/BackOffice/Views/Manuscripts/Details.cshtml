@@ -1,38 +1,42 @@
 ﻿@model Horizone.Models.Manuscript
 
 @{
-    ViewBag.Title = "Details";
+    ViewBag.Title = @StaticResource.Resources.Details;
 }
-<div class="content">
 
-    <h2> @StaticResource.Resources.Details </h2>
+<h2> @StaticResource.Resources.Details</h2>
+
+<div>
+    <h4> @StaticResource.Resources.Manuscript</h4>
+    <hr />
     <div class="autocontents">
         <ul>
             <li>
-                @Html.DisplayNameFor(model => model.Index)
+                <h4> @Html.DisplayNameFor(model => model.Index)</h4>
             </li>
             <li>
                 @Html.DisplayFor(model => model.Index)
             </li>
         </ul>
         <p>
-            <b> @StaticResource.Resources.SeeAlso : </b>
+            <h4> @StaticResource.Resources.SeeAlso : </h4>
         </p>
         <ul>
 
-            <li><a href="@Url.Action("Details","LayoutManuscripts",new { id = Model.LayoutManuscriptId })">@StaticResource.Resources.LayoutManuscript</a></li>
-            <li><a href="@Url.Action("Details","OverallDescriptions",new { id = Model.OverallDescriptionId })">@StaticResource.Resources.OverallDescription</a></li>
-            <li><a href="@Url.Action("Details","ScriptManuscripts",new { id = Model.ScriptManuscriptId })">@StaticResource.Resources.ScriptManuscript</a></li>
-            <li><a href="@Url.Action("Details","TextContents",new { id = Model.TextContentId })">@StaticResource.Resources.TextContent</a></li>
-            <li><a href="@Url.Action("Details","TextLanguages",new { id = Model.TextLanguageId })">@StaticResource.Resources.TextLanguage</a></li>
-            <li> <a href="@Url.Action("Details","MaterialManuscripts",new { id = Model.MaterialManuscriptId })">@StaticResource.Resources.Material</a></li>
+            <li><a href="@Url.Action("LayoutManuscripts","Manuscripts",new { id = Model.Id})">@StaticResource.Resources.LayoutManuscript</a></li>
+            <li><a href="@Url.Action("OverallDescriptions","Manuscripts",new { id = Model.Id })">@StaticResource.Resources.OverallDescription</a></li>
+            <li><a href="@Url.Action("ScriptManuscripts","Manuscripts",new { id = Model.Id })">@StaticResource.Resources.ScriptManuscript</a></li>
+            <li><a href="@Url.Action("TextContents","Manuscripts",new { id = Model.Id })">@StaticResource.Resources.TextContent</a></li>
+            <li><a href="@Url.Action("TextLanguages","Manuscripts",new { id = Model.Id })">@StaticResource.Resources.TextLanguage</a></li>
+            <li> <a href="@Url.Action("MaterialManuscripts","Manuscripts",new { id = Model.Id })">@StaticResource.Resources.Material</a></li>
         </ul>
     </div>
+
     <div class="autocontents">
-       
+
         <ul>
             <li>
-                @StaticResource.Resources.Manuscript
+                <h4> @StaticResource.Resources.Manuscript </h4>
             </li>
             <li>
                 @if (Model.ImageManuscripts?.Count > 0)
@@ -60,7 +64,7 @@
                 @Html.Raw(Model.Transcription)
             </li>
         </ul>
-        
+
         <ul>
             <li>
                 <h4> @Html.DisplayNameFor(model => model.English) </h4>
@@ -69,7 +73,7 @@
                 @Html.Raw(Model.English)
             </li>
         </ul>
-        
+
         <ul>
             <li>
                 <h4>  @Html.DisplayNameFor(model => model.Francaise) </h4>
@@ -78,7 +82,7 @@
                 @Html.Raw(Model.Francaise)
             </li>
         </ul>
-       
+
         <ul>
             <li>
                 <h4>  @Html.DisplayNameFor(model => model.Chinese) </h4>
@@ -87,7 +91,7 @@
                 @Html.Raw(Model.Chinese)
             </li>
         </ul>
-       
+
         <ul>
             <li>
                 <h4>   @Html.DisplayNameFor(model => model.Editor) </h4>
@@ -96,7 +100,7 @@
                 @Html.DisplayFor(model => model.Editor)
             </li>
         </ul>
-        
+
         <ul>
             <li>
                 <h4> @Html.DisplayNameFor(model => model.References) </h4>
@@ -105,7 +109,7 @@
                 @Html.DisplayFor(model => model.References)
             </li>
         </ul>
-        
+
         <ul>
             <li>
                 <h4>  @Html.DisplayNameFor(model => model.PhilologicalCommentary) </h4>
@@ -114,7 +118,7 @@
                 @Html.Raw(Model.PhilologicalCommentary)
             </li>
         </ul>
-        
+
         <ul>
             <li>
                 <h4>  @Html.DisplayNameFor(model => model.Visible) </h4>
@@ -123,13 +127,14 @@
                 @Html.DisplayFor(model => model.Visible)
             </li>
         </ul>
-          
-        
+
+
     </div>
 </div>
-    <div>
-            <p>
-                @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
-                @Html.ActionLink("Back to List", "Index")
-            </p>
-    </div>
+<div>
+    <p>
+        @Html.ActionLink(StaticResource.Resources.Edit, "Edit", new { id = Model.Id }, new { @class = "btn btn-info" }) |
+        @Html.ActionLink(StaticResource.Resources.Return, "Index", null, new { @class = "btn btn-primary" })
+    </p>
+
+</div>

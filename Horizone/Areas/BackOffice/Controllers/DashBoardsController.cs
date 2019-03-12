@@ -69,18 +69,48 @@ namespace Horizone.Areas.BackOffice.Controllers
         {
             return View();
         }
+
         [ChildActionOnly]
         public ActionResult InPresse()
         {
 
-            var menus = db.Menus;
+          var linkAndPresses = db.LinkAndPresses;
 
-            foreach (var item in db.Menus)
+            foreach (var item in db.LinkAndPresses)
             {
-                if (item.Order == 4)
-                    menus.Add(item);
+              if (item.Order == 4)
+                    linkAndPresses.Add(item);
             }
-            return PartialView(menus.ToList());
+            return PartialView(linkAndPresses.ToList());
+        }
+
+        [ChildActionOnly]
+        public ActionResult Search(string search, string title, string journal)
+        {
+            IEnumerable<Bibliography> bibliographies = db.Bibliographys;
+
+            if (!string.IsNullOrWhiteSpace(search))
+            {
+                bibliographies = bibliographies.Where(x => x.Author.Contains(search));
+
+                //bibliographies = bibliographies.Where(x => x.PublicationDate.Contains(search));
+                //bibliographies = bibliographies.Where(x => x.Title.Contains(search));
+                //|| || (x=> x.PublicationDate.Contains(search)
+                //|| x.Journal.Contains(search)
+                //|| x.Title.Contains(search));
+            }
+            //if (!string.IsNullOrWhiteSpace(title))
+            //    bibliographies = bibliographies.Where(y => y.Title.Contains(title));
+            //if (!string.IsNullOrWhiteSpace(journal))
+            //    bibliographies = bibliographies.Where(y => y.Journal.Contains(journal));
+
+            if (bibliographies.Count() == 0)
+            {
+                Display("Aucun résultat");
+            }
+
+            return PartialView("Search", bibliographies.ToList());
+
         }
     }
 }

@@ -1,0 +1,67 @@
+﻿@model Horizone.Models.LinkAndPress
+
+@{
+    ViewBag.Title = @StaticResource.Resources.Details;
+}
+
+<h2>@StaticResource.Resources.Details</h2>
+
+<div>
+    <h4>@StaticResource.Resources.Link</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Language.Symbol)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Language.Symbol)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Title)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Title)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Link)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Link)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Order)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Order)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Status)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Status)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Target)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Target)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink(StaticResource.Resources.Edit, "Edit", new { id = Model.Id }, new { @class = "btn btn-info" }) |
+    @Html.ActionLink(StaticResource.Resources.Return, "Index", null, new { @class = "btn btn-primary" })
+</p>
+

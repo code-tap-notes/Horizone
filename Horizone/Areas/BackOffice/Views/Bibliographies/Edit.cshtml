@@ -1,16 +1,17 @@
 ﻿@model Horizone.Models.Bibliography
 
-{
+@{
     ViewBag.Title = @StaticResource.Resources.Edit;
-    }
+}
+<h2>@StaticResource.Resources.Edit</h2>
+<h4>@StaticResource.Resources.Bibliography</h4>
 
-    <h2>@StaticResource.Resources.Edit</h2>
-    @using (Html.BeginForm())
-    {
-        @Html.AntiForgeryToken()
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    <div class="row form-horizontal">
+        <div class="col-md-12">
 
-        <div class="form-horizontal">
-            <h4>Bibliography</h4>
             <hr />
             @Html.ValidationSummary(true, "", new { @class = "text-danger" })
             @Html.HiddenFor(model => model.Id)
@@ -32,8 +33,9 @@
             </div>
 
             <div class="form-group">
-                @Html.LabelFor(model => model.Title, htmlAttributes: new { @class = "control-label col-md-2" })
-                <div class="col-md-10">
+
+                @Html.LabelFor(model => model.Title, htmlAttributes: new { @class = "control-label col-lg-2" })
+                <div class="col-lg-10">
                     @Html.EditorFor(model => model.Title, new { htmlAttributes = new { @class = "form-control" } })
                     @Html.ValidationMessageFor(model => model.Title, "", new { @class = "text-danger" })
                 </div>
@@ -62,16 +64,5 @@
                 </div>
             </div>
         </div>
-    }
-    @section Scripts {
-        @Scripts.Render("~/bundles/jqueryval")
-        @Scripts.Render("~/bundles/jquery")
-        <script>
-
-        $(function () {
-            tinymce.init({ selector: '#Title' });
-
-        });
-        </script>
-    }
-
+    </div>
+  }

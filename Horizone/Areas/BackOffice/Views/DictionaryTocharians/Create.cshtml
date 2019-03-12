@@ -1,0 +1,760 @@
+﻿@model Horizone.Models.DictionaryTocharian
+
+
+@{
+              ViewBag.Title = @StaticResource.Resources.Add;
+}
+
+<h2>@StaticResource.Resources.Add</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+<div class="form-horizontal">
+    <h4>@StaticResource.Resources.DictionaryTocharian</h4>
+    <hr />
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+    <div class="form-group">
+        @Html.LabelFor(model => model.LanguageId, "LanguageId", htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.DropDownList("LanguageId", null, htmlAttributes: new { @class = "form-control" })
+            @Html.ValidationMessageFor(model => model.LanguageId, "", new { @class = "text-danger" })
+        </div>
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(model => model.Word, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.Word, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.Word, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.English, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.English, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.English, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.Francaise, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.Francaise, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.Francaise, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.Chinese, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.Chinese, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.Chinese, "", new { @class = "text-danger" })
+        </div>
+    </div>
+    @if (Session[Horizone.Common.CommonConstants.CurrentCulture].ToString() == "en")
+    {
+        <div class="form-group">
+            @Html.LabelFor(model => model.WordClassId, "WordClassId", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownList("WordClassEnId", null, htmlAttributes: new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.WordClassId, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.WordSubClassId, "WordSubClassId", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownList("WordSubClassEnId", null, htmlAttributes: new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.WordSubClassId, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label col-md-2">@StaticResource.Resources.Case</label>
+            <div class="col-md-10">
+                @Html.ListBox("CaseId", (MultiSelectList)ViewBag.CasesEn, new { @class = "form-control" })
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label col-md-2">@StaticResource.Resources.Number</label>
+            <div class="col-md-10">
+                @Html.ListBox("NumberId", (MultiSelectList)ViewBag.NumbersEn, new { @class = "form-control" })
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label col-md-2">@StaticResource.Resources.Gender</label>
+            <div class="col-md-10">
+                @Html.ListBox("GenderId", (MultiSelectList)ViewBag.GendersEn, new { @class = "form-control" })
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label col-md-2">@StaticResource.Resources.Person</label>
+            <div class="col-md-10">
+                @Html.ListBox("PersonId", (MultiSelectList)ViewBag.PersonsEn, new { @class = "form-control" })
+            </div>
+        </div>
+    }
+    @if (Session[Horizone.Common.CommonConstants.CurrentCulture].ToString() == "fr")
+    {
+        <div class="form-group">
+            @Html.LabelFor(model => model.WordClassId, "WordClassId", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownList("WordClassFrId", null, htmlAttributes: new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.WordClassId, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.WordSubClassId, "WordSubClassId", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownList("WordSubClassFrId", null, htmlAttributes: new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.WordSubClassId, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label col-md-2">@StaticResource.Resources.Case</label>
+            <div class="col-md-10">
+                @Html.ListBox("CaseId", (MultiSelectList)ViewBag.CasesFr, new { @class = "form-control" })
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label col-md-2">@StaticResource.Resources.Number</label>
+            <div class="col-md-10">
+                @Html.ListBox("NumberId", (MultiSelectList)ViewBag.NumbersFr, new { @class = "form-control" })
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label col-md-2">@StaticResource.Resources.Gender</label>
+            <div class="col-md-10">
+                @Html.ListBox("GenderId", (MultiSelectList)ViewBag.GendersFr, new { @class = "form-control" })
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label col-md-2">@StaticResource.Resources.Person</label>
+            <div class="col-md-10">
+                @Html.ListBox("PersonId", (MultiSelectList)ViewBag.PersonsFr, new { @class = "form-control" })
+            </div>
+        </div>
+    }
+    @if (Session[Horizone.Common.CommonConstants.CurrentCulture].ToString() == "zh")
+    {
+        <div class="form-group">
+            @Html.LabelFor(model => model.WordClassId, "WordClassId", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownList("WordClassZhId", null, htmlAttributes: new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.WordClassId, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.WordSubClassId, "WordSubClassId", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownList("WordSubClassZhId", null, htmlAttributes: new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.WordSubClassId, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label col-md-2">@StaticResource.Resources.Case</label>
+            <div class="col-md-10">
+                @Html.ListBox("CaseId", (MultiSelectList)ViewBag.CasesZh, new { @class = "form-control" })
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label col-md-2">@StaticResource.Resources.Number</label>
+            <div class="col-md-10">
+                @Html.ListBox("NumberId", (MultiSelectList)ViewBag.NumbersZh, new { @class = "form-control" })
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label col-md-2">@StaticResource.Resources.Gender</label>
+            <div class="col-md-10">
+                @Html.ListBox("GenderId", (MultiSelectList)ViewBag.GendersZh, new { @class = "form-control" })
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label col-md-2">@StaticResource.Resources.Person</label>
+            <div class="col-md-10">
+                @Html.ListBox("PersonId", (MultiSelectList)ViewBag.PersonsZh, new { @class = "form-control" })
+            </div>
+        </div>
+    }
+    <div class="form-group">
+        @Html.LabelFor(model => model.TochLanguageId, "TochLanguageId", htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.DropDownList("TochLanguageId", null, htmlAttributes: new { @class = "form-control" })
+            @Html.ValidationMessageFor(model => model.TochLanguageId, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.EquivalentTA, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.EquivalentTA, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.EquivalentTA, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.EquivalentTB, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.EquivalentTB, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.EquivalentTB, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.EquivalentInOther, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.EquivalentInOther, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.EquivalentInOther, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.DerivedFrom, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.DerivedFrom, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.DerivedFrom, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.RelatedLexemes, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.RelatedLexemes, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.RelatedLexemes, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.RootCharacter, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.RootCharacter, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.RootCharacter, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.InternalRootVowel, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.InternalRootVowel, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.InternalRootVowel, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <h4>@StaticResource.Resources.Paradigm</h4>
+    <table class="table-bordered">
+        <tr>
+            <th rowspan="2">@StaticResource.Resources.Term</th>
+            <th colspan="3">@StaticResource.Resources.Masculine</th>
+            <th colspan="3">@StaticResource.Resources.Feminine</th>
+        </tr>
+        <tr>
+            <td>@StaticResource.Resources.Singular</td>
+            <td>@StaticResource.Resources.Dual</td>
+            <td>@StaticResource.Resources.Plural</td>
+            <td>@StaticResource.Resources.Singular</td>
+            <td>@StaticResource.Resources.Dual</td>
+            <td>@StaticResource.Resources.Plural</td>
+        </tr>
+        <tr>
+            <td>@StaticResource.Resources.Nominate</td>
+            <td>
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.NominateMasculineSingular, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.NominateMasculineSingular, "", new { @class = "text-danger" })
+                </div>
+            </td>
+            <td>
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.NominateMasculineDual, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.NominateMasculineDual, "", new { @class = "text-danger" })
+                </div>
+            </td>
+            <td>
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.NominateMasculinePlural, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.NominateMasculinePlural, "", new { @class = "text-danger" })
+                </div>
+            </td>
+            <td>
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.NominateFeminineSingular, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.NominateFeminineSingular, "", new { @class = "text-danger" })
+                </div>
+            </td>
+            <td>
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.NominateFeminineDual, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.NominateFeminineDual, "", new { @class = "text-danger" })
+                </div>
+            </td>
+            <td>
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.NominateFemininePlural, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.NominateFemininePlural, "", new { @class = "text-danger" })
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td>@StaticResource.Resources.Oblique</td>
+            <td>
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.ObliqueMasculineSingular, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.ObliqueMasculineSingular, "", new { @class = "text-danger" })
+                </div>
+            </td>
+            <td>
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.ObliqueMasculineDual, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.ObliqueMasculineDual, "", new { @class = "text-danger" })
+                </div>
+            </td>
+            <td>
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.ObliqueMasculinePlural, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.ObliqueMasculinePlural, "", new { @class = "text-danger" })
+                </div>
+            </td>
+            <td>
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.ObliqueFeminineSingular, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.ObliqueFeminineSingular, "", new { @class = "text-danger" })
+                </div>
+            </td>
+            <td>
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.ObliqueFeminineDual, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.ObliqueFeminineDual, "", new { @class = "text-danger" })
+                </div>
+            </td>
+            <td>
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.ObliqueFemininePlural, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.ObliqueFemininePlural, "", new { @class = "text-danger" })
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td>@StaticResource.Resources.Vocative</td>
+            <td>
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.VocativeMasculineSingular, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.VocativeMasculineSingular, "", new { @class = "text-danger" })
+                </div>
+            </td>
+            <td>
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.VocativeMasculineDual, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.VocativeMasculineDual, "", new { @class = "text-danger" })
+                </div>
+            </td>
+            <td>
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.VocativeMasculinePlural, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.VocativeMasculinePlural, "", new { @class = "text-danger" })
+                </div>
+            </td>
+            <td>
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.VocativeFeminineSingular, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.VocativeFeminineSingular, "", new { @class = "text-danger" })
+                </div>
+            </td>
+            <td>
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.VocativeFeminineDual, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.VocativeFeminineDual, "", new { @class = "text-danger" })
+                </div>
+            </td>
+            <td>
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.VocativeFemininePlural, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.VocativeFemininePlural, "", new { @class = "text-danger" })
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td>@StaticResource.Resources.Genitive</td>
+            <td>
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.GenitiveMasculineSingular, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.GenitiveMasculineSingular, "", new { @class = "text-danger" })
+                </div>
+            </td>
+            <td>
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.GenitiveMasculineDual, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.GenitiveMasculineDual, "", new { @class = "text-danger" })
+                </div>
+            </td>
+            <td>
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.GenitiveMasculinePlural, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.GenitiveMasculinePlural, "", new { @class = "text-danger" })
+                </div>
+            </td>
+            <td>
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.GenitiveFeminineSingular, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.GenitiveFeminineSingular, "", new { @class = "text-danger" })
+                </div>
+            </td>
+            <td>
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.GenitiveFeminineDual, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.GenitiveFeminineDual, "", new { @class = "text-danger" })
+                </div>
+            </td>
+            <td>
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.GenitiveFemininePlural, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.GenitiveFemininePlural, "", new { @class = "text-danger" })
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td>@StaticResource.Resources.Locative</td>
+            <td>
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.LocativeMasculineSingular, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.LocativeMasculineSingular, "", new { @class = "text-danger" })
+                </div>
+            </td>
+            <td>
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.LocativeMasculineDual, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.LocativeMasculineDual, "", new { @class = "text-danger" })
+                </div>
+            </td>
+            <td>
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.LocativeMasculinePlural, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.LocativeMasculinePlural, "", new { @class = "text-danger" })
+                </div>
+            </td>
+            <td>
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.LocativeFeminineSingular, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.LocativeFeminineSingular, "", new { @class = "text-danger" })
+                </div>
+            </td>
+            <td>
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.LocativeFeminineDual, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.LocativeFeminineDual, "", new { @class = "text-danger" })
+                </div>
+            </td>
+            <td>
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.LocativeFemininePlural, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.LocativeFemininePlural, "", new { @class = "text-danger" })
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td>@StaticResource.Resources.Ablative</td>
+            <td>
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.AblativeMasculineSingular, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.AblativeMasculineSingular, "", new { @class = "text-danger" })
+                </div>
+            </td>
+            <td>
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.AblativeMasculineDual, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.AblativeMasculineDual, "", new { @class = "text-danger" })
+                </div>
+            </td>
+            <td>
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.AblativeMasculinePlural, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.AblativeMasculinePlural, "", new { @class = "text-danger" })
+                </div>
+            </td>
+            <td>
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.AblativeFeminineSingular, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.AblativeFeminineSingular, "", new { @class = "text-danger" })
+                </div>
+            </td>
+            <td>
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.AblativeFeminineDual, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.AblativeFeminineDual, "", new { @class = "text-danger" })
+                </div>
+            </td>
+            <td>
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.AblativeFemininePlural, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.AblativeFemininePlural, "", new { @class = "text-danger" })
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td>@StaticResource.Resources.Allative</td>
+            <td>
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.AllativeMasculineSingular, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.AllativeMasculineSingular, "", new { @class = "text-danger" })
+                </div>
+            </td>
+            <td>
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.AllativeMasculineDual, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.AllativeMasculineDual, "", new { @class = "text-danger" })
+                </div>
+            </td>
+            <td>
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.AllativeMasculinePlural, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.AllativeMasculinePlural, "", new { @class = "text-danger" })
+                </div>
+            </td>
+            <td>
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.AllativeFeminineSingular, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.AllativeFeminineSingular, "", new { @class = "text-danger" })
+                </div>
+            </td>
+            <td>
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.AllativeFeminineDual, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.AllativeFeminineDual, "", new { @class = "text-danger" })
+                </div>
+            </td>
+            <td>
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.AllativeFemininePlural, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.AllativeFemininePlural, "", new { @class = "text-danger" })
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td>@StaticResource.Resources.Perlative</td>
+            <td>
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.PerlativeMasculineSingular, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.PerlativeMasculineSingular, "", new { @class = "text-danger" })
+                </div>
+            </td>
+            <td>
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.PerlativeMasculineDual, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.PerlativeMasculineDual, "", new { @class = "text-danger" })
+                </div>
+            </td>
+            <td>
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.PerlativeMasculinePlural, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.PerlativeMasculinePlural, "", new { @class = "text-danger" })
+                </div>
+            </td>
+            <td>
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.PerlativeFeminineSingular, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.PerlativeFeminineSingular, "", new { @class = "text-danger" })
+                </div>
+            </td>
+            <td>
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.PerlativeFeminineDual, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.PerlativeFeminineDual, "", new { @class = "text-danger" })
+                </div>
+            </td>
+            <td>
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.PerlativeFemininePlural, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.PerlativeFemininePlural, "", new { @class = "text-danger" })
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td>@StaticResource.Resources.Instrumental</td>
+            <td>
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.InstrumentalMasculineSingular, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.InstrumentalMasculineSingular, "", new { @class = "text-danger" })
+                </div>
+            </td>
+            <td>
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.InstrumentalMasculineDual, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.InstrumentalMasculineDual, "", new { @class = "text-danger" })
+                </div>
+            </td>
+            <td>
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.InstrumentalMasculinePlural, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.InstrumentalMasculinePlural, "", new { @class = "text-danger" })
+                </div>
+            </td>
+            <td>
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.InstrumentalFeminineSingular, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.InstrumentalFeminineSingular, "", new { @class = "text-danger" })
+                </div>
+            </td>
+            <td>
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.InstrumentalFeminineDual, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.InstrumentalFeminineDual, "", new { @class = "text-danger" })
+                </div>
+            </td>
+            <td>
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.InstrumentalFemininePlural, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.InstrumentalFemininePlural, "", new { @class = "text-danger" })
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td>@StaticResource.Resources.Comitative</td>
+            <td>
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.ComitativeMasculineSingular, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.ComitativeMasculineSingular, "", new { @class = "text-danger" })
+                </div>
+            </td>
+            <td>
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.ComitativeMasculineDual, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.ComitativeMasculineDual, "", new { @class = "text-danger" })
+                </div>
+            </td>
+            <td>
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.ComitativeMasculinePlural, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.ComitativeMasculinePlural, "", new { @class = "text-danger" })
+                </div>
+            </td>
+            <td>
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.ComitativeFeminineSingular, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.ComitativeFeminineSingular, "", new { @class = "text-danger" })
+                </div>
+            </td>
+            <td>
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.ComitativeFeminineDual, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.ComitativeFeminineDual, "", new { @class = "text-danger" })
+                </div>
+            </td>
+            <td>
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.ComitativeFemininePlural, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.ComitativeFemininePlural, "", new { @class = "text-danger" })
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                @StaticResource.Resources.Causative
+            </td>
+            <td>
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.CausativeMasculineSingular, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.CausativeMasculineSingular, "", new { @class = "text-danger" })
+                </div>
+            </td>
+            <td>
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.CausativeMasculineDual, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.CausativeMasculineDual, "", new { @class = "text-danger" })
+                </div>
+            </td>
+            <td>
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.CausativeMasculinePlural, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.CausativeMasculinePlural, "", new { @class = "text-danger" })
+                </div>
+            </td>
+            <td>
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.CausativeFeminineSingular, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.CausativeFeminineSingular, "", new { @class = "text-danger" })
+                </div>
+            </td>
+            <td>
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.CausativeFeminineDual, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.CausativeFeminineDual, "", new { @class = "text-danger" })
+                </div>
+            </td>
+            <td>
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.CausativeFemininePlural, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.CausativeFemininePlural, "", new { @class = "text-danger" })
+                </div>
+            </td>
+        </tr>
+    </table>
+    <div class="form-group">
+        @Html.LabelFor(model => model.Stem, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.Stem, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.Stem, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.StemClass, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.StemClass, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.StemClass, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.Voice, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.Voice, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.Voice, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.Valency, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.Valency, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.Valency, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.PronounSuffix, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.PronounSuffix, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.PronounSuffix, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.TenseMood, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.TenseMood, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.TenseMood, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.Visible, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            <div class="checkbox">
+                @Html.EditorFor(model => model.Visible)
+                @Html.ValidationMessageFor(model => model.Visible, "", new { @class = "text-danger" })
+            </div>
+        </div>
+    </div>
+
+
+
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <input type="submit" value=@StaticResource.Resources.Add class="btn btn-info" />
+            @Html.ActionLink(StaticResource.Resources.Cancel, "Index", null, new { @class = "btn btn-default" })
+        </div>
+    </div>
+</div>
+}

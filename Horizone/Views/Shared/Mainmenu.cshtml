@@ -1,4 +1,4 @@
-﻿@model List<Horizone.Models.Menu>
+﻿@model List<Horizone.Models.LinkAndPress>
 
 <ul class="nav navbar-nav">
               
@@ -11,7 +11,7 @@
                     if (item.Order == 1)
                     {
                         <li>
-                            <a href=@item.Link>@item.Text </a>
+                            <a href=@item.Link>@item.Title </a>
                         </li>
                     }
                 }
@@ -21,7 +21,7 @@
                     if (item.Order == 2)
                     {
                 <li>
-                    <a href=@item.Link>@item.Text </a>
+                    <a href=@item.Link>@item.Title </a>
                 </li>
                     }
                 }
@@ -31,10 +31,11 @@
                     if (item.Order == 3)
                     {
                 <li>
-                    <a href=@item.Link>@item.Text </a>
+                    <a href=@item.Link>@item.Title </a>
                 </li>
                     }
                 }
             </ul>
         </li>
  </ul>
+

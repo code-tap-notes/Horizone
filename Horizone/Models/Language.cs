@@ -13,7 +13,6 @@ namespace Horizone.Models
         public string Symbol { get; set; }
         [StringLength(40, MinimumLength = 1, ErrorMessageResourceName = "MaxLength40", ErrorMessageResourceType = typeof(StaticResource.Resources))]
         public string Name { get; set; }
-
         public bool IsDefault { get; set; }
     }
 }

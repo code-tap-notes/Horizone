@@ -1,0 +1,74 @@
+﻿@model Horizone.Models.Manuscript
+
+@{
+    ViewBag.Title = @StaticResource.Resources.ScriptManuscript;
+}
+
+<h2>@StaticResource.Resources.ScriptManuscript</h2>
+<div>
+    <h4>@StaticResource.Resources.Details</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.AlignmentType)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AlignmentType)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ModuleWidth)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ModuleWidth)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ModuleHeight)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ModuleHeight)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AvCharPerLigne)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AvCharPerLigne)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NibThickness)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NibThickness)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Script)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Script)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ScriptAdd)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ScriptAdd)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink(StaticResource.Resources.Edit, "Edit", new { id = Model.Id }, new { @class = "btn btn-info" }) |
+    @Html.ActionLink(StaticResource.Resources.Return, "Details", new { id = Model.Id }, new { @class = "btn btn-primary" })
+</p>
+

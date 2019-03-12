@@ -22,27 +22,19 @@ namespace Horizone.Models
                 return DateTime.Now;
             }
         }
-
-        [Required(ErrorMessageResourceName = "FieldRequired", ErrorMessageResourceType = typeof(StaticResource.Resources))]
-        [StringLength(500, MinimumLength = 1, ErrorMessageResourceName = "MinLength", ErrorMessageResourceType = typeof(StaticResource.Resources))]
         [Display(Name = "Content", ResourceType = typeof(StaticResource.Resources))]      
         public string Content { get; set; }
-
 
         [Display(Name = "News", ResourceType = typeof(StaticResource.Resources))]
         public int NewsId { get; set; }
 
-
         [ForeignKey("NewsId")]
         public News News { get; set; }
 
-
         [Display(Name = "PublishedBy", ResourceType = typeof(StaticResource.Resources))]
-        [Required(ErrorMessageResourceName = "FieldRequired", ErrorMessageResourceType = typeof(StaticResource.Resources))]
         public string UserId { get; set; }
 
         [ForeignKey("UserId")]
         public ApplicationUser ApplicationUser { get; set; }
-       
     }
 }

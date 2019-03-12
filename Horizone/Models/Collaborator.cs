@@ -16,6 +16,6 @@ namespace Horizone.Models
         [ForeignKey("UserId")]
         public ApplicationUser ApplicationUser { get; set; }
 
-        public ICollection<News> Newss { get; set; }
+        public ICollection<News> Newses { get; set; }
     }
 }

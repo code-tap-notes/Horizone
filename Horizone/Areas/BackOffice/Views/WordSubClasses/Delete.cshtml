@@ -1,0 +1,49 @@
+﻿@model Horizone.Models.WordSubClass
+
+@{
+    ViewBag.Title = @StaticResource.Resources.Delete;
+}
+
+<h2> @StaticResource.Resources.Delete</h2>
+
+<h3 class="text-danger"> @StaticResource.Resources.AskDelete</h3>
+<div>
+    <h4> @StaticResource.Resources.WordSubClass</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.SubClassEn)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SubClassEn)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SubClassFr)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SubClassFr)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SubClassZh)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SubClassZh)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-danger" /> |
+            @Html.ActionLink(@StaticResource.Resources.Return, "Index", null, new { @class = "btn btn-default" })
+        </div>
+    }
+</div>

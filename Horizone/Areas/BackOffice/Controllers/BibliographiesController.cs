@@ -12,15 +12,16 @@ using PagedList;
 
 namespace Horizone.Areas.BackOffice.Controllers
 {
-    [Authorize(Roles = "Collaborator,Admin")]
     public class BibliographiesController : BaseController
-        {
+    {
+        
 
-            // GET: BackOffice/Bibliographies
-            public ActionResult Index(int page = 1, int pageSize = 6)
-            {
-                return View(db.Bibliographys.OrderBy(x => x.Id).ToPagedList(page, pageSize));
-            }
+        // GET: BackOffice/Bibliographies
+        public ActionResult Index(int page = 1, int pageSize = 6)
+        {
+            return View(db.Bibliographys.OrderBy(x => x.Id).ToPagedList(page, pageSize));
+        }
+
         // GET: BackOffice/Bibliographies/Details/5
         public ActionResult Details(int? id)
         {
@@ -35,8 +36,6 @@ namespace Horizone.Areas.BackOffice.Controllers
             }
             return View(bibliography);
         }
-        
-            
 
         // GET: BackOffice/Bibliographies/Create
         public ActionResult Create()
@@ -47,7 +46,6 @@ namespace Horizone.Areas.BackOffice.Controllers
         // POST: BackOffice/Bibliographies/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
-        
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Create([Bind(Include = "Id,Author,PublicationDate,Title,Journal,UlrBibliography")] Bibliography bibliography)
@@ -76,7 +74,7 @@ namespace Horizone.Areas.BackOffice.Controllers
             }
             return View(bibliography);
         }
-       
+
         // POST: BackOffice/Bibliographies/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
@@ -92,7 +90,7 @@ namespace Horizone.Areas.BackOffice.Controllers
             }
             return View(bibliography);
         }
-       
+
         // GET: BackOffice/Bibliographies/Delete/5
         public ActionResult Delete(int? id)
         {
@@ -119,35 +117,5 @@ namespace Horizone.Areas.BackOffice.Controllers
             return RedirectToAction("Index");
         }
 
-        // GET: Bibliographies/Search/
-
-        public ActionResult Search(string search, string title, string journal)
-        {
-
-            IEnumerable<Bibliography> bibliographies = db.Bibliographys;
-
-            if (!string.IsNullOrWhiteSpace(search))
-            {
-                bibliographies = bibliographies.Where(x => x.Author.Contains(search));
-
-                //bibliographies = bibliographies.Where(x => x.PublicationDate.Contains(search));
-                //bibliographies = bibliographies.Where(x => x.Title.Contains(search));
-                //|| || (x=> x.PublicationDate.Contains(search)
-                //|| x.Journal.Contains(search)
-                //|| x.Title.Contains(search));
-            }
-            //if (!string.IsNullOrWhiteSpace(title))
-            //    bibliographies = bibliographies.Where(y => y.Title.Contains(title));
-            //if (!string.IsNullOrWhiteSpace(journal))
-            //    bibliographies = bibliographies.Where(y => y.Journal.Contains(journal));
-
-            if (bibliographies.Count() == 0)
-            {
-                Display("Aucun résultat");
-            }
-
-            return View("Search", bibliographies.ToList());
-
-        }
     }
 }

@@ -8,8 +8,6 @@
     <title>@ViewBag.Title - HISTOCHTEXT</title>
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
-
-
     <link href="~/Content/layout.css" rel="stylesheet" />
 </head>
 
@@ -55,7 +53,7 @@
             <li>@Html.ActionLink(@StaticResource.Resources.Bibliography, "Bibliographie", "Home")</li>
             <li>@Html.ActionLink(@StaticResource.Resources.Help, "Aide", "Home")</li>
 
-            <li class="dropdown">              
+            <li class="dropdown">
                 @{Html.RenderAction("Mainmenu", "Home");}
             </li>
         </ul>

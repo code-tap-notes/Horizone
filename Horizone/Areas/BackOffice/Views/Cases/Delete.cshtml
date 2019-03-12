@@ -1,0 +1,49 @@
+﻿@model Horizone.Models.Case
+
+@{
+    ViewBag.Title = @StaticResource.Resources.Delete;
+}
+
+<h2> @StaticResource.Resources.Delete</h2>
+
+<h3 class="text-danger"> @StaticResource.Resources.AskDelete</h3>
+<div>
+    <h4> @StaticResource.Resources.Case</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.NameCaseEn)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NameCaseEn)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NameCaseFr)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NameCaseFr)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NameCaseZh)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NameCaseZh)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-danger" /> |
+            @Html.ActionLink(@StaticResource.Resources.Return, "Index", null, new { @class = "btn btn-default" })
+        </div>
+    }
+</div>

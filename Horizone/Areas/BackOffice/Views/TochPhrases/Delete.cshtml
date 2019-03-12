@@ -1,0 +1,105 @@
+﻿@model Horizone.Models.TochPhrase
+
+@{
+    ViewBag.Title = @StaticResource.Resources.Delete;
+}
+
+<h2>@StaticResource.Resources.Delete</h2>
+
+<h3 class="text-danger">@StaticResource.Resources.AskDelete</h3>
+<div>
+    <h4>@StaticResource.Resources.TochPhrase</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Language.Symbol)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Language.Symbol)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TochLanguage.Language)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TochLanguage.Language)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Phrase)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Phrase)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.English)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.English)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Francaise)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Francaise)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Chinese)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Chinese)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DerivedFrom)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DerivedFrom)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.RelatedLexemes)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.RelatedLexemes)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Description)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Description)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Visible)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Visible)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+       <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-danger" /> |
+            @Html.ActionLink(@StaticResource.Resources.Return, "Index", null, new { @class = "btn btn-default" })
+        </div>
+    }
+</div>

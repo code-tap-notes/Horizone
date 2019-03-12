@@ -1,0 +1,41 @@
+﻿@model Horizone.Models.WordSubClass
+@{
+    ViewBag.Title = @StaticResource.Resources.Details;
+}
+
+<h2>@StaticResource.Resources.Details</h2>
+
+<div>
+    <h4>@StaticResource.Resources.WordSubClass</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.SubClassEn)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SubClassEn)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SubClassFr)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SubClassFr)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SubClassZh)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SubClassZh)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink(StaticResource.Resources.Edit, "Edit", new { id = Model.Id }, new { @class = "btn btn-info" }) |
+    @Html.ActionLink(StaticResource.Resources.Return, "Index", null, new { @class = "btn btn-primary" })
+</p>

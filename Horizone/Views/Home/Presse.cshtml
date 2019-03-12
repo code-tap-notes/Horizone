@@ -1,10 +1,11 @@
-﻿@model List<Horizone.Models.Menu>
+﻿@model List<Horizone.Models.LinkAndPress>
 @foreach (var item in Model)
 {
     if (item.Order == 4)
     {
         <li>
-            <a href=@item.Link>&#x27A4; @item.Text </a>
+            <a href=@item.Link>&#x27A4; @item.Title </a>
         </li>
     }
 }
+ 

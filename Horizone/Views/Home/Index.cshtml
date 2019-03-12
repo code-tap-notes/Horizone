@@ -4,34 +4,31 @@
 <div class="container body-content">
     <!--Recherche-->
     <div id="search">
-        <form class="form-group row" action="@Url.Action("Search", "FrontMamuscripts")" method="post" enctype="multipart/form-data">
+        <form class="form-group row" action="@Url.Action("Search", "FrontBibliographys")" method="post" enctype="multipart/form-data">
             <div class="form-group col-md-2">
                 <br />
                 <button type="submit" class="btn btn-info bigBtn"> @StaticResource.Resources.Search </button>
-            </div>
-
+            </div>                       
             <div class="form-group col-md-2">
                 <label for="Topic">@StaticResource.Resources.Words</label>
-                <textarea rows="1" cols="50" type="text" class="form-control" id="WordSearch" name="WordSearch"> </textarea>
+                <input rows="1" cols="50" type="text" id="Search" name="Search"> 
             </div>
-
             <div>
                 <p>"Insert:   </p>
-                <input type="button" value="ā" onclick="insertText('WordSearch', 'ā');">
-                <input type="button" value="ä" onclick="insertText('WordSearch', 'ä');">
-                <input type="button" value="ī" onclick="insertText('WordSearch', 'ī');">
-                <input type="button" value="ö" onclick="insertText('WordSearch', 'ö');">
-                <input type="button" value="ū" onclick="insertText('WordSearch', 'ū');">
-                <input type="button" value="ü" onclick="insertText('WordSearch', 'ü');">
-                <input type="button" value="ṅ" onclick="insertText('WordSearch', 'ṅ');">
-                <input type="button" value="ñ" onclick="insertText('WordSearch', 'ñ');">
-                <input type="button" value="ṃ" onclick="insertText('WordSearch', 'ṃ');">
-                <input type="button" value="ś" onclick="insertText('WordSearch', 'ś');">
-                <input type="button" value="ṣ" onclick="insertText('WordSearch', 'ṣ');">
-                <input type="button" value="š" onclick="insertText('WordSearch', 'š');">
-                <input type="button" value="ß" onclick="insertText('WordSearch', 'ß');">
+                <a  onclick="insertText('Search','ā');" href="#">ā  </a>
+                <a  onclick="insertText('Search','ä');" href="#">ä  </a>                
+                <a  onclick="insertText('Search','ī');" href="#">ī  </a>
+                <a  onclick="insertText('Search','ö');" href="#">ö  </a>
+                <a  onclick="insertText('Search','ū');" href="#">ū  </a>
+                <a  onclick="insertText('Search','ü');" href="#">ü  </a>
+                <a  onclick="insertText('Search','ṅ');" href="#">ṅ  </a>
+                <a  onclick="insertText('Search','ñ');" href="#">ñ  </a>
+                <a  onclick="insertText('Search','ṃ');" href="#">ṃ  </a>
+                <a  onclick="insertText('Search','ś');" href="#">ś  </a>
+                <a  onclick="insertText('Search','ṣ');" href="#">ṣ  </a>
+                <a  onclick="insertText('Search','š');" href="#">š  </a>
+                <a  onclick="insertText('Search','ß');" href="#">ß  </a>                
             </div>
-
         </form>
     </div>
     <!--Information principal-->
@@ -46,7 +43,7 @@
 
         <div id="left">
             <hr />
-            <img class="GrandImage" src="~/Image/China_Tarim.jpg" />
+            <img class="GrandImage" src="~/Image/21.jpg" />
         </div>
     </div>
 
@@ -110,9 +107,9 @@
 
             </div>
         </div>
-        <!--Main-Right-->
+        <!--Main-Right - ACTIVITE-->
         <div id="slide-right">
-            <img style="width:90px;height:90px;" src="~/Image/basin.jpg" />
+            <img style="width:90px;height:90px;" src="~/Image/15.jpg" />
             @{Html.RenderAction("PageActivity", "Home"); }
         </div>
     </div>
@@ -152,8 +149,6 @@
                                 <div class="clear"></div>
                             </div>
                         </div>
-
-
                     </div>
                 </div>
             </div>
@@ -276,10 +271,10 @@
 
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")
-    <script>
-        function insertText(elemID, text) {
-            var elem = document.getElementById(elemID);
-            elem.innerHTML += text;
-        }
-    </script>
+<script>
+   
+    function insertText(elemID, text) {
+        document.getElementById(elemID).value += text;       
+    }
+ </script>
 }

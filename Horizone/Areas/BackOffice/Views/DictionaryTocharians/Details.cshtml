@@ -1,0 +1,510 @@
+﻿@model Horizone.Models.DictionaryTocharian
+
+@{
+    ViewBag.Title = @StaticResource.Resources.Details;
+}
+
+<h2>@StaticResource.Resources.Details</h2>
+
+<div>
+    <h4>@StaticResource.Resources.DictionaryTocharian</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Language)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Language.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TochLanguage.Language)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TochLanguage.Language)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.WordClass.ClassEn)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.WordClass.ClassEn)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.WordSubClass.SubClassEn)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.WordSubClass.SubClassEn)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Word)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Word)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.English)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.English)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Francaise)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Francaise)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Chinese)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Chinese)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.EquivalentTA)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EquivalentTA)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.EquivalentTB)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EquivalentTB)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.EquivalentInOther)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EquivalentInOther)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DerivedFrom)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DerivedFrom)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.RelatedLexemes)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.RelatedLexemes)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.RootCharacter)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.RootCharacter)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.InternalRootVowel)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.InternalRootVowel)
+        </dd>
+
+        <dt>
+            @StaticResource.Resources.Case
+        </dt>
+        <dd>
+            <table class="table table-striped">
+                @foreach (var item in Model.Cases)
+                {
+                    <tr><td>@item.NameCaseEn</td></tr>
+                }
+
+            </table>
+        </dd>
+        <dt>
+            @StaticResource.Resources.Gender
+        </dt>
+        <dd>
+            <table class="table table-striped">
+                @foreach (var item in Model.Genders)
+                {
+                    <tr><td>@item.NameGenderEn</td></tr>
+                }
+
+            </table>
+        </dd>
+        <dt>
+            <p>  @StaticResource.Resources.Number</p>
+        </dt>
+        <dd>
+            <table class="table table-striped">
+                @foreach (var item in Model.Numbers)
+                {
+                    <tr><td>@item.WordNumberEn</td></tr>
+                }
+
+            </table>
+        </dd>
+        <dt>
+            <p>  @StaticResource.Resources.Person</p>
+        </dt>
+        <dd>
+            <table class="table table-striped">
+                @foreach (var item in Model.Persons)
+                {
+                    <tr><td>@item.ConjugatedPersonEn</td></tr>
+                }
+
+            </table>
+        </dd>
+
+
+    </dl>
+    <h4>@StaticResource.Resources.Paradigm</h4>
+    <table class="table-bordered">
+        <tr>
+            <th rowspan="2">@StaticResource.Resources.Term</th>
+            <th colspan="3">@StaticResource.Resources.Masculine</th>
+            <th colspan="3">@StaticResource.Resources.Feminine</th>
+        </tr>
+        <tr>
+            <td class="col-md-1">@StaticResource.Resources.Singular</td>
+            <td class="col-md-1">@StaticResource.Resources.Dual</td>
+            <td class="col-md-1">@StaticResource.Resources.Plural</td>
+            <td class="col-md-1">@StaticResource.Resources.Singular</td>
+            <td class="col-md-1">@StaticResource.Resources.Dual</td>
+            <td class="col-md-1">@StaticResource.Resources.Plural</td>
+        </tr>
+        <tr>
+            <td class="col-md-1">@StaticResource.Resources.Nominate</td>
+            <td>
+
+                @Html.DisplayFor(model => model.NominateMasculineSingular)
+            </td>
+            <td>
+                @Html.DisplayFor(model => model.NominateMasculineDual)
+            </td>
+            <td>
+                @Html.DisplayFor(model => model.NominateMasculinePlural)
+            </td>
+            <td>
+                @Html.DisplayFor(model => model.NominateFeminineSingular)
+            </td>
+            <td>
+                @Html.DisplayFor(model => model.NominateFeminineDual)
+            </td>
+            <td>
+                @Html.DisplayFor(model => model.NominateFemininePlural)
+            </td>
+
+        </tr>
+        <tr>
+            <td class="col-md-1">@StaticResource.Resources.Oblique</td>
+            <td>
+                @Html.DisplayFor(model => model.ObliqueMasculineSingular)
+            </td>
+            <td>
+                @Html.DisplayFor(model => model.ObliqueMasculineDual)
+            </td>
+            <td>
+                @Html.DisplayFor(model => model.ObliqueMasculinePlural)
+            </td>
+            <td>
+                @Html.DisplayFor(model => model.ObliqueFeminineSingular)
+            </td>
+            <td>
+                @Html.DisplayFor(model => model.ObliqueFeminineDual)
+            </td>
+            <td>
+                @Html.DisplayFor(model => model.ObliqueFemininePlural)
+            </td>
+        </tr>
+        <tr>
+            <td class="col-md-1">@StaticResource.Resources.Vocative</td>
+            <td>
+
+                @Html.DisplayFor(model => model.VocativeMasculineSingular)
+            </td>
+            <td>
+                @Html.DisplayFor(model => model.VocativeMasculineDual)
+            </td>
+            <td>
+                @Html.DisplayFor(model => model.VocativeMasculinePlural)
+            </td>
+            <td>
+                @Html.DisplayFor(model => model.VocativeFeminineSingular)
+            </td>
+            <td>
+                @Html.DisplayFor(model => model.VocativeFeminineDual)
+            </td>
+            <td>
+                @Html.DisplayFor(model => model.VocativeFemininePlural)
+            </td>
+        </tr>
+        <tr>
+            <td class="col-md-1">@StaticResource.Resources.Genitive</td>
+            <td>
+
+                @Html.DisplayFor(model => model.GenitiveMasculineSingular)
+            </td>
+            <td>
+                @Html.DisplayFor(model => model.GenitiveMasculineDual)
+            </td>
+            <td>
+                @Html.DisplayFor(model => model.GenitiveMasculinePlural)
+            </td>
+            <td>
+                @Html.DisplayFor(model => model.GenitiveFeminineSingular)
+            </td>
+            <td>
+                @Html.DisplayFor(model => model.GenitiveFeminineDual)
+            </td>
+            <td>
+                @Html.DisplayFor(model => model.GenitiveFemininePlural)
+
+            </td>
+        </tr>
+        <tr>
+            <td class="col-md-1">@StaticResource.Resources.Locative</td>
+            <td>
+
+                @Html.DisplayFor(model => model.LocativeMasculineSingular)
+            </td>
+            <td>
+                @Html.DisplayFor(model => model.LocativeMasculineDual)
+            </td>
+            <td>
+                @Html.DisplayFor(model => model.LocativeMasculinePlural)
+            </td>
+            <td>
+                @Html.DisplayFor(model => model.LocativeFeminineSingular)
+            </td>
+            <td>
+                @Html.DisplayFor(model => model.LocativeFeminineDual)
+            </td>
+            <td>
+                @Html.DisplayFor(model => model.LocativeFemininePlural)
+            </td>
+        </tr>
+        <tr>
+            <td class="col-md-1">@StaticResource.Resources.Ablative</td>
+
+            <td>
+                @Html.DisplayFor(model => model.AblativeMasculineSingular)
+            </td>
+            <td>
+                @Html.DisplayFor(model => model.AblativeMasculineDual)
+            </td>
+            <td>
+                @Html.DisplayFor(model => model.AblativeMasculinePlural)
+            </td>
+            <td>
+                @Html.DisplayFor(model => model.AblativeFeminineSingular)
+            </td>
+            <td>
+                @Html.DisplayFor(model => model.AblativeFeminineDual)
+            </td>
+            <td>
+                @Html.DisplayFor(model => model.AblativeFemininePlural)
+            </td>
+        </tr>
+        <tr>
+            <td class="col-md-1">@StaticResource.Resources.Allative</td>
+            <td>
+                @Html.DisplayFor(model => model.AllativeMasculineSingular)
+            </td>
+            <td>
+                @Html.DisplayFor(model => model.AllativeMasculineDual)
+            </td>
+            <td>
+                @Html.DisplayFor(model => model.AllativeMasculinePlural)
+            </td>
+            <td>
+                @Html.DisplayFor(model => model.AllativeFeminineSingular)
+            </td>
+            <td>
+                @Html.DisplayFor(model => model.AllativeFeminineDual)
+            </td>
+            <td>
+                @Html.DisplayFor(model => model.AllativeFemininePlural)
+
+            </td>
+        </tr>
+        <tr>
+            <td class="col-md-1">@StaticResource.Resources.Perlative</td>
+            <td>
+
+                @Html.DisplayFor(model => model.PerlativeMasculineSingular)
+            </td>
+            <td>
+                @Html.DisplayFor(model => model.PerlativeMasculineDual)
+            </td>
+            <td>
+                @Html.DisplayFor(model => model.PerlativeMasculinePlural)
+            </td>
+            <td>
+                @Html.DisplayFor(model => model.PerlativeFeminineSingular)
+            </td>
+            <td>
+                @Html.DisplayFor(model => model.PerlativeFeminineDual)
+            </td>
+            <td>
+                @Html.DisplayFor(model => model.PerlativeFemininePlural)
+
+            </td>
+        </tr>
+        <tr>
+            <td class="col-md-1">@StaticResource.Resources.Instrumental</td>
+            <td>
+                @Html.DisplayFor(model => model.InstrumentalMasculineSingular)
+            </td>
+            <td>
+                @Html.DisplayFor(model => model.InstrumentalMasculineDual)
+            </td>
+            <td>
+                @Html.DisplayFor(model => model.InstrumentalMasculinePlural)
+            </td>
+            <td>
+                @Html.DisplayFor(model => model.InstrumentalFeminineSingular)
+            </td>
+            <td>
+                @Html.DisplayFor(model => model.InstrumentalFeminineDual)
+            </td>
+            <td>
+                @Html.DisplayFor(model => model.InstrumentalFemininePlural)
+
+            </td>
+        </tr>
+        <tr>
+            <td class="col-md-1">@StaticResource.Resources.Comitative</td>
+            <td>
+                @Html.DisplayFor(model => model.ComitativeMasculineSingular)
+            </td>
+            <td>
+                @Html.DisplayFor(model => model.ComitativeMasculineDual)
+            </td>
+            <td>
+                @Html.DisplayFor(model => model.ComitativeMasculinePlural)
+            </td>
+            <td>
+                @Html.DisplayFor(model => model.ComitativeFeminineSingular)
+
+            </td>
+            <td>
+                @Html.DisplayFor(model => model.ComitativeFeminineDual)
+            </td>
+            <td>
+                @Html.DisplayFor(model => model.ComitativeFemininePlural)
+
+            </td>
+        </tr>
+        <tr>
+            <td class="col-md-1">
+                @StaticResource.Resources.Causative
+            </td>
+            <td>
+
+                @Html.DisplayFor(model => model.CausativeMasculineSingular)
+            </td>
+            <td>
+                @Html.DisplayFor(model => model.CausativeMasculineDual)
+            </td>
+            <td>
+                @Html.DisplayFor(model => model.CausativeMasculinePlural)
+            </td>
+            <td>
+                @Html.DisplayFor(model => model.CausativeFeminineSingular)
+            </td>
+            <td>
+                @Html.DisplayFor(model => model.CausativeFeminineDual)
+            </td>
+            <td>
+                @Html.DisplayFor(model => model.CausativeFemininePlural)
+            </td>
+        </tr>
+    </table>
+    <dl class="dl-horizontal">
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Stem)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Stem)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.StemClass)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.StemClass)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Voice)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Voice)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Valency)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Valency)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PronounSuffix)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PronounSuffix)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TenseMood)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TenseMood)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Visible)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Visible)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink(StaticResource.Resources.Edit, "Edit", new { id = Model.Id }, new { @class = "btn btn-info" }) |
+    @Html.ActionLink(StaticResource.Resources.Return, "Index", null, new { @class = "btn btn-primary" })
+</p>

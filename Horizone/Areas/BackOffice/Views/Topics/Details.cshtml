@@ -1,50 +1,34 @@
 ﻿@model Horizone.Models.Topic
 
 @{
-    ViewBag.Title = "Details";
+    ViewBag.Title = @StaticResource.Resources.Details;
 }
 
-<h2>Details</h2>
+<h2>@StaticResource.Resources.Details</h2>
 
 <div>
-    <h4>Topic</h4>
+    <h4>@StaticResource.Resources.Topic</h4>
     <hr />
     <dl class="dl-horizontal">
         <dt>
-            @Html.DisplayNameFor(model => model.NameFrench)
+            @Html.DisplayNameFor(model => model.Language.Symbol)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.NameFrench)
+            @Html.DisplayFor(model => model.Language.Symbol)
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.NameEnglish)
+            @Html.DisplayNameFor(model => model.TopicName)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.NameEnglish)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.TopicChinese)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.TopicChinese)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.TopicVietnam)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.TopicVietnam)
+            @Html.DisplayFor(model => model.TopicName)
         </dd>
 
     </dl>
 </div>
 <p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
-    @Html.ActionLink("Back to List", "Index")
+    @Html.ActionLink(StaticResource.Resources.Edit, "Edit", new { id = Model.Id }, new { @class = "btn btn-info" }) |
+    @Html.ActionLink(StaticResource.Resources.Return, "Index", null, new { @class = "btn btn-primary" })
 </p>

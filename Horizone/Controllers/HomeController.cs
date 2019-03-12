@@ -19,8 +19,7 @@ namespace Horizone.Controllers
         {
             return View();
         }
-        
-
+       
         public ActionResult About()
         {                       
             var aboutProjets = db.AboutProjets.Include(a => a.Language);
@@ -52,10 +51,9 @@ namespace Horizone.Controllers
                                       
             var collaborations = db.Collaborations;
             foreach (var item in collaborations)
-                if (item.Team) collaborations.Add(item);
-
+            if (item.Team) collaborations.Add(item);
             return View(collaborations.Include("Publications").Include("ImageCollaborations").ToList());
-            
+         
         }
         public ActionResult Collaboration()
         {
@@ -100,15 +98,15 @@ namespace Horizone.Controllers
         }
 
         [ChildActionOnly]
-        public ActionResult MainMenu()
-        {
-            return PartialView(db.Menus.ToList());
+       public ActionResult MainMenu()
+       {
+        return PartialView(db.LinkAndPresses.ToList());
            
-        }
+       }
         [ChildActionOnly]
         public ActionResult Presse()
-        {
-            return PartialView(db.Menus.ToList());
+      {
+       return PartialView(db.LinkAndPresses.ToList());
 
         }
 
@@ -131,8 +129,8 @@ namespace Horizone.Controllers
         public ActionResult Nouvelles()
         {
 
-            var newss = db.Newss.Include(n => n.Collaborateur).Include(n => n.Topic);
-            return View(newss.ToList());
+            var newses = db.Newses.Include(n => n.Collaborator).Include(n => n.Topic);
+            return View(newses.ToList());
         }
         // GET: Manuscripts
         public ActionResult Manuscript()

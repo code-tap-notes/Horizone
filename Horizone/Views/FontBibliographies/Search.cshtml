@@ -64,24 +64,23 @@
 
             @foreach (var item in Model)
             {
-                <tr>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.Author)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.PublicationDate)
-                    </td>
-                    <td>
-                        @Html.Raw(item.Title)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.Journal)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.UlrBibliography)
-                    </td>
-
-                </tr>
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Author)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.PublicationDate)
+                </td>
+                <td>
+                    @Html.Raw(item.Title)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Journal)
+                </td>                
+                <td>
+                    <a href=@item.UlrBibliography class="btn btn-info">@StaticResource.Resources.LearnMore &raquo;</a>
+                </td>
+            </tr>
             }
 
         </table>

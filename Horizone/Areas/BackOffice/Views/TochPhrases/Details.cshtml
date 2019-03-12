@@ -1,0 +1,96 @@
+﻿@model Horizone.Models.TochPhrase
+@{
+    ViewBag.Title = @StaticResource.Resources.Details;
+}
+
+<h2>@StaticResource.Resources.Details</h2>
+<div>
+    <h4>TochPhrase</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Language)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Language.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TochLanguage.Language)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TochLanguage.Language)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Phrase)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Phrase)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.English)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.English)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Francaise)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Francaise)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Chinese)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Chinese)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DerivedFrom)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DerivedFrom)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.RelatedLexemes)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.RelatedLexemes)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Description)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Description)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Visible)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Visible)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink(StaticResource.Resources.Edit, "Edit", new { id = Model.Id }, new { @class = "btn btn-info" }) |
+    @Html.ActionLink(StaticResource.Resources.Return, "Index", null, new { @class = "btn btn-primary" })
+</p>

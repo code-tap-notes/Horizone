@@ -33,6 +33,17 @@ namespace Horizone.Models
         [Display(Name = "Link", ResourceType = typeof(StaticResource.Resources))]
         [StringLength(500, MinimumLength = 1, ErrorMessageResourceName = "MinLength", ErrorMessageResourceType = typeof(StaticResource.Resources))]
         public string UlrBibliography { get; set; }
-      
+
+        [Display(Name = "TochStory", ResourceType = typeof(StaticResource.Resources))]
+        public ICollection<TochStory> TochStories { get; set; }
+
+        [Display(Name = "TochStory", ResourceType = typeof(StaticResource.Resources))]
+        public ICollection<TochPhrase> TochPhrases { get; set; }
+
+        [Display(Name = "Manuscript", ResourceType = typeof(StaticResource.Resources))]
+        public ICollection<Manuscript> Manuscripts { get; set; }
+
+        [Display(Name = "DictionaryTocharian", ResourceType = typeof(StaticResource.Resources))]
+        public ICollection<DictionaryTocharian> DictionaryTocharians { get; set; }
     }
 }

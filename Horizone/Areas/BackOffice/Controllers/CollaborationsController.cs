@@ -60,6 +60,7 @@ namespace Horizone.Areas.BackOffice.Controllers
             {
                 if (PublicationId.Count() > 0)
                     collaboration.Publications = db.Publications.Where(x => PublicationId.Contains(x.Id)).ToList();
+ 
                 if (PublicationId.Count() == 0)
                     collaboration.Publications = db.Publications.Where(x => x.Title == "No visible").ToList();
                 db.Collaborations.Add(collaboration);

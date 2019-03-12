@@ -12,7 +12,7 @@ namespace Horizone.Models
     {
         public int Id { get; set; }
 
-        [Display(Name = "Title", ResourceType = typeof(StaticResource.Resources))]
+        [Display(Name = "TitleArticle", ResourceType = typeof(StaticResource.Resources))]
         [Required(ErrorMessageResourceName = "FieldRequired", ErrorMessageResourceType = typeof(StaticResource.Resources))]
         public string Title { get; set; }
        
@@ -27,13 +27,12 @@ namespace Horizone.Models
                 return DateTime.Now;
             }
           }
-
-      
+   
         [Display(Name = "Content",ResourceType = typeof(StaticResource.Resources))]
         public string Content{ get; set; }
        
-        [Display(Name = "Views ", ResourceType = typeof(StaticResource.Resources))]
-        [Range(0, 10000, ErrorMessage = ">0")]
+        [Display(Name = "Views", ResourceType = typeof(StaticResource.Resources))]
+        [Range(0, 10000, ErrorMessageResourceName = "Positive", ErrorMessageResourceType = typeof(StaticResource.Resources))]
         public int View { get; set; }
 
         [Display(Name = "Topic", ResourceType = typeof(StaticResource.Resources))]
@@ -42,21 +41,19 @@ namespace Horizone.Models
         [ForeignKey("TopicId")]
         public Topic Topic { get; set; }
 
-        [Display(Name = "PublisgedBy", ResourceType = typeof(StaticResource.Resources))]
-        public int ColaborateurId { get; set; }
+        [Display(Name = "PublishedBy", ResourceType = typeof(StaticResource.Resources))]
+        public int CollaboratorId { get; set; }
 
-        [ForeignKey("ColaborateurId")]
-        public Collaborator Collaborateur { get; set; }
+        [ForeignKey("CollaboratorId")]
+        public Collaborator Collaborator { get; set; }
 
         public ICollection<Comment> Comments { get; set; }
-        public ICollection<ImageNews> ImageNewss { get; set; }
+        public ICollection<ImageNews> ImageNewses { get; set; }
 
         [Display(Name = "Language", ResourceType = typeof(StaticResource.Resources))]
         public int LanguageId { get; set; }
 
         [ForeignKey("LanguageId")]
-        public Language Language { get; set; }
-
-      
+        public Language Language { get; set; }      
     }
 }

@@ -6,19 +6,20 @@ using System.Linq;
 using System.Net;
 using System.Web;
 using System.Web.Mvc;
+using Horizone.Controllers;
 using Horizone.Models;
 
 namespace Horizone.Areas.BackOffice.Controllers
 {
-    [Authorize(Roles = "Collaborator,Admin")]
-    public class TopicsController : Controller
+    public class TopicsController : BaseController
     {
-        private ApplicationDbContext db = new ApplicationDbContext();
+       
 
         // GET: BackOffice/Topics
         public ActionResult Index()
         {
-            return View(db.Topics.ToList());
+            var topics = db.Topics.Include(t => t.Language);
+            return View(topics.ToList());
         }
 
         // GET: BackOffice/Topics/Details/5
@@ -28,7 +29,7 @@ namespace Horizone.Areas.BackOffice.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Topic topic = db.Topics.Find(id);
+            Topic topic = db.Topics.Include(t => t.Language).SingleOrDefault(x=>x.Id==id);
             if (topic == null)
             {
                 return HttpNotFound();
@@ -39,6 +40,7 @@ namespace Horizone.Areas.BackOffice.Controllers
         // GET: BackOffice/Topics/Create
         public ActionResult Create()
         {
+            ViewBag.LanguageId = new SelectList(db.Languages, "Id", "Symbol");
             return View();
         }
 
@@ -47,7 +49,7 @@ namespace Horizone.Areas.BackOffice.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,NameFrench,NameEnglish,TopicChinese,TopicVietnam")] Topic topic)
+        public ActionResult Create([Bind(Include = "Id,TopicName,LanguageId")] Topic topic)
         {
             if (ModelState.IsValid)
             {
@@ -56,6 +58,7 @@ namespace Horizone.Areas.BackOffice.Controllers
                 return RedirectToAction("Index");
             }
 
+            ViewBag.LanguageId = new SelectList(db.Languages, "Id", "Symbol", topic.LanguageId);
             return View(topic);
         }
 
@@ -71,6 +74,7 @@ namespace Horizone.Areas.BackOffice.Controllers
             {
                 return HttpNotFound();
             }
+            ViewBag.LanguageId = new SelectList(db.Languages, "Id", "Symbol", topic.LanguageId);
             return View(topic);
         }
 
@@ -79,7 +83,7 @@ namespace Horizone.Areas.BackOffice.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,NameFrench,NameEnglish,TopicChinese,TopicVietnam")] Topic topic)
+        public ActionResult Edit([Bind(Include = "Id,TopicName,LanguageId")] Topic topic)
         {
             if (ModelState.IsValid)
             {
@@ -87,6 +91,7 @@ namespace Horizone.Areas.BackOffice.Controllers
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
+            ViewBag.LanguageId = new SelectList(db.Languages, "Id", "Symbol", topic.LanguageId);
             return View(topic);
         }
 
@@ -114,15 +119,6 @@ namespace Horizone.Areas.BackOffice.Controllers
             db.Topics.Remove(topic);
             db.SaveChanges();
             return RedirectToAction("Index");
-        }
-
-        protected override void Dispose(bool disposing)
-        {
-            if (disposing)
-            {
-                db.Dispose();
-            }
-            base.Dispose(disposing);
         }
     }
 }

@@ -1,0 +1,42 @@
+﻿@model Horizone.Models.Manuscript
+
+@{
+    ViewBag.Title = @StaticResource.Resources.TextLanguage;
+}
+
+<h2> @StaticResource.Resources.TextLanguage</h2>
+
+<div>
+    <h4> @StaticResource.Resources.Details</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.TochLanguage)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TochLanguage.Language)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.LanguageStage)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LanguageStage)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.LanguageDetails)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LanguageDetails)
+        </dd>
+
+    </dl>
+</div>
+<p>
+@Html.ActionLink(StaticResource.Resources.Edit, "Edit", new { id = Model.Id }, new { @class = "btn btn-info" }) |
+@Html.ActionLink(StaticResource.Resources.Return, "Details", new { id = Model.Id }, new { @class = "btn btn-primary" })
+</p>

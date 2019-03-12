@@ -22,15 +22,18 @@ namespace Horizone.Models
         public string English { get; set; }
 
         [AllowHtml]
-        [Display(Name = "Francaise", ResourceType = typeof(StaticResource.Resources))]
+        [Display(Name = "French", ResourceType = typeof(StaticResource.Resources))]
         public string Francaise { get; set; }
 
         [AllowHtml]
         [Display(Name = "Chinese", ResourceType = typeof(StaticResource.Resources))]
         public string Chinese { get; set; }
 
-        [Display(Name = "Language", ResourceType = typeof(StaticResource.Resources))]
-        public string Language { get; set; }
+        [Display(Name = "TochLanguage", ResourceType = typeof(StaticResource.Resources))]
+        public int TochLanguageId { get; set; }
+
+        [ForeignKey("TochLanguageId")]
+        public TochLanguage TochLanguage { get; set; }
 
         [Display(Name = "DerivedFrom", ResourceType = typeof(StaticResource.Resources))]
         public string DerivedFrom { get; set; }
@@ -48,5 +51,10 @@ namespace Horizone.Models
         [Display(Name = "Visible", ResourceType = typeof(StaticResource.Resources))]
         public Boolean Visible { get; set; }
 
+        [Display(Name = "Language", ResourceType = typeof(StaticResource.Resources))]
+        public int LanguageId { get; set; }
+
+        [ForeignKey("LanguageId")]
+        public Language Language { get; set; }
     }
 }

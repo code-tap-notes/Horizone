@@ -13,9 +13,7 @@ namespace Horizone.Areas.BackOffice.Controllers
 {
     [Authorize(Roles = "Collaborator,Admin")]
     public class PublicationsController : BaseController
-    {
-        
-
+    {        
         // GET: BackOffice/Publications
         public ActionResult Index()
         {
@@ -115,8 +113,6 @@ namespace Horizone.Areas.BackOffice.Controllers
             db.Publications.Remove(publication);
             db.SaveChanges();
             return RedirectToAction("Index");
-        }
-
-        
+        }       
     }
 }

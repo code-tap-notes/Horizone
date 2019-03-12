@@ -1,0 +1,729 @@
+﻿@model Horizone.Models.DictionaryTocharian
+
+@{
+    ViewBag.Title = @StaticResource.Resources.Delete;
+}
+
+<h2> @StaticResource.Resources.Delete</h2>
+
+<h3 class="text-danger"> @StaticResource.Resources.AskDelete</h3>
+<div>
+    <h4> @StaticResource.Resources.DictionaryTocharian</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Language.Symbol)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Language.Symbol)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TochLanguage.Language)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TochLanguage.Language)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.WordClass.Class)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.WordClass.Class)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.WordSubClass.SubClass)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.WordSubClass.SubClass)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Word)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Word)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.English)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.English)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Francaise)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Francaise)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Chinese)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Chinese)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.EquivalentTA)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EquivalentTA)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.EquivalentTB)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EquivalentTB)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.EquivalentInOther)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EquivalentInOther)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DerivedFrom)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DerivedFrom)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.RelatedLexemes)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.RelatedLexemes)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.RootCharacter)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.RootCharacter)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.InternalRootVowel)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.InternalRootVowel)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NominateMasculineSingular)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NominateMasculineSingular)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NominateMasculineDual)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NominateMasculineDual)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NominateMasculinePlural)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NominateMasculinePlural)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NominateFeminineSingular)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NominateFeminineSingular)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NominateFeminineDual)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NominateFeminineDual)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NominateFemininePlural)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NominateFemininePlural)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ObliqueMasculineSingular)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ObliqueMasculineSingular)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ObliqueMasculineDual)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ObliqueMasculineDual)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ObliqueMasculinePlural)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ObliqueMasculinePlural)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ObliqueFeminineSingular)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ObliqueFeminineSingular)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ObliqueFeminineDual)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ObliqueFeminineDual)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ObliqueFemininePlural)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ObliqueFemininePlural)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.VocativeMasculineSingular)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.VocativeMasculineSingular)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.VocativeMasculineDual)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.VocativeMasculineDual)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.VocativeMasculinePlural)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.VocativeMasculinePlural)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.VocativeFeminineSingular)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.VocativeFeminineSingular)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.VocativeFeminineDual)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.VocativeFeminineDual)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.VocativeFemininePlural)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.VocativeFemininePlural)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.GenitiveMasculineSingular)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.GenitiveMasculineSingular)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.GenitiveMasculineDual)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.GenitiveMasculineDual)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.GenitiveMasculinePlural)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.GenitiveMasculinePlural)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.GenitiveFeminineSingular)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.GenitiveFeminineSingular)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.GenitiveFeminineDual)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.GenitiveFeminineDual)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.GenitiveFemininePlural)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.GenitiveFemininePlural)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.LocativeMasculineSingular)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LocativeMasculineSingular)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.LocativeMasculineDual)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LocativeMasculineDual)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.LocativeMasculinePlural)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LocativeMasculinePlural)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.LocativeFeminineSingular)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LocativeFeminineSingular)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.LocativeFeminineDual)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LocativeFeminineDual)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.LocativeFemininePlural)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LocativeFemininePlural)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AblativeMasculineSingular)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AblativeMasculineSingular)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AblativeMasculineDual)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AblativeMasculineDual)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AblativeMasculinePlural)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AblativeMasculinePlural)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AblativeFeminineSingular)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AblativeFeminineSingular)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AblativeFeminineDual)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AblativeFeminineDual)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AblativeFemininePlural)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AblativeFemininePlural)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AllativeMasculineSingular)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AllativeMasculineSingular)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AllativeMasculineDual)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AllativeMasculineDual)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AllativeMasculinePlural)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AllativeMasculinePlural)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AllativeFeminineSingular)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AllativeFeminineSingular)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AllativeFeminineDual)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AllativeFeminineDual)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AllativeFemininePlural)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AllativeFemininePlural)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PerlativeMasculineSingular)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PerlativeMasculineSingular)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PerlativeMasculineDual)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PerlativeMasculineDual)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PerlativeMasculinePlural)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PerlativeMasculinePlural)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PerlativeFeminineSingular)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PerlativeFeminineSingular)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PerlativeFeminineDual)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PerlativeFeminineDual)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PerlativeFemininePlural)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PerlativeFemininePlural)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.InstrumentalMasculineSingular)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.InstrumentalMasculineSingular)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.InstrumentalMasculineDual)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.InstrumentalMasculineDual)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.InstrumentalMasculinePlural)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.InstrumentalMasculinePlural)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.InstrumentalFeminineSingular)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.InstrumentalFeminineSingular)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.InstrumentalFeminineDual)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.InstrumentalFeminineDual)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.InstrumentalFemininePlural)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.InstrumentalFemininePlural)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ComitativeMasculineSingular)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ComitativeMasculineSingular)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ComitativeMasculineDual)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ComitativeMasculineDual)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ComitativeMasculinePlural)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ComitativeMasculinePlural)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ComitativeFeminineSingular)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ComitativeFeminineSingular)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ComitativeFeminineDual)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ComitativeFeminineDual)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ComitativeFemininePlural)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ComitativeFemininePlural)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CausativeMasculineSingular)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CausativeMasculineSingular)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CausativeMasculineDual)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CausativeMasculineDual)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CausativeMasculinePlural)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CausativeMasculinePlural)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CausativeFeminineSingular)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CausativeFeminineSingular)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CausativeFeminineDual)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CausativeFeminineDual)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CausativeFemininePlural)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CausativeFemininePlural)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Stem)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Stem)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.StemClass)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.StemClass)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Voice)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Voice)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Valency)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Valency)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PronounSuffix)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PronounSuffix)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TenseMood)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TenseMood)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Visible)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Visible)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-danger" /> |
+            @Html.ActionLink(@StaticResource.Resources.Return, "Index", null, new { @class = "btn btn-default" })
+        </div>
+    }
+</div>
