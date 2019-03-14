@@ -15,8 +15,8 @@ namespace Horizone.Models
         [Display(Name = "TitleArticle", ResourceType = typeof(StaticResource.Resources))]
         [Required(ErrorMessageResourceName = "FieldRequired", ErrorMessageResourceType = typeof(StaticResource.Resources))]
         public string Title { get; set; }
-       
 
+        [AllowHtml]
         [Display(Name = "Summary", ResourceType = typeof(StaticResource.Resources))]
         public string Summary { get; set; }
 
@@ -27,8 +27,8 @@ namespace Horizone.Models
                 return DateTime.Now;
             }
           }
-   
-        [Display(Name = "Content",ResourceType = typeof(StaticResource.Resources))]
+        [AllowHtml]
+        [Display(Name = "Link",ResourceType = typeof(StaticResource.Resources))]
         public string Content{ get; set; }
        
         [Display(Name = "Views", ResourceType = typeof(StaticResource.Resources))]

@@ -1089,4 +1089,13 @@
   <data name="WordSubClassZh" xml:space="preserve">
     <value>Sous-classe de mots-  Chinois</value>
   </data>
+  <data name="Del" xml:space="preserve">
+    <value>a été supprimée.</value>
+  </data>
+  <data name="SeenFrequently" xml:space="preserve">
+    <value>Vu fréquemment</value>
+  </data>
+  <data name="LatestNews" xml:space="preserve">
+    <value>Dernières nouvelles</value>
+  </data>
 </root>

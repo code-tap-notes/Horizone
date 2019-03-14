@@ -1,0 +1,157 @@
+﻿@model IEnumerable<Horizone.Models.DictionaryTocharian>
+
+@{
+    ViewBag.Title = @StaticResource.Resources.DictionaryTocharian;
+}
+
+<h2>@StaticResource.Resources.DictionaryTocharian </h2>
+<div id="search">
+
+    <form class="form-group row" action="@Url.Action("Search", "Vocabularies")" method="post" enctype="multipart/form-data">
+
+        <div class="form-group col-md-2">
+            <br />
+            <button type="submit" class="btn btn-info bigBtn"> @StaticResource.Resources.Search</button>
+        </div>
+
+        <div class="form-group col-md-4">
+            <label for="search">@StaticResource.Resources.SearchWord </label>
+            <input class="form-control" type="text" id="Search" name="search" />
+        </div>
+        <div>
+            <p><strong>Insert:  </strong> </p>
+            <a onclick="insertText('Search','ā');" href="#">ā  </a>
+            <a onclick="insertText('Search','ä');" href="#">ä  </a>
+            <a onclick="insertText('Search','ī');" href="#">ī  </a>
+            <a onclick="insertText('Search','ö');" href="#">ö  </a>
+            <a onclick="insertText('Search','ū');" href="#">ū  </a>
+            <a onclick="insertText('Search','ü');" href="#">ü  </a>
+            <a onclick="insertText('Search','ṅ');" href="#">ṅ  </a>
+            <a onclick="insertText('Search','ñ');" href="#">ñ  </a>
+            <a onclick="insertText('Search','ṃ');" href="#">ṃ  </a>
+            <a onclick="insertText('Search','ś');" href="#">ś  </a>
+            <a onclick="insertText('Search','ṣ');" href="#">ṣ  </a>
+            <a onclick="insertText('Search','š');" href="#">š  </a>
+            <a onclick="insertText('Search','ß');" href="#">ß  </a>
+        </div>
+    </form>
+</div>
+
+<table class="table">
+    <tr>
+
+        <th>
+            @Html.DisplayNameFor(model => model.TochLanguage.Language)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Word)
+        </th>
+        @if (Session[Horizone.Common.CommonConstants.CurrentCulture].ToString() == "en")
+
+        {
+            <th>
+                @Html.DisplayNameFor(model => model.English)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.WordClass.ClassEn)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.WordSubClass.SubClassEn)
+            </th>
+        }
+        @if (Session[Horizone.Common.CommonConstants.CurrentCulture].ToString() == "fr")
+
+        {
+            <th>
+                @Html.DisplayNameFor(model => model.Francaise)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.WordClass.ClassFr)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.WordSubClass.SubClassFr)
+            </th>
+        }
+        @if (Session[Horizone.Common.CommonConstants.CurrentCulture].ToString() == "zh")
+
+        {
+            <th>
+                @Html.DisplayNameFor(model => model.Chinese)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.WordClass.ClassZh)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.WordSubClass.SubClassZh)
+            </th>
+        }
+        
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.TochLanguage.Language)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Word)
+            </td>
+            @if (Session[Horizone.Common.CommonConstants.CurrentCulture].ToString() == "en")
+
+            {
+                <td>
+                    @Html.DisplayFor(modelItem => item.English)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.WordClass.ClassEn)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.WordSubClass.SubClassEn)
+                </td>
+            }
+            @if (Session[Horizone.Common.CommonConstants.CurrentCulture].ToString() == "fr")
+
+            {
+                <td>
+                    @Html.DisplayFor(modelItem => item.Francaise)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.WordClass.ClassFr)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.WordSubClass.SubClassFr)
+                </td>
+            }
+            @if (Session[Horizone.Common.CommonConstants.CurrentCulture].ToString() == "zh")
+
+            {
+                <td>
+                    @Html.DisplayFor(modelItem => item.Chinese)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.WordClass.ClassZh)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.WordSubClass.SubClassZh)
+                </td>
+            }
+           
+            <td>
+                @Html.ActionLink(@StaticResource.Resources.Details, "Details", new { id = item.Id }, new { @class = "btn btn-info" })
+            </td>
+        </tr>
+    }
+
+</table>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+    <script>
+
+        function insertText(elemID, text) {
+            document.getElementById(elemID).value += text;
+        }
+    </script>
+}

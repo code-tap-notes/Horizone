@@ -20,6 +20,20 @@ namespace Horizone.Controllers
             return View(newses.ToList());
         }
 
+        [ChildActionOnly]
+        public ActionResult ListNews()
+        {
+            var news = db.Newses.Include("Language").Include("Collaborator").Include("Topic").Include("ImageNewses");
+            return PartialView(news.OrderByDescending(x => x.View).ToList());
+        }
+
+        [ChildActionOnly]
+        public ActionResult LatestNews()
+        {
+            var news = db.Newses.Include("Language").Include("Collaborator").Include("Topic").Include("ImageNewses");
+            return PartialView(news.OrderByDescending(x => x.Id).ToList());
+        }
+
         // GET: FontNews/Details/5
         public ActionResult Details(int? id)
         {
@@ -41,7 +55,6 @@ namespace Horizone.Controllers
         public ActionResult CreateComment([Bind(Include = "Id,Content,NewsId,UserId")] Comment comment)
         {          
             ViewBag.Message = "Comment";
-
             if (ModelState.IsValid)
             {
                 db.Comments.Add(comment);

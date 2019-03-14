@@ -7,27 +7,28 @@
         <form class="form-group row" action="@Url.Action("Search", "FrontBibliographys")" method="post" enctype="multipart/form-data">
             <div class="form-group col-md-2">
                 <br />
-                <button type="submit" class="btn btn-info bigBtn"> @StaticResource.Resources.Search </button>
-            </div>                       
-            <div class="form-group col-md-2">
-                <label for="Topic">@StaticResource.Resources.Words</label>
-                <input rows="1" cols="50" type="text" id="Search" name="Search"> 
+                <button type="submit" class="btn btn-info bigBtn"> @StaticResource.Resources.Search</button>
+            </div>
+
+            <div class="form-group col-md-4">
+                <label for="search">@StaticResource.Resources.SearchWord </label>
+                <input class="form-control" type="text" id="Search" name="search" />
             </div>
             <div>
-                <p>"Insert:   </p>
-                <a  onclick="insertText('Search','ā');" href="#">ā  </a>
-                <a  onclick="insertText('Search','ä');" href="#">ä  </a>                
-                <a  onclick="insertText('Search','ī');" href="#">ī  </a>
-                <a  onclick="insertText('Search','ö');" href="#">ö  </a>
-                <a  onclick="insertText('Search','ū');" href="#">ū  </a>
-                <a  onclick="insertText('Search','ü');" href="#">ü  </a>
-                <a  onclick="insertText('Search','ṅ');" href="#">ṅ  </a>
-                <a  onclick="insertText('Search','ñ');" href="#">ñ  </a>
-                <a  onclick="insertText('Search','ṃ');" href="#">ṃ  </a>
-                <a  onclick="insertText('Search','ś');" href="#">ś  </a>
-                <a  onclick="insertText('Search','ṣ');" href="#">ṣ  </a>
-                <a  onclick="insertText('Search','š');" href="#">š  </a>
-                <a  onclick="insertText('Search','ß');" href="#">ß  </a>                
+                <p><strong>Insert:  </strong> </p>
+                <a onclick="insertText('Search','ā');" href="#">ā  </a>
+                <a onclick="insertText('Search','ä');" href="#">ä  </a>
+                <a onclick="insertText('Search','ī');" href="#">ī  </a>
+                <a onclick="insertText('Search','ö');" href="#">ö  </a>
+                <a onclick="insertText('Search','ū');" href="#">ū  </a>
+                <a onclick="insertText('Search','ü');" href="#">ü  </a>
+                <a onclick="insertText('Search','ṅ');" href="#">ṅ  </a>
+                <a onclick="insertText('Search','ñ');" href="#">ñ  </a>
+                <a onclick="insertText('Search','ṃ');" href="#">ṃ  </a>
+                <a onclick="insertText('Search','ś');" href="#">ś  </a>
+                <a onclick="insertText('Search','ṣ');" href="#">ṣ  </a>
+                <a onclick="insertText('Search','š');" href="#">š  </a>
+                <a onclick="insertText('Search','ß');" href="#">ß  </a>
             </div>
         </form>
     </div>
@@ -50,59 +51,22 @@
     <div class="clear"></div>
 
     <!--Last News-->
-    <div id="slide-vp">
-        <h4>Latest News</h4>
+    <div id="slide-vp">       
         <div id="slide-left">
-
-            <div id="slideleft-main">
-                <h2 class="title"><a href="#">Tarim</a> </h2>
-                <img src="~/Image/Central_Tian_Shan_mountains.jpg" /><br />
-
-                <div class="des">
-                    HisTochText aborde la culture bouddhiste.Le Tarim est un fleuve sans embouchure traversant le désert du Taklamakan dans le sud du Xinjiang, une des cinq régions autonomes de République populaire de Chine. Il forme le bassin du Tarim.
-
-                    Avant l'utilisation massive des eaux du Tarim pour irriguer de
-                </div>
-                <p class="tlq"><a href="#">HisTochText aborde la culture bouddhiste</a></p>
-
+            <div id="slideleft-main">                
+                    @{Html.RenderAction("LatestNews", "FontNews"); }                
             </div>
-            <div id="slideleft-scroll">
-                <!--Five last news-->
 
+            <div id="slideleft-scroll">
+                <!--Frequntly-->
                 <div class="content_scoller width_common">
                     <ul>
                         <li>
                             <div class="title_news">
-                                <a href="#" class="txt_link"> HisTochText aborde la culture bouddhiste </a>
+                                @{Html.RenderAction("ListNews", "FontNews"); }
                             </div>
                         </li>
-                        <li>
-                            <div class="title_news">
-                                <a href="#" class="txt_link"> HisTochText aborde la culture bouddhiste </a>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="title_news">
-                                <a href="#" class="txt_link"> HisTochText aborde la culture bouddhiste </a>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="title_news">
-                                <a href="#" class="txt_link"> HisTochText aborde la culture bouddhiste </a>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="title_news">
-                                <a href="#" class="txt_link"> HisTochText aborde la culture bouddhiste </a>
-                            </div>
-                        </li>
-
                     </ul>
-                </div>
-                <!--Logo Histochtech-->
-                <div id="gocnhin">
-                    <img class="moyenImage" alt="" src="~/Image/basin.jpg">
-                    <div class="title_news"></div>
                 </div>
 
             </div>
@@ -112,134 +76,112 @@
             <img style="width:90px;height:90px;" src="~/Image/15.jpg" />
             @{Html.RenderAction("PageActivity", "Home"); }
         </div>
+        <!--Logo Histochtech-->
+        <div id="gocnhin">
+            <img class="moyenImage" alt="" src="~/Image/basin.jpg">
+            <div class="title_news"></div>
+        </div>
+        <div id="slideleft-scroll">
+            <div id="content-vp">
+                <div class="box-cat">
+                    <div class="cat">
+                        <div class="content_scoller width_common">
+                            <ul>
+                                <li>
+                                    <div class="main-cat">
+                                        <a href="#" class="content-title">Manuscript</a>
+                                        <br />
+                                        <div class="clear"></div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
-    <!--Page content-->
-
+    <!--Page Manuscript-->
     <div id="content-vp">
-        <!--Frequntly-->
-        <div id="content-left">
-            <div class="box-cat">
-                <div class="cat">
-                    <div class="main-cat">
-                        <a href="#"> Seen frequently</a>
+        <div class="box-cat">
+            <div class="cat">
+                <div id="slideleft-scroll">
+                    <div class="content_scoller width_common">
+                        <ul>
+                            <li>
+                                <div class="news">
+                                    <h3 class="title"><a href="#"> Tocharian A </a></h3>
+                                    <img class="images_news" src="~/Image/Tocharian.jpg" align="left" />
+                                    <div class="des">hgjhjkjk </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="news">
+                                    <h3 class="title"><a href="#"> Tocharian B </a></h3>
+                                    <img class="images_news" src="~/Image/Tocharian.jpg" align="left" />
+                                    <div class="des">hgjhjkjk </div>
+                                    <div class="clear"></div>
+                                </div>
+                            </li>
+                        </ul>
+
                     </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--Group of tochStory-->
+    <div id="midheader-vp">
+        <div id="content-vp">
+            <div class="clear"></div>
 
-                    <div class="clear"></div>
-                    <div class="cat-content">
+            <div class="clear"></div>
 
-                        <div class="col1">
-                            <div class="news">
-                                <img class="images_news" src="~/Image/imagesToch.jpg" />
-                                <h4 class="title"><a href="#">Les langues tokhariennes</a><span class="hit">20</span></h4>
-                                <div class="clear"></div>
-                            </div>
+            <div class="cat">
+                <div class="main-cat">
+                    <a href="#">TochStoty</a>
+                </div>
+
+                <div class="clear"></div>
+                <div class="cat-content">
+                    <div class="col-md-4">
+                        <div class="news">
+                            <h3 class="title"><a href="#"> Story 1 </a></h3>
+                            <img class="images_news" src="~/Image/tarim.jpg" />/" align="left" />
+                            <div class="des">vf,jjjd j dfftt bdfg  </div>
+
+
+                            <div class="clear"></div>
+
                         </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="news">
+                            <h3 class="title"><a href="#"> Story 2 </a></h3>
+                            <img class="images_news" src="~/Image/tarim.jpg" />/" align="left" />
+                            <div class="des">vf,jjjd j dfftt bdfg  </div>
 
-                        <div class="col1">
-                            <div class="news">
-                                <img class="images_news" src="~/Image/images.jpg" />
-                                <h4 class="title"><a href="#">Tocharian, also spelled Tokharian .</a><span class="hit">20</span></h4>
-                                <div class="clear"></div>
-                            </div>
+                            <div class="clear"></div>
+
                         </div>
-                        <div class="col1">
-                            <div class="news">
-                                <img class="images_news" src="~/Image/Wfm_tarim_basin.jpg" />
-                                <h4 class="title"><a href="#">Branch of the Indo-European language family.</a><span class="hit">20</span></h4>
-                                <div class="clear"></div>
-                            </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="news">
+                            <h3 class="title"><a href="#"> Story 3 </a></h3>
+                            <img class="images_news" src="~/Image/tarim.jpg" />/" align="left" />
+                            <div class="des">vf,jjjd j dfftt bdfg  </div>
+
+                            <div class="clear"></div>
+
                         </div>
                     </div>
                 </div>
             </div>
+
             <div class="clear"></div>
-        </div>
-        <!--Active-->
-        <div id="content-main">
-
-            <h2>PAGES ACTIVE</h2>
-            <nav aria-label="Page navigation">
-                <ul class="pagination">
-                    <li>
-                        <a href="#" aria-label="Previous">
-                            <span aria-hidden="true">&laquo;</span>
-                        </a>
-                    </li>
-                    <li>
-
-                    </li>
-
-                    <li>
-                        <a href="#" aria-label="Next">
-                            <span aria-hidden="true">&raquo;</span>
-                        </a>
-                    </li>
-                </ul>
-
-            </nav>
 
         </div>
-        <!--Group of topic-->
-        <div id="content-right">
-            <div class="box-cat">
-                <div class="cat">
-                    <div class="main-cat">
-                        <a href="#">Manuscript</a>
-                    </div>
-
-                    <div class="clear"></div>
-                    <div class="cat-content">
-                        <div class="col1">
-                            <div class="news">
-                                <h3 class="title"><a href="#"> Tocharian A </a></h3>
-                                <img class="images_news" src="~/Image/Tocharian.jpg" align="left" />
-                                <div class="des">hgjhjkjk </div>
-                                <div class="clear"></div>
-                            </div>
-                        </div>
-                        <div class="col2">
-                            <h3 class="tlq"><a href="#">Tocharian B</a></h3>
-                            <h3 class="tlq"><a href="#">Wooden Manuscript </a></h3>
-                            <h3 class="tlq"><a href="#">Leaf</a></h3>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-            <div class="clear"></div>
-            <div class="box-cat">
-                <div class="cat">
-                    <div class="main-cat">
-                        <a href="#">TochStoty</a>
-                    </div>
-
-                    <div class="clear"></div>
-                    <div class="cat-content">
-                        <div class="col1">
-                            <div class="news">
-                                <h3 class="title"><a href="#"> Story 1 </a></h3>
-                                <img class="images_news" src="~/Image/tarim.jpg" />/" align="left" />
-                                <div class="des">vf,jjjd j dfftt bdfg  </div>
-                                <div class="clear"></div>
-                            </div>
-                        </div>
-                        <div class="col2">
-                            <h3 class="tlq"><a href="#">TochStory 2</a></h3>
-                            <h3 class="tlq"><a href="#">TochStory 3</a></h3>
-                            <h3 class="tlq"><a href="#">TochStory 4</a></h3>
-
-                        </div>
-
-                    </div>
-
-                </div>
-
-            </div>
-            <div class="clear"></div>
-        </div>
-
         <div class="clear"></div>
-
     </div>
 
     <div id="footer">

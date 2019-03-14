@@ -1,6 +1,6 @@
 ﻿@model IEnumerable<Horizone.Models.Activity>
 
-<h4>    @StaticResource.Resources.Activity </h4>
+<h4><strong>    @StaticResource.Resources.Activity</strong> </h4>
 @foreach (var item in Model)
 {
     if (item.Language.Symbol == Session[Horizone.Common.CommonConstants.CurrentCulture].ToString())

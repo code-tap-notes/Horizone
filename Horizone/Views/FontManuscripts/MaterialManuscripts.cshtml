@@ -1,0 +1,49 @@
+﻿@model Horizone.Models.Manuscript
+
+@{
+    ViewBag.Title = @StaticResource.Resources.Material;
+}
+
+<h2>@StaticResource.Resources.Material @StaticResource.Resources.Manuscript</h2>
+<div>
+    <h4>@StaticResource.Resources.Details</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Material)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Material)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PaperColor)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PaperColor)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PaperThickness)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PaperThickness)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.WritingTool)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.WritingTool)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink(StaticResource.Resources.Return, "Details", new { id = Model.Id }, new { @class = "btn btn-primary" })
+</p>
+

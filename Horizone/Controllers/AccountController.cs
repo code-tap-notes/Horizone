@@ -143,7 +143,7 @@ namespace Horizone.Controllers
             return View();
         }
         //Add for collaborator
-        
+        [Authorize(Roles = "Admin")]
         public ActionResult RegisterCollaborator()
         {
             return View();
@@ -194,24 +194,28 @@ namespace Horizone.Controllers
             // Si nous sommes arrivés là, un échec s’est produit. Réafficher le formulaire
             return View(model);
         }
-        
+        [Authorize(Roles = "Admin")]
         [HttpPost]
         [AllowAnonymous]
         [ValidateAntiForgeryToken]
         public async Task<ActionResult> RegisterCollaborator(RegisterViewModel model)
         {
-            
+
             if (ModelState.IsValid)
             {
-                var user = new ApplicationUser { UserName = model.Email, Email = model.Email };
-                var result = await UserManager.CreateAsync(user, model.Password);               
-                if (result.Succeeded)
-                {
-                    user = UserManager.FindByEmail(model.Email);
+               
+                //var user = new ApplicationUser { UserName = model.Email, Email = model.Email };
+
+                // var result = await UserManager.CreateAsync(user, model.Password);               
+                // if (result.Succeeded)
+
+                // {
+                var user = await UserManager.FindByNameAsync(model.Email);
+               
+                   // user = UserManager.FindByEmail(model.Email);
                     if (user.Id != null)
+                        
                     {
-                        var roles = UserManager.GetRoles(user.Id);
-                        if (roles.Contains("Collaborator"))
                         {
                             var collaborator = new Collaborator
                             {
@@ -221,32 +225,27 @@ namespace Horizone.Controllers
                                 PhoneNumber = model.PhoneNumber,
                                 UserId = user.Id
                             };
+                            
                             db.Collaborators.Add(collaborator);
                             db.SaveChanges();
-                        }
-                       // UserManager.AddToRole(user.Id, "Collaborator");
+                            UserManager.AddToRole(user.Id, "Collaborator");                           
+                        }                       
                     }
-
-                    await SignInManager.SignInAsync(user, isPersistent: false, rememberBrowser: false);
-
-
-
+                 //   await SignInManager.SignInAsync(user, isPersistent: false, rememberBrowser: false);
                     // Pour plus d'informations sur l'activation de la confirmation de compte et de la réinitialisation de mot de passe, visitez https://go.microsoft.com/fwlink/?LinkID=320771
                     // Envoyer un message électronique avec ce lien
                     // string code = await UserManager.GenerateEmailConfirmationTokenAsync(user.Id);
                     // var callbackUrl = Url.Action("ConfirmEmail", "Account", new { userId = user.Id, code = code }, protocol: Request.Url.Scheme);
                     // await UserManager.SendEmailAsync(user.Id, "Confirmez votre compte", "Confirmez votre compte en cliquant <a href=\"" + callbackUrl + "\">ici</a>");
                     Display("Collaborator ajouté");
-
-                    return RedirectToAction("Index", "Dashboard", new { area = "BackOffice" });
-                }
-                AddErrors(result);
+                    return RedirectToAction("Index", "Home");
+                //}
+               // AddErrors(result);
             }
-
             // Si nous sommes arrivés là, un échec s’est produit. Réafficher le formulaire
             return View(model);
         }
-
+       
         public void GetCurrentUserRole()
         {
             string userId = User.Identity.GetUserId();

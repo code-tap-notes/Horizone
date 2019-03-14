@@ -1,0 +1,105 @@
+﻿@model Horizone.Models.Manuscript
+
+@{
+    ViewBag.Title = @StaticResource.Resources.OverallDescription;
+}
+
+<h2>@StaticResource.Resources.OverallDescription</h2>
+<div>
+    <h4>@StaticResource.Resources.Details</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Collection)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Collection)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Siglum)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Siglum)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Joint)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Joint)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.OtherSiglum)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.OtherSiglum)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ExpeditionCode)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ExpeditionCode)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MainFindSpot)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MainFindSpot)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SpecificFindSpot)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SpecificFindSpot)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.GeneralState)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.GeneralState)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Description)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Description)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Remark)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Remark)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.LeafNumber)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LeafNumber)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink(StaticResource.Resources.Return, "Details", new { id = Model.Id }, new { @class = "btn btn-primary" })
+</p>
+

@@ -24,7 +24,7 @@
                 <label for="Manuscript">Manuscript</label>
                 <input class="form-control" type="text" id="Manuscript" name="search" />
             </div>
-            
+
         </form>
     </div>
     <!--Information principal-->
@@ -42,174 +42,93 @@
         </div>
     </div>
     <div class="clear"></div>
-
     <!--Last News-->
     <div id="slide-vp">
-        <h4>Latest News</h4>
-        <div id="slide-left">
-
-            <div id="slideleft-main">
-                <h2 class="title"><a href="#">Tarim</a> </h2>
-                <img src="~/Image/Central_Tian_Shan_mountains.jpg" /><br />
-
-                <div class="des">
-                    HisTochText aborde la culture bouddhiste.Le Tarim est un fleuve sans embouchure traversant le désert du Taklamakan dans le sud du Xinjiang, une des cinq régions autonomes de République populaire de Chine. Il forme le bassin du Tarim.
-
-                    Avant l'utilisation massive des eaux du Tarim pour irriguer de
+        
+            <div id="slide-left">
+                <div id="slideleft-main">
+                    @{Html.RenderAction("LatestNews", "Dashboards"); }
                 </div>
-                <p class="tlq"><a href="#">HisTochText aborde la culture bouddhiste</a></p>
-
-            </div>
-            <div id="slideleft-scroll">
-                <!--Five last news-->
-
-                <div class="content_scoller width_common">
-                    <ul>
-                        <li>
-                            <div class="title_news">
-                                <a href="#" class="txt_link"> HisTochText aborde la culture bouddhiste </a>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="title_news">
-                                <a href="#" class="txt_link"> HisTochText aborde la culture bouddhiste </a>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="title_news">
-                                <a href="#" class="txt_link"> HisTochText aborde la culture bouddhiste </a>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="title_news">
-                                <a href="#" class="txt_link"> HisTochText aborde la culture bouddhiste </a>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="title_news">
-                                <a href="#" class="txt_link"> HisTochText aborde la culture bouddhiste </a>
-                            </div>
-                        </li>
-
-                    </ul>
-                </div>
-                <!--Logo Histochtech-->
-                <div id="gocnhin">
-                    <img class="moyenImage" alt="" src="~/Image/basin.jpg">
-                    <div class="title_news"></div>
-                </div>
-
-            </div>
+                <div id="slideleft-scroll">
+                    <!--Seen Frequently-->
+                    <div class="content_scoller width_common">
+                        <ul>
+                            <li>
+                                <div class="title_news">
+                                    @{Html.RenderAction("News", "Dashboards"); }
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>           
+            </div>    
+            <!--Main-Right-->
+        <div id="slide-right">
+                <img style="width:90px;height:90px;" src="~/Image/15.jpg" />
+                @{Html.RenderAction("PageActivity", "Dashboards"); }
         </div>
-        <!--Main-Right-->
-        <div id="slide-right">          
-            <img style="width:90px;height:90px;" src="~/Image/15.jpg" />
-             @{Html.RenderAction("PageActivity", "Dashboards"); }
-                    
+            <!--Logo Histochtech-->
+        <div id="gocnhin">
+                <img class="moyenImage" alt="" src="~/Image/basin.jpg">
+                <div class="title_news"></div>
+        </div>
+        <div id="slideleft-scroll">
+                <div id="content-vp">
+                    <div class="box-cat">
+                        <div class="cat">
+                            <div class="content_scoller width_common">
+                                <ul>
+                                    <li>
+                                        <div class="main-cat">
+                                            <a href="#" class="content-title">Manuscript</a>
+                                            <br />
+                                            <div class="clear"></div>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
         </div>
     </div>
-    <!--Page content-->
+        <!--Page Manuscript-->
 
-    <div id="content-vp">
-        <!--Frequntly-->
-        <div id="content-left">
+        <div id="content-vp">
             <div class="box-cat">
                 <div class="cat">
-                    <div class="main-cat">
-                        <a href="#"> Seen frequently</a>
-                    </div>
+                    <div id="slideleft-scroll">
+                        <div class="content_scoller width_common">
+                            <ul>
+                                <li>
+                                    <div class="news">
+                                        <h3 class="title"><a href="#"> Tocharian A </a></h3>
+                                        <img class="images_news" src="~/Image/Tocharian.jpg" align="left" />
+                                        <div class="des">hgjhjkjk </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="news">
+                                        <h3 class="title"><a href="#"> Tocharian B </a></h3>
+                                        <img class="images_news" src="~/Image/Tocharian.jpg" align="left" />
+                                        <div class="des">hgjhjkjk </div>
+                                        <div class="clear"></div>
+                                    </div>
+                                </li>
+                            </ul>
 
-                    <div class="clear"></div>
-                    <div class="cat-content">
-
-                        <div class="col1">
-                            <div class="news">
-                                <img class="images_news" src="~/Image/imagesToch.jpg" />
-                                <h4 class="title"><a href="#">Les langues tokhariennes</a><span class="hit">20</span></h4>
-                                <div class="clear"></div>
-                            </div>
                         </div>
-
-                        <div class="col1">
-                            <div class="news">
-                                <img class="images_news" src="~/Image/images.jpg" />
-                                <h4 class="title"><a href="#">Tocharian, also spelled Tokharian .</a><span class="hit">20</span></h4>
-                                <div class="clear"></div>
-                            </div>
-                        </div>
-                        <div class="col1">
-                            <div class="news">
-                                <img class="images_news" src="~/Image/Wfm_tarim_basin.jpg" />
-                                <h4 class="title"><a href="#">Branch of the Indo-European language family.</a><span class="hit">20</span></h4>
-                                <div class="clear"></div>
-                            </div>
-                        </div>
-
-
                     </div>
                 </div>
             </div>
-            <div class="clear"></div>
         </div>
-        <!--Active-->
-        <div id="content-main">
+        <!--Group of tochStory-->
+        <div id="midheader-vp">
+            <div id="content-vp">
+                <div class="clear"></div>
 
-            <h2>@StaticResource.Resources.Activity</h2>
-            <nav aria-label="Page navigation">
-                <ul class="pagination">
-                    <li>
-                        <a href="#" aria-label="Previous">
-                            <span aria-hidden="true">&laquo;</span>
-                        </a>
-                    </li>
-                    <li>
-                      
-                    </li>
-                    
-                    <li>
-                        <a href="#" aria-label="Next">
-                            <span aria-hidden="true">&raquo;</span>
-                        </a>
-                    </li>
-                </ul>
-            </nav>
+                <div class="clear"></div>
 
-        </div>
-        <!--Group of topic-->
-        <div id="content-right">
-            <div class="box-cat">
-                <div class="cat">
-                    <div class="main-cat">
-                        <a href="#">Manuscript</a>
-                    </div>
-
-                    <div class="clear"></div>
-                    <div class="cat-content">
-                        <div class="col1">
-                            <div class="news">
-                                <h3 class="title"><a href="#"> Tocharian A </a></h3>
-                                <img class="images_news" src="~/Image/Tocharian.jpg" align="left" />
-                                <div class="des">hgjhjkjk </div>
-
-
-                                <div class="clear"></div>
-
-                            </div>
-                        </div>
-                        <div class="col2">
-                            <h3 class="tlq"><a href="#">Tocharian B</a></h3>
-                            <h3 class="tlq"><a href="#">Wooden Manuscript </a></h3>
-                            <h3 class="tlq"><a href="#">Leaf</a></h3>
-
-                        </div>
-
-                    </div>
-
-                </div>
-
-            </div>
-            <div class="clear"></div>
-            <div class="box-cat">
                 <div class="cat">
                     <div class="main-cat">
                         <a href="#">TochStoty</a>
@@ -217,7 +136,7 @@
 
                     <div class="clear"></div>
                     <div class="cat-content">
-                        <div class="col1">
+                        <div class="col-md-4">
                             <div class="news">
                                 <h3 class="title"><a href="#"> Story 1 </a></h3>
                                 <img class="images_news" src="~/Image/tarim.jpg" />/" align="left" />
@@ -228,46 +147,34 @@
 
                             </div>
                         </div>
-                        <div class="col2">
-                            <h3 class="tlq"><a href="#">TochStory 2</a></h3>
-                            <h3 class="tlq"><a href="#">TochStory 3</a></h3>
-                            <h3 class="tlq"><a href="#">TochStory 4</a></h3>
+                        <div class="col-md-4">
+                            <div class="news">
+                                <h3 class="title"><a href="#"> Story 2 </a></h3>
+                                <img class="images_news" src="~/Image/tarim.jpg" />/" align="left" />
+                                <div class="des">vf,jjjd j dfftt bdfg  </div>
 
+                                <div class="clear"></div>
+
+                            </div>
                         </div>
+                        <div class="col-md-4">
+                            <div class="news">
+                                <h3 class="title"><a href="#"> Story 3 </a></h3>
+                                <img class="images_news" src="~/Image/tarim.jpg" />/" align="left" />
+                                <div class="des">vf,jjjd j dfftt bdfg  </div>
 
+                                <div class="clear"></div>
+
+                            </div>
+                        </div>
                     </div>
-
                 </div>
+
+                <div class="clear"></div>
 
             </div>
             <div class="clear"></div>
         </div>
-
-        <div class="clear"></div>
-
-    </div>
-
-
-
-
-    <div id="footer">
-        
-    </div>
+        <div id="footer"></div>
 </div>
 
-@section Scripts {
-    @Scripts.Render("~/bundles/jqueryval")
-    <script src="~/Scripts/jquery.datetimepicker.js"></script>
-    <script>
-
-            $(function () {
-                $('#DepartureDate').datetimepicker({
-                    lang: 'fr',
-                    format: 'd/M/Y'
-                });
-
-                $('#DepartureDate').attr('autocomplete', 'off');
-
-            });
-    </script>
-}

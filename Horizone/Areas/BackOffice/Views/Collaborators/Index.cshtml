@@ -1,4 +1,4 @@
-﻿@model IEnumerable<Horizone.Models.Collaborateur>
+﻿@model IEnumerable<Horizone.Models.Collaborator>
 
 @{
     ViewBag.Title = @StaticResource.Resources.Collaborator;
@@ -46,22 +46,3 @@
         </tr>
     }
 </table>
-
-
-@section Scripts {
-    @Scripts.Render("~/bundles/jqueryval")
-    <script src="~/Scripts/jquery.datetimepicker.js"></script>
-    <script>
-
-        $(function () {
-            $('#dateDebut').datetimepicker({
-                format: 'd/M/Y'
-            });
-            $('#dateFin').datetimepicker({
-                format: 'd/M/Y'
-            });
-            $('#dateDebut').attr('autocomplete', 'off');
-            $('#dateFin').attr('autocomplete', 'off');
-        });
-    </script>
-}

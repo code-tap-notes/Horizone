@@ -1,0 +1,89 @@
+﻿@model Horizone.Models.Manuscript
+
+@{
+    ViewBag.Title = @StaticResource.Resources.TextContent;
+}
+
+<h2>@StaticResource.Resources.TextContent</h2>
+<div>
+    <h4>@StaticResource.Resources.Details</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.TextGenre)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TextGenre)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TextSubGenre)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TextSubGenre)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Title)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Title)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Passage)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Passage)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Parallel)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Parallel)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MetricForm)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MetricForm)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Tune)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Tune)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Bibliographys)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Bibliographys)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Cetom)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Cetom)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink(StaticResource.Resources.Return, "Details", new { id = Model.Id }, new { @class = "btn btn-primary" })
+</p>
+

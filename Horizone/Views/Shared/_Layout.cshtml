@@ -33,7 +33,6 @@
                 </ul>
                 <ul class="nav navbar-right">
                     <li><a href="@Url.Action("index","dashboards",new {area="backoffice" })">☆</a> </li>
-
                 </ul>
 
                 @Html.Partial("_LoginPartial")
@@ -46,11 +45,11 @@
             <li>@Html.ActionLink(StaticResource.Resources.AboutProject, "About", "Home")</li>
             <li>@Html.ActionLink(@StaticResource.Resources.TochPhrase, "TochPhase", "Home")</li>
             <li>@Html.ActionLink(@StaticResource.Resources.TochStory, "TochHistoire", "Home")</li>
-            <li>@Html.ActionLink(@StaticResource.Resources.Manuscript, "Manuscript", "Home")</li>
-            <li>@Html.ActionLink(@StaticResource.Resources.Vocabulary, "Vocabulaire", "Home")</li>
-            <li>@Html.ActionLink(@StaticResource.Resources.News_Blog, "Nouvelles", "Home")</li>
+            <li>@Html.ActionLink(@StaticResource.Resources.Manuscript, "Index", "FontManuscripts")</li>
+            <li>@Html.ActionLink(@StaticResource.Resources.Vocabulary, "Vocabulaire", "Vocabularies")</li>
+            <li>@Html.ActionLink(@StaticResource.Resources.News_Blog, "Index", "FontNews")</li>
             <li>@Html.ActionLink(@StaticResource.Resources.Activity, "Activity", "Home")</li>
-            <li>@Html.ActionLink(@StaticResource.Resources.Bibliography, "Bibliographie", "Home")</li>
+            <li>@Html.ActionLink(@StaticResource.Resources.Bibliography, "Bibliographie", "FontBibliographies")</li>
             <li>@Html.ActionLink(@StaticResource.Resources.Help, "Aide", "Home")</li>
 
             <li class="dropdown">
@@ -74,14 +73,11 @@
                        // new {value="ja",text=StaticResource.Resources.Japanese},
                        // new {value="de",text=StaticResource.Resources.German},
 
-
                     }, "value", "text", Session[Horizone.Common.CommonConstants.CurrentCulture]),new { onchange="this.form.submit();"})
                 }
             </li>
         </ul>
-
     </div>
-
     <div class="container body-content">
         <hr />
         @RenderBody()

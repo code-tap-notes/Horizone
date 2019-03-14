@@ -8,7 +8,11 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
-
+using System.Globalization;
+using System.Security.Claims;
+using Microsoft.AspNet.Identity.Owin;
+using Microsoft.Owin.Security;
+using System.Net;
 
 namespace Horizone.Areas.BackOffice.Controllers
 {
@@ -25,6 +29,8 @@ namespace Horizone.Areas.BackOffice.Controllers
             Session.Remove("ADMINISTRATOR");
             return RedirectToAction("index", "home", new { area = "" });
         }
+        
+
         public ActionResult About()
 
         {
@@ -63,6 +69,18 @@ namespace Horizone.Areas.BackOffice.Controllers
         {
             var activitys = db.Activitys.Include("Language");
             return PartialView(activitys.OrderByDescending(x => x.DateofActivity).ToList());
+        }
+        [ChildActionOnly]
+        public ActionResult News()
+        {           
+            var news = db.Newses.Include("Language").Include("Collaborator").Include("Topic").Include("ImageNewses");
+            return PartialView(news.OrderByDescending(x => x.View).ToList());            
+        }
+        [ChildActionOnly]
+        public ActionResult LatestNews()
+        {
+            var news = db.Newses.Include("Language").Include("Collaborator").Include("Topic").Include("ImageNewses");
+            return PartialView(news.OrderByDescending(x => x.Id).ToList());
         }
 
         public ActionResult Help()

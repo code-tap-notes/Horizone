@@ -7,16 +7,16 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using Horizone.Models;
+using PagedList;
 
 namespace Horizone.Controllers
 {
     public class FontBibliographiesController : BaseController
-    {
-        
-        // GET: FontBibliographies
-        public ActionResult Index()
+    {  
+        // GET: FontBibliographies       
+        public ActionResult Bibliographie(int page = 1, int pageSize = 6)
         {
-            return View(db.Bibliographys.ToList());
+            return View(db.Bibliographys.OrderBy(x => x.Id).ToPagedList(page, pageSize));
         }
 
         // GET: FontBibliographies/Details/5
@@ -52,8 +52,6 @@ namespace Horizone.Controllers
             }
             //if (!string.IsNullOrWhiteSpace(title))
             //    bibliographies = bibliographies.Where(y => y.Title.Contains(title));
-
-
             //if (!string.IsNullOrWhiteSpace(journal))
             //    bibliographies = bibliographies.Where(y => y.Journal.Contains(journal));
 

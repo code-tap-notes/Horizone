@@ -673,6 +673,15 @@ namespace StaticResource {
         }
         
         /// <summary>
+        ///   Recherche une chaîne localisée semblable à a été supprimée..
+        /// </summary>
+        public static string Del {
+            get {
+                return ResourceManager.GetString("Del", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Recherche une chaîne localisée semblable à Supprimer.
         /// </summary>
         public static string Delete {
@@ -1245,6 +1254,15 @@ namespace StaticResource {
         public static string LastName {
             get {
                 return ResourceManager.GetString("LastName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Dernières nouvelles.
+        /// </summary>
+        public static string LatestNews {
+            get {
+                return ResourceManager.GetString("LatestNews", resourceCulture);
             }
         }
         
@@ -2433,6 +2451,15 @@ namespace StaticResource {
         public static string SeeAlso {
             get {
                 return ResourceManager.GetString("SeeAlso", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Vu fréquemment.
+        /// </summary>
+        public static string SeenFrequently {
+            get {
+                return ResourceManager.GetString("SeenFrequently", resourceCulture);
             }
         }
         

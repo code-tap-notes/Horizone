@@ -1089,4 +1089,13 @@
   <data name="WordSubClassZh" xml:space="preserve">
     <value>中学的单词  - 中文</value>
   </data>
+  <data name="Del" xml:space="preserve">
+    <value>已被删除</value>
+  </data>
+  <data name="SeenFrequently" xml:space="preserve">
+    <value>经常看到</value>
+  </data>
+  <data name="LatestNews" xml:space="preserve">
+    <value>最新消息</value>
+  </data>
 </root>

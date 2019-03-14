@@ -15,11 +15,26 @@
             <button type="submit" class="btn btn-info bigBtn"> @StaticResource.Resources.Search </button>
         </div>
 
-        <div class="form-group col-md-6">
+        <div class="form-group col-md-4">
             <label for="Title"> @StaticResource.Resources.SearchWord </label>
-            <input class="form-control" type="text" id="Title" name="search" />
+            <input class="form-control" type="text" id="Search" name="search" />
         </div>
-
+        <div>
+            <p><strong>Insert:  </strong> </p>
+            <a onclick="insertText('Search','ā');" href="#">ā  </a>
+            <a onclick="insertText('Search','ä');" href="#">ä  </a>
+            <a onclick="insertText('Search','ī');" href="#">ī  </a>
+            <a onclick="insertText('Search','ö');" href="#">ö  </a>
+            <a onclick="insertText('Search','ū');" href="#">ū  </a>
+            <a onclick="insertText('Search','ü');" href="#">ü  </a>
+            <a onclick="insertText('Search','ṅ');" href="#">ṅ  </a>
+            <a onclick="insertText('Search','ñ');" href="#">ñ  </a>
+            <a onclick="insertText('Search','ṃ');" href="#">ṃ  </a>
+            <a onclick="insertText('Search','ś');" href="#">ś  </a>
+            <a onclick="insertText('Search','ṣ');" href="#">ṣ  </a>
+            <a onclick="insertText('Search','š');" href="#">š  </a>
+            <a onclick="insertText('Search','ß');" href="#">ß  </a>
+        </div>
     </form>
 </div>
 <table class="table">
@@ -59,7 +74,7 @@
             </td>
             <td>
 
-                <a href=@item.UlrBibliography class="btn btn-info">@StaticResource.Resources.LearnMore &raquo;</a>               
+                <a href=@item.UlrBibliography class="btn btn-info">@StaticResource.Resources.LearnMore &raquo;</a>
             </td>
 
         </tr>
@@ -67,4 +82,13 @@
 
 </table>
 @Html.PagedListPager(Model, page => Url.Action("bibliographie", new { page }))
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+    <script>
+
+        function insertText(elemID, text) {
+            document.getElementById(elemID).value += text;
+        }
+    </script>
+}
 

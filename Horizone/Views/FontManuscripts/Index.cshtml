@@ -1,14 +1,13 @@
-﻿@model IEnumerable<Horizone.Models.TochPhrase>
-
+﻿@model PagedList.IPagedList<Horizone.Models.Manuscript>
+@using PagedList.Mvc;
 @{
-    ViewBag.Title = @StaticResource.Resources.TochPhrase;
+    ViewBag.Title = @StaticResource.Resources.Manuscript;
 }
 
-<h2>@StaticResource.Resources.TochPhrase</h2>
-
+<h2> @StaticResource.Resources.Manuscript</h2>
 <div id="search">
 
-    <form class="form-group row" action="@Url.Action("Search", "Bibliographies")" method="post" enctype="multipart/form-data">
+    <form class="form-group row" action="@Url.Action("Search", "FontManuscripts")" method="post" enctype="multipart/form-data">
 
         <div class="form-group col-md-2">
             <br />
@@ -35,73 +34,49 @@
             <a onclick="insertText('Search','š');" href="#">š  </a>
             <a onclick="insertText('Search','ß');" href="#">ß  </a>
         </div>
-
     </form>
 </div>
+
 <table class="table">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.Language.Name)
+            @StaticResource.Resources.Manuscript
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.TochLanguage.Language)
+            @StaticResource.Resources.OtherSiglum
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Phrase)
+            @StaticResource.Resources.Language
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.English)
+            @StaticResource.Resources.LeafNumber
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Francaise)
+            @StaticResource.Resources.NumberOfLine
         </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Chinese)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.DerivedFrom)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.RelatedLexemes)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Description)
-        </th>
-       
         <th></th>
     </tr>
+
 
     @foreach (var item in Model)
     {
         <tr>
             <td>
-                @Html.DisplayFor(modelItem => item.Language.Name)
+                @Html.DisplayFor(modelItem => item.Index)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.OtherSiglum)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.TochLanguage.Language)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Phrase)
+                @Html.DisplayFor(modelItem => item.LeafNumber)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.English)
+                @Html.DisplayFor(modelItem => item.NumberOfLine)
             </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Francaise)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Chinese)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.DerivedFrom)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.RelatedLexemes)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Description)
-            </td>
-            
+
             <td>
                 @Html.ActionLink(@StaticResource.Resources.Details, "Details", new { id = item.Id }, new { @class = "btn btn-info", style = "width:90px" })
             </td>
@@ -109,6 +84,7 @@
     }
 
 </table>
+@Html.PagedListPager(Model, page => Url.Action("index", new { page }))
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")
     <script>

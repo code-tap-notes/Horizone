@@ -185,7 +185,6 @@ namespace Horizone.Areas.BackOffice.Controllers
             db.Manuscripts.Include("ImageManuscripts").Include("Language").Include("Tochlanguage").Include("Bibliographys").SingleOrDefault(x => x.Id == manuscript.Id);
             if (ModelState.IsValid)
             {
-
                 if (BibliographyId != null)
                     manuscript.Bibliographys = db.Bibliographys.Where(x => BibliographyId.Contains(x.Id)).ToList();
                 db.SaveChanges();
@@ -196,7 +195,6 @@ namespace Horizone.Areas.BackOffice.Controllers
             ViewBag.Bibliographys = new SelectList(db.Bibliographys, "Id", "Title");
             return View(manuscript);            
         }
-
         // GET: BackOffice/Manuscripts/Delete/5
         public ActionResult Delete(int? id)
         {

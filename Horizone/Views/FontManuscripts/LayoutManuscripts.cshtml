@@ -1,0 +1,130 @@
+﻿@model Horizone.Models.Manuscript
+
+@{
+    ViewBag.Title = @StaticResource.Resources.LayoutManuscript;
+}
+
+<h2>@StaticResource.Resources.LayoutManuscript</h2>
+<div>
+    <h4>@StaticResource.Resources.Details</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.SizeHeight)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SizeHeight)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Completeness)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Completeness)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SizeWidth)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SizeWidth)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NumberOfLine)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NumberOfLine)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.LineDistance)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LineDistance)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Format)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Format)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Ruling)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Ruling)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.RulingColor)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.RulingColor)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.RulingDetail)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.RulingDetail)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.StringholeHeight)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.StringholeHeight)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.StringholeWidth)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.StringholeWidth)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DistanceStringholeRight)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DistanceStringholeRight)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DistanceStringholeLeft)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DistanceStringholeLeft)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.InterruptedLine)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.InterruptedLine)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink(StaticResource.Resources.Return, "Details", new { id = Model.Id }, new { @class = "btn btn-primary" })
+</p>
+
+

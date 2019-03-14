@@ -208,6 +208,7 @@
     <Compile Include="Areas\BackOffice\Controllers\CasesController.cs" />
     <Compile Include="Areas\BackOffice\Controllers\ClientsController.cs" />
     <Compile Include="Areas\BackOffice\Controllers\CollaborationsController.cs" />
+    <Compile Include="Areas\BackOffice\Controllers\CollaboratorsController.cs" />
     <Compile Include="Areas\BackOffice\Controllers\CommentsController.cs" />
     <Compile Include="Areas\BackOffice\Controllers\ContactMessagesController.cs" />
     <Compile Include="Areas\BackOffice\Controllers\DashBoardsController.cs" />
@@ -225,7 +226,9 @@
     <Compile Include="Areas\BackOffice\Controllers\TopicsController.cs" />
     <Compile Include="Areas\BackOffice\Controllers\WordClassesController.cs" />
     <Compile Include="Areas\BackOffice\Controllers\WordSubClassesController.cs" />
+    <Compile Include="Controllers\FontManuscriptsController.cs" />
     <Compile Include="Controllers\FontNewsController.cs" />
+    <Compile Include="Controllers\VocabulariesController.cs" />
     <Compile Include="Migrations\201902071549146_Init.cs" />
     <Compile Include="Migrations\201902071549146_Init.Designer.cs">
       <DependentUpon>201902071549146_Init.cs</DependentUpon>
@@ -545,6 +548,9 @@
     <Content Include="Areas\BackOffice\Views\News\Index.cshtml" />
     <Content Include="Areas\BackOffice\Views\Comments\Index.cshtml" />
     <Content Include="Areas\BackOffice\Views\Comments\Delete.cshtml" />
+    <Content Include="Areas\BackOffice\Views\DashBoards\News.cshtml" />
+    <Content Include="Areas\BackOffice\Views\DashBoards\LatestNews.cshtml" />
+    <Content Include="Areas\BackOffice\Views\Bibliographies\Search.cshtml" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\cldr.js" />
     <Content Include="Scripts\cldr\event.js" />
@@ -805,13 +811,9 @@
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\Shared\EditorTemplates\tinymce_jquery_full.cshtml" />
-    <Content Include="Views\Home\Bibliographie.cshtml" />
     <Content Include="Views\Home\Aide.cshtml" />
-    <Content Include="Views\Home\Manuscript.cshtml" />
     <Content Include="Views\Home\TochHistoire.cshtml" />
     <Content Include="Views\Home\TochPhase.cshtml" />
-    <Content Include="Views\Home\Nouvelles.cshtml" />
-    <Content Include="Views\Home\Vocabulaire.cshtml" />
     <Content Include="Views\Shared\Mainmenu.cshtml" />
     <Content Include="Views\Shared\EditorTemplates\tinymce_full_compressed.cshtml" />
     <Content Include="Views\Shared\EditorTemplates\tinymce_full.cshtml" />
@@ -834,11 +836,23 @@
     <Content Include="Views\Home\PageActivity.cshtml" />
     <Content Include="Views\Account\RegisterCollaborator.cshtml" />
     <Content Include="Views\Home\Presse.cshtml" />
-    <Content Include="Views\FontNews\Create.cshtml" />
-    <Content Include="Views\FontNews\Delete.cshtml" />
     <Content Include="Views\FontNews\Details.cshtml" />
-    <Content Include="Views\FontNews\Edit.cshtml" />
     <Content Include="Views\FontNews\Index.cshtml" />
+    <Content Include="Views\FontNews\ListNews.cshtml" />
+    <Content Include="Views\FontNews\LatestNews.cshtml" />
+    <Content Include="Views\FontManuscripts\Index.cshtml" />
+    <Content Include="Views\Vocabularies\Vocabulaire.cshtml" />
+    <Content Include="Views\FontBibliographies\Bibliographie.cshtml" />
+    <Content Include="Views\FontManuscripts\Details.cshtml" />
+    <Content Include="Views\FontManuscripts\LayoutManuscripts.cshtml" />
+    <Content Include="Views\FontManuscripts\OverallDescriptions.cshtml" />
+    <Content Include="Views\FontManuscripts\ScriptManuscripts.cshtml" />
+    <Content Include="Views\FontManuscripts\TextContents.cshtml" />
+    <Content Include="Views\FontManuscripts\TextLanguages.cshtml" />
+    <Content Include="Views\FontManuscripts\MaterialManuscripts.cshtml" />
+    <Content Include="Views\FontManuscripts\Search.cshtml" />
+    <Content Include="Views\Vocabularies\Details.cshtml" />
+    <Content Include="Views\Vocabularies\Search.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

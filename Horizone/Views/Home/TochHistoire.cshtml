@@ -1,45 +1,69 @@
 ﻿@model IEnumerable<Horizone.Models.TochStory>
 
 @{
-    ViewBag.Title = "TochHistoire";
+    ViewBag.Title = ViewBag.Title = @StaticResource.Resources.TochStory;
 }
+<h2>@StaticResource.Resources.TochStory</h2>
 
-<h2>TochHistoire</h2>
 <div id="search">
-    <form class="form-group row" action="@Url.Action("Search", "FrontMamuscripts")" method="post" enctype="multipart/form-data">
+
+    <form class="form-group row" action="@Url.Action("Search", "Bibliographies")" method="post" enctype="multipart/form-data">
+
         <div class="form-group col-md-2">
             <br />
-            <button type="submit" class="btn btn-info bigBtn"> Rechercher</button>
-        </div>
-        <div class="form-group col-md-2">
-            <label for="Topic">Topic:</label>
-            <a> <input type="text" class="form-control" id="Word" name="Word" /> </a> <br />
-
+            <button type="submit" class="btn btn-info bigBtn"> @StaticResource.Resources.Search</button>
         </div>
 
-        <div class="form-group col-md-2">
-            <label for="Date">Mot de recherche:</label>
-            <input class="form-control" type="number" id="Date" name="Date" />
+        <div class="form-group col-md-4">
+            <label for="search">@StaticResource.Resources.SearchWord </label>
+            <input class="form-control" type="text" id="Search" name="search" />
         </div>
-        
+        <div>
+            <p><strong>Insert:  </strong> </p>
+            <a onclick="insertText('Search','ā');" href="#">ā  </a>
+            <a onclick="insertText('Search','ä');" href="#">ä  </a>
+            <a onclick="insertText('Search','ī');" href="#">ī  </a>
+            <a onclick="insertText('Search','ö');" href="#">ö  </a>
+            <a onclick="insertText('Search','ū');" href="#">ū  </a>
+            <a onclick="insertText('Search','ü');" href="#">ü  </a>
+            <a onclick="insertText('Search','ṅ');" href="#">ṅ  </a>
+            <a onclick="insertText('Search','ñ');" href="#">ñ  </a>
+            <a onclick="insertText('Search','ṃ');" href="#">ṃ  </a>
+            <a onclick="insertText('Search','ś');" href="#">ś  </a>
+            <a onclick="insertText('Search','ṣ');" href="#">ṣ  </a>
+            <a onclick="insertText('Search','š');" href="#">š  </a>
+            <a onclick="insertText('Search','ß');" href="#">ß  </a>
+        </div>
+
     </form>
 </div>
-
-
 <table class="table">
     <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Language.Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TochLanguage.Language)
+        </th>
         <th>
             @Html.DisplayNameFor(model => model.Name)
         </th>
         <th>
-            Topic
+            @Html.DisplayNameFor(model => model.Content)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.ContentEnglish)
+            @Html.DisplayNameFor(model => model.English)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Francaise)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Chinese)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.Description)
         </th>
+        
         <th></th>
     </tr>
 
@@ -47,25 +71,43 @@
     {
         <tr>
             <td>
+                @Html.DisplayFor(modelItem => item.Language.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TochLanguage.Language)
+            </td>
+            <td>
                 @Html.DisplayFor(modelItem => item.Name)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.ContentEnglish)
+                @Html.DisplayFor(modelItem => item.Content)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.ContentFrancaise)
+                @Html.DisplayFor(modelItem => item.English)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.ContentChinese)
+                @Html.DisplayFor(modelItem => item.Francaise)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.ContentVietnam)
+                @Html.DisplayFor(modelItem => item.Chinese)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Description)
             </td>
-           
+            
+            <td>
+                @Html.ActionLink("Details", "Details", new { id = item.Id })
+            </td>
         </tr>
     }
 
 </table>
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+    <script>
+
+        function insertText(elemID, text) {
+            document.getElementById(elemID).value += text;
+        }
+    </script>
+}
