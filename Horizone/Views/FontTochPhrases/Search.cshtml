@@ -1,29 +1,17 @@
-﻿@model ICollection<Horizone.Models.DictionaryTocharian>
+﻿@model ICollection<Horizone.Models.TochPhrase>
 
 @{
     ViewBag.Title = @StaticResource.Resources.Search;
-
 }
-
-
 <h2>@StaticResource.Resources.SearchResult</h2>
-
 
 <div class="col-md-2">
 
-    <form class="form-group row" action="@Url.Action("Search", "Vocabularies")" method="post" enctype="multipart/form-data">
+    <form class="form-group row" action="@Url.Action("Search", "FontTochPhrases")" method="post" enctype="multipart/form-data">
         <div class="form-group ">
-            <label for="search">@StaticResource.Resources.SearchWord</label>
+            <label for="search">@StaticResource.Resources.Phrase</label>
             <input type="text" class="form-control" id="search" name="search" /><br />
-        </div>
-        <div class="form-group ">
-            <label for="WordClass">@StaticResource.Resources.WordClass</label>
-            <input type="text" class="form-control" id="WordClass" name="WordClass" /><br />
-        </div>
-        <div class="form-group ">
-            <label for="language">@StaticResource.Resources.TochLanguage</label>
-            <input type="text" class="form-control" id="language" name="language" /><br />
-        </div>
+        </div>                
     </form>
 </div>
 <div class="col-md-2">
@@ -41,14 +29,14 @@
         <table class="table">
             <tr>
                 <th>
-                    @StaticResource.Resources.Words
+                    @StaticResource.Resources.Phrase
                 </th>
                 <th>
                     @StaticResource.Resources.English
                 </th>
                 <th>
                     @StaticResource.Resources.TochLanguage
-                </th>                
+                </th>
                 <th></th>
             </tr>
 
@@ -56,7 +44,7 @@
             {
                 <tr>
                     <td>
-                        @Html.DisplayFor(modelItem => item.Word)
+                        @Html.DisplayFor(modelItem => item.Phrase)
                     </td>
                     <td>
                         @Html.DisplayFor(modelItem => item.English)
@@ -69,9 +57,7 @@
                     </td>
                 </tr>
             }
-
         </table>
-
     </div>
 </div>
 

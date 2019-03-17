@@ -121,7 +121,8 @@
         <div class="form-group">
             @Html.LabelFor(model => model.WordClassId, "WordClassId", htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.DropDownList("WordClassEnId", null, htmlAttributes: new { @class = "form-control" })
+               
+                @Html.DropDownList("WordClassId", (SelectList)ViewBag.WordClassEnId, htmlAttributes: new { @class = "form-control" })
                 @Html.ValidationMessageFor(model => model.WordClassId, "", new { @class = "text-danger" })
             </div>
         </div>
@@ -129,7 +130,8 @@
         <div class="form-group">
             @Html.LabelFor(model => model.WordSubClassId, "WordSubClassId", htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.DropDownList("WordSubClassEnId", null, htmlAttributes: new { @class = "form-control" })
+               
+                @Html.DropDownList("WordSubClassId",(SelectList)ViewBag.WordSubClassEnId, htmlAttributes: new { @class = "form-control" })
                 @Html.ValidationMessageFor(model => model.WordSubClassId, "", new { @class = "text-danger" })
             </div>
         </div>
@@ -164,7 +166,8 @@
         <div class="form-group">
             @Html.LabelFor(model => model.WordClassId, "WordClassId", htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.DropDownList("WordClassFrId", null, htmlAttributes: new { @class = "form-control" })
+               
+                @Html.DropDownList("WordClassId", (SelectList)ViewBag.WordClassFrId, htmlAttributes: new { @class = "form-control" })
                 @Html.ValidationMessageFor(model => model.WordClassId, "", new { @class = "text-danger" })
             </div>
         </div>
@@ -172,7 +175,8 @@
         <div class="form-group">
             @Html.LabelFor(model => model.WordSubClassId, "WordSubClassId", htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.DropDownList("WordSubClassFrId", null, htmlAttributes: new { @class = "form-control" })
+              
+                @Html.DropDownList("WordSubClassId", (SelectList)ViewBag.WordSubClassFrId, htmlAttributes: new { @class = "form-control" })
                 @Html.ValidationMessageFor(model => model.WordSubClassId, "", new { @class = "text-danger" })
             </div>
         </div>
@@ -207,7 +211,8 @@
         <div class="form-group">
             @Html.LabelFor(model => model.WordClassId, "WordClassId", htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.DropDownList("WordClassZhId", null, htmlAttributes: new { @class = "form-control" })
+              
+                @Html.DropDownList("WordClassId", (SelectList)ViewBag.WordClassZhId, htmlAttributes: new { @class = "form-control" })
                 @Html.ValidationMessageFor(model => model.WordClassId, "", new { @class = "text-danger" })
             </div>
         </div>
@@ -215,7 +220,8 @@
         <div class="form-group">
             @Html.LabelFor(model => model.WordSubClassId, "WordSubClassId", htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.DropDownList("WordSubClassZhId", null, htmlAttributes: new { @class = "form-control" })
+               
+                @Html.DropDownList("WordSubClassId", (SelectList)ViewBag.WordSubClassZhId, htmlAttributes: new { @class = "form-control" })
                 @Html.ValidationMessageFor(model => model.WordSubClassId, "", new { @class = "text-danger" })
             </div>
         </div>

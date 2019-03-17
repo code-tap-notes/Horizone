@@ -228,6 +228,7 @@
     <Compile Include="Areas\BackOffice\Controllers\WordSubClassesController.cs" />
     <Compile Include="Controllers\FontManuscriptsController.cs" />
     <Compile Include="Controllers\FontNewsController.cs" />
+    <Compile Include="Controllers\FontTochPhrasesController.cs" />
     <Compile Include="Controllers\VocabulariesController.cs" />
     <Compile Include="Migrations\201902071549146_Init.cs" />
     <Compile Include="Migrations\201902071549146_Init.Designer.cs">
@@ -813,7 +814,6 @@
     <Content Include="Views\Shared\EditorTemplates\tinymce_jquery_full.cshtml" />
     <Content Include="Views\Home\Aide.cshtml" />
     <Content Include="Views\Home\TochHistoire.cshtml" />
-    <Content Include="Views\Home\TochPhase.cshtml" />
     <Content Include="Views\Shared\Mainmenu.cshtml" />
     <Content Include="Views\Shared\EditorTemplates\tinymce_full_compressed.cshtml" />
     <Content Include="Views\Shared\EditorTemplates\tinymce_full.cshtml" />
@@ -826,7 +826,6 @@
     <Content Include="Scripts\tinymce\skins\lightgray\fonts\tinymce-mobile.woff" />
     <Content Include="Scripts\tinymce\langs\readme.md" />
     <Content Include="Views\FontBibliographies\Details.cshtml" />
-    <Content Include="Views\FontBibliographies\Index.cshtml" />
     <Content Include="Views\FontBibliographies\Search.cshtml" />
     <Content Include="Views\Home\AboutUs.cshtml" />
     <Content Include="Views\Home\Collaboration.cshtml" />
@@ -853,6 +852,9 @@
     <Content Include="Views\FontManuscripts\Search.cshtml" />
     <Content Include="Views\Vocabularies\Details.cshtml" />
     <Content Include="Views\Vocabularies\Search.cshtml" />
+    <Content Include="Views\FontTochPhrases\Details.cshtml" />
+    <Content Include="Views\FontTochPhrases\Index.cshtml" />
+    <Content Include="Views\FontTochPhrases\Search.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -108,30 +108,21 @@ namespace Horizone.Controllers
         {                    
                 return View(db.TochStorys.ToList());          
         }
-
-        public ActionResult TochPhase()
-        {        
-            return View(db.TochPhrases.ToList());
-        }
-                     
+                           
         public ActionResult Aide()
         {           
             return View();
-        }
-               
+        }               
         public ActionResult Activity()
         {
             var activitys = db.Activitys.Include("Language");            
             return View(activitys.OrderByDescending(x => x.DateofActivity).ToList());
         }
-
         [ChildActionOnly]
         public ActionResult PageActivity()
         {
             var activitys = db.Activitys.Include("Language");
             return PartialView(activitys.OrderByDescending(x => x.DateofActivity).ToList());
-        }
-
-       
+        }    
     }
 }

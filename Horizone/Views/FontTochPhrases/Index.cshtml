@@ -8,7 +8,7 @@
 
 <div id="search">
 
-    <form class="form-group row" action="@Url.Action("Search", "Bibliographies")" method="post" enctype="multipart/form-data">
+    <form class="form-group row" action="@Url.Action("Search", "FontTochPhrases")" method="post" enctype="multipart/form-data">
 
         <div class="form-group col-md-2">
             <br />
@@ -51,23 +51,11 @@
         </th>
         <th>
             @Html.DisplayNameFor(model => model.English)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Francaise)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Chinese)
-        </th>
+        </th>       
         <th>
             @Html.DisplayNameFor(model => model.DerivedFrom)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.RelatedLexemes)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Description)
-        </th>
-       
+        </th>       
+
         <th></th>
     </tr>
 
@@ -86,22 +74,11 @@
             <td>
                 @Html.DisplayFor(modelItem => item.English)
             </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Francaise)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Chinese)
-            </td>
+            
             <td>
                 @Html.DisplayFor(modelItem => item.DerivedFrom)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.RelatedLexemes)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Description)
-            </td>
-            
+            </td>            
+
             <td>
                 @Html.ActionLink(@StaticResource.Resources.Details, "Details", new { id = item.Id }, new { @class = "btn btn-info", style = "width:90px" })
             </td>
