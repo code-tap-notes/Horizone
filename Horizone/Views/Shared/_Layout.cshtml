@@ -11,14 +11,14 @@
     <link href="~/Content/layout.css" rel="stylesheet" />
 </head>
 
-<body background="~/Content/bar_background.png" class="parallax">
+<body style="background-color: papayawhip "  >
     <div>
-        <img style="margin:25px;margin-top:25px;" src="~/Image/bar1.jpg" class="logo" />
+        <img style="width:100%" src="~/Image/bar1.jpg" class="logo" />
     </div>
 
-    <div class="navbar navbar-inverse navbar-fixed-top">
+    <div class="navbar navbar-inverse navbar-fixed-top" style="background-color:lightgrey">
 
-        <div class="container">
+        <div class="container" style="color: #1f2369 !important">
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
                     <span class="icon-bar"></span>
@@ -40,7 +40,7 @@
         </div>
 
     </div>
-    <div class="navbar-collapse collapse" style="background-color:black">
+    <div class="navbar-collapse collapse" style="background-color:lightgrey";color: #1f2369;>
         <ul class="nav navbar-nav">
             <li>@Html.ActionLink(StaticResource.Resources.AboutProject, "About", "Home")</li>
             <li>@Html.ActionLink(@StaticResource.Resources.TochPhrase, "Index", "FontTochPhrases")</li>

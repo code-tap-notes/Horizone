@@ -230,9 +230,9 @@
     <Compile Include="Controllers\FontNewsController.cs" />
     <Compile Include="Controllers\FontTochPhrasesController.cs" />
     <Compile Include="Controllers\VocabulariesController.cs" />
-    <Compile Include="Migrations\201902071549146_Init.cs" />
-    <Compile Include="Migrations\201902071549146_Init.Designer.cs">
-      <DependentUpon>201902071549146_Init.cs</DependentUpon>
+    <Compile Include="Migrations\201903191633144_Init.cs" />
+    <Compile Include="Migrations\201903191633144_Init.Designer.cs">
+      <DependentUpon>201903191633144_Init.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AboutProject.cs" />
@@ -880,8 +880,8 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201902071549146_Init.resx">
-      <DependentUpon>201902071549146_Init.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201903191633144_Init.resx">
+      <DependentUpon>201903191633144_Init.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

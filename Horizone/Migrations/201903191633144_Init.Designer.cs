@@ -13,7 +13,7 @@ namespace Horizone.Migrations
         
         string IMigrationMetadata.Id
         {
-            get { return "201902071549146_Init"; }
+            get { return "201903191633144_Init"; }
         }
         
         string IMigrationMetadata.Source
