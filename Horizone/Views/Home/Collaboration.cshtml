@@ -17,13 +17,11 @@
             <li>@Html.ActionLink(StaticResource.Resources.AboutUs, "AboutUs", "Home")</li>
             <li>@Html.ActionLink(StaticResource.Resources.Contact, "Contact", "Home")</li>
         </ul>
-
     </div>
     <div class="autocontents">
         <h2>   @StaticResource.Resources.Collaboration </h2>
         @foreach (var item in Model)
-        {
-       
+        {       
             if (!item.Team)
             {
             <ul>
