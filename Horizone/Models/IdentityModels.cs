@@ -16,15 +16,13 @@ namespace Horizone.Models
             // Ajouter les revendications personnalisées de l’utilisateur ici
             return userIdentity;
         }
-    }
-     
+    }   
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {
         public ApplicationDbContext()
             : base("Horizone", throwIfV1Schema: false)
         {
         }
-
         public static ApplicationDbContext Create()
         {
             return new ApplicationDbContext();
@@ -53,6 +51,7 @@ namespace Horizone.Models
         public DbSet<ImageManuscript> ImageManuscripts { get; set; }
         public DbSet<ImageNews> ImageNews { get; set; }
         public DbSet<ImageCollaboration> ImageCollaborations { get; set; }
+       
         public DbSet<Manuscript> Manuscripts { get; set; }
         public DbSet<News> Newses { get; set; }
         public DbSet<TochPhrase> TochPhrases { get; set; }
@@ -65,5 +64,8 @@ namespace Horizone.Models
         public DbSet<Activity> Activitys { get; set; }
         public DbSet<Publication> Publications { get; set; }
         public DbSet<AboutProject> AboutProjets { get; set; }     
+        public DbSet<AnalyseMaterial> AnalyseMaterials { get; set; }
+        public DbSet<ImageUV> ImageUVs { get; set; }
+        public DbSet<ImageAnalyse> ImageAnalyses { get; set; }
     }
 }

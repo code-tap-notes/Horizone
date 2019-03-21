@@ -1,5 +1,5 @@
 ﻿@model IEnumerable<Horizone.Models.News>
-<h3>@StaticResource.Resources.SeenFrequently</h3>
+<h3 style="color: chocolate"><u>@StaticResource.Resources.SeenFrequently</u></h3>
 @foreach (var item in Model)
 {
     if (item.Language.Symbol == Session[Horizone.Common.CommonConstants.CurrentCulture].ToString())

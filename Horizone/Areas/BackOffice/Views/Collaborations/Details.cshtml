@@ -73,9 +73,15 @@
         <dd>
             @Html.DisplayFor(model => model.Visible)
         </dd>
-        
         <dt>
-            <p>  @StaticResource.Resources.Publications</p> 
+            @Html.DisplayNameFor(model => model.Order)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Order)
+        </dd>
+
+        <dt>
+             @StaticResource.Resources.Publications
         </dt>
         <dd>
             <table class="table table-striped">

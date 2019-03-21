@@ -204,6 +204,7 @@
     <Compile Include="Areas\BackOffice\BackOfficeAreaRegistration.cs" />
     <Compile Include="Areas\BackOffice\Controllers\AboutProjectsController.cs" />
     <Compile Include="Areas\BackOffice\Controllers\ActivitiesController.cs" />
+    <Compile Include="Areas\BackOffice\Controllers\AnalyseMaterialsController.cs" />
     <Compile Include="Areas\BackOffice\Controllers\BibliographiesController.cs" />
     <Compile Include="Areas\BackOffice\Controllers\CasesController.cs" />
     <Compile Include="Areas\BackOffice\Controllers\ClientsController.cs" />
@@ -234,6 +235,14 @@
     <Compile Include="Migrations\201902071549146_Init.Designer.cs">
       <DependentUpon>201902071549146_Init.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201903211629026_AddAnalyseManuscript.cs" />
+    <Compile Include="Migrations\201903211629026_AddAnalyseManuscript.Designer.cs">
+      <DependentUpon>201903211629026_AddAnalyseManuscript.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201903211720083_ChangeAnalyseManuscript.cs" />
+    <Compile Include="Migrations\201903211720083_ChangeAnalyseManuscript.Designer.cs">
+      <DependentUpon>201903211720083_ChangeAnalyseManuscript.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AboutProject.cs" />
     <Compile Include="Common\CommonConstants.cs" />
@@ -247,6 +256,7 @@
     </Compile>
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Activity.cs" />
+    <Compile Include="Models\AnalyseMaterial.cs" />
     <Compile Include="Models\Bibliography.cs" />
     <Compile Include="Models\Case.cs" />
     <Compile Include="Models\Client.cs" />
@@ -258,9 +268,11 @@
     <Compile Include="Models\DictionaryTocharian.cs" />
     <Compile Include="Models\Gender.cs" />
     <Compile Include="Models\IdentityModels.cs" />
+    <Compile Include="Models\ImageAnalyse.cs" />
     <Compile Include="Models\ImageCollaboration.cs" />
     <Compile Include="Models\ImageManuscript.cs" />
     <Compile Include="Models\ImageNews.cs" />
+    <Compile Include="Models\ImageUV.cs" />
     <Compile Include="Models\Language.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\Manuscript.cs" />
@@ -552,6 +564,11 @@
     <Content Include="Areas\BackOffice\Views\DashBoards\News.cshtml" />
     <Content Include="Areas\BackOffice\Views\DashBoards\LatestNews.cshtml" />
     <Content Include="Areas\BackOffice\Views\Bibliographies\Search.cshtml" />
+    <Content Include="Areas\BackOffice\Views\AnalyseMaterials\Create.cshtml" />
+    <Content Include="Areas\BackOffice\Views\AnalyseMaterials\Delete.cshtml" />
+    <Content Include="Areas\BackOffice\Views\AnalyseMaterials\Details.cshtml" />
+    <Content Include="Areas\BackOffice\Views\AnalyseMaterials\Edit.cshtml" />
+    <Content Include="Areas\BackOffice\Views\AnalyseMaterials\Index.cshtml" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\cldr.js" />
     <Content Include="Scripts\cldr\event.js" />
@@ -855,6 +872,7 @@
     <Content Include="Views\FontTochPhrases\Details.cshtml" />
     <Content Include="Views\FontTochPhrases\Index.cshtml" />
     <Content Include="Views\FontTochPhrases\Search.cshtml" />
+    <Content Include="Views\FontManuscripts\AnalyseMaterial.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -882,6 +900,12 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201902071549146_Init.resx">
       <DependentUpon>201902071549146_Init.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201903211629026_AddAnalyseManuscript.resx">
+      <DependentUpon>201903211629026_AddAnalyseManuscript.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201903211720083_ChangeAnalyseManuscript.resx">
+      <DependentUpon>201903211720083_ChangeAnalyseManuscript.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

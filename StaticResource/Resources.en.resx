@@ -1095,4 +1095,19 @@
   <data name="LatestNews" xml:space="preserve">
     <value>Latest News</value>
   </data>
+  <data name="AnalyseMaterial" xml:space="preserve">
+    <value>Analyse Material</value>
+  </data>
+  <data name="ImageUV" xml:space="preserve">
+    <value>Ultraviolet Image</value>
+  </data>
+  <data name="OtherImage" xml:space="preserve">
+    <value>Other Image</value>
+  </data>
+  <data name="Index" xml:space="preserve">
+    <value>Index</value>
+  </data>
+  <data name="Print" xml:space="preserve">
+    <value>Print</value>
+  </data>
 </root>

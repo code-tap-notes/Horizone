@@ -52,5 +52,6 @@ namespace Horizone.Models
         [Display(Name = "Visible", ResourceType = typeof(StaticResource.Resources))]
         public Boolean Visible { get; set; }
 
+        public int Order { get; set; }
     }
 }

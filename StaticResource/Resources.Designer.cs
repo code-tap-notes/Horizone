@@ -286,6 +286,15 @@ namespace StaticResource {
         }
         
         /// <summary>
+        ///   Recherche une chaîne localisée semblable à Analyser le matériel.
+        /// </summary>
+        public static string AnalyseMaterial {
+            get {
+                return ResourceManager.GetString("AnalyseMaterial", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Recherche une chaîne localisée semblable à Et.
         /// </summary>
         public static string And {
@@ -1096,6 +1105,15 @@ namespace StaticResource {
         }
         
         /// <summary>
+        ///   Recherche une chaîne localisée semblable à Image Ultraviolet.
+        /// </summary>
+        public static string ImageUV {
+            get {
+                return ResourceManager.GetString("ImageUV", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Recherche une chaîne localisée semblable à Indéclinable.
         /// </summary>
         public static string Indeclinable {
@@ -1110,6 +1128,15 @@ namespace StaticResource {
         public static string IndeclinableAdjective {
             get {
                 return ResourceManager.GetString("IndeclinableAdjective", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Index.
+        /// </summary>
+        public static string Index {
+            get {
+                return ResourceManager.GetString("Index", resourceCulture);
             }
         }
         
@@ -1960,6 +1987,15 @@ namespace StaticResource {
         }
         
         /// <summary>
+        ///   Recherche une chaîne localisée semblable à Autre image.
+        /// </summary>
+        public static string OtherImage {
+            get {
+                return ResourceManager.GetString("OtherImage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Recherche une chaîne localisée semblable à Autre pronom.
         /// </summary>
         public static string OtherPronoun {
@@ -2217,6 +2253,15 @@ namespace StaticResource {
         public static string Presentation {
             get {
                 return ResourceManager.GetString("Presentation", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Imprimer.
+        /// </summary>
+        public static string Print {
+            get {
+                return ResourceManager.GetString("Print", resourceCulture);
             }
         }
         
@@ -2707,7 +2752,7 @@ namespace StaticResource {
         }
         
         /// <summary>
-        ///   Recherche une chaîne localisée semblable à TochHistoire.
+        ///   Recherche une chaîne localisée semblable à TochNarration.
         /// </summary>
         public static string TochStory {
             get {

@@ -52,7 +52,7 @@ namespace Horizone.Controllers
             var collaborations = db.Collaborations;
             foreach (var item in collaborations)
             if (item.Team) collaborations.Add(item);
-            return View(collaborations.Include("Publications").Include("ImageCollaborations").ToList());
+            return View(collaborations.Include("Publications").Include("ImageCollaborations").OrderBy(x=>x.Order).ToList());
         }
 
         public ActionResult Collaboration()
@@ -61,7 +61,7 @@ namespace Horizone.Controllers
             foreach (var item in db.Collaborations)
              if (!item.Team) collaborations.Add(item);
 
-            return View(collaborations.Include("Publications").Include("ImageCollaborations").ToList());
+            return View(collaborations.Include("Publications").Include("ImageCollaborations").OrderBy(x => x.Order).ToList());
         }
 
         // GET: FrontContact/Create

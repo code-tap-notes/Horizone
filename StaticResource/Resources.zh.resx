@@ -1098,4 +1098,19 @@
   <data name="LatestNews" xml:space="preserve">
     <value>最新消息</value>
   </data>
+  <data name="AnalyseMaterial" xml:space="preserve">
+    <value>分析材料</value>
+  </data>
+  <data name="ImageUV" xml:space="preserve">
+    <value>紫外线图像</value>
+  </data>
+  <data name="OtherImage" xml:space="preserve">
+    <value>其他形象</value>
+  </data>
+  <data name="Index" xml:space="preserve">
+    <value>指数</value>
+  </data>
+  <data name="Print" xml:space="preserve">
+    <value>打印</value>
+  </data>
 </root>

@@ -14,9 +14,13 @@ namespace Horizone.Controllers
     public class FontBibliographiesController : BaseController
     {  
         // GET: FontBibliographies       
-        public ActionResult Bibliographie(int page = 1, int pageSize = 6)
+        public ActionResult Bibliographie(int page = 1, int pageSize = 20)
         {
             return View(db.Bibliographys.OrderBy(x => x.Id).ToPagedList(page, pageSize));
+        }
+        public ActionResult Print()
+        {
+            return View();
         }
 
         // GET: FontBibliographies/Details/5

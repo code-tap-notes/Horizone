@@ -5,9 +5,6 @@
     ViewBag.Title = @StaticResource.Resources.Bibliography;
 }
 
-<h2>@StaticResource.Resources.Bibliography</h2>
-
-
 <div id="search">
     <form class="form-group row" action="@Url.Action("Search", "FontBibliographies")" method="post" enctype="multipart/form-data">
         <div class="form-group col-md-2">
@@ -19,73 +16,48 @@
             <label for="Title"> @StaticResource.Resources.SearchWord </label>
             <input class="form-control" type="text" id="Search" name="search" />
         </div>
-        <div>
+
+
+        <div class="form-group col-md-4">
             <p><strong>Insert:  </strong> </p>
-            <a onclick="insertText('Search','ā');" href="#">ā  </a>
-            <a onclick="insertText('Search','ä');" href="#">ä  </a>
-            <a onclick="insertText('Search','ī');" href="#">ī  </a>
-            <a onclick="insertText('Search','ö');" href="#">ö  </a>
-            <a onclick="insertText('Search','ū');" href="#">ū  </a>
-            <a onclick="insertText('Search','ü');" href="#">ü  </a>
-            <a onclick="insertText('Search','ṅ');" href="#">ṅ  </a>
-            <a onclick="insertText('Search','ñ');" href="#">ñ  </a>
-            <a onclick="insertText('Search','ṃ');" href="#">ṃ  </a>
-            <a onclick="insertText('Search','ś');" href="#">ś  </a>
-            <a onclick="insertText('Search','ṣ');" href="#">ṣ  </a>
-            <a onclick="insertText('Search','š');" href="#">š  </a>
-            <a onclick="insertText('Search','ß');" href="#">ß  </a>
+            <a onclick="insertText('Search','ā');" href="#" style="background-color: blanchedalmond; padding:5px"> ā  </a><a> </a>             
+            <a onclick="insertText('Search','ä');" href="#" style="background-color: blanchedalmond; padding:5px"> ä  </a>
+            <a onclick="insertText('Search','ī');" href="#" style="background-color: blanchedalmond; padding:5px"> ī  </a>
+            <a onclick="insertText('Search','ö');" href="#" style="background-color: blanchedalmond; padding:5px"> ö  </a>
+            <a onclick="insertText('Search','ū');" href="#" style="background-color: blanchedalmond; padding:5px"> ū  </a>
+            <a onclick="insertText('Search','ü');" href="#" style="background-color: blanchedalmond; padding:5px"> ü  </a>
+            <a onclick="insertText('Search','ṅ');" href="#" style="background-color: blanchedalmond; padding:5px"> ṅ  </a>
+            <a onclick="insertText('Search','ñ');" href="#" style="background-color: blanchedalmond; padding:5px"> ñ  </a>
+            <a onclick="insertText('Search','ṃ');" href="#" style="background-color: blanchedalmond; padding:5px"> ṃ  </a>
+            <a onclick="insertText('Search','ś');" href="#" style="background-color: blanchedalmond; padding:5px"> ś  </a>
+            <a onclick="insertText('Search','ṣ');" href="#" style="background-color: blanchedalmond; padding:5px"> ṣ  </a>
+            <a onclick="insertText('Search','š');" href="#" style="background-color: blanchedalmond; padding:5px"> š  </a>
+            <a onclick="insertText('Search','ß');" href="#" style="background-color: blanchedalmond; padding:5px"> ß  </a>
+        </div>
+        <div class="form-group col-md-2">
+            @Html.ActionLink(@StaticResource.Resources.Print, "Print", "FontBibliographies", new { @class = "btn btn-info", style = "width:90px" })
         </div>
     </form>
 </div>
-<table class="table">
-    <tr>
-        <th>
-            @StaticResource.Resources.Author
-        </th>
-        <th>
-            @StaticResource.Resources.PublicationDate
-        </th>
-        <th>
-            @StaticResource.Resources.TitleArticle
-        </th>
-        <th>
-            @StaticResource.Resources.Newspaper
-        </th>
-        <th>
-            @StaticResource.Resources.Link
-        </th>
-        <th></th>
-    </tr>
 
+<h2>@StaticResource.Resources.Bibliography</h2>
+
+<ul>
     @foreach (var item in Model)
     {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Author)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.PublicationDate)
-            </td>
-            <td>
-                @Html.Raw(item.Title)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Journal)
-            </td>
-            <td>
-
-                <a href=@item.UlrBibliography class="btn btn-info">@StaticResource.Resources.LearnMore &raquo;</a>
-            </td>
-
-        </tr>
+        <li>
+            <a href=@item.UlrBibliography>@Html.DisplayFor(modelItem => item.Author) - @Html.DisplayFor(modelItem => item.PublicationDate)</a>
+        </li>
+        <li>
+            @Html.DisplayFor(modelItem => item.Author) - @Html.DisplayFor(modelItem => item.PublicationDate) -  @Html.Raw(item.Title) -  @Html.Raw(item.Title) -  @Html.DisplayFor(modelItem => item.Journal)
+        </li>
     }
+</ul>
 
-</table>
 @Html.PagedListPager(Model, page => Url.Action("bibliographie", new { page }))
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")
     <script>
-
         function insertText(elemID, text) {
             document.getElementById(elemID).value += text;
         }

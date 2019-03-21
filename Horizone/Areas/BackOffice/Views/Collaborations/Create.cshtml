@@ -55,12 +55,12 @@
 
         </div>
     </div>
-    <div class="form-group">        
+    <div class="form-group">
         @Html.LabelFor(model => model.CV, htmlAttributes: new { @class = "control-label col-md-2" })
 
         <div class="col-md-10">
             @Html.EditorFor(model => model.CV, new { htmlAttributes = new { @class = "form-control" } })
-            @Html.ValidationMessageFor(model => model.CV, "", new { @class = "text-danger" })          
+            @Html.ValidationMessageFor(model => model.CV, "", new { @class = "text-danger" })
         </div>
     </div>
     <div class="form-group">
@@ -79,6 +79,15 @@
             <div class="checkbox">
                 @Html.EditorFor(model => model.Visible)
                 @Html.ValidationMessageFor(model => model.Visible, "", new { @class = "text-danger" })
+            </div>
+        </div>
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(model => model.Order, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            <div class="checkbox">
+                @Html.EditorFor(model => model.Order)
+                @Html.ValidationMessageFor(model => model.Order, "", new { @class = "text-danger" })
             </div>
         </div>
     </div>

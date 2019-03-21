@@ -295,7 +295,7 @@
     <value>TochPhrase</value>
   </data>
   <data name="TochStory" xml:space="preserve">
-    <value>TochHistoire</value>
+    <value>TochNarration</value>
   </data>
   <data name="Vocabulary" xml:space="preserve">
     <value>Vocabulaire</value>
@@ -1097,5 +1097,20 @@
   </data>
   <data name="LatestNews" xml:space="preserve">
     <value>Dernières nouvelles</value>
+  </data>
+  <data name="AnalyseMaterial" xml:space="preserve">
+    <value>Analyser le matériel</value>
+  </data>
+  <data name="ImageUV" xml:space="preserve">
+    <value>Image Ultraviolet</value>
+  </data>
+  <data name="OtherImage" xml:space="preserve">
+    <value>Autre image</value>
+  </data>
+  <data name="Index" xml:space="preserve">
+    <value>Index</value>
+  </data>
+  <data name="Print" xml:space="preserve">
+    <value>Imprimer</value>
   </data>
 </root>

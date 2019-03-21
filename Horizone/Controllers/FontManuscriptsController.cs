@@ -21,6 +21,10 @@ namespace Horizone.Controllers
             var manuscripts = db.Manuscripts.Include(m => m.TochLanguage).Include(m => m.Language).Include(m => m.Bibliographys);
             return View(manuscripts.OrderBy(x => x.Id).ToPagedList(page, pageSize));
         }
+        public ActionResult AnalyseMaterial()
+        {
+            return View(db.AnalyseMaterials.Include("ImageUVs").Include("ImageAnalyses").ToList());
+        }
 
         // GET: BackOffice/Manuscripts/Details/5
         public ActionResult Details(int? id)
