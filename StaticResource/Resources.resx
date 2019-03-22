@@ -118,7 +118,7 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="AboutUs" xml:space="preserve">
-    <value>Qui somme nous?</value>
+    <value>Qui sommes nous?</value>
   </data>
   <data name="Author" xml:space="preserve">
     <value>Auteur</value>
@@ -136,7 +136,7 @@
     <value>Chinoise</value>
   </data>
   <data name="Contact" xml:space="preserve">
-    <value>Nous contact</value>
+    <value>Nous contacter</value>
   </data>
   <data name="ContactMessage" xml:space="preserve">
     <value>Message Utilisateur</value>
@@ -274,7 +274,7 @@
     <value>List des Messages Contact</value>
   </data>
   <data name="Manuscript" xml:space="preserve">
-    <value>Manuscrite</value>
+    <value>Manuscrits</value>
   </data>
   <data name="VietNamese" xml:space="preserve">
     <value>Vietnamien </value>
@@ -286,7 +286,7 @@
     <value>Japonaise</value>
   </data>
   <data name="Activity" xml:space="preserve">
-    <value>Activité</value>
+    <value>Activités</value>
   </data>
   <data name="Help" xml:space="preserve">
     <value>Aide</value>
@@ -370,7 +370,7 @@
     <value>Cote bibliothèque</value>
   </data>
   <data name="Text" xml:space="preserve">
-    <value>Texte</value>
+    <value>Textes</value>
   </data>
   <data name="Message" xml:space="preserve">
     <value>Message</value>
@@ -379,7 +379,7 @@
     <value>Contenu</value>
   </data>
   <data name="AboutProject" xml:space="preserve">
-    <value>A propos de projet</value>
+    <value>À propos du projet</value>
   </data>
   <data name="Aim" xml:space="preserve">
     <value>Objectif</value>
@@ -391,10 +391,10 @@
     <value>Partenaires</value>
   </data>
   <data name="Feedback" xml:space="preserve">
-    <value>Contact pratique</value>
+    <value>Dialogue-Feedback</value>
   </data>
   <data name="Funding" xml:space="preserve">
-    <value>Le financement</value>
+    <value>Financement</value>
   </data>
   <data name="HisTochTextPress" xml:space="preserve">
     <value>HisTochText dans la presse</value>
@@ -1099,7 +1099,7 @@
     <value>Dernières nouvelles</value>
   </data>
   <data name="AnalyseMaterial" xml:space="preserve">
-    <value>Analyser le matériel</value>
+    <value>Analyse  matérielle</value>
   </data>
   <data name="ImageUV" xml:space="preserve">
     <value>Image Ultraviolet</value>

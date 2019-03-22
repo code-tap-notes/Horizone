@@ -124,7 +124,7 @@ namespace StaticResource {
         }
         
         /// <summary>
-        ///   Recherche une chaîne localisée semblable à A propos de projet.
+        ///   Recherche une chaîne localisée semblable à À propos du projet.
         /// </summary>
         public static string AboutProject {
             get {
@@ -133,7 +133,7 @@ namespace StaticResource {
         }
         
         /// <summary>
-        ///   Recherche une chaîne localisée semblable à Qui somme nous?.
+        ///   Recherche une chaîne localisée semblable à Qui sommes nous?.
         /// </summary>
         public static string AboutUs {
             get {
@@ -151,7 +151,7 @@ namespace StaticResource {
         }
         
         /// <summary>
-        ///   Recherche une chaîne localisée semblable à Activité.
+        ///   Recherche une chaîne localisée semblable à Activités.
         /// </summary>
         public static string Activity {
             get {
@@ -286,7 +286,7 @@ namespace StaticResource {
         }
         
         /// <summary>
-        ///   Recherche une chaîne localisée semblable à Analyser le matériel.
+        ///   Recherche une chaîne localisée semblable à Analyse  matérielle.
         /// </summary>
         public static string AnalyseMaterial {
             get {
@@ -619,7 +619,7 @@ namespace StaticResource {
         }
         
         /// <summary>
-        ///   Recherche une chaîne localisée semblable à Nous contact.
+        ///   Recherche une chaîne localisée semblable à Nous contacter.
         /// </summary>
         public static string Contact {
             get {
@@ -844,7 +844,7 @@ namespace StaticResource {
         }
         
         /// <summary>
-        ///   Recherche une chaîne localisée semblable à Contact pratique.
+        ///   Recherche une chaîne localisée semblable à Dialogue-Feedback.
         /// </summary>
         public static string Feedback {
             get {
@@ -934,7 +934,7 @@ namespace StaticResource {
         }
         
         /// <summary>
-        ///   Recherche une chaîne localisée semblable à Le financement.
+        ///   Recherche une chaîne localisée semblable à Financement.
         /// </summary>
         public static string Funding {
             get {
@@ -1510,7 +1510,7 @@ namespace StaticResource {
         }
         
         /// <summary>
-        ///   Recherche une chaîne localisée semblable à Manuscrite.
+        ///   Recherche une chaîne localisée semblable à Manuscrits.
         /// </summary>
         public static string Manuscript {
             get {
@@ -2671,7 +2671,7 @@ namespace StaticResource {
         }
         
         /// <summary>
-        ///   Recherche une chaîne localisée semblable à Texte.
+        ///   Recherche une chaîne localisée semblable à Textes.
         /// </summary>
         public static string Text {
             get {
