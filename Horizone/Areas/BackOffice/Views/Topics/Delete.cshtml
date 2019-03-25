@@ -1,41 +1,64 @@
 ﻿@model Horizone.Models.Topic
 
 @{
-    ViewBag.Title = @StaticResource.Resources.Delete;
+    ViewBag.Title = "Delete";
 }
 
-<h2> @StaticResource.Resources.Delete</h2>
+<h2>Delete</h2>
 
-<h3 class="text-danger"> @StaticResource.Resources.AskDelete</h3>
+<h3>Are you sure you want to delete this?</h3>
 <div>
-    <h4> @StaticResource.Resources.Topic</h4>
+    <h4>Topic</h4>
     <hr />
     <dl class="dl-horizontal">
         <dt>
-            @Html.DisplayNameFor(model => model.Language.Symbol)
+            @Html.DisplayNameFor(model => model.TopicEn)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.Language.Symbol)
+            @Html.DisplayFor(model => model.TopicEn)
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.TopicName)
+            @Html.DisplayNameFor(model => model.TopicFr)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.TopicName)
+            @Html.DisplayFor(model => model.TopicFr)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TopicZh)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TopicZh)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Activity)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Activity)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.News)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.News)
         </dd>
 
     </dl>
 
-    @using (Html.BeginForm())
-    {
+    @using (Html.BeginForm()) {
         @Html.AntiForgeryToken()
 
         <div class="form-actions no-color">
-            <input type="submit" value="Delete" class="btn btn-danger" /> |
-            @Html.ActionLink(@StaticResource.Resources.Return, "Index", null, new { @class = "btn btn-default" })
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
         </div>
     }
 </div>

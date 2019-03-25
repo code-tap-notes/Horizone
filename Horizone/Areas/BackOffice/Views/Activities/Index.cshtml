@@ -1,36 +1,39 @@
 ﻿@model IEnumerable<Horizone.Models.Activity>
 
 @{
-    ViewBag.Title = @StaticResource.Resources.Activity;
+    ViewBag.Title = "Index";
 }
 
-<h2>@StaticResource.Resources.Activity</h2>
+<h2>Index</h2>
 
 <p>
-    @Html.ActionLink(@StaticResource.Resources.Add, "Create", null, new { @class = "btn btn-primary" })
+    @Html.ActionLink("Create New", "Create")
 </p>
 <table class="table">
     <tr>
         <th>
-            @StaticResource.Resources.Language
+            @Html.DisplayNameFor(model => model.Language.Symbol)
         </th>
         <th>
-            @StaticResource.Resources.DateActivity
+            @Html.DisplayNameFor(model => model.Topic.TopicEn)
         </th>
         <th>
-            @StaticResource.Resources.Place
+            @Html.DisplayNameFor(model => model.DateofActivity)
         </th>
         <th>
-            @StaticResource.Resources.Activity
+            @Html.DisplayNameFor(model => model.Place)
         </th>
         <th>
-            @StaticResource.Resources.Description
+            @Html.DisplayNameFor(model => model.NameActivity)
         </th>
         <th>
-            @StaticResource.Resources.Link
+            @Html.DisplayNameFor(model => model.Description)
         </th>
         <th>
-            @StaticResource.Resources.Picture
+            @Html.DisplayNameFor(model => model.UlrActivity)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Picture)
         </th>
         <th></th>
     </tr>
@@ -38,7 +41,10 @@
 @foreach (var item in Model) {
     <tr>
         <td>
-            @Html.DisplayFor(modelItem => item.Language.Name)
+            @Html.DisplayFor(modelItem => item.Language.Symbol)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Topic.TopicEn)
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.DateofActivity)
@@ -59,10 +65,11 @@
             @Html.DisplayFor(modelItem => item.Picture)
         </td>
         <td>
-            @Html.ActionLink(@StaticResource.Resources.Edit, "Edit", new { id = item.Id }, new { @class = "btn btn-info", style = "width:90px" })
-            @Html.ActionLink(@StaticResource.Resources.Details, "Details", new { id = item.Id }, new { @class = "btn btn-info", style = "width:90px" })
-            @Html.ActionLink(@StaticResource.Resources.Delete, "Delete", new { id = item.Id }, new { @class = "btn btn-info", style = "width:90px" })
+            @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
+            @Html.ActionLink("Details", "Details", new { id=item.Id }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.Id })
         </td>
     </tr>
 }
+
 </table>

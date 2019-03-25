@@ -592,6 +592,15 @@ namespace StaticResource {
         }
         
         /// <summary>
+        ///   Recherche une chaîne localisée semblable à Conférences.
+        /// </summary>
+        public static string Conferences {
+            get {
+                return ResourceManager.GetString("Conferences", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Recherche une chaîne localisée semblable à Le nouveau mot de passe et le mot de passe de confirmation ne correspondent pas..
         /// </summary>
         public static string ConfirmError {
@@ -844,6 +853,15 @@ namespace StaticResource {
         }
         
         /// <summary>
+        ///   Recherche une chaîne localisée semblable à Expositions.
+        /// </summary>
+        public static string Expositions {
+            get {
+                return ResourceManager.GetString("Expositions", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Recherche une chaîne localisée semblable à Dialogue-Feedback.
         /// </summary>
         public static string Feedback {
@@ -1065,6 +1083,15 @@ namespace StaticResource {
         public static string Gerundive {
             get {
                 return ResourceManager.GetString("Gerundive", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Glossaire.
+        /// </summary>
+        public static string Glossary {
+            get {
+                return ResourceManager.GetString("Glossary", resourceCulture);
             }
         }
         
@@ -1519,6 +1546,15 @@ namespace StaticResource {
         }
         
         /// <summary>
+        ///   Recherche une chaîne localisée semblable à Cartes.
+        /// </summary>
+        public static string Maps {
+            get {
+                return ResourceManager.GetString("Maps", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Recherche une chaîne localisée semblable à Masculine.
         /// </summary>
         public static string Masculine {
@@ -1600,6 +1636,15 @@ namespace StaticResource {
         }
         
         /// <summary>
+        ///   Recherche une chaîne localisée semblable à Médias.
+        /// </summary>
+        public static string Media {
+            get {
+                return ResourceManager.GetString("Media", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Recherche une chaîne localisée semblable à Message.
         /// </summary>
         public static string Message {
@@ -1627,6 +1672,15 @@ namespace StaticResource {
         }
         
         /// <summary>
+        ///   Recherche une chaîne localisée semblable à Missions.
+        /// </summary>
+        public static string Missions {
+            get {
+                return ResourceManager.GetString("Missions", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Recherche une chaîne localisée semblable à Module Hauteur.
         /// </summary>
         public static string ModuleHeight {
@@ -1650,6 +1704,15 @@ namespace StaticResource {
         public static string MParticiple {
             get {
                 return ResourceManager.GetString("MParticiple", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Musées.
+        /// </summary>
+        public static string Museums {
+            get {
+                return ResourceManager.GetString("Museums", resourceCulture);
             }
         }
         
@@ -2203,6 +2266,15 @@ namespace StaticResource {
         }
         
         /// <summary>
+        ///   Recherche une chaîne localisée semblable à Photographies.
+        /// </summary>
+        public static string Photographs {
+            get {
+                return ResourceManager.GetString("Photographs", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Recherche une chaîne localisée semblable à Phrase.
         /// </summary>
         public static string Phrase {
@@ -2248,11 +2320,30 @@ namespace StaticResource {
         }
         
         /// <summary>
-        ///   Recherche une chaîne localisée semblable à Présentation Projet HISTOCHTEXT.
+        ///   Recherche une chaîne localisée semblable à La présentation.
         /// </summary>
         public static string Presentation {
             get {
                 return ResourceManager.GetString("Presentation", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Présentation sur
+        ///TochPhase.
+        /// </summary>
+        public static string PresentationPhrase {
+            get {
+                return ResourceManager.GetString("PresentationPhrase", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Présentation Projet HISTOCHTEXT.
+        /// </summary>
+        public static string PresentationProjet {
+            get {
+                return ResourceManager.GetString("PresentationProjet", resourceCulture);
             }
         }
         
@@ -2509,6 +2600,15 @@ namespace StaticResource {
         }
         
         /// <summary>
+        ///   Recherche une chaîne localisée semblable à Séminaires.
+        /// </summary>
+        public static string Seminars {
+            get {
+                return ResourceManager.GetString("Seminars", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Recherche une chaîne localisée semblable à Envoyer.
         /// </summary>
         public static string Send {
@@ -2640,6 +2740,15 @@ namespace StaticResource {
         public static string Summary {
             get {
                 return ResourceManager.GetString("Summary", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Colloques.
+        /// </summary>
+        public static string Symposia {
+            get {
+                return ResourceManager.GetString("Symposia", resourceCulture);
             }
         }
         

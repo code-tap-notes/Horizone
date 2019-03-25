@@ -6,7 +6,7 @@
 
 <div class="content">
 
-    <h2> @StaticResource.Resources.AboutProject HISTOCHTEXT </h2>
+    <h2 class="main-cat"> @StaticResource.Resources.AboutProject HISTOCHTEXT </h2>
     <div class="autocontents">
         <p>
             <b>@StaticResource.Resources.Content (s): </b>
@@ -44,10 +44,10 @@
         </ul>
 
     </div>
-    <div class="content">
+    <div class="autocontents">
        
-            <h2 id="Aim">@StaticResource.Resources.Aim</h2>     
-            <p class="content">
+            <h4 id="Aim"><u>@StaticResource.Resources.Aim</u></h4>     
+            
                 @foreach (var item in Model)
                 {
                     if (item.Language.Symbol == Session[Horizone.Common.CommonConstants.CurrentCulture].ToString())
@@ -56,9 +56,9 @@
                     }
                    
                 }
-            </p>
-            <h2 id="Funding">@StaticResource.Resources.Funding</h2>
-            <p class="content">
+            
+            <h4 id="Funding"><u>@StaticResource.Resources.Funding</u></h4>
+           
                 @foreach (var item in Model)
                 {
                     if (item.Language.Symbol == Session[Horizone.Common.CommonConstants.CurrentCulture].ToString())
@@ -67,9 +67,9 @@
                     }
 
                 }
-            </p>
-            <h2 id="Programing">@StaticResource.Resources.Programing</h2>
-            <p class="content">
+            
+            <h4 id="Programing"><u>@StaticResource.Resources.Programing</u></h4>
+            
                 @foreach (var item in Model)
                 {
                     if (item.Language.Symbol == Session[Horizone.Common.CommonConstants.CurrentCulture].ToString())
@@ -77,9 +77,9 @@
                     @Html.Raw(item.Programing)
                     }
                 }
-                </p>
-            <h2 id="Feedback">@StaticResource.Resources.Feedback</h2>
-            <p class="content">
+               
+            <h4 id="Feedback"><u>@StaticResource.Resources.Feedback</u></h4>
+            
                 @foreach (var item in Model)
                 {
                     if (item.Language.Symbol == Session[Horizone.Common.CommonConstants.CurrentCulture].ToString())
@@ -87,14 +87,15 @@
                     @Html.Raw(item.Feedback)
                     }
                 }
-            </p>
-            <h2 id="HisTochTextPress">@StaticResource.Resources.HisTochTextPress</h2>
+            
+            <h4 id="HisTochTextPress"><u>@StaticResource.Resources.HisTochTextPress</u></h4>
             <ul>
                 <li>
                     @{Html.RenderAction("Presse", "Home");}                    
                 </li>
             </ul>
-        </div>
+    </div>
+  
  </div>
 
 

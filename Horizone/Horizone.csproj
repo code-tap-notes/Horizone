@@ -231,17 +231,9 @@
     <Compile Include="Controllers\FontNewsController.cs" />
     <Compile Include="Controllers\FontTochPhrasesController.cs" />
     <Compile Include="Controllers\VocabulariesController.cs" />
-    <Compile Include="Migrations\201903191633144_Init.cs" />
-    <Compile Include="Migrations\201903191633144_Init.Designer.cs">
-      <DependentUpon>201903191633144_Init.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201903211629026_AddAnalyseManuscript.cs" />
-    <Compile Include="Migrations\201903211629026_AddAnalyseManuscript.Designer.cs">
-      <DependentUpon>201903211629026_AddAnalyseManuscript.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201903211720083_ChangeAnalyseManuscript.cs" />
-    <Compile Include="Migrations\201903211720083_ChangeAnalyseManuscript.Designer.cs">
-      <DependentUpon>201903211720083_ChangeAnalyseManuscript.cs</DependentUpon>
+    <Compile Include="Migrations\201903251655000_Init.cs" />
+    <Compile Include="Migrations\201903251655000_Init.Designer.cs">
+      <DependentUpon>201903251655000_Init.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AboutProject.cs" />
@@ -349,6 +341,7 @@
     <Content Include="Image\bar1.jpg" />
     <Content Include="Image\bar2.jpg" />
     <Content Include="Image\basin.jpg" />
+    <Content Include="Image\carte.jpg" />
     <Content Include="Image\Central_Tian_Shan_mountains.jpg" />
     <Content Include="Image\China_Tarim.jpg" />
     <Content Include="Image\images.jpg" />
@@ -446,11 +439,6 @@
     <Content Include="Areas\BackOffice\Views\DashBoards\About.cshtml" />
     <Content Include="Areas\BackOffice\Views\DashBoards\Help.cshtml" />
     <Content Include="Areas\BackOffice\Views\DashBoards\Contact.cshtml" />
-    <Content Include="Areas\BackOffice\Views\Activities\Create.cshtml" />
-    <Content Include="Areas\BackOffice\Views\Activities\Delete.cshtml" />
-    <Content Include="Areas\BackOffice\Views\Activities\Details.cshtml" />
-    <Content Include="Areas\BackOffice\Views\Activities\Edit.cshtml" />
-    <Content Include="Areas\BackOffice\Views\Activities\Index.cshtml" />
     <Content Include="Areas\BackOffice\Views\DashBoards\AboutUs.cshtml" />
     <Content Include="Areas\BackOffice\Views\AboutProjects\Create.cshtml" />
     <Content Include="Areas\BackOffice\Views\AboutProjects\Delete.cshtml" />
@@ -544,11 +532,6 @@
     <Content Include="Areas\BackOffice\Views\Persons\Details.cshtml" />
     <Content Include="Areas\BackOffice\Views\Persons\Edit.cshtml" />
     <Content Include="Areas\BackOffice\Views\Persons\Index.cshtml" />
-    <Content Include="Areas\BackOffice\Views\Topics\Create.cshtml" />
-    <Content Include="Areas\BackOffice\Views\Topics\Delete.cshtml" />
-    <Content Include="Areas\BackOffice\Views\Topics\Details.cshtml" />
-    <Content Include="Areas\BackOffice\Views\Topics\Edit.cshtml" />
-    <Content Include="Areas\BackOffice\Views\Topics\Index.cshtml" />
     <Content Include="Areas\BackOffice\Views\TochStories\Create.cshtml" />
     <Content Include="Areas\BackOffice\Views\TochStories\Delete.cshtml" />
     <Content Include="Areas\BackOffice\Views\TochStories\Details.cshtml" />
@@ -569,6 +552,16 @@
     <Content Include="Areas\BackOffice\Views\AnalyseMaterials\Details.cshtml" />
     <Content Include="Areas\BackOffice\Views\AnalyseMaterials\Edit.cshtml" />
     <Content Include="Areas\BackOffice\Views\AnalyseMaterials\Index.cshtml" />
+    <Content Include="Areas\BackOffice\Views\Topics\Create.cshtml" />
+    <Content Include="Areas\BackOffice\Views\Topics\Delete.cshtml" />
+    <Content Include="Areas\BackOffice\Views\Topics\Details.cshtml" />
+    <Content Include="Areas\BackOffice\Views\Topics\Edit.cshtml" />
+    <Content Include="Areas\BackOffice\Views\Topics\Index.cshtml" />
+    <Content Include="Areas\BackOffice\Views\Activities\Create.cshtml" />
+    <Content Include="Areas\BackOffice\Views\Activities\Delete.cshtml" />
+    <Content Include="Areas\BackOffice\Views\Activities\Details.cshtml" />
+    <Content Include="Areas\BackOffice\Views\Activities\Edit.cshtml" />
+    <Content Include="Areas\BackOffice\Views\Activities\Index.cshtml" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\cldr.js" />
     <Content Include="Scripts\cldr\event.js" />
@@ -898,14 +891,8 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201903191633144_Init.resx">
-      <DependentUpon>201903191633144_Init.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201903211629026_AddAnalyseManuscript.resx">
-      <DependentUpon>201903211629026_AddAnalyseManuscript.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201903211720083_ChangeAnalyseManuscript.resx">
-      <DependentUpon>201903211720083_ChangeAnalyseManuscript.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201903251655000_Init.resx">
+      <DependentUpon>201903251655000_Init.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

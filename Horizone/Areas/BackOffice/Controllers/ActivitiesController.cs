@@ -6,20 +6,18 @@ using System.Linq;
 using System.Net;
 using System.Web;
 using System.Web.Mvc;
-using Horizone.Controllers;
 using Horizone.Models;
 
 namespace Horizone.Areas.BackOffice.Controllers
 {
-    [Authorize(Roles = "Collaborator,Admin")]
-    public class ActivitiesController : BaseController
+    public class ActivitiesController : Controller
     {
-      
+        private ApplicationDbContext db = new ApplicationDbContext();
 
         // GET: BackOffice/Activities
         public ActionResult Index()
         {
-            var activitys = db.Activitys.Include("Language");
+            var activitys = db.Activitys.Include(a => a.Language).Include(a => a.Topic);
             return View(activitys.ToList());
         }
 
@@ -41,8 +39,8 @@ namespace Horizone.Areas.BackOffice.Controllers
         // GET: BackOffice/Activities/Create
         public ActionResult Create()
         {
-            ViewBag.LanguageId = new SelectList(db.Languages, "Id", "Name");
-           
+            ViewBag.LanguageId = new SelectList(db.Languages, "Id", "Symbol");
+            ViewBag.TopicId = new SelectList(db.Topics, "Id", "TopicEn");
             return View();
         }
 
@@ -51,7 +49,7 @@ namespace Horizone.Areas.BackOffice.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,DateofActivity,Place,NameActivity,Description,UlrActivity,Picture,LanguageId")] Activity activity)
+        public ActionResult Create([Bind(Include = "Id,DateofActivity,Place,NameActivity,Description,UlrActivity,Picture,TopicId,LanguageId")] Activity activity)
         {
             if (ModelState.IsValid)
             {
@@ -60,7 +58,8 @@ namespace Horizone.Areas.BackOffice.Controllers
                 return RedirectToAction("Index");
             }
 
-            ViewBag.LanguageId = new SelectList(db.Languages, "Id", "Name", activity.LanguageId);
+            ViewBag.LanguageId = new SelectList(db.Languages, "Id", "Symbol", activity.LanguageId);
+            ViewBag.TopicId = new SelectList(db.Topics, "Id", "TopicEn", activity.TopicId);
             return View(activity);
         }
 
@@ -76,7 +75,8 @@ namespace Horizone.Areas.BackOffice.Controllers
             {
                 return HttpNotFound();
             }
-            ViewBag.LanguageId = new SelectList(db.Languages, "Id", "Name", activity.LanguageId);
+            ViewBag.LanguageId = new SelectList(db.Languages, "Id", "Symbol", activity.LanguageId);
+            ViewBag.TopicId = new SelectList(db.Topics, "Id", "TopicEn", activity.TopicId);
             return View(activity);
         }
 
@@ -85,7 +85,7 @@ namespace Horizone.Areas.BackOffice.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,DateofActivity,Place,NameActivity,Description,UlrActivity,Picture,LanguageId")] Activity activity)
+        public ActionResult Edit([Bind(Include = "Id,DateofActivity,Place,NameActivity,Description,UlrActivity,Picture,TopicId,LanguageId")] Activity activity)
         {
             if (ModelState.IsValid)
             {
@@ -93,7 +93,8 @@ namespace Horizone.Areas.BackOffice.Controllers
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            ViewBag.LanguageId = new SelectList(db.Languages, "Id", "Name", activity.LanguageId);
+            ViewBag.LanguageId = new SelectList(db.Languages, "Id", "Symbol", activity.LanguageId);
+            ViewBag.TopicId = new SelectList(db.Topics, "Id", "TopicEn", activity.TopicId);
             return View(activity);
         }
 
@@ -122,6 +123,14 @@ namespace Horizone.Areas.BackOffice.Controllers
             db.SaveChanges();
             return RedirectToAction("Index");
         }
-        
+
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing)
+            {
+                db.Dispose();
+            }
+            base.Dispose(disposing);
+        }
     }
 }

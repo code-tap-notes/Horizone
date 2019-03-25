@@ -11,96 +11,108 @@
     <link href="~/Content/layout.css" rel="stylesheet" />
 </head>
 
-<body style="background-color:antiquewhite" class="parallax">
+<body style="background-color:antiquewhite; box-shadow:0 2px 2px rgba(0,0,0, .5);" class="parallax">
+
+
     <div>
         <img style="width:100%" src="~/Image/bar1.jpg" class="logo" />
     </div>
 
     <div class="navbar navbar-expand-sm navbar-light navbar-fixed-top" style="color:Highlight; font-size:medium; background-color: lightgrey;">
-            <div class="container">
-                <div class="navbar-header" style="font-size:medium; font-weight:bold;">
-                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
-                    @Html.ActionLink("HISTOCHTEXT", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
-                </div>
-                <div class="navbar-collapse collapse" style="  font-size:medium; color:Highlight !important">
-                    <ul class="nav navbar-nav">
-                        <li>@Html.ActionLink(StaticResource.Resources.Home, "Index", "Home")</li>
-                    </ul>
-                    <ul class="nav navbar-right">
-                        <li><a href="@Url.Action("index","dashboards",new {area="backoffice" })">☆</a> </li>
-                    </ul>
-
-                    @Html.Partial("_LoginPartial")
-                </div>
+        <div class="container">
+            <div class="navbar-header" style="font-size:medium; font-weight:bold;">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                @Html.ActionLink("HISTOCHTEXT", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
             </div>
+            <div class="navbar-collapse collapse" style="  font-size:medium; color:Highlight !important">
+                <ul class="nav navbar-nav">
+                    <li>@Html.ActionLink(StaticResource.Resources.Home, "Index", "Home")</li>
+                </ul>
+                <ul class="nav navbar-right">
+                    <li><a href="@Url.Action("index","dashboards",new {area="backoffice" })">☆</a> </li>
+                </ul>
+                @Html.Partial("_LoginPartial")
+            </div>
+        </div>
 
     </div>
-        <div class="navbar-collapse collapse" style="background-color:lightgrey; font-size:medium; color:Highlight;font-weight:bold;">
-            <ul class="nav navbar-nav">
-                <li>@Html.ActionLink(StaticResource.Resources.AboutProject, "About", "Home")</li>
-                <li>@Html.ActionLink(@StaticResource.Resources.TochPhrase, "Index", "FontTochPhrases")</li>
-                <li>@Html.ActionLink(@StaticResource.Resources.TochStory, "TochHistoire", "Home")</li>
-                <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">@StaticResource.Resources.Manuscript <span class="caret"></span></a>
-                    <ul class="dropdown-menu">
-                        <li><a href="@Url.Action("Index", "FontManuscripts")"> @StaticResource.Resources.Manuscript - @StaticResource.Resources.Text</a></li>
-                        <li><a href="@Url.Action("AnalyseMaterial", "FontManuscripts")">@StaticResource.Resources.AnalyseMaterial</a></li>
-                    </ul>
-                </li>
-                <li>@Html.ActionLink(@StaticResource.Resources.Vocabulary, "Vocabulaire", "Vocabularies")</li>
-                <li>@Html.ActionLink(@StaticResource.Resources.News_Blog, "Index", "FontNews")</li>
-                <li>@Html.ActionLink(@StaticResource.Resources.Activity, "Activity", "Home")</li>
-                <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">@StaticResource.Resources.Activity <span class="caret"></span></a>
-                    <ul class="dropdown-menu">
-                        <li><a href="@Url.Action("Index", "FontManuscripts")"> @StaticResource.Resources.Publications</a></li>
-                        <li><a href="@Url.Action("AnalyseMaterial", "FontManuscripts")">Conférences, Séminaires</a></li>
-                        <li><a href="@Url.Action("AnalyseMaterial", "FontManuscripts")"> Colloques</a></li>
-                        <li><a href="@Url.Action("AnalyseMaterial", "FontManuscripts")"> Missions</a></li>
-                    </ul>
-                </li>
-                <li>@Html.ActionLink(@StaticResource.Resources.Bibliography, "Bibliographie", "FontBibliographies")</li>
-                <li>@Html.ActionLink(@StaticResource.Resources.Help, "Aide", "Home")</li>
-                <li class="dropdown">
-                    @{Html.RenderAction("Mainmenu", "Home");}
-                </li>
-            </ul>
-            <!--Choice language-->
-            <ul class="nav navbar-right">
-                <li>
-                </li>
-                <li>
-                    @using (Html.BeginForm("ChangeCulture", "Base"))
-                    {
-                        @Html.Hidden("returnUrl", Request.RawUrl)
-                        @Html.DropDownList("ddlCulture", new SelectList(new[] {
-                            new {value="fr",text=StaticResource.Resources.French},
-                            new {value="en",text=StaticResource.Resources.English},
-                            new {value="zh",text=StaticResource.Resources.Chinese},
-                           // new {value="vi",text=StaticResource.Resources.VietNamese},
-                           // new {value="ja",text=StaticResource.Resources.Japanese},
-                           // new {value="de",text=StaticResource.Resources.German},
+    <div class="navbar-collapse collapse" style="background-color: #CF9; font-size: inherit; color:Highlight;font-weight:bold;text-shadow:0 2px 2px rgba(255,255,255, 0.7);">
+        <ul class="nav navbar-nav">
+            <li>@Html.ActionLink(StaticResource.Resources.AboutProject, "About", "Home")</li>
+            <li>@Html.ActionLink(@StaticResource.Resources.TochPhrase, "Index", "FontTochPhrases")</li>
+            <li>@Html.ActionLink(@StaticResource.Resources.TochStory, "TochHistoire", "Home")</li>
+            <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">@StaticResource.Resources.Manuscript <span class="caret"></span></a>
+                <ul class="dropdown-menu">
+                    <li><a href="@Url.Action("Index", "FontManuscripts")"> @StaticResource.Resources.Manuscript - @StaticResource.Resources.Text</a></li>
+                    <li><a href="@Url.Action("AnalyseMaterial", "FontManuscripts")">@StaticResource.Resources.AnalyseMaterial</a></li>
+                </ul>
+            </li>
+            <li>@Html.ActionLink(@StaticResource.Resources.Vocabulary, "Vocabulaire", "Vocabularies")</li>
+            <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">@StaticResource.Resources.News_Blog <span class="caret"></span></a>
+                <ul class="dropdown-menu">
+                    <li><a href="@Url.Action("Index", "FontNews")"> @StaticResource.Resources.Publications</a></li>
+                    <li><a href="@Url.Action("Index", "FontNews")"> @StaticResource.Resources.Conferences , @StaticResource.Resources.Symposia</a></li>
+                    <li><a href="@Url.Action("Index", "FontNews")">  @StaticResource.Resources.Expositions , @StaticResource.Resources.Museums </a></li>
+                    <li><a href="@Url.Action("Index", "FontNews")">  @StaticResource.Resources.Media</a></li>
+                </ul>
+            </li>
+            <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">@StaticResource.Resources.Activity <span class="caret"></span></a>
+                <ul class="dropdown-menu">
+                    <li><a href="@Url.Action("Activity", "Home")"> @StaticResource.Resources.Publications</a></li>
+                    <li><a href="@Url.Action("Activity", "Home")"> @StaticResource.Resources.Conferences , @StaticResource.Resources.Seminars</a></li>
+                    <li><a href="@Url.Action("Activity", "Home")">  @StaticResource.Resources.Symposia</a></li>
+                    <li><a href="@Url.Action("Activity", "Home")">  @StaticResource.Resources.Missions</a></li>
+                </ul>
+            </li>
 
-                        }, "value", "text", Session[Horizone.Common.CommonConstants.CurrentCulture]),new { onchange="this.form.submit();"})
-                    }
+            <li class="dropdown">
+                @{Html.RenderAction("Mainmenu", "Home");}
+            </li>
+            <li>@Html.ActionLink(@StaticResource.Resources.Bibliography, "Bibliographie", "FontBibliographies")</li>
+            <li>@Html.ActionLink(@StaticResource.Resources.Help, "Aide", "Home")</li>
+        </ul>
+        <ul class="nav navbar-right">
+            <!--Choice language-->
+            @using (Html.BeginForm("ChangeCulture", "Base"))
+            {
+                <li style="background-color: gray !important; color: darkgreen !important">
+                    @Html.Hidden("returnUrl", Request.RawUrl)
+                    @Html.DropDownList("ddlCulture", new SelectList(new[] {
+                        new {value="fr",text=StaticResource.Resources.French},
+                        new {value="en",text=StaticResource.Resources.English},
+                        new {value="zh",text=StaticResource.Resources.Chinese},
+                       // new {value="vi",text=StaticResource.Resources.VietNamese},
+                       // new {value="ja",text=StaticResource.Resources.Japanese},
+                       // new {value="de",text=StaticResource.Resources.German},
+
+                    }, "value", "text", Session[Horizone.Common.CommonConstants.CurrentCulture]),new { onchange="this.form.submit();"})
                 </li>
-            </ul>
-        </div>
-        <div class="container body-content">
+            }
+        </ul>        
+    </div>
+    <div class="navbar-collapse collapse" >
+
+        
+    </div>
+    <div class="container body-content">
             <hr />
             @RenderBody()
             <hr />
             <footer>
-                <p>&copy; @DateTime.Now.Year - Projet HISTOCHTEXT</p>
+                <p>&copy; @DateTime.Now.Year - @StaticResource.Resources.Project</p>
             </footer>
-        </div>
+    </div>
 
         @Scripts.Render("~/bundles/jquery")
         @Scripts.Render("~/bundles/bootstrap")
         @RenderSection("scripts", required: false)
+
 </body>
 </html>

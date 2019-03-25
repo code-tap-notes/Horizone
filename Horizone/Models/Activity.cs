@@ -34,6 +34,12 @@ namespace Horizone.Models
         [Display(Name = "Picture", ResourceType = typeof(StaticResource.Resources))]
         public string Picture { get; set; }
 
+        [Display(Name = "Topic", ResourceType = typeof(StaticResource.Resources))]
+        public int TopicId { get; set; }
+
+        [ForeignKey("TopicId")]
+        public Topic Topic { get; set; }
+
         [Display(Name = "Language", ResourceType = typeof(StaticResource.Resources))]
         public int LanguageId { get; set; }
 

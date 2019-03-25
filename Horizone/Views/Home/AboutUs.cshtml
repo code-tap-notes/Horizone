@@ -20,55 +20,59 @@
         </ul>
 
     </div>
+
+    <h2>   @StaticResource.Resources.Team </h2>
     <div class="autocontents">
-        <h2>   @StaticResource.Resources.Team </h2>
         @foreach (var item in Model)
         {
             if (item.Team)
-            {
-            <ul>
-                <li>
-                    <h4 class="underline">@Html.DisplayFor(modelItem => item.Title) @Html.DisplayFor(modelItem => item.LastName)  @Html.DisplayFor(modelItem => item.FirstName)</h4>
-                    <div class="row">
-                        <div class="col-lg-9">
-                            <p>
-                                &diams; @StaticResource.Resources.Summary  @Html.Raw(item.Summary)
-                            </p>
-                            <table>
-                                <tr>
-                                    <th> &diams; @StaticResource.Resources.CVName -  </th>
-                                    <th>  Link </th>
-                                </tr>
-                                <tr>
-                                    <td>@item.CV   </td>
-                                    <td>@Html.ActionLink("DownLoad", "Home", new { cvName = item.CV }) </td>
-                                </tr>
-                            </table>
-                             
-                            <br />
-                            <p>
-                                &diams; @StaticResource.Resources.Publications
-                            </p>
-                            @foreach (var item1 in item.Publications)
-                            {
-                                <a href=@item1.UlrBibliography>&#x27A4;@item1.Title &raquo;</a>
+            {                
+                <ul>
+                    <li>
+                        <div class="autocontents">                        
+                        <h4 class="underline">@Html.DisplayFor(modelItem => item.Title) @Html.DisplayFor(modelItem => item.LastName)  @Html.DisplayFor(modelItem => item.FirstName)</h4>
+                        <div class="row">
+                            <div class="col-lg-9">
+                                <p>
+                                    &diams; @StaticResource.Resources.Summary  @Html.Raw(item.Summary)
+                                </p>
+                                <table>
+                                    <tr>
+                                        <th> &diams; @StaticResource.Resources.CVName -  </th>
+                                        <th>  Link </th>
+                                    </tr>
+                                    <tr>
+                                        <td>@item.CV   </td>
+                                        <td>@Html.ActionLink("DownLoad", "Home", new { cvName = item.CV }) </td>
+                                    </tr>
+                                </table>
+
                                 <br />
-                            }
-                            <br />
-                            <a href="mailto:@item.Email" )>&diams; @StaticResource.Resources.SendEmail       </a>
-                            <br />
+                                <p>
+                                    &diams; @StaticResource.Resources.Publications
+                                </p>
+                                @foreach (var item1 in item.Publications)
+                                {
+                                    <a href=@item1.UlrBibliography>&#x27A4;@item1.Title &raquo;</a>
+                                    <br />
+                                }
+                                <br />
+                                <a href="mailto:@item.Email" )>&diams; @StaticResource.Resources.SendEmail       </a>
+                                <br />
+                            </div>
+                            <div class="col-lg-3">
+                                @if (item.ImageCollaborations?.Count > 0)
+                                {
+                                    <img src="data:@item.ImageCollaborations.First().ContentType;base64,@Convert.ToBase64String(item.ImageCollaborations.First().Content)" alt="Photo" style="width:30%" />
+                                }
+                            </div>
+                        </div>                        
                         </div>
-                        <div class="col-lg-3">
-                            @if (item.ImageCollaborations?.Count > 0)
-                            {
-                                <img src="data:@item.ImageCollaborations.First().ContentType;base64,@Convert.ToBase64String(item.ImageCollaborations.First().Content)" alt="Photo" style="width:30%" />
-                            }                           
-                        </div>
-                    </div>
-                </li>
-   
-            </ul>
+                    </li>
+
+                </ul>
             }
         }
     </div>
 </div>
+

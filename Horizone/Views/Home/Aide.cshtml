@@ -4,10 +4,11 @@
 }
 
 <h2>@StaticResource.Resources.Help</h2>
-Cartes:
+<div class="autocontents"> 
+    <ul>
+        <li>@Html.ActionLink(StaticResource.Resources.Maps, "AboutUs", "Home")</li>
+        <li>@Html.ActionLink(StaticResource.Resources.Photographs, "Collaboration", "Home")</li>
+        <li>@Html.ActionLink(StaticResource.Resources.Glossary, "Contact", "Home")</li>
+    </ul>
 
-Photographies:
-
-Glossaire:
-<hr />
-Pour collaborateurs :
+</div>

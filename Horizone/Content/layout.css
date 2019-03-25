@@ -12,22 +12,46 @@ ul{ list-style:none}
 .images_news{ width:120px; margin:0 7px 7px 0}
 .tlq{ background:url(../images/bg_dot_gray_3x3.gif) no-repeat left 5px; padding-left:10px; height:auto}
 .tlq a{ color:#999; font-size:11px; font-weight:bold; line-height:140%}
-.tlq a:hover{ color:#900;}
+.tlq a:hover{ color: #900;}
 .learnmore{ color:#666; font-size:11px;}
 .form-control {
     width: 100% !important;
 }
+/*Title page*/
+h2.main-cat {
+    
+    color: #343a89;
+    font-weight: bold;
+    display: block;
+    height: 30px;
+    padding: 5px 0 0 10px;
+    font-size: 24px;
+}
 
+/*Color menu bar boostrap */
+ul.nav a:hover {
+    color: slateblue !important;
+    background-color: #ebfdc2;
+    font-weight: bold;
+}
+/*Color menu dropdown */
+ul.dropdown-menu {
+    background-color: #ebfdc2;
+}
 
 .newinputwidth {
     width: 2000px !important;
 }
+/*Qui sommes nous*/
 .autocontents {
     border: solid 1px #D2B48C;
     margin: 20px 0;
     padding: 10px;
+    box-shadow: 0 2px 2px rgba(0,0,0, .5);
 }
 .content {
+    border-top: solid 2px #a0d606;
+    border-top-style: ridge;
     font-size: 12px;
     font-family: "Arial Unicode MS", Arial, Helvetica, sans-serif;
     letter-spacing: 0.6px;
@@ -35,6 +59,8 @@ ul{ list-style:none}
     color: darkslategray;
     text-align: justify;
     line-height: 1.6;
+    padding: 2px 2px 2px 2px;
+    box-shadow: 0 2px 2px rgba(0,0,0, .5);
 }
 .content-title {
     border-top: solid 1px #900;
@@ -126,7 +152,7 @@ ul{ list-style:none}
 	#content-vp #content-main .box-cat{ margin-right:5px}
 	#content-vp .cat{ background:url(../images/bg_1x28.gif) repeat-x; height:30px; padding:0 0 0 10px; margin:7px 0 10px 0}
 	#content-vp .main-cat{ width:auto; float:left}
-	#content-vp .main-cat a{ border-top:solid 1px saddlebrown; color: saddlebrown; font-weight:bold; display:block; height:30px; padding:5px 0 0 10px; font-size:20px}
+	#content-vp .main-cat a{ border-top:solid 2px #a0d606; color: #343a89; font-weight:bold; display:block; height:30px; padding:5px 0 0 10px; font-size:20px}
 	#content-vp #content-main .child-cat{ width:79%; margin:6px 0 0 5px; float:left}
 	#content-vp #content-main .child-cat a{ font-weight:bold; height:30px;  font-size:12px; color:#333; border-right:1px solid #E2E2E3; font-size:11px; padding: 0 3px 0 3px}
 	#content-vp #content-main .cat-content .col1{ width:75%; float:left}

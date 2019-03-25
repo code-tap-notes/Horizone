@@ -8,98 +8,115 @@
 <div>
     <h4>@StaticResource.Resources.Details</h4>
     <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.Collection)
-        </dt>
+    <div class="row">
+    <div class="col-md-6">
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.Collection)
+            </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.Collection)
-        </dd>
+            <dd>
+                @Html.DisplayFor(model => model.Collection)
+            </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Siglum)
-        </dt>
+            <dt>
+                @Html.DisplayNameFor(model => model.Siglum)
+            </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.Siglum)
-        </dd>
+            <dd>
+                @Html.DisplayFor(model => model.Siglum)
+            </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Joint)
-        </dt>
+            <dt>
+                @Html.DisplayNameFor(model => model.Joint)
+            </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.Joint)
-        </dd>
+            <dd>
+                @Html.DisplayFor(model => model.Joint)
+            </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.OtherSiglum)
-        </dt>
+            <dt>
+                @Html.DisplayNameFor(model => model.OtherSiglum)
+            </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.OtherSiglum)
-        </dd>
+            <dd>
+                @Html.DisplayFor(model => model.OtherSiglum)
+            </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.ExpeditionCode)
-        </dt>
+            <dt>
+                @Html.DisplayNameFor(model => model.ExpeditionCode)
+            </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.ExpeditionCode)
-        </dd>
+            <dd>
+                @Html.DisplayFor(model => model.ExpeditionCode)
+            </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.MainFindSpot)
-        </dt>
+            <dt>
+                @Html.DisplayNameFor(model => model.MainFindSpot)
+            </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.MainFindSpot)
-        </dd>
+            <dd>
+                @Html.DisplayFor(model => model.MainFindSpot) &#8594;
+                <a onclick="insertImage('imageCarte','https://n7.alamy.com/zooms/3c27f77bd8394817bb907c31eb574ba8/yemen-hadramawt-governorate-tarim-sad-omar-sheikh-al-kaf-palace-bah1c2.jpg');">@StaticResource.Resources.SeeAlso @StaticResource.Resources.Maps</a>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.SpecificFindSpot)
-        </dt>
+            </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.SpecificFindSpot)
-        </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.SpecificFindSpot)
+            </dt>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.GeneralState)
-        </dt>
+            <dd>
+                @Html.DisplayFor(model => model.SpecificFindSpot)
+            </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.GeneralState)
-        </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.GeneralState)
+            </dt>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Description)
-        </dt>
+            <dd>
+                @Html.DisplayFor(model => model.GeneralState)
+            </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.Description)
-        </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.Description)
+            </dt>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Remark)
-        </dt>
+            <dd>
+                @Html.DisplayFor(model => model.Description)
+            </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.Remark)
-        </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.Remark)
+            </dt>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.LeafNumber)
-        </dt>
+            <dd>
+                @Html.DisplayFor(model => model.Remark)
+            </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.LeafNumber)
-        </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.LeafNumber)
+            </dt>
 
-    </dl>
+            <dd>
+                @Html.DisplayFor(model => model.LeafNumber)
+            </dd>
+
+        </dl>
+    </div>
+
+
+    <div class="col-md-6">
+        <img style="width:350px" id="imageCarte" src="~/Image/21.jpg" />
+    </div>
+   </div>
 </div>
 <p>
     @Html.ActionLink(StaticResource.Resources.Return, "Details", new { id = Model.Id }, new { @class = "btn btn-primary" })
 </p>
 
+    <script>
+        function insertImage(imageCarte,ulr) {
+            document.getElementById(imageCarte).src = ulr;
+        }
+    </script>
+    

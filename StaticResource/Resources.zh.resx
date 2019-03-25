@@ -246,7 +246,7 @@
   <data name="PhoneNumber" xml:space="preserve">
     <value>电话号码</value>
   </data>
-  <data name="Presentation" xml:space="preserve">
+  <data name="PresentationProjet" xml:space="preserve">
     <value>介绍HISTOCHTEXT项目</value>
   </data>
   <data name="Project" xml:space="preserve">
@@ -1112,5 +1112,42 @@
   </data>
   <data name="Print" xml:space="preserve">
     <value>打印</value>
+  </data>
+  <data name="Presentation" xml:space="preserve">
+    <value>介绍</value>
+  </data>
+  <data name="PresentationPhrase" xml:space="preserve">
+    <value>介绍
+TochPhase</value>
+  </data>
+  <data name="Conferences" xml:space="preserve">
+    <value>会议</value>
+  </data>
+  <data name="Expositions" xml:space="preserve">
+    <value>展销会</value>
+  </data>
+  <data name="Glossary" xml:space="preserve">
+    <value>词汇表</value>
+  </data>
+  <data name="Maps" xml:space="preserve">
+    <value>地图</value>
+  </data>
+  <data name="Media" xml:space="preserve">
+    <value>媒体</value>
+  </data>
+  <data name="Missions" xml:space="preserve">
+    <value>使命</value>
+  </data>
+  <data name="Museums" xml:space="preserve">
+    <value>博物馆</value>
+  </data>
+  <data name="Photographs" xml:space="preserve">
+    <value>照片</value>
+  </data>
+  <data name="Seminars" xml:space="preserve">
+    <value>研讨会</value>
+  </data>
+  <data name="Symposia" xml:space="preserve">
+    <value>座谈会</value>
   </data>
 </root>

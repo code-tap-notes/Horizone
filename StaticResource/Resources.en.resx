@@ -183,7 +183,7 @@
   <data name="PhoneNumber" xml:space="preserve">
     <value>Phone Number</value>
   </data>
-  <data name="Presentation" xml:space="preserve">
+  <data name="PresentationProjet" xml:space="preserve">
     <value>HIXTOCHTEXT Project Presentation</value>
   </data>
   <data name="PublicationDate" xml:space="preserve">
@@ -1109,5 +1109,42 @@
   </data>
   <data name="Print" xml:space="preserve">
     <value>Print</value>
+  </data>
+  <data name="Presentation" xml:space="preserve">
+    <value>Presentation</value>
+  </data>
+  <data name="PresentationPhrase" xml:space="preserve">
+    <value>Presentation about
+TochPhase</value>
+  </data>
+  <data name="Conferences" xml:space="preserve">
+    <value>Conferences</value>
+  </data>
+  <data name="Expositions" xml:space="preserve">
+    <value>Expositions</value>
+  </data>
+  <data name="Glossary" xml:space="preserve">
+    <value>Glossary</value>
+  </data>
+  <data name="Maps" xml:space="preserve">
+    <value>Maps</value>
+  </data>
+  <data name="Media" xml:space="preserve">
+    <value>Media</value>
+  </data>
+  <data name="Missions" xml:space="preserve">
+    <value>Missions</value>
+  </data>
+  <data name="Museums" xml:space="preserve">
+    <value>Museums</value>
+  </data>
+  <data name="Photographs" xml:space="preserve">
+    <value>Photographs</value>
+  </data>
+  <data name="Seminars" xml:space="preserve">
+    <value>Seminars</value>
+  </data>
+  <data name="Symposia" xml:space="preserve">
+    <value>Symposia</value>
   </data>
 </root>

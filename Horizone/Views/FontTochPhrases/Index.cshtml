@@ -5,7 +5,11 @@
 }
 
 <h2>@StaticResource.Resources.TochPhrase</h2>
-
+<div class="autocontents">
+    <p>
+        <b> @StaticResource.Resources.PresentationPhrase </b>
+    </p>        
+</div>
 <div id="search">
 
     <form class="form-group row" action="@Url.Action("Search", "FontTochPhrases")" method="post" enctype="multipart/form-data">
@@ -51,10 +55,10 @@
         </th>
         <th>
             @Html.DisplayNameFor(model => model.English)
-        </th>       
+        </th>
         <th>
             @Html.DisplayNameFor(model => model.DerivedFrom)
-        </th>       
+        </th>
 
         <th></th>
     </tr>
@@ -74,10 +78,10 @@
             <td>
                 @Html.DisplayFor(modelItem => item.English)
             </td>
-            
+
             <td>
                 @Html.DisplayFor(modelItem => item.DerivedFrom)
-            </td>            
+            </td>
 
             <td>
                 @Html.ActionLink(@StaticResource.Resources.Details, "Details", new { id = item.Id }, new { @class = "btn btn-info", style = "width:90px" })

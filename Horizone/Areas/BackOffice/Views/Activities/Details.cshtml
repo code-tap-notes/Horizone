@@ -1,25 +1,33 @@
 ﻿@model Horizone.Models.Activity
 
 @{
-    ViewBag.Title = @StaticResource.Resources.Details;
+    ViewBag.Title = "Details";
 }
 
-<h2>@StaticResource.Resources.Details</h2>
+<h2>Details</h2>
 
 <div>
-    <h4>@StaticResource.Resources.Activity</h4>
+    <h4>Activity</h4>
     <hr />
     <dl class="dl-horizontal">
         <dt>
-            @StaticResource.Resources.Language
+            @Html.DisplayNameFor(model => model.Language.Symbol)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.Language.Name)
+            @Html.DisplayFor(model => model.Language.Symbol)
         </dd>
 
         <dt>
-            @StaticResource.Resources.DateActivity
+            @Html.DisplayNameFor(model => model.Topic.TopicEn)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Topic.TopicEn)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DateofActivity)
         </dt>
 
         <dd>
@@ -27,7 +35,7 @@
         </dd>
 
         <dt>
-            @StaticResource.Resources.Place
+            @Html.DisplayNameFor(model => model.Place)
         </dt>
 
         <dd>
@@ -35,7 +43,7 @@
         </dd>
 
         <dt>
-            @StaticResource.Resources.Activity
+            @Html.DisplayNameFor(model => model.NameActivity)
         </dt>
 
         <dd>
@@ -43,7 +51,7 @@
         </dd>
 
         <dt>
-            @StaticResource.Resources.Description
+            @Html.DisplayNameFor(model => model.Description)
         </dt>
 
         <dd>
@@ -51,7 +59,7 @@
         </dd>
 
         <dt>
-            @StaticResource.Resources.Link
+            @Html.DisplayNameFor(model => model.UlrActivity)
         </dt>
 
         <dd>
@@ -59,7 +67,7 @@
         </dd>
 
         <dt>
-            @StaticResource.Resources.Picture
+            @Html.DisplayNameFor(model => model.Picture)
         </dt>
 
         <dd>
@@ -69,6 +77,6 @@
     </dl>
 </div>
 <p>
-    @Html.ActionLink(StaticResource.Resources.Edit, "Edit", new { id = Model.Id }, new { @class = "btn btn-info" }) |
-    @Html.ActionLink(StaticResource.Resources.Return, "Index", null, new { @class = "btn btn-primary" })
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
 </p>

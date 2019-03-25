@@ -15,12 +15,22 @@ namespace Horizone.Models
         [Display(Name = "Topic", ResourceType = typeof(StaticResource.Resources))]
         [Required(ErrorMessageResourceName = "FieldRequired", ErrorMessageResourceType = typeof(StaticResource.Resources))]             
         [StringLength(40, MinimumLength = 1, ErrorMessageResourceName = "MaxLength40", ErrorMessageResourceType = typeof(StaticResource.Resources))]
-        public string TopicName { get; set; }
-              
-        [Display(Name = "Language", ResourceType = typeof(StaticResource.Resources))]
-        public int LanguageId { get; set; }
+        public string TopicEn { get; set; }
 
-        [ForeignKey("LanguageId")]
-        public Language Language { get; set; }
+        [Display(Name = "Topic", ResourceType = typeof(StaticResource.Resources))]
+        [Required(ErrorMessageResourceName = "FieldRequired", ErrorMessageResourceType = typeof(StaticResource.Resources))]
+        [StringLength(40, MinimumLength = 1, ErrorMessageResourceName = "MaxLength40", ErrorMessageResourceType = typeof(StaticResource.Resources))]
+        public string TopicFr { get; set; }
+
+        [Display(Name = "Topic", ResourceType = typeof(StaticResource.Resources))]
+        [Required(ErrorMessageResourceName = "FieldRequired", ErrorMessageResourceType = typeof(StaticResource.Resources))]
+        [StringLength(40, MinimumLength = 1, ErrorMessageResourceName = "MaxLength40", ErrorMessageResourceType = typeof(StaticResource.Resources))]
+        public string TopicZh { get; set; }
+
+        [Display(Name = "Activity", ResourceType = typeof(StaticResource.Resources))]
+        public bool Activity { get; set; }
+
+        [Display(Name = "News", ResourceType = typeof(StaticResource.Resources))]
+        public bool News { get; set; }
     }
 }
