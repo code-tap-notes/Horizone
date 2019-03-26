@@ -1147,4 +1147,22 @@ TochPhase</value>
   <data name="Symposia" xml:space="preserve">
     <value>Symposia</value>
   </data>
+  <data name="AssociatedResearcher" xml:space="preserve">
+    <value>Associated Researcher</value>
+  </data>
+  <data name="Latin" xml:space="preserve">
+    <value>Latin</value>
+  </data>
+  <data name="Photography" xml:space="preserve">
+    <value>Photography</value>
+  </data>
+  <data name="TopicEn" xml:space="preserve">
+    <value>English topic</value>
+  </data>
+  <data name="TopicFr" xml:space="preserve">
+    <value>French topic</value>
+  </data>
+  <data name="TopicZh" xml:space="preserve">
+    <value>Chinese topic</value>
+  </data>
 </root>

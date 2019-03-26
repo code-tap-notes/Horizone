@@ -235,6 +235,14 @@
     <Compile Include="Migrations\201903251655000_Init.Designer.cs">
       <DependentUpon>201903251655000_Init.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201903262104286_addTableVisualAid.cs" />
+    <Compile Include="Migrations\201903262104286_addTableVisualAid.Designer.cs">
+      <DependentUpon>201903262104286_addTableVisualAid.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201903262118468_addTablePresentation.cs" />
+    <Compile Include="Migrations\201903262118468_addTablePresentation.Designer.cs">
+      <DependentUpon>201903262118468_addTablePresentation.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AboutProject.cs" />
     <Compile Include="Common\CommonConstants.cs" />
@@ -274,6 +282,8 @@
     <Compile Include="Models\Number.cs" />
     <Compile Include="Models\Person.cs" />
     <Compile Include="Models\Personne.cs" />
+    <Compile Include="Models\Presentation.cs" />
+    <Compile Include="Models\VisualAid.cs" />
     <Compile Include="Models\Publication.cs" />
     <Compile Include="Models\TochLanguage.cs" />
     <Compile Include="Models\TochPhrase.cs" />
@@ -893,6 +903,12 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201903251655000_Init.resx">
       <DependentUpon>201903251655000_Init.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201903262104286_addTableVisualAid.resx">
+      <DependentUpon>201903262104286_addTableVisualAid.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201903262118468_addTablePresentation.resx">
+      <DependentUpon>201903262118468_addTablePresentation.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

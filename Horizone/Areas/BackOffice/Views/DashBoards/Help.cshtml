@@ -4,7 +4,22 @@
 }
 
 <h2>@StaticResource.Resources.Help</h2>
-Glossaire::
-<hr />
-Pour colaborateurs :
+<div class="autocontents">
+    <ul>
+        <li>
+            <a onclick="insertImage('imageCarte','https://www.researchgate.net/publication/307765410/figure/fig1/AS:405838004015104@1473770728188/Geographic-position-of-Aksu-City-in-the-Tarim-Basin-northwest-China-adapted-from.png');">@StaticResource.Resources.Maps</a>
+        </li>
+        <li>@Html.ActionLink(StaticResource.Resources.Photographs, "Collaboration", "Home")</li>
+        <li>@Html.ActionLink(StaticResource.Resources.Glossary, "Contact", "Home")</li>
+    </ul>
 
+</div>
+<div class="row">
+    <img style="width: 900px" id="imageCarte" src="" />
+</div>
+
+<script>
+    function insertImage(imageCarte, ulr) {
+        document.getElementById(imageCarte).src = ulr;
+    }
+</script>

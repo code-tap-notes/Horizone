@@ -29,10 +29,12 @@ h2.main-cat {
 }
 
 /*Color menu bar boostrap */
+
 ul.nav a:hover {
     color: slateblue !important;
     background-color: #ebfdc2;
     font-weight: bold;
+    font-size:inherit;    
 }
 /*Color menu dropdown */
 ul.dropdown-menu {

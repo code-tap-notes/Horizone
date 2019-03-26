@@ -30,11 +30,9 @@ namespace Horizone.Models
 
         [AllowHtml]
         [Display(Name = "Summary", ResourceType = typeof(StaticResource.Resources))]
-        [StringLength(500, MinimumLength = 1, ErrorMessageResourceName = "MaxLength500", ErrorMessageResourceType = typeof(StaticResource.Resources))]
         public string Summary { get; set; }
 
         [Display(Name = "CVName")]
-        [StringLength(500, MinimumLength = 1, ErrorMessageResourceName = "MaxLength500", ErrorMessageResourceType = typeof(StaticResource.Resources))]
         public string CV { get; set; }
 
         [Display(Name = "Email", ResourceType = typeof(StaticResource.Resources))]        
@@ -48,6 +46,12 @@ namespace Horizone.Models
 
         [Display(Name = "Team", ResourceType = typeof(StaticResource.Resources))]
         public Boolean Team { get; set; }
+
+        [Display(Name = "AssociatedResearcher", ResourceType = typeof(StaticResource.Resources))]
+        public Boolean AssociatedResearcher { get; set; }
+
+        [Display(Name = "Collaborator", ResourceType = typeof(StaticResource.Resources))]
+        public Boolean Collaborator { get; set; }
 
         [Display(Name = "Visible", ResourceType = typeof(StaticResource.Resources))]
         public Boolean Visible { get; set; }

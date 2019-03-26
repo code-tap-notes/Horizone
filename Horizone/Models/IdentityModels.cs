@@ -51,7 +51,7 @@ namespace Horizone.Models
         public DbSet<ImageManuscript> ImageManuscripts { get; set; }
         public DbSet<ImageNews> ImageNews { get; set; }
         public DbSet<ImageCollaboration> ImageCollaborations { get; set; }
-       
+        public DbSet<VisualAid> VisualAids { get; set; }        
         public DbSet<Manuscript> Manuscripts { get; set; }
         public DbSet<News> Newses { get; set; }
         public DbSet<TochPhrase> TochPhrases { get; set; }
@@ -67,5 +67,6 @@ namespace Horizone.Models
         public DbSet<AnalyseMaterial> AnalyseMaterials { get; set; }
         public DbSet<ImageUV> ImageUVs { get; set; }
         public DbSet<ImageAnalyse> ImageAnalyses { get; set; }
+        public DbSet<Presentation> Presentations { get; set; }
     }
 }

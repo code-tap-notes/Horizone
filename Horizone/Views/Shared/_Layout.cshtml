@@ -38,9 +38,8 @@
                 @Html.Partial("_LoginPartial")
             </div>
         </div>
-
     </div>
-    <div class="navbar-collapse collapse" style="background-color: #CF9; font-size: inherit; color:Highlight;font-weight:bold;text-shadow:0 2px 2px rgba(255,255,255, 0.7);">
+    <div class="navbar-collapse collapse" style="background-color: #CF9; color:Highlight;font-weight:bold;text-shadow:0 2px 2px rgba(255,255,255, 0.7);">
         <ul class="nav navbar-nav">
             <li>@Html.ActionLink(StaticResource.Resources.AboutProject, "About", "Home")</li>
             <li>@Html.ActionLink(@StaticResource.Resources.TochPhrase, "Index", "FontTochPhrases")</li>
@@ -71,7 +70,6 @@
                     <li><a href="@Url.Action("Activity", "Home")">  @StaticResource.Resources.Missions</a></li>
                 </ul>
             </li>
-
             <li class="dropdown">
                 @{Html.RenderAction("Mainmenu", "Home");}
             </li>

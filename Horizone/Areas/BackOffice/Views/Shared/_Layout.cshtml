@@ -25,9 +25,9 @@
                                 <li><h6 class="dropdownTitle">&#x27A4;@StaticResource.Resources.AboutProject </h6></li>
                                 <li><a href="@Url.Action("create", "AboutProjects")">@StaticResource.Resources.Add</a></li>
                                 <li><a href="@Url.Action("index", "AboutProjects")">@StaticResource.Resources.List</a></li>
-                                <li><h6 class="dropdownTitle">&#x27A4;@StaticResource.Resources.Bibliography</h6></li>
-                                <li><a href="@Url.Action("create", "Bibliographies")">@StaticResource.Resources.Add</a></li>
-                                <li><a href="@Url.Action("index", "Bibliographies")">@StaticResource.Resources.List</a></li>
+                                <li><h6 class="dropdownTitle">&#x27A4;@StaticResource.Resources.Presentation</h6></li>
+                                <li><a href="@Url.Action("create", "Presentations")">@StaticResource.Resources.Add</a></li>
+                                <li><a href="@Url.Action("index", "Presentations")">@StaticResource.Resources.List</a></li>
                                 <li><h6 class="dropdownTitle">&#x27A4;@StaticResource.Resources.Activity</h6></li>
                                 <li><a href="@Url.Action("create", "Activities")">@StaticResource.Resources.Add</a></li>
                                 <li><a href="@Url.Action("index", "Activities")">@StaticResource.Resources.List</a></li>
@@ -62,6 +62,9 @@
                                 <li><h6 class="dropdownTitle">&#9733; @StaticResource.Resources.Manuscript </h6></li>
                                 <li><a href="@Url.Action("create", "Manuscripts")">@StaticResource.Resources.Add</a></li>
                                 <li><a href="@Url.Action("index", "Manuscripts")">@StaticResource.Resources.List</a></li>
+                                <li><h6 class="dropdownTitle">&#9733; @StaticResource.Resources.AnalyseMaterial </h6></li>
+                                <li><a href="@Url.Action("create", "AnalyseMaterials")">@StaticResource.Resources.Add</a></li>
+                                <li><a href="@Url.Action("index", "AnalyseMaterials")">@StaticResource.Resources.List</a></li>
                                 <li><h6 class="dropdownTitle"> &#9733; @StaticResource.Resources.TochPhrase </h6></li>
                                 <li><a href="@Url.Action("create", "TochPhrases")">@StaticResource.Resources.Add</a></li>
                                 <li><a href="@Url.Action("index", "TochPhrases")">@StaticResource.Resources.List</a></li>
@@ -135,27 +138,44 @@
                 </div>
             </div>
         </div>
-    <div class="navbar navbar-expand-sm" style="background-color: lightblue; font-size: medium;font-weight:bold">                  
+    <div class="navbar navbar-expand-sm" style="background-color: lightblue; font-size: inherit; font-weight:bold">                  
             <div class="navbar-collapse collapse" >
-                <ul class="nav navbar-nav">                 
-                    <li>@Html.ActionLink(@StaticResource.Resources.AboutProject, "About", "DashBoards")</li>                    
+                <ul class="nav navbar-nav">
+                    <li>@Html.ActionLink(@StaticResource.Resources.AboutProject, "About", "DashBoards")</li>
                     <li>@Html.ActionLink(@StaticResource.Resources.TochPhrase, "Index", "TochPhrases")</li>
                     <li>@Html.ActionLink(@StaticResource.Resources.TochStory, "Index", "TochStories")</li>
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">@StaticResource.Resources.Manuscript <span class="caret"></span></a>
                         <ul class="dropdown-menu">
-                            <li><a href="@Url.Action("Index", "Manuscripts")">@StaticResource.Resources.Linguistics @StaticResource.Resources.Manuscript </a></li>
+                            <li><a href="@Url.Action("Index", "Manuscripts")"> @StaticResource.Resources.Manuscript - @StaticResource.Resources.Text</a></li>
                             <li><a href="@Url.Action("Index", "AnalyseMaterials")">@StaticResource.Resources.AnalyseMaterial</a></li>
                         </ul>
                     </li>
                     <li>@Html.ActionLink(@StaticResource.Resources.Vocabulary, "Index", "DictionaryTocharians")</li>
-                    <li>@Html.ActionLink(@StaticResource.Resources.News_Blog, "Index", "News")</li>
-                    <li>@Html.ActionLink(@StaticResource.Resources.Bibliography, "index", "Bibliographies")</li>
-                    <li>@Html.ActionLink(@StaticResource.Resources.Activity, "index", "Activities")</li>
-                    <li>@Html.ActionLink(@StaticResource.Resources.Help, "Help", "Dashboards")</li>
-                    <li>                        
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">@StaticResource.Resources.News_Blog <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="@Url.Action("Index", "News")"> @StaticResource.Resources.Publications</a></li>
+                            <li><a href="@Url.Action("Index", "News")"> @StaticResource.Resources.Conferences , @StaticResource.Resources.Symposia</a></li>
+                            <li><a href="@Url.Action("Index", "News")">  @StaticResource.Resources.Expositions , @StaticResource.Resources.Museums </a></li>
+                            <li><a href="@Url.Action("Index", "News")">  @StaticResource.Resources.Media</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">@StaticResource.Resources.Activity <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="@Url.Action("index", "Activities")"> @StaticResource.Resources.Publications</a></li>
+                            <li><a href="@Url.Action("index", "Activities")"> @StaticResource.Resources.Conferences , @StaticResource.Resources.Seminars</a></li>
+                            <li><a href="@Url.Action("index", "Activities")">  @StaticResource.Resources.Symposia</a></li>
+                            <li><a href="@Url.Action("index", "Activities")">  @StaticResource.Resources.Missions</a></li>
+                        </ul>
+                    </li>
+                    <li>
                         @{Html.RenderAction("Link", "LinkAndPresses");}
-                     </li>
+                    </li>
+                    <li>@Html.ActionLink(@StaticResource.Resources.Bibliography, "index", "Bibliographies")</li>
+                    <li>@Html.ActionLink(@StaticResource.Resources.Help, "Help", "Dashboards")</li>
+
                 </ul>               
             </div>                      
     </div>

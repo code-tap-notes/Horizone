@@ -12,17 +12,17 @@ namespace Horizone.Models
     {
         public int Id { get; set; }
 
-        [Display(Name = "Topic", ResourceType = typeof(StaticResource.Resources))]
+        [Display(Name = "TopicEn", ResourceType = typeof(StaticResource.Resources))]
         [Required(ErrorMessageResourceName = "FieldRequired", ErrorMessageResourceType = typeof(StaticResource.Resources))]             
         [StringLength(40, MinimumLength = 1, ErrorMessageResourceName = "MaxLength40", ErrorMessageResourceType = typeof(StaticResource.Resources))]
         public string TopicEn { get; set; }
 
-        [Display(Name = "Topic", ResourceType = typeof(StaticResource.Resources))]
+        [Display(Name = "TopicFr", ResourceType = typeof(StaticResource.Resources))]
         [Required(ErrorMessageResourceName = "FieldRequired", ErrorMessageResourceType = typeof(StaticResource.Resources))]
         [StringLength(40, MinimumLength = 1, ErrorMessageResourceName = "MaxLength40", ErrorMessageResourceType = typeof(StaticResource.Resources))]
         public string TopicFr { get; set; }
 
-        [Display(Name = "Topic", ResourceType = typeof(StaticResource.Resources))]
+        [Display(Name = "TopicZh", ResourceType = typeof(StaticResource.Resources))]
         [Required(ErrorMessageResourceName = "FieldRequired", ErrorMessageResourceType = typeof(StaticResource.Resources))]
         [StringLength(40, MinimumLength = 1, ErrorMessageResourceName = "MaxLength40", ErrorMessageResourceType = typeof(StaticResource.Resources))]
         public string TopicZh { get; set; }

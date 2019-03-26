@@ -313,6 +313,15 @@ namespace StaticResource {
         }
         
         /// <summary>
+        ///   Recherche une chaîne localisée semblable à Chercheur associé.
+        /// </summary>
+        public static string AssociatedResearcher {
+            get {
+                return ResourceManager.GetString("AssociatedResearcher", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Recherche une chaîne localisée semblable à Auteur.
         /// </summary>
         public static string Author {
@@ -1321,6 +1330,15 @@ namespace StaticResource {
         }
         
         /// <summary>
+        ///   Recherche une chaîne localisée semblable à Latin.
+        /// </summary>
+        public static string Latin {
+            get {
+                return ResourceManager.GetString("Latin", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Recherche une chaîne localisée semblable à Mise en page.
         /// </summary>
         public static string LayoutManuscript {
@@ -2275,6 +2293,15 @@ namespace StaticResource {
         }
         
         /// <summary>
+        ///   Recherche une chaîne localisée semblable à La photographie.
+        /// </summary>
+        public static string Photography {
+            get {
+                return ResourceManager.GetString("Photography", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Recherche une chaîne localisée semblable à Phrase.
         /// </summary>
         public static string Phrase {
@@ -2875,6 +2902,33 @@ namespace StaticResource {
         public static string Topic {
             get {
                 return ResourceManager.GetString("Topic", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Sujet Anglais.
+        /// </summary>
+        public static string TopicEn {
+            get {
+                return ResourceManager.GetString("TopicEn", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Sujet Francais.
+        /// </summary>
+        public static string TopicFr {
+            get {
+                return ResourceManager.GetString("TopicFr", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Sujet Chinois.
+        /// </summary>
+        public static string TopicZh {
+            get {
+                return ResourceManager.GetString("TopicZh", resourceCulture);
             }
         }
         

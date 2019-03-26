@@ -27,6 +27,12 @@ namespace Horizone.Models
         [Display(Name = "French", ResourceType = typeof(StaticResource.Resources))]
         public string Francaise { get; set; }
 
+        [Display(Name = "German", ResourceType = typeof(StaticResource.Resources))]
+        public string German { get; set; }
+
+        [Display(Name = "Latin", ResourceType = typeof(StaticResource.Resources))]
+        public string Latin { get; set; }
+
         [Display(Name = "Chinese", ResourceType = typeof(StaticResource.Resources))]
         public string Chinese { get; set; }
 
