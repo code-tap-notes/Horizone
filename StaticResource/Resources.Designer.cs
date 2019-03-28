@@ -745,7 +745,7 @@ namespace StaticResource {
         }
         
         /// <summary>
-        ///   Recherche une chaîne localisée semblable à Dictionnaire Tocharian.
+        ///   Recherche une chaîne localisée semblable à Dictionnaire Tokharien.
         /// </summary>
         public static string DictionaryTocharian {
             get {
@@ -1182,6 +1182,15 @@ namespace StaticResource {
         public static string Infinitive {
             get {
                 return ResourceManager.GetString("Infinitive", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Insérer.
+        /// </summary>
+        public static string Insert {
+            get {
+                return ResourceManager.GetString("Insert", resourceCulture);
             }
         }
         
@@ -2447,6 +2456,15 @@ namespace StaticResource {
         }
         
         /// <summary>
+        ///   Recherche une chaîne localisée semblable à Publication individuelle.
+        /// </summary>
+        public static string PublicationIndividual {
+            get {
+                return ResourceManager.GetString("PublicationIndividual", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Recherche une chaîne localisée semblable à Publications.
         /// </summary>
         public static string Publications {
@@ -2591,11 +2609,56 @@ namespace StaticResource {
         }
         
         /// <summary>
+        ///   Recherche une chaîne localisée semblable à Recherche anglaise.
+        /// </summary>
+        public static string SearchEnglish {
+            get {
+                return ResourceManager.GetString("SearchEnglish", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Recherche française.
+        /// </summary>
+        public static string SearchFrench {
+            get {
+                return ResourceManager.GetString("SearchFrench", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Recherche allemande.
+        /// </summary>
+        public static string SearchGerman {
+            get {
+                return ResourceManager.GetString("SearchGerman", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Recherche latine.
+        /// </summary>
+        public static string SearchLatin {
+            get {
+                return ResourceManager.GetString("SearchLatin", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Recherche une chaîne localisée semblable à Résultats de votre recherche.
         /// </summary>
         public static string SearchResult {
             get {
                 return ResourceManager.GetString("SearchResult", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Recherche Tokharien.
+        /// </summary>
+        public static string SearchToch {
+            get {
+                return ResourceManager.GetString("SearchToch", resourceCulture);
             }
         }
         
@@ -2870,7 +2933,7 @@ namespace StaticResource {
         }
         
         /// <summary>
-        ///   Recherche une chaîne localisée semblable à Tocharian Language.
+        ///   Recherche une chaîne localisée semblable à Tokharien Language.
         /// </summary>
         public static string TochLanguage {
             get {

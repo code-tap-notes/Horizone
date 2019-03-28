@@ -349,7 +349,7 @@
     <value>Index de code</value>
   </data>
   <data name="DictionaryTocharian" xml:space="preserve">
-    <value>Dictionnaire Tocharian</value>
+    <value>Dictionnaire Tokharien</value>
   </data>
   <data name="Editor" xml:space="preserve">
     <value>Éditeur</value>
@@ -1027,7 +1027,7 @@
     <value>Le champ {0}  doit avoir numéro  positif</value>
   </data>
   <data name="TochLanguage" xml:space="preserve">
-    <value>Tocharian Language</value>
+    <value>Tokharien Language</value>
   </data>
   <data name="ListedPosition" xml:space="preserve">
     <value>Position Afficher</value>
@@ -1167,5 +1167,26 @@ TochPhase</value>
   </data>
   <data name="TopicZh" xml:space="preserve">
     <value>Sujet Chinois</value>
+  </data>
+  <data name="Insert" xml:space="preserve">
+    <value>Insérer</value>
+  </data>
+  <data name="SearchEnglish" xml:space="preserve">
+    <value>Recherche anglaise</value>
+  </data>
+  <data name="SearchFrench" xml:space="preserve">
+    <value>Recherche française</value>
+  </data>
+  <data name="SearchGerman" xml:space="preserve">
+    <value>Recherche allemande</value>
+  </data>
+  <data name="SearchLatin" xml:space="preserve">
+    <value>Recherche latine</value>
+  </data>
+  <data name="SearchToch" xml:space="preserve">
+    <value>Recherche Tokharien</value>
+  </data>
+  <data name="PublicationIndividual" xml:space="preserve">
+    <value>Publication individuelle</value>
   </data>
 </root>

@@ -23,6 +23,12 @@
         <th>
             @Html.DisplayNameFor(model => model.UlrBibliography)
         </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PublicationIndividual)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PublicationProjet)
+        </th>
         <th></th>
     </tr>
 
@@ -40,6 +46,12 @@
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.UlrBibliography)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PublicationIndividual)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PublicationProjet)
         </td>
         <td>
             @Html.ActionLink(@StaticResource.Resources.Edit, "Edit", new { id = item.Id }, new { @class = "btn btn-info" })

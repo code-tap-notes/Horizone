@@ -20,7 +20,6 @@ namespace Horizone.Areas.BackOffice.Controllers
             return View(dictionaryTocharians.ToList());
         }
         
-
         // GET: BackOffice/DictionaryTocharians/Details/5
         public ActionResult Details(int? id)
         {
@@ -29,14 +28,20 @@ namespace Horizone.Areas.BackOffice.Controllers
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
             DictionaryTocharian dictionaryTocharian = db.DictionaryTocharians.Include(d => d.Language).Include(d => d.TochLanguage).Include(d => d.WordClass).Include(d => d.WordSubClass).Include("Cases").Include("Numbers").Include("Genders").Include("Persons").SingleOrDefault(y => y.Id == id);
+            if (dictionaryTocharian.Cases.Count() == 0)
+                dictionaryTocharian.Cases = db.Cases.Where(x => x.NameCaseEn == "No Case").ToList();
+            if (dictionaryTocharian.Genders.Count() == 0)
+                dictionaryTocharian.Genders = db.Genders.Where(x => x.NameGenderEn == "No Gender").ToList();            
+            if (dictionaryTocharian.Numbers.Count() == 0)
+                dictionaryTocharian.Numbers = db.Numbers.Where(x => x.WordNumberEn == "No Number").ToList();            
+            if (dictionaryTocharian.Persons.Count() == 0)
+                dictionaryTocharian.Persons = db.Persons.Where(x => x.ConjugatedPersonEn == "No Person").ToList();
             if (dictionaryTocharian == null)
             {
                 return HttpNotFound();
             }
             return View(dictionaryTocharian);
-        }
-       
-            
+        }                   
         // GET: BackOffice/DictionaryTocharians/Create
         public ActionResult Create()
         {
@@ -68,26 +73,26 @@ namespace Horizone.Areas.BackOffice.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,Word,English,Francaise,Chinese,WordClassId,WordSubClassId,TochLanguageId,EquivalentTA,EquivalentTB,EquivalentInOther,DerivedFrom,RelatedLexemes,RootCharacter,InternalRootVowel,NominateMasculineSingular,NominateMasculineDual,NominateMasculinePlural,NominateFeminineSingular,NominateFeminineDual,NominateFemininePlural,ObliqueMasculineSingular,ObliqueMasculineDual,ObliqueMasculinePlural,ObliqueFeminineSingular,ObliqueFeminineDual,ObliqueFemininePlural,VocativeMasculineSingular,VocativeMasculineDual,VocativeMasculinePlural,VocativeFeminineSingular,VocativeFeminineDual,VocativeFemininePlural,GenitiveMasculineSingular,GenitiveMasculineDual,GenitiveMasculinePlural,GenitiveFeminineSingular,GenitiveFeminineDual,GenitiveFemininePlural,LocativeMasculineSingular,LocativeMasculineDual,LocativeMasculinePlural,LocativeFeminineSingular,LocativeFeminineDual,LocativeFemininePlural,AblativeMasculineSingular,AblativeMasculineDual,AblativeMasculinePlural,AblativeFeminineSingular,AblativeFeminineDual,AblativeFemininePlural,AllativeMasculineSingular,AllativeMasculineDual,AllativeMasculinePlural,AllativeFeminineSingular,AllativeFeminineDual,AllativeFemininePlural,PerlativeMasculineSingular,PerlativeMasculineDual,PerlativeMasculinePlural,PerlativeFeminineSingular,PerlativeFeminineDual,PerlativeFemininePlural,InstrumentalMasculineSingular,InstrumentalMasculineDual,InstrumentalMasculinePlural,InstrumentalFeminineSingular,InstrumentalFeminineDual,InstrumentalFemininePlural,ComitativeMasculineSingular,ComitativeMasculineDual,ComitativeMasculinePlural,ComitativeFeminineSingular,ComitativeFeminineDual,ComitativeFemininePlural,CausativeMasculineSingular,CausativeMasculineDual,CausativeMasculinePlural,CausativeFeminineSingular,CausativeFeminineDual,CausativeFemininePlural,Stem,StemClass,Voice,Valency,PronounSuffix,TenseMood,Visible,LanguageId")] DictionaryTocharian dictionaryTocharian, int[] CaseId, int[] GenderId, int[] NumberId, int[] PersonId)
+        public ActionResult Create([Bind(Include = "Id,Word,English,Francaise,German,Latin,Chinese,WordClassId,WordSubClassId,TochLanguageId,EquivalentTA,EquivalentTB,EquivalentInOther,DerivedFrom,RelatedLexemes,RootCharacter,InternalRootVowel,NominateMasculineSingular,NominateMasculineDual,NominateMasculinePlural,NominateFeminineSingular,NominateFeminineDual,NominateFemininePlural,ObliqueMasculineSingular,ObliqueMasculineDual,ObliqueMasculinePlural,ObliqueFeminineSingular,ObliqueFeminineDual,ObliqueFemininePlural,VocativeMasculineSingular,VocativeMasculineDual,VocativeMasculinePlural,VocativeFeminineSingular,VocativeFeminineDual,VocativeFemininePlural,GenitiveMasculineSingular,GenitiveMasculineDual,GenitiveMasculinePlural,GenitiveFeminineSingular,GenitiveFeminineDual,GenitiveFemininePlural,LocativeMasculineSingular,LocativeMasculineDual,LocativeMasculinePlural,LocativeFeminineSingular,LocativeFeminineDual,LocativeFemininePlural,AblativeMasculineSingular,AblativeMasculineDual,AblativeMasculinePlural,AblativeFeminineSingular,AblativeFeminineDual,AblativeFemininePlural,AllativeMasculineSingular,AllativeMasculineDual,AllativeMasculinePlural,AllativeFeminineSingular,AllativeFeminineDual,AllativeFemininePlural,PerlativeMasculineSingular,PerlativeMasculineDual,PerlativeMasculinePlural,PerlativeFeminineSingular,PerlativeFeminineDual,PerlativeFemininePlural,InstrumentalMasculineSingular,InstrumentalMasculineDual,InstrumentalMasculinePlural,InstrumentalFeminineSingular,InstrumentalFeminineDual,InstrumentalFemininePlural,ComitativeMasculineSingular,ComitativeMasculineDual,ComitativeMasculinePlural,ComitativeFeminineSingular,ComitativeFeminineDual,ComitativeFemininePlural,CausativeMasculineSingular,CausativeMasculineDual,CausativeMasculinePlural,CausativeFeminineSingular,CausativeFeminineDual,CausativeFemininePlural,Stem,StemClass,Voice,Valency,PronounSuffix,TenseMood,Visible,LanguageId")] DictionaryTocharian dictionaryTocharian, int[] CaseId, int[] GenderId, int[] NumberId, int[] PersonId)
         {
             if (ModelState.IsValid)
             {
                 if (CaseId.Count() > 0)
                     dictionaryTocharian.Cases = db.Cases.Where(x => CaseId.Contains(x.Id)).ToList();
                 if (CaseId.Count() == 0)
-                    dictionaryTocharian.Cases = db.Cases.Where(x => x.NameCaseEn == "No").ToList();
+                    dictionaryTocharian.Cases = db.Cases.Where(x => x.NameCaseEn == "No Case").ToList();
                 if (GenderId.Count() > 0)
                     dictionaryTocharian.Genders = db.Genders.Where(x => GenderId.Contains(x.Id)).ToList();
                 if (GenderId.Count() == 0)
-                    dictionaryTocharian.Genders = db.Genders.Where(x => x.NameGenderEn == "No").ToList();
+                    dictionaryTocharian.Genders = db.Genders.Where(x => x.NameGenderEn == "No Gender").ToList();
                 if (NumberId.Count() > 0)
                     dictionaryTocharian.Numbers = db.Numbers.Where(x => NumberId.Contains(x.Id)).ToList();
                 if (NumberId.Count() == 0)
-                    dictionaryTocharian.Numbers = db.Numbers.Where(x => x.WordNumberEn == "No").ToList();
+                    dictionaryTocharian.Numbers = db.Numbers.Where(x => x.WordNumberEn == "No Number").ToList();
                 if (PersonId.Count() > 0)
                     dictionaryTocharian.Persons = db.Persons.Where(x => PersonId.Contains(x.Id)).ToList();
                 if (PersonId.Count() == 0)
-                    dictionaryTocharian.Persons = db.Persons.Where(x => x.ConjugatedPersonEn == "No").ToList();
+                    dictionaryTocharian.Persons = db.Persons.Where(x => x.ConjugatedPersonEn == "No Person").ToList();
                 db.DictionaryTocharians.Add(dictionaryTocharian);
                 db.SaveChanges();
                 return RedirectToAction("Index");
@@ -158,29 +163,28 @@ namespace Horizone.Areas.BackOffice.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,Word,English,Francaise,Chinese,WordClassId,WordSubClassId,TochLanguageId,EquivalentTA,EquivalentTB,EquivalentInOther,DerivedFrom,RelatedLexemes,RootCharacter,InternalRootVowel,NominateMasculineSingular,NominateMasculineDual,NominateMasculinePlural,NominateFeminineSingular,NominateFeminineDual,NominateFemininePlural,ObliqueMasculineSingular,ObliqueMasculineDual,ObliqueMasculinePlural,ObliqueFeminineSingular,ObliqueFeminineDual,ObliqueFemininePlural,VocativeMasculineSingular,VocativeMasculineDual,VocativeMasculinePlural,VocativeFeminineSingular,VocativeFeminineDual,VocativeFemininePlural,GenitiveMasculineSingular,GenitiveMasculineDual,GenitiveMasculinePlural,GenitiveFeminineSingular,GenitiveFeminineDual,GenitiveFemininePlural,LocativeMasculineSingular,LocativeMasculineDual,LocativeMasculinePlural,LocativeFeminineSingular,LocativeFeminineDual,LocativeFemininePlural,AblativeMasculineSingular,AblativeMasculineDual,AblativeMasculinePlural,AblativeFeminineSingular,AblativeFeminineDual,AblativeFemininePlural,AllativeMasculineSingular,AllativeMasculineDual,AllativeMasculinePlural,AllativeFeminineSingular,AllativeFeminineDual,AllativeFemininePlural,PerlativeMasculineSingular,PerlativeMasculineDual,PerlativeMasculinePlural,PerlativeFeminineSingular,PerlativeFeminineDual,PerlativeFemininePlural,InstrumentalMasculineSingular,InstrumentalMasculineDual,InstrumentalMasculinePlural,InstrumentalFeminineSingular,InstrumentalFeminineDual,InstrumentalFemininePlural,ComitativeMasculineSingular,ComitativeMasculineDual,ComitativeMasculinePlural,ComitativeFeminineSingular,ComitativeFeminineDual,ComitativeFemininePlural,CausativeMasculineSingular,CausativeMasculineDual,CausativeMasculinePlural,CausativeFeminineSingular,CausativeFeminineDual,CausativeFemininePlural,Stem,StemClass,Voice,Valency,PronounSuffix,TenseMood,Visible,LanguageId")] DictionaryTocharian dictionaryTocharian, int[] CaseId, int[] GenderId, int[] NumberId, int[] PersonId)
+        public ActionResult Edit([Bind(Include = "Id,Word,English,Francaise,German,Latin,Chinese,WordClassId,WordSubClassId,TochLanguageId,EquivalentTA,EquivalentTB,EquivalentInOther,DerivedFrom,RelatedLexemes,RootCharacter,InternalRootVowel,NominateMasculineSingular,NominateMasculineDual,NominateMasculinePlural,NominateFeminineSingular,NominateFeminineDual,NominateFemininePlural,ObliqueMasculineSingular,ObliqueMasculineDual,ObliqueMasculinePlural,ObliqueFeminineSingular,ObliqueFeminineDual,ObliqueFemininePlural,VocativeMasculineSingular,VocativeMasculineDual,VocativeMasculinePlural,VocativeFeminineSingular,VocativeFeminineDual,VocativeFemininePlural,GenitiveMasculineSingular,GenitiveMasculineDual,GenitiveMasculinePlural,GenitiveFeminineSingular,GenitiveFeminineDual,GenitiveFemininePlural,LocativeMasculineSingular,LocativeMasculineDual,LocativeMasculinePlural,LocativeFeminineSingular,LocativeFeminineDual,LocativeFemininePlural,AblativeMasculineSingular,AblativeMasculineDual,AblativeMasculinePlural,AblativeFeminineSingular,AblativeFeminineDual,AblativeFemininePlural,AllativeMasculineSingular,AllativeMasculineDual,AllativeMasculinePlural,AllativeFeminineSingular,AllativeFeminineDual,AllativeFemininePlural,PerlativeMasculineSingular,PerlativeMasculineDual,PerlativeMasculinePlural,PerlativeFeminineSingular,PerlativeFeminineDual,PerlativeFemininePlural,InstrumentalMasculineSingular,InstrumentalMasculineDual,InstrumentalMasculinePlural,InstrumentalFeminineSingular,InstrumentalFeminineDual,InstrumentalFemininePlural,ComitativeMasculineSingular,ComitativeMasculineDual,ComitativeMasculinePlural,ComitativeFeminineSingular,ComitativeFeminineDual,ComitativeFemininePlural,CausativeMasculineSingular,CausativeMasculineDual,CausativeMasculinePlural,CausativeFeminineSingular,CausativeFeminineDual,CausativeFemininePlural,Stem,StemClass,Voice,Valency,PronounSuffix,TenseMood,Visible,LanguageId")] DictionaryTocharian dictionaryTocharian, int[] CaseId, int[] GenderId, int[] NumberId, int[] PersonId)
         {
             db.Entry(dictionaryTocharian).State = EntityState.Modified;
             db.DictionaryTocharians.Include(t => t.TochLanguage).Include(t => t.Language).Include("Cases").Include("Genders").Include("Numbers").Include("Persons").SingleOrDefault(x => x.Id == dictionaryTocharian.Id);
             if (ModelState.IsValid)
             {
-
+                if (CaseId.Count() == 0)
+                    dictionaryTocharian.Cases = db.Cases.Where(x => x.NameCaseEn == "No Case").ToList();
                 if (CaseId.Count() > 0)
                     dictionaryTocharian.Cases = db.Cases.Where(x => CaseId.Contains(x.Id)).ToList();
-                if (CaseId.Count() == 0)
-                    dictionaryTocharian.Cases = db.Cases.Where(x => x.NameCaseEn == "No").ToList();
+                if (GenderId.Count() == 0)
+                    dictionaryTocharian.Genders = db.Genders.Where(x => x.NameGenderEn == "No Gender").ToList();
                 if (GenderId.Count() > 0)
                     dictionaryTocharian.Genders = db.Genders.Where(x => GenderId.Contains(x.Id)).ToList();
-                if (GenderId.Count() == 0)
-                    dictionaryTocharian.Genders = db.Genders.Where(x => x.NameGenderEn == "No").ToList();
+                if (NumberId.Count() == 0)
+                    dictionaryTocharian.Numbers = db.Numbers.Where(x => x.WordNumberEn == "No Number").ToList();
                 if (NumberId.Count() > 0)
                     dictionaryTocharian.Numbers = db.Numbers.Where(x => NumberId.Contains(x.Id)).ToList();
-                if (NumberId.Count() == 0)
-                    dictionaryTocharian.Numbers = db.Numbers.Where(x => x.WordNumberEn == "No").ToList();
-                if (PersonId.Count() > 0)
-                    dictionaryTocharian.Persons = db.Persons.Where(x => PersonId.Contains(x.Id)).ToList();
                 if (PersonId.Count() == 0)
-                    dictionaryTocharian.Persons = db.Persons.Where(x => x.ConjugatedPersonEn == "No").ToList();
+                    dictionaryTocharian.Persons = db.Persons.Where(x => x.ConjugatedPersonEn == "No Person").ToList();
+                if (PersonId.Count() > 0)
+                    dictionaryTocharian.Persons = db.Persons.Where(x => PersonId.Contains(x.Id)).ToList();               
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
@@ -206,7 +210,7 @@ namespace Horizone.Areas.BackOffice.Controllers
             ViewBag.PersonsZh = new SelectList(db.Persons, "Id", "ConjugatedPersonZh");
             return View(dictionaryTocharian);
         }
-        
+  
         // GET: BackOffice/DictionaryTocharians/Delete/5
         public ActionResult Delete(int? id)
         {
@@ -221,7 +225,6 @@ namespace Horizone.Areas.BackOffice.Controllers
             }
             return View(dictionaryTocharian);
         }
-
         // POST: BackOffice/DictionaryTocharians/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
@@ -232,6 +235,5 @@ namespace Horizone.Areas.BackOffice.Controllers
             db.SaveChanges();
             return RedirectToAction("Index");
         }
-
     }
 }

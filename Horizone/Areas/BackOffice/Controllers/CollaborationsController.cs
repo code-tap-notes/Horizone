@@ -53,7 +53,7 @@ namespace Horizone.Areas.BackOffice.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,Title,LastName,FirstName,Summary,CV,Email,Team,Visible,Order")] Collaboration collaboration, int[] PublicationId)
+        public ActionResult Create([Bind(Include = "Id,Title,LastName,FirstName,Summary,CV,Email,Team,AssociatedResearcher,Collaborator,Visible,Order")] Collaboration collaboration, int[] PublicationId)
         {
             if (ModelState.IsValid)
             {
@@ -94,7 +94,7 @@ namespace Horizone.Areas.BackOffice.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,Title,LastName,FirstName,Summary,CV,Email,Team,Visible,Order")] Collaboration collaboration, int[] PublicationId)
+        public ActionResult Edit([Bind(Include = "Id,Title,LastName,FirstName,Summary,CV,Email,Team,AssociatedResearcher,Collaborator,Visible,Order")] Collaboration collaboration, int[] PublicationId)
         {
             db.Entry(collaboration).State = EntityState.Modified;           
             db.Collaborations.Include("ImageCollaborations").Include("Publications").SingleOrDefault(x => x.Id == collaboration.Id);

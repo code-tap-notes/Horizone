@@ -41,7 +41,12 @@
 </div>
 
 <h2>@StaticResource.Resources.Bibliography</h2>
-
+<div class="autocontents">
+    <p>
+        <b> @StaticResource.Resources.Presentation </b>
+        @{Html.RenderAction("PresentationBibliography", "Home"); }
+    </p>
+</div>
 <ul>
     @foreach (var item in Model)
     {

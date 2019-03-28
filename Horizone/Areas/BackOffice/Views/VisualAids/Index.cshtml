@@ -1,0 +1,58 @@
+﻿@model IEnumerable<Horizone.Models.VisualAid>
+
+@{
+    ViewBag.Title = @StaticResource.Resources.Help;
+}
+
+<h2>@StaticResource.Resources.Help</h2>
+
+<p>
+    @Html.ActionLink(@StaticResource.Resources.Add, "Create", null, new { @class = "btn btn-primary" })
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Language.Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Aids)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Description)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Photography)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Map)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Language.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Aids)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Description)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Photography)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Map)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
+                @Html.ActionLink("Details", "Details", new { id = item.Id }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.Id })
+            </td>
+        </tr>
+    }
+
+</table>

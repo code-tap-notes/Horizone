@@ -1,0 +1,11 @@
+﻿@model IEnumerable<Horizone.Models.Presentation>
+
+@foreach (var item in Model)
+{
+    if (item.Language.Symbol == Session[Horizone.Common.CommonConstants.CurrentCulture].ToString())
+    {
+        @Html.Raw(item.DictionaryTocharian);
+    }
+}
+
+

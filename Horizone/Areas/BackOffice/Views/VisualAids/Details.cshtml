@@ -1,0 +1,58 @@
+﻿@model Horizone.Models.VisualAid
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>VisualAid</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Language.Symbol)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Language.Symbol)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Aids)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Aids)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Description)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Description)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Photography)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Photography)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Map)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Map)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

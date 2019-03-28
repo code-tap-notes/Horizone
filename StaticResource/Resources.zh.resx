@@ -1168,4 +1168,25 @@ TochPhase</value>
   <data name="TopicZh" xml:space="preserve">
     <value>中文主题</value>
   </data>
+  <data name="Insert" xml:space="preserve">
+    <value>插入</value>
+  </data>
+  <data name="SearchEnglish" xml:space="preserve">
+    <value>英文搜索</value>
+  </data>
+  <data name="SearchFrench" xml:space="preserve">
+    <value>法国搜索</value>
+  </data>
+  <data name="SearchGerman" xml:space="preserve">
+    <value>德国搜索</value>
+  </data>
+  <data name="SearchLatin" xml:space="preserve">
+    <value>拉丁搜索</value>
+  </data>
+  <data name="SearchToch" xml:space="preserve">
+    <value>Tocharian搜索</value>
+  </data>
+  <data name="PublicationIndividual" xml:space="preserve">
+    <value>出版个人</value>
+  </data>
 </root>

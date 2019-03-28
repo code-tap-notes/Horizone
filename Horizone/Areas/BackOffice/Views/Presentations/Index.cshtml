@@ -1,0 +1,81 @@
+﻿@model IEnumerable<Horizone.Models.Presentation>
+@{
+    ViewBag.Title = @StaticResource.Resources.Presentation;
+}
+
+<h2>@StaticResource.Resources.Presentation</h2>
+
+<p>
+    @Html.ActionLink(@StaticResource.Resources.Add, "Create", null, new { @class = "btn btn-primary" })
+</p>
+@foreach (var item in Model)
+{
+    <dl class="dl-horizontal">
+
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Language.Name)
+        </dt>
+        <dd>
+            @Html.Raw(item.Language.Name)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.AboutUs)
+        </dt>
+
+        <dd>
+            @Html.Raw(item.AboutUs)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.TochPhrase)
+        </dt>
+
+        <dd>
+            @Html.Raw(item.TochPhrase)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.TochStory)
+        </dt>
+
+        <dd>
+            @Html.Raw(item.TochStory)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Manuscript)
+        </dt>
+        <dd>
+            @Html.Raw(item.Manuscript)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Activity)
+        </dt>
+        <dd>
+            @Html.Raw(item.Activity)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Bibliography)
+        </dt>
+        <dd>
+            @Html.Raw(item.Bibliography)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.DictionaryTocharian)
+        </dt>
+        <dd>
+            @Html.Raw(item.DictionaryTocharian)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.VisualAids)
+        </dt>
+        <dd>
+            @Html.Raw(item.VisualAids)
+        </dd>
+    </dl>
+    <dl>
+        @Html.ActionLink(@StaticResource.Resources.Edit, "Edit", new { id = item.Id }, new { @class = "btn btn-info" })
+        @Html.ActionLink(@StaticResource.Resources.Details, "Details", new { id = item.Id }, new { @class = "btn btn-info" })
+        @Html.ActionLink(@StaticResource.Resources.Delete, "Delete", new { id = item.Id }, new { @class = "btn btn-info" })
+
+    </dl>
+
+}

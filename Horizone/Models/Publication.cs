@@ -29,7 +29,13 @@ namespace Horizone.Models
         [Display(Name = "Link", ResourceType = typeof(StaticResource.Resources))]
         [StringLength(500, MinimumLength = 1, ErrorMessageResourceName = "MinLength", ErrorMessageResourceType = typeof(StaticResource.Resources))]
         public string UlrBibliography { get; set; }
-        
+
+        [Display(Name = "PublicationIndividual", ResourceType = typeof(StaticResource.Resources))]
+        public Boolean PublicationIndividual { get; set; }
+
+        [Display(Name = "Project", ResourceType = typeof(StaticResource.Resources))]
+        public Boolean PublicationProjet { get; set; }
+
         [Display(Name = "Collaboration", ResourceType = typeof(StaticResource.Resources))]
         public ICollection<Collaboration> Collaborations { get; set; }
     }

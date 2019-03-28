@@ -48,6 +48,24 @@
         </div>
     </div>
     <div class="form-group">
+        @Html.LabelFor(model => model.PublicationIndividual, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            <div class="checkbox">
+                @Html.EditorFor(model => model.PublicationIndividual)
+                @Html.ValidationMessageFor(model => model.PublicationIndividual, "", new { @class = "text-danger" })
+            </div>
+        </div>
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(model => model.PublicationProjet, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            <div class="checkbox">
+                @Html.EditorFor(model => model.PublicationProjet)
+                @Html.ValidationMessageFor(model => model.PublicationProjet, "", new { @class = "text-danger" })
+            </div>
+        </div>
+    </div>
+    <div class="form-group">
         <div class="col-md-offset-2 col-md-10">
             <input type="submit" value=@StaticResource.Resources.Save class="btn btn-primary" />
             @Html.ActionLink(@StaticResource.Resources.Return, "Index", null, new { @class = "btn btn-default" })

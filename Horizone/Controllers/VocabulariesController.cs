@@ -36,31 +36,86 @@ namespace Horizone.Controllers
         }
         public ActionResult Search(string search)
         {
-
             IEnumerable<DictionaryTocharian> dictionaryTocharians = db.DictionaryTocharians;
-
             if (!string.IsNullOrWhiteSpace(search))
             {
-                dictionaryTocharians = dictionaryTocharians.Where(x => x.Word.Contains(search));
-
-                //bibliographies = bibliographies.Where(x => x.PublicationDate.Contains(search));
-                //bibliographies = bibliographies.Where(x => x.Title.Contains(search));
-                //|| || (x=> x.PublicationDate.Contains(search)
-                //|| x.Journal.Contains(search)
-                //|| x.Title.Contains(search));
-            }
-            //if (!string.IsNullOrWhiteSpace(title))
-            //    bibliographies = bibliographies.Where(y => y.Title.Contains(title));
-            //if (!string.IsNullOrWhiteSpace(journal))
-            //    bibliographies = bibliographies.Where(y => y.Journal.Contains(journal));
-
+                dictionaryTocharians = dictionaryTocharians.Where(x => x.Word.Contains(search));              
+            }          
             if (dictionaryTocharians.Count() == 0)
             {
                 Display("Aucun résultat");
             }
-
             return View("Search", dictionaryTocharians.ToList());
         }
-
+        public ActionResult SearchEnglish(string search)
+        {
+            IEnumerable<DictionaryTocharian> dictionaryTocharians = db.DictionaryTocharians;
+            if (!string.IsNullOrWhiteSpace(search))
+            {
+                dictionaryTocharians = dictionaryTocharians.Where(x => x.English != null);
+                dictionaryTocharians = dictionaryTocharians.Where(x => x.English.Contains(search));                
+            }           
+            if (dictionaryTocharians.Count() == 0)
+            {
+                Display("Aucun résultat");
+            }
+            return View("Search", dictionaryTocharians.ToList());
+        }
+        public ActionResult SearchFrench(string search)
+        {
+            IEnumerable<DictionaryTocharian> dictionaryTocharians = db.DictionaryTocharians;
+            if (!string.IsNullOrWhiteSpace(search)) 
+            {
+                dictionaryTocharians = dictionaryTocharians.Where(x => x.Francaise != null);
+                dictionaryTocharians = dictionaryTocharians.Where(x => x.Francaise.Contains(search));
+            }
+            if (dictionaryTocharians.Count() == 0)
+            {
+                Display("Aucun résultat");
+            }
+            return View("Search", dictionaryTocharians.ToList());
+        }
+        public ActionResult SearchGerman(string search)
+        {
+            IEnumerable<DictionaryTocharian> dictionaryTocharians = db.DictionaryTocharians;
+            if (!string.IsNullOrWhiteSpace(search))
+            {
+                dictionaryTocharians = dictionaryTocharians.Where(x => x.German != null);
+                dictionaryTocharians = dictionaryTocharians.Where(x => x.German.Contains(search));
+            }
+            if (dictionaryTocharians.Count() == 0)
+            {
+                Display("Aucun résultat");
+            }
+            return View("Search", dictionaryTocharians.ToList());
+        }
+        public ActionResult SearchLatin(string search)
+        {
+            IEnumerable<DictionaryTocharian> dictionaryTocharians = db.DictionaryTocharians;
+            if (!string.IsNullOrWhiteSpace(search))
+            {
+                dictionaryTocharians = dictionaryTocharians.Where(x => x.Latin != null);
+                dictionaryTocharians = dictionaryTocharians.Where(x => x.Latin.Contains(search));
+            }
+            if (dictionaryTocharians.Count() == 0)
+            {
+                Display("Aucun résultat");
+            }
+            return View("Search", dictionaryTocharians.ToList());
+        }
+        public ActionResult SearchChinese(string search)
+        {
+            IEnumerable<DictionaryTocharian> dictionaryTocharians = db.DictionaryTocharians;
+            if (!string.IsNullOrWhiteSpace(search))
+            {
+                dictionaryTocharians = dictionaryTocharians.Where(x => x.Chinese != null);
+                dictionaryTocharians = dictionaryTocharians.Where(x => x.Chinese.Contains(search));
+            }
+            if (dictionaryTocharians.Count() == 0)
+            {
+                Display("Aucun résultat");
+            }
+            return View("Search", dictionaryTocharians.ToList());
+        }
     }
 }

@@ -32,9 +32,13 @@ namespace Horizone.Controllers
             var aboutProjets = db.AboutProjets.Include(a => a.Language);
             return PartialView(aboutProjets.ToList());
         }
-
+        public ActionResult Aide()
+        {
+            var visualAids = db.VisualAids.Include(v => v.Language);
+            return View(visualAids.ToList());
+        }
         [ChildActionOnly]
-        public ActionResult Presente()
+        public ActionResult PresenteProject()
         {
             var currentCulture = Session[CommonConstants.CurrentCulture];
             var symbolLanguage = currentCulture.ToString();
@@ -46,7 +50,45 @@ namespace Horizone.Controllers
             }            
            return PartialView(aboutProjets.Include(a => a.Language).ToList());
         }
-
+        [ChildActionOnly]
+        public ActionResult PresentationTochPhrase()
+        {
+            return PartialView(db.Presentations.Include(a => a.Language).ToList());
+        }
+        [ChildActionOnly]
+        public ActionResult PresentationTochStory()
+        {
+            return PartialView(db.Presentations.Include(a => a.Language).ToList());
+        }
+        [ChildActionOnly]
+        public ActionResult PresentationManuscript()
+        {
+            return PartialView(db.Presentations.Include(a => a.Language).ToList());
+        }
+        [ChildActionOnly]
+        public ActionResult PresentationDictionaryTocharian()
+        {
+            return PartialView(db.Presentations.Include(a => a.Language).ToList());
+        }
+        [ChildActionOnly]
+        public ActionResult PresentationActivity()
+        {
+            return PartialView(db.Presentations.Include(a => a.Language).ToList());
+        }
+        public ActionResult PresentationAboutUs()
+        {
+            return PartialView(db.Presentations.Include(a => a.Language).ToList());
+        }
+        [ChildActionOnly]
+        public ActionResult PresentationVisualAid()
+        {
+            return PartialView(db.Presentations.Include(a => a.Language).ToList());
+        }
+        [ChildActionOnly]
+        public ActionResult PresentationBibliography()
+        {
+            return PartialView(db.Presentations.Include(a => a.Language).ToList());
+        }
         public ActionResult AboutUs()
         {
             var collaborations = db.Collaborations;
@@ -109,19 +151,16 @@ namespace Horizone.Controllers
                 return View(db.TochStorys.ToList());          
         }
                            
-        public ActionResult Aide()
-        {           
-            return View();
-        }               
+                   
         public ActionResult Activity()
         {
-            var activitys = db.Activitys.Include("Language");            
+            var activitys = db.Activitys.Include("Language").Include("Topic");            
             return View(activitys.OrderByDescending(x => x.DateofActivity).ToList());
         }
         [ChildActionOnly]
         public ActionResult PageActivity()
         {
-            var activitys = db.Activitys.Include("Language");
+            var activitys = db.Activitys.Include("Language").Include("Topic");
             return PartialView(activitys.OrderByDescending(x => x.DateofActivity).ToList());
         }    
     }
