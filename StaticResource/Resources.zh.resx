@@ -1189,4 +1189,10 @@ TochPhase</value>
   <data name="PublicationIndividual" xml:space="preserve">
     <value>出版个人</value>
   </data>
+  <data name="Partner" xml:space="preserve">
+    <value>伙伴</value>
+  </data>
+  <data name="RelationInternational" xml:space="preserve">
+    <value>国际关系</value>
+  </data>
 </root>

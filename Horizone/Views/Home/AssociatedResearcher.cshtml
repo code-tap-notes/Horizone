@@ -1,30 +1,29 @@
 ﻿@model IEnumerable<Horizone.Models.Collaboration>
-
 @{
-    ViewBag.Title = @StaticResource.Resources.AboutUs;
+    ViewBag.Title = @StaticResource.Resources.AssociatedResearcher;
 }
-
-
 <div class="content">
 
-    <h2> @StaticResource.Resources.AboutUs </h2>
+    <h2> @StaticResource.Resources.AssociatedResearcher </h2>
     <div class="autocontents">
         <p>
             <b> @StaticResource.Resources.SeeAlso : </b>
         </p>
         <ul>
+            <li>@Html.ActionLink(StaticResource.Resources.AboutProject, "About", "Home")</li>
+            <li>@Html.ActionLink(StaticResource.Resources.AboutUs, "AboutUs", "Home")</li>
+             <li>@Html.ActionLink(StaticResource.Resources.Collaboration, "Collaboration", "Home")</li>
+            <li>@Html.ActionLink(StaticResource.Resources.Partner, "Partner", "Home")</li>
+            <li>@Html.ActionLink(StaticResource.Resources.RelationInternational, "RelationInternational", "Home")</li>
+            <li>@Html.ActionLink(StaticResource.Resources.Contact, "Contact", "Home")</li>
 
-            <li>@Html.ActionLink(StaticResource.Resources.AboutProject, "About", "Dashboards")</li>
-            <li>@Html.ActionLink(StaticResource.Resources.Collaboration, "Collaboration", "Dashboards")</li>
-            <li>@Html.ActionLink(StaticResource.Resources.Contact, "Contact", "Dashboards")</li>
         </ul>
-
     </div>
-    <div class="autocontents">       
-        <h2>   @StaticResource.Resources.Team </h2>
+    <div class="autocontents">
+        <h2>   @StaticResource.Resources.AssociatedResearcher </h2>
         @foreach (var item in Model)
         {
-            if (item.Team)
+            if (item.AssociatedResearcher)
             {
                 <ul>
                     <li>
@@ -36,13 +35,14 @@
                                 </p>
                                 <table>
                                     <tr>
-                                        <th> &diams; @StaticResource.Resources.CVName </th>                                        
+                                        <th> &diams; @StaticResource.Resources.CVName - </th>
+                                        <th> Link </th>
                                     </tr>
                                     <tr>
-                                        <td>@item.CV   </td>                                        
+                                        <td>@item.CV   </td>
+                                        <td>@Html.ActionLink("DownLoad", "Home", new { cvName = item.CV }) </td>
                                     </tr>
                                 </table>
-
                                 <br />
                                 <p>
                                     &diams; @StaticResource.Resources.Publications
@@ -67,9 +67,9 @@
 
                 </ul>
             }
+
         }
 
     </div>
-
-
 </div>
+

@@ -217,7 +217,7 @@
     <value>Projet</value>
   </data>
   <data name="Team" xml:space="preserve">
-    <value>Notre equipe</value>
+    <value>Notre équipe</value>
   </data>
   <data name="Add" xml:space="preserve">
     <value>Ajouter</value>
@@ -388,7 +388,7 @@
     <value>Et</value>
   </data>
   <data name="Collaboration" xml:space="preserve">
-    <value>Partenaires</value>
+    <value>Collaboration</value>
   </data>
   <data name="Feedback" xml:space="preserve">
     <value>Dialogue-Feedback</value>
@@ -1188,5 +1188,14 @@ TochPhase</value>
   </data>
   <data name="PublicationIndividual" xml:space="preserve">
     <value>Publication individuelle</value>
+  </data>
+  <data name="Fonction" xml:space="preserve">
+    <value>Fonction</value>
+  </data>
+  <data name="Partner" xml:space="preserve">
+    <value>Partenaires</value>
+  </data>
+  <data name="RelationInternational" xml:space="preserve">
+    <value>Relation Internationale</value>
   </data>
 </root>

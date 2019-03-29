@@ -38,6 +38,11 @@ namespace Horizone.Controllers
             return View(visualAids.ToList());
         }
         [ChildActionOnly]
+        public ActionResult PresentationVisualAid()
+        {
+            return PartialView(db.Presentations.Include(a => a.Language).ToList());
+        }
+        [ChildActionOnly]
         public ActionResult PresenteProject()
         {
             var currentCulture = Session[CommonConstants.CurrentCulture];
@@ -79,11 +84,7 @@ namespace Horizone.Controllers
         {
             return PartialView(db.Presentations.Include(a => a.Language).ToList());
         }
-        [ChildActionOnly]
-        public ActionResult PresentationVisualAid()
-        {
-            return PartialView(db.Presentations.Include(a => a.Language).ToList());
-        }
+        
         [ChildActionOnly]
         public ActionResult PresentationBibliography()
         {
@@ -101,9 +102,22 @@ namespace Horizone.Controllers
         {
             var collaborations = db.Collaborations;
             foreach (var item in db.Collaborations)
-             if (!item.Team) collaborations.Add(item);
+             if (item.Collaborator) collaborations.Add(item);
 
             return View(collaborations.Include("Publications").Include("ImageCollaborations").OrderBy(x => x.Order).ToList());
+        }
+        public ActionResult AssociatedResearcher()
+        {
+            var collaborations = db.Collaborations;
+            foreach (var item in db.Collaborations)
+                if (item.AssociatedResearcher) collaborations.Add(item);
+
+            return View(collaborations.Include("Publications").Include("ImageCollaborations").OrderBy(x => x.Order).ToList());
+        }
+        public ActionResult Partner()
+        {
+             
+            return View();
         }
 
         // GET: FrontContact/Create

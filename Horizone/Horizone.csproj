@@ -358,6 +358,8 @@
     <Content Include="Image\bar1.jpg" />
     <Content Include="Image\bar2.jpg" />
     <Content Include="Image\basin.jpg" />
+    <Content Include="Image\BNF.jfif" />
+    <Content Include="Image\BNHM.jfif" />
     <Content Include="Image\carte.jpg" />
     <Content Include="Image\Central_Tian_Shan_mountains.jpg" />
     <Content Include="Image\China_Tarim.jpg" />
@@ -366,6 +368,7 @@
     <Content Include="Image\imagesToch.jpg" />
     <Content Include="Image\logo2.png" />
     <Content Include="Image\open-book.jpg" />
+    <Content Include="Image\pr1.jfif" />
     <Content Include="Image\Silk-Road-Map-full.jpg" />
     <Content Include="Image\silk-road-map3.png" />
     <Content Include="Image\silk-road3.jpg" />
@@ -378,6 +381,7 @@
     <Content Include="Image\th.jpg" />
     <Content Include="Image\Tocharian.jpg" />
     <Content Include="Image\Wfm_tarim_basin.jpg" />
+    <Content Include="Image\ưien.jfif" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="ApplicationInsights.config">
@@ -910,6 +914,8 @@
     <Content Include="Views\Home\PresentationAboutUs.cshtml" />
     <Content Include="Views\Home\PresentationVisualAid.cshtml" />
     <Content Include="Views\Home\PresentationBibliography.cshtml" />
+    <Content Include="Views\Home\AssociatedResearcher.cshtml" />
+    <Content Include="Views\Home\Partner.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -39,8 +39,19 @@ ul.nav a:hover {
 /*Color menu dropdown */
 ul.dropdown-menu {
     background-color: #ebfdc2;
+    color: slateblue !important;
+}
+.dropdown-submenu {
+    top: 0;
+    Left: 100%;
+    margin-top: -1px;
 }
 
+.dropdown-submenu .dropdown-menu {
+        top: 0;
+        left: 100%;
+        margin-top: -1px;
+    }
 .newinputwidth {
     width: 2000px !important;
 }

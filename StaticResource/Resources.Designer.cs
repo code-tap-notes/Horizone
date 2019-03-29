@@ -493,7 +493,7 @@ namespace StaticResource {
         }
         
         /// <summary>
-        ///   Recherche une chaîne localisée semblable à Partenaires.
+        ///   Recherche une chaîne localisée semblable à Collaboration.
         /// </summary>
         public static string Collaboration {
             get {
@@ -930,6 +930,15 @@ namespace StaticResource {
         public static string FirstPerson {
             get {
                 return ResourceManager.GetString("FirstPerson", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Fonction.
+        /// </summary>
+        public static string Fonction {
+            get {
+                return ResourceManager.GetString("Fonction", resourceCulture);
             }
         }
         
@@ -2158,6 +2167,15 @@ namespace StaticResource {
         }
         
         /// <summary>
+        ///   Recherche une chaîne localisée semblable à Partenaires.
+        /// </summary>
+        public static string Partner {
+            get {
+                return ResourceManager.GetString("Partner", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Recherche une chaîne localisée semblable à Passage.
         /// </summary>
         public static string Passage {
@@ -2497,6 +2515,15 @@ namespace StaticResource {
         public static string RelatedLexemes {
             get {
                 return ResourceManager.GetString("RelatedLexemes", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Relation Internationale.
+        /// </summary>
+        public static string RelationInternational {
+            get {
+                return ResourceManager.GetString("RelationInternational", resourceCulture);
             }
         }
         
@@ -2843,7 +2870,7 @@ namespace StaticResource {
         }
         
         /// <summary>
-        ///   Recherche une chaîne localisée semblable à Notre equipe.
+        ///   Recherche une chaîne localisée semblable à Notre équipe.
         /// </summary>
         public static string Team {
             get {
