@@ -196,6 +196,15 @@ namespace StaticResource {
         }
         
         /// <summary>
+        ///   Recherche une chaîne localisée semblable à Affiliation.
+        /// </summary>
+        public static string Affiliation {
+            get {
+                return ResourceManager.GetString("Affiliation", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Recherche une chaîne localisée semblable à Objectif.
         /// </summary>
         public static string Aim {
@@ -1771,6 +1780,51 @@ namespace StaticResource {
         }
         
         /// <summary>
+        ///   Recherche une chaîne localisée semblable à Nom de Lieu en Anglaise.
+        /// </summary>
+        public static string NamePlaceEn {
+            get {
+                return ResourceManager.GetString("NamePlaceEn", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Nom de Lieu en  Français.
+        /// </summary>
+        public static string NamePlaceFr {
+            get {
+                return ResourceManager.GetString("NamePlaceFr", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Nom de Lieux.
+        /// </summary>
+        public static string NamePlaces {
+            get {
+                return ResourceManager.GetString("NamePlaces", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Nom de Lieu en Chinois.
+        /// </summary>
+        public static string NamePlaceZh {
+            get {
+                return ResourceManager.GetString("NamePlaceZh", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Titres des récits.
+        /// </summary>
+        public static string NameStory {
+            get {
+                return ResourceManager.GetString("NameStory", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Recherche une chaîne localisée semblable à Le Nombre de lignes doit être positif.
         /// </summary>
         public static string NegativeError {
@@ -2356,6 +2410,15 @@ namespace StaticResource {
         }
         
         /// <summary>
+        ///   Recherche une chaîne localisée semblable à Représentation Plastique.
+        /// </summary>
+        public static string PlasticRepresentation {
+            get {
+                return ResourceManager.GetString("PlasticRepresentation", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Recherche une chaîne localisée semblable à Pluriel.
         /// </summary>
         public static string Plural {
@@ -2452,6 +2515,15 @@ namespace StaticResource {
         public static string PronounSuffix {
             get {
                 return ResourceManager.GetString("PronounSuffix", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Noms Propres.
+        /// </summary>
+        public static string ProperNoun {
+            get {
+                return ResourceManager.GetString("ProperNoun", resourceCulture);
             }
         }
         
@@ -2807,6 +2879,15 @@ namespace StaticResource {
         }
         
         /// <summary>
+        ///   Recherche une chaîne localisée semblable à Source de la narration.
+        /// </summary>
+        public static string SourceStory {
+            get {
+                return ResourceManager.GetString("SourceStory", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Recherche une chaîne localisée semblable à Lieu spécifique de trouvaille.
         /// </summary>
         public static string SpecificFindSpot {
@@ -2938,6 +3019,42 @@ namespace StaticResource {
         public static string TextSubgenre {
             get {
                 return ResourceManager.GetString("TextSubgenre", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Thème de la narration.
+        /// </summary>
+        public static string ThemeStory {
+            get {
+                return ResourceManager.GetString("ThemeStory", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Thème de la narration-Anglais.
+        /// </summary>
+        public static string ThemeStoryEn {
+            get {
+                return ResourceManager.GetString("ThemeStoryEn", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Thème de la narration-Française.
+        /// </summary>
+        public static string ThemeStoryFr {
+            get {
+                return ResourceManager.GetString("ThemeStoryFr", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Thème de la narration-Chinois.
+        /// </summary>
+        public static string ThemeStoryZh {
+            get {
+                return ResourceManager.GetString("ThemeStoryZh", resourceCulture);
             }
         }
         

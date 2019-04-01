@@ -1,0 +1,42 @@
+﻿@model Horizone.Models.ThemeStory
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>ThemeStory</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.ThemeEn)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ThemeEn)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ThemeFr)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ThemeFr)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ThemeZn)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ThemeZn)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

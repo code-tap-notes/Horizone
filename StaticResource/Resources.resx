@@ -1198,4 +1198,43 @@ TochPhase</value>
   <data name="RelationInternational" xml:space="preserve">
     <value>Relation Internationale</value>
   </data>
+  <data name="Affiliation" xml:space="preserve">
+    <value>Affiliation</value>
+  </data>
+  <data name="NamePlaces" xml:space="preserve">
+    <value>Nom de Lieux</value>
+  </data>
+  <data name="NameStory" xml:space="preserve">
+    <value>Titres des récits</value>
+  </data>
+  <data name="PlasticRepresentation" xml:space="preserve">
+    <value>Représentation Plastique</value>
+  </data>
+  <data name="SourceStory" xml:space="preserve">
+    <value>Source de la narration</value>
+  </data>
+  <data name="ThemeStory" xml:space="preserve">
+    <value>Thème de la narration</value>
+  </data>
+  <data name="NamePlaceEn" xml:space="preserve">
+    <value>Nom de Lieu en Anglaise</value>
+  </data>
+  <data name="NamePlaceFr" xml:space="preserve">
+    <value>Nom de Lieu en  Français</value>
+  </data>
+  <data name="NamePlaceZh" xml:space="preserve">
+    <value>Nom de Lieu en Chinois</value>
+  </data>
+  <data name="ThemeStoryEn" xml:space="preserve">
+    <value>Thème de la narration-Anglais</value>
+  </data>
+  <data name="ThemeStoryFr" xml:space="preserve">
+    <value>Thème de la narration-Française</value>
+  </data>
+  <data name="ThemeStoryZh" xml:space="preserve">
+    <value>Thème de la narration-Chinois</value>
+  </data>
+  <data name="ProperNoun" xml:space="preserve">
+    <value>Noms Propres</value>
+  </data>
 </root>

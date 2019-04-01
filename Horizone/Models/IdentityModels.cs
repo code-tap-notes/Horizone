@@ -56,6 +56,11 @@ namespace Horizone.Models
         public DbSet<News> Newses { get; set; }
         public DbSet<TochPhrase> TochPhrases { get; set; }
         public DbSet<TochStory> TochStorys { get; set; }
+        public DbSet<NamePlace> NamePlaces { get; set; }
+        public DbSet<ThemeStory> ThemeStorys { get; set; }
+        public DbSet<SourceStory> SourceStorys { get; set; }
+        public DbSet<ProperNoun> ProperNouns { get; set; }
+
         public DbSet<Topic> Topics { get; set; }
         public DbSet<TochLanguage> TochLanguages { get; set; }
         public DbSet<Bibliography> Bibliographys { get; set; }

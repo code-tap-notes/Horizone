@@ -12,16 +12,40 @@ namespace Horizone.Models
     {
         public int Id { get; set; }
 
-        [Display(Name = "Name", ResourceType = typeof(StaticResource.Resources))]
+        [Display(Name = "NameStory", ResourceType = typeof(StaticResource.Resources))]
         [Required(ErrorMessageResourceName = "FieldRequired", ErrorMessageResourceType = typeof(StaticResource.Resources))]
         [StringLength(500, MinimumLength = 1, ErrorMessageResourceName = "MaxLength500", ErrorMessageResourceType = typeof(StaticResource.Resources))]
         public string Name { get; set; }
 
-        [Display(Name = "TochLanguage", ResourceType = typeof(StaticResource.Resources))]
-        public int TochLanguageId { get; set; }
+        [Display(Name = "SourceStory", ResourceType = typeof(StaticResource.Resources))]
+        public int SourceStoryId { get; set; }
 
-        [ForeignKey("TochLanguageId")]
-        public TochLanguage TochLanguage { get; set; }
+        [ForeignKey("SourceStoryId")]
+        public SourceStory SourceStory { get; set; }
+
+        [Display(Name = "ProperNoun", ResourceType = typeof(StaticResource.Resources))]
+        public int ProperNounId { get; set; }
+
+        [ForeignKey("SourceStoryId")]
+        public ProperNoun ProperNoun { get; set; }
+
+        [Display(Name = "ThemeStory", ResourceType = typeof(StaticResource.Resources))]
+        public int ThemeStoryId { get; set; }
+
+        [ForeignKey("ThemeStoryId")]
+        public ThemeStory ThemeStory { get; set; }
+
+        [Display(Name = "NamePlace", ResourceType = typeof(StaticResource.Resources))]
+        public int NamePlaceId { get; set; }
+
+        [ForeignKey("NamePlaceId")]
+        public NamePlace NamePlace { get; set; }
+
+        [Display(Name = "PlasticRepresentation", ResourceType = typeof(StaticResource.Resources))]
+        public string PlasticRepresentation { get; set; }
+
+        [Display(Name = "MainFindSpot", ResourceType = typeof(StaticResource.Resources))]
+        public string MainFindSpot { get; set; }
 
         [AllowHtml]
         [Required(ErrorMessageResourceName = "FieldRequired", ErrorMessageResourceType = typeof(StaticResource.Resources))]
@@ -39,10 +63,11 @@ namespace Horizone.Models
         [AllowHtml]
         [Display(Name = "Chinese", ResourceType = typeof(StaticResource.Resources))]
         public string Chinese { get; set; }
-
+       
         [AllowHtml]
+        [Display(Name = "Description", ResourceType = typeof(StaticResource.Resources))]
         public string Description { get; set; }
-
+        
         [Display(Name = "Visible", ResourceType = typeof(StaticResource.Resources))]
         public Boolean Visible { get; set; }
 

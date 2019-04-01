@@ -1195,4 +1195,34 @@ TochPhase</value>
   <data name="RelationInternational" xml:space="preserve">
     <value>国际关系</value>
   </data>
+  <data name="Affiliation" xml:space="preserve">
+    <value>加盟</value>
+  </data>
+  <data name="NamePlaces" xml:space="preserve">
+    <value>地名</value>
+  </data>
+  <data name="NameStory" xml:space="preserve">
+    <value>叙述名称</value>
+  </data>
+  <data name="PlasticRepresentation" xml:space="preserve">
+    <value>塑料代表</value>
+  </data>
+  <data name="SourceStory" xml:space="preserve">
+    <value>故事来源</value>
+  </data>
+  <data name="ThemeStory" xml:space="preserve">
+    <value>讲故事的主题</value>
+  </data>
+  <data name="ThemeStoryEn" xml:space="preserve">
+    <value>英语故事主题</value>
+  </data>
+  <data name="ThemeStoryFr" xml:space="preserve">
+    <value>法语故事的主题</value>
+  </data>
+  <data name="ThemeStoryZh" xml:space="preserve">
+    <value>中文故事主题</value>
+  </data>
+  <data name="ProperNoun" xml:space="preserve">
+    <value>正确的名词</value>
+  </data>
 </root>

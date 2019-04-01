@@ -1192,4 +1192,43 @@ TochPhase</value>
   <data name="RelationInternational" xml:space="preserve">
     <value>International Relation</value>
   </data>
+  <data name="Affiliation" xml:space="preserve">
+    <value>Affiliation</value>
+  </data>
+  <data name="NamePlaces" xml:space="preserve">
+    <value>Names of Places</value>
+  </data>
+  <data name="NameStory" xml:space="preserve">
+    <value>Story Name</value>
+  </data>
+  <data name="PlasticRepresentation" xml:space="preserve">
+    <value>Plastic Representation</value>
+  </data>
+  <data name="SourceStory" xml:space="preserve">
+    <value>Story Source</value>
+  </data>
+  <data name="ThemeStory" xml:space="preserve">
+    <value>Story Theme</value>
+  </data>
+  <data name="NamePlaceEn" xml:space="preserve">
+    <value>Name of Place in English</value>
+  </data>
+  <data name="NamePlaceFr" xml:space="preserve">
+    <value>Name of Place in French</value>
+  </data>
+  <data name="NamePlaceZh" xml:space="preserve">
+    <value>Name of Place  in Chinese</value>
+  </data>
+  <data name="ThemeStoryEn" xml:space="preserve">
+    <value>Story Theme in English</value>
+  </data>
+  <data name="ThemeStoryFr" xml:space="preserve">
+    <value>Story Theme in French</value>
+  </data>
+  <data name="ThemeStoryZh" xml:space="preserve">
+    <value>Story Theme in Chinoise</value>
+  </data>
+  <data name="ProperNoun" xml:space="preserve">
+    <value>Proper Noun</value>
+  </data>
 </root>

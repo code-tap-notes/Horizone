@@ -30,7 +30,11 @@ namespace Horizone.Models
 
         [AllowHtml]
         [Display(Name ="Fonction", ResourceType = typeof(StaticResource.Resources))]
-        public string Summary { get; set; }
+        public string Fonction { get; set; }
+
+        [AllowHtml]
+        [Display(Name = "Affiliation", ResourceType = typeof(StaticResource.Resources))]
+        public string Affiliation { get; set; }
 
         [Display(Name = "CVName")]
         public string CV { get; set; }

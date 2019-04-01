@@ -217,14 +217,17 @@
     <Compile Include="Areas\BackOffice\Controllers\GendersController.cs" />
     <Compile Include="Areas\BackOffice\Controllers\LinkAndPressesController.cs" />
     <Compile Include="Areas\BackOffice\Controllers\ManuscriptsController.cs" />
+    <Compile Include="Areas\BackOffice\Controllers\NamePlacesController.cs" />
     <Compile Include="Areas\BackOffice\Controllers\NewsController.cs" />
     <Compile Include="Areas\BackOffice\Controllers\NumbersController.cs" />
     <Compile Include="Areas\BackOffice\Controllers\PersonsController.cs" />
     <Compile Include="Areas\BackOffice\Controllers\PresentationsController.cs" />
+    <Compile Include="Areas\BackOffice\Controllers\ProperNounsController.cs" />
     <Compile Include="Areas\BackOffice\Controllers\PublicationsController.cs" />
+    <Compile Include="Areas\BackOffice\Controllers\SourceStoriesController.cs" />
+    <Compile Include="Areas\BackOffice\Controllers\ThemeStoriesController.cs" />
     <Compile Include="Areas\BackOffice\Controllers\TochLanguagesController.cs" />
     <Compile Include="Areas\BackOffice\Controllers\TochPhrasesController.cs" />
-    <Compile Include="Areas\BackOffice\Controllers\TochStoriesController.cs" />
     <Compile Include="Areas\BackOffice\Controllers\TopicsController.cs" />
     <Compile Include="Areas\BackOffice\Controllers\VisualAidsController.cs" />
     <Compile Include="Areas\BackOffice\Controllers\WordClassesController.cs" />
@@ -248,6 +251,10 @@
     <Compile Include="Migrations\201903271407016_addColLanguage.cs" />
     <Compile Include="Migrations\201903271407016_addColLanguage.Designer.cs">
       <DependentUpon>201903271407016_addColLanguage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201904011558582_ChangeTochStory.cs" />
+    <Compile Include="Migrations\201904011558582_ChangeTochStory.Designer.cs">
+      <DependentUpon>201904011558582_ChangeTochStory.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AboutProject.cs" />
@@ -284,11 +291,15 @@
     <Compile Include="Models\Manuscript.cs" />
     <Compile Include="Models\LinkAndPress.cs" />
     <Compile Include="Models\Message.cs" />
+    <Compile Include="Models\NamePlace.cs" />
     <Compile Include="Models\News.cs" />
     <Compile Include="Models\Number.cs" />
     <Compile Include="Models\Person.cs" />
     <Compile Include="Models\Personne.cs" />
     <Compile Include="Models\Presentation.cs" />
+    <Compile Include="Models\ProperNoun.cs" />
+    <Compile Include="Models\SourceStory.cs" />
+    <Compile Include="Models\ThemeStory.cs" />
     <Compile Include="Models\VisualAid.cs" />
     <Compile Include="Models\Publication.cs" />
     <Compile Include="Models\TochLanguage.cs" />
@@ -562,11 +573,6 @@
     <Content Include="Areas\BackOffice\Views\Persons\Details.cshtml" />
     <Content Include="Areas\BackOffice\Views\Persons\Edit.cshtml" />
     <Content Include="Areas\BackOffice\Views\Persons\Index.cshtml" />
-    <Content Include="Areas\BackOffice\Views\TochStories\Create.cshtml" />
-    <Content Include="Areas\BackOffice\Views\TochStories\Delete.cshtml" />
-    <Content Include="Areas\BackOffice\Views\TochStories\Details.cshtml" />
-    <Content Include="Areas\BackOffice\Views\TochStories\Edit.cshtml" />
-    <Content Include="Areas\BackOffice\Views\TochStories\Index.cshtml" />
     <Content Include="Areas\BackOffice\Views\News\Create.cshtml" />
     <Content Include="Areas\BackOffice\Views\News\Delete.cshtml" />
     <Content Include="Areas\BackOffice\Views\News\Details.cshtml" />
@@ -602,6 +608,26 @@
     <Content Include="Areas\BackOffice\Views\Presentations\Details.cshtml" />
     <Content Include="Areas\BackOffice\Views\Presentations\Edit.cshtml" />
     <Content Include="Areas\BackOffice\Views\Presentations\Index.cshtml" />
+    <Content Include="Areas\BackOffice\Views\NamePlaces\Create.cshtml" />
+    <Content Include="Areas\BackOffice\Views\NamePlaces\Delete.cshtml" />
+    <Content Include="Areas\BackOffice\Views\NamePlaces\Details.cshtml" />
+    <Content Include="Areas\BackOffice\Views\NamePlaces\Edit.cshtml" />
+    <Content Include="Areas\BackOffice\Views\NamePlaces\Index.cshtml" />
+    <Content Include="Areas\BackOffice\Views\ThemeStories\Create.cshtml" />
+    <Content Include="Areas\BackOffice\Views\ThemeStories\Delete.cshtml" />
+    <Content Include="Areas\BackOffice\Views\ThemeStories\Details.cshtml" />
+    <Content Include="Areas\BackOffice\Views\ThemeStories\Edit.cshtml" />
+    <Content Include="Areas\BackOffice\Views\ThemeStories\Index.cshtml" />
+    <Content Include="Areas\BackOffice\Views\SourceStories\Create.cshtml" />
+    <Content Include="Areas\BackOffice\Views\SourceStories\Delete.cshtml" />
+    <Content Include="Areas\BackOffice\Views\SourceStories\Details.cshtml" />
+    <Content Include="Areas\BackOffice\Views\SourceStories\Edit.cshtml" />
+    <Content Include="Areas\BackOffice\Views\SourceStories\Index.cshtml" />
+    <Content Include="Areas\BackOffice\Views\ProperNouns\Create.cshtml" />
+    <Content Include="Areas\BackOffice\Views\ProperNouns\Delete.cshtml" />
+    <Content Include="Areas\BackOffice\Views\ProperNouns\Details.cshtml" />
+    <Content Include="Areas\BackOffice\Views\ProperNouns\Edit.cshtml" />
+    <Content Include="Areas\BackOffice\Views\ProperNouns\Index.cshtml" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\cldr.js" />
     <Content Include="Scripts\cldr\event.js" />
@@ -952,6 +978,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201903271407016_addColLanguage.resx">
       <DependentUpon>201903271407016_addColLanguage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201904011558582_ChangeTochStory.resx">
+      <DependentUpon>201904011558582_ChangeTochStory.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

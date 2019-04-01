@@ -21,7 +21,10 @@
             @Html.DisplayNameFor(model => model.FirstName)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Summary)
+            @Html.DisplayNameFor(model => model.Fonction)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Affiliation)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.CV)
@@ -60,8 +63,12 @@
             @Html.DisplayFor(modelItem => item.FirstName)
         </td>
         <td>
-            @Html.Raw(item.Summary)
+            @Html.Raw(item.Fonction)
         </td>
+        <td>
+            @Html.Raw(item.Affiliation)
+        </td>
+       
         <td>
             @Html.DisplayFor(modelItem => item.CV)
         </td>
