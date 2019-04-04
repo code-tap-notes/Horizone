@@ -1,0 +1,42 @@
+﻿@model Horizone.Models.AlignmentType
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>AlignmentType</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.AlignmentTypeEn)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AlignmentTypeEn)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AlignmentTypeFr)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AlignmentTypeFr)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AlignmentTypeZh)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AlignmentTypeZh)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

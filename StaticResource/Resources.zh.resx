@@ -1225,4 +1225,160 @@ TochPhase</value>
   <data name="ProperNoun" xml:space="preserve">
     <value>正确的名词</value>
   </data>
+  <data name="AlignmentTypeEn" xml:space="preserve">
+    <value>对齐类型 - 英语</value>
+  </data>
+  <data name="AlignmentTypeFr" xml:space="preserve">
+    <value>对齐类型 - 法语</value>
+  </data>
+  <data name="AlignmentTypeZh" xml:space="preserve">
+    <value>对齐类型 - 中文</value>
+  </data>
+  <data name="DescriptionEn" xml:space="preserve">
+    <value>说明英文</value>
+  </data>
+  <data name="DescriptionFr" xml:space="preserve">
+    <value>描述法语</value>
+  </data>
+  <data name="DescriptionZh" xml:space="preserve">
+    <value>描述中文</value>
+  </data>
+  <data name="FormatEn" xml:space="preserve">
+    <value>格式英文</value>
+  </data>
+  <data name="FormatFr" xml:space="preserve">
+    <value>格式法语</value>
+  </data>
+  <data name="FormatZh" xml:space="preserve">
+    <value>格式中文</value>
+  </data>
+  <data name="LanguageDetailEn" xml:space="preserve">
+    <value>语言详细信息 - 英语</value>
+  </data>
+  <data name="LanguageDetailFr" xml:space="preserve">
+    <value>语言细节 - 法语</value>
+  </data>
+  <data name="LanguageDetailZh" xml:space="preserve">
+    <value>语言细节 - 中文</value>
+  </data>
+  <data name="LanguageStageEn" xml:space="preserve">
+    <value>语言阶段 - 英语</value>
+  </data>
+  <data name="LanguageStageFr" xml:space="preserve">
+    <value>语言阶段 - 法语</value>
+  </data>
+  <data name="LanguageStageZh" xml:space="preserve">
+    <value>语言阶段 - 中文</value>
+  </data>
+  <data name="MaterialEn" xml:space="preserve">
+    <value>材料 - 英文</value>
+  </data>
+  <data name="MaterialFr" xml:space="preserve">
+    <value>材料 - 法国</value>
+  </data>
+  <data name="MaterialZh" xml:space="preserve">
+    <value>材料 - 中文</value>
+  </data>
+  <data name="MetricEn" xml:space="preserve">
+    <value>公制 - 英语</value>
+  </data>
+  <data name="MetricFr" xml:space="preserve">
+    <value>公制 - 法语</value>
+  </data>
+  <data name="MetricZh" xml:space="preserve">
+    <value>公制 -中国 </value>
+  </data>
+  <data name="PaperColorEn" xml:space="preserve">
+    <value>纸张颜色 - 英文</value>
+  </data>
+  <data name="PaperColorFr" xml:space="preserve">
+    <value>纸张颜色 - 法语</value>
+  </data>
+  <data name="PaperColorZh" xml:space="preserve">
+    <value>纸色 - 中文</value>
+  </data>
+  <data name="RemarkEn" xml:space="preserve">
+    <value>说英语</value>
+  </data>
+  <data name="RemarkFr" xml:space="preserve">
+    <value>说法语</value>
+  </data>
+  <data name="RemarkZh" xml:space="preserve">
+    <value>说中文</value>
+  </data>
+  <data name="RulingColorEn" xml:space="preserve">
+    <value>执政颜色英语</value>
+  </data>
+  <data name="RulingColorFr" xml:space="preserve">
+    <value>统治颜色法语</value>
+  </data>
+  <data name="RulingColorZh" xml:space="preserve">
+    <value>统治中国色彩</value>
+  </data>
+  <data name="RulingDetailEn" xml:space="preserve">
+    <value>执政细节英语</value>
+  </data>
+  <data name="RulingDetailFr" xml:space="preserve">
+    <value>执政细节法语</value>
+  </data>
+  <data name="RulingDetailZh" xml:space="preserve">
+    <value>执政细节中国人</value>
+  </data>
+  <data name="RulingEn" xml:space="preserve">
+    <value>执政英语</value>
+  </data>
+  <data name="RulingFr" xml:space="preserve">
+    <value>执政法国</value>
+  </data>
+  <data name="RulingZh" xml:space="preserve">
+    <value>统治中国人</value>
+  </data>
+  <data name="ScriptAddEn" xml:space="preserve">
+    <value>脚本细节 - 英文</value>
+  </data>
+  <data name="ScriptAddFr" xml:space="preserve">
+    <value>脚本细节 - 法语</value>
+  </data>
+  <data name="ScriptAddZh" xml:space="preserve">
+    <value>脚本细节 - 中文</value>
+  </data>
+  <data name="ScriptEn" xml:space="preserve">
+    <value>脚本 - 英文</value>
+  </data>
+  <data name="ScriptFr" xml:space="preserve">
+    <value>脚本 - 法语</value>
+  </data>
+  <data name="ScriptZh" xml:space="preserve">
+    <value>脚本 - 中文</value>
+  </data>
+  <data name="StateEn" xml:space="preserve">
+    <value>一般国家英语</value>
+  </data>
+  <data name="StateFr" xml:space="preserve">
+    <value>一般国家法语</value>
+  </data>
+  <data name="StateZh" xml:space="preserve">
+    <value>一般国家中国人</value>
+  </data>
+  <data name="SubGenderEn" xml:space="preserve">
+    <value>英语子类型</value>
+  </data>
+  <data name="SubGenderFr" xml:space="preserve">
+    <value>法语子类型</value>
+  </data>
+  <data name="SubGenderZh" xml:space="preserve">
+    <value>中国亚属</value>
+  </data>
+  <data name="WritingToolEn" xml:space="preserve">
+    <value>写作工具 - 英语</value>
+  </data>
+  <data name="WritingToolFr" xml:space="preserve">
+    <value>书写工具 - 法语</value>
+  </data>
+  <data name="WritingToolZh" xml:space="preserve">
+    <value>书写工具 - 中文</value>
+  </data>
+  <data name="Tocharian" xml:space="preserve">
+    <value>吐火罗</value>
+  </data>
 </root>

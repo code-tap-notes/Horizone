@@ -1,0 +1,42 @@
+﻿@model Horizone.Models.RulingDetail
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>RulingDetail</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.RulingDetailEn)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.RulingDetailEn)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.RulingDetailFr)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.RulingDetailFr)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.RulingDetailZh)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.RulingDetailZh)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

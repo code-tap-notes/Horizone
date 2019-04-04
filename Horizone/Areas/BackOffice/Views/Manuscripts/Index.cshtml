@@ -1,7 +1,7 @@
 ﻿@model PagedList.IPagedList<Horizone.Models.Manuscript>
 @using PagedList.Mvc;
 @{
-    ViewBag.Title = @StaticResource.Resources.Manuscript;
+  ViewBag.Title = @StaticResource.Resources.Manuscript;
 }
 
 <h2> @StaticResource.Resources.Manuscript</h2>
@@ -32,29 +32,29 @@
 
     @foreach (var item in Model)
     {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.Index)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.OtherSiglum)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.TochLanguage.Language)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.LeafNumber)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.NumberOfLine)
-        </td>
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Index)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.OtherSiglum)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TochLanguage.Language)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.LeafNumber)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NumberOfLine)
+            </td>
 
-        <td>
-            @Html.ActionLink(@StaticResource.Resources.Edit, "Edit", new { id = item.Id }, new { @class = "btn btn-info", style = "width:90px" })
-            @Html.ActionLink(@StaticResource.Resources.Details, "Details", new { id = item.Id }, new { @class = "btn btn-info", style = "width:90px" })
-            @Html.ActionLink(@StaticResource.Resources.Delete, "Delete", new { id = item.Id }, new { @class = "btn btn-info", style = "width:90px" })
-        </td>
-    </tr>
+            <td>
+                @Html.ActionLink(@StaticResource.Resources.Edit, "Edit", new { id = item.Id }, new { @class = "btn btn-info", style = "width:90px" })
+                @Html.ActionLink(@StaticResource.Resources.Details, "Details", new { id = item.Id }, new { @class = "btn btn-info", style = "width:90px" })
+                @Html.ActionLink(@StaticResource.Resources.Delete, "Delete", new { id = item.Id }, new { @class = "btn btn-info", style = "width:90px" })
+            </td>
+        </tr>
     }
 
 </table>

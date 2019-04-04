@@ -204,6 +204,7 @@
     <Compile Include="Areas\BackOffice\BackOfficeAreaRegistration.cs" />
     <Compile Include="Areas\BackOffice\Controllers\AboutProjectsController.cs" />
     <Compile Include="Areas\BackOffice\Controllers\ActivitiesController.cs" />
+    <Compile Include="Areas\BackOffice\Controllers\AlignmentTypesController.cs" />
     <Compile Include="Areas\BackOffice\Controllers\AnalyseMaterialsController.cs" />
     <Compile Include="Areas\BackOffice\Controllers\BibliographiesController.cs" />
     <Compile Include="Areas\BackOffice\Controllers\CasesController.cs" />
@@ -211,20 +212,35 @@
     <Compile Include="Areas\BackOffice\Controllers\CollaborationsController.cs" />
     <Compile Include="Areas\BackOffice\Controllers\CollaboratorsController.cs" />
     <Compile Include="Areas\BackOffice\Controllers\CommentsController.cs" />
-    <Compile Include="Areas\BackOffice\Controllers\ContactMessagesController.cs" />
     <Compile Include="Areas\BackOffice\Controllers\DashBoardsController.cs" />
+    <Compile Include="Areas\BackOffice\Controllers\DescriptionManuscriptsController.cs" />
     <Compile Include="Areas\BackOffice\Controllers\DictionaryTochariansController.cs" />
+    <Compile Include="Areas\BackOffice\Controllers\FormatsController.cs" />
+    <Compile Include="Areas\BackOffice\Controllers\GenderManuscriptsController.cs" />
     <Compile Include="Areas\BackOffice\Controllers\GendersController.cs" />
+    <Compile Include="Areas\BackOffice\Controllers\LanguageDetailsController.cs" />
+    <Compile Include="Areas\BackOffice\Controllers\LanguageStagesController.cs" />
     <Compile Include="Areas\BackOffice\Controllers\LinkAndPressesController.cs" />
     <Compile Include="Areas\BackOffice\Controllers\ManuscriptsController.cs" />
+    <Compile Include="Areas\BackOffice\Controllers\MapsController.cs" />
+    <Compile Include="Areas\BackOffice\Controllers\MaterialsController.cs" />
+    <Compile Include="Areas\BackOffice\Controllers\MetricsController.cs" />
     <Compile Include="Areas\BackOffice\Controllers\NamePlacesController.cs" />
     <Compile Include="Areas\BackOffice\Controllers\NewsController.cs" />
     <Compile Include="Areas\BackOffice\Controllers\NumbersController.cs" />
+    <Compile Include="Areas\BackOffice\Controllers\PaperColorsController.cs" />
     <Compile Include="Areas\BackOffice\Controllers\PersonsController.cs" />
     <Compile Include="Areas\BackOffice\Controllers\PresentationsController.cs" />
-    <Compile Include="Areas\BackOffice\Controllers\ProperNounsController.cs" />
     <Compile Include="Areas\BackOffice\Controllers\PublicationsController.cs" />
+    <Compile Include="Areas\BackOffice\Controllers\RemarkAddsController.cs" />
+    <Compile Include="Areas\BackOffice\Controllers\RulingColorsController.cs" />
+    <Compile Include="Areas\BackOffice\Controllers\RulingDetailsController.cs" />
+    <Compile Include="Areas\BackOffice\Controllers\RulingsController.cs" />
+    <Compile Include="Areas\BackOffice\Controllers\ScriptAddsController.cs" />
+    <Compile Include="Areas\BackOffice\Controllers\ScriptsController.cs" />
     <Compile Include="Areas\BackOffice\Controllers\SourceStoriesController.cs" />
+    <Compile Include="Areas\BackOffice\Controllers\StatesController.cs" />
+    <Compile Include="Areas\BackOffice\Controllers\SubGenderManuscriptsController.cs" />
     <Compile Include="Areas\BackOffice\Controllers\ThemeStoriesController.cs" />
     <Compile Include="Areas\BackOffice\Controllers\TochLanguagesController.cs" />
     <Compile Include="Areas\BackOffice\Controllers\TochPhrasesController.cs" />
@@ -232,6 +248,7 @@
     <Compile Include="Areas\BackOffice\Controllers\VisualAidsController.cs" />
     <Compile Include="Areas\BackOffice\Controllers\WordClassesController.cs" />
     <Compile Include="Areas\BackOffice\Controllers\WordSubClassesController.cs" />
+    <Compile Include="Areas\BackOffice\Controllers\WritingToolsController.cs" />
     <Compile Include="Controllers\FontManuscriptsController.cs" />
     <Compile Include="Controllers\FontNewsController.cs" />
     <Compile Include="Controllers\FontTochPhrasesController.cs" />
@@ -256,6 +273,10 @@
     <Compile Include="Migrations\201904011558582_ChangeTochStory.Designer.cs">
       <DependentUpon>201904011558582_ChangeTochStory.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201904031921286_ChangeManuscript.cs" />
+    <Compile Include="Migrations\201904031921286_ChangeManuscript.Designer.cs">
+      <DependentUpon>201904031921286_ChangeManuscript.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AboutProject.cs" />
     <Compile Include="Common\CommonConstants.cs" />
@@ -269,6 +290,7 @@
     </Compile>
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Activity.cs" />
+    <Compile Include="Models\AlignmentType.cs" />
     <Compile Include="Models\AnalyseMaterial.cs" />
     <Compile Include="Models\Bibliography.cs" />
     <Compile Include="Models\Case.cs" />
@@ -276,10 +298,23 @@
     <Compile Include="Models\Collaborator.cs" />
     <Compile Include="Models\Collaboration.cs" />
     <Compile Include="Models\Comment.cs" />
-    <Compile Include="Models\ContactMessage.cs" />
     <Compile Include="Models\Dashboard.cs" />
+    <Compile Include="Models\DescriptionManuscript.cs" />
     <Compile Include="Models\DictionaryTocharian.cs" />
+    <Compile Include="Models\Format.cs" />
     <Compile Include="Models\Gender.cs" />
+    <Compile Include="Models\GenderManuscript.cs" />
+    <Compile Include="Models\LanguageDetail.cs" />
+    <Compile Include="Models\LanguageStage.cs" />
+    <Compile Include="Models\Material.cs" />
+    <Compile Include="Models\PaperColor.cs" />
+    <Compile Include="Models\RemarkAdd.cs" />
+    <Compile Include="Models\Ruling.cs" />
+    <Compile Include="Models\RulingDetail.cs" />
+    <Compile Include="Models\RulingColor.cs" />
+    <Compile Include="Models\Script.cs" />
+    <Compile Include="Models\ScriptAdd.cs" />
+    <Compile Include="Models\State.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ImageAnalyse.cs" />
     <Compile Include="Models\ImageCollaboration.cs" />
@@ -290,7 +325,9 @@
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\Manuscript.cs" />
     <Compile Include="Models\LinkAndPress.cs" />
+    <Compile Include="Models\Map.cs" />
     <Compile Include="Models\Message.cs" />
+    <Compile Include="Models\Metric.cs" />
     <Compile Include="Models\NamePlace.cs" />
     <Compile Include="Models\News.cs" />
     <Compile Include="Models\Number.cs" />
@@ -299,6 +336,7 @@
     <Compile Include="Models\Presentation.cs" />
     <Compile Include="Models\ProperNoun.cs" />
     <Compile Include="Models\SourceStory.cs" />
+    <Compile Include="Models\SubGenderManuscript.cs" />
     <Compile Include="Models\ThemeStory.cs" />
     <Compile Include="Models\VisualAid.cs" />
     <Compile Include="Models\Publication.cs" />
@@ -308,6 +346,7 @@
     <Compile Include="Models\Topic.cs" />
     <Compile Include="Models\WordClass .cs" />
     <Compile Include="Models\WordSubClass.cs" />
+    <Compile Include="Models\WritingTool.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
     <Compile Include="Validators\AgeAttribute.cs" />
@@ -472,9 +511,6 @@
     <Content Include="Content\bootstrap\mixins\text-emphasis.less" />
     <Content Include="Content\bootstrap\mixins\text-overflow.less" />
     <Content Include="Content\bootstrap\mixins\vendor-prefixes.less" />
-    <Content Include="Areas\BackOffice\Views\ContactMessages\Delete.cshtml" />
-    <Content Include="Areas\BackOffice\Views\ContactMessages\Details.cshtml" />
-    <Content Include="Areas\BackOffice\Views\ContactMessages\Index.cshtml" />
     <Content Include="Areas\BackOffice\Views\Clients\Details.cshtml" />
     <Content Include="Areas\BackOffice\Views\Clients\Index.cshtml" />
     <Content Include="Areas\BackOffice\Views\DashBoards\About.cshtml" />
@@ -509,18 +545,7 @@
     <Content Include="Areas\BackOffice\Views\TochLanguages\Details.cshtml" />
     <Content Include="Areas\BackOffice\Views\TochLanguages\Edit.cshtml" />
     <Content Include="Areas\BackOffice\Views\TochLanguages\Index.cshtml" />
-    <Content Include="Areas\BackOffice\Views\Manuscripts\Create.cshtml" />
-    <Content Include="Areas\BackOffice\Views\Manuscripts\Delete.cshtml" />
-    <Content Include="Areas\BackOffice\Views\Manuscripts\Details.cshtml" />
-    <Content Include="Areas\BackOffice\Views\Manuscripts\Edit.cshtml" />
-    <Content Include="Areas\BackOffice\Views\Manuscripts\Index.cshtml" />
     <Content Include="Areas\BackOffice\Views\DashBoards\Search.cshtml" />
-    <Content Include="Areas\BackOffice\Views\Manuscripts\LayoutManuscripts.cshtml" />
-    <Content Include="Areas\BackOffice\Views\Manuscripts\OverallDescriptions.cshtml" />
-    <Content Include="Areas\BackOffice\Views\Manuscripts\ScriptManuscripts.cshtml" />
-    <Content Include="Areas\BackOffice\Views\Manuscripts\TextContents.cshtml" />
-    <Content Include="Areas\BackOffice\Views\Manuscripts\TextLanguages.cshtml" />
-    <Content Include="Areas\BackOffice\Views\Manuscripts\MaterialManuscripts.cshtml" />
     <Content Include="Areas\BackOffice\Views\Bibliographies\Create.cshtml" />
     <Content Include="Areas\BackOffice\Views\Bibliographies\Delete.cshtml" />
     <Content Include="Areas\BackOffice\Views\Bibliographies\Details.cshtml" />
@@ -623,11 +648,112 @@
     <Content Include="Areas\BackOffice\Views\SourceStories\Details.cshtml" />
     <Content Include="Areas\BackOffice\Views\SourceStories\Edit.cshtml" />
     <Content Include="Areas\BackOffice\Views\SourceStories\Index.cshtml" />
-    <Content Include="Areas\BackOffice\Views\ProperNouns\Create.cshtml" />
-    <Content Include="Areas\BackOffice\Views\ProperNouns\Delete.cshtml" />
-    <Content Include="Areas\BackOffice\Views\ProperNouns\Details.cshtml" />
-    <Content Include="Areas\BackOffice\Views\ProperNouns\Edit.cshtml" />
-    <Content Include="Areas\BackOffice\Views\ProperNouns\Index.cshtml" />
+    <Content Include="Areas\BackOffice\Views\AlignmentTypes\Create.cshtml" />
+    <Content Include="Areas\BackOffice\Views\AlignmentTypes\Delete.cshtml" />
+    <Content Include="Areas\BackOffice\Views\AlignmentTypes\Details.cshtml" />
+    <Content Include="Areas\BackOffice\Views\AlignmentTypes\Edit.cshtml" />
+    <Content Include="Areas\BackOffice\Views\AlignmentTypes\Index.cshtml" />
+    <Content Include="Areas\BackOffice\Views\DescriptionManuscripts\Create.cshtml" />
+    <Content Include="Areas\BackOffice\Views\DescriptionManuscripts\Delete.cshtml" />
+    <Content Include="Areas\BackOffice\Views\DescriptionManuscripts\Details.cshtml" />
+    <Content Include="Areas\BackOffice\Views\DescriptionManuscripts\Edit.cshtml" />
+    <Content Include="Areas\BackOffice\Views\DescriptionManuscripts\Index.cshtml" />
+    <Content Include="Areas\BackOffice\Views\Formats\Create.cshtml" />
+    <Content Include="Areas\BackOffice\Views\Formats\Delete.cshtml" />
+    <Content Include="Areas\BackOffice\Views\Formats\Details.cshtml" />
+    <Content Include="Areas\BackOffice\Views\Formats\Edit.cshtml" />
+    <Content Include="Areas\BackOffice\Views\Formats\Index.cshtml" />
+    <Content Include="Areas\BackOffice\Views\GenderManuscripts\Create.cshtml" />
+    <Content Include="Areas\BackOffice\Views\GenderManuscripts\Delete.cshtml" />
+    <Content Include="Areas\BackOffice\Views\GenderManuscripts\Details.cshtml" />
+    <Content Include="Areas\BackOffice\Views\GenderManuscripts\Edit.cshtml" />
+    <Content Include="Areas\BackOffice\Views\GenderManuscripts\Index.cshtml" />
+    <Content Include="Areas\BackOffice\Views\LanguageDetails\Create.cshtml" />
+    <Content Include="Areas\BackOffice\Views\LanguageDetails\Delete.cshtml" />
+    <Content Include="Areas\BackOffice\Views\LanguageDetails\Details.cshtml" />
+    <Content Include="Areas\BackOffice\Views\LanguageDetails\Edit.cshtml" />
+    <Content Include="Areas\BackOffice\Views\LanguageDetails\Index.cshtml" />
+    <Content Include="Areas\BackOffice\Views\LanguageStages\Create.cshtml" />
+    <Content Include="Areas\BackOffice\Views\LanguageStages\Delete.cshtml" />
+    <Content Include="Areas\BackOffice\Views\LanguageStages\Details.cshtml" />
+    <Content Include="Areas\BackOffice\Views\LanguageStages\Edit.cshtml" />
+    <Content Include="Areas\BackOffice\Views\LanguageStages\Index.cshtml" />
+    <Content Include="Areas\BackOffice\Views\Maps\Create.cshtml" />
+    <Content Include="Areas\BackOffice\Views\Maps\Delete.cshtml" />
+    <Content Include="Areas\BackOffice\Views\Maps\Details.cshtml" />
+    <Content Include="Areas\BackOffice\Views\Maps\Edit.cshtml" />
+    <Content Include="Areas\BackOffice\Views\Maps\Index.cshtml" />
+    <Content Include="Areas\BackOffice\Views\Metrics\Create.cshtml" />
+    <Content Include="Areas\BackOffice\Views\Metrics\Delete.cshtml" />
+    <Content Include="Areas\BackOffice\Views\Metrics\Details.cshtml" />
+    <Content Include="Areas\BackOffice\Views\Metrics\Edit.cshtml" />
+    <Content Include="Areas\BackOffice\Views\Metrics\Index.cshtml" />
+    <Content Include="Areas\BackOffice\Views\PaperColors\Create.cshtml" />
+    <Content Include="Areas\BackOffice\Views\PaperColors\Delete.cshtml" />
+    <Content Include="Areas\BackOffice\Views\PaperColors\Details.cshtml" />
+    <Content Include="Areas\BackOffice\Views\PaperColors\Edit.cshtml" />
+    <Content Include="Areas\BackOffice\Views\PaperColors\Index.cshtml" />
+    <Content Include="Areas\BackOffice\Views\RemarkAdds\Create.cshtml" />
+    <Content Include="Areas\BackOffice\Views\RemarkAdds\Delete.cshtml" />
+    <Content Include="Areas\BackOffice\Views\RemarkAdds\Details.cshtml" />
+    <Content Include="Areas\BackOffice\Views\RemarkAdds\Edit.cshtml" />
+    <Content Include="Areas\BackOffice\Views\RemarkAdds\Index.cshtml" />
+    <Content Include="Areas\BackOffice\Views\Materials\Create.cshtml" />
+    <Content Include="Areas\BackOffice\Views\Materials\Delete.cshtml" />
+    <Content Include="Areas\BackOffice\Views\Materials\Details.cshtml" />
+    <Content Include="Areas\BackOffice\Views\Materials\Edit.cshtml" />
+    <Content Include="Areas\BackOffice\Views\Materials\Index.cshtml" />
+    <Content Include="Areas\BackOffice\Views\Rulings\Create.cshtml" />
+    <Content Include="Areas\BackOffice\Views\Rulings\Delete.cshtml" />
+    <Content Include="Areas\BackOffice\Views\Rulings\Details.cshtml" />
+    <Content Include="Areas\BackOffice\Views\Rulings\Edit.cshtml" />
+    <Content Include="Areas\BackOffice\Views\Rulings\Index.cshtml" />
+    <Content Include="Areas\BackOffice\Views\RulingColors\Create.cshtml" />
+    <Content Include="Areas\BackOffice\Views\RulingColors\Delete.cshtml" />
+    <Content Include="Areas\BackOffice\Views\RulingColors\Details.cshtml" />
+    <Content Include="Areas\BackOffice\Views\RulingColors\Edit.cshtml" />
+    <Content Include="Areas\BackOffice\Views\RulingColors\Index.cshtml" />
+    <Content Include="Areas\BackOffice\Views\RulingDetails\Create.cshtml" />
+    <Content Include="Areas\BackOffice\Views\RulingDetails\Delete.cshtml" />
+    <Content Include="Areas\BackOffice\Views\RulingDetails\Details.cshtml" />
+    <Content Include="Areas\BackOffice\Views\RulingDetails\Edit.cshtml" />
+    <Content Include="Areas\BackOffice\Views\RulingDetails\Index.cshtml" />
+    <Content Include="Areas\BackOffice\Views\Scripts\Create.cshtml" />
+    <Content Include="Areas\BackOffice\Views\Scripts\Delete.cshtml" />
+    <Content Include="Areas\BackOffice\Views\Scripts\Details.cshtml" />
+    <Content Include="Areas\BackOffice\Views\Scripts\Edit.cshtml" />
+    <Content Include="Areas\BackOffice\Views\Scripts\Index.cshtml" />
+    <Content Include="Areas\BackOffice\Views\ScriptAdds\Create.cshtml" />
+    <Content Include="Areas\BackOffice\Views\ScriptAdds\Delete.cshtml" />
+    <Content Include="Areas\BackOffice\Views\ScriptAdds\Details.cshtml" />
+    <Content Include="Areas\BackOffice\Views\ScriptAdds\Edit.cshtml" />
+    <Content Include="Areas\BackOffice\Views\ScriptAdds\Index.cshtml" />
+    <Content Include="Areas\BackOffice\Views\States\Create.cshtml" />
+    <Content Include="Areas\BackOffice\Views\States\Delete.cshtml" />
+    <Content Include="Areas\BackOffice\Views\States\Details.cshtml" />
+    <Content Include="Areas\BackOffice\Views\States\Edit.cshtml" />
+    <Content Include="Areas\BackOffice\Views\States\Index.cshtml" />
+    <Content Include="Areas\BackOffice\Views\SubGenderManuscripts\Create.cshtml" />
+    <Content Include="Areas\BackOffice\Views\SubGenderManuscripts\Delete.cshtml" />
+    <Content Include="Areas\BackOffice\Views\SubGenderManuscripts\Details.cshtml" />
+    <Content Include="Areas\BackOffice\Views\SubGenderManuscripts\Edit.cshtml" />
+    <Content Include="Areas\BackOffice\Views\SubGenderManuscripts\Index.cshtml" />
+    <Content Include="Areas\BackOffice\Views\WritingTools\Create.cshtml" />
+    <Content Include="Areas\BackOffice\Views\WritingTools\Delete.cshtml" />
+    <Content Include="Areas\BackOffice\Views\WritingTools\Details.cshtml" />
+    <Content Include="Areas\BackOffice\Views\WritingTools\Edit.cshtml" />
+    <Content Include="Areas\BackOffice\Views\WritingTools\Index.cshtml" />
+    <Content Include="Areas\BackOffice\Views\Manuscripts\Create.cshtml" />
+    <Content Include="Areas\BackOffice\Views\Manuscripts\Delete.cshtml" />
+    <Content Include="Areas\BackOffice\Views\Manuscripts\Details.cshtml" />
+    <Content Include="Areas\BackOffice\Views\Manuscripts\Edit.cshtml" />
+    <Content Include="Areas\BackOffice\Views\Manuscripts\Index.cshtml" />
+    <Content Include="Areas\BackOffice\Views\Manuscripts\LayoutManuscripts.cshtml" />
+    <Content Include="Areas\BackOffice\Views\Manuscripts\OverallDescriptions.cshtml" />
+    <Content Include="Areas\BackOffice\Views\Manuscripts\ScriptManuscripts.cshtml" />
+    <Content Include="Areas\BackOffice\Views\Manuscripts\TextLanguages.cshtml" />
+    <Content Include="Areas\BackOffice\Views\Manuscripts\MaterialManuscripts.cshtml" />
+    <Content Include="Areas\BackOffice\Views\Manuscripts\TextContents.cshtml" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\cldr.js" />
     <Content Include="Scripts\cldr\event.js" />
@@ -865,7 +991,6 @@
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Home\About.cshtml" />
-    <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Account\_ExternalLoginsListPartial.cshtml" />
     <Content Include="Views\Account\ConfirmEmail.cshtml" />
@@ -907,7 +1032,6 @@
     <Content Include="Views\Home\Collaboration.cshtml" />
     <Content Include="Views\Home\Activity.cshtml" />
     <Content Include="Views\Home\PresenteProject.cshtml" />
-    <Content Include="Views\Home\Address.cshtml" />
     <Content Include="Views\Home\PageActivity.cshtml" />
     <Content Include="Views\Account\RegisterCollaborator.cshtml" />
     <Content Include="Views\Home\Presse.cshtml" />
@@ -942,6 +1066,7 @@
     <Content Include="Views\Home\PresentationBibliography.cshtml" />
     <Content Include="Views\Home\AssociatedResearcher.cshtml" />
     <Content Include="Views\Home\Partner.cshtml" />
+    <Content Include="Views\Home\Contact.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -981,6 +1106,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201904011558582_ChangeTochStory.resx">
       <DependentUpon>201904011558582_ChangeTochStory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201904031921286_ChangeManuscript.resx">
+      <DependentUpon>201904031921286_ChangeManuscript.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

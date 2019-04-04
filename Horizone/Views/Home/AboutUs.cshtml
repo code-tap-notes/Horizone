@@ -3,8 +3,6 @@
 @{
     ViewBag.Title = @StaticResource.Resources.AboutUs;
 }
-
-
 <div class="content">
 
     <h2> @StaticResource.Resources.AboutUs </h2>
@@ -19,7 +17,6 @@
             <b> @StaticResource.Resources.SeeAlso : </b>
         </p>
         <ul>
-
             <li>@Html.ActionLink(StaticResource.Resources.AboutProject, "About", "Home")</li>
             <li>@Html.ActionLink(StaticResource.Resources.AssociatedResearcher, "AssociatedResearcher", "Home")</li>
             <li>@Html.ActionLink(StaticResource.Resources.Collaboration, "Collaboration", "Home")</li>
@@ -27,11 +24,8 @@
             <li>@Html.ActionLink(StaticResource.Resources.RelationInternational, "RelationInternational", "Home")</li>
             <li>@Html.ActionLink(StaticResource.Resources.Contact, "Contact", "Home")</li>
         </ul>
-
     </div>
-
     <h2>   @StaticResource.Resources.Team (2018-2019) </h2>
-    
         @foreach (var item in Model)
         {
             if (item.Team)
@@ -58,7 +52,6 @@
                                             <td>@Html.ActionLink("DownLoad", "Home", new { cvName = item.CV }) </td>
                                         </tr>
                                     </table>
-
                                     <br />
                                     <p>
                                         &diams; @StaticResource.Resources.Publications
@@ -81,10 +74,8 @@
                             </div>
                         </div>
                     </li>
-
                 </ul>
             }
-        }
-     
+        }    
 </div>
 

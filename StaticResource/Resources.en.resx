@@ -385,7 +385,7 @@
     <value>And</value>
   </data>
   <data name="Collaboration" xml:space="preserve">
-    <value>Collaboration</value>
+    <value>Collaborations</value>
   </data>
   <data name="Feedback" xml:space="preserve">
     <value>Feedback</value>
@@ -1148,7 +1148,7 @@ TochPhase</value>
     <value>Symposia</value>
   </data>
   <data name="AssociatedResearcher" xml:space="preserve">
-    <value>Associated Researcher</value>
+    <value>Associated Researchers</value>
   </data>
   <data name="Latin" xml:space="preserve">
     <value>Latin</value>
@@ -1230,5 +1230,161 @@ TochPhase</value>
   </data>
   <data name="ProperNoun" xml:space="preserve">
     <value>Proper Noun</value>
+  </data>
+  <data name="AlignmentTypeEn" xml:space="preserve">
+    <value>Alignment Type English</value>
+  </data>
+  <data name="AlignmentTypeFr" xml:space="preserve">
+    <value>Alignment Type French</value>
+  </data>
+  <data name="AlignmentTypeZh" xml:space="preserve">
+    <value>Alignment Type Chinese</value>
+  </data>
+  <data name="DescriptionEn" xml:space="preserve">
+    <value>Description-English</value>
+  </data>
+  <data name="DescriptionFr" xml:space="preserve">
+    <value>Description-French</value>
+  </data>
+  <data name="DescriptionZh" xml:space="preserve">
+    <value>Description-Chinese</value>
+  </data>
+  <data name="FormatEn" xml:space="preserve">
+    <value>Format-English</value>
+  </data>
+  <data name="FormatFr" xml:space="preserve">
+    <value>Format-French</value>
+  </data>
+  <data name="FormatZh" xml:space="preserve">
+    <value>Format-Chinese</value>
+  </data>
+  <data name="LanguageDetailEn" xml:space="preserve">
+    <value>Language Detail English</value>
+  </data>
+  <data name="LanguageDetailFr" xml:space="preserve">
+    <value>Language Detail French</value>
+  </data>
+  <data name="LanguageDetailZh" xml:space="preserve">
+    <value>Language Detail Chinese</value>
+  </data>
+  <data name="LanguageStageEn" xml:space="preserve">
+    <value>Language Stage English</value>
+  </data>
+  <data name="LanguageStageFr" xml:space="preserve">
+    <value>Language Stage French</value>
+  </data>
+  <data name="LanguageStageZh" xml:space="preserve">
+    <value>Language Stage Chinese</value>
+  </data>
+  <data name="MaterialEn" xml:space="preserve">
+    <value>Material- English</value>
+  </data>
+  <data name="MaterialFr" xml:space="preserve">
+    <value>Material- French</value>
+  </data>
+  <data name="MaterialZh" xml:space="preserve">
+    <value>Material-Chinese</value>
+  </data>
+  <data name="MetricEn" xml:space="preserve">
+    <value>Metric Form - English</value>
+  </data>
+  <data name="MetricFr" xml:space="preserve">
+    <value>Metric Form French</value>
+  </data>
+  <data name="MetricZh" xml:space="preserve">
+    <value>Metric Form Chinese</value>
+  </data>
+  <data name="PaperColorEn" xml:space="preserve">
+    <value>Paper Color English</value>
+  </data>
+  <data name="PaperColorFr" xml:space="preserve">
+    <value>Paper Color French</value>
+  </data>
+  <data name="PaperColorZh" xml:space="preserve">
+    <value>Paper Color Chinese</value>
+  </data>
+  <data name="RemarkEn" xml:space="preserve">
+    <value>Remark-English</value>
+  </data>
+  <data name="RemarkFr" xml:space="preserve">
+    <value>Remark-French</value>
+  </data>
+  <data name="RemarkZh" xml:space="preserve">
+    <value>Remark-Chinese</value>
+  </data>
+  <data name="RulingColorEn" xml:space="preserve">
+    <value>Ruling Color English</value>
+  </data>
+  <data name="RulingColorFr" xml:space="preserve">
+    <value>Ruling Color French</value>
+  </data>
+  <data name="RulingColorZh" xml:space="preserve">
+    <value>Ruling Color Chinese</value>
+  </data>
+  <data name="RulingDetailEn" xml:space="preserve">
+    <value>Ruling Detail English</value>
+  </data>
+  <data name="RulingDetailFr" xml:space="preserve">
+    <value>Ruling Detail French</value>
+  </data>
+  <data name="RulingDetailZh" xml:space="preserve">
+    <value>Ruling Detail Chinese</value>
+  </data>
+  <data name="RulingEn" xml:space="preserve">
+    <value>Ruling-English</value>
+  </data>
+  <data name="RulingFr" xml:space="preserve">
+    <value>Ruling-French</value>
+  </data>
+  <data name="RulingZh" xml:space="preserve">
+    <value>Ruling-Chinese</value>
+  </data>
+  <data name="ScriptAddEn" xml:space="preserve">
+    <value>Script-Add English</value>
+  </data>
+  <data name="ScriptAddFr" xml:space="preserve">
+    <value>Script-Add French</value>
+  </data>
+  <data name="ScriptAddZh" xml:space="preserve">
+    <value>Script-Add Chinese</value>
+  </data>
+  <data name="ScriptEn" xml:space="preserve">
+    <value>Script English</value>
+  </data>
+  <data name="ScriptFr" xml:space="preserve">
+    <value>Script French</value>
+  </data>
+  <data name="ScriptZh" xml:space="preserve">
+    <value>Script Chinese</value>
+  </data>
+  <data name="StateEn" xml:space="preserve">
+    <value>General State- English</value>
+  </data>
+  <data name="StateFr" xml:space="preserve">
+    <value>General State- French</value>
+  </data>
+  <data name="StateZh" xml:space="preserve">
+    <value>General State-Chinese</value>
+  </data>
+  <data name="SubGenderEn" xml:space="preserve">
+    <value>SubGender - English</value>
+  </data>
+  <data name="SubGenderFr" xml:space="preserve">
+    <value>SubGender - French</value>
+  </data>
+  <data name="SubGenderZh" xml:space="preserve">
+    <value>SubGender-Chinese</value>
+  </data>
+  <data name="WritingToolEn" xml:space="preserve">
+    <value>Writing Tool English</value>
+  </data>
+  <data name="WritingToolFr" xml:space="preserve">
+    <value>Writing Tool French</value>
+  </data>
+  <data name="WritingToolZh" xml:space="preserve">
+    <value>Writing Tool Chinese</value>
+  </data>
+  <data name="Tocharian" xml:space="preserve">
+    <value>Tocharian</value>
   </data>
 </root>

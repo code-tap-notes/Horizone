@@ -1,22 +1,158 @@
 ﻿@model Horizone.Models.Manuscript
 
 @{
-    ViewBag.Title = @StaticResource.Resources.Delete;
+    ViewBag.Title = "Delete";
 }
 
-<h2> @StaticResource.Resources.Delete</h2>
+<h2>Delete</h2>
 
-<h3 class="text-danger"> @StaticResource.Resources.AskDelete</h3>
+<h3>Are you sure you want to delete this?</h3>
 <div>
-    <h4> @StaticResource.Resources.Manuscript</h4>
+    <h4>Manuscript</h4>
     <hr />
     <dl class="dl-horizontal">
         <dt>
-            @Html.DisplayNameFor(model => model.Language.Symbol)
+            @Html.DisplayNameFor(model => model.AlignmentType.AlignmentTypeEn)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.Language.Symbol)
+            @Html.DisplayFor(model => model.AlignmentType.AlignmentTypeEn)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DescriptionManuscript.DescriptionEn)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DescriptionManuscript.DescriptionEn)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Format.FormatEn)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Format.FormatEn)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.GenderManuscript.NameGenderEn)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.GenderManuscript.NameGenderEn)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.LanguageDetail.LanguageDetailEn)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LanguageDetail.LanguageDetailEn)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.LanguageStage.LanguageStageEn)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LanguageStage.LanguageStageEn)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Map.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Map.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Material.MaterialEn)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Material.MaterialEn)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Metric.MetricEn)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Metric.MetricEn)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PaperColor.PaperColorEn)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PaperColor.PaperColorEn)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.RemarkAdd.RemarkEn)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.RemarkAdd.RemarkEn)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Ruling.RulingEn)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Ruling.RulingEn)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.RulingColor.RulingColorEn)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.RulingColor.RulingColorEn)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.RulingDetail.RulingDetailEn)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.RulingDetail.RulingDetailEn)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Script.ScriptEn)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Script.ScriptEn)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ScriptAdd.ScriptAddEn)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ScriptAdd.ScriptAddEn)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.State.StateEn)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.State.StateEn)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SubGenderManuscript.SubGenderEn)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SubGenderManuscript.SubGenderEn)
         </dd>
 
         <dt>
@@ -25,6 +161,14 @@
 
         <dd>
             @Html.DisplayFor(model => model.TochLanguage.Language)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.WritingTool.WritingToolEn)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.WritingTool.WritingToolEn)
         </dd>
 
         <dt>
@@ -76,43 +220,11 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.MainFindSpot)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.MainFindSpot)
-        </dd>
-
-        <dt>
             @Html.DisplayNameFor(model => model.SpecificFindSpot)
         </dt>
 
         <dd>
             @Html.DisplayFor(model => model.SpecificFindSpot)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.GeneralState)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.GeneralState)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Description)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Description)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Remark)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Remark)
         </dd>
 
         <dt>
@@ -161,38 +273,6 @@
 
         <dd>
             @Html.DisplayFor(model => model.LineDistance)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Format)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Format)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Ruling)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Ruling)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.RulingColor)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.RulingColor)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.RulingDetail)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.RulingDetail)
         </dd>
 
         <dt>
@@ -300,43 +380,11 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.Material)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Material)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.PaperColor)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.PaperColor)
-        </dd>
-
-        <dt>
             @Html.DisplayNameFor(model => model.PaperThickness)
         </dt>
 
         <dd>
             @Html.DisplayFor(model => model.PaperThickness)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.WritingTool)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.WritingTool)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.AlignmentType)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.AlignmentType)
         </dd>
 
         <dt>
@@ -372,54 +420,6 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.Script)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Script)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.ScriptAdd)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.ScriptAdd)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.LanguageStage)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.LanguageStage)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.LanguageDetails)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.LanguageDetails)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.TextGenre)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.TextGenre)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.TextSubGenre)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.TextSubGenre)
-        </dd>
-
-        <dt>
             @Html.DisplayNameFor(model => model.Title)
         </dt>
 
@@ -441,14 +441,6 @@
 
         <dd>
             @Html.DisplayFor(model => model.Parallel)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.MetricForm)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.MetricForm)
         </dd>
 
         <dt>
@@ -477,13 +469,12 @@
 
     </dl>
 
-    @using (Html.BeginForm())
-    {
+    @using (Html.BeginForm()) {
         @Html.AntiForgeryToken()
 
         <div class="form-actions no-color">
-            <input type="submit" value="Delete" class="btn btn-danger" /> |
-            @Html.ActionLink(@StaticResource.Resources.Return, "Index", null, new { @class = "btn btn-default" })
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
         </div>
     }
 </div>

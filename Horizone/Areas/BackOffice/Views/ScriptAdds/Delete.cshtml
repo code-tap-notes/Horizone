@@ -1,0 +1,48 @@
+﻿@model Horizone.Models.ScriptAdd
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>ScriptAdd</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.ScriptAddEn)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ScriptAddEn)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ScriptAddFr)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ScriptAddFr)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ScriptAddZh)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ScriptAddZh)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

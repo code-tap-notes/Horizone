@@ -1,0 +1,42 @@
+﻿@model Horizone.Models.Format
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Format</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.FormatEn)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FormatEn)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FormatFr)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FormatFr)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FormatZh)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FormatZh)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

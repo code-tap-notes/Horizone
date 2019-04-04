@@ -1,0 +1,42 @@
+﻿@model Horizone.Models.RemarkAdd
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>RemarkAdd</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.RemarkEn)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.RemarkEn)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.RemarkFr)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.RemarkFr)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.RemarkZh)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.RemarkZh)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

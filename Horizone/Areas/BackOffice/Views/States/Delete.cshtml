@@ -1,0 +1,48 @@
+﻿@model Horizone.Models.State
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>State</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.StateEn)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.StateEn)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.StateFr)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.StateFr)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.StateZh)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.StateZh)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

@@ -1,0 +1,45 @@
+﻿@model IEnumerable<Horizone.Models.RulingColor>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.RulingColorEn)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.RulingColorFr)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.RulingColorZh)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.RulingColorEn)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.RulingColorFr)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.RulingColorZh)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
+            @Html.ActionLink("Details", "Details", new { id=item.Id }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.Id })
+        </td>
+    </tr>
+}
+
+</table>

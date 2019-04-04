@@ -9,10 +9,18 @@
     <hr />
     <dl class="dl-horizontal">
         <dt>
-            @Html.DisplayNameFor(model => model.AlignmentType)
+            @Html.DisplayNameFor(model => model.Index)
         </dt>
+
         <dd>
-            @Html.DisplayFor(model => model.AlignmentType)
+            @Html.DisplayFor(model => model.Index)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.AlignmentType.AlignmentTypeEn)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AlignmentType.AlignmentTypeEn)
         </dd>
 
         <dt>
@@ -48,21 +56,20 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.Script)
+            @Html.DisplayNameFor(model => model.Script.ScriptEn)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.Script)
+            @Html.DisplayFor(model => model.Script.ScriptEn)
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.ScriptAdd)
+            @Html.DisplayNameFor(model => model.ScriptAdd.ScriptAddEn)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.ScriptAdd)
+            @Html.DisplayFor(model => model.ScriptAdd.ScriptAddEn)
         </dd>
-
     </dl>
 </div>
 <p>

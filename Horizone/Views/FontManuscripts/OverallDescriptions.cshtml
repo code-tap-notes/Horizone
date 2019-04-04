@@ -12,6 +12,13 @@
     <div class="col-md-6">
         <dl class="dl-horizontal">
             <dt>
+                @Html.DisplayNameFor(model => model.Index)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Index)
+            </dd>
+            <dt>
                 @Html.DisplayNameFor(model => model.Collection)
             </dt>
 
@@ -52,11 +59,11 @@
             </dd>
 
             <dt>
-                @Html.DisplayNameFor(model => model.MainFindSpot)
+                @Html.DisplayNameFor(model => model.Map.Name)
             </dt>
 
             <dd>
-                @Html.DisplayFor(model => model.MainFindSpot) &#8594;
+                @Html.DisplayFor(model => model.Map.Name)  &#8594;
                 <a onclick="insertImage('imageCarte','https://upload.wikimedia.org/wikipedia/commons/thumb/d/d0/Tarimbecken_3._Jahrhundert.png/1200px-Tarimbecken_3._Jahrhundert.png');">@StaticResource.Resources.SeeAlso @StaticResource.Resources.Maps</a>
 
             </dd>
@@ -70,29 +77,28 @@
             </dd>
 
             <dt>
-                @Html.DisplayNameFor(model => model.GeneralState)
+                @Html.DisplayNameFor(model => model.State.StateEn)
             </dt>
 
             <dd>
-                @Html.DisplayFor(model => model.GeneralState)
+                @Html.DisplayFor(model => model.State.StateEn)
             </dd>
 
             <dt>
-                @Html.DisplayNameFor(model => model.Description)
+                @Html.DisplayNameFor(model => model.DescriptionManuscript.DescriptionEn)
             </dt>
 
             <dd>
-                @Html.DisplayFor(model => model.Description)
+                @Html.DisplayFor(model => model.DescriptionManuscript.DescriptionEn)
             </dd>
 
             <dt>
-                @Html.DisplayNameFor(model => model.Remark)
+                @Html.DisplayNameFor(model => model.RemarkAdd.RemarkEn)
             </dt>
 
             <dd>
-                @Html.DisplayFor(model => model.Remark)
+                @Html.DisplayFor(model => model.RemarkAdd.RemarkEn)
             </dd>
-
             <dt>
                 @Html.DisplayNameFor(model => model.LeafNumber)
             </dt>

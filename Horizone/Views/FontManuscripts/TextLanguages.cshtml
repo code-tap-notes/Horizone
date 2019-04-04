@@ -11,7 +11,14 @@
     <hr />
     <dl class="dl-horizontal">
         <dt>
-            @Html.DisplayNameFor(model => model.TochLanguage)
+            @Html.DisplayNameFor(model => model.Index)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Index)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.TochLanguage.Language)
         </dt>
 
         <dd>
@@ -19,19 +26,18 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.LanguageStage)
+            @Html.DisplayNameFor(model => model.LanguageStage.LanguageStageEn)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.LanguageStage)
+            @Html.DisplayFor(model => model.LanguageStage.LanguageStageEn)
         </dd>
-
         <dt>
-            @Html.DisplayNameFor(model => model.LanguageDetails)
+            @Html.DisplayNameFor(model => model.LanguageDetail.LanguageDetailEn)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.LanguageDetails)
+            @Html.DisplayFor(model => model.LanguageDetail.LanguageDetailEn)
         </dd>
 
     </dl>

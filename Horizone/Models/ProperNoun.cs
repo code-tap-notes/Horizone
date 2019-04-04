@@ -10,7 +10,7 @@ namespace Horizone.Models
     {
         public int Id { get; set; }
 
-        [Display(Name = "ThemeStory", ResourceType = typeof(StaticResource.Resources))]
-        public string Source { get; set; }
+        [Display(Name = "ProperNoun", ResourceType = typeof(StaticResource.Resources))]
+        public string Name { get; set; }
     }
 }

@@ -10,19 +10,25 @@
     <hr />
     <dl class="dl-horizontal">
         <dt>
-            @Html.DisplayNameFor(model => model.Material)
+            @Html.DisplayNameFor(model => model.Index)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.Material)
+            @Html.DisplayFor(model => model.Index)
         </dd>
-
         <dt>
-            @Html.DisplayNameFor(model => model.PaperColor)
+            @Html.DisplayNameFor(model => model.Material.MaterialEn)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.PaperColor)
+            @Html.DisplayFor(model => model.Material.MaterialEn)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.PaperColor.PaperColorEn)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PaperColor.PaperColorEn)
         </dd>
 
         <dt>
@@ -34,13 +40,12 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.WritingTool)
+            @Html.DisplayNameFor(model => model.WritingTool.WritingToolEn)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.WritingTool)
+            @Html.DisplayFor(model => model.WritingTool.WritingToolEn)
         </dd>
-
     </dl>
 </div>
 <p>

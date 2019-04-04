@@ -1,7 +1,6 @@
 ﻿@model Horizone.Models.Manuscript
-
 @{
-    ViewBag.Title = @StaticResource.Resources.LayoutManuscript;
+  ViewBag.Title = @StaticResource.Resources.LayoutManuscript;
 }
 
 <h2>@StaticResource.Resources.LayoutManuscript</h2>
@@ -9,6 +8,14 @@
     <h4>@StaticResource.Resources.Details</h4>
     <hr />
     <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Index)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Index)
+        </dd>
+
         <dt>
             @Html.DisplayNameFor(model => model.SizeHeight)
         </dt>
@@ -48,47 +55,42 @@
         <dd>
             @Html.DisplayFor(model => model.LineDistance)
         </dd>
-
         <dt>
-            @Html.DisplayNameFor(model => model.Format)
+            @Html.DisplayNameFor(model => model.Format.FormatEn)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.Format)
+            @Html.DisplayFor(model => model.Format.FormatEn)
         </dd>
-
         <dt>
-            @Html.DisplayNameFor(model => model.Ruling)
+            @Html.DisplayNameFor(model => model.Ruling.RulingEn)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.Ruling)
+            @Html.DisplayFor(model => model.Ruling.RulingEn)
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.RulingColor)
+            @Html.DisplayNameFor(model => model.RulingColor.RulingColorEn)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.RulingColor)
+            @Html.DisplayFor(model => model.RulingColor.RulingColorEn)
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.RulingDetail)
+            @Html.DisplayNameFor(model => model.RulingDetail.RulingDetailEn)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.RulingDetail)
-        </dd>
-
+            @Html.DisplayFor(model => model.RulingDetail.RulingDetailEn)
+        </dd>        
         <dt>
             @Html.DisplayNameFor(model => model.StringholeHeight)
         </dt>
-
         <dd>
             @Html.DisplayFor(model => model.StringholeHeight)
         </dd>
-
         <dt>
             @Html.DisplayNameFor(model => model.StringholeWidth)
         </dt>
@@ -127,5 +129,3 @@
     @Html.ActionLink(StaticResource.Resources.Edit, "Edit", new { id = Model.Id }, new { @class = "btn btn-info" }) |
     @Html.ActionLink(StaticResource.Resources.Return, "Details", new { id = Model.Id }, new { @class = "btn btn-primary" })
 </p>
-
-

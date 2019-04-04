@@ -39,7 +39,6 @@ namespace Horizone.Models
         public DbSet<Client> Clients { get; set; }
         public DbSet<Collaborator> Collaborators { get; set; }
         public DbSet<Collaboration> Collaborations { get; set; }
-        public DbSet<ContactMessage> ContactMessages { get; set; }
         public DbSet<Comment> Comments { get; set; }
         public DbSet<DictionaryTocharian> DictionaryTocharians { get; set; }
         public DbSet<Case> Cases { get; set; }
@@ -53,6 +52,26 @@ namespace Horizone.Models
         public DbSet<ImageCollaboration> ImageCollaborations { get; set; }
         public DbSet<VisualAid> VisualAids { get; set; }        
         public DbSet<Manuscript> Manuscripts { get; set; }
+        public DbSet<Map> Maps { get; set; }
+        public DbSet<State> States { get; set; }
+        public DbSet<DescriptionManuscript> DescriptionManuscripts { get; set; }
+        public DbSet<RemarkAdd> RemarkAdds { get; set; }
+        public DbSet<Format> Formats { get; set; }
+        public DbSet<Ruling> Rulings { get; set; }
+        public DbSet<RulingColor> RulingColors { get; set; }
+        public DbSet<RulingDetail> RulingDetails { get; set; }
+        public DbSet<PaperColor> PaperColors { get; set; }
+        public DbSet<Material> Materials { get; set; }
+        public DbSet<WritingTool> WritingTools { get; set; }
+        public DbSet<AlignmentType> AlignmentTypes { get; set; }
+        public DbSet<Script> Scripts { get; set; }
+        public DbSet<ScriptAdd> ScriptAdds { get; set; }
+        public DbSet<LanguageStage> LanguageStages { get; set; }
+        public DbSet<LanguageDetail> LanguageDetails { get; set; }
+        public DbSet<GenderManuscript> GenderManuscripts { get; set; }
+        public DbSet<SubGenderManuscript> SubGenderManuscripts { get; set; }
+        public DbSet<Metric> Metrics { get; set; }
+
         public DbSet<News> Newses { get; set; }
         public DbSet<TochPhrase> TochPhrases { get; set; }
         public DbSet<TochStory> TochStorys { get; set; }

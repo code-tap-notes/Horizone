@@ -1,0 +1,42 @@
+﻿@model Horizone.Models.LanguageStage
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>LanguageStage</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.LanguageStageEn)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LanguageStageEn)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.LanguageStageFr)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LanguageStageFr)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.LanguageStageZh)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LanguageStageZh)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

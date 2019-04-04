@@ -1,5 +1,4 @@
 ﻿@model Horizone.Models.Manuscript
-
 @{
     ViewBag.Title = @StaticResource.Resources.TextLanguage;
 }
@@ -11,7 +10,14 @@
     <hr />
     <dl class="dl-horizontal">
         <dt>
-            @Html.DisplayNameFor(model => model.TochLanguage)
+            @Html.DisplayNameFor(model => model.Index)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Index)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.TochLanguage.Language)
         </dt>
 
         <dd>
@@ -19,24 +25,23 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.LanguageStage)
+            @Html.DisplayNameFor(model => model.LanguageStage.LanguageStageEn)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.LanguageStage)
+            @Html.DisplayFor(model => model.LanguageStage.LanguageStageEn)
         </dd>
-
         <dt>
-            @Html.DisplayNameFor(model => model.LanguageDetails)
+            @Html.DisplayNameFor(model => model.LanguageDetail.LanguageDetailEn)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.LanguageDetails)
+            @Html.DisplayFor(model => model.LanguageDetail.LanguageDetailEn)
         </dd>
 
     </dl>
 </div>
 <p>
-@Html.ActionLink(StaticResource.Resources.Edit, "Edit", new { id = Model.Id }, new { @class = "btn btn-info" }) |
-@Html.ActionLink(StaticResource.Resources.Return, "Details", new { id = Model.Id }, new { @class = "btn btn-primary" })
+    @Html.ActionLink(StaticResource.Resources.Edit, "Edit", new { id = Model.Id }, new { @class = "btn btn-info" }) |
+    @Html.ActionLink(StaticResource.Resources.Return, "Details", new { id = Model.Id }, new { @class = "btn btn-primary" })
 </p>

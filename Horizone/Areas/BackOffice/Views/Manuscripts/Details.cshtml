@@ -1,11 +1,9 @@
 ﻿@model Horizone.Models.Manuscript
-
 @{
     ViewBag.Title = @StaticResource.Resources.Details;
 }
 
 <h2> @StaticResource.Resources.Details</h2>
-
 <div>
     <h4> @StaticResource.Resources.Manuscript</h4>
     <hr />
@@ -31,7 +29,6 @@
             <li> <a href="@Url.Action("MaterialManuscripts","Manuscripts",new { id = Model.Id })">@StaticResource.Resources.Material</a></li>
         </ul>
     </div>
-
     <div class="autocontents">
 
         <ul>
@@ -64,7 +61,6 @@
                 @Html.Raw(Model.Transcription)
             </li>
         </ul>
-
         <ul>
             <li>
                 <h4> @Html.DisplayNameFor(model => model.English) </h4>
@@ -73,7 +69,6 @@
                 @Html.Raw(Model.English)
             </li>
         </ul>
-
         <ul>
             <li>
                 <h4>  @Html.DisplayNameFor(model => model.Francaise) </h4>
@@ -82,7 +77,6 @@
                 @Html.Raw(Model.Francaise)
             </li>
         </ul>
-
         <ul>
             <li>
                 <h4>  @Html.DisplayNameFor(model => model.Chinese) </h4>
@@ -91,7 +85,6 @@
                 @Html.Raw(Model.Chinese)
             </li>
         </ul>
-
         <ul>
             <li>
                 <h4>   @Html.DisplayNameFor(model => model.Editor) </h4>
@@ -100,7 +93,6 @@
                 @Html.DisplayFor(model => model.Editor)
             </li>
         </ul>
-
         <ul>
             <li>
                 <h4> @Html.DisplayNameFor(model => model.References) </h4>
@@ -109,7 +101,6 @@
                 @Html.DisplayFor(model => model.References)
             </li>
         </ul>
-
         <ul>
             <li>
                 <h4>  @Html.DisplayNameFor(model => model.PhilologicalCommentary) </h4>
@@ -118,7 +109,6 @@
                 @Html.Raw(Model.PhilologicalCommentary)
             </li>
         </ul>
-
         <ul>
             <li>
                 <h4>  @Html.DisplayNameFor(model => model.Visible) </h4>
@@ -127,8 +117,6 @@
                 @Html.DisplayFor(model => model.Visible)
             </li>
         </ul>
-
-
     </div>
 </div>
 <div>

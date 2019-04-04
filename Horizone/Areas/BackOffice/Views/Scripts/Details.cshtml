@@ -1,0 +1,42 @@
+﻿@model Horizone.Models.Script
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Script</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.ScriptEn)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ScriptEn)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ScriptFr)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ScriptFr)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ScriptZh)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ScriptZh)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

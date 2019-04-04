@@ -1,0 +1,42 @@
+﻿@model Horizone.Models.Metric
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Metric</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.MetricEn)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MetricEn)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MetricFr)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MetricFr)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MetricZh)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MetricZh)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

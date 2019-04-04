@@ -25,12 +25,11 @@ namespace Horizone.Controllers
             var aboutProjets = db.AboutProjets.Include(a => a.Language);
             return View(aboutProjets.ToList());
         }
-
-        [ChildActionOnly]
-        public ActionResult Address()
+       
+        public ActionResult Contact()
         {
             var aboutProjets = db.AboutProjets.Include(a => a.Language);
-            return PartialView(aboutProjets.ToList());
+            return View(aboutProjets.ToList());
         }
         public ActionResult Aide()
         {
@@ -115,33 +114,10 @@ namespace Horizone.Controllers
             return View(collaborations.Include("Publications").Include("ImageCollaborations").OrderBy(x => x.Order).ToList());
         }
         public ActionResult Partner()
-        {
-             
-            return View();
-        }
-
-        // GET: FrontContact/Create
-        public ActionResult Contact()
         {            
             return View();
         }
-
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Contact([Bind(Include = "Id,Title,LastName,FirstName,Email,PhoneNumber,SendDate,Message,SymbolLanguage")] ContactMessage contactMessage)
-        {
-            ViewBag.Message = "Nous contact:";          
-            if (ModelState.IsValid)
-            {
-                var currentCulture = Session[CommonConstants.CurrentCulture];
-                contactMessage.SymbolLanguage = currentCulture.ToString();
-                db.ContactMessages.Add(contactMessage);
-                db.SaveChanges();
-                return RedirectToAction("Contact");
-            }
-            return View(contactMessage);
-        }
-
+        
         public FileResult DownLoad(string cvName, int id)
         {
             var fullPath = "~/Equipe/" + id + "-" + cvName;
@@ -164,8 +140,7 @@ namespace Horizone.Controllers
         {                    
                 return View(db.TochStorys.ToList());          
         }
-                           
-                   
+                                             
         public ActionResult Activity()
         {
             var activitys = db.Activitys.Include("Language").Include("Topic");            

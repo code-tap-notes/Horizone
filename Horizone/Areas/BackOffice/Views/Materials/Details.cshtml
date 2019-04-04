@@ -1,0 +1,42 @@
+﻿@model Horizone.Models.Material
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Material</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.MaterialEn)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MaterialEn)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MaterialFr)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MaterialFr)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MaterialZh)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MaterialZh)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

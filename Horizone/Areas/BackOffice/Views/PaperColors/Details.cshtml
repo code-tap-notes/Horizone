@@ -1,0 +1,42 @@
+﻿@model Horizone.Models.PaperColor
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>PaperColor</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.PaperColorEn)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PaperColorEn)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PaperColorFr)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PaperColorFr)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PaperColorZh)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PaperColorZh)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
