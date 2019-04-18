@@ -41,7 +41,7 @@ ul.dropdown-menu {
     background-color: #ebfdc2;
     color: slateblue !important;    
     padding: 2px;
-    width: 246px;
+    width: auto;
 }
 
 .dropdown-submenu {
@@ -51,11 +51,12 @@ ul.dropdown-menu {
    
 }
 
-    .dropdown-submenu .dropdown-menu {   
-        top : auto;
+    .dropdown-submenu .dropdown-menu {
+        top: auto;
         left: 100%;
         margin-top: -1px;
-        display : none;
+        display: none;
+        color: slateblue !important;
     }
 .newinputwidth {
     width: 2000px !important;
@@ -77,7 +78,7 @@ ul.dropdown-menu {
     color: darkslategray;
     text-align: justify;
     line-height: 1.6;
-    padding: 2px 2px 2px 2px;
+    padding: 4px 12px 2px 12px;
     box-shadow: 0 2px 2px rgba(0,0,0, .5);
 }
 .content-title {

@@ -7,7 +7,14 @@
 <h2> @StaticResource.Resources.Details</h2>
 
 <div>
-    <h4> @StaticResource.Resources.Manuscript</h4>
+    <div class="row">
+        <div class="col-md-10">
+            <h4> @StaticResource.Resources.Manuscript</h4>
+        </div>
+        <div class="col-md-10">            
+                @Html.ActionLink(@StaticResource.Resources.Print, "PrintManuscript", "FontManuscripts", new { @class = "btn btn-info", style = "width:90px" })            
+        </div>
+    </div>
     <hr />
     <div class="autocontents">
         <ul>
@@ -22,7 +29,6 @@
             <h4> @StaticResource.Resources.SeeAlso : </h4>
         </p>
         <ul>
-
             <li><a href="@Url.Action("LayoutManuscripts","FontManuscripts",new { id = Model.Id})">@StaticResource.Resources.LayoutManuscript</a></li>
             <li><a href="@Url.Action("OverallDescriptions","FontManuscripts",new { id = Model.Id })">@StaticResource.Resources.OverallDescription</a></li>
             <li><a href="@Url.Action("ScriptManuscripts","FontManuscripts",new { id = Model.Id })">@StaticResource.Resources.ScriptManuscript</a></li>
@@ -31,9 +37,7 @@
             <li> <a href="@Url.Action("MaterialManuscripts","FontManuscripts",new { id = Model.Id })">@StaticResource.Resources.Material</a></li>
         </ul>
     </div>
-
     <div class="autocontents">
-
         <ul>
             <li>
                 <h4> @StaticResource.Resources.Manuscript </h4>
@@ -64,7 +68,6 @@
                 @Html.Raw(Model.Transcription)
             </li>
         </ul>
-
         <ul>
             <li>
                 <h4> @Html.DisplayNameFor(model => model.English) </h4>
@@ -73,7 +76,6 @@
                 @Html.Raw(Model.English)
             </li>
         </ul>
-
         <ul>
             <li>
                 <h4>  @Html.DisplayNameFor(model => model.Francaise) </h4>
@@ -82,7 +84,6 @@
                 @Html.Raw(Model.Francaise)
             </li>
         </ul>
-
         <ul>
             <li>
                 <h4>  @Html.DisplayNameFor(model => model.Chinese) </h4>
@@ -91,7 +92,6 @@
                 @Html.Raw(Model.Chinese)
             </li>
         </ul>
-
         <ul>
             <li>
                 <h4>   @Html.DisplayNameFor(model => model.Editor) </h4>
@@ -100,7 +100,6 @@
                 @Html.DisplayFor(model => model.Editor)
             </li>
         </ul>
-
         <ul>
             <li>
                 <h4> @Html.DisplayNameFor(model => model.References) </h4>
@@ -109,7 +108,6 @@
                 @Html.DisplayFor(model => model.References)
             </li>
         </ul>
-
         <ul>
             <li>
                 <h4>  @Html.DisplayNameFor(model => model.PhilologicalCommentary) </h4>
@@ -118,7 +116,6 @@
                 @Html.Raw(Model.PhilologicalCommentary)
             </li>
         </ul>
-
         <ul>
             <li>
                 <h4>  @Html.DisplayNameFor(model => model.Visible) </h4>
@@ -127,13 +124,10 @@
                 @Html.DisplayFor(model => model.Visible)
             </li>
         </ul>
-
-
     </div>
 </div>
 <div>
     <p>
         @Html.ActionLink(StaticResource.Resources.Return, "Index", null, new { @class = "btn btn-primary" })
     </p>
-
 </div>

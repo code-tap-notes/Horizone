@@ -10,6 +10,7 @@ using System.Data.Entity;
 using System.IO;
 using System.Net;
 using Horizone.Controllers;
+using Rotativa;
 
 namespace Horizone.Controllers
 {
@@ -20,6 +21,12 @@ namespace Horizone.Controllers
         {
             var dictionaryTocharians = db.DictionaryTocharians.Include(d => d.Language).Include(d => d.TochLanguage).Include(d => d.WordClass).Include(d => d.WordSubClass).Include("Cases").Include("Numbers").Include("Genders").Include("Persons");
             return View(dictionaryTocharians.ToList());
+        }
+        
+            public ActionResult PrintVocabulaire()
+        {
+            var report = new ActionAsPdf("Details");
+            return report;
         }
         public ActionResult Details(int? id)
         {

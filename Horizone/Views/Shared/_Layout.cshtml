@@ -40,7 +40,15 @@
         <ul class="nav navbar-nav">
             <li>@Html.ActionLink(StaticResource.Resources.AboutProject, "About", "Home")</li>
             <li>@Html.ActionLink(@StaticResource.Resources.TochPhrase, "Index", "FontTochPhrases")</li>
-            <li>@Html.ActionLink(@StaticResource.Resources.TochStory, "TochHistoire", "Home")</li>
+            <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">@StaticResource.Resources.TochStory <span class="caret"></span></a>
+                <ul class="dropdown-menu">
+                    <li><a href="@Url.Action("ThemeStory", "Home")"> @StaticResource.Resources.ThemeStory </a></li>
+                    <li><a href="@Url.Action("NamePlace", "Home")">@StaticResource.Resources.NamePlaces</a></li>
+                    <li><a href="@Url.Action("ProperNoun", "Home")">@StaticResource.Resources.ProperNoun</a></li>
+                    <li><a href="@Url.Action("TochHistoire", "Home")">@StaticResource.Resources.TochStory</a></li>
+                </ul>
+            </li>
             <li class="dropdown">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">@StaticResource.Resources.Manuscript <span class="caret"></span></a>
                 <ul class="dropdown-menu">

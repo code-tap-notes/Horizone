@@ -169,7 +169,7 @@ namespace StaticResource {
         }
         
         /// <summary>
-        ///   Recherche une chaîne localisée semblable à Address.
+        ///   Recherche une chaîne localisée semblable à Adresse.
         /// </summary>
         public static string Address {
             get {
@@ -709,6 +709,15 @@ namespace StaticResource {
         }
         
         /// <summary>
+        ///   Recherche une chaîne localisée semblable à Biographie - Carrière académique.
+        /// </summary>
+        public static string CV {
+            get {
+                return ResourceManager.GetString("CV", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Recherche une chaîne localisée semblable à Nom du CV.
         /// </summary>
         public static string CVName {
@@ -831,6 +840,15 @@ namespace StaticResource {
         public static string DistanceStringholeRight {
             get {
                 return ResourceManager.GetString("DistanceStringholeRight", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Télécharger.
+        /// </summary>
+        public static string DownLoad {
+            get {
+                return ResourceManager.GetString("DownLoad", resourceCulture);
             }
         }
         
@@ -2316,6 +2334,15 @@ namespace StaticResource {
         public static string OnlyNumbers {
             get {
                 return ResourceManager.GetString("OnlyNumbers", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Ordre.
+        /// </summary>
+        public static string Order {
+            get {
+                return ResourceManager.GetString("Order", resourceCulture);
             }
         }
         

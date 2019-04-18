@@ -12,8 +12,6 @@ namespace Horizone.Models
 	{
 		public int Id { get; set; }
    
-        [RegularExpression(@"([a-zA-Z])*\s*$", ErrorMessageResourceName = "OnlyLetters", ErrorMessageResourceType = typeof(StaticResource.Resources))]       		
-        [Required(ErrorMessageResourceName = "FieldRequired", ErrorMessageResourceType = typeof(StaticResource.Resources))]
         [StringLength(20, MinimumLength = 1, ErrorMessageResourceName = "MaxLength20", ErrorMessageResourceType = typeof(StaticResource.Resources))]
         [Display(Name = "Title", ResourceType = typeof(StaticResource.Resources))]
         [Index("IX_PersonneUnique", 1, IsUnique = true)]
