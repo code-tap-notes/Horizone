@@ -19,56 +19,92 @@
         </ul>
     </div>
     <div class="autocontents">
-        <h2>   @StaticResource.Resources.Collaboration </h2>
+       
         @foreach (var item in Model)
-        {       
+        {
             if (item.Collaborator)
             {
-            <ul>
-                <li>
-                    <h4 class="underline">@Html.DisplayFor(modelItem => item.Title) @Html.DisplayFor(modelItem => item.LastName)  @Html.DisplayFor(modelItem => item.FirstName)</h4>
-                    <div class="row">
-                        <div class="col-lg-9">
-                            <p>
-                                &diams; @StaticResource.Resources.Summary  @Html.Raw(item.Summary)
-                            </p>
-                            <table>
-                                <tr>
-                                    <th> &diams; @StaticResource.Resources.CVName - </th>
-                                    <th> Link </th>
-                                </tr>
-                                <tr>
-                                    <td>@item.CV   </td>
-                                    <td>@Html.ActionLink("DownLoad", "Home", new { cvName = item.CV }) </td>
-                                </tr>
-                            </table>
-                            <br />
-                            <p>
-                                &diams; @StaticResource.Resources.Publications
-                            </p>
-                            @foreach (var item1 in item.Publications)
-                            {
-                                <a href=@item1.UlrBibliography>&#x27A4;@item1.Title &raquo;</a>
-                                <br />
-                            }
-                            <br />
-                            <a href="mailto:@item.Email" )>&diams; @StaticResource.Resources.SendEmail       </a>
-                            <br />
-                        </div>
-                        <div class="col-lg-3">
-                            @if (item.ImageCollaborations?.Count > 0)
-                            {
-                                <img src="data:@item.ImageCollaborations.First().ContentType;base64,@Convert.ToBase64String(item.ImageCollaborations.First().Content)" alt="Photo" style="width:30%" />
-                            }
-                        </div>
-                    </div>
-                </li>
+                <ul>
+                    <li>
+                        <div class="autocontents">
+                            <h4 class="underline" style="font-weight:bold;color:#343a89;"> @Html.DisplayFor(modelItem => item.LastName)  @Html.DisplayFor(modelItem => item.FirstName)</h4>
+                            <div class="row">
+                                <div class="col-md-10">
+                                    <p style="font-weight:bold;">
+                                        &diams; @StaticResource.Resources.Fonction
+                                    </p>
+                                    @if (Session[Horizone.Common.CommonConstants.CurrentCulture].ToString() == "en")
+                                    {
+                                        <p>
+                                            @Html.Raw(item.FonctionEn)
+                                        </p>
+                                        <p style="font-weight:bold;">
+                                            &diams; @StaticResource.Resources.Affiliation
+                                        </p>
+                                        <p>
+                                            @Html.Raw(item.AffiliationEn)
+                                        </p>
+                                    }
+                                    @if (Session[Horizone.Common.CommonConstants.CurrentCulture].ToString() == "fr")
+                                    {
+                                        <p>
+                                            @Html.Raw(item.FonctionFr)
+                                        </p>
+                                        <p style="font-weight:bold;">
+                                            &diams; @StaticResource.Resources.Affiliation
+                                        </p>
+                                        <p>
+                                            @Html.Raw(item.AffiliationFr)
+                                        </p>
+                                    }
+                                    @if (Session[Horizone.Common.CommonConstants.CurrentCulture].ToString() == "zh")
+                                    {
+                                        <p>
+                                            @Html.Raw(item.FonctionZh)
+                                        </p>
+                                        <p style="font-weight:bold;">
+                                            &diams; @StaticResource.Resources.Affiliation
+                                        </p>
+                                        <p>
+                                            @Html.Raw(item.AffiliationZh)
+                                        </p>
+                                    }
 
-            </ul>
+                                    <table>
+                                        <tr>
+                                            <th> &diams; @StaticResource.Resources.CV -  </th>
+                                            @*  <th>  Link </th>*@
+                                        </tr>
+                                        <tr>
+                                            <td>  <a class="btn btn-info" style="background-color: #99AAFF" href="@item.CV">@StaticResource.Resources.LearnMore &raquo;</a> </td>
+                                            @*  <td>@Html.ActionLink("DownLoad", "Home", new { cvName = item.CV }) </td>*@
+                                        </tr>
+                                    </table>
+                                    <br />
+                                    <p style="font-weight:bold;">
+                                        &diams; @StaticResource.Resources.Publications
+                                    </p>
+                                    @foreach (var item1 in item.Publications)
+                                    {
+                                        <a href=@item1.UlrBibliography>&#x27A4;@item1.Title &raquo;</a>
+                                        <br />
+                                    }
+                                    <br />
+                                    <a href="mailto:@item.Email" )>&diams; @StaticResource.Resources.SendEmail       </a>
+                                    <br />
+                                </div>
+                                <div class="col-md-2">
+                                    @if (item.ImageCollaborations?.Count > 0)
+                                    {
+                                        <img src="data:@item.ImageCollaborations.First().ContentType;base64,@Convert.ToBase64String(item.ImageCollaborations.First().Content)" alt="Photo" style="width:50%" />
+                                    }
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                </ul>               
             }
-        
         }
-
     </div>
 </div>
 

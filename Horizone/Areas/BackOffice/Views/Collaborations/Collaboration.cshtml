@@ -18,24 +18,37 @@
         <th>
             @StaticResource.Resources.FirstName
         </th>
-        <th>
-            @StaticResource.Resources.Fonction
-        </th>
-        <th>
-            @StaticResource.Resources.Affiliation
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.CV)
-        </th>
-        <th>
-            @StaticResource.Resources.Email
-        </th>
-        <th>
-            @StaticResource.Resources.Team
-        </th>
-        <th>
-            @StaticResource.Resources.AssociatedResearcher (s)
-        </th>
+        @if (Session[Horizone.Common.CommonConstants.CurrentCulture].ToString() == "en")
+        {
+
+            <th>
+                @StaticResource.Resources.Fonction  @StaticResource.Resources.English
+            </th>
+            <th>
+                @StaticResource.Resources.Affiliation  @StaticResource.Resources.English
+            </th>
+        }
+        @if (Session[Horizone.Common.CommonConstants.CurrentCulture].ToString() == "fr")
+        {
+
+            <th>
+                @StaticResource.Resources.Fonction  @StaticResource.Resources.French
+            </th>
+            <th>
+                @StaticResource.Resources.Affiliation  @StaticResource.Resources.French
+            </th>
+        }
+        @if (Session[Horizone.Common.CommonConstants.CurrentCulture].ToString() == "zh")
+        {
+
+            <th>
+                @StaticResource.Resources.Fonction  @StaticResource.Resources.Chinese
+            </th>
+            <th>
+                @StaticResource.Resources.Affiliation @StaticResource.Resources.Chinese
+            </th>
+        }
+       
         <th>
             @StaticResource.Resources.Collaboration (s)
         </th>
@@ -53,54 +66,68 @@
 
     @foreach (var item in Model)
     {
-        if (!item.Team)
+        if (item.Collaborator)
         {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.Title)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.LastName)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.FirstName)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Fonction)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Affiliation)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.CV)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Email)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Team)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.AssociatedResearcher)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Collaborator)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Visible)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Order)
-        </td>
-        <td>
-            @Html.Raw(item.Publications.First().Title)
-        </td>
-        <td>
-            @Html.ActionLink(@StaticResource.Resources.Edit, "Edit", new { id = item.Id }, new { @class = "btn btn-info", style = "width:90px" })
-            @Html.ActionLink(@StaticResource.Resources.Details, "Details", new { id = item.Id }, new { @class = "btn btn-info", style = "width:90px" })
-            @Html.ActionLink(@StaticResource.Resources.Delete, "Delete", new { id = item.Id }, new { @class = "btn btn-info", style = "width:90px" })
-        </td>
-    </tr>
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Title)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.LastName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.FirstName)
+                </td>
+                @if (Session[Horizone.Common.CommonConstants.CurrentCulture].ToString() == "en")
+                {
+
+                    <td>
+                        @Html.DisplayFor(modelItem => item.FonctionEn)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.AffiliationEn)
+                    </td>
+                }
+                @if (Session[Horizone.Common.CommonConstants.CurrentCulture].ToString() == "fr")
+                {
+
+                    <td>
+                        @Html.DisplayFor(modelItem => item.FonctionFr)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.AffiliationFr)
+                    </td>
+                }
+                @if (Session[Horizone.Common.CommonConstants.CurrentCulture].ToString() == "zh")
+                {
+
+                    <td>
+                        @Html.DisplayFor(modelItem => item.FonctionZh)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.AffiliationZh)
+                    </td>
+                }
+
+                
+                <td>
+                    @Html.DisplayFor(modelItem => item.Collaborator)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Visible)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Order)
+                </td>
+                <td>
+                    @Html.Raw(item.Publications.First().Title)
+                </td>
+                <td>
+                    @Html.ActionLink(@StaticResource.Resources.Edit, "Edit", new { id = item.Id }, new { @class = "btn btn-info", style = "width:90px" })
+                    @Html.ActionLink(@StaticResource.Resources.Details, "Details", new { id = item.Id }, new { @class = "btn btn-info", style = "width:90px" })
+                    @Html.ActionLink(@StaticResource.Resources.Delete, "Delete", new { id = item.Id }, new { @class = "btn btn-info", style = "width:90px" })
+                </td>
+            </tr>
         }
     }
 

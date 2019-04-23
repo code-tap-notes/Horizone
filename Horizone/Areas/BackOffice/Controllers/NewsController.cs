@@ -41,7 +41,7 @@ namespace Horizone.Areas.BackOffice.Controllers
         {
             ViewBag.CollaboratorId = new SelectList(db.Collaborators,"Id","FirstName");
             ViewBag.LanguageId = new SelectList(db.Languages, "Id", "Symbol");
-            ViewBag.TopicId = new SelectList(db.Topics, "Id", "TopicName");
+            ViewBag.TopicId = new SelectList(db.Topics, "Id", "TopicFr", "TopicEn");
             return View();
         }
 
@@ -60,7 +60,7 @@ namespace Horizone.Areas.BackOffice.Controllers
             }
             ViewBag.CollaboratorId = new SelectList(db.Collaborators, "Id", "FirstName", news.CollaboratorId);
             ViewBag.LanguageId = new SelectList(db.Languages, "Id", "Symbol", news.LanguageId);
-            ViewBag.TopicId = new SelectList(db.Topics, "Id", "TopicName", news.TopicId);
+            ViewBag.TopicId = new SelectList(db.Topics, "Id", "TopicFr", "TopicEn", news.TopicId);
             return View(news);
         }
         // GET: BackOffice/News/Edit/5
@@ -77,7 +77,7 @@ namespace Horizone.Areas.BackOffice.Controllers
             }
             ViewBag.CollaboratorId = new SelectList(db.Collaborators, "Id", "FirstName", news.CollaboratorId);
             ViewBag.LanguageId = new SelectList(db.Languages, "Id", "Name", news.LanguageId);
-            ViewBag.TopicId = new SelectList(db.Topics, "Id", "TopicName", news.TopicId);
+            ViewBag.TopicId = new SelectList(db.Topics, "Id", "TopicFr", "TopicEn", news.TopicId);
             return View(news);
         }
         // POST: BackOffice/News/Edit/5
@@ -97,7 +97,7 @@ namespace Horizone.Areas.BackOffice.Controllers
             }
             ViewBag.CollaboratorId = new SelectList(db.Collaborators, "Id", "FirstName", news.CollaboratorId);            
             ViewBag.LanguageId = new SelectList(db.Languages, "Id", "Name", news.LanguageId);
-            ViewBag.TopicId = new SelectList(db.Topics, "Id", "TopicName", news.TopicId);
+            ViewBag.TopicId = new SelectList(db.Topics, "Id", "TopicFr", "TopicEn", news.TopicId);
             return View(news);
         }
         // GET: BackOffice/News/Delete/5

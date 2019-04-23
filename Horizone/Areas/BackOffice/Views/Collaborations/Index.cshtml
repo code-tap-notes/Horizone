@@ -21,10 +21,22 @@
             @Html.DisplayNameFor(model => model.FirstName)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Fonction)
+            @StaticResource.Resources.Fonction  @StaticResource.Resources.English
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Affiliation)
+            @StaticResource.Resources.Affiliation  @StaticResource.Resources.English
+        </th>
+        <th>
+            @StaticResource.Resources.Fonction  @StaticResource.Resources.French
+        </th>
+        <th>
+            @StaticResource.Resources.Affiliation  @StaticResource.Resources.French
+        </th>
+        <th>
+            @StaticResource.Resources.Fonction  @StaticResource.Resources.Chinese
+        </th>
+        <th>
+            @StaticResource.Resources.Affiliation @StaticResource.Resources.Chinese
         </th>
         <th>
             @Html.DisplayNameFor(model => model.CV)
@@ -63,12 +75,24 @@
             @Html.DisplayFor(modelItem => item.FirstName)
         </td>
         <td>
-            @Html.Raw(item.Fonction)
+            @Html.DisplayFor(modelItem => item.FonctionEn)
         </td>
         <td>
-            @Html.Raw(item.Affiliation)
+            @Html.DisplayFor(modelItem => item.AffiliationEn)
         </td>
-       
+        <td>
+            @Html.DisplayFor(modelItem => item.FonctionFr)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.AffiliationFr)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.FonctionZh)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.AffiliationZh)
+        </td>
+
         <td>
             @Html.DisplayFor(modelItem => item.CV)
         </td>

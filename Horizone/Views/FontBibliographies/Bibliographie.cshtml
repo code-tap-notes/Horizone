@@ -35,7 +35,7 @@
             <a onclick="insertText('Search','ß');" href="#" style="background-color: blanchedalmond; padding:5px"> ß  </a>
         </div>
         <div class="form-group col-md-2">
-            @Html.ActionLink(@StaticResource.Resources.Print, "Print", "FontBibliographies", new { @class = "btn btn-info", style = "width:90px" })
+            @Html.ActionLink(@StaticResource.Resources.Print, "PrintAllReport", "FontBibliographies", new { @class = "btn btn-info", style = "width:90px" })
         </div>
     </form>
 </div>
@@ -62,10 +62,18 @@
 @Html.PagedListPager(Model, page => Url.Action("bibliographie", new { page }))
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")
-    <script>
-        function insertText(elemID, text) {
-            document.getElementById(elemID).value += text;
-        }
+<script>
+   function insertText(elemID, text) {
+       document.getElementById(elemID).value += text;
+   };
+    var a;
+    //Bo LAYOUT
+   function NoLayout(a)
+    {
+       window.open(a,
+           'open_window',
+           'menubar=no, toolbar=no, location=no, directories=no, status=no, scrollbars=no, resizable=no, dependent, width=800, height=620, left=0, top=0');
+    }
     </script>
 }
 

@@ -10,6 +10,7 @@ using Horizone.Models;
 using PagedList;
 using Horizone.Common;
 using System.IO;
+using Rotativa;
 
 namespace Horizone.Controllers
 {
@@ -19,7 +20,35 @@ namespace Horizone.Controllers
         {
             return View();
         }
-
+        public ActionResult Photographs()
+        {
+            return View();
+        }
+        public ActionResult Glossary()
+        {
+            return View();
+        }
+        [ChildActionOnly]
+        public ActionResult Map()
+        {         
+            ViewBag.Place = new SelectList(db.Maps, "Id", "Name");
+            return PartialView(db.Maps.ToList());
+        }
+        
+        // GET: BackOffice/Maps/Details/5
+        public ActionResult MapDetails(int? id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            Map map = db.Maps.Find(id);
+            if (map == null)
+            {
+                return HttpNotFound();
+            }
+            return View(map);
+        }
         public ActionResult About()
         {                       
             var aboutProjets = db.AboutProjets.Include(a => a.Language);
@@ -117,10 +146,15 @@ namespace Horizone.Controllers
         {            
             return View();
         }
-        
-        public FileResult DownLoad(string cvName, int id)
+        public ActionResult RelationInternational()
         {
-            var fullPath = "~/Equipe/" + id + "-" + cvName;
+            return View();
+        }
+
+        public FileResult DownLoad(int id)
+        {
+            var collaborations = db.Collaborations;
+            var fullPath = "~/Equipe/" + id + "123-" + collaborations.Find(id).CV;
             return File(fullPath, "application/CV-Download", Path.GetFileName(fullPath));
         }
        
@@ -140,7 +174,24 @@ namespace Horizone.Controllers
         {                    
                 return View(db.TochStorys.ToList());          
         }
-                                             
+        public ActionResult ThemeStory()
+        {
+            return View(db.ThemeStorys.ToList());
+        }
+        public ActionResult NamePlace()
+        {
+            return View(db.NamePlaces.ToList());
+        }
+        public ActionResult ProperNoun()
+        {
+            return View(db.ProperNouns.ToList());
+        }
+        public ActionResult PrintHistoire()
+        {
+            var report = new ActionAsPdf("TochHistoire");
+            return report;
+        }
+
         public ActionResult Activity()
         {
             var activitys = db.Activitys.Include("Language").Include("Topic");            

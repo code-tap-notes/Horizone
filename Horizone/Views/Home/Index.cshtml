@@ -49,8 +49,14 @@
     <!--Last News-->
     <div id="slide-vp">       
         <div id="slide-left">
-            <div id="slideleft-main">                
-                    @{Html.RenderAction("LatestNews", "FontNews"); }                
+            <div id="slideleft-main">
+               
+                @{Html.RenderAction("LatestNewsFr", "FontNews"); }
+                              
+                @{Html.RenderAction("LatestNewsEn", "FontNews"); }
+                
+                @{Html.RenderAction("LatestNewsZh", "FontNews"); }
+                
             </div>
             <div id="slideleft-scroll">
                 <!--Frequntly-->

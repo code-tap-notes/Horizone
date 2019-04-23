@@ -52,6 +52,9 @@
     <Reference Include="PagedList.Mvc, Version=4.5.0.0, Culture=neutral, PublicKeyToken=abbb863e9397c5e1, processorArchitecture=MSIL">
       <HintPath>..\packages\PagedList.Mvc.4.5.0.0\lib\net40\PagedList.Mvc.dll</HintPath>
     </Reference>
+    <Reference Include="Rotativa, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Rotativa.1.7.3\lib\net461\Rotativa.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
@@ -244,6 +247,7 @@
     <Compile Include="Areas\BackOffice\Controllers\ThemeStoriesController.cs" />
     <Compile Include="Areas\BackOffice\Controllers\TochLanguagesController.cs" />
     <Compile Include="Areas\BackOffice\Controllers\TochPhrasesController.cs" />
+    <Compile Include="Areas\BackOffice\Controllers\TochStoriesController.cs" />
     <Compile Include="Areas\BackOffice\Controllers\TopicsController.cs" />
     <Compile Include="Areas\BackOffice\Controllers\VisualAidsController.cs" />
     <Compile Include="Areas\BackOffice\Controllers\WordClassesController.cs" />
@@ -276,6 +280,10 @@
     <Compile Include="Migrations\201904031921286_ChangeManuscript.cs" />
     <Compile Include="Migrations\201904031921286_ChangeManuscript.Designer.cs">
       <DependentUpon>201904031921286_ChangeManuscript.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201904152046112_changeCollaboration.cs" />
+    <Compile Include="Migrations\201904152046112_changeCollaboration.Designer.cs">
+      <DependentUpon>201904152046112_changeCollaboration.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AboutProject.cs" />
@@ -408,6 +416,7 @@
     <Content Include="Image\bar1.jpg" />
     <Content Include="Image\bar2.jpg" />
     <Content Include="Image\basin.jpg" />
+    <Content Include="Image\BBAW.jpg" />
     <Content Include="Image\BNF.jfif" />
     <Content Include="Image\BNHM.jfif" />
     <Content Include="Image\carte.jpg" />
@@ -417,6 +426,12 @@
     <Content Include="Image\images.jpg" />
     <Content Include="Image\imagesToch.jpg" />
     <Content Include="Image\logo2.png" />
+    <Content Include="Image\Map\Chorchuk.jpg" />
+    <Content Include="Image\Map\Dunhuang.png" />
+    <Content Include="Image\Map\Gaochang.jpg" />
+    <Content Include="Image\Map\Khotan.jpg" />
+    <Content Include="Image\Map\Qiuci.jpg" />
+    <Content Include="Image\Map\Turfan.jpg" />
     <Content Include="Image\open-book.jpg" />
     <Content Include="Image\pr1.jfif" />
     <Content Include="Image\Silk-Road-Map-full.jpg" />
@@ -432,6 +447,10 @@
     <Content Include="Image\Tocharian.jpg" />
     <Content Include="Image\Wfm_tarim_basin.jpg" />
     <Content Include="Image\ưien.jfif" />
+    <Content Include="Rotativa\help-wkhtmltoimage.txt" />
+    <Content Include="Rotativa\help-wkhtmltopdf.txt" />
+    <Content Include="Rotativa\wkhtmltoimage.exe" />
+    <Content Include="Rotativa\wkhtmltopdf.exe" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="ApplicationInsights.config">
@@ -754,6 +773,13 @@
     <Content Include="Areas\BackOffice\Views\Manuscripts\TextLanguages.cshtml" />
     <Content Include="Areas\BackOffice\Views\Manuscripts\MaterialManuscripts.cshtml" />
     <Content Include="Areas\BackOffice\Views\Manuscripts\TextContents.cshtml" />
+    <Content Include="Areas\BackOffice\Views\Collaborations\AssociatedResearcher.cshtml" />
+    <Content Include="Areas\BackOffice\Views\TochStories\Create.cshtml" />
+    <Content Include="Areas\BackOffice\Views\TochStories\Delete.cshtml" />
+    <Content Include="Areas\BackOffice\Views\TochStories\Details.cshtml" />
+    <Content Include="Areas\BackOffice\Views\TochStories\Edit.cshtml" />
+    <Content Include="Areas\BackOffice\Views\TochStories\Index.cshtml" />
+    <Content Include="App_Browsers\qt.browser" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\cldr.js" />
     <Content Include="Scripts\cldr\event.js" />
@@ -1067,6 +1093,17 @@
     <Content Include="Views\Home\AssociatedResearcher.cshtml" />
     <Content Include="Views\Home\Partner.cshtml" />
     <Content Include="Views\Home\Contact.cshtml" />
+    <Content Include="Views\Home\RelationInternational.cshtml" />
+    <Content Include="Views\Home\Photographs.cshtml" />
+    <Content Include="Views\Home\Glossary.cshtml" />
+    <Content Include="Views\Home\Map.cshtml" />
+    <Content Include="Views\Home\MapDetails.cshtml" />
+    <Content Include="Views\FontNews\LatestNewsFr.cshtml" />
+    <Content Include="Views\FontNews\LatestNewsEn.cshtml" />
+    <Content Include="Views\FontNews\LatestNewsZh.cshtml" />
+    <Content Include="Views\Home\ThemeStory.cshtml" />
+    <Content Include="Views\Home\NamePlace.cshtml" />
+    <Content Include="Views\Home\ProperNoun.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -1109,6 +1146,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201904031921286_ChangeManuscript.resx">
       <DependentUpon>201904031921286_ChangeManuscript.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201904152046112_changeCollaboration.resx">
+      <DependentUpon>201904152046112_changeCollaboration.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

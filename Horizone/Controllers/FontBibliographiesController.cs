@@ -8,6 +8,7 @@ using System.Web;
 using System.Web.Mvc;
 using Horizone.Models;
 using PagedList;
+using Rotativa;
 
 namespace Horizone.Controllers
 {
@@ -18,9 +19,11 @@ namespace Horizone.Controllers
         {
             return View(db.Bibliographys.OrderBy(x => x.Id).ToPagedList(page, pageSize));
         }
-        public ActionResult Print()
+        
+        public ActionResult PrintAllReport()
         {
-            return View();
+            var report = new ActionAsPdf("Bibliographie");
+            return report;
         }
 
         // GET: FontBibliographies/Details/5

@@ -12,8 +12,6 @@ namespace Horizone.Models
     {
         public int Id { get; set; }
 
-        [RegularExpression(@"([a-zA-Z])*\s*$", ErrorMessage = "Le champ {0} ne doit contenir que des lettres / Only letters")]
-        [Required(ErrorMessageResourceName = "FieldRequired", ErrorMessageResourceType = typeof(StaticResource.Resources))]
         [StringLength(20, MinimumLength = 1, ErrorMessageResourceName = "MaxLength20", ErrorMessageResourceType = typeof(StaticResource.Resources))]
         [Display(Name = "Title", ResourceType = typeof(StaticResource.Resources))]       
         public string Title { get; set; }
@@ -30,11 +28,23 @@ namespace Horizone.Models
 
         [AllowHtml]
         [Display(Name ="Fonction", ResourceType = typeof(StaticResource.Resources))]
-        public string Fonction { get; set; }
+        public string FonctionEn { get; set; }
+        [AllowHtml]
+        [Display(Name = "Fonction", ResourceType = typeof(StaticResource.Resources))]
+        public string FonctionFr { get; set; }
+        [AllowHtml]
+        [Display(Name = "Fonction", ResourceType = typeof(StaticResource.Resources))]
+        public string FonctionZh { get; set; }
 
         [AllowHtml]
         [Display(Name = "Affiliation", ResourceType = typeof(StaticResource.Resources))]
-        public string Affiliation { get; set; }
+        public string AffiliationFr { get; set; }
+        [AllowHtml]
+        [Display(Name = "Affiliation", ResourceType = typeof(StaticResource.Resources))]
+        public string AffiliationEn { get; set; }
+        [AllowHtml]
+        [Display(Name = "Affiliation", ResourceType = typeof(StaticResource.Resources))]
+        public string AffiliationZh { get; set; }
 
         [Display(Name = "CVName")]
         public string CV { get; set; }
@@ -60,6 +70,7 @@ namespace Horizone.Models
         [Display(Name = "Visible", ResourceType = typeof(StaticResource.Resources))]
         public Boolean Visible { get; set; }
 
+        [Display(Name = "Order", ResourceType = typeof(StaticResource.Resources))]
         public int Order { get; set; }
     }
 }

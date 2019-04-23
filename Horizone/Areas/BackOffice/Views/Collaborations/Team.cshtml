@@ -20,18 +20,34 @@
         <th>
             @StaticResource.Resources.FirstName
         </th>
-        <th>
-            @StaticResource.Resources.Fonction
-        </th>
-        <th>
-            @StaticResource.Resources.Affiliation
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.CV)
-        </th>
-        <th>
-            @StaticResource.Resources.Email
-        </th>
+        @if (Session[Horizone.Common.CommonConstants.CurrentCulture].ToString() == "en")
+        {
+
+            <th>
+                @StaticResource.Resources.Fonction  @StaticResource.Resources.English
+            </th>
+            <th>
+                @StaticResource.Resources.Affiliation  @StaticResource.Resources.English
+            </th>
+        }
+        @if (Session[Horizone.Common.CommonConstants.CurrentCulture].ToString() == "fr")
+        {
+            <th>
+                @StaticResource.Resources.Fonction  @StaticResource.Resources.French
+            </th>
+            <th>
+                @StaticResource.Resources.Affiliation  @StaticResource.Resources.French
+            </th>
+        }
+        @if (Session[Horizone.Common.CommonConstants.CurrentCulture].ToString() == "zh")
+        {
+            <th>
+                @StaticResource.Resources.Fonction  @StaticResource.Resources.Chinese
+            </th>
+            <th>
+                @StaticResource.Resources.Affiliation @StaticResource.Resources.Chinese
+            </th>
+        }       
         <th>
             @StaticResource.Resources.Team
         </th>
@@ -60,18 +76,35 @@
                 <td>
                     @Html.DisplayFor(modelItem => item.FirstName)
                 </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Fonction)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Affiliation)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.CV)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Email)
-                </td>
+                @if (Session[Horizone.Common.CommonConstants.CurrentCulture].ToString() == "en")
+                {
+                    <td>
+                        @Html.DisplayFor(modelItem => item.FonctionEn)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.AffiliationEn)
+                    </td>
+                }
+                @if (Session[Horizone.Common.CommonConstants.CurrentCulture].ToString() == "fr")
+                {
+
+                    <td>
+                        @Html.DisplayFor(modelItem => item.FonctionFr)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.AffiliationFr)
+                    </td>
+                }
+                @if (Session[Horizone.Common.CommonConstants.CurrentCulture].ToString() == "zh")
+                {
+
+                    <td>
+                        @Html.DisplayFor(modelItem => item.FonctionZh)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.AffiliationZh)
+                    </td>
+                }                               
                 <td>
                     @Html.DisplayFor(modelItem => item.Team)
                 </td>
@@ -93,5 +126,4 @@
             </tr>
         }
     }
-
 </table>

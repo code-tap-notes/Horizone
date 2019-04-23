@@ -1,0 +1,138 @@
+﻿@model Horizone.Models.TochStory
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>TochStory</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Language.Symbol)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Language.Symbol)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NamePlace.PlaceEn)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NamePlace.PlaceEn)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ProperNoun.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ProperNoun.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SourceStory.Source)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SourceStory.Source)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ThemeStory.ThemeEn)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ThemeStory.ThemeEn)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ProperNounId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ProperNounId)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PlasticRepresentation)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PlasticRepresentation)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MainFindSpot)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MainFindSpot)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Content)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Content)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.English)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.English)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Francaise)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Francaise)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Chinese)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Chinese)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Description)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Description)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Visible)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Visible)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

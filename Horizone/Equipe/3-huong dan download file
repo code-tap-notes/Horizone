@@ -1,0 +1,84 @@
+public FileResult DownLoad()
+{
+string path = Server.MapPath("~/aapp/File")
+string fileName =Path.GetFileName("duny.jpg");
+string fullPath = Path.Combine(path,fileName);
+
+return File(fullPath,"image/jpg");
+}
+
+<div>
+<a href="/home/download"> Click here to download</a>
+</div>
+
+Theo link thu 2 nay co ve ro rang hon:
+https://www.youtube.com/watch?v=b80mg4XOYIU
+
+
+private List<string> GetFiles()
+{
+var dir = new System.IO.DirectoryInfo(Server.MapPath("~/ "));
+System.IO.FileInfo[] fileNames = dir.GetFiles("*.*");
+List<string> items = new List<string>();
+foreach (var file in fileNames)
+{
+item.Add(file.Name);
+}
+return items;
+}
+
+
+
+View:
+@model List<string>
+
+<p> Documents </p>
+<table>
+<tr>
+  <th> File name </th>
+  <th> Link </th>
+</tr>
+@for (var i=0;i<= Model.Count -1; i++)
+{
+  <tr>
+  <td>@Model[i].ToString() </td>
+  <td>@Html.ActionLink("DownLoad","DownLoad",new { ImageName = @Model[i].ToString()}) </td>
+  </tr>
+  
+}
+<table>  
+  
+  
+  
+  
+  
+  
+  
+
+
+
+
+ActionREsult Index()
+{
+var items = GetFiles();
+return View(items);
+}
+
+
+
+
+public FileResult DownLoad(string imageName)
+{
+var fullPath = "~/Image/"+ImageName;
+return File(path,"application/force-download",Path.GetFileName(fullPath);
+}
+
+
+
+
+
+
+
+
+
+}

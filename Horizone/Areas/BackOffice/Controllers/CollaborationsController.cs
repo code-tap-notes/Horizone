@@ -14,7 +14,6 @@ namespace Horizone.Areas.BackOffice.Controllers
 {
     public class CollaborationsController : BaseController
     {       
-
         // GET: BackOffice/Collaborations
         public ActionResult Index()
         {
@@ -35,10 +34,10 @@ namespace Horizone.Areas.BackOffice.Controllers
             {
                 return HttpNotFound();
             }
+           
             return View(collaboration);
+
         }
-       
-       
         // GET: BackOffice/Collaborations/Create
         public ActionResult Create()
         {
@@ -53,7 +52,7 @@ namespace Horizone.Areas.BackOffice.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,Title,LastName,FirstName,Fonction,Affiliation,CV,Email,Team,AssociatedResearcher,Collaborator,Visible,Order")] Collaboration collaboration, int[] PublicationId)
+        public ActionResult Create([Bind(Include = "Id,Title,LastName,FirstName,FonctionFr,AffiliationFr,FonctionEn,AffiliationEn,FonctionZh,AffiliationZh,CV,Email,Team,AssociatedResearcher,Collaborator,Visible,Order")] Collaboration collaboration, int[] PublicationId)
         {
             if (ModelState.IsValid)
             {
@@ -94,7 +93,7 @@ namespace Horizone.Areas.BackOffice.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,Title,LastName,FirstName,Fonction,Affiliation,CV,Email,Team,AssociatedResearcher,Collaborator,Visible,Order")] Collaboration collaboration, int[] PublicationId)
+        public ActionResult Edit([Bind(Include = "Id,Title,LastName,FirstName,FonctionFr,AffiliationFr,FonctionEn,AffiliationEn,FonctionZh,AffiliationZh,CV,Email,Team,AssociatedResearcher,Collaborator,Visible,Order")] Collaboration collaboration, int[] PublicationId)
         {
             db.Entry(collaboration).State = EntityState.Modified;           
             db.Collaborations.Include("ImageCollaborations").Include("Publications").SingleOrDefault(x => x.Id == collaboration.Id);
@@ -141,16 +140,22 @@ namespace Horizone.Areas.BackOffice.Controllers
             var collaborations = db.Collaborations;
 
             foreach (var item in collaborations)                                       
-                if (item.Team) collaborations.Add(item);
-            
-            return View(collaborations.Include("Publications").ToList());
+                if (item.Team) collaborations.Add(item);          
+            return View(collaborations.Include("Publications").OrderBy(x => x.Order).ToList());
         }
         public ActionResult Collaboration()
         {
             var collaborations = db.Collaborations;
             foreach (var item in collaborations)           
-                if (!item.Team) collaborations.Add(item);            
-            return View(collaborations.Include("Publications").ToList());
+                if (item.Collaborator) collaborations.Add(item);            
+            return View(collaborations.Include("Publications").OrderBy(x => x.Order).ToList());
+        }
+        public ActionResult AssociatedResearcher()
+        {
+            var collaborations = db.Collaborations;
+            foreach (var item in collaborations)
+                if (item.AssociatedResearcher) collaborations.Add(item);
+            return View(collaborations.Include("Publications").OrderBy(x => x.Order).ToList());
         }
 
         [HttpPost]
@@ -178,16 +183,21 @@ namespace Horizone.Areas.BackOffice.Controllers
         [HttpPost]
         public ActionResult UpLoadCv(HttpPostedFileBase file,int id)
         {
+            
             try
             {
                 if (file.ContentLength > 0)
                 {
                     string fileName = Path.GetFileName(file.FileName);
-                    fileName = id + "-" + fileName;
+                    db.Collaborations.Find(id).CV = fileName;
+                    db.SaveChanges();
+                    fileName = id + "123-" + fileName;
                     string filePath = Path.Combine(Server.MapPath("~/Equipe"), fileName);
                     file.SaveAs(filePath);
+                   
                 }
-                Display( "Upload file successfully");                               
+                Display( "Upload file successfully");
+                
                 return RedirectToAction("edit", "Collaborations", new { id = id });
             }
             catch
@@ -207,9 +217,10 @@ namespace Horizone.Areas.BackOffice.Controllers
             }
             return items;
         }
-        public FileResult DownLoad(string cvName, int id)
-        {
-            var fullPath = "~/Equipe/" +id+"-"+ cvName;
+        public FileResult DownLoad(int? id)
+        {            
+            Collaboration collaboration = db.Collaborations.Find(id);                          
+            var fullPath = "~/Equipe/" +id+ "123-"+ collaboration.CV;
             return File(fullPath, "application/CV-Download", Path.GetFileName(fullPath));
         }
 

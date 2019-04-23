@@ -535,7 +535,7 @@
     <value>1-1500 caractères</value>
   </data>
   <data name="Address" xml:space="preserve">
-    <value>Address</value>
+    <value>Adresse</value>
   </data>
   <data name="PublishedBy" xml:space="preserve">
     <value>Publié par</value>
@@ -1392,5 +1392,14 @@ TochPhase</value>
   </data>
   <data name="Tocharian" xml:space="preserve">
     <value>Tokharien</value>
+  </data>
+  <data name="CV" xml:space="preserve">
+    <value>Biographie - Carrière académique</value>
+  </data>
+  <data name="DownLoad" xml:space="preserve">
+    <value>Télécharger</value>
+  </data>
+  <data name="Order" xml:space="preserve">
+    <value>Ordre</value>
   </data>
 </root>

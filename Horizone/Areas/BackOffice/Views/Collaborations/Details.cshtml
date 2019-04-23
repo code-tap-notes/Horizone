@@ -36,18 +36,46 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.Fonction)
+            @Html.DisplayNameFor(model => model.FonctionEn)
         </dt>
 
         <dd>
-            @Html.Raw(Model.Fonction)
+            @Html.Raw(Model.FonctionEn)
         </dd>
         <dt>
-            @Html.DisplayNameFor(model => model.Affiliation)
+            @Html.DisplayNameFor(model => model.AffiliationEn)
         </dt>
 
         <dd>
-            @Html.Raw(Model.Affiliation)
+            @Html.Raw(Model.AffiliationEn)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.FonctionFr)
+        </dt>
+
+        <dd>
+            @Html.Raw(Model.FonctionFr)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.AffiliationFr)
+        </dt>
+
+        <dd>
+            @Html.Raw(Model.AffiliationFr)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.FonctionZh)
+        </dt>
+
+        <dd>
+            @Html.Raw(Model.FonctionZh)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.AffiliationZh)
+        </dt>
+
+        <dd>
+            @Html.Raw(Model.AffiliationZh)
         </dd>
 
         <dt>
@@ -116,5 +144,17 @@
 </div>
 <p>
     @Html.ActionLink(StaticResource.Resources.Edit, "Edit", new { id = Model.Id }, new { @class = "btn btn-info" }) |
-    @Html.ActionLink(StaticResource.Resources.Return, "Index", null, new { @class = "btn btn-primary" })
+    @if (Model.Team)
+    {
+        @Html.ActionLink(@StaticResource.Resources.Return, "Team", null, new { @class = "btn btn-default" })
+    };
+    @if (Model.Collaborator)
+    {
+        @Html.ActionLink(@StaticResource.Resources.Return, "Collaboration", null, new { @class = "btn btn-default" })
+    }
+    @if (Model.AssociatedResearcher)
+    {
+        @Html.ActionLink(@StaticResource.Resources.Return, "AssociatedResearcher", null, new { @class = "btn btn-default" })
+    }
+   
 </p>

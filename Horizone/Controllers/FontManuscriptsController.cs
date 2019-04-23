@@ -10,6 +10,7 @@ using System.Data.Entity;
 using System.IO;
 using System.Net;
 using Horizone.Controllers;
+using Rotativa;
 
 namespace Horizone.Controllers
 {
@@ -21,10 +22,16 @@ namespace Horizone.Controllers
             var manuscripts = db.Manuscripts.Include(m => m.AlignmentType).Include(m => m.DescriptionManuscript).Include(m => m.Format).Include(m => m.GenderManuscript).Include(m => m.LanguageDetail).Include(m => m.LanguageStage).Include(m => m.Map).Include(m => m.Material).Include(m => m.Metric).Include(m => m.PaperColor).Include(m => m.RemarkAdd).Include(m => m.Ruling).Include(m => m.RulingColor).Include(m => m.RulingDetail).Include(m => m.Script).Include(m => m.ScriptAdd).Include(m => m.State).Include(m => m.SubGenderManuscript).Include(m => m.TochLanguage).Include(m => m.WritingTool);
             return View(manuscripts.OrderBy(x => x.Id).ToPagedList(page, pageSize));
         }
+        public ActionResult PrintIndex()
+        {
+            var report = new ActionAsPdf("Index");
+            return report;
+        }
         public ActionResult AnalyseMaterial()
         {
             return View(db.AnalyseMaterials.Include("ImageUVs").Include("ImageAnalyses").ToList());
         }
+       
 
         // GET: BackOffice/Manuscripts/Details/5
         public ActionResult Details(int? id)
@@ -39,6 +46,11 @@ namespace Horizone.Controllers
                 return HttpNotFound();
             }
             return View(manuscript);
+        }
+        public ActionResult PrintManuscript()
+        {
+            var report = new ActionAsPdf("Details");
+            return report;
         }
         // GET: BackOffice/Manuscripts/Details/layout/5
         public ActionResult LayoutManuscripts(int? id)

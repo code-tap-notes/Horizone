@@ -63,13 +63,7 @@
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">@StaticResource.Resources.AboutUs <span class="caret"></span></a>
                         <ul class="dropdown-menu">
 
-                            <li class="dropdown-submenu">
-                                <a class="test" tabindex="-1" href="#">&diams; @StaticResource.Resources.AboutProject<span class="caret"></span></a>
-                                <ul class="dropdown-menu">
-                                    <li><a href="@Url.Action("create", "AboutProjects")">@StaticResource.Resources.Add</a></li>
-                                    <li><a href="@Url.Action("index", "AboutProjects")">@StaticResource.Resources.List</a></li>
-                                </ul>
-                            </li>
+
                             <li class="dropdown-submenu">
                                 <a class="test" tabindex="-1" href="#">&diams; @StaticResource.Resources.Team<span class="caret"></span></a>
                                 <ul class="dropdown-menu">
@@ -82,6 +76,28 @@
                                 <ul class="dropdown-menu">
                                     <li><a href="@Url.Action("create", "Collaborations")">@StaticResource.Resources.Add</a></li>
                                     <li><a href="@Url.Action("Collaboration", "Collaborations")">@StaticResource.Resources.List</a></li>
+                                </ul>
+                            </li>
+                           
+                            <li class="dropdown-submenu">
+                                <a class="test" tabindex="-1" href="#">&diams; @StaticResource.Resources.AssociatedResearcher<span class="caret"></span></a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="@Url.Action("create","Collaborations")">@StaticResource.Resources.Add</a></li>
+                                    <li><a href="@Url.Action("AssociatedResearcher", "Collaborations")">@StaticResource.Resources.List</a></li>
+                                </ul>
+                            </li>
+                             <li class="dropdown-submenu">
+                                <a class="test" tabindex="-1" href="#">&diams; @StaticResource.Resources.Partner<span class="caret"></span></a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="@Url.Action("create","Collaborations")">@StaticResource.Resources.Add</a></li>
+                                    <li><a href="@Url.Action("index", "Collaborations")">@StaticResource.Resources.List</a></li>
+                                </ul>
+                            </li>
+                            <li class="dropdown-submenu">
+                                <a class="test" tabindex="-1" href="#">&diams; @StaticResource.Resources.RelationInternational<span class="caret"></span></a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="@Url.Action("create", "Collaborations")">@StaticResource.Resources.Add</a></li>
+                                    <li><a href="@Url.Action("index", "Collaborations")">@StaticResource.Resources.List</a></li>
                                 </ul>
                             </li>
                             <li class="dropdown-submenu">
@@ -452,12 +468,20 @@
                 <li>
                     @{Html.RenderAction("Link", "LinkAndPresses");}
                 </li>
-                <li>@Html.ActionLink(@StaticResource.Resources.Bibliography, "index", "Bibliographies")</li>
-                <li>@Html.ActionLink(@StaticResource.Resources.Help, "Help", "Dashboards")</li>
+                <li>@Html.ActionLink(@StaticResource.Resources.Bibliography, "index", "Bibliographies")</li>               
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">@StaticResource.Resources.Help<span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><h6 class="dropdownTitle">&#9733; @StaticResource.Resources.Maps</h6></li>
+                        <li><a href="@Url.Action("Create", "Maps",new { area = "" })">@StaticResource.Resources.Add</a></li>
+                        <li><a href="@Url.Action("index", "Maps")">@StaticResource.Resources.List</a></li>
+                        <li><a href="@Url.Action("help", "dashboards")">&#9733; @StaticResource.Resources.Help</a></li>
+                    </ul>
+                </li>
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">@StaticResource.Resources.ManagementUsers<span class="caret"></span></a>
                     <ul class="dropdown-menu">
-                        <li><h6 class="dropdownTitle">&#9733; @StaticResource.Resources.Collaborator</h6></li>
+                        <li><h6 class="dropdownTitle">&#9733; @StaticResource.Resources.Collaborator Web</h6></li>
                         <li><a href="@Url.Action("RegisterCollaborator", "Account",new { area = "" })">@StaticResource.Resources.Add</a></li>
                         <li><a href="@Url.Action("index", "Collaborators")">@StaticResource.Resources.List</a></li>
                         <li><h6 class="dropdownTitle">&#9733; @StaticResource.Resources.User</h6></li>

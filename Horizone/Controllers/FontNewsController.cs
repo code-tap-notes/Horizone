@@ -17,6 +17,7 @@ namespace Horizone.Controllers
         public ActionResult Index()
         {
             var newses = db.Newses.Include(n => n.Collaborator).Include(n => n.Language).Include(n => n.Topic);
+            
             return View(newses.ToList());
         }
 
@@ -24,13 +25,25 @@ namespace Horizone.Controllers
         public ActionResult ListNews()
         {
             var news = db.Newses.Include("Language").Include("Collaborator").Include("Topic").Include("ImageNewses");
-            return PartialView(news.OrderByDescending(x => x.View).ToList());
+            return PartialView(news.OrderByDescending(x => x.View).Take(3).ToList());
         }
 
         [ChildActionOnly]
-        public ActionResult LatestNews()
+        public ActionResult LatestNewsFr()
         {
-            var news = db.Newses.Include("Language").Include("Collaborator").Include("Topic").Include("ImageNewses");
+            var news = db.Newses.Include("Language").Include("Collaborator").Include("Topic").Include("ImageNewses").Where(x=>x.LanguageId == 1);
+            return PartialView(news.OrderByDescending(x => x.Id).ToList());
+        }
+        [ChildActionOnly]
+        public ActionResult LatestNewsEn()
+        {
+            var news = db.Newses.Include("Language").Include("Collaborator").Include("Topic").Include("ImageNewses").Where(x => x.LanguageId == 2);
+            return PartialView(news.OrderByDescending(x => x.Id).ToList());
+        }
+        [ChildActionOnly]
+        public ActionResult LatestNewsZh()
+        {
+            var news = db.Newses.Include("Language").Include("Collaborator").Include("Topic").Include("ImageNewses").Where(x => x.LanguageId == 3);
             return PartialView(news.OrderByDescending(x => x.Id).ToList());
         }
 
@@ -42,6 +55,7 @@ namespace Horizone.Controllers
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
             News news = db.Newses.Find(id);
+            news.View += 1;
             if (news == null)
             {
                 return HttpNotFound();

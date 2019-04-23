@@ -1387,4 +1387,13 @@ TochPhase</value>
   <data name="Tocharian" xml:space="preserve">
     <value>Tocharian</value>
   </data>
+  <data name="CV" xml:space="preserve">
+    <value>Biography - Academic Career</value>
+  </data>
+  <data name="DownLoad" xml:space="preserve">
+    <value>DownLoad</value>
+  </data>
+  <data name="Order" xml:space="preserve">
+    <value>Order</value>
+  </data>
 </root>
