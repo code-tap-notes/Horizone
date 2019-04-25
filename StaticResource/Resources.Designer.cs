@@ -2834,7 +2834,7 @@ namespace StaticResource {
         }
         
         /// <summary>
-        ///   Recherche une chaîne localisée semblable à Relation Internationale.
+        ///   Recherche une chaîne localisée semblable à Relations internationales.
         /// </summary>
         public static string RelationInternational {
             get {
