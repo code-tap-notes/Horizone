@@ -61,6 +61,15 @@ namespace StaticResource {
         }
         
         /// <summary>
+        ///   Recherche une chaîne localisée semblable à Les abréviations.
+        /// </summary>
+        public static string Abbreviations {
+            get {
+                return ResourceManager.GetString("Abbreviations", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Recherche une chaîne localisée semblable à Ablative.
         /// </summary>
         public static string Ablative {
@@ -1987,6 +1996,15 @@ namespace StaticResource {
         }
         
         /// <summary>
+        ///   Recherche une chaîne localisée semblable à Nom Image.
+        /// </summary>
+        public static string NamePicture {
+            get {
+                return ResourceManager.GetString("NamePicture", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Recherche une chaîne localisée semblable à Nom de Lieu en Anglaise.
         /// </summary>
         public static string NamePlaceEn {
@@ -2708,6 +2726,15 @@ namespace StaticResource {
         }
         
         /// <summary>
+        ///   Recherche une chaîne localisée semblable à Presse.
+        /// </summary>
+        public static string Press {
+            get {
+                return ResourceManager.GetString("Press", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Recherche une chaîne localisée semblable à Imprimer.
         /// </summary>
         public static string Print {
@@ -3401,6 +3428,15 @@ namespace StaticResource {
         }
         
         /// <summary>
+        ///   Recherche une chaîne localisée semblable à Symbole.
+        /// </summary>
+        public static string Symbol {
+            get {
+                return ResourceManager.GetString("Symbol", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Recherche une chaîne localisée semblable à Colloques.
         /// </summary>
         public static string Symposia {
@@ -3631,6 +3667,15 @@ namespace StaticResource {
         public static string Tune {
             get {
                 return ResourceManager.GetString("Tune", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Type d&apos;image.
+        /// </summary>
+        public static string TypePicture {
+            get {
+                return ResourceManager.GetString("TypePicture", resourceCulture);
             }
         }
         

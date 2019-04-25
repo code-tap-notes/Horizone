@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Data.Entity;
+using System.IO;
 using System.Linq;
 using System.Net;
 using System.Web;
@@ -69,7 +70,7 @@ namespace Horizone.Areas.BackOffice.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            AboutProject aboutProject = db.AboutProjets.Find(id);
+            AboutProject aboutProject = db.AboutProjets.Include("ImageProjects").SingleOrDefault(x => x.Id == id);
             if (aboutProject == null)
             {
                 return HttpNotFound();
@@ -85,9 +86,11 @@ namespace Horizone.Areas.BackOffice.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Edit([Bind(Include = "Id,Aim,Funding,Programing,Feedback,Contact,LanguageId")] AboutProject aboutProject)
         {
+            db.Entry(aboutProject).State = EntityState.Modified;
+            db.AboutProjets.Include("ImageProjects").SingleOrDefault(x => x.Id == aboutProject.Id);
+
             if (ModelState.IsValid)
             {
-                db.Entry(aboutProject).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
@@ -120,6 +123,36 @@ namespace Horizone.Areas.BackOffice.Controllers
             db.SaveChanges();
             return RedirectToAction("Index");
         }
-        
+        [HttpPost]
+        public ActionResult AddPicture(HttpPostedFileBase picture, int id)
+        {
+            if (picture?.ContentLength > 0)
+            {
+                var tp = new ImageProject();
+                tp.ContentType = picture.ContentType;
+                tp.Name = picture.FileName;
+                tp.AboutProjectId = id;
+
+                using (var reader = new BinaryReader(picture.InputStream))
+                {
+                    tp.Content = reader.ReadBytes(picture.ContentLength);
+                }
+                db.ImageProjets.Add(tp);
+                db.SaveChanges();
+                return RedirectToAction("edit", "AboutProjects", new { id = id });
+            }
+            Display("une image doit être séléctionnée");
+            // return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            return RedirectToAction("edit", "AboutProjects", new { id = id });
+        }
+        public ActionResult DeletePicture(int id, int idProject)
+        {
+            ImageProject image = db.ImageProjets.Find(id);
+            db.ImageProjets.Remove(image);
+            db.Entry(image).State = EntityState.Deleted;
+            db.SaveChanges();
+            // return Json(image);
+            return RedirectToAction("Edit", "AboutProjects", new { id = idProject });
+        }
     }
 }

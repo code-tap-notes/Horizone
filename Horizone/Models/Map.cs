@@ -10,13 +10,12 @@ namespace Horizone.Models
     public class Map
     {
         public int Id { get; set; }
-        
-        [AllowHtml]
-        [Display(Name = "MainFindSpot", ResourceType = typeof(StaticResource.Resources))]
-        public string Name { get; set; }
-      
-        [Display(Name = "Maps", ResourceType = typeof(StaticResource.Resources))]
-        public String UlrMap { get; set; }
+
+        [Display(Name = "NamePicture", ResourceType = typeof(StaticResource.Resources))]
+        public string NamePicture { get; set; }
+       
+        [Display(Name = "Picture", ResourceType = typeof(StaticResource.Resources))]
+        public ICollection<ImageMap> ImageMaps { get; set; }
       
     }
 }

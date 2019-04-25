@@ -12,10 +12,7 @@
 <table class="table">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.Name)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.UlrMap)
+            @Html.DisplayNameFor(model => model.NamePicture)
         </th>
         <th></th>
     </tr>
@@ -23,10 +20,7 @@
 @foreach (var item in Model) {
     <tr>
         <td>
-            @Html.DisplayFor(modelItem => item.Name)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.UlrMap)
+            @Html.DisplayFor(modelItem => item.NamePicture)
         </td>
         <td>
             @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |

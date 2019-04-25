@@ -30,6 +30,9 @@
         <th>
             @Html.DisplayNameFor(model => model.Target)
         </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Press)
+        </th>
         <th></th>
     </tr>
 
@@ -53,6 +56,9 @@
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.Target)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Press)
         </td>
         <td>
             @Html.ActionLink(@StaticResource.Resources.Edit, "Edit", new { id = item.Id }, new { @class = "btn btn-info", style = "width:90px" })

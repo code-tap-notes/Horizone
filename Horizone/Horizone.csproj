@@ -206,6 +206,7 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Areas\BackOffice\BackOfficeAreaRegistration.cs" />
     <Compile Include="Areas\BackOffice\Controllers\AboutProjectsController.cs" />
+    <Compile Include="Areas\BackOffice\Controllers\AbreviationsController.cs" />
     <Compile Include="Areas\BackOffice\Controllers\ActivitiesController.cs" />
     <Compile Include="Areas\BackOffice\Controllers\AlignmentTypesController.cs" />
     <Compile Include="Areas\BackOffice\Controllers\AnalyseMaterialsController.cs" />
@@ -232,6 +233,7 @@
     <Compile Include="Areas\BackOffice\Controllers\NewsController.cs" />
     <Compile Include="Areas\BackOffice\Controllers\NumbersController.cs" />
     <Compile Include="Areas\BackOffice\Controllers\PaperColorsController.cs" />
+    <Compile Include="Areas\BackOffice\Controllers\PartnerAndRelationsController.cs" />
     <Compile Include="Areas\BackOffice\Controllers\PersonsController.cs" />
     <Compile Include="Areas\BackOffice\Controllers\PresentationsController.cs" />
     <Compile Include="Areas\BackOffice\Controllers\PublicationsController.cs" />
@@ -285,6 +287,38 @@
     <Compile Include="Migrations\201904152046112_changeCollaboration.Designer.cs">
       <DependentUpon>201904152046112_changeCollaboration.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201904231033279_changeTableMap.cs" />
+    <Compile Include="Migrations\201904231033279_changeTableMap.Designer.cs">
+      <DependentUpon>201904231033279_changeTableMap.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201904240945004_changePartner.cs" />
+    <Compile Include="Migrations\201904240945004_changePartner.Designer.cs">
+      <DependentUpon>201904240945004_changePartner.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201904241418162_changeTypeImage.cs" />
+    <Compile Include="Migrations\201904241418162_changeTypeImage.Designer.cs">
+      <DependentUpon>201904241418162_changeTypeImage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201904242001184_changeHomeImage.cs" />
+    <Compile Include="Migrations\201904242001184_changeHomeImage.Designer.cs">
+      <DependentUpon>201904242001184_changeHomeImage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201904242036395_changMAp.cs" />
+    <Compile Include="Migrations\201904242036395_changMAp.Designer.cs">
+      <DependentUpon>201904242036395_changMAp.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201904242053303_changeMap.cs" />
+    <Compile Include="Migrations\201904242053303_changeMap.Designer.cs">
+      <DependentUpon>201904242053303_changeMap.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201904242112375_changeHomeDecor.cs" />
+    <Compile Include="Migrations\201904242112375_changeHomeDecor.Designer.cs">
+      <DependentUpon>201904242112375_changeHomeDecor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201904251348341_ImagePourTous.cs" />
+    <Compile Include="Migrations\201904251348341_ImagePourTous.Designer.cs">
+      <DependentUpon>201904251348341_ImagePourTous.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AboutProject.cs" />
     <Compile Include="Common\CommonConstants.cs" />
@@ -296,6 +330,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\Abreviation.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Activity.cs" />
     <Compile Include="Models\AlignmentType.cs" />
@@ -312,10 +347,16 @@
     <Compile Include="Models\Format.cs" />
     <Compile Include="Models\Gender.cs" />
     <Compile Include="Models\GenderManuscript.cs" />
+    <Compile Include="Models\ImageProject.cs" />
+    <Compile Include="Models\Map.cs" />
+    <Compile Include="Models\ImageActivity.cs" />
+    <Compile Include="Models\ImageMap.cs" />
+    <Compile Include="Models\ImagePartner.cs" />
     <Compile Include="Models\LanguageDetail.cs" />
     <Compile Include="Models\LanguageStage.cs" />
     <Compile Include="Models\Material.cs" />
     <Compile Include="Models\PaperColor.cs" />
+    <Compile Include="Models\PartnerAndRelation.cs" />
     <Compile Include="Models\RemarkAdd.cs" />
     <Compile Include="Models\Ruling.cs" />
     <Compile Include="Models\RulingDetail.cs" />
@@ -333,7 +374,6 @@
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\Manuscript.cs" />
     <Compile Include="Models\LinkAndPress.cs" />
-    <Compile Include="Models\Map.cs" />
     <Compile Include="Models\Message.cs" />
     <Compile Include="Models\Metric.cs" />
     <Compile Include="Models\NamePlace.cs" />
@@ -697,11 +737,6 @@
     <Content Include="Areas\BackOffice\Views\LanguageStages\Details.cshtml" />
     <Content Include="Areas\BackOffice\Views\LanguageStages\Edit.cshtml" />
     <Content Include="Areas\BackOffice\Views\LanguageStages\Index.cshtml" />
-    <Content Include="Areas\BackOffice\Views\Maps\Create.cshtml" />
-    <Content Include="Areas\BackOffice\Views\Maps\Delete.cshtml" />
-    <Content Include="Areas\BackOffice\Views\Maps\Details.cshtml" />
-    <Content Include="Areas\BackOffice\Views\Maps\Edit.cshtml" />
-    <Content Include="Areas\BackOffice\Views\Maps\Index.cshtml" />
     <Content Include="Areas\BackOffice\Views\Metrics\Create.cshtml" />
     <Content Include="Areas\BackOffice\Views\Metrics\Delete.cshtml" />
     <Content Include="Areas\BackOffice\Views\Metrics\Details.cshtml" />
@@ -780,6 +815,23 @@
     <Content Include="Areas\BackOffice\Views\TochStories\Edit.cshtml" />
     <Content Include="Areas\BackOffice\Views\TochStories\Index.cshtml" />
     <Content Include="App_Browsers\qt.browser" />
+    <Content Include="Areas\BackOffice\Views\Abreviations\Create.cshtml" />
+    <Content Include="Areas\BackOffice\Views\Abreviations\Delete.cshtml" />
+    <Content Include="Areas\BackOffice\Views\Abreviations\Details.cshtml" />
+    <Content Include="Areas\BackOffice\Views\Abreviations\Edit.cshtml" />
+    <Content Include="Areas\BackOffice\Views\Abreviations\Index.cshtml" />
+    <Content Include="Areas\BackOffice\Views\PartnerAndRelations\Create.cshtml" />
+    <Content Include="Areas\BackOffice\Views\PartnerAndRelations\Delete.cshtml" />
+    <Content Include="Areas\BackOffice\Views\PartnerAndRelations\Details.cshtml" />
+    <Content Include="Areas\BackOffice\Views\PartnerAndRelations\Edit.cshtml" />
+    <Content Include="Areas\BackOffice\Views\PartnerAndRelations\Index.cshtml" />
+    <Content Include="Areas\BackOffice\Views\PartnerAndRelations\Partner.cshtml" />
+    <Content Include="Areas\BackOffice\Views\PartnerAndRelations\Relation.cshtml" />
+    <Content Include="Areas\BackOffice\Views\Maps\Create.cshtml" />
+    <Content Include="Areas\BackOffice\Views\Maps\Delete.cshtml" />
+    <Content Include="Areas\BackOffice\Views\Maps\Details.cshtml" />
+    <Content Include="Areas\BackOffice\Views\Maps\Edit.cshtml" />
+    <Content Include="Areas\BackOffice\Views\Maps\Index.cshtml" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\cldr.js" />
     <Content Include="Scripts\cldr\event.js" />
@@ -1093,21 +1145,23 @@
     <Content Include="Views\Home\AssociatedResearcher.cshtml" />
     <Content Include="Views\Home\Partner.cshtml" />
     <Content Include="Views\Home\Contact.cshtml" />
-    <Content Include="Views\Home\RelationInternational.cshtml" />
     <Content Include="Views\Home\Photographs.cshtml" />
     <Content Include="Views\Home\Glossary.cshtml" />
-    <Content Include="Views\Home\Map.cshtml" />
-    <Content Include="Views\Home\MapDetails.cshtml" />
     <Content Include="Views\FontNews\LatestNewsFr.cshtml" />
     <Content Include="Views\FontNews\LatestNewsEn.cshtml" />
     <Content Include="Views\FontNews\LatestNewsZh.cshtml" />
     <Content Include="Views\Home\ThemeStory.cshtml" />
     <Content Include="Views\Home\NamePlace.cshtml" />
     <Content Include="Views\Home\ProperNoun.cshtml" />
+    <Content Include="Views\Home\RelationInternational.cshtml" />
+    <Content Include="Views\FontBibliographies\Abbreviation.cshtml" />
+    <Content Include="Views\FontBibliographies\SearchAbreviation.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Areas\BackOffice\Models\" />
+    <Folder Include="Image\Activity\" />
+    <Folder Include="Image\Projet\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
@@ -1149,6 +1203,30 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201904152046112_changeCollaboration.resx">
       <DependentUpon>201904152046112_changeCollaboration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201904231033279_changeTableMap.resx">
+      <DependentUpon>201904231033279_changeTableMap.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201904240945004_changePartner.resx">
+      <DependentUpon>201904240945004_changePartner.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201904241418162_changeTypeImage.resx">
+      <DependentUpon>201904241418162_changeTypeImage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201904242001184_changeHomeImage.resx">
+      <DependentUpon>201904242001184_changeHomeImage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201904242036395_changMAp.resx">
+      <DependentUpon>201904242036395_changMAp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201904242053303_changeMap.resx">
+      <DependentUpon>201904242053303_changeMap.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201904242112375_changeHomeDecor.resx">
+      <DependentUpon>201904242112375_changeHomeDecor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201904251348341_ImagePourTous.resx">
+      <DependentUpon>201904251348341_ImagePourTous.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

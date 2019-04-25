@@ -1402,4 +1402,19 @@ TochPhase</value>
   <data name="Order" xml:space="preserve">
     <value>Ordre</value>
   </data>
+  <data name="Symbol" xml:space="preserve">
+    <value>Symbole</value>
+  </data>
+  <data name="TypePicture" xml:space="preserve">
+    <value>Type d'image</value>
+  </data>
+  <data name="Abbreviations" xml:space="preserve">
+    <value>Les abréviations</value>
+  </data>
+  <data name="Press" xml:space="preserve">
+    <value>Presse</value>
+  </data>
+  <data name="NamePicture" xml:space="preserve">
+    <value>Nom Image</value>
+  </data>
 </root>

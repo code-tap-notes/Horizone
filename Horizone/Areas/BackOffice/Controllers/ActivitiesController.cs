@@ -2,17 +2,18 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Data.Entity;
+using System.IO;
 using System.Linq;
 using System.Net;
 using System.Web;
 using System.Web.Mvc;
+using Horizone.Controllers;
 using Horizone.Models;
 
 namespace Horizone.Areas.BackOffice.Controllers
 {
-    public class ActivitiesController : Controller
+    public class ActivitiesController : BaseController
     {
-        private ApplicationDbContext db = new ApplicationDbContext();
 
         // GET: BackOffice/Activities
         public ActionResult Index()
@@ -70,7 +71,7 @@ namespace Horizone.Areas.BackOffice.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Activity activity = db.Activitys.Find(id);
+            Activity activity = db.Activitys.Include("ImageActivitys").SingleOrDefault(x => x.Id==id);
             if (activity == null)
             {
                 return HttpNotFound();
@@ -87,9 +88,10 @@ namespace Horizone.Areas.BackOffice.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Edit([Bind(Include = "Id,DateofActivity,Place,NameActivity,Description,UlrActivity,Picture,TopicId,LanguageId")] Activity activity)
         {
+            db.Entry(activity).State = EntityState.Modified;
+            db.Activitys.Include("ImageActivitys").SingleOrDefault(x => x.Id == activity.Id);
             if (ModelState.IsValid)
             {
-                db.Entry(activity).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
@@ -124,13 +126,36 @@ namespace Horizone.Areas.BackOffice.Controllers
             return RedirectToAction("Index");
         }
 
-        protected override void Dispose(bool disposing)
+        [HttpPost]
+        public ActionResult AddPicture(HttpPostedFileBase picture, int id)
         {
-            if (disposing)
+            if (picture?.ContentLength > 0)
             {
-                db.Dispose();
+                var tp = new ImageActivity();
+                tp.ContentType = picture.ContentType;
+                tp.Name = picture.FileName;
+                tp.ActivityId = id;
+
+                using (var reader = new BinaryReader(picture.InputStream))
+                {
+                    tp.Content = reader.ReadBytes(picture.ContentLength);
+                }
+                db.ImageActivitys.Add(tp);
+                db.SaveChanges();
+                return RedirectToAction("edit", "Activities", new { id = id });
             }
-            base.Dispose(disposing);
+            Display("une image doit être séléctionnée");
+            // return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            return RedirectToAction("edit", "Activities", new { id = id });
+        }
+        public ActionResult DeletePicture(int id, int idActivity)
+        {
+            ImageActivity image = db.ImageActivitys.Find(id);
+            db.ImageActivitys.Remove(image);
+            db.Entry(image).State = EntityState.Deleted;
+            db.SaveChanges();
+            // return Json(image);
+            return RedirectToAction("Edit", "Activities", new { id = idActivity });
         }
     }
 }

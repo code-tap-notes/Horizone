@@ -19,10 +19,19 @@ namespace Horizone.Controllers
         {
             return View(db.Bibliographys.OrderBy(x => x.Id).ToPagedList(page, pageSize));
         }
-        
+        public ActionResult Abbreviation(int page = 1, int pageSize = 20)
+        {
+            return View(db.Abreviations.OrderBy(x => x.Id).ToPagedList(page, pageSize));
+        }
+
         public ActionResult PrintAllReport()
         {
             var report = new ActionAsPdf("Bibliographie");
+            return report;
+        }
+        public ActionResult PrintAbreviation()
+        {
+            var report = new ActionAsPdf("Abbreviation");
             return report;
         }
 
@@ -68,6 +77,33 @@ namespace Horizone.Controllers
             }
 
             return View("Search", bibliographies.ToList());
+
+        }
+        public ActionResult SearchAbreviation(string search)
+        {
+            IEnumerable<Abreviation> abreviations = db.Abreviations;
+
+            if (!string.IsNullOrWhiteSpace(search))
+            {
+                abreviations = abreviations.Where(x => x.Symbol.Contains(search));
+
+                //bibliographies = bibliographies.Where(x => x.PublicationDate.Contains(search));
+                //bibliographies = bibliographies.Where(x => x.Title.Contains(search));
+                //|| || (x=> x.PublicationDate.Contains(search)
+                //|| x.Journal.Contains(search)
+                //|| x.Title.Contains(search));
+            }
+            //if (!string.IsNullOrWhiteSpace(title))
+            //    bibliographies = bibliographies.Where(y => y.Title.Contains(title));
+            //if (!string.IsNullOrWhiteSpace(journal))
+            //    bibliographies = bibliographies.Where(y => y.Journal.Contains(journal));
+
+            if (abreviations.Count() == 0)
+            {
+                Display("Aucun résultat");
+            }
+
+            return View("SearchAbreviation", abreviations.ToList());
 
         }
     }

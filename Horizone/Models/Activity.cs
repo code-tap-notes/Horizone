@@ -11,8 +11,7 @@ namespace Horizone.Models
     public class Activity
     {
         public int Id { get; set; }
-
-        
+       
         [Display(Name = "DateActivity", ResourceType = typeof(StaticResource.Resources))]
         [Required(ErrorMessageResourceName = "FieldRequired", ErrorMessageResourceType = typeof(StaticResource.Resources))]
         public string DateofActivity { get; set; }
@@ -46,6 +45,8 @@ namespace Horizone.Models
         [ForeignKey("LanguageId")]
         public Language Language { get; set; }
 
+        [Display(Name = "Picture", ResourceType = typeof(StaticResource.Resources))]
+        public ICollection<ImageActivity> ImageActivitys { get; set; }
 
 
     }

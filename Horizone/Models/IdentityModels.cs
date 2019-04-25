@@ -36,10 +36,38 @@ namespace Horizone.Models
             modelBuilder.Entity<IdentityUserClaim>().ToTable("UserClaims");
             modelBuilder.Entity<IdentityUserLogin>().ToTable("UserLogins");
         }
+        //pour tous
+        public DbSet<Language> Languages { get; set; }
+        public DbSet<LinkAndPress> LinkAndPresses { get; set; }
+        public DbSet<AboutProject> AboutProjets { get; set; }
+        public DbSet<ImageProject> ImageProjets { get; set; }
+
+        public DbSet<Presentation> Presentations { get; set; }
+        public DbSet<ImageMap> ImageMaps { get; set; }
+        public DbSet<Map> Maps { get; set; }
+
+        //Gestion Utilisateur et équipe
         public DbSet<Client> Clients { get; set; }
         public DbSet<Collaborator> Collaborators { get; set; }
         public DbSet<Collaboration> Collaborations { get; set; }
+        public DbSet<Publication> Publications { get; set; }
+        public DbSet<PartnerAndRelation> PartnerAndRelations { get; set; }
+        public DbSet<ImagePartner> ImagePartners { get; set; }
+        public DbSet<ImageCollaboration> ImageCollaborations { get; set; }
+
+        //Visual Aid
+        public DbSet<VisualAid> VisualAids { get; set; }
+
+        //News and Activity
         public DbSet<Comment> Comments { get; set; }
+        public DbSet<News> Newses { get; set; }
+        public DbSet<Topic> Topics { get; set; }
+        public DbSet<ImageNews> ImageNews { get; set; }
+        public DbSet<Activity> Activitys { get; set; }
+        public DbSet<ImageActivity> ImageActivitys { get; set; }
+
+        //Dictionaire
+        public DbSet<TochLanguage> TochLanguages { get; set; }
         public DbSet<DictionaryTocharian> DictionaryTocharians { get; set; }
         public DbSet<Case> Cases { get; set; }
         public DbSet<Gender> Genders { get; set; }
@@ -47,12 +75,10 @@ namespace Horizone.Models
         public DbSet<Person> Persons { get; set; }
         public DbSet<WordClass> WordClasses { get; set; }
         public DbSet<WordSubClass> WordSubClasses { get; set; }
+
+        //Manuscript
         public DbSet<ImageManuscript> ImageManuscripts { get; set; }
-        public DbSet<ImageNews> ImageNews { get; set; }
-        public DbSet<ImageCollaboration> ImageCollaborations { get; set; }
-        public DbSet<VisualAid> VisualAids { get; set; }        
         public DbSet<Manuscript> Manuscripts { get; set; }
-        public DbSet<Map> Maps { get; set; }
         public DbSet<State> States { get; set; }
         public DbSet<DescriptionManuscript> DescriptionManuscripts { get; set; }
         public DbSet<RemarkAdd> RemarkAdds { get; set; }
@@ -71,8 +97,11 @@ namespace Horizone.Models
         public DbSet<GenderManuscript> GenderManuscripts { get; set; }
         public DbSet<SubGenderManuscript> SubGenderManuscripts { get; set; }
         public DbSet<Metric> Metrics { get; set; }
+        public DbSet<AnalyseMaterial> AnalyseMaterials { get; set; }
+        public DbSet<ImageUV> ImageUVs { get; set; }
+        public DbSet<ImageAnalyse> ImageAnalyses { get; set; }
 
-        public DbSet<News> Newses { get; set; }
+        //TochPhrase and TochStory
         public DbSet<TochPhrase> TochPhrases { get; set; }
         public DbSet<TochStory> TochStorys { get; set; }
         public DbSet<NamePlace> NamePlaces { get; set; }
@@ -80,17 +109,8 @@ namespace Horizone.Models
         public DbSet<SourceStory> SourceStorys { get; set; }
         public DbSet<ProperNoun> ProperNouns { get; set; }
 
-        public DbSet<Topic> Topics { get; set; }
-        public DbSet<TochLanguage> TochLanguages { get; set; }
+        //Reference
         public DbSet<Bibliography> Bibliographys { get; set; }
-        public DbSet<LinkAndPress> LinkAndPresses { get; set; }
-        public DbSet<Language> Languages { get; set; }
-        public DbSet<Activity> Activitys { get; set; }
-        public DbSet<Publication> Publications { get; set; }
-        public DbSet<AboutProject> AboutProjets { get; set; }     
-        public DbSet<AnalyseMaterial> AnalyseMaterials { get; set; }
-        public DbSet<ImageUV> ImageUVs { get; set; }
-        public DbSet<ImageAnalyse> ImageAnalyses { get; set; }
-        public DbSet<Presentation> Presentations { get; set; }
+        public DbSet<Abreviation> Abreviations { get; set; }
     }
 }
