@@ -53,7 +53,7 @@ namespace Horizone.Controllers
         public ActionResult About()
         {                       
             var aboutProjets = db.AboutProjets.Include(a => a.Language);
-            return View(aboutProjets.Include("ImageProject").ToList());
+            return View(aboutProjets.Include("ImageProjects").ToList());
         }
         
         public ActionResult Contact()
