@@ -1018,7 +1018,7 @@
     <value>Linguistique</value>
   </data>
   <data name="Person" xml:space="preserve">
-    <value>La personne</value>
+    <value>Personne</value>
   </data>
   <data name="Term" xml:space="preserve">
     <value>Terme</value>
@@ -1114,7 +1114,7 @@
     <value>Imprimer</value>
   </data>
   <data name="Presentation" xml:space="preserve">
-    <value>La présentation</value>
+    <value>Présentation</value>
   </data>
   <data name="PresentationPhrase" xml:space="preserve">
     <value>Présentation sur
@@ -1409,7 +1409,7 @@ TochPhase</value>
     <value>Type d'image</value>
   </data>
   <data name="Abbreviations" xml:space="preserve">
-    <value>Les abréviations</value>
+    <value>Abréviations</value>
   </data>
   <data name="Press" xml:space="preserve">
     <value>Presse</value>

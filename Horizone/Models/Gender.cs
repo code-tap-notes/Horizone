@@ -11,6 +11,9 @@ namespace Horizone.Models
     {
         public int Id { get; set; }
 
+        [Display(Name = "Abbreviations", ResourceType = typeof(StaticResource.Resources))]
+        public string NameGender { get; set; }
+
         [Display(Name = "GenderEn", ResourceType = typeof(StaticResource.Resources))]
         public string NameGenderEn { get; set; }
 

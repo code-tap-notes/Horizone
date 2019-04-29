@@ -10,6 +10,8 @@ namespace Horizone.Models
     public class Person
     {
         public int Id { get; set; }
+        [Display(Name = "Abbreviations", ResourceType = typeof(StaticResource.Resources))]
+        public string ConjugatedPerson { get; set; }
 
         [Display(Name = "PersonEn", ResourceType = typeof(StaticResource.Resources))]
         public string ConjugatedPersonEn { get; set; }
