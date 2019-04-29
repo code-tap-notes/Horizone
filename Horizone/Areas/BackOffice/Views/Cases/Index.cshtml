@@ -13,6 +13,9 @@
 <table class="table">
     <tr>
         <th>
+            @Html.DisplayNameFor(model => model.NameCase)
+        </th>
+        <th>
             @Html.DisplayNameFor(model => model.NameCaseEn)
         </th>
         <th>
@@ -25,21 +28,24 @@
     </tr>
     @foreach (var item in Model)
     {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.NameCaseEn)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.NameCaseFr)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.NameCaseZh)
-            </td>
-            <td>
-                @Html.ActionLink(@StaticResource.Resources.Edit, "Edit", new { id = item.Id }, new { @class = "btn btn-info", style = "width:90px" })
-                @Html.ActionLink(@StaticResource.Resources.Details, "Details", new { id = item.Id }, new { @class = "btn btn-info", style = "width:90px" })
-                @Html.ActionLink(@StaticResource.Resources.Delete, "Delete", new { id = item.Id }, new { @class = "btn btn-info", style = "width:90px" })
-            </td>
-        </tr>
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.NameCase)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NameCaseEn)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NameCaseFr)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NameCaseZh)
+        </td>
+        <td>
+            @Html.ActionLink(@StaticResource.Resources.Edit, "Edit", new { id = item.Id }, new { @class = "btn btn-info", style = "width:90px" })
+            @Html.ActionLink(@StaticResource.Resources.Details, "Details", new { id = item.Id }, new { @class = "btn btn-info", style = "width:90px" })
+            @Html.ActionLink(@StaticResource.Resources.Delete, "Delete", new { id = item.Id }, new { @class = "btn btn-info", style = "width:90px" })
+        </td>
+    </tr>
     }
 </table>

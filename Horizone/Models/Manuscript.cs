@@ -32,12 +32,9 @@ namespace Horizone.Models
         [Display(Name = "ExpeditionCode", ResourceType = typeof(StaticResource.Resources))]
         public string ExpeditionCode { get; set; }
 
-        [Display(Name = "MainFindSpot", ResourceType = typeof(StaticResource.Resources))]       
-        public int MapId { get; set; }
-
-        [ForeignKey("MapId")]
-        public Map Map { get; set; }
-
+        [Display(Name = "MainFindSpot", ResourceType = typeof(StaticResource.Resources))]
+        public string MainFindSpot { get; set; }
+        
         [Display(Name = "SpecificFindSpot", ResourceType = typeof(StaticResource.Resources))]
         public string SpecificFindSpot { get; set; }
 
@@ -263,6 +260,5 @@ namespace Horizone.Models
         [Display(Name = "Visible", ResourceType = typeof(StaticResource.Resources))]
         public Boolean Visible { get; set; }
        
-
     }
 }

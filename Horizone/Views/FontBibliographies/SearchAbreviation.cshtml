@@ -1,0 +1,45 @@
+﻿@model IEnumerable<Horizone.Models.Abreviation>
+
+@{
+    ViewBag.Title = "SearchAbreviation";
+}
+
+<h2>@StaticResource.Resources.SearchResult</h2>
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Symbol)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DescriptionEn) @StaticResource.Resources.English
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DescriptionFr) @StaticResource.Resources.French
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DescriptionZh) @StaticResource.Resources.Chinese
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Symbol)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DescriptionEn)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DescriptionFr)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DescriptionZh)
+            </td>
+           
+        </tr>
+    }
+
+</table>

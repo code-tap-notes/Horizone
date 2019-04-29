@@ -78,7 +78,13 @@
             <li class="dropdown">
                 @{Html.RenderAction("Mainmenu", "Home");}
             </li>
-            <li>@Html.ActionLink(@StaticResource.Resources.Bibliography, "Bibliographie", "FontBibliographies")</li>
+            <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">@StaticResource.Resources.References <span class="caret"></span></a>
+                <ul class="dropdown-menu">
+                    <li><a href="@Url.Action( "Bibliographie", "FontBibliographies")"> @StaticResource.Resources.Bibliography</a></li>
+                    <li><a href="@Url.Action("abbreviation", "FontBibliographies")"> @StaticResource.Resources.Abbreviations </a></li>
+                </ul>
+            </li>
             <li>@Html.ActionLink(@StaticResource.Resources.Help, "Aide", "Home")</li>
         </ul>
         <ul class="nav navbar-right">

@@ -47,5 +47,9 @@ namespace Horizone.Models
 
         [ForeignKey("LanguageId")]
         public Language Language { get; set; }
+
+        [Display(Name = "Picture", ResourceType = typeof(StaticResource.Resources))]
+        public ICollection<ImageProject> ImageProjects { get; set; }
+
     }
 }

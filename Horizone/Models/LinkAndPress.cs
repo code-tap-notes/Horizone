@@ -19,6 +19,9 @@ namespace Horizone.Models
         [Display(Name = "OrderOfLink", ResourceType = typeof(StaticResource.Resources))]
         public int Order { get; set; }
 
+        [Display(Name = "Press", ResourceType = typeof(StaticResource.Resources))]
+        public Boolean Press { get; set; }
+
         public Byte Status { get; set; }
         [Display(Name = "ListedPosition", ResourceType = typeof(StaticResource.Resources))]
         public string Target { get; set; }

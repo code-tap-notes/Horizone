@@ -183,7 +183,6 @@ namespace Horizone.Areas.BackOffice.Controllers
         [HttpPost]
         public ActionResult UpLoadCv(HttpPostedFileBase file,int id)
         {
-            
             try
             {
                 if (file.ContentLength > 0)

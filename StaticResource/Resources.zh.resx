@@ -1390,4 +1390,19 @@ TochPhase</value>
   <data name="Order" xml:space="preserve">
     <value>订购</value>
   </data>
+  <data name="Symbol" xml:space="preserve">
+    <value>符号</value>
+  </data>
+  <data name="TypePicture" xml:space="preserve">
+    <value>图片类型</value>
+  </data>
+  <data name="Abbreviations" xml:space="preserve">
+    <value>缩略语</value>
+  </data>
+  <data name="Press" xml:space="preserve">
+    <value>按</value>
+  </data>
+  <data name="NamePicture" xml:space="preserve">
+    <value>名称图片</value>
+  </data>
 </root>

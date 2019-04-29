@@ -31,8 +31,9 @@ namespace Horizone.Controllers
         [ChildActionOnly]
         public ActionResult Map()
         {         
-            ViewBag.Place = new SelectList(db.Maps, "Id", "Name");
-            return PartialView(db.Maps.ToList());
+            ViewBag.Place = new SelectList(db.ImageMaps, "Id", "NamePicture");
+            
+            return PartialView();            
         }
         
         // GET: BackOffice/Maps/Details/5
@@ -42,19 +43,19 @@ namespace Horizone.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Map map = db.Maps.Find(id);
-            if (map == null)
+            ImageMap allPicture = db.ImageMaps.Find(id);
+            if (allPicture == null)
             {
                 return HttpNotFound();
             }
-            return View(map);
+            return View(allPicture);
         }
         public ActionResult About()
         {                       
             var aboutProjets = db.AboutProjets.Include(a => a.Language);
-            return View(aboutProjets.ToList());
+            return View(aboutProjets.Include("ImageProject").ToList());
         }
-       
+        
         public ActionResult Contact()
         {
             var aboutProjets = db.AboutProjets.Include(a => a.Language);
@@ -139,25 +140,30 @@ namespace Horizone.Controllers
             var collaborations = db.Collaborations;
             foreach (var item in db.Collaborations)
                 if (item.AssociatedResearcher) collaborations.Add(item);
-
             return View(collaborations.Include("Publications").Include("ImageCollaborations").OrderBy(x => x.Order).ToList());
         }
         public ActionResult Partner()
-        {            
-            return View();
+        {
+                var partnerAndRelations = db.PartnerAndRelations;
+            foreach (var item in db.PartnerAndRelations)
+                if (item.Partner) partnerAndRelations.Add(item);
+            return View(partnerAndRelations.Include("ImagePartners").OrderBy(x => x.Order).ToList());
         }
+       
         public ActionResult RelationInternational()
         {
-            return View();
+                var partnerAndRelations = db.PartnerAndRelations;
+            foreach (var item in db.PartnerAndRelations)
+                if (item.Relation) partnerAndRelations.Add(item);
+            return View(partnerAndRelations.Include("ImagePartners").OrderBy(x => x.Order).ToList());           
         }
-
+            
         public FileResult DownLoad(int id)
         {
             var collaborations = db.Collaborations;
             var fullPath = "~/Equipe/" + id + "123-" + collaborations.Find(id).CV;
             return File(fullPath, "application/CV-Download", Path.GetFileName(fullPath));
         }
-       
         [ChildActionOnly]
        public ActionResult MainMenu()
        {
@@ -194,7 +200,7 @@ namespace Horizone.Controllers
 
         public ActionResult Activity()
         {
-            var activitys = db.Activitys.Include("Language").Include("Topic");            
+            var activitys = db.Activitys.Include("Language").Include("Topic").Include("ImageActivity");            
             return View(activitys.OrderByDescending(x => x.DateofActivity).ToList());
         }
         [ChildActionOnly]
@@ -202,6 +208,7 @@ namespace Horizone.Controllers
         {
             var activitys = db.Activitys.Include("Language").Include("Topic");
             return PartialView(activitys.OrderByDescending(x => x.DateofActivity).ToList());
-        }    
+        }
+       
     }
 }

@@ -1,4 +1,4 @@
-﻿
+﻿@model IEnumerable<Horizone.Models.PartnerAndRelation>
 @{
     ViewBag.Title = @StaticResource.Resources.RelationInternational;
 }
@@ -14,33 +14,26 @@
         <li>@Html.ActionLink(StaticResource.Resources.Collaboration, "Collaboration", "Home")</li>
         <li>@Html.ActionLink(StaticResource.Resources.Partner, "Partner", "Home")</li>
         <li>@Html.ActionLink(StaticResource.Resources.Contact, "Contact", "Home")</li>
-
     </ul>
 </div>
 <div class="autocontents">
     <div class="row">
+        @{Html.RenderAction("DecorRelation", "Home");}
+    </div>
+    <div class="row">
 
-        <div class="col-md-4">
-            <h4> Universität Wien</h4>
-            <img style="width:80px;height:60px;" src="~/Image/ưien.jfif" class="logo" />
-            <p>
-                Comprehensive Edition of Tocharian Manuscripts (CEToM, Vienna)
-            </p>
-            <p><a class="btn btn-default" style="background-color: #A8A2CC;" href="https://www.univie.ac.at/tocharian/?A%2023">@StaticResource.Resources.LearnMore &raquo;</a></p>
-        </div>
-        <div class="col-md-4">
-            <h4>Berlin-BBAW</h4>
-            <img style="width:80px;height:60px;" src="~/Image/BBAW.jpg" class="logo" />
-            <p> Berlin-Brandenburgische Akademie der Wissenschaften</p>
-
-            <p><a class="btn btn-default" style="background-color: #A8A2CC;" href="http://www.bbaw.de/en/">@StaticResource.Resources.LearnMore &raquo;</a></p>
-        </div>
-    
-        <div class="col-md-4">
-            <h4>CSMC</h4>
-            <img style="width:80px;height:60px;" src="~/Image/BNHM.jfif" class="logo" />
-            <p> Centre for the Study of Manuscript Cultures - Warburgstr. 26, 20354 Hamburg</p>
-            <p><a class="btn btn-default" style="background-color: #A8A2CC;" href="https://www.manuscript-cultures.uni-hamburg.de/">@StaticResource.Resources.LearnMore &raquo;</a></p>
-        </div>        
+        @foreach (var item in Model)
+        {
+            if (item.Relation)
+            {
+                <div class="col-md-2">
+                    <h4>  @Html.DisplayFor(modelItem => item.Name)</h4>
+                    <p>
+                        @Html.DisplayFor(modelItem => item.Description)
+                    </p>
+                    <p><a class="btn btn-default" style="background-color: #A8A2CC;" href=@item.Link>@StaticResource.Resources.LearnMore &raquo;</a></p>
+                </div>
+            }
+        }
     </div>
 </div>

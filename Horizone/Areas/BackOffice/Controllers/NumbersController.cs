@@ -46,7 +46,7 @@ namespace Horizone.Areas.BackOffice.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,WordNumberEn,WordNumberFr,WordNumberZh")] Number number)
+        public ActionResult Create([Bind(Include = "Id,WordNumber,WordNumberEn,WordNumberFr,WordNumberZh")] Number number)
         {
             if (ModelState.IsValid)
             {
@@ -78,7 +78,7 @@ namespace Horizone.Areas.BackOffice.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,WordNumberEn,WordNumberFr,WordNumberZh")] Number number)
+        public ActionResult Edit([Bind(Include = "Id,WordNumber,WordNumberEn,WordNumberFr,WordNumberZh")] Number number)
         {
             if (ModelState.IsValid)
             {

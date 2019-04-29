@@ -11,6 +11,10 @@ namespace Horizone.Models
     {
         public int Id { get; set; }
 
+        [Display(Name = "Abbreviations", ResourceType = typeof(StaticResource.Resources))]
+        public string Class { get; set; }
+
+
         [Display(Name = "WordClassEn", ResourceType = typeof(StaticResource.Resources))]
         [Required(ErrorMessageResourceName = "FieldRequired", ErrorMessageResourceType = typeof(StaticResource.Resources))]
         public string ClassEn { get; set; }

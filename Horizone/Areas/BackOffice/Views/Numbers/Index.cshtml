@@ -11,6 +11,9 @@
 <table class="table">
     <tr>
         <th>
+            @Html.DisplayNameFor(model => model.WordNumber)
+        </th>
+        <th>
             @Html.DisplayNameFor(model => model.WordNumberEn)
         </th>
         <th>
@@ -24,22 +27,25 @@
 
     @foreach (var item in Model)
     {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.WordNumberEn)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.WordNumberFr)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.WordNumberZh)
-            </td>
-            <td>
-                @Html.ActionLink(@StaticResource.Resources.Edit, "Edit", new { id = item.Id }, new { @class = "btn btn-info", style = "width:90px" })
-                @Html.ActionLink(@StaticResource.Resources.Details, "Details", new { id = item.Id }, new { @class = "btn btn-info", style = "width:90px" })
-                @Html.ActionLink(@StaticResource.Resources.Delete, "Delete", new { id = item.Id }, new { @class = "btn btn-info", style = "width:90px" })
-            </td>
-        </tr>
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.WordNumber)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.WordNumberEn)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.WordNumberFr)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.WordNumberZh)
+        </td>
+        <td>
+            @Html.ActionLink(@StaticResource.Resources.Edit, "Edit", new { id = item.Id }, new { @class = "btn btn-info", style = "width:90px" })
+            @Html.ActionLink(@StaticResource.Resources.Details, "Details", new { id = item.Id }, new { @class = "btn btn-info", style = "width:90px" })
+            @Html.ActionLink(@StaticResource.Resources.Delete, "Delete", new { id = item.Id }, new { @class = "btn btn-info", style = "width:90px" })
+        </td>
+    </tr>
     }
 
 </table>
