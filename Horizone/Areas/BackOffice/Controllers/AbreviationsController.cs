@@ -17,7 +17,7 @@ namespace Horizone.Areas.BackOffice.Controllers
         // GET: BackOffice/Abreviations
         public ActionResult Index()
         {
-            return View(db.Abreviations.ToList());
+            return View(db.Abreviations.OrderBy(x=>x.Symbol).ToList());
         }
 
         // GET: BackOffice/Abreviations/Details/5

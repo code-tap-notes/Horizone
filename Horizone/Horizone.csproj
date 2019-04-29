@@ -319,6 +319,10 @@
     <Compile Include="Migrations\201904251348341_ImagePourTous.Designer.cs">
       <DependentUpon>201904251348341_ImagePourTous.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201904271527418_AddcolumeGender.cs" />
+    <Compile Include="Migrations\201904271527418_AddcolumeGender.Designer.cs">
+      <DependentUpon>201904271527418_AddcolumeGender.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AboutProject.cs" />
     <Compile Include="Common\CommonConstants.cs" />
@@ -1227,6 +1231,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201904251348341_ImagePourTous.resx">
       <DependentUpon>201904251348341_ImagePourTous.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201904271527418_AddcolumeGender.resx">
+      <DependentUpon>201904271527418_AddcolumeGender.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

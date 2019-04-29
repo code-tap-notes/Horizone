@@ -46,7 +46,7 @@ namespace Horizone.Areas.BackOffice.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,ConjugatedPersonEn,ConjugatedPersonFr,ConjugatedPersonZh")] Person person)
+        public ActionResult Create([Bind(Include = "Id,ConjugatedPerson,ConjugatedPersonEn,ConjugatedPersonFr,ConjugatedPersonZh")] Person person)
         {
             if (ModelState.IsValid)
             {
@@ -78,7 +78,7 @@ namespace Horizone.Areas.BackOffice.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,ConjugatedPersonEn,ConjugatedPersonFr,ConjugatedPersonZh")] Person person)
+        public ActionResult Edit([Bind(Include = "Id,ConjugatedPerson,ConjugatedPersonEn,ConjugatedPersonFr,ConjugatedPersonZh")] Person person)
         {
             if (ModelState.IsValid)
             {

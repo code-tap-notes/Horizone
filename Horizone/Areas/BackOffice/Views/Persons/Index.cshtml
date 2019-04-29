@@ -11,6 +11,9 @@
 <table class="table">
     <tr>
         <th>
+            @Html.DisplayNameFor(model => model.ConjugatedPerson)
+        </th>
+        <th>
             @Html.DisplayNameFor(model => model.ConjugatedPersonEn)
         </th>
         <th>
@@ -25,6 +28,9 @@
     @foreach (var item in Model)
     {
         <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.ConjugatedPerson)
+            </td>
             <td>
                 @Html.DisplayFor(modelItem => item.ConjugatedPersonEn)
             </td>

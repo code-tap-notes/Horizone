@@ -61,7 +61,7 @@ namespace StaticResource {
         }
         
         /// <summary>
-        ///   Recherche une chaîne localisée semblable à Les abréviations.
+        ///   Recherche une chaîne localisée semblable à Abréviations.
         /// </summary>
         public static string Abbreviations {
             get {
@@ -2563,7 +2563,7 @@ namespace StaticResource {
         }
         
         /// <summary>
-        ///   Recherche une chaîne localisée semblable à La personne.
+        ///   Recherche une chaîne localisée semblable à Personne.
         /// </summary>
         public static string Person {
             get {
@@ -2698,7 +2698,7 @@ namespace StaticResource {
         }
         
         /// <summary>
-        ///   Recherche une chaîne localisée semblable à La présentation.
+        ///   Recherche une chaîne localisée semblable à Présentation.
         /// </summary>
         public static string Presentation {
             get {

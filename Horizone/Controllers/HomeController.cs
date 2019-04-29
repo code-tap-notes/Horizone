@@ -43,17 +43,17 @@ namespace Horizone.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            ImageMap allPicture = db.ImageMaps.Find(id);
-            if (allPicture == null)
+            ImageMap imageMap = db.ImageMaps.Find(id);
+            if (imageMap == null)
             {
                 return HttpNotFound();
             }
-            return View(allPicture);
+            return View(imageMap);
         }
         public ActionResult About()
         {                       
             var aboutProjets = db.AboutProjets.Include(a => a.Language);
-            return View(aboutProjets.Include("ImageProject").ToList());
+            return View(aboutProjets.Include("ImageProjects").ToList());
         }
         
         public ActionResult Contact()
@@ -200,7 +200,7 @@ namespace Horizone.Controllers
 
         public ActionResult Activity()
         {
-            var activitys = db.Activitys.Include("Language").Include("Topic").Include("ImageActivity");            
+            var activitys = db.Activitys.Include("Language").Include("Topic").Include("ImageActivitys");            
             return View(activitys.OrderByDescending(x => x.DateofActivity).ToList());
         }
         [ChildActionOnly]
