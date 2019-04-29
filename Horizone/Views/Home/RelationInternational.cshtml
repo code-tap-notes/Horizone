@@ -18,19 +18,32 @@
 </div>
 <div class="autocontents">
     <div class="row">
-        @{Html.RenderAction("DecorRelation", "Home");}
-    </div>
-    <div class="row">
 
         @foreach (var item in Model)
         {
             if (item.Relation)
             {
                 <div class="col-md-2">
+                    @if (item.ImagePartners?.Count > 0)
+                    {
+                        <img style="width:80px;height:60px;" src="data:@item.ImagePartners.First().ContentType;base64,@Convert.ToBase64String(item.ImagePartners.First().Content)" alt="Photo" />
+                    }
+
                     <h4>  @Html.DisplayFor(modelItem => item.Name)</h4>
                     <p>
                         @Html.DisplayFor(modelItem => item.Description)
                     </p>
+                    <hr />
+                </div>
+            }
+        }
+    </div>
+    <div class="row">
+        @foreach (var item in Model)
+        {
+            if (item.Relation)
+            {
+                <div class="col-md-2">
                     <p><a class="btn btn-default" style="background-color: #A8A2CC;" href=@item.Link>@StaticResource.Resources.LearnMore &raquo;</a></p>
                 </div>
             }

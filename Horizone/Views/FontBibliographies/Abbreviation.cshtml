@@ -46,14 +46,9 @@
             @StaticResource.Resources.Symbol
         </th>
         <th>
-            @StaticResource.Resources.DescriptionEn 
+            @StaticResource.Resources.Description 
         </th>
-        <th>
-            @StaticResource.Resources.DescriptionFr 
-        </th>
-        <th>
-            @StaticResource.Resources.DescriptionZh 
-        </th>
+       
         <th></th>
     </tr>
 
@@ -64,15 +59,9 @@
                 @Html.DisplayFor(modelItem => item.Symbol)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.DescriptionEn)
+                @Html.DisplayFor(modelItem => item.Description)
             </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.DescriptionFr)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.DescriptionZh)
-            </td>
-
+           
         </tr>
     }
 

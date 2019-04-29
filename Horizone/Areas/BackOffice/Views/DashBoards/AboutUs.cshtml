@@ -3,48 +3,85 @@
 @{
     ViewBag.Title = @StaticResource.Resources.AboutUs;
 }
-
-
 <div class="content">
 
     <h2> @StaticResource.Resources.AboutUs </h2>
     <div class="autocontents">
         <p>
+            <b> @StaticResource.Resources.Presentation @StaticResource.Resources.Team </b>
+        </p>
+    </div>
+    <div class="autocontents">
+        <p>
             <b> @StaticResource.Resources.SeeAlso : </b>
         </p>
         <ul>
-
-            <li>@Html.ActionLink(StaticResource.Resources.AboutProject, "About", "Dashboards")</li>
-            <li>@Html.ActionLink(StaticResource.Resources.Collaboration, "Collaboration", "Dashboards")</li>
-            <li>@Html.ActionLink(StaticResource.Resources.Contact, "Contact", "Dashboards")</li>
+            <li>@Html.ActionLink(StaticResource.Resources.AboutProject, "About", "DashBoard")</li>
+            <li>@Html.ActionLink(StaticResource.Resources.Contact, "Contact", "DashBoard")</li>
         </ul>
-
     </div>
-    <div class="autocontents">       
-        <h2>   @StaticResource.Resources.Team </h2>
-        @foreach (var item in Model)
+    <h2>   @StaticResource.Resources.Team (2018-2019) </h2>
+    @foreach (var item in Model)
+    {
+        if (item.Team)
         {
-            if (item.Team)
-            {
-                <ul>
-                    <li>
-                        <h4 class="underline">@Html.DisplayFor(modelItem => item.Title) @Html.DisplayFor(modelItem => item.LastName)  @Html.DisplayFor(modelItem => item.FirstName)</h4>
+            <ul>
+                <li>
+                    <div class="autocontents">
+                        <h4 class="underline" style="font-weight:bold; color:#343a89">  @Html.DisplayFor(modelItem => item.LastName)  @Html.DisplayFor(modelItem => item.FirstName) </h4>
                         <div class="row">
-                            <div class="col-lg-9">
-                                <p>
-                                    &diams; @StaticResource.Resources.Summary  @Html.Raw(item.Summary)
+                            <div class="col-md-10">
+                                <p style="font-weight:bold;">
+                                    &diams; @StaticResource.Resources.Fonction
                                 </p>
+                                @if (Session[Horizone.Common.CommonConstants.CurrentCulture].ToString() == "en")
+                                {
+                                    <p>
+                                        @Html.Raw(item.FonctionEn)
+                                    </p>
+                                    <p style="font-weight:bold;">
+                                        &diams; @StaticResource.Resources.Affiliation
+                                    </p>
+                                    <p>
+                                        @Html.Raw(item.AffiliationEn)
+                                    </p>
+                                }
+                                @if (Session[Horizone.Common.CommonConstants.CurrentCulture].ToString() == "fr")
+                                {
+                                    <p>
+                                        @Html.Raw(item.FonctionFr)
+                                    </p>
+                                    <p style="font-weight:bold;">
+                                        &diams; @StaticResource.Resources.Affiliation
+                                    </p>
+                                    <p>
+                                        @Html.Raw(item.AffiliationFr)
+                                    </p>
+                                }
+                                @if (Session[Horizone.Common.CommonConstants.CurrentCulture].ToString() == "zh")
+                                {
+                                    <p>
+                                        @Html.Raw(item.FonctionZh)
+                                    </p>
+                                    <p style="font-weight:bold;">
+                                        &diams; @StaticResource.Resources.Affiliation
+                                    </p>
+                                    <p>
+                                        @Html.Raw(item.AffiliationZh)
+                                    </p>
+                                }
+
                                 <table>
                                     <tr>
-                                        <th> &diams; @StaticResource.Resources.CVName </th>                                        
+                                        <th> &diams; @StaticResource.Resources.CVName -  </th>
+                                        <th>  Link </th>
                                     </tr>
                                     <tr>
-                                        <td>@item.CV   </td>                                        
+                                        <td>@item.CV   </td>
                                     </tr>
                                 </table>
-
                                 <br />
-                                <p>
+                                <p style="font-weight:bold;">
                                     &diams; @StaticResource.Resources.Publications
                                 </p>
                                 @foreach (var item1 in item.Publications)
@@ -56,20 +93,17 @@
                                 <a href="mailto:@item.Email" )>&diams; @StaticResource.Resources.SendEmail       </a>
                                 <br />
                             </div>
-                            <div class="col-lg-3">
+                            <div class="col-md-2">
                                 @if (item.ImageCollaborations?.Count > 0)
                                 {
-                                    <img src="data:@item.ImageCollaborations.First().ContentType;base64,@Convert.ToBase64String(item.ImageCollaborations.First().Content)" alt="Photo" style="width:30%" />
+                                    <img src="data:@item.ImageCollaborations.First().ContentType;base64,@Convert.ToBase64String(item.ImageCollaborations.First().Content)" alt="Photo" style="width:50%" />
                                 }
                             </div>
                         </div>
-                    </li>
-
-                </ul>
-            }
+                    </div>
+                </li>
+            </ul>
         }
-
-    </div>
-
-
+    }
 </div>
+

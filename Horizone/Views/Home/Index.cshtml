@@ -33,30 +33,17 @@
         </form>
     </div>
     <!--Information principal-->
-
-    <div id="midheader-vp">
-        <div id="right">
-            <!--Presenter le projet-->
-            <h3> @StaticResource.Resources.Project HISTOCHTEXT</h3>
-            @{Html.RenderAction("PresenteProject", "Home"); }
-        </div>
-        <div id="left">
-            <hr />
-            <img class="GrandImage" src="~/Image/21.jpg" />
-        </div>
+    <div id="midheader-vp">        
+            @{Html.RenderAction("PresenteProject", "Home"); }        
     </div>
     <div class="clear"></div>
     <!--Last News-->
     <div id="slide-vp">       
         <div id="slide-left">
-            <div id="slideleft-main">
-               
-                @{Html.RenderAction("LatestNewsFr", "FontNews"); }
-                              
-                @{Html.RenderAction("LatestNewsEn", "FontNews"); }
-                
+            <div id="slideleft-main">              
+                @{Html.RenderAction("LatestNewsFr", "FontNews"); }                              
+                @{Html.RenderAction("LatestNewsEn", "FontNews"); }                
                 @{Html.RenderAction("LatestNewsZh", "FontNews"); }
-                
             </div>
             <div id="slideleft-scroll">
                 <!--Frequntly-->
@@ -74,12 +61,14 @@
         <!--Main-Right - ACTIVITE-->
         <div id="slide-right">
             @{Html.RenderAction("PageActivity", "Home"); }
+
         </div>
         <!--Logo Histochtech-->
         <div id="gocnhin">
             <img class="moyenImage" alt="" src="~/Image/basin.jpg">
             <div class="title_news"></div>
         </div>
+        
         <div id="slideleft-scroll">
             <div id="content-vp">
                 <div class="box-cat">

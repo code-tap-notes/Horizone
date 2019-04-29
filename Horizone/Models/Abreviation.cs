@@ -16,14 +16,7 @@ namespace Horizone.Models
 
         [AllowHtml]
         [Display(Name = "Description", ResourceType = typeof(StaticResource.Resources))]
-        public string DescriptionEn { get; set; }
+        public string Description { get; set; }
 
-        [AllowHtml]
-        [Display(Name = "Description", ResourceType = typeof(StaticResource.Resources))]
-        public string DescriptionFr { get; set; }
-
-        [AllowHtml]
-        [Display(Name = "Description", ResourceType = typeof(StaticResource.Resources))]
-        public string DescriptionZh { get; set; }
     }
 }

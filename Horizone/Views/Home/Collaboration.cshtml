@@ -18,8 +18,6 @@
             <li>@Html.ActionLink(StaticResource.Resources.RelationInternational, "RelationInternational", "Home")</li>
         </ul>
     </div>
-
-
     @foreach (var item in Model)
     {
         if (item.Collaborator)
@@ -69,7 +67,6 @@
                                         @Html.Raw(item.AffiliationZh)
                                     </p>
                                 }
-
                                 <table>
                                     <tr>
                                         <th> &diams; @StaticResource.Resources.CV -  </th>

@@ -4,9 +4,8 @@
 @foreach (var item in Model)
 {
     if (item.Language.Symbol == Session[Horizone.Common.CommonConstants.CurrentCulture].ToString())
-    {
-        <p>&diams; @Html.Raw(item.DateofActivity)| @Html.Raw(item.NameActivity)| @Html.Raw(item.Description)|</p>
-        <a href=@item.UlrActivity> @StaticResource.Resources.LearnMore  &raquo;</a>
+    {        
+            <p>&diams; @Html.Raw(item.DateofActivity)| @Html.Raw(item.NameActivity)| @Html.Raw(item.Description)|</p>
+            <a href=@item.UlrActivity> @StaticResource.Resources.LearnMore  &raquo;</a>       
     }
 }
-

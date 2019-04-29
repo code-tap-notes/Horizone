@@ -1,14 +1,26 @@
 ﻿@model IEnumerable<Horizone.Models.AboutProject>
+@foreach (var item in Model)
+{
+    if (item.Language.Symbol == Session[Horizone.Common.CommonConstants.CurrentCulture].ToString())
+    {
+        <div class="row">
+            <div class="col-md-4">
+                <hr />
+                @if (item.ImageProjects?.Count > 0)
+                {                   
+                    <img src="data:@item.ImageProjects.First().ContentType;base64,@Convert.ToBase64String(item.ImageProjects.First().Content)" alt="Photo" style="width:95%" />
+                }
+            </div>
+            <div class="col-md-8">
+                <!--Presenter le projet-->
+                <h3> @StaticResource.Resources.Project HISTOCHTEXT</h3>
+                <h4>    @StaticResource.Resources.Aim </h4>
+                @Html.Raw(item.Aim);
+            </div>
+        </div>
+    }
+}
 
-
-<h4>    @StaticResource.Resources.Aim </h4>
- @foreach (var item in Model)
-  {
-     if (item.Language.Symbol == Session[Horizone.Common.CommonConstants.CurrentCulture].ToString())
-     {
-         @Html.Raw(item.Aim);
-     }
- }
 
 
 

@@ -31,49 +31,46 @@
 
         </ul>
     </div>
-
     <div class="autocontents">
         <p>
             <b> @StaticResource.Resources.SeeAlso : </b>
         </p>
         <ul>
-
             <li>@Html.ActionLink(StaticResource.Resources.AboutUs, "AboutUs", "Dashboards")</li>
-            <li>@Html.ActionLink(StaticResource.Resources.Collaboration, "Collaboration", "Dashboards")</li>
             <li>@Html.ActionLink(StaticResource.Resources.Contact, "Contact", "Dashboards")</li>
         </ul>
 
     </div>
-    <div class="content">
+    <div class="autocontents">
 
         <h2 id="Aim">@StaticResource.Resources.Aim</h2>
-        <p class="content">
+        
             @foreach (var item in Model)
             {
                 @Html.Raw(item.Aim)
             }
-        </p>
+       
         <h2 id="Funding">@StaticResource.Resources.Funding</h2>
-        <p class="content">
+        
             @foreach (var item in Model)
             {
                 @Html.Raw(item.Funding)
             }
-        </p>
+        
         <h2 id="Programing">@StaticResource.Resources.Programing</h2>
-        <p class="content">
+        
             @foreach (var item in Model)
             {
                 @Html.Raw(item.Programing)
             }
-        </p>
+       
         <h2 id="Feedback">@StaticResource.Resources.Feedback</h2>
-        <p class="content">
+       
             @foreach (var item in Model)
             {
                 @Html.Raw(item.Feedback)
             }
-        </p>
+       
         <h2 id="HisTochTextPress">@StaticResource.Resources.HisTochTextPress</h2>
         <ul>
             <li>

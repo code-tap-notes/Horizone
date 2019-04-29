@@ -64,7 +64,6 @@ namespace Horizone.Models
         public DbSet<Topic> Topics { get; set; }
         public DbSet<ImageNews> ImageNews { get; set; }
         public DbSet<Activity> Activitys { get; set; }
-        public DbSet<ImageActivity> ImageActivitys { get; set; }
 
         //Dictionaire
         public DbSet<TochLanguage> TochLanguages { get; set; }

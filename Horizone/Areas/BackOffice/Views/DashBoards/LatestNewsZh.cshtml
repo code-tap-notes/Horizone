@@ -1,0 +1,21 @@
+﻿@model IEnumerable<Horizone.Models.News>
+@*@if (Model.First().Language.Symbol == Session[Horizone.Common.CommonConstants.CurrentCulture].ToString())
+        {
+
+            <h3 style="border-top:solid 1px saddlebrown; color:saddlebrown; font-weight:bold;">@StaticResource.Resources.LatestNews</h3>
+
+                <div class="autocontents">
+                    <h4 class="title"><strong>@Html.Raw(Model.First().Title)</strong> </h4>
+                    @if (Model.First().ImageNewses?.Count > 0)
+                    {
+                        <img src="data:@Model.First().ImageNewses.First().ContentType;base64,@Convert.ToBase64String(Model.First().ImageNewses.First().Content)" alt="Photo" style="width:100%" />
+                    }
+                    <p></p>
+                    <p>&diams; @Html.Raw(Model.First().Date)|@StaticResource.Resources.PublishedBy @Html.Raw(Model.First().Collaborator.FirstName)| |</p>
+                    <div class="des">
+                        @Html.Raw(Model.First().Summary)
+                    </div>
+                    <p class="tlq"><a href=@Model.First().Content> @StaticResource.Resources.LearnMore  &raquo;</a> </p>
+                </div>
+    }*@
+

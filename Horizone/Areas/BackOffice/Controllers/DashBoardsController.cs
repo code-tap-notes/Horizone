@@ -29,19 +29,18 @@ namespace Horizone.Areas.BackOffice.Controllers
             Session.Remove("ADMINISTRATOR");
             return RedirectToAction("index", "home", new { area = "" });
         }
-        
-
+        //Pour menu About
         public ActionResult About()
-
         {
             var aboutProjets = db.AboutProjets.Include("Language");
             return View(aboutProjets.ToList());
-
         }
+       
+        //Pour Home page
         [ChildActionOnly]
         public ActionResult PresenteProjet()
         {
-            var aboutProjets = db.AboutProjets.Include("Language");
+            var aboutProjets = db.AboutProjets.Include("Language").Include("ImageProjects");
             return PartialView(aboutProjets.ToList());
         }
         [ChildActionOnly]
@@ -70,47 +69,56 @@ namespace Horizone.Areas.BackOffice.Controllers
             var activitys = db.Activitys.Include("Language");
             return PartialView(activitys.OrderByDescending(x => x.DateofActivity).ToList());
         }
+        // 3 news have max view
         [ChildActionOnly]
         public ActionResult News()
         {           
             var news = db.Newses.Include("Language").Include("Collaborator").Include("Topic").Include("ImageNewses");
-            return PartialView(news.OrderByDescending(x => x.View).ToList());            
+            return PartialView(news.OrderByDescending(x => x.View).Take(3).ToList());            
         }
+        // 1 latest news
+       
         [ChildActionOnly]
-        public ActionResult LatestNews()
+        public ActionResult LatestNewsFr()
         {
-            var news = db.Newses.Include("Language").Include("Collaborator").Include("Topic").Include("ImageNewses");
+            var news = db.Newses.Include("Language").Include("Collaborator").Include("Topic").Include("ImageNewses").Where(x => x.LanguageId == 1);
             return PartialView(news.OrderByDescending(x => x.Id).ToList());
         }
-
+        [ChildActionOnly]
+        public ActionResult LatestNewsEn()
+        {
+            var news = db.Newses.Include("Language").Include("Collaborator").Include("Topic").Include("ImageNewses").Where(x => x.LanguageId == 2);
+            return PartialView(news.OrderByDescending(x => x.Id).ToList());
+        }
+        [ChildActionOnly]
+        public ActionResult LatestNewsZh()
+        {
+            var news = db.Newses.Include("Language").Include("Collaborator").Include("Topic").Include("ImageNewses").Where(x => x.LanguageId == 3);
+            return PartialView(news.OrderByDescending(x => x.Id).ToList());
+        }
         public ActionResult Help()
         {
             return View();
         }
-
+        //Press
         [ChildActionOnly]
         public ActionResult InPresse()
         {
-
           var linkAndPresses = db.LinkAndPresses;
-
             foreach (var item in db.LinkAndPresses)
             {
-              if (item.Order == 4)
+              if (item.Press)
                     linkAndPresses.Add(item);
             }
             return PartialView(linkAndPresses.ToList());
         }
-
         [ChildActionOnly]
         public ActionResult Search(string search, string title, string journal)
         {
             IEnumerable<Bibliography> bibliographies = db.Bibliographys;
-
             if (!string.IsNullOrWhiteSpace(search))
             {
                 bibliographies = bibliographies.Where(x => x.Author.Contains(search));
-
                 //bibliographies = bibliographies.Where(x => x.PublicationDate.Contains(search));
                 //bibliographies = bibliographies.Where(x => x.Title.Contains(search));
                 //|| || (x=> x.PublicationDate.Contains(search)
@@ -121,14 +129,11 @@ namespace Horizone.Areas.BackOffice.Controllers
             //    bibliographies = bibliographies.Where(y => y.Title.Contains(title));
             //if (!string.IsNullOrWhiteSpace(journal))
             //    bibliographies = bibliographies.Where(y => y.Journal.Contains(journal));
-
             if (bibliographies.Count() == 0)
             {
                 Display("Aucun résultat");
             }
-
             return PartialView("Search", bibliographies.ToList());
-
         }
     }
 }

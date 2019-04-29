@@ -8,6 +8,7 @@ using System.Web;
 using System.Web.Mvc;
 using Horizone.Controllers;
 using Horizone.Models;
+using PagedList;
 
 namespace Horizone.Areas.BackOffice.Controllers
 {
@@ -15,9 +16,9 @@ namespace Horizone.Areas.BackOffice.Controllers
     {
 
         // GET: BackOffice/Abreviations
-        public ActionResult Index()
+        public ActionResult Index(int page = 1, int pageSize = 20)
         {
-            return View(db.Abreviations.ToList());
+            return View(db.Abreviations.OrderBy(x => x.Symbol).ToPagedList(page, pageSize));
         }
 
         // GET: BackOffice/Abreviations/Details/5
@@ -46,7 +47,7 @@ namespace Horizone.Areas.BackOffice.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,Symbol,DescriptionEn,DescriptionFr,DescriptionZh")] Abreviation abreviation)
+        public ActionResult Create([Bind(Include = "Id,Symbol,Description")] Abreviation abreviation)
         {
             if (ModelState.IsValid)
             {
@@ -78,7 +79,7 @@ namespace Horizone.Areas.BackOffice.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,Symbol,DescriptionEn,DescriptionFr,DescriptionZh")] Abreviation abreviation)
+        public ActionResult Edit([Bind(Include = "Id,Symbol,Description")] Abreviation abreviation)
         {
             if (ModelState.IsValid)
             {

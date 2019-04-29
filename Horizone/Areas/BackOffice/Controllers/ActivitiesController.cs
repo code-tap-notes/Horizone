@@ -50,7 +50,7 @@ namespace Horizone.Areas.BackOffice.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,DateofActivity,Place,NameActivity,Description,UlrActivity,Picture,TopicId,LanguageId")] Activity activity)
+        public ActionResult Create([Bind(Include = "Id,DateofActivity,Place,NameActivity,Description,UlrActivity,TopicId,LanguageId")] Activity activity)
         {
             if (ModelState.IsValid)
             {
@@ -71,7 +71,7 @@ namespace Horizone.Areas.BackOffice.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Activity activity = db.Activitys.Include("ImageActivitys").SingleOrDefault(x => x.Id==id);
+            Activity activity = db.Activitys.SingleOrDefault(x => x.Id==id);
             if (activity == null)
             {
                 return HttpNotFound();
@@ -86,10 +86,10 @@ namespace Horizone.Areas.BackOffice.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,DateofActivity,Place,NameActivity,Description,UlrActivity,Picture,TopicId,LanguageId")] Activity activity)
+        public ActionResult Edit([Bind(Include = "Id,DateofActivity,Place,NameActivity,Description,UlrActivity,TopicId,LanguageId")] Activity activity)
         {
             db.Entry(activity).State = EntityState.Modified;
-            db.Activitys.Include("ImageActivitys").SingleOrDefault(x => x.Id == activity.Id);
+            db.Activitys.SingleOrDefault(x => x.Id == activity.Id);
             if (ModelState.IsValid)
             {
                 db.SaveChanges();
@@ -114,7 +114,6 @@ namespace Horizone.Areas.BackOffice.Controllers
             }
             return View(activity);
         }
-
         // POST: BackOffice/Activities/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
@@ -126,36 +125,6 @@ namespace Horizone.Areas.BackOffice.Controllers
             return RedirectToAction("Index");
         }
 
-        [HttpPost]
-        public ActionResult AddPicture(HttpPostedFileBase picture, int id)
-        {
-            if (picture?.ContentLength > 0)
-            {
-                var tp = new ImageActivity();
-                tp.ContentType = picture.ContentType;
-                tp.Name = picture.FileName;
-                tp.ActivityId = id;
-
-                using (var reader = new BinaryReader(picture.InputStream))
-                {
-                    tp.Content = reader.ReadBytes(picture.ContentLength);
-                }
-                db.ImageActivitys.Add(tp);
-                db.SaveChanges();
-                return RedirectToAction("edit", "Activities", new { id = id });
-            }
-            Display("une image doit être séléctionnée");
-            // return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            return RedirectToAction("edit", "Activities", new { id = id });
-        }
-        public ActionResult DeletePicture(int id, int idActivity)
-        {
-            ImageActivity image = db.ImageActivitys.Find(id);
-            db.ImageActivitys.Remove(image);
-            db.Entry(image).State = EntityState.Deleted;
-            db.SaveChanges();
-            // return Json(image);
-            return RedirectToAction("Edit", "Activities", new { id = idActivity });
-        }
+        
     }
 }

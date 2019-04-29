@@ -24,16 +24,8 @@
         </form>
     </div>
     <!--Information principal-->
-    <div id="midheader-vp">
-        <div id="right">
-            <!--information-->
-            <h3> @StaticResource.Resources.Project HISTOCHTEXT</h3>
-            @{Html.RenderAction("PresenteProjet", "Dashboards"); }
-        </div>
-        <div id="left">
-            <hr />
-            <img class="GrandImage" src="~/Image/China_Tarim.jpg" />
-        </div>
+    <div id="midheader-vp">      
+            @{Html.RenderAction("PresenteProjet", "Dashboards"); }        
     </div>
     <div class="clear"></div>
     <!--Last News-->
@@ -41,7 +33,10 @@
         
             <div id="slide-left">
                 <div id="slideleft-main">
-                    @{Html.RenderAction("LatestNews", "Dashboards"); }
+                    @{Html.RenderAction("LatestNewsFr", "Dashboards"); }
+                    @{Html.RenderAction("LatestNewsEn", "Dashboards"); }
+                    @{Html.RenderAction("LatestNewsZh", "Dashboards"); }
+
                 </div>
                 <div id="slideleft-scroll">
                     <!--Seen Frequently-->

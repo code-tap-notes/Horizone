@@ -21,7 +21,7 @@ namespace Horizone.Controllers
         }
         public ActionResult Abbreviation(int page = 1, int pageSize = 20)
         {
-            return View(db.Abreviations.OrderBy(x => x.Id).ToPagedList(page, pageSize));
+            return View(db.Abreviations.OrderBy(x => x.Symbol).ToPagedList(page, pageSize));
         }
 
         public ActionResult PrintAllReport()

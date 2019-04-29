@@ -319,6 +319,14 @@
     <Compile Include="Migrations\201904251348341_ImagePourTous.Designer.cs">
       <DependentUpon>201904251348341_ImagePourTous.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201904291216071_changeActivity.cs" />
+    <Compile Include="Migrations\201904291216071_changeActivity.Designer.cs">
+      <DependentUpon>201904291216071_changeActivity.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201904291350380_changeAbre.cs" />
+    <Compile Include="Migrations\201904291350380_changeAbre.Designer.cs">
+      <DependentUpon>201904291350380_changeAbre.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AboutProject.cs" />
     <Compile Include="Common\CommonConstants.cs" />
@@ -349,7 +357,6 @@
     <Compile Include="Models\GenderManuscript.cs" />
     <Compile Include="Models\ImageProject.cs" />
     <Compile Include="Models\Map.cs" />
-    <Compile Include="Models\ImageActivity.cs" />
     <Compile Include="Models\ImageMap.cs" />
     <Compile Include="Models\ImagePartner.cs" />
     <Compile Include="Models\LanguageDetail.cs" />
@@ -832,6 +839,9 @@
     <Content Include="Areas\BackOffice\Views\Maps\Details.cshtml" />
     <Content Include="Areas\BackOffice\Views\Maps\Edit.cshtml" />
     <Content Include="Areas\BackOffice\Views\Maps\Index.cshtml" />
+    <Content Include="Areas\BackOffice\Views\DashBoards\LatestNewsFr.cshtml" />
+    <Content Include="Areas\BackOffice\Views\DashBoards\LatestNewsEn.cshtml" />
+    <Content Include="Areas\BackOffice\Views\DashBoards\LatestNewsZh.cshtml" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\cldr.js" />
     <Content Include="Scripts\cldr\event.js" />
@@ -1116,7 +1126,6 @@
     <Content Include="Views\FontNews\Details.cshtml" />
     <Content Include="Views\FontNews\Index.cshtml" />
     <Content Include="Views\FontNews\ListNews.cshtml" />
-    <Content Include="Views\FontNews\LatestNews.cshtml" />
     <Content Include="Views\FontManuscripts\Index.cshtml" />
     <Content Include="Views\Vocabularies\Vocabulaire.cshtml" />
     <Content Include="Views\FontBibliographies\Bibliographie.cshtml" />
@@ -1227,6 +1236,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201904251348341_ImagePourTous.resx">
       <DependentUpon>201904251348341_ImagePourTous.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201904291216071_changeActivity.resx">
+      <DependentUpon>201904291216071_changeActivity.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201904291350380_changeAbre.resx">
+      <DependentUpon>201904291350380_changeAbre.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

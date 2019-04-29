@@ -1,4 +1,4 @@
-﻿
+﻿@model IEnumerable<Horizone.Models.PartnerAndRelation>
 @{
     ViewBag.Title = @StaticResource.Resources.Partner;
 }
@@ -18,33 +18,33 @@
 </div>
 <div class="autocontents">
     <div class="row">
-
-       
-        <div class="col-md-4">
-            <h4>BnF - Le département des Manuscrits</h4>
-            <img style="width:80px;height:60px;" src="~/Image/BNF.jfif" class="logo" />
-            <p> Conservateur en chef: Isabelle Le Masne de Chermont</p>
-            <p> Superviseur de oriental manuscrites: Laurent Héricher</p>
-
-           <p><a class="btn btn-default" style="background-color: #A8A2CC;" href="https://www.bnf.fr/fr/departement-des-manuscrits">@StaticResource.Resources.LearnMore &raquo;</a></p>
-        </div>
-    
-        <div class="col-md-4">
-            <h4>CNRS USR 3224</h4>
-            <img style="width:80px;height:60px;" src="https://www.mnhn.fr/sites/mnhn.fr/files/styles/bandeau/public/thumbnails/image/visueljdp-hd_1440_850_0.jpg?itok=QeHM8asA" class="logo" />
-            <p> Centre de Recherche sur la Conservation,</p>
-            <p>Muséum National d’Histoire Naturelle</p>
-
-            <p><a class="btn btn-default" style="background-color: #A8A2CC;" href="https://www.cnrs.fr/">@StaticResource.Resources.LearnMore &raquo;</a></p>
-        </div>
-        <div class="col-md-4">
-            <h4>PARIS I</h4>
-            <img style="width:80px;height:60px;" src="~/Image/pr1.jfif" class="logo" />
-            <p> Université Paris I</p>
-            <p>  Master de Conservation -Restauration des biens culturels: Mme Claude LAROQUE</p>
-
-            <p><a class="btn btn-default" style="background-color: #A8A2CC;  " href="http://www.pantheonsorbonne.fr/accueil">@StaticResource.Resources.LearnMore &raquo;</a></p>
-        </div>
-
+        @foreach (var item in Model)
+        {
+            if (item.Partner)
+            {
+                <div class="col-md-4">
+                    @if (item.ImagePartners?.Count > 0)
+                    {
+                        <img style="width:80px;height:60px;" src="data:@item.ImagePartners.First().ContentType;base64,@Convert.ToBase64String(item.ImagePartners.First().Content)" alt="Photo" />
+                    }
+                    <h4>  @Html.DisplayFor(modelItem => item.Name)</h4>
+                    <p>
+                        @Html.DisplayFor(modelItem => item.Description)
+                    </p>
+                    <hr />
+                </div>
+            }
+        }
     </div>
+    <div class="row">
+        @foreach (var item in Model)
+        {
+            if (item.Partner)
+            {
+                <div class="col-md-4">
+                    <p><a class="btn btn-default" style="background-color: #A8A2CC;" href=@item.Link>@StaticResource.Resources.LearnMore &raquo;</a></p>
+                </div>
+            }
+        }
     </div>
+</div>

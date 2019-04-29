@@ -32,9 +32,7 @@
         <th>
             @Html.DisplayNameFor(model => model.UlrActivity)
         </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Picture)
-        </th>
+        
         <th></th>
     </tr>
 
@@ -61,9 +59,7 @@
         <td>
             @Html.DisplayFor(modelItem => item.UlrActivity)
         </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Picture)
-        </td>
+        
         <td>
             @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
             @Html.ActionLink("Details", "Details", new { id=item.Id }) |

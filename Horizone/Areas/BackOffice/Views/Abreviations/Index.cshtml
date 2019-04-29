@@ -1,6 +1,8 @@
-﻿@model IEnumerable<Horizone.Models.Abreviation>
+﻿@model PagedList.IPagedList<Horizone.Models.Abreviation>
+@using PagedList.Mvc;
 
-@{
+@{   
+
     ViewBag.Title = "Index";
 }
 
@@ -12,40 +14,32 @@
 <table class="table">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.Symbol)
+            @StaticResource.Resources.Symbol
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.DescriptionEn) @StaticResource.Resources.English
+            @StaticResource.Resources.Description
         </th>
-        <th>
-            @Html.DisplayNameFor(model => model.DescriptionFr) @StaticResource.Resources.French
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.DescriptionZh) @StaticResource.Resources.Chinese
-        </th>
+
         <th></th>
     </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.Symbol)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.DescriptionEn)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.DescriptionFr)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.DescriptionZh)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
-            @Html.ActionLink("Details", "Details", new { id=item.Id }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.Id })
-        </td>
-    </tr>
-}
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Symbol)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Description)
+            </td>
+
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
+                @Html.ActionLink("Details", "Details", new { id = item.Id }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.Id })
+            </td>
+        </tr>
+    }
 
 </table>
+@Html.PagedListPager(Model, page => Url.Action("abbreviation", new { page }))

@@ -1,8 +1,7 @@
 ﻿@model IEnumerable<Horizone.Models.News>
-    @if (@Model.First().Language.Symbol == Session[Horizone.Common.CommonConstants.CurrentCulture].ToString())
-    {
+@if (Model.First().Language.Symbol == Session[Horizone.Common.CommonConstants.CurrentCulture].ToString())
+{
     <h3 style="border-top:solid 1px saddlebrown; color:saddlebrown; font-weight:bold;">@StaticResource.Resources.LatestNews</h3>
-
     <div class="autocontents">
         <h4 class="title"><strong>@Html.Raw(Model.First().Title)</strong> </h4>
         @if (Model.First().ImageNewses?.Count > 0)
@@ -16,7 +15,6 @@
         </div>
         <p class="tlq"><a href=@Model.First().Content> @StaticResource.Resources.LearnMore  &raquo;</a> </p>
     </div>
-
-    }
+}
 
 
