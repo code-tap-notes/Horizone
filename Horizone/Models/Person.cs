@@ -8,6 +8,7 @@ using System.Web;
 namespace Horizone.Models
 {
     public class Person
+
     {
         public int Id { get; set; }
         [Display(Name = "Abbreviations", ResourceType = typeof(StaticResource.Resources))]
