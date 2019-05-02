@@ -1,0 +1,108 @@
+﻿@model Horizone.Models.AnalyseMacroscopic
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>@StaticResource.Resources.Details</h2>
+
+<div>
+    <h4>@StaticResource.Resources.AnalyseMacroscopic</h4>
+    <hr />
+    <div class="autocontents">
+        <ul>
+            <li>
+
+                <h4>   @Html.DisplayNameFor(model => model.Catalogie.Name)</h4>
+
+
+                <h4> @Html.DisplayNameFor(model => model.Index)</h4>
+            </li>
+            <li>
+                @Html.DisplayFor(model => model.Catalogie.Name)
+
+                @Html.DisplayFor(model => model.Index)
+            </li>
+        </ul>
+        <p>
+            <h4> @StaticResource.Resources.SeeAlso : </h4>
+        </p>
+        <ul>
+            <li><a href="@Url.Action("PageLayout","FontManuscripts",new { id = Model.Id})">@StaticResource.Resources.LayoutManuscript</a></li>
+            <li><a href="@Url.Action("MacroscopicAnalyse","FontManuscripts",new { id = Model.Id })">@StaticResource.Resources.OverallDescription</a></li>
+            <li><a href="@Url.Action("SheetDescription","FontManuscripts",new { id = Model.Id })">@StaticResource.Resources.ScriptManuscript</a></li>
+        </ul>
+    </div>
+    <div class="autocontents">
+        <ul>
+            <li>
+                <h4> @StaticResource.Resources.TransmittedLight  </h4>
+            </li>
+            <li>
+                @if (Model.TransmittedLights?.Count > 0)
+                {
+                    foreach (var item in Model.TransmittedLights)
+                    {
+                        <img src="data:@item.ContentType;base64,@Convert.ToBase64String(item.Content)" alt="Photo" style="width:100%" />
+                    }
+                }
+            </li>
+        </ul>
+    </div>
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.GenderManuscript.NameGenderEn)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.GenderManuscript.NameGenderEn)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Map.NamePicture)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Map.NamePicture)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.State.StateEn)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.State.StateEn)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TochLanguage.Language)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TochLanguage.Language)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.EstimatedDateProduction)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.EstimatedDateProduction)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.PlaceProduction)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.PlaceProduction)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Title)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Title)
+        </dd>
+    </dl>
+</div>
+<div>
+    <p>
+        @Html.ActionLink(StaticResource.Resources.Return, "IndexAnalyseMacroscopic", null, new { @class = "btn btn-primary" })
+    </p>
+
+</div>

@@ -12,6 +12,12 @@ namespace Horizone.Models
     {
         public int Id { get; set; }
 
+        [Display(Name = "Catalogue", ResourceType = typeof(StaticResource.Resources))]
+        public int CatalogieId { get; set; }
+
+        [ForeignKey("CatalogieId")]
+        public Catalogie Catalogie { get; set; }
+
         [Display(Name = "Index")]
         [Required(ErrorMessageResourceName = "FieldRequired", ErrorMessageResourceType = typeof(StaticResource.Resources))]
         public string Index { get; set; }
@@ -33,8 +39,11 @@ namespace Horizone.Models
         public string ExpeditionCode { get; set; }
 
         [Display(Name = "MainFindSpot", ResourceType = typeof(StaticResource.Resources))]
-        public string MainFindSpot { get; set; }
-        
+        public int MapId { get; set; }
+
+        [ForeignKey("MapId")]
+        public Map Map { get; set; }
+
         [Display(Name = "SpecificFindSpot", ResourceType = typeof(StaticResource.Resources))]
         public string SpecificFindSpot { get; set; }
 

@@ -31,8 +31,66 @@ namespace Horizone.Controllers
         {
             return View(db.AnalyseMaterials.Include("ImageUVs").Include("ImageAnalyses").ToList());
         }
-       
+        // GET: BackOffice/AnalyseMacroscopics
+        public ActionResult IndexAnalyseMacroscopic()
+        {
+            var analyseMacroscopics = db.AnalyseMacroscopics.Include(a => a.Catalogie).Include(a => a.ChainLinesVisibility).Include(a => a.Drying).Include(a => a.FiberDirection).Include(a => a.FiberDistribution).Include(a => a.Format).Include(a => a.GenderManuscript).Include(a => a.LaidLinesRegularity).Include(a => a.ManufaturingDefect).Include(a => a.Map).Include(a => a.PaperColor).Include(a => a.PreparationPaperBeforeUsing).Include(a => a.Restore).Include(a => a.Ruling).Include(a => a.RulingColor).Include(a => a.Script).Include(a => a.SieveMark).Include(a => a.State).Include(a => a.TochLanguage).Include(a => a.WritingTool);
+            return View(analyseMacroscopics.ToList());
+        }
+        
 
+             public ActionResult MacroscopicDetails(int? id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            AnalyseMacroscopic analyseMacroscopic = db.AnalyseMacroscopics.Include("TransmittedLights").SingleOrDefault(x => x.Id == id);
+            if (analyseMacroscopic == null)
+            {
+                return HttpNotFound();
+            }
+            return View(analyseMacroscopic);
+        }
+        public ActionResult MacroscopicAnalyse(int? id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            AnalyseMacroscopic analyseMacroscopic = db.AnalyseMacroscopics.Find(id);
+            if (analyseMacroscopic == null)
+            {
+                return HttpNotFound();
+            }
+            return View(analyseMacroscopic);
+        }
+        public ActionResult PageLayout(int? id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            AnalyseMacroscopic analyseMacroscopic = db.AnalyseMacroscopics.Find(id);
+            if (analyseMacroscopic == null)
+            {
+                return HttpNotFound();
+            }
+            return View(analyseMacroscopic);
+        }
+        public ActionResult SheetDescription(int? id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            AnalyseMacroscopic analyseMacroscopic = db.AnalyseMacroscopics.Find(id);
+            if (analyseMacroscopic == null)
+            {
+                return HttpNotFound();
+            }
+            return View(analyseMacroscopic);
+        }
         // GET: BackOffice/Manuscripts/Details/5
         public ActionResult Details(int? id)
         {

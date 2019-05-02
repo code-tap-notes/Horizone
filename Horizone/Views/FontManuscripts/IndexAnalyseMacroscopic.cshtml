@@ -1,0 +1,80 @@
+﻿@model IEnumerable<Horizone.Models.AnalyseMacroscopic>
+
+@{
+    ViewBag.Title = "AnalyseMacroscopic";
+}
+
+<h2>AnalyseMacroscopic</h2>
+<table class="table">
+    <tr>
+        <th>
+            @StaticResource.Resources.Catalogue
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Index)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.GenderManuscript.NameGenderEn)
+        </th>
+
+        <th>
+            @Html.DisplayNameFor(model => model.Map.NamePicture)
+        </th>
+
+        <th>
+            @Html.DisplayNameFor(model => model.State.StateEn)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TochLanguage.Language)
+        </th>
+
+        <th>
+            @Html.DisplayNameFor(model => model.EstimatedDateProduction)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PlaceProduction)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Title)
+        </th>
+       
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Catalogie.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Index)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.GenderManuscript.NameGenderEn)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Map.NamePicture)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.State.StateEn)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TochLanguage.Language)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.EstimatedDateProduction)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PlaceProduction)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Title)
+            </td>
+            <td>
+                @Html.ActionLink("Details", "MacroscopicDetails", new { id = item.Id }) |
+            </td>
+        </tr>
+    }
+
+</table>

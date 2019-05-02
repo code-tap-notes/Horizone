@@ -1,0 +1,42 @@
+﻿@model Horizone.Models.PreparationPaperBeforeUsing
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>PreparationPaperBeforeUsing</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.PreparationEn) @StaticResource.Resources.English
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PreparationEn)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PreparationFr) @StaticResource.Resources.French
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PreparationFr)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PreparationZh) @StaticResource.Resources.Chinese
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PreparationZh)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

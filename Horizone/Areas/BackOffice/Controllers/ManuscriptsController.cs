@@ -31,7 +31,7 @@ namespace Horizone.Areas.BackOffice.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Manuscript manuscript = db.Manuscripts.Include(y => y.ImageManuscripts).Include(m => m.AlignmentType).Include(m => m.DescriptionManuscript).Include(m => m.Format).Include(m => m.GenderManuscript).Include(m => m.LanguageDetail).Include(m => m.LanguageStage).Include(m => m.Material).Include(m => m.Metric).Include(m => m.PaperColor).Include(m => m.RemarkAdd).Include(m => m.Ruling).Include(m => m.RulingColor).Include(m => m.RulingDetail).Include(m => m.Script).Include(m => m.ScriptAdd).Include(m => m.State).Include(m => m.SubGenderManuscript).Include(m => m.TochLanguage).Include(m => m.WritingTool).SingleOrDefault(m=>m.Id==id);
+            Manuscript manuscript = db.Manuscripts.Include(x=>x.Catalogie).Include(x=>x.Map).Include(y => y.ImageManuscripts).Include(m => m.AlignmentType).Include(m => m.DescriptionManuscript).Include(m => m.Format).Include(m => m.GenderManuscript).Include(m => m.LanguageDetail).Include(m => m.LanguageStage).Include(m => m.Material).Include(m => m.Metric).Include(m => m.PaperColor).Include(m => m.RemarkAdd).Include(m => m.Ruling).Include(m => m.RulingColor).Include(m => m.RulingDetail).Include(m => m.Script).Include(m => m.ScriptAdd).Include(m => m.State).Include(m => m.SubGenderManuscript).Include(m => m.TochLanguage).Include(m => m.WritingTool).SingleOrDefault(m=>m.Id==id);
             if (manuscript == null)
             {
                 return HttpNotFound();
@@ -45,7 +45,7 @@ namespace Horizone.Areas.BackOffice.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Manuscript manuscript = db.Manuscripts.Include(m => m.AlignmentType).Include(m => m.DescriptionManuscript).Include(m => m.Format).Include(m => m.GenderManuscript).Include(m => m.LanguageDetail).Include(m => m.LanguageStage).Include(m => m.Material).Include(m => m.Metric).Include(m => m.PaperColor).Include(m => m.RemarkAdd).Include(m => m.Ruling).Include(m => m.RulingColor).Include(m => m.RulingDetail).Include(m => m.Script).Include(m => m.ScriptAdd).Include(m => m.State).Include(m => m.SubGenderManuscript).Include(m => m.TochLanguage).Include(m => m.WritingTool).SingleOrDefault(m => m.Id == id);
+            Manuscript manuscript = db.Manuscripts.Include(x => x.Catalogie).Include(x => x.Map).Include(m => m.AlignmentType).Include(m => m.DescriptionManuscript).Include(m => m.Format).Include(m => m.GenderManuscript).Include(m => m.LanguageDetail).Include(m => m.LanguageStage).Include(m => m.Material).Include(m => m.Metric).Include(m => m.PaperColor).Include(m => m.RemarkAdd).Include(m => m.Ruling).Include(m => m.RulingColor).Include(m => m.RulingDetail).Include(m => m.Script).Include(m => m.ScriptAdd).Include(m => m.State).Include(m => m.SubGenderManuscript).Include(m => m.TochLanguage).Include(m => m.WritingTool).SingleOrDefault(m => m.Id == id);
             if (manuscript == null)
             {
                 return HttpNotFound();
@@ -59,7 +59,7 @@ namespace Horizone.Areas.BackOffice.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Manuscript manuscript = db.Manuscripts.Include(m => m.AlignmentType).Include(m => m.DescriptionManuscript).Include(m => m.Format).Include(m => m.GenderManuscript).Include(m => m.LanguageDetail).Include(m => m.LanguageStage).Include(m => m.Material).Include(m => m.Metric).Include(m => m.PaperColor).Include(m => m.RemarkAdd).Include(m => m.Ruling).Include(m => m.RulingColor).Include(m => m.RulingDetail).Include(m => m.Script).Include(m => m.ScriptAdd).Include(m => m.State).Include(m => m.SubGenderManuscript).Include(m => m.TochLanguage).Include(m => m.WritingTool).SingleOrDefault(m => m.Id == id);
+            Manuscript manuscript = db.Manuscripts.Include(x => x.Catalogie).Include(x => x.Map).Include(m => m.AlignmentType).Include(m => m.DescriptionManuscript).Include(m => m.Format).Include(m => m.GenderManuscript).Include(m => m.LanguageDetail).Include(m => m.LanguageStage).Include(m => m.Material).Include(m => m.Metric).Include(m => m.PaperColor).Include(m => m.RemarkAdd).Include(m => m.Ruling).Include(m => m.RulingColor).Include(m => m.RulingDetail).Include(m => m.Script).Include(m => m.ScriptAdd).Include(m => m.State).Include(m => m.SubGenderManuscript).Include(m => m.TochLanguage).Include(m => m.WritingTool).SingleOrDefault(m => m.Id == id);
             if (manuscript == null)
             {
                 return HttpNotFound();
@@ -73,7 +73,7 @@ namespace Horizone.Areas.BackOffice.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Manuscript manuscript = db.Manuscripts.Include(m => m.AlignmentType).Include(m => m.DescriptionManuscript).Include(m => m.Format).Include(m => m.GenderManuscript).Include(m => m.LanguageDetail).Include(m => m.LanguageStage).Include(m => m.Material).Include(m => m.Metric).Include(m => m.PaperColor).Include(m => m.RemarkAdd).Include(m => m.Ruling).Include(m => m.RulingColor).Include(m => m.RulingDetail).Include(m => m.Script).Include(m => m.ScriptAdd).Include(m => m.State).Include(m => m.SubGenderManuscript).Include(m => m.TochLanguage).Include(m => m.WritingTool).SingleOrDefault(m => m.Id == id);
+            Manuscript manuscript = db.Manuscripts.Include(x => x.Catalogie).Include(x => x.Map).Include(m => m.AlignmentType).Include(m => m.DescriptionManuscript).Include(m => m.Format).Include(m => m.GenderManuscript).Include(m => m.LanguageDetail).Include(m => m.LanguageStage).Include(m => m.Material).Include(m => m.Metric).Include(m => m.PaperColor).Include(m => m.RemarkAdd).Include(m => m.Ruling).Include(m => m.RulingColor).Include(m => m.RulingDetail).Include(m => m.Script).Include(m => m.ScriptAdd).Include(m => m.State).Include(m => m.SubGenderManuscript).Include(m => m.TochLanguage).Include(m => m.WritingTool).SingleOrDefault(m => m.Id == id);
             if (manuscript == null)
             {
                 return HttpNotFound();
@@ -87,7 +87,7 @@ namespace Horizone.Areas.BackOffice.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Manuscript manuscript = db.Manuscripts.Include(m => m.AlignmentType).Include(m => m.DescriptionManuscript).Include(m => m.Format).Include(m => m.GenderManuscript).Include(m => m.LanguageDetail).Include(m => m.LanguageStage).Include(m => m.Material).Include(m => m.Metric).Include(m => m.PaperColor).Include(m => m.RemarkAdd).Include(m => m.Ruling).Include(m => m.RulingColor).Include(m => m.RulingDetail).Include(m => m.Script).Include(m => m.ScriptAdd).Include(m => m.State).Include(m => m.SubGenderManuscript).Include(m => m.TochLanguage).Include(m => m.WritingTool).SingleOrDefault(m => m.Id == id);
+            Manuscript manuscript = db.Manuscripts.Include(x => x.Catalogie).Include(x => x.Map).Include(m => m.AlignmentType).Include(m => m.DescriptionManuscript).Include(m => m.Format).Include(m => m.GenderManuscript).Include(m => m.LanguageDetail).Include(m => m.LanguageStage).Include(m => m.Material).Include(m => m.Metric).Include(m => m.PaperColor).Include(m => m.RemarkAdd).Include(m => m.Ruling).Include(m => m.RulingColor).Include(m => m.RulingDetail).Include(m => m.Script).Include(m => m.ScriptAdd).Include(m => m.State).Include(m => m.SubGenderManuscript).Include(m => m.TochLanguage).Include(m => m.WritingTool).SingleOrDefault(m => m.Id == id);
             if (manuscript == null)
             {
                 return HttpNotFound();
@@ -101,7 +101,7 @@ namespace Horizone.Areas.BackOffice.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Manuscript manuscript = db.Manuscripts.Include(m => m.AlignmentType).Include(m => m.DescriptionManuscript).Include(m => m.Format).Include(m => m.GenderManuscript).Include(m => m.LanguageDetail).Include(m => m.LanguageStage).Include(m => m.Material).Include(m => m.Metric).Include(m => m.PaperColor).Include(m => m.RemarkAdd).Include(m => m.Ruling).Include(m => m.RulingColor).Include(m => m.RulingDetail).Include(m => m.Script).Include(m => m.ScriptAdd).Include(m => m.State).Include(m => m.SubGenderManuscript).Include(m => m.TochLanguage).Include(m => m.WritingTool).SingleOrDefault(m => m.Id == id);
+            Manuscript manuscript = db.Manuscripts.Include(x => x.Catalogie).Include(x => x.Map).Include(m => m.AlignmentType).Include(m => m.DescriptionManuscript).Include(m => m.Format).Include(m => m.GenderManuscript).Include(m => m.LanguageDetail).Include(m => m.LanguageStage).Include(m => m.Material).Include(m => m.Metric).Include(m => m.PaperColor).Include(m => m.RemarkAdd).Include(m => m.Ruling).Include(m => m.RulingColor).Include(m => m.RulingDetail).Include(m => m.Script).Include(m => m.ScriptAdd).Include(m => m.State).Include(m => m.SubGenderManuscript).Include(m => m.TochLanguage).Include(m => m.WritingTool).SingleOrDefault(m => m.Id == id);
             if (manuscript == null)
             {
                 return HttpNotFound();
@@ -114,7 +114,7 @@ namespace Horizone.Areas.BackOffice.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Manuscript manuscript = db.Manuscripts.Include(m => m.AlignmentType).Include(m => m.DescriptionManuscript).Include(m => m.Format).Include(m => m.GenderManuscript).Include(m => m.LanguageDetail).Include(m => m.LanguageStage).Include(m => m.Material).Include(m => m.Metric).Include(m => m.PaperColor).Include(m => m.RemarkAdd).Include(m => m.Ruling).Include(m => m.RulingColor).Include(m => m.RulingDetail).Include(m => m.Script).Include(m => m.ScriptAdd).Include(m => m.State).Include(m => m.SubGenderManuscript).Include(m => m.TochLanguage).Include(m => m.WritingTool).SingleOrDefault(m => m.Id == id);
+            Manuscript manuscript = db.Manuscripts.Include(x => x.Catalogie).Include(x => x.Map).Include(m => m.AlignmentType).Include(m => m.DescriptionManuscript).Include(m => m.Format).Include(m => m.GenderManuscript).Include(m => m.LanguageDetail).Include(m => m.LanguageStage).Include(m => m.Material).Include(m => m.Metric).Include(m => m.PaperColor).Include(m => m.RemarkAdd).Include(m => m.Ruling).Include(m => m.RulingColor).Include(m => m.RulingDetail).Include(m => m.Script).Include(m => m.ScriptAdd).Include(m => m.State).Include(m => m.SubGenderManuscript).Include(m => m.TochLanguage).Include(m => m.WritingTool).SingleOrDefault(m => m.Id == id);
             if (manuscript == null)
             {
                 return HttpNotFound();
@@ -125,13 +125,14 @@ namespace Horizone.Areas.BackOffice.Controllers
             // GET: BackOffice/Manuscripts/Create
             public ActionResult Create()
         {
+            ViewBag.MapId = new SelectList(db.Maps, "Id", "NamePicture");
+            ViewBag.CatelogieId = new SelectList(db.Catalogies, "Id", "Name");
             ViewBag.AlignmentTypeId = new SelectList(db.AlignmentTypes, "Id", "AlignmentTypeEn");
             ViewBag.DescriptionManuscriptId = new SelectList(db.DescriptionManuscripts, "Id", "DescriptionEn");
             ViewBag.FormatId = new SelectList(db.Formats, "Id", "FormatEn");
             ViewBag.GenderManuscriptId = new SelectList(db.GenderManuscripts, "Id", "NameGenderEn");
             ViewBag.LanguageDetailId = new SelectList(db.LanguageDetails, "Id", "LanguageDetailEn");
             ViewBag.LanguageStageId = new SelectList(db.LanguageStages, "Id", "LanguageStageEn");
-            ViewBag.MapId = new SelectList(db.ImageMaps, "Id", "Name");
             ViewBag.MaterialId = new SelectList(db.Materials, "Id", "MaterialEn");
             ViewBag.MetricId = new SelectList(db.Metrics, "Id", "MetricEn");
             ViewBag.PaperColorId = new SelectList(db.PaperColors, "Id", "PaperColorEn");
@@ -154,7 +155,7 @@ namespace Horizone.Areas.BackOffice.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,Index,Collection,Siglum,Joint,OtherSiglum,ExpeditionCode, MainFindSpot,SpecificFindSpot,StateId,DescriptionManuscriptId,RemarkAddId,LeafNumber,SizeHeight,Completeness,SizeWidth,NumberOfLine,LineDistance,FormatId,RulingId,RulingColorId,RulingDetailId,StringholeHeight,StringholeWidth,DistanceStringholeRight,DistanceStringholeLeft,InterruptedLine,Transliteration,Transcription,English,Francaise,Chinese,Editor,References,PhilologicalCommentary,MaterialId,PaperColorId,PaperThickness,WritingToolId,AlignmentTypeId,ModuleWidth,ModuleHeight,AvCharPerLigne,NibThickness,ScriptId,ScriptAddId,TochLanguageId,LanguageStageId,LanguageDetailId,GenderManuscriptId,SubGenderManuscriptId,Title,Passage,Parallel,MetricId,Tune,Cetom,Visible")] Manuscript manuscript, int[] BibliographyId)
+        public ActionResult Create([Bind(Include = "Id,CatalogieId,Index,Collection,Siglum,Joint,OtherSiglum,ExpeditionCode, MapId,SpecificFindSpot,StateId,DescriptionManuscriptId,RemarkAddId,LeafNumber,SizeHeight,Completeness,SizeWidth,NumberOfLine,LineDistance,FormatId,RulingId,RulingColorId,RulingDetailId,StringholeHeight,StringholeWidth,DistanceStringholeRight,DistanceStringholeLeft,InterruptedLine,Transliteration,Transcription,English,Francaise,Chinese,Editor,References,PhilologicalCommentary,MaterialId,PaperColorId,PaperThickness,WritingToolId,AlignmentTypeId,ModuleWidth,ModuleHeight,AvCharPerLigne,NibThickness,ScriptId,ScriptAddId,TochLanguageId,LanguageStageId,LanguageDetailId,GenderManuscriptId,SubGenderManuscriptId,Title,Passage,Parallel,MetricId,Tune,Cetom,Visible")] Manuscript manuscript, int[] BibliographyId)
         {
             if (BibliographyId.Count() > 0)
                 manuscript.Bibliographys = db.Bibliographys.Where(x => BibliographyId.Contains(x.Id)).ToList();
@@ -165,7 +166,8 @@ namespace Horizone.Areas.BackOffice.Controllers
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-
+            ViewBag.MapId = new SelectList(db.Maps, "Id", "NamePicture", manuscript.MapId);
+            ViewBag.CatelogieId = new SelectList(db.Catalogies, "Id", "Name", manuscript.CatalogieId);
             ViewBag.AlignmentTypeId = new SelectList(db.AlignmentTypes, "Id", "AlignmentTypeEn", manuscript.AlignmentTypeId);
             ViewBag.DescriptionManuscriptId = new SelectList(db.DescriptionManuscripts, "Id", "DescriptionEn", manuscript.DescriptionManuscriptId);
             ViewBag.FormatId = new SelectList(db.Formats, "Id", "FormatEn", manuscript.FormatId);
@@ -201,6 +203,8 @@ namespace Horizone.Areas.BackOffice.Controllers
             {
                 return HttpNotFound();
             }
+            ViewBag.MapId = new SelectList(db.Maps, "Id", "NamePicture", manuscript.MapId);
+            ViewBag.CatelogieId = new SelectList(db.Catalogies, "Id", "Name");
             ViewBag.AlignmentTypeId = new SelectList(db.AlignmentTypes, "Id", "AlignmentTypeEn", manuscript.AlignmentTypeId);
             ViewBag.DescriptionManuscriptId = new SelectList(db.DescriptionManuscripts, "Id", "DescriptionEn", manuscript.DescriptionManuscriptId);
             ViewBag.FormatId = new SelectList(db.Formats, "Id", "FormatEn", manuscript.FormatId);
@@ -229,10 +233,10 @@ namespace Horizone.Areas.BackOffice.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,Index,Collection,Siglum,Joint,OtherSiglum,ExpeditionCode,MainFindSpot,SpecificFindSpot,StateId,DescriptionManuscriptId,RemarkAddId,LeafNumber,SizeHeight,Completeness,SizeWidth,NumberOfLine,LineDistance,FormatId,RulingId,RulingColorId,RulingDetailId,StringholeHeight,StringholeWidth,DistanceStringholeRight,DistanceStringholeLeft,InterruptedLine,Transliteration,Transcription,English,Francaise,Chinese,Editor,References,PhilologicalCommentary,MaterialId,PaperColorId,PaperThickness,WritingToolId,AlignmentTypeId,ModuleWidth,ModuleHeight,AvCharPerLigne,NibThickness,ScriptId,ScriptAddId,TochLanguageId,LanguageStageId,LanguageDetailId,GenderManuscriptId,SubGenderManuscriptId,Title,Passage,Parallel,MetricId,Tune,Cetom,Visible")] Manuscript manuscript, int[] BibliographyId)
+        public ActionResult Edit([Bind(Include = "Id,CatalogieId,Index,Collection,Siglum,Joint,OtherSiglum,ExpeditionCode,MapId,SpecificFindSpot,StateId,DescriptionManuscriptId,RemarkAddId,LeafNumber,SizeHeight,Completeness,SizeWidth,NumberOfLine,LineDistance,FormatId,RulingId,RulingColorId,RulingDetailId,StringholeHeight,StringholeWidth,DistanceStringholeRight,DistanceStringholeLeft,InterruptedLine,Transliteration,Transcription,English,Francaise,Chinese,Editor,References,PhilologicalCommentary,MaterialId,PaperColorId,PaperThickness,WritingToolId,AlignmentTypeId,ModuleWidth,ModuleHeight,AvCharPerLigne,NibThickness,ScriptId,ScriptAddId,TochLanguageId,LanguageStageId,LanguageDetailId,GenderManuscriptId,SubGenderManuscriptId,Title,Passage,Parallel,MetricId,Tune,Cetom,Visible")] Manuscript manuscript, int[] BibliographyId)
         {
             db.Entry(manuscript).State = EntityState.Modified;
-            db.Manuscripts.Include("ImageManuscripts").Include("State").Include("DescriptionManuscript").Include("RemarkAdd").Include("Format").Include("Ruling").Include("RulingColor").Include("RulingDetail").Include("Material").Include("PaperColor").Include("WritingTool").Include("AlignmentType").Include("Script").Include("ScriptAdd").Include("LanguageStage").Include("Tochlanguage").Include("LanguageDetail").Include("GenderManuscript").Include("SubGenderManuscript").Include("Metric").Include("Bibliographys").SingleOrDefault(x => x.Id == manuscript.Id);
+            db.Manuscripts.Include("Catalogie").Include("Map").Include("ImageManuscripts").Include("State").Include("DescriptionManuscript").Include("RemarkAdd").Include("Format").Include("Ruling").Include("RulingColor").Include("RulingDetail").Include("Material").Include("PaperColor").Include("WritingTool").Include("AlignmentType").Include("Script").Include("ScriptAdd").Include("LanguageStage").Include("Tochlanguage").Include("LanguageDetail").Include("GenderManuscript").Include("SubGenderManuscript").Include("Metric").Include("Bibliographys").SingleOrDefault(x => x.Id == manuscript.Id);
             if (ModelState.IsValid)
             {
                 if (BibliographyId != null)
@@ -240,7 +244,8 @@ namespace Horizone.Areas.BackOffice.Controllers
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            
+            ViewBag.MapId = new SelectList(db.Maps, "Id", "NamePicture", manuscript.MapId);
+            ViewBag.CatelogieId = new SelectList(db.Catalogies, "Id", "Name", manuscript.CatalogieId);
             ViewBag.AlignmentTypeId = new SelectList(db.AlignmentTypes, "Id", "AlignmentTypeEn", manuscript.AlignmentTypeId);
             ViewBag.DescriptionManuscriptId = new SelectList(db.DescriptionManuscripts, "Id", "DescriptionEn", manuscript.DescriptionManuscriptId);
             ViewBag.FormatId = new SelectList(db.Formats, "Id", "FormatEn", manuscript.FormatId);

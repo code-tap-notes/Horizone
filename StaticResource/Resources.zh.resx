@@ -1405,4 +1405,118 @@ TochPhase</value>
   <data name="NamePicture" xml:space="preserve">
     <value>名称图片</value>
   </data>
+  <data name="AnalyseMacroscopic" xml:space="preserve">
+    <value>分析宏观</value>
+  </data>
+  <data name="AverageThickness" xml:space="preserve">
+    <value>平均厚度</value>
+  </data>
+  <data name="ChainLinesVisibility" xml:space="preserve">
+    <value>链线能见度</value>
+  </data>
+  <data name="ClayOrSandParticules" xml:space="preserve">
+    <value>粘土或沙粒</value>
+  </data>
+  <data name="CoatingColor" xml:space="preserve">
+    <value>涂层颜色</value>
+  </data>
+  <data name="CoatingDecayingCondition" xml:space="preserve">
+    <value>涂层腐朽条件</value>
+  </data>
+  <data name="Correction" xml:space="preserve">
+    <value>更正</value>
+  </data>
+  <data name="Different" xml:space="preserve">
+    <value>不同</value>
+  </data>
+  <data name="EstimatedDateProduction" xml:space="preserve">
+    <value>预计生产日期</value>
+  </data>
+  <data name="FiberDirection" xml:space="preserve">
+    <value>光纤方向</value>
+  </data>
+  <data name="FiberDistribution" xml:space="preserve">
+    <value>光纤分布</value>
+  </data>
+  <data name="FindingPlace" xml:space="preserve">
+    <value>寻找地方</value>
+  </data>
+  <data name="Identical" xml:space="preserve">
+    <value>相同</value>
+  </data>
+  <data name="LaidLinesRegularity" xml:space="preserve">
+    <value>奠定了规则性</value>
+  </data>
+  <data name="ManufaturingDefect" xml:space="preserve">
+    <value>制造缺陷</value>
+  </data>
+  <data name="NeedForConservation" xml:space="preserve">
+    <value>需要保护</value>
+  </data>
+  <data name="NumberChainLinePerCm" xml:space="preserve">
+    <value>每1cm的链线数量</value>
+  </data>
+  <data name="NumberLayer" xml:space="preserve">
+    <value>层数</value>
+  </data>
+  <data name="NumberOfHoles" xml:space="preserve">
+    <value>螺纹孔数</value>
+  </data>
+  <data name="Observation" xml:space="preserve">
+    <value>意见</value>
+  </data>
+  <data name="Opacity" xml:space="preserve">
+    <value>不透明度</value>
+  </data>
+  <data name="PageFrame" xml:space="preserve">
+    <value>页面框架</value>
+  </data>
+  <data name="PlaceProduction" xml:space="preserve">
+    <value>放置生产</value>
+  </data>
+  <data name="PreparationPaperBeforeUsing" xml:space="preserve">
+    <value>使用前准备纸张</value>
+  </data>
+  <data name="RattleQuality" xml:space="preserve">
+    <value>带有拨浪鼓的质量</value>
+  </data>
+  <data name="Restore" xml:space="preserve">
+    <value>恢复的床单</value>
+  </data>
+  <data name="SheetCondition" xml:space="preserve">
+    <value>表单条件</value>
+  </data>
+  <data name="SieveMark" xml:space="preserve">
+    <value>筛分标记</value>
+  </data>
+  <data name="SoftQuality" xml:space="preserve">
+    <value>软质量</value>
+  </data>
+  <data name="SpaceBetweenLines" xml:space="preserve">
+    <value>链线之间的空间</value>
+  </data>
+  <data name="SurfaceAspect" xml:space="preserve">
+    <value>表面方面</value>
+  </data>
+  <data name="SurfaceOnBothSides" xml:space="preserve">
+    <value>双面表面</value>
+  </data>
+  <data name="Transparency" xml:space="preserve">
+    <value>透明度</value>
+  </data>
+  <data name="Catalogue" xml:space="preserve">
+    <value>目录</value>
+  </data>
+  <data name="Drying" xml:space="preserve">
+    <value>烘干</value>
+  </data>
+  <data name="GeneralInformation" xml:space="preserve">
+    <value>一般信息</value>
+  </data>
+  <data name="Theme" xml:space="preserve">
+    <value>主题</value>
+  </data>
+  <data name="TransmittedLight" xml:space="preserve">
+    <value>图片传输光</value>
+  </data>
 </root>

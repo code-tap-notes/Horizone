@@ -1,0 +1,42 @@
+﻿@model Horizone.Models.SieveMark
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>SieveMark</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.SieveMarkEn) @StaticResource.Resources.English
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SieveMarkEn)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SieveMarkFr) @StaticResource.Resources.French
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SieveMarkFr)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SieveMarkZh) @StaticResource.Resources.Chinese
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SieveMarkZh)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

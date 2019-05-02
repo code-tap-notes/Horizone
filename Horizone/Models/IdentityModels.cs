@@ -76,6 +76,7 @@ namespace Horizone.Models
         public DbSet<WordSubClass> WordSubClasses { get; set; }
 
         //Manuscript
+        public DbSet<Catalogie> Catalogies { get; set; }
         public DbSet<ImageManuscript> ImageManuscripts { get; set; }
         public DbSet<Manuscript> Manuscripts { get; set; }
         public DbSet<State> States { get; set; }
@@ -99,7 +100,19 @@ namespace Horizone.Models
         public DbSet<AnalyseMaterial> AnalyseMaterials { get; set; }
         public DbSet<ImageUV> ImageUVs { get; set; }
         public DbSet<ImageAnalyse> ImageAnalyses { get; set; }
-
+        //Analyse Macroscopic
+        public DbSet<AnalyseMacroscopic> AnalyseMacroscopics { get; set; }
+        public DbSet<TransmittedLight> TransmittedLights { get; set; }
+        public DbSet<Restore> Restores { get; set; }
+        public DbSet<ManufaturingDefect> ManufaturingDefects { get; set; }
+        public DbSet<PreparationPaperBeforeUsing> PreparationPaperBeforeUsings { get; set; }
+        public DbSet<Drying> Dryings { get; set; }
+        public DbSet<ChainLinesVisibility> ChainLinesVisibilitys { get; set; }
+        public DbSet<LaidLinesRegularity> LaidLinesRegularitys { get; set; }
+        public DbSet<FiberDirection> FiberDirections { get; set; }
+        public DbSet<SieveMark> SieveMarks { get; set; }
+        public DbSet<FiberDistribution> FiberDistributions { get; set; }
+      
         //TochPhrase and TochStory
         public DbSet<TochPhrase> TochPhrases { get; set; }
         public DbSet<TochStory> TochStorys { get; set; }

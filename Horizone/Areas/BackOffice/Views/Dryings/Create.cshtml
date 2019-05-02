@@ -1,0 +1,51 @@
+﻿@model Horizone.Models.Drying
+
+@{
+    ViewBag.Title = "Create";
+}
+
+<h2>Create</h2>
+
+@using (Html.BeginForm()) 
+{
+    @Html.AntiForgeryToken()
+    
+    <div class="form-horizontal">
+        <h4>Drying</h4>
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        <div class="form-group">
+            @Html.LabelFor(model => model.DryingEn, htmlAttributes: new { @class = "control-label col-md-2" }) @StaticResource.Resources.English
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.DryingEn, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.DryingEn, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.DryingFr, htmlAttributes: new { @class = "control-label col-md-2" }) @StaticResource.Resources.French
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.DryingFr, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.DryingFr, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.DryingZh, htmlAttributes: new { @class = "control-label col-md-2" }) @StaticResource.Resources.Chinese
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.DryingZh, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.DryingZh, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Create" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>

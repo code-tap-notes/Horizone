@@ -691,7 +691,7 @@
     <value>Stringhole Width</value>
   </data>
   <data name="WritingTool" xml:space="preserve">
-    <value>Writing Tool</value>
+    <value>Writing tool</value>
   </data>
   <data name="File" xml:space="preserve">
     <value>File</value>
@@ -1069,22 +1069,22 @@
     <value>Person - Chinese</value>
   </data>
   <data name="WordClassEn" xml:space="preserve">
-    <value>WordClass - English</value>
+    <value>Word Class - English</value>
   </data>
   <data name="WordClassFr" xml:space="preserve">
-    <value>WordClass- French</value>
+    <value>Word Class- French</value>
   </data>
   <data name="WordClassZh" xml:space="preserve">
-    <value>WordClass- Chinese</value>
+    <value>Word Class- Chinese</value>
   </data>
   <data name="WordSubClassEn" xml:space="preserve">
-    <value>WordSubClass - English</value>
+    <value>Word SubClass - English</value>
   </data>
   <data name="WordSubClassFr" xml:space="preserve">
-    <value>WordSubClass- French</value>
+    <value>Word SubClass- French</value>
   </data>
   <data name="WordSubClassZh" xml:space="preserve">
-    <value>WordSubClass- Chinese</value>
+    <value>Word SubClass- Chinese</value>
   </data>
   <data name="Del" xml:space="preserve">
     <value>has been removed</value>
@@ -1376,13 +1376,13 @@ TochPhase</value>
     <value>SubGender-Chinese</value>
   </data>
   <data name="WritingToolEn" xml:space="preserve">
-    <value>Writing Tool English</value>
+    <value>Writing tool English</value>
   </data>
   <data name="WritingToolFr" xml:space="preserve">
-    <value>Writing Tool French</value>
+    <value>Writing tool French</value>
   </data>
   <data name="WritingToolZh" xml:space="preserve">
-    <value>Writing Tool Chinese</value>
+    <value>Writing tool Chinese</value>
   </data>
   <data name="Tocharian" xml:space="preserve">
     <value>Tocharian</value>
@@ -1410,5 +1410,119 @@ TochPhase</value>
   </data>
   <data name="NamePicture" xml:space="preserve">
     <value>Name Picture</value>
+  </data>
+  <data name="AnalyseMacroscopic" xml:space="preserve">
+    <value>Analyse Macroscopic</value>
+  </data>
+  <data name="AverageThickness" xml:space="preserve">
+    <value>Average thickness</value>
+  </data>
+  <data name="ChainLinesVisibility" xml:space="preserve">
+    <value>Chain lines visibility</value>
+  </data>
+  <data name="ClayOrSandParticules" xml:space="preserve">
+    <value>Clay or sand particules</value>
+  </data>
+  <data name="CoatingColor" xml:space="preserve">
+    <value>Coating color</value>
+  </data>
+  <data name="CoatingDecayingCondition" xml:space="preserve">
+    <value>Coating decaying condition</value>
+  </data>
+  <data name="Correction" xml:space="preserve">
+    <value>Correction</value>
+  </data>
+  <data name="Different" xml:space="preserve">
+    <value>Different</value>
+  </data>
+  <data name="EstimatedDateProduction" xml:space="preserve">
+    <value>Estimated date of production</value>
+  </data>
+  <data name="FiberDirection" xml:space="preserve">
+    <value>Fiber direction</value>
+  </data>
+  <data name="FiberDistribution" xml:space="preserve">
+    <value>Fiber distribution</value>
+  </data>
+  <data name="FindingPlace" xml:space="preserve">
+    <value>Finding place</value>
+  </data>
+  <data name="Identical" xml:space="preserve">
+    <value>Identical</value>
+  </data>
+  <data name="LaidLinesRegularity" xml:space="preserve">
+    <value>Laid lines regularity</value>
+  </data>
+  <data name="ManufaturingDefect" xml:space="preserve">
+    <value>Manufaturing Defect</value>
+  </data>
+  <data name="NeedForConservation" xml:space="preserve">
+    <value>Need for conservation</value>
+  </data>
+  <data name="NumberChainLinePerCm" xml:space="preserve">
+    <value>Number of chain line per 1cm</value>
+  </data>
+  <data name="NumberLayer" xml:space="preserve">
+    <value>Number of layer</value>
+  </data>
+  <data name="NumberOfHoles" xml:space="preserve">
+    <value>Number of thread holes</value>
+  </data>
+  <data name="Observation" xml:space="preserve">
+    <value>Observation</value>
+  </data>
+  <data name="Opacity" xml:space="preserve">
+    <value>Opacity</value>
+  </data>
+  <data name="PageFrame" xml:space="preserve">
+    <value>Page frame</value>
+  </data>
+  <data name="PlaceProduction" xml:space="preserve">
+    <value>Place production</value>
+  </data>
+  <data name="PreparationPaperBeforeUsing" xml:space="preserve">
+    <value>Preparation of paper before using</value>
+  </data>
+  <data name="RattleQuality" xml:space="preserve">
+    <value>Stiff with rattle quality</value>
+  </data>
+  <data name="Restore" xml:space="preserve">
+    <value>Restored sheets</value>
+  </data>
+  <data name="SheetCondition" xml:space="preserve">
+    <value>Sheet condition</value>
+  </data>
+  <data name="SieveMark" xml:space="preserve">
+    <value>Sieve mark</value>
+  </data>
+  <data name="SoftQuality" xml:space="preserve">
+    <value>Soft quality</value>
+  </data>
+  <data name="SpaceBetweenLines" xml:space="preserve">
+    <value>Space between chain lines</value>
+  </data>
+  <data name="SurfaceAspect" xml:space="preserve">
+    <value>Surface aspect</value>
+  </data>
+  <data name="SurfaceOnBothSides" xml:space="preserve">
+    <value>Surface on both sides</value>
+  </data>
+  <data name="Transparency" xml:space="preserve">
+    <value>Transparency</value>
+  </data>
+  <data name="Catalogue" xml:space="preserve">
+    <value>Catalogue</value>
+  </data>
+  <data name="Drying" xml:space="preserve">
+    <value>Drying</value>
+  </data>
+  <data name="GeneralInformation" xml:space="preserve">
+    <value>General Information</value>
+  </data>
+  <data name="Theme" xml:space="preserve">
+    <value>Theme</value>
+  </data>
+  <data name="TransmittedLight" xml:space="preserve">
+    <value>Picture Transmitted Light</value>
   </data>
 </root>

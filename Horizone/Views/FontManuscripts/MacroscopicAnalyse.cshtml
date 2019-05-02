@@ -1,0 +1,198 @@
+﻿@model Horizone.Models.AnalyseMacroscopic
+
+@{
+    ViewBag.Title = "MacroscopicAnalyse";
+}
+
+<h2>MacroscopicAnalyse</h2>
+
+<div>
+    <h4>AnalyseMacroscopic</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Catalogie.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Catalogie.Name)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Index)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Index)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.ChainLinesVisibility.ChainLinesVisibilityEn)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ChainLinesVisibility.ChainLinesVisibilityEn)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Drying.DryingEn)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Drying.DryingEn)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FiberDirection.DirectionEn)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FiberDirection.DirectionEn)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.LaidLinesRegularity.LaidLinesRegularityEn)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LaidLinesRegularity.LaidLinesRegularityEn)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FiberDistribution.DistributionEn)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FiberDistribution.DistributionEn)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ManufaturingDefect.ManufaturingDefectEn)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ManufaturingDefect.ManufaturingDefectEn)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PaperColor.PaperColorEn)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PaperColor.PaperColorEn)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PreparationPaperBeforeUsing.PreparationEn)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PreparationPaperBeforeUsing.PreparationEn)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.RulingColor.RulingColorEn)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.RulingColor.RulingColorEn)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SieveMark.SieveMarkEn)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SieveMark.SieveMarkEn)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.WritingTool.WritingToolEn)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.WritingTool.WritingToolEn)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SoftQuality)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SoftQuality)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.RattleQuality)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.RattleQuality)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Transparency)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Transparency)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SurfaceAspect)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SurfaceAspect)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CoatingDecayingCondition)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CoatingDecayingCondition)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ClayOrSandParticules)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ClayOrSandParticules)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SurfaceOnBothSides)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SurfaceOnBothSides)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NumberLayer)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NumberLayer)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NumberChainLinePerCm)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NumberChainLinePerCm)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SpaceBetweenLines)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SpaceBetweenLines)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink(StaticResource.Resources.Return, "MacroscopicDetails", new { id = Model.Id }, new { @class = "btn btn-primary" })
+</p>

@@ -55,7 +55,7 @@ namespace Horizone.Areas.BackOffice.Controllers
             foreach ( var item in collaborations)
             if (item.Team) collaborations.Add(item);
        
-            return View(collaborations.Include("Publications").Include("ImageCollaborations").ToList());
+            return View(collaborations.Include("Publications").Include("ImageCollaborations").OrderBy(x => x.Order).ToList());
         }
         // GET: FrontContact/Create
         public ActionResult Contact()

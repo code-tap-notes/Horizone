@@ -10,16 +10,16 @@
     </p>
 </div>
 <div class="autocontents">
-    <ul>     
-        <li>@Html.ActionLink(StaticResource.Resources.Photographs, "Photographs", "Home")</li>
-        <li>@Html.ActionLink(StaticResource.Resources.Glossary, "Glossary", "Home")</li>
+    <ul>
+        <li><a href="@Url.Action("Photographs", "Home")">&#9733; @StaticResource.Resources.Photographs</a></li>
+        <li><a href="@Url.Action("Glossary", "Home")">&#9733; @StaticResource.Resources.Glossary</a></li>
+        <li><a href="#">&#9733; @StaticResource.Resources.Maps</a></li>       
     </ul>
+    <div class="row">
+        @{Html.RenderAction("Map", "Home"); }
+        <img style="width: 400px" id="imageCarte" src="" />
+    </div>
 </div>
-<div class="row">
-    @{Html.RenderAction("Map", "Home"); }
-    <img style="width: 400px" id="imageCarte" src="" />
-</div>
-
 <script>
     function insertImage(imageCarte, ulr) {
         document.getElementById(imageCarte).src = ulr;

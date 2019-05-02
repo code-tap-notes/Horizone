@@ -1,0 +1,30 @@
+﻿@model IEnumerable<Horizone.Models.Map>
+<div style="padding-left:12px">
+    <div class="row">
+        <div class="col-md-2">
+            <h6><u> @StaticResource.Resources.Name @StaticResource.Resources.Place </u></h6>
+        </div>
+    </div>
+
+    @foreach (var item in Model)
+    {
+        <div class="row">
+            <ul>
+                <li>
+                    <div class="col-md-3">
+
+                        &diams;   @Html.Raw(item.NamePicture)
+                    </div>
+                    <div class="col-md-9">
+                        @if (item.ImageMaps?.Count > 0)
+                        {
+                            <img style="width:600px;height:360px;" src="data:@item.ImageMaps.First().ContentType;base64,@Convert.ToBase64String(item.ImageMaps.First().Content)" alt="Photo" />
+                        }
+                    </div>
+                </li>
+            </ul>
+        </div>
+    }
+
+</div>
+

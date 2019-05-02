@@ -1,11 +1,10 @@
 ﻿@model PagedList.IPagedList<Horizone.Models.Bibliography>
 @using PagedList.Mvc;
 @{
-    ViewBag.Title = @StaticResource.Resources.Bibliography;
+                ViewBag.Title = @StaticResource.Resources.Bibliography;
 }
 
 <h2>@StaticResource.Resources.Bibliography</h2>
-
 <div id="search">
 
     <form class="form-group row" action="@Url.Action("Search", "Bibliographies")" method="post" enctype="multipart/form-data">

@@ -27,10 +27,10 @@
     {
         <tr>
             <td>
-                @Html.DisplayFor(modelItem => item.Symbol)
+                @Html.Raw(item.Symbol)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Description)
+                @Html.Raw(item.Description)
             </td>
 
             <td>
@@ -42,4 +42,4 @@
     }
 
 </table>
-@Html.PagedListPager(Model, page => Url.Action("abbreviation", new { page }))
+@Html.PagedListPager(Model, page => Url.Action("index", new { page }))

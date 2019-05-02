@@ -1,0 +1,103 @@
+﻿@model Horizone.Models.AnalyseMacroscopic
+
+@{
+    ViewBag.Title = "SheetDescription";
+}
+
+<h2>SheetDescription</h2>
+
+<div>
+    <h4>AnalyseMacroscopic</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Catalogie.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Catalogie.Name)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Index)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Index)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Format.FormatEn)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Format.FormatEn)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NumberOfHoles)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NumberOfHoles)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Description)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Description)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AverageThickness)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AverageThickness)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Correction)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Correction)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SheetCondition)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SheetCondition)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NeedForConservation)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NeedForConservation)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Observation)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Observation)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Restore.RestoreEn)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Restore.RestoreEn)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink(StaticResource.Resources.Return, "MacroscopicDetails", new { id = Model.Id }, new { @class = "btn btn-primary" })
+</p>

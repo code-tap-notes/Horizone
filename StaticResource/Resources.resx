@@ -1417,4 +1417,118 @@ TochPhase</value>
   <data name="NamePicture" xml:space="preserve">
     <value>Nom Image</value>
   </data>
+  <data name="AnalyseMacroscopic" xml:space="preserve">
+    <value>Analyser Macroscopique</value>
+  </data>
+  <data name="AverageThickness" xml:space="preserve">
+    <value>Épaisseur moyenne</value>
+  </data>
+  <data name="ChainLinesVisibility" xml:space="preserve">
+    <value>Visibilité des lignes</value>
+  </data>
+  <data name="ClayOrSandParticules" xml:space="preserve">
+    <value>Argile ou particules de sable</value>
+  </data>
+  <data name="CoatingColor" xml:space="preserve">
+    <value>Couleur de revêtement</value>
+  </data>
+  <data name="CoatingDecayingCondition" xml:space="preserve">
+    <value>Condition de dégradation du revêtement</value>
+  </data>
+  <data name="Correction" xml:space="preserve">
+    <value>Correction</value>
+  </data>
+  <data name="Different" xml:space="preserve">
+    <value>Différent(e)</value>
+  </data>
+  <data name="EstimatedDateProduction" xml:space="preserve">
+    <value>Date estimée de production</value>
+  </data>
+  <data name="FiberDirection" xml:space="preserve">
+    <value>Direction de la fibre</value>
+  </data>
+  <data name="FiberDistribution" xml:space="preserve">
+    <value>Distribution de la fibre</value>
+  </data>
+  <data name="FindingPlace" xml:space="preserve">
+    <value>Lieu de trouvaille</value>
+  </data>
+  <data name="Identical" xml:space="preserve">
+    <value>Identique</value>
+  </data>
+  <data name="LaidLinesRegularity" xml:space="preserve">
+    <value>Régularité des lignes</value>
+  </data>
+  <data name="ManufaturingDefect" xml:space="preserve">
+    <value>Défaut de fabrication</value>
+  </data>
+  <data name="NeedForConservation" xml:space="preserve">
+    <value>Besoin de conservation</value>
+  </data>
+  <data name="NumberChainLinePerCm" xml:space="preserve">
+    <value>Nombre de ligne de chaîne par 1cm</value>
+  </data>
+  <data name="NumberLayer" xml:space="preserve">
+    <value>Nombre de couches</value>
+  </data>
+  <data name="NumberOfHoles" xml:space="preserve">
+    <value>Nombre de trous de filetage</value>
+  </data>
+  <data name="Observation" xml:space="preserve">
+    <value>Observation</value>
+  </data>
+  <data name="Opacity" xml:space="preserve">
+    <value>Opacité</value>
+  </data>
+  <data name="PageFrame" xml:space="preserve">
+    <value>Cadre de page</value>
+  </data>
+  <data name="PlaceProduction" xml:space="preserve">
+    <value>Lieu de production</value>
+  </data>
+  <data name="PreparationPaperBeforeUsing" xml:space="preserve">
+    <value>Préparation du papier avant utilisation</value>
+  </data>
+  <data name="RattleQuality" xml:space="preserve">
+    <value>Rigide avec un hochet</value>
+  </data>
+  <data name="Restore" xml:space="preserve">
+    <value>Feuilles restaurées</value>
+  </data>
+  <data name="SheetCondition" xml:space="preserve">
+    <value>Etat de la feuille</value>
+  </data>
+  <data name="SieveMark" xml:space="preserve">
+    <value>Tamis</value>
+  </data>
+  <data name="SoftQuality" xml:space="preserve">
+    <value>Qualité douce</value>
+  </data>
+  <data name="SpaceBetweenLines" xml:space="preserve">
+    <value>Espace entre les lignes</value>
+  </data>
+  <data name="SurfaceAspect" xml:space="preserve">
+    <value>Aspect de surface</value>
+  </data>
+  <data name="SurfaceOnBothSides" xml:space="preserve">
+    <value>Surface des deux côtés</value>
+  </data>
+  <data name="Transparency" xml:space="preserve">
+    <value>Transparence </value>
+  </data>
+  <data name="Catalogue" xml:space="preserve">
+    <value>Catalogue</value>
+  </data>
+  <data name="Drying" xml:space="preserve">
+    <value>Séchage</value>
+  </data>
+  <data name="GeneralInformation" xml:space="preserve">
+    <value>L'Information générale</value>
+  </data>
+  <data name="Theme" xml:space="preserve">
+    <value>Thème</value>
+  </data>
+  <data name="TransmittedLight" xml:space="preserve">
+    <value>L'image transmise lumière</value>
+  </data>
 </root>

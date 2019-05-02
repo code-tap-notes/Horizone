@@ -1,15 +1,16 @@
-﻿@{
+﻿@model IEnumerable<Horizone.Models.AboutProject>
+@{
     ViewBag.Title = @StaticResource.Resources.Contact;
 }
-<address>
-   
-        @{Html.RenderAction("Address", "Dashboards"); }
+<h4>    @StaticResource.Resources.Address </h4>
+@foreach (var item in Model)
+{
+    if (item.Language.Symbol == Session[Horizone.Common.CommonConstants.CurrentCulture].ToString())
+    {
+        @Html.Raw(item.Contact);
+    }
+}
+<img style="width:80px;height:60px;" src="https://upload.wikimedia.org/wikipedia/commons/0/08/Logo-ephe-coul-1.png" class="logo" />
 
-   
-</address>
+<p><a class="btn btn-default" style="background-color: #99AAFF;" href="https://www.ephe.fr/">@StaticResource.Resources.LearnMore &raquo;</a></p>
 
-<address>
-    <strong>Colaborateur 1</strong>   <a href="http://bibliotheques.mnhn.fr/medias/medias.aspx?INSTANCE=EXPLOITATION">MUSEUM D'HISTOIRE</a><br />
-    <strong>Colaborateur 2</strong> <a href="https://gallica.bnf.fr/accueil/fr/content/accueil-fr?mode=desktop"> @StaticResource.Resources.bnf</a><br />
-    <strong>Colaborateur 3</strong>   <a href="https://www.univie.ac.at/tocharian/?A%2023">CETOM</a><br />
-</address>

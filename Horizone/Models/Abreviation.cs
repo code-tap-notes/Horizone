@@ -11,6 +11,7 @@ namespace Horizone.Models
     {
         public int Id { get; set; }
 
+        [AllowHtml]
         [Display(Name = "Symbol", ResourceType = typeof(StaticResource.Resources))]
         public string Symbol { get; set; }
 

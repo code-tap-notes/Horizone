@@ -1,0 +1,48 @@
+﻿@model Horizone.Models.ChainLinesVisibility
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>ChainLinesVisibility</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.ChainLinesVisibilityEn)  @StaticResource.Resources.English
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ChainLinesVisibilityEn)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ChainLinesVisibilityFr)  @StaticResource.Resources.French
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ChainLinesVisibilityFr)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ChainLinesVisibilityZh)  @StaticResource.Resources.Chinese
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ChainLinesVisibilityZh)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

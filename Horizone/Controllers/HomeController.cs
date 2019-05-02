@@ -46,14 +46,9 @@ namespace Horizone.Controllers
         public ActionResult Map()
         {
             ViewBag.Place = new SelectList(db.ImageMaps, "Id", "NamePicture");
-
-            return PartialView();
+            return PartialView(db.Maps.Include("ImageMaps").ToList());
         }
-        // GET: BackOffice/Maps/Details/5
-        public ActionResult MapDetails(int? id)
-        {
-            return View();
-        }
+       
         //Presentation pour homepage
         [ChildActionOnly]
         public ActionResult PresenteProject()

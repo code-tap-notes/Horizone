@@ -13,15 +13,12 @@ using PagedList;
 namespace Horizone.Areas.BackOffice.Controllers
 {
     public class BibliographiesController : BaseController
-    {
-        
-
+    {        
         // GET: BackOffice/Bibliographies
-        public ActionResult Index(int page = 1, int pageSize = 6)
+        public ActionResult Index(int page = 1, int pageSize = 20)
         {
             return View(db.Bibliographys.OrderBy(x => x.Id).ToPagedList(page, pageSize));
         }
-
         // GET: BackOffice/Bibliographies/Details/5
         public ActionResult Details(int? id)
         {
