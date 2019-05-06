@@ -1519,4 +1519,10 @@ TochPhase</value>
   <data name="TransmittedLight" xml:space="preserve">
     <value>图片传输光</value>
   </data>
+  <data name="AnalyseMicroscopic" xml:space="preserve">
+    <value>分析显微镜</value>
+  </data>
+  <data name="Genre" xml:space="preserve">
+    <value>样</value>
+  </data>
 </root>

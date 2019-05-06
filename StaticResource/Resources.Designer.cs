@@ -349,6 +349,15 @@ namespace StaticResource {
         }
         
         /// <summary>
+        ///   Recherche une chaîne localisée semblable à Analyse Microscopique.
+        /// </summary>
+        public static string AnalyseMicroscopic {
+            get {
+                return ResourceManager.GetString("AnalyseMicroscopic", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Recherche une chaîne localisée semblable à Et.
         /// </summary>
         public static string And {
@@ -1335,6 +1344,15 @@ namespace StaticResource {
         public static string GenitiveMasculineSingular {
             get {
                 return ResourceManager.GetString("GenitiveMasculineSingular", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Genre.
+        /// </summary>
+        public static string Genre {
+            get {
+                return ResourceManager.GetString("Genre", resourceCulture);
             }
         }
         
