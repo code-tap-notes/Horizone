@@ -331,7 +331,7 @@ namespace StaticResource {
         }
         
         /// <summary>
-        ///   Recherche une chaîne localisée semblable à Analyser Macroscopique.
+        ///   Recherche une chaîne localisée semblable à Analyse macroscopique.
         /// </summary>
         public static string AnalyseMacroscopic {
             get {

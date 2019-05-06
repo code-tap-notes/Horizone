@@ -126,7 +126,7 @@ namespace Horizone.Areas.BackOffice.Controllers
             public ActionResult Create()
         {
             ViewBag.MapId = new SelectList(db.Maps, "Id", "NamePicture");
-            ViewBag.CatelogieId = new SelectList(db.Catalogies, "Id", "Name");
+            ViewBag.CatalogieId = new SelectList(db.Catalogies, "Id", "Name");
             ViewBag.AlignmentTypeId = new SelectList(db.AlignmentTypes, "Id", "AlignmentTypeEn");
             ViewBag.DescriptionManuscriptId = new SelectList(db.DescriptionManuscripts, "Id", "DescriptionEn");
             ViewBag.FormatId = new SelectList(db.Formats, "Id", "FormatEn");
@@ -167,7 +167,7 @@ namespace Horizone.Areas.BackOffice.Controllers
                 return RedirectToAction("Index");
             }
             ViewBag.MapId = new SelectList(db.Maps, "Id", "NamePicture", manuscript.MapId);
-            ViewBag.CatelogieId = new SelectList(db.Catalogies, "Id", "Name", manuscript.CatalogieId);
+            ViewBag.CatalogieId = new SelectList(db.Catalogies, "Id", "Name", manuscript.CatalogieId);
             ViewBag.AlignmentTypeId = new SelectList(db.AlignmentTypes, "Id", "AlignmentTypeEn", manuscript.AlignmentTypeId);
             ViewBag.DescriptionManuscriptId = new SelectList(db.DescriptionManuscripts, "Id", "DescriptionEn", manuscript.DescriptionManuscriptId);
             ViewBag.FormatId = new SelectList(db.Formats, "Id", "FormatEn", manuscript.FormatId);
@@ -204,7 +204,7 @@ namespace Horizone.Areas.BackOffice.Controllers
                 return HttpNotFound();
             }
             ViewBag.MapId = new SelectList(db.Maps, "Id", "NamePicture", manuscript.MapId);
-            ViewBag.CatelogieId = new SelectList(db.Catalogies, "Id", "Name");
+            ViewBag.CatalogieId = new SelectList(db.Catalogies, "Id", "Name");
             ViewBag.AlignmentTypeId = new SelectList(db.AlignmentTypes, "Id", "AlignmentTypeEn", manuscript.AlignmentTypeId);
             ViewBag.DescriptionManuscriptId = new SelectList(db.DescriptionManuscripts, "Id", "DescriptionEn", manuscript.DescriptionManuscriptId);
             ViewBag.FormatId = new SelectList(db.Formats, "Id", "FormatEn", manuscript.FormatId);
@@ -245,7 +245,7 @@ namespace Horizone.Areas.BackOffice.Controllers
                 return RedirectToAction("Index");
             }
             ViewBag.MapId = new SelectList(db.Maps, "Id", "NamePicture", manuscript.MapId);
-            ViewBag.CatelogieId = new SelectList(db.Catalogies, "Id", "Name", manuscript.CatalogieId);
+            ViewBag.CatalogieId = new SelectList(db.Catalogies, "Id", "Name", manuscript.CatalogieId);
             ViewBag.AlignmentTypeId = new SelectList(db.AlignmentTypes, "Id", "AlignmentTypeEn", manuscript.AlignmentTypeId);
             ViewBag.DescriptionManuscriptId = new SelectList(db.DescriptionManuscripts, "Id", "DescriptionEn", manuscript.DescriptionManuscriptId);
             ViewBag.FormatId = new SelectList(db.Formats, "Id", "FormatEn", manuscript.FormatId);

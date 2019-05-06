@@ -1418,7 +1418,7 @@ TochPhase</value>
     <value>Nom Image</value>
   </data>
   <data name="AnalyseMacroscopic" xml:space="preserve">
-    <value>Analyser Macroscopique</value>
+    <value>Analyse macroscopique</value>
   </data>
   <data name="AverageThickness" xml:space="preserve">
     <value>Épaisseur moyenne</value>

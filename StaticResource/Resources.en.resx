@@ -1096,7 +1096,7 @@
     <value>Latest News</value>
   </data>
   <data name="AnalyseMaterial" xml:space="preserve">
-    <value>Analyse Material</value>
+    <value>Material analysis</value>
   </data>
   <data name="ImageUV" xml:space="preserve">
     <value>Ultraviolet Image</value>
@@ -1412,7 +1412,7 @@ TochPhase</value>
     <value>Name Picture</value>
   </data>
   <data name="AnalyseMacroscopic" xml:space="preserve">
-    <value>Analyse Macroscopic</value>
+    <value>Macroscopic analysis</value>
   </data>
   <data name="AverageThickness" xml:space="preserve">
     <value>Average thickness</value>

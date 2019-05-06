@@ -19,6 +19,13 @@ ViewBag.Title = @StaticResource.Resources.Add;
             @Html.ValidationMessageFor(model => model.Index, "", new { @class = "text-danger" })
         </div>
     </div>
+    <div class="form-group">
+        @Html.LabelFor(model => model.CatalogieId, "CatalogieId", htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.DropDownList("CatalogieId", null, htmlAttributes: new { @class = "form-control" })
+            @Html.ValidationMessageFor(model => model.CatalogieId, "", new { @class = "text-danger" })
+        </div>
+    </div>
 
     <div class="form-group">
         @Html.LabelFor(model => model.Collection, htmlAttributes: new { @class = "control-label col-md-2" })
@@ -59,14 +66,14 @@ ViewBag.Title = @StaticResource.Resources.Add;
             @Html.ValidationMessageFor(model => model.ExpeditionCode, "", new { @class = "text-danger" })
         </div>
     </div>
+
     <div class="form-group">
-        @Html.LabelFor(model => model.MainFindSpot, htmlAttributes: new { @class = "control-label col-md-2" })
+        @Html.LabelFor(model => model.MapId, "MapId", htmlAttributes: new { @class = "control-label col-md-2" })
         <div class="col-md-10">
-            @Html.EditorFor(model => model.MainFindSpot, new { htmlAttributes = new { @class = "form-control" } })
-            @Html.ValidationMessageFor(model => model.MainFindSpot, "", new { @class = "text-danger" })
+            @Html.DropDownList("MapId", null, htmlAttributes: new { @class = "form-control" })
+            @Html.ValidationMessageFor(model => model.MapId, "", new { @class = "text-danger" })
         </div>
     </div>
-    
 
     <div class="form-group">
         @Html.LabelFor(model => model.SpecificFindSpot, htmlAttributes: new { @class = "control-label col-md-2" })

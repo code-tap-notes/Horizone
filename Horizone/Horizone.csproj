@@ -290,6 +290,10 @@
     <Compile Include="Migrations\201905021418013_ChangeGender.Designer.cs">
       <DependentUpon>201905021418013_ChangeGender.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201905030407282_changtable.cs" />
+    <Compile Include="Migrations\201905030407282_changtable.Designer.cs">
+      <DependentUpon>201905030407282_changtable.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AboutProject.cs" />
     <Compile Include="Common\CommonConstants.cs" />
@@ -1245,6 +1249,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201905021418013_ChangeGender.resx">
       <DependentUpon>201905021418013_ChangeGender.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201905030407282_changtable.resx">
+      <DependentUpon>201905030407282_changtable.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

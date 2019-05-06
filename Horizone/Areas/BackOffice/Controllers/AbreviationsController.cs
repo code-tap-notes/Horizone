@@ -18,7 +18,7 @@ namespace Horizone.Areas.BackOffice.Controllers
         // GET: BackOffice/Abreviations
         public ActionResult Index(int page = 1, int pageSize = 20)
         {
-            return View(db.Abreviations.OrderBy(x => x.Symbol).ToPagedList(page, pageSize));
+            return View(db.Abreviations.OrderBy(x => x.Id).ToPagedList(page, pageSize));
         }
 
         // GET: BackOffice/Abreviations/Details/5
