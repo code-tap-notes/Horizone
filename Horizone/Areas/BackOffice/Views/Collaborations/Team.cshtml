@@ -11,9 +11,7 @@
 </p>
 <table class="table">
     <tr>
-        <th>
-            @StaticResource.Resources.Title
-        </th>
+        
         <th>
             @StaticResource.Resources.LastName
         </th>
@@ -48,12 +46,7 @@
                 @StaticResource.Resources.Affiliation @StaticResource.Resources.Chinese
             </th>
         }       
-        <th>
-            @StaticResource.Resources.Team
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Visible)
-        </th>
+       
         <th>
             @Html.DisplayNameFor(model => model.Order)
         </th>
@@ -67,9 +60,7 @@
         if (item.Team)
         {
             <tr>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Title)
-                </td>
+                
                 <td>
                     @Html.DisplayFor(modelItem => item.LastName)
                 </td>
@@ -105,12 +96,7 @@
                         @Html.DisplayFor(modelItem => item.AffiliationZh)
                     </td>
                 }                               
-                <td>
-                    @Html.DisplayFor(modelItem => item.Team)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Visible)
-                </td>
+               
                 <td>
                     @Html.DisplayFor(modelItem => item.Order)
                 </td>
@@ -118,10 +104,9 @@
                     @Html.Raw(item.Publications.First().Title)
                 </td>
                 <td>
-                    @Html.ActionLink(@StaticResource.Resources.Edit, "Edit", new { id = item.Id }, new { @class = "btn btn-info", style = "width:90px" })
-                    @Html.ActionLink(@StaticResource.Resources.Details, "Details", new { id = item.Id }, new { @class = "btn btn-info", style = "width:90px" })
-                    @Html.ActionLink(@StaticResource.Resources.Delete, "Delete", new { id = item.Id }, new { @class = "btn btn-info", style = "width:90px" })
-
+                    @Html.ActionLink(@StaticResource.Resources.Edit, "Edit", new { id = item.Id }, new { @class = "btn btn-info", style = "width:85px" })
+                    @Html.ActionLink(@StaticResource.Resources.Details, "Details", new { id = item.Id }, new { @class = "btn btn-info", style = "width:85px" })
+                    @Html.ActionLink(@StaticResource.Resources.Delete, "Delete", new { id = item.Id }, new { @class = "btn btn-info", style = "width:85px" })
                 </td>
             </tr>
         }

@@ -1531,4 +1531,10 @@ TochPhase</value>
   <data name="TransmittedLight" xml:space="preserve">
     <value>L'image transmise lumière</value>
   </data>
+  <data name="AnalyseMicroscopic" xml:space="preserve">
+    <value>Analyse Microscopique</value>
+  </data>
+  <data name="Genre" xml:space="preserve">
+    <value>Genre</value>
+  </data>
 </root>
