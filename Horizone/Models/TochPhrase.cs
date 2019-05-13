@@ -51,10 +51,6 @@ namespace Horizone.Models
         [Display(Name = "Visible", ResourceType = typeof(StaticResource.Resources))]
         public Boolean Visible { get; set; }
 
-        [Display(Name = "Language", ResourceType = typeof(StaticResource.Resources))]
-        public int LanguageId { get; set; }
-
-        [ForeignKey("LanguageId")]
-        public Language Language { get; set; }
+     
     }
 }

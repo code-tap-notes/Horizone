@@ -23,23 +23,17 @@ namespace Horizone.Models
         [ForeignKey("SourceStoryId")]
         public SourceStory SourceStory { get; set; }
 
-        [Display(Name = "ProperNoun", ResourceType = typeof(StaticResource.Resources))]
-        public int ProperNounId { get; set; }
-
-        [ForeignKey("SourceStoryId")]
-        public ProperNoun ProperNoun { get; set; }
-
         [Display(Name = "ThemeStory", ResourceType = typeof(StaticResource.Resources))]
         public int ThemeStoryId { get; set; }
 
         [ForeignKey("ThemeStoryId")]
         public ThemeStory ThemeStory { get; set; }
 
-        [Display(Name = "NamePlace", ResourceType = typeof(StaticResource.Resources))]
-        public int NamePlaceId { get; set; }
+        [Display(Name = "ProperNoun", ResourceType = typeof(StaticResource.Resources))]
+        public ICollection<ProperNoun> ProperNouns { get; set; }
 
-        [ForeignKey("NamePlaceId")]
-        public NamePlace NamePlace { get; set; }
+        [Display(Name = "NamePlace", ResourceType = typeof(StaticResource.Resources))]
+        public ICollection<NamePlace> NamePlaces { get; set; }
 
         [Display(Name = "PlasticRepresentation", ResourceType = typeof(StaticResource.Resources))]
         public string PlasticRepresentation { get; set; }
@@ -73,11 +67,6 @@ namespace Horizone.Models
 
         [Display(Name = "Bibliography", ResourceType = typeof(StaticResource.Resources))]
         public ICollection<Bibliography> Bibliographys { get; set; }
-
-        [Display(Name = "Language", ResourceType = typeof(StaticResource.Resources))]
-        public int LanguageId { get; set; }
-
-        [ForeignKey("LanguageId")]
-        public Language Language { get; set; }
+       
     }
 }

@@ -17,9 +17,14 @@ ul{ list-style:none}
 .form-control {
     width: 100% !important;
 }
+#txt1 {
+    border-color: lightcyan;
+    width: 400px;
+    height: 30px;
+    padding: 5px 2px 2px 10px;
+}
 /*Title page*/
 h2.main-cat {
-    
     color: #343a89;
     font-weight: bold;
     display: block;

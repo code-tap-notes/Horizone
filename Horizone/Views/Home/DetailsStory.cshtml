@@ -1,0 +1,106 @@
+﻿@model Horizone.Models.TochStory
+
+@{
+    ViewBag.Title = @StaticResource.Resources.Details;
+}
+
+<h2>@StaticResource.Resources.Details</h2>
+
+
+<div>
+    <h4>@StaticResource.Resources.TochStory</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.SourceStory.Source)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SourceStory.Source)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ThemeStory.ThemeEn)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ThemeStory.ThemeEn)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PlasticRepresentation)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PlasticRepresentation)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MainFindSpot)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MainFindSpot)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Content)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Content)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.English)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.English)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Francaise)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Francaise)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Chinese)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Chinese)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Description)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Description)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Visible)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Visible)
+        </dd>
+
+    </dl>
+</div>
+<p>
+@Html.ActionLink(StaticResource.Resources.Return, "Index", null, new { @class = "btn btn-primary" })
+</p>

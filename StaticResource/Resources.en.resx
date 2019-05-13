@@ -1531,4 +1531,16 @@ TochPhase</value>
   <data name="Genre" xml:space="preserve">
     <value>Genre</value>
   </data>
+  <data name="SpecialCharacter" xml:space="preserve">
+    <value>Special character</value>
+  </data>
+  <data name="ScriptType" xml:space="preserve">
+    <value>Script Type</value>
+  </data>
+  <data name="SheetDescription" xml:space="preserve">
+    <value>Sheet Description</value>
+  </data>
+  <data name="LiteraryForm" xml:space="preserve">
+    <value>Literary form</value>
+  </data>
 </root>

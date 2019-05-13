@@ -1,12 +1,14 @@
 ﻿@model Horizone.Models.AnalyseMacroscopic
-
 @{
-    ViewBag.Title = "Delete";
+    ViewBag.Title = @StaticResource.Resources.Delete;
 }
 
-<h2>Delete</h2>
+<h2> @StaticResource.Resources.Delete</h2>
 
-<h3>Are you sure you want to delete this?</h3>
+<h3 class="text-danger"> @StaticResource.Resources.AskDelete</h3>
+
+
+
 <div>
     <h4>AnalyseMacroscopic</h4>
     <hr />
@@ -60,19 +62,19 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.Gender.NameGender)
+            @Html.DisplayNameFor(model => model.GenderManuscript.NameGenderEn)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.Gender.NameGender)
+            @Html.DisplayFor(model => model.GenderManuscript.NameGenderEn)
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.LaidLinesRegularity.RestoreEn)
+            @Html.DisplayNameFor(model => model.LaidLinesRegularity.LaidLinesRegularityEn)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.LaidLinesRegularity.RestoreEn)
+            @Html.DisplayFor(model => model.LaidLinesRegularity.LaidLinesRegularityEn)
         </dd>
 
         <dt>
@@ -365,12 +367,13 @@
 
     </dl>
 
-    @using (Html.BeginForm()) {
+    @using (Html.BeginForm())
+    {
         @Html.AntiForgeryToken()
 
-        <div class="form-actions no-color">
-            <input type="submit" value="Delete" class="btn btn-default" /> |
-            @Html.ActionLink("Back to List", "Index")
-        </div>
+    <div class="form-actions no-color">
+        <input type="submit" value="Delete" class="btn btn-danger" /> |
+        @Html.ActionLink(@StaticResource.Resources.Return, "Index", null, new { @class = "btn btn-default" })
+    </div>
     }
 </div>

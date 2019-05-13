@@ -278,26 +278,25 @@
                                 </ul>
                             </li>
                             <li class="dropdown-submenu">
-                                <a class="test" tabindex="-1" href="#">&diams; @StaticResource.Resources.Script Brami<span class="caret"></span></a>
+                                <a class="test" tabindex="-1" href="#">&diams; @StaticResource.Resources.Script<span class="caret"></span></a>
                                 <ul class="dropdown-menu">
+                                    <li> &diams; @StaticResource.Resources.ScriptType</li>
+                                    <li><a href="@Url.Action("create", "ScriptTypes")">@StaticResource.Resources.Add</a></li>
+                                    <li><a href="@Url.Action("index", "ScriptTypes")">@StaticResource.Resources.List</a></li>                                
+                               
+                                    <li> &diams; @StaticResource.Resources.Script Brami</li>
                                     <li><a href="@Url.Action("create", "Scripts")">@StaticResource.Resources.Add</a></li>
-                                    <li><a href="@Url.Action("index", "Scripts")">@StaticResource.Resources.List</a></li>
-                                </ul>
-                            </li>
-                            <li class="dropdown-submenu">
-                                <a class="test" tabindex="-1" href="#">&diams; @StaticResource.Resources.Script Kharoshi <span class="caret"></span></a>
-                                <ul class="dropdown-menu">
+                                    <li><a href="@Url.Action("Brahmi", "Scripts")">@StaticResource.Resources.List</a></li>
+                               
+                                    <li> &diams; @StaticResource.Resources.Script Kharoshi</li>
                                     <li><a href="@Url.Action("create", "Scripts")">@StaticResource.Resources.Add</a></li>
-                                    <li><a href="@Url.Action("index", "Scripts")">@StaticResource.Resources.List</a></li>
-                                </ul>
-                            </li>
-                            <li class="dropdown-submenu">
-                                <a class="test" tabindex="-1" href="#">&diams; @StaticResource.Resources.Script Ductus<span class="caret"></span></a>
-                                <ul class="dropdown-menu">
+                                    <li><a href="@Url.Action("Kharosthi", "Scripts")">@StaticResource.Resources.List</a></li>
+                                
+                                    <li> &diams; @StaticResource.Resources.Script Ductus</li>
                                     <li><a href="@Url.Action("create", "Scripts")">@StaticResource.Resources.Add</a></li>
-                                    <li><a href="@Url.Action("index", "Scripts")">@StaticResource.Resources.List</a></li>
+                                    <li><a href="@Url.Action("Ductus", "Scripts")">@StaticResource.Resources.List</a></li>
                                 </ul>
-                            </li>
+                            </li>                                                      
                             <li class="dropdown-submenu">
                                 <a class="test" tabindex="-1" href="#">&diams; @StaticResource.Resources.ScriptAdd<span class="caret"></span></a>
                                 <ul class="dropdown-menu">
@@ -320,7 +319,7 @@
                                 </ul>
                             </li>
                             <li class="dropdown-submenu">
-                                <a class="test" tabindex="-1" href="#">&diams; Forme Litteraire<span class="caret"></span></a>
+                                <a class="test" tabindex="-1" href="#">&diams;@StaticResource.Resources.LiteraryForm<span class="caret"></span></a>
                                 <ul class="dropdown-menu">
                                     <li><a href="@Url.Action("create", "Metrics")">@StaticResource.Resources.Add</a></li>
                                     <li><a href="@Url.Action("index", "Metrics")">@StaticResource.Resources.List</a></li>
@@ -347,19 +346,12 @@
                                     <li><a href="@Url.Action("index", "Manuscripts")">@StaticResource.Resources.List</a></li>
                                 </ul>
                             </li>
-                            <li class="dropdown-submenu">
-                                <a class="test" tabindex="-1" href="#">&diams; @StaticResource.Resources.AnalyseMaterial<span class="caret"></span></a>
-                                <ul class="dropdown-menu">
-                                    <li><a href="@Url.Action("create", "AnalyseMaterials")">@StaticResource.Resources.Add</a></li>
-                                    <li><a href="@Url.Action("index", "AnalyseMaterials")">@StaticResource.Resources.List</a></li>
-                                </ul>
-                            </li>
                         </ul>
                     </li>
                     <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">@StaticResource.Resources.AnalyseMacroscopic <span class="caret"></span></a>
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">@StaticResource.Resources.AnalyseMaterial <span class="caret"></span></a>
                         <ul class="dropdown-menu">
-
+                            <li>&diams; @StaticResource.Resources.AnalyseMacroscopic</li>
                             <li class="dropdown-submenu">
                                 <a class="test" tabindex="-1" href="#">&diams; @StaticResource.Resources.Restore<span class="caret"></span></a>
                                 <ul class="dropdown-menu">
@@ -402,7 +394,7 @@
                                     <li><a href="@Url.Action("index", "ChainLinesVisibilities")">@StaticResource.Resources.List</a></li>
                                 </ul>
                             </li>
-                            
+
                             <li class="dropdown-submenu">
                                 <a class="test" tabindex="-1" href="#">&diams; @StaticResource.Resources.Drying<span class="caret"></span></a>
                                 <ul class="dropdown-menu">
@@ -417,7 +409,6 @@
                                     <li><a href="@Url.Action("index", "PreparationPaperBeforeUsings")">@StaticResource.Resources.List</a></li>
                                 </ul>
                             </li>
-
                             <li class="dropdown-submenu">
                                 <a class="test" tabindex="-1" href="#">&diams; @StaticResource.Resources.ManufaturingDefect  <span class="caret"></span></a>
                                 <ul class="dropdown-menu">
@@ -425,7 +416,6 @@
                                     <li><a href="@Url.Action("index", "ManufaturingDefects")">@StaticResource.Resources.List</a></li>
                                 </ul>
                             </li>
-
                             <li class="dropdown-submenu">
                                 <a class="test" tabindex="-1" href="#">&diams; @StaticResource.Resources.AnalyseMacroscopic<span class="caret"></span></a>
                                 <ul class="dropdown-menu">
@@ -433,9 +423,24 @@
                                     <li><a href="@Url.Action("index", "AnalyseMacroscopics")">@StaticResource.Resources.List</a></li>
                                 </ul>
                             </li>
-
+                            <li>&diams; @StaticResource.Resources.AnalyseMicroscopic</li>
+                            <li class="dropdown-submenu">
+                                <a class="test" tabindex="-1" href="#">&diams; @StaticResource.Resources.FiberDirection<span class="caret"></span></a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="@Url.Action("create", "FiberDirections")">@StaticResource.Resources.Add</a></li>
+                                    <li><a href="@Url.Action("index", "FiberDirections")">@StaticResource.Resources.List</a></li>
+                                </ul>
+                            </li>
+                            <li class="dropdown-submenu">
+                                <a class="test" tabindex="-1" href="#">&diams; @StaticResource.Resources.AnalyseMicroscopic<span class="caret"></span></a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="@Url.Action("create", "AnalyseMicroscopics")">@StaticResource.Resources.Add</a></li>
+                                    <li><a href="@Url.Action("index", "AnalyseMicroscopics")">@StaticResource.Resources.List</a></li>
+                                </ul>
+                            </li>
                         </ul>
                     </li>
+                   
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">@StaticResource.Resources.Linguistics <span class="caret"></span></a>
                         <ul class="dropdown-menu">
@@ -506,16 +511,14 @@
                             <li><a href="@Url.Action("index", "Topics")">@StaticResource.Resources.List</a></li>
                             <li><h6 class="dropdownTitle"> &diams; @StaticResource.Resources.Comment</h6></li>
                             <li><a href="@Url.Action("index", "Comments")">@StaticResource.Resources.List</a></li>
-                            <li><h6 class="dropdownTitle"> &diams; @StaticResource.Resources.News</h6></li>
-                            <li><a href="@Url.Action("create", "News")">@StaticResource.Resources.Add</a></li>
-                            <li><a href="@Url.Action("index", "News")">@StaticResource.Resources.List</a></li>
                             <li><h6 class="dropdownTitle">&diams; @StaticResource.Resources.Activity</h6></li>
                             <li><a href="@Url.Action("create", "Activities")">@StaticResource.Resources.Add</a></li>
                             <li><a href="@Url.Action("index", "Activities")">@StaticResource.Resources.List</a></li>
-
+                            <li><h6 class="dropdownTitle"> &diams; @StaticResource.Resources.News</h6></li>
+                            <li><a href="@Url.Action("create", "News")">@StaticResource.Resources.Add</a></li>
+                            <li><a href="@Url.Action("index", "News")">@StaticResource.Resources.List</a></li>
                         </ul>
                     </li>
-
                 </ul>
                 @using Microsoft.AspNet.Identity
                 <ul class="nav navbar-nav navbar-right">
@@ -537,7 +540,8 @@
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">@StaticResource.Resources.Manuscript <span class="caret"></span></a>
                     <ul class="dropdown-menu">
                         <li><a href="@Url.Action("Index", "Manuscripts")"> @StaticResource.Resources.Manuscript - @StaticResource.Resources.Text</a></li>
-                        <li><a href="@Url.Action("Index", "AnalyseMaterials")">@StaticResource.Resources.AnalyseMaterial</a></li>
+                        <li><a href="@Url.Action("Index", "AnalyseMaterials")">@StaticResource.Resources.AnalyseMacroscopic</a></li>
+                        <li><a href="@Url.Action("Index", "AnalyseMaterials")">@StaticResource.Resources.AnalyseMicroscopic</a></li>
                     </ul>
                 </li>
                 <li>@Html.ActionLink(@StaticResource.Resources.Vocabulary, "Index", "DictionaryTocharians")</li>
@@ -598,6 +602,7 @@
         </div>
     </div>
     <div class="container body-content">
+        
         @RenderBody()
         <hr />
         <footer>
@@ -607,20 +612,25 @@
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
     @RenderSection("scripts", required: false)
- <script>
-    $(document).ready(function () {
-      $('.dropdown-submenu a.test').on("click", function(e){
-      $(this).next('ul').toggle();
-      e.stopPropagation();
-      e.preventDefault();      
-      });
-    },
-        function () {
-            $(this).find("ul:first").slideDown(500);
+    <script>
+        $(document).ready(function () {
+            $('.dropdown-submenu a.test').on("click", function (e) {
+                $(this).next('ul').toggle();
+                e.stopPropagation();
+                e.preventDefault();
+            });
         },
-        function () {
-            $(this).find("ul:first").hide(300);
-     });
-</script>
+
+            function insertText(elemID, text) {
+                var elem = document.getElementById(elemID);
+                elem.innerHTML += text;
+            },
+            function () {
+                $(this).find("ul:first").slideDown(500);
+            },
+            function () {
+                $(this).find("ul:first").hide(300);
+            });
+    </script>
 </body>
 </html>

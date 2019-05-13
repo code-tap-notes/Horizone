@@ -1,13 +1,14 @@
 ﻿@model Horizone.Models.NamePlace
 
 @{
-    ViewBag.Title = "Details";
+    ViewBag.Title = @StaticResource.Resources.Details;
 }
 
-<h2>Details</h2>
+<h2>@StaticResource.Resources.Details</h2>
+
 
 <div>
-    <h4>NamePlace</h4>
+    <h4>@StaticResource.Resources.Place</h4>
     <hr />
     <dl class="dl-horizontal">
         <dt>
@@ -37,6 +38,6 @@
     </dl>
 </div>
 <p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
-    @Html.ActionLink("Back to List", "Index")
+    @Html.ActionLink(StaticResource.Resources.Edit, "Edit", new { id = Model.Id }, new { @class = "btn btn-info" }) |
+    @Html.ActionLink(StaticResource.Resources.Return, "Index", null, new { @class = "btn btn-primary" })
 </p>

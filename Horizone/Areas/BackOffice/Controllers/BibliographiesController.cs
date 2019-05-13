@@ -121,7 +121,6 @@ namespace Horizone.Areas.BackOffice.Controllers
             if (!string.IsNullOrWhiteSpace(search))
             {
                 bibliographies = bibliographies.Where(x => x.Author.Contains(search));
-
                 //bibliographies = bibliographies.Where(x => x.PublicationDate.Contains(search));
                 //bibliographies = bibliographies.Where(x => x.Title.Contains(search));
                 //|| || (x=> x.PublicationDate.Contains(search)
@@ -132,14 +131,11 @@ namespace Horizone.Areas.BackOffice.Controllers
             //    bibliographies = bibliographies.Where(y => y.Title.Contains(title));
             //if (!string.IsNullOrWhiteSpace(journal))
             //    bibliographies = bibliographies.Where(y => y.Journal.Contains(journal));
-
             if (bibliographies.Count() == 0)
             {
                 Display("Aucun résultat");
             }
-
             return View("Search", bibliographies.ToList());
-
         }
 
     }

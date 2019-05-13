@@ -91,6 +91,7 @@ namespace Horizone.Models
         public DbSet<WritingTool> WritingTools { get; set; }
         public DbSet<AlignmentType> AlignmentTypes { get; set; }
         public DbSet<Script> Scripts { get; set; }
+        public DbSet<ScriptType> ScriptTypes { get; set; }
         public DbSet<ScriptAdd> ScriptAdds { get; set; }
         public DbSet<LanguageStage> LanguageStages { get; set; }
         public DbSet<LanguageDetail> LanguageDetails { get; set; }

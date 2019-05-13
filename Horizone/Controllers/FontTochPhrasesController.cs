@@ -16,7 +16,7 @@ namespace Horizone.Controllers
         // GET: FontTochPhrases
         public ActionResult Index()
         {
-            var tochPhrases = db.TochPhrases.Include(t => t.Language).Include(t => t.TochLanguage);
+            var tochPhrases = db.TochPhrases.Include(t => t.TochLanguage);
             return View(tochPhrases.ToList());
         }
 

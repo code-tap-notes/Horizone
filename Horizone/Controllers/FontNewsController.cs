@@ -19,6 +19,27 @@ namespace Horizone.Controllers
             var newses = db.Newses.Include(n => n.Collaborator).Include(n => n.Language).Include(n => n.Topic);
             
             return View(newses.ToList());
+        }     
+
+        public ActionResult Publications()
+        {
+            var newses = db.Newses.Include(n => n.Collaborator).Include(n => n.Language).Include(n => n.Topic).Where(x => x.Topic.Id == 10);
+            return View(newses.ToList());
+        }
+        public ActionResult ConferencesAndSymposia()
+        {
+            var newses = db.Newses.Include(n => n.Collaborator).Include(n => n.Language).Include(n => n.Topic).Where(x => x.Topic.Id == 9 || x.Topic.Id == 14);
+            return View(newses.ToList());
+        }
+        public ActionResult ExpositionsAndMuseums()
+        {
+            var newses = db.Newses.Include(n => n.Collaborator).Include(n => n.Language).Include(n => n.Topic).Where(x => x.Topic.Id == 11 || x.Topic.Id == 16);
+            return View(newses.ToList());
+        }
+        public ActionResult Media()
+        {
+            var newses = db.Newses.Include(n => n.Collaborator).Include(n => n.Language).Include(n => n.Topic).Where(x=>x.Topic.Id == 12);
+            return View(newses.ToList());
         }
 
         [ChildActionOnly]
@@ -54,7 +75,7 @@ namespace Horizone.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            News news = db.Newses.Find(id);
+            News news = db.Newses.Include("Collaborator").Include("Language").Include("Topic").Include("ImageNewses").SingleOrDefault(x=>x.Id ==id);
             news.View += 1;
             if (news == null)
             {
@@ -76,6 +97,6 @@ namespace Horizone.Controllers
                 return RedirectToAction("CreatComment");
             }
             return View(comment);
-        }       
-    }
+        }  
+       }
 }

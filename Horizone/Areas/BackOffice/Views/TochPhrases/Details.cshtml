@@ -1,21 +1,16 @@
 ﻿@model Horizone.Models.TochPhrase
+
 @{
     ViewBag.Title = @StaticResource.Resources.Details;
 }
 
 <h2>@StaticResource.Resources.Details</h2>
+
+
 <div>
-    <h4>TochPhrase</h4>
+    <h4>@StaticResource.Resources.TochPhrase</h4>
     <hr />
     <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.Language)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Language.Name)
-        </dd>
-
         <dt>
             @Html.DisplayNameFor(model => model.TochLanguage.Language)
         </dt>

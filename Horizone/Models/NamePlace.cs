@@ -19,5 +19,9 @@ namespace Horizone.Models
         [Display(Name = "NamePlaceZh", ResourceType = typeof(StaticResource.Resources))]
         public string PlaceZh { get; set; }
 
+        [Display(Name = "TochStory", ResourceType = typeof(StaticResource.Resources))]
+        public ICollection<TochStory> TochStories { get; set; }
+
+
     }
 }

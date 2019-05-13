@@ -1780,6 +1780,15 @@ namespace StaticResource {
         }
         
         /// <summary>
+        ///   Recherche une chaîne localisée semblable à Forme Littéraire.
+        /// </summary>
+        public static string LiteraryForm {
+            get {
+                return ResourceManager.GetString("LiteraryForm", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Recherche une chaîne localisée semblable à Locative.
         /// </summary>
         public static string Locative {
@@ -3401,6 +3410,15 @@ namespace StaticResource {
         }
         
         /// <summary>
+        ///   Recherche une chaîne localisée semblable à Type d&apos;écriture.
+        /// </summary>
+        public static string ScriptType {
+            get {
+                return ResourceManager.GetString("ScriptType", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Recherche une chaîne localisée semblable à Écriture Chinois.
         /// </summary>
         public static string ScriptZh {
@@ -3545,6 +3563,15 @@ namespace StaticResource {
         }
         
         /// <summary>
+        ///   Recherche une chaîne localisée semblable à Description de la feuille.
+        /// </summary>
+        public static string SheetDescription {
+            get {
+                return ResourceManager.GetString("SheetDescription", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Recherche une chaîne localisée semblable à Cote bibliothèque.
         /// </summary>
         public static string Shelfmark {
@@ -3631,6 +3658,15 @@ namespace StaticResource {
         public static string SpaceBetweenLines {
             get {
                 return ResourceManager.GetString("SpaceBetweenLines", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Caractère spécial.
+        /// </summary>
+        public static string SpecialCharacter {
+            get {
+                return ResourceManager.GetString("SpecialCharacter", resourceCulture);
             }
         }
         

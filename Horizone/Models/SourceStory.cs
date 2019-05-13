@@ -13,6 +13,5 @@ namespace Horizone.Models
 
         [Display(Name = "SourceStory", ResourceType = typeof(StaticResource.Resources))]
         public string Source { get; set; }
-
     }
 }

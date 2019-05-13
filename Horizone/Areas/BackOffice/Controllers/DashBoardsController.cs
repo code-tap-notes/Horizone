@@ -44,6 +44,11 @@ namespace Horizone.Areas.BackOffice.Controllers
             return PartialView(aboutProjets.ToList());
         }
         [ChildActionOnly]
+        public ActionResult SpecialCharacter()
+        {
+            return PartialView();
+        }
+        [ChildActionOnly]
         public ActionResult Address()
         {
             var aboutProjets = db.AboutProjets.Include("Language");

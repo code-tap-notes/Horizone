@@ -1,14 +1,15 @@
 ﻿@model IEnumerable<Horizone.Models.SieveMark>
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = @StaticResource.Resources.SieveMark;
 }
 
-<h2>Index</h2>
+<h2>@StaticResource.Resources.SieveMark</h2>
 
 <p>
-    @Html.ActionLink("Create New", "Create")
+    @Html.ActionLink(@StaticResource.Resources.Add, "Create", null, new { @class = "btn btn-primary" })
 </p>
+
 <table class="table">
     <tr>
         <th>
@@ -23,7 +24,8 @@
         <th></th>
     </tr>
 
-@foreach (var item in Model) {
+    @foreach (var item in Model)
+    {
     <tr>
         <td>
             @Html.DisplayFor(modelItem => item.SieveMarkEn)
@@ -34,12 +36,13 @@
         <td>
             @Html.DisplayFor(modelItem => item.SieveMarkZh)
         </td>
+
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
-            @Html.ActionLink("Details", "Details", new { id=item.Id }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.Id })
+            @Html.ActionLink(@StaticResource.Resources.Edit, "Edit", new { id = item.Id }, new { @class = "btn btn-info", style = "width:85px" })
+            @Html.ActionLink(@StaticResource.Resources.Details, "Details", new { id = item.Id }, new { @class = "btn btn-info", style = "width:85px" })
+            @Html.ActionLink(@StaticResource.Resources.Delete, "Delete", new { id = item.Id }, new { @class = "btn btn-info", style = "width:85px" })
         </td>
     </tr>
-}
+    }
 
 </table>

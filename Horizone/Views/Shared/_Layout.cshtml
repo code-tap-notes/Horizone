@@ -9,6 +9,7 @@
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
     <link href="~/Content/layout.css" rel="stylesheet" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/2.3.1/css/flag-icon.min.css" rel="stylesheet" />
 </head>
 
 <body style="background-color:antiquewhite; box-shadow:0 2px 2px rgba(0,0,0, .5);" class="parallax">
@@ -44,6 +45,7 @@
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">@StaticResource.Resources.TochStory <span class="caret"></span></a>
                 <ul class="dropdown-menu">
                     <li><a href="@Url.Action("ThemeStory", "Home")"> @StaticResource.Resources.ThemeStory </a></li>
+                    <li><a href="@Url.Action("SourceStory", "Home")"> @StaticResource.Resources.SourceStory </a></li>
                     <li><a href="@Url.Action("NamePlace", "Home")">@StaticResource.Resources.NamePlaces</a></li>
                     <li><a href="@Url.Action("ProperNoun", "Home")">@StaticResource.Resources.ProperNoun</a></li>
                     <li><a href="@Url.Action("TochHistoire", "Home")">@StaticResource.Resources.TochStory</a></li>
@@ -61,19 +63,19 @@
             <li class="dropdown">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">@StaticResource.Resources.News_Blog <span class="caret"></span></a>
                 <ul class="dropdown-menu">
-                    <li><a href="@Url.Action("Index", "FontNews")"> @StaticResource.Resources.Publications</a></li>
-                    <li><a href="@Url.Action("Index", "FontNews")"> @StaticResource.Resources.Conferences , @StaticResource.Resources.Symposia</a></li>
-                    <li><a href="@Url.Action("Index", "FontNews")">  @StaticResource.Resources.Expositions , @StaticResource.Resources.Museums </a></li>
-                    <li><a href="@Url.Action("Index", "FontNews")">  @StaticResource.Resources.Media</a></li>
+                    <li><a href="@Url.Action("Publications", "FontNews")"> @StaticResource.Resources.Publications</a></li>
+                    <li><a href="@Url.Action("ConferencesAndSymposia", "FontNews")"> @StaticResource.Resources.Conferences , @StaticResource.Resources.Symposia</a></li>
+                    <li><a href="@Url.Action("ExpositionsAndMuseums", "FontNews")">  @StaticResource.Resources.Expositions , @StaticResource.Resources.Museums </a></li>
+                    <li><a href="@Url.Action("Media", "FontNews")">  @StaticResource.Resources.Media</a></li>
                 </ul>
             </li>
             <li class="dropdown">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">@StaticResource.Resources.Activity <span class="caret"></span></a>
                 <ul class="dropdown-menu">
-                    <li><a href="@Url.Action("Activity", "Home")"> @StaticResource.Resources.Publications</a></li>
-                    <li><a href="@Url.Action("Activity", "Home")"> @StaticResource.Resources.Conferences , @StaticResource.Resources.Seminars</a></li>
-                    <li><a href="@Url.Action("Activity", "Home")">  @StaticResource.Resources.Symposia</a></li>
-                    <li><a href="@Url.Action("Activity", "Home")">  @StaticResource.Resources.Missions</a></li>
+                    <li><a href="@Url.Action("Publications", "Home")"> @StaticResource.Resources.Publications</a></li>
+                    <li><a href="@Url.Action("ConferencesAndSeminar", "Home")"> @StaticResource.Resources.Conferences , @StaticResource.Resources.Seminars</a></li>
+                    <li><a href="@Url.Action("Symposia", "Home")">  @StaticResource.Resources.Symposia</a></li>
+                    <li><a href="@Url.Action("Missions", "Home")">  @StaticResource.Resources.Missions</a></li>
                 </ul>
             </li>
             <li class="dropdown">
@@ -92,7 +94,7 @@
             <!--Choice language-->
             @using (Html.BeginForm("ChangeCulture", "Base"))
             {
-                <li style="background-color: gray !important; color: darkgreen !important">
+                <li style="background-color: gray !important; color: darkgreen !important" class="flag-icon-background flag-icon-fr">
                     @Html.Hidden("returnUrl", Request.RawUrl)
                     @Html.DropDownList("ddlCulture", new SelectList(new[] {
                         new {value="fr",text=StaticResource.Resources.French},
@@ -107,8 +109,6 @@
         </ul>
     </div>
     <div class="navbar-collapse collapse">
-
-
     </div>
     <div class="container body-content">
         <hr />

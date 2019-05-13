@@ -1525,4 +1525,16 @@ TochPhase</value>
   <data name="Genre" xml:space="preserve">
     <value>样</value>
   </data>
+  <data name="SpecialCharacter" xml:space="preserve">
+    <value>特殊的性格</value>
+  </data>
+  <data name="ScriptType" xml:space="preserve">
+    <value>写作类型</value>
+  </data>
+  <data name="SheetDescription" xml:space="preserve">
+    <value>表格说明</value>
+  </data>
+  <data name="LiteraryForm" xml:space="preserve">
+    <value>文学形式</value>
+  </data>
 </root>

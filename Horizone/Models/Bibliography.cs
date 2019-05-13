@@ -37,7 +37,7 @@ namespace Horizone.Models
         [Display(Name = "TochStory", ResourceType = typeof(StaticResource.Resources))]
         public ICollection<TochStory> TochStories { get; set; }
 
-        [Display(Name = "TochStory", ResourceType = typeof(StaticResource.Resources))]
+        [Display(Name = "TochPhrase", ResourceType = typeof(StaticResource.Resources))]
         public ICollection<TochPhrase> TochPhrases { get; set; }
 
         [Display(Name = "Manuscript", ResourceType = typeof(StaticResource.Resources))]

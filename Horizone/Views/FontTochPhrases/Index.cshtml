@@ -49,9 +49,7 @@
 </div>
 <table class="table">
     <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.Language.Name)
-        </th>
+        
         <th>
             @Html.DisplayNameFor(model => model.TochLanguage.Language)
         </th>
@@ -71,9 +69,7 @@
     @foreach (var item in Model)
     {
         <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Language.Name)
-            </td>
+            
             <td>
                 @Html.DisplayFor(modelItem => item.TochLanguage.Language)
             </td>

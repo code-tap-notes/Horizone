@@ -1,10 +1,10 @@
 ﻿@model IEnumerable<Horizone.Models.NamePlace>
 
 @{
-    ViewBag.Title = "NamePlace";
+    ViewBag.Title = @StaticResource.Resources.NamePlaces;
 }
 
-<h2>NamePlace</h2>
+<h2>@StaticResource.Resources.NamePlaces</h2>
 
 <table class="table">
     <tr>
@@ -31,11 +31,7 @@
         <td>
             @Html.DisplayFor(modelItem => item.PlaceZh)
         </td>
-        <td>
-  
-            @Html.ActionLink("Details", "Details", new { id=item.Id }) |
-   
-        </td>
+       
     </tr>
 }
 

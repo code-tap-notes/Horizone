@@ -6,13 +6,13 @@ using System.Linq;
 using System.Net;
 using System.Web;
 using System.Web.Mvc;
+using Horizone.Controllers;
 using Horizone.Models;
 
 namespace Horizone.Areas.BackOffice.Controllers
 {
-    public class VisualAidsController : Controller
+    public class VisualAidsController : BaseController
     {
-        private ApplicationDbContext db = new ApplicationDbContext();
 
         // GET: BackOffice/VisualAids
         public ActionResult Index()
@@ -120,13 +120,6 @@ namespace Horizone.Areas.BackOffice.Controllers
             return RedirectToAction("Index");
         }
 
-        protected override void Dispose(bool disposing)
-        {
-            if (disposing)
-            {
-                db.Dispose();
-            }
-            base.Dispose(disposing);
-        }
+       
     }
 }

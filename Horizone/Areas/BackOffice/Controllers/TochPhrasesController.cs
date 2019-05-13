@@ -1,4 +1,4 @@
-﻿using System;
+﻿ using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.Entity;
@@ -12,11 +12,12 @@ using Horizone.Models;
 namespace Horizone.Areas.BackOffice.Controllers
 {
     public class TochPhrasesController : BaseController
-    {       
+    {
+
         // GET: BackOffice/TochPhrases
         public ActionResult Index()
         {
-            var tochPhrases = db.TochPhrases.Include(t => t.Language).Include(t => t.TochLanguage);
+            var tochPhrases = db.TochPhrases.Include(t => t.TochLanguage);
             return View(tochPhrases.ToList());
         }
 
@@ -38,16 +39,16 @@ namespace Horizone.Areas.BackOffice.Controllers
         // GET: BackOffice/TochPhrases/Create
         public ActionResult Create()
         {
-            ViewBag.LanguageId = new SelectList(db.Languages, "Id", "Symbol");
             ViewBag.TochLanguageId = new SelectList(db.TochLanguages, "Id", "Language");
             return View();
         }
+
         // POST: BackOffice/TochPhrases/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,Phrase,English,Francaise,Chinese,TochLanguageId,DerivedFrom,RelatedLexemes,Description,Visible,LanguageId")] TochPhrase tochPhrase)
+        public ActionResult Create([Bind(Include = "Id,Phrase,English,Francaise,Chinese,TochLanguageId,DerivedFrom,RelatedLexemes,Description,Visible")] TochPhrase tochPhrase)
         {
             if (ModelState.IsValid)
             {
@@ -56,7 +57,6 @@ namespace Horizone.Areas.BackOffice.Controllers
                 return RedirectToAction("Index");
             }
 
-            ViewBag.LanguageId = new SelectList(db.Languages, "Id", "Symbol", tochPhrase.LanguageId);
             ViewBag.TochLanguageId = new SelectList(db.TochLanguages, "Id", "Language", tochPhrase.TochLanguageId);
             return View(tochPhrase);
         }
@@ -73,16 +73,16 @@ namespace Horizone.Areas.BackOffice.Controllers
             {
                 return HttpNotFound();
             }
-            ViewBag.LanguageId = new SelectList(db.Languages, "Id", "Symbol", tochPhrase.LanguageId);
             ViewBag.TochLanguageId = new SelectList(db.TochLanguages, "Id", "Language", tochPhrase.TochLanguageId);
             return View(tochPhrase);
         }
+
         // POST: BackOffice/TochPhrases/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,Phrase,English,Francaise,Chinese,TochLanguageId,DerivedFrom,RelatedLexemes,Description,Visible,LanguageId")] TochPhrase tochPhrase)
+        public ActionResult Edit([Bind(Include = "Id,Phrase,English,Francaise,Chinese,TochLanguageId,DerivedFrom,RelatedLexemes,Description,Visible")] TochPhrase tochPhrase)
         {
             if (ModelState.IsValid)
             {
@@ -90,10 +90,10 @@ namespace Horizone.Areas.BackOffice.Controllers
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            ViewBag.LanguageId = new SelectList(db.Languages, "Id", "Symbol", tochPhrase.LanguageId);
             ViewBag.TochLanguageId = new SelectList(db.TochLanguages, "Id", "Language", tochPhrase.TochLanguageId);
             return View(tochPhrase);
         }
+
         // GET: BackOffice/TochPhrases/Delete/5
         public ActionResult Delete(int? id)
         {
@@ -108,6 +108,7 @@ namespace Horizone.Areas.BackOffice.Controllers
             }
             return View(tochPhrase);
         }
+
         // POST: BackOffice/TochPhrases/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
@@ -117,6 +118,6 @@ namespace Horizone.Areas.BackOffice.Controllers
             db.TochPhrases.Remove(tochPhrase);
             db.SaveChanges();
             return RedirectToAction("Index");
-        }
+        }      
     }
 }

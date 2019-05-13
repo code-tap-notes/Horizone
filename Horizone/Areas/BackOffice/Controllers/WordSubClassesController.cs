@@ -6,18 +6,19 @@ using System.Linq;
 using System.Net;
 using System.Web;
 using System.Web.Mvc;
-using Horizone.Models;
 using Horizone.Controllers;
+using Horizone.Models;
 
 namespace Horizone.Areas.BackOffice.Controllers
 {
     public class WordSubClassesController : BaseController
-    {        
+    {
 
         // GET: BackOffice/WordSubClasses
         public ActionResult Index()
         {
-            return View(db.WordSubClasses.ToList());
+            var wordSubClasses = db.WordSubClasses.Include(w => w.WordClass);
+            return View(wordSubClasses.ToList());
         }
 
         // GET: BackOffice/WordSubClasses/Details/5
@@ -38,6 +39,7 @@ namespace Horizone.Areas.BackOffice.Controllers
         // GET: BackOffice/WordSubClasses/Create
         public ActionResult Create()
         {
+            ViewBag.WordClassId = new SelectList(db.WordClasses, "Id", "Class");
             return View();
         }
 
@@ -46,7 +48,7 @@ namespace Horizone.Areas.BackOffice.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,SubClass,SubClassEn,SubClassFr,SubClassZh")] WordSubClass wordSubClass)
+        public ActionResult Create([Bind(Include = "Id,SubClass,SubClassEn,SubClassFr,SubClassZh,WordClassId")] WordSubClass wordSubClass)
         {
             if (ModelState.IsValid)
             {
@@ -55,6 +57,7 @@ namespace Horizone.Areas.BackOffice.Controllers
                 return RedirectToAction("Index");
             }
 
+            ViewBag.WordClassId = new SelectList(db.WordClasses, "Id", "Class", wordSubClass.WordClassId);
             return View(wordSubClass);
         }
 
@@ -70,6 +73,7 @@ namespace Horizone.Areas.BackOffice.Controllers
             {
                 return HttpNotFound();
             }
+            ViewBag.WordClassId = new SelectList(db.WordClasses, "Id", "Class", wordSubClass.WordClassId);
             return View(wordSubClass);
         }
 
@@ -78,7 +82,7 @@ namespace Horizone.Areas.BackOffice.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,SubClass,SubClassEn,SubClassFr,SubClassZh")] WordSubClass wordSubClass)
+        public ActionResult Edit([Bind(Include = "Id,SubClass,SubClassEn,SubClassFr,SubClassZh,WordClassId")] WordSubClass wordSubClass)
         {
             if (ModelState.IsValid)
             {
@@ -86,6 +90,7 @@ namespace Horizone.Areas.BackOffice.Controllers
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
+            ViewBag.WordClassId = new SelectList(db.WordClasses, "Id", "Class", wordSubClass.WordClassId);
             return View(wordSubClass);
         }
 
@@ -114,5 +119,6 @@ namespace Horizone.Areas.BackOffice.Controllers
             db.SaveChanges();
             return RedirectToAction("Index");
         }
+
     }
 }

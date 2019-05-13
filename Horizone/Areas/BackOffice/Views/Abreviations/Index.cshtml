@@ -1,16 +1,17 @@
 ﻿@model PagedList.IPagedList<Horizone.Models.Abreviation>
 @using PagedList.Mvc;
 
-@{   
-
-    ViewBag.Title = "Index";
+@{
+    ViewBag.Title = @StaticResource.Resources.;
 }
 
-<h2>Index</h2>
+<h2>@StaticResource.Resources.</h2>
 
 <p>
-    @Html.ActionLink("Create New", "Create")
+    @Html.ActionLink(@StaticResource.Resources.Add, "Create", null, new { @class = "btn btn-primary" })
 </p>
+
+
 <table class="table">
     <tr>
         <th>
@@ -25,20 +26,21 @@
 
     @foreach (var item in Model)
     {
-        <tr>
-            <td>
-                @Html.Raw(item.Symbol)
-            </td>
-            <td>
-                @Html.Raw(item.Description)
-            </td>
+    <tr>
+        <td>
+            @Html.Raw(item.Symbol)
+        </td>
+        <td>
+            @Html.Raw(item.Description)
+        </td>
 
-            <td>
-                @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
-                @Html.ActionLink("Details", "Details", new { id = item.Id }) |
-                @Html.ActionLink("Delete", "Delete", new { id = item.Id })
-            </td>
-        </tr>
+        <td>
+            @Html.ActionLink(@StaticResource.Resources.Edit, "Edit", new { id = item.Id }, new { @class = "btn btn-info", style = "width:85px" })
+            @Html.ActionLink(@StaticResource.Resources.Details, "Details", new { id = item.Id }, new { @class = "btn btn-info", style = "width:85px" })
+            @Html.ActionLink(@StaticResource.Resources.Delete, "Delete", new { id = item.Id }, new { @class = "btn btn-info", style = "width:85px" })
+        </td>
+
+    </tr>
     }
 
 </table>

@@ -267,7 +267,6 @@ namespace Horizone.Models
         public ICollection<Bibliography> Bibliographys { get; set; }
 
         [Display(Name = "Visible", ResourceType = typeof(StaticResource.Resources))]
-        public Boolean Visible { get; set; }
-       
+        public Boolean Visible { get; set; }      
     }
 }

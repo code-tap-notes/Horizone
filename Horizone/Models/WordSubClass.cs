@@ -24,6 +24,12 @@ namespace Horizone.Models
 
         [Display(Name = "WordSubClassZh", ResourceType = typeof(StaticResource.Resources))]
         public string SubClassZh { get; set; }
-       
+
+        [Display(Name = "WordClass", ResourceType = typeof(StaticResource.Resources))]
+        public int WordClassId { get; set; }
+
+        [ForeignKey("WordClassId")]
+        public WordClass WordClass { get; set; }
+
     }
 }

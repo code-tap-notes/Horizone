@@ -13,11 +13,11 @@ namespace Horizone.Areas.BackOffice.Controllers
 {
     public class TochStoriesController : BaseController
     {
-        
+
         // GET: BackOffice/TochStories
         public ActionResult Index()
         {
-            var tochStorys = db.TochStorys.Include(t => t.Language).Include(t => t.NamePlace).Include(t => t.ProperNoun).Include(t => t.SourceStory).Include(t => t.ThemeStory);
+            var tochStorys = db.TochStorys.Include(t => t.SourceStory).Include(t => t.ThemeStory);
             return View(tochStorys.ToList());
         }
 
@@ -28,7 +28,12 @@ namespace Horizone.Areas.BackOffice.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            TochStory tochStory = db.TochStorys.Find(id);
+           
+            TochStory tochStory = db.TochStorys.Include("SourceStory").Include("ThemeStory").Include("NamePlaces").Include("ProperNouns").SingleOrDefault(x => x.Id == id);
+            if (tochStory.NamePlaces.Count() == 0)
+                tochStory.NamePlaces = db.NamePlaces.Where(x => x.PlaceEn == "NA").ToList();
+            if (tochStory.ProperNouns.Count() == 0)
+                tochStory.ProperNouns = db.ProperNouns.Where(x => x.Name == "NA").ToList();
             if (tochStory == null)
             {
                 return HttpNotFound();
@@ -39,11 +44,12 @@ namespace Horizone.Areas.BackOffice.Controllers
         // GET: BackOffice/TochStories/Create
         public ActionResult Create()
         {
-            ViewBag.LanguageId = new SelectList(db.Languages, "Id", "Symbol");
-            ViewBag.NamePlaceId = new SelectList(db.NamePlaces, "Id", "PlaceEn");
-            ViewBag.SourceStoryId = new SelectList(db.ProperNouns, "Id", "Name");
             ViewBag.SourceStoryId = new SelectList(db.SourceStorys, "Id", "Source");
             ViewBag.ThemeStoryId = new SelectList(db.ThemeStorys, "Id", "ThemeEn");
+            MultiSelectList PlaceValues = new MultiSelectList(db.NamePlaces, "Id", "PlaceEn");
+            ViewBag.NamePlaces = PlaceValues;
+            MultiSelectList NounValues = new MultiSelectList(db.ProperNouns, "Id", "Name");
+            ViewBag.ProperNouns = NounValues;
             return View();
         }
 
@@ -52,20 +58,31 @@ namespace Horizone.Areas.BackOffice.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,Name,SourceStoryId,ProperNounId,ThemeStoryId,NamePlaceId,PlasticRepresentation,MainFindSpot,Content,English,Francaise,Chinese,Description,Visible,LanguageId")] TochStory tochStory)
+        public ActionResult Create([Bind(Include = "Id,Name,SourceStoryId,ThemeStoryId,PlasticRepresentation,MainFindSpot,Content,English,Francaise,Chinese,Description,Visible")] TochStory tochStory, int[] NamePlaceId, int[] ProperNounId)
         {
             if (ModelState.IsValid)
             {
+                if (NamePlaceId.Count() > 0)
+                    tochStory.NamePlaces = db.NamePlaces.Where(x => NamePlaceId.Contains(x.Id)).ToList();
+                if (NamePlaceId.Count() == 0)
+                    tochStory.NamePlaces = db.NamePlaces.Where(x => x.PlaceEn == "NA").ToList();
+
+                if (ProperNounId.Count() > 0)
+                    tochStory.ProperNouns = db.ProperNouns.Where(x => ProperNounId.Contains(x.Id)).ToList();
+                if (ProperNounId.Count() == 0)
+                    tochStory.ProperNouns = db.ProperNouns.Where(x => x.Name == "NA").ToList();
+
                 db.TochStorys.Add(tochStory);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-
-            ViewBag.LanguageId = new SelectList(db.Languages, "Id", "Symbol", tochStory.LanguageId);
-            ViewBag.NamePlaceId = new SelectList(db.NamePlaces, "Id", "PlaceEn", tochStory.NamePlaceId);
-            ViewBag.SourceStoryId = new SelectList(db.ProperNouns, "Id", "Name", tochStory.SourceStoryId);
+                       
             ViewBag.SourceStoryId = new SelectList(db.SourceStorys, "Id", "Source", tochStory.SourceStoryId);
             ViewBag.ThemeStoryId = new SelectList(db.ThemeStorys, "Id", "ThemeEn", tochStory.ThemeStoryId);
+            MultiSelectList PlaceValues = new MultiSelectList(db.NamePlaces, "Id", "PlaceEn");
+            ViewBag.NamePlaces = PlaceValues;
+            MultiSelectList NounValues = new MultiSelectList(db.ProperNouns, "Id", "Name");
+            ViewBag.ProperNouns = NounValues;
             return View(tochStory);
         }
 
@@ -76,16 +93,17 @@ namespace Horizone.Areas.BackOffice.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            TochStory tochStory = db.TochStorys.Find(id);
+            TochStory tochStory = db.TochStorys.Include("NamePlaces").Include("ProperNouns").SingleOrDefault(x => x.Id == id); ;
             if (tochStory == null)
             {
                 return HttpNotFound();
             }
-            ViewBag.LanguageId = new SelectList(db.Languages, "Id", "Symbol", tochStory.LanguageId);
-            ViewBag.NamePlaceId = new SelectList(db.NamePlaces, "Id", "PlaceEn", tochStory.NamePlaceId);
-            ViewBag.SourceStoryId = new SelectList(db.ProperNouns, "Id", "Name", tochStory.SourceStoryId);
             ViewBag.SourceStoryId = new SelectList(db.SourceStorys, "Id", "Source", tochStory.SourceStoryId);
             ViewBag.ThemeStoryId = new SelectList(db.ThemeStorys, "Id", "ThemeEn", tochStory.ThemeStoryId);
+            MultiSelectList PlaceValues = new MultiSelectList(db.NamePlaces, "Id", "PlaceEn");
+            ViewBag.NamePlaces = PlaceValues;
+            MultiSelectList NounValues = new MultiSelectList(db.ProperNouns, "Id", "Name");
+            ViewBag.ProperNouns = NounValues;
             return View(tochStory);
         }
 
@@ -94,20 +112,31 @@ namespace Horizone.Areas.BackOffice.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,Name,SourceStoryId,ProperNounId,ThemeStoryId,NamePlaceId,PlasticRepresentation,MainFindSpot,Content,English,Francaise,Chinese,Description,Visible,LanguageId")] TochStory tochStory)
+        public ActionResult Edit([Bind(Include = "Id,Name,SourceStoryId,ThemeStoryId,PlasticRepresentation,MainFindSpot,Content,English,Francaise,Chinese,Description,Visible")] TochStory tochStory, int[] NamePlaceId, int[] ProperNounId)
         {
+            db.Entry(tochStory).State = EntityState.Modified;
+            db.TochStorys.Include("NamePlaces").Include("ProperNouns").SingleOrDefault(x => x.Id == tochStory.Id);
             if (ModelState.IsValid)
             {
-                db.Entry(tochStory).State = EntityState.Modified;
+                if (NamePlaceId != null)
+                    tochStory.NamePlaces = db.NamePlaces.Where(x => NamePlaceId.Contains(x.Id)).ToList();
+                else
+                    tochStory.NamePlaces = db.NamePlaces.Where(x => x.PlaceEn == "NA").ToList();
+                if (ProperNounId != null)
+                    tochStory.ProperNouns = db.ProperNouns.Where(x => ProperNounId.Contains(x.Id)).ToList();
+                else
+                    tochStory.ProperNouns = db.ProperNouns.Where(x => x.Name == "NA").ToList();
+
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            ViewBag.LanguageId = new SelectList(db.Languages, "Id", "Symbol", tochStory.LanguageId);
-            ViewBag.NamePlaceId = new SelectList(db.NamePlaces, "Id", "PlaceEn", tochStory.NamePlaceId);
-            ViewBag.SourceStoryId = new SelectList(db.ProperNouns, "Id", "Name", tochStory.SourceStoryId);
+           
             ViewBag.SourceStoryId = new SelectList(db.SourceStorys, "Id", "Source", tochStory.SourceStoryId);
             ViewBag.ThemeStoryId = new SelectList(db.ThemeStorys, "Id", "ThemeEn", tochStory.ThemeStoryId);
-            return View(tochStory);
+            MultiSelectList PlaceValues = new MultiSelectList(db.NamePlaces, "Id", "PlaceEn");
+            ViewBag.NamePlaces = PlaceValues;
+            MultiSelectList NounValues = new MultiSelectList(db.ProperNouns, "Id", "Name");
+            ViewBag.ProperNouns = NounValues; return View(tochStory);
         }
 
         // GET: BackOffice/TochStories/Delete/5

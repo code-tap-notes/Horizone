@@ -1,0 +1,55 @@
+﻿@model IEnumerable<Horizone.Models.Script>
+
+@{
+    ViewBag.Title = "Ductus";
+}
+
+<h2>Ductus</h2>
+
+<p>
+    @Html.ActionLink(@StaticResource.Resources.Add, "Create", null, new { @class = "btn btn-primary" })
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.ScriptType.NameType)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ScriptEn)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ScriptFr)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ScriptZh)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        if (item.ScriptType.Id == 3)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ScriptType.NameType)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ScriptEn)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ScriptFr)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ScriptZh)
+                </td>
+                <td>
+                    @Html.ActionLink(@StaticResource.Resources.Edit, "Edit", new { id = item.Id }, new { @class = "btn btn-info", style = "width:85px" })
+                    @Html.ActionLink(@StaticResource.Resources.Details, "Details", new { id = item.Id }, new { @class = "btn btn-info", style = "width:85px" })
+                    @Html.ActionLink(@StaticResource.Resources.Delete, "Delete", new { id = item.Id }, new { @class = "btn btn-info", style = "width:85px" })
+                </td>
+            </tr>
+        }
+    }
+
+</table>

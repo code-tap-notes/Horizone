@@ -1,51 +1,47 @@
 ﻿@model Horizone.Models.PreparationPaperBeforeUsing
-
 @{
-    ViewBag.Title = "Create";
+    ViewBag.Title = @StaticResource.Resources.Add;
 }
 
-<h2>Create</h2>
+<h2>@StaticResource.Resources.Add</h2>
 
-@using (Html.BeginForm()) 
+@using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
-    
-    <div class="form-horizontal">
-        <h4>PreparationPaperBeforeUsing</h4>
-        <hr />
-        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-        <div class="form-group">
-            @Html.LabelFor(model => model.PreparationEn, htmlAttributes: new { @class = "control-label col-md-2" }) @StaticResource.Resources.English
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.PreparationEn, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.PreparationEn, "", new { @class = "text-danger" })
-            </div>
-        </div>
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.PreparationFr, htmlAttributes: new { @class = "control-label col-md-2" }) @StaticResource.Resources.French
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.PreparationFr, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.PreparationFr, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.PreparationZh, htmlAttributes: new { @class = "control-label col-md-2" }) @StaticResource.Resources.Chinese
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.PreparationZh, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.PreparationZh, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Create" class="btn btn-default" />
-            </div>
+<div class="form-horizontal">
+    <h4>@StaticResource.Resources.PreparationPaperBeforeUsing</h4>
+    <hr />
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+    <div class="form-group">
+        @Html.LabelFor(model => model.PreparationEn, htmlAttributes: new { @class = "control-label col-md-2" }) @StaticResource.Resources.English
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.PreparationEn, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.PreparationEn, "", new { @class = "text-danger" })
         </div>
     </div>
-}
 
-<div>
-    @Html.ActionLink("Back to List", "Index")
+    <div class="form-group">
+        @Html.LabelFor(model => model.PreparationFr, htmlAttributes: new { @class = "control-label col-md-2" }) @StaticResource.Resources.French
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.PreparationFr, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.PreparationFr, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.PreparationZh, htmlAttributes: new { @class = "control-label col-md-2" }) @StaticResource.Resources.Chinese
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.PreparationZh, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.PreparationZh, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <input type="submit" value=@StaticResource.Resources.Add class="btn btn-info" />
+            @Html.ActionLink(StaticResource.Resources.Cancel, "Index", null, new { @class = "btn btn-default" })
+        </div>
+    </div>
 </div>
+}

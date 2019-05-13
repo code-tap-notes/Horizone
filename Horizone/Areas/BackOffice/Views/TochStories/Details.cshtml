@@ -1,39 +1,16 @@
 ﻿@model Horizone.Models.TochStory
 
 @{
-    ViewBag.Title = "Details";
+    ViewBag.Title = @StaticResource.Resources.Details;
 }
 
-<h2>Details</h2>
+<h2>@StaticResource.Resources.Details</h2>
+
 
 <div>
-    <h4>TochStory</h4>
+    <h4>@StaticResource.Resources.TochStory</h4>
     <hr />
     <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.Language.Symbol)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Language.Symbol)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.NamePlace.PlaceEn)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.NamePlace.PlaceEn)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.ProperNoun.Name)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.ProperNoun.Name)
-        </dd>
-
         <dt>
             @Html.DisplayNameFor(model => model.SourceStory.Source)
         </dt>
@@ -56,14 +33,6 @@
 
         <dd>
             @Html.DisplayFor(model => model.Name)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.ProperNounId)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.ProperNounId)
         </dd>
 
         <dt>
@@ -129,10 +98,33 @@
         <dd>
             @Html.DisplayFor(model => model.Visible)
         </dd>
+        <dt>
+            @StaticResource.Resources.ProperNoun
+        </dt>
+        <dd>
+            <table class="table table-striped">
+                @foreach (var item in Model.ProperNouns)
+                {
+                    <tr><td>@item.Name</td></tr>
+                }
 
+            </table>
+        </dd>
+        <dt>
+            @StaticResource.Resources.NamePlaces
+        </dt>
+        <dd>
+            <table class="table table-striped">
+                @foreach (var item in Model.NamePlaces)
+                {
+                    <tr><td>@item.PlaceEn </td></tr>
+                }
+
+            </table>
+        </dd>
     </dl>
 </div>
 <p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
-    @Html.ActionLink("Back to List", "Index")
+    @Html.ActionLink(StaticResource.Resources.Edit, "Edit", new { id = Model.Id }, new { @class = "btn btn-info" }) |
+    @Html.ActionLink(StaticResource.Resources.Return, "Index", null, new { @class = "btn btn-primary" })
 </p>

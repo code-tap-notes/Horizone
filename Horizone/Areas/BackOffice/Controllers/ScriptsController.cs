@@ -17,7 +17,23 @@ namespace Horizone.Areas.BackOffice.Controllers
         // GET: BackOffice/Scripts
         public ActionResult Index()
         {
-            return View(db.Scripts.ToList());
+            var scripts = db.Scripts.Include(s => s.ScriptType);
+            return View(scripts.ToList());
+        }
+        public ActionResult Brahmi()
+        {
+            var scripts = db.Scripts.Include(s => s.ScriptType).Where(s => s.ScriptType.Id == 1);
+            return View(scripts.ToList());
+        }
+        public ActionResult Kharosthi()
+        {
+            var scripts = db.Scripts.Include(s => s.ScriptType).Where(s => s.ScriptType.Id == 2);
+            return View(scripts.ToList());
+        }
+        public ActionResult Ductus()
+        {
+            var scripts = db.Scripts.Include(s => s.ScriptType).Where(s=>s.ScriptType.Id == 3);
+            return View(scripts.ToList());
         }
 
         // GET: BackOffice/Scripts/Details/5
@@ -38,6 +54,7 @@ namespace Horizone.Areas.BackOffice.Controllers
         // GET: BackOffice/Scripts/Create
         public ActionResult Create()
         {
+            ViewBag.ScriptTypeId = new SelectList(db.ScriptTypes, "Id", "NameType");
             return View();
         }
 
@@ -46,7 +63,7 @@ namespace Horizone.Areas.BackOffice.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,ScriptEn,ScriptFr,ScriptZh")] Script script)
+        public ActionResult Create([Bind(Include = "Id,ScriptEn,ScriptFr,ScriptZh,ScriptTypeId")] Script script)
         {
             if (ModelState.IsValid)
             {
@@ -55,6 +72,7 @@ namespace Horizone.Areas.BackOffice.Controllers
                 return RedirectToAction("Index");
             }
 
+            ViewBag.ScriptTypeId = new SelectList(db.ScriptTypes, "Id", "NameType", script.ScriptTypeId);
             return View(script);
         }
 
@@ -70,6 +88,7 @@ namespace Horizone.Areas.BackOffice.Controllers
             {
                 return HttpNotFound();
             }
+            ViewBag.ScriptTypeId = new SelectList(db.ScriptTypes, "Id", "NameType", script.ScriptTypeId);
             return View(script);
         }
 
@@ -78,7 +97,7 @@ namespace Horizone.Areas.BackOffice.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,ScriptEn,ScriptFr,ScriptZh")] Script script)
+        public ActionResult Edit([Bind(Include = "Id,ScriptEn,ScriptFr,ScriptZh,ScriptTypeId")] Script script)
         {
             if (ModelState.IsValid)
             {
@@ -86,6 +105,7 @@ namespace Horizone.Areas.BackOffice.Controllers
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
+            ViewBag.ScriptTypeId = new SelectList(db.ScriptTypes, "Id", "NameType", script.ScriptTypeId);
             return View(script);
         }
 
@@ -115,5 +135,6 @@ namespace Horizone.Areas.BackOffice.Controllers
             return RedirectToAction("Index");
         }
 
+       
     }
 }

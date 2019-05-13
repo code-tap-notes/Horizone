@@ -245,6 +245,7 @@
     <Compile Include="Areas\BackOffice\Controllers\PersonsController.cs" />
     <Compile Include="Areas\BackOffice\Controllers\PreparationPaperBeforeUsingsController.cs" />
     <Compile Include="Areas\BackOffice\Controllers\PresentationsController.cs" />
+    <Compile Include="Areas\BackOffice\Controllers\ProperNounsController.cs" />
     <Compile Include="Areas\BackOffice\Controllers\PublicationsController.cs" />
     <Compile Include="Areas\BackOffice\Controllers\RemarkAddsController.cs" />
     <Compile Include="Areas\BackOffice\Controllers\RestoresController.cs" />
@@ -253,6 +254,7 @@
     <Compile Include="Areas\BackOffice\Controllers\RulingsController.cs" />
     <Compile Include="Areas\BackOffice\Controllers\ScriptAddsController.cs" />
     <Compile Include="Areas\BackOffice\Controllers\ScriptsController.cs" />
+    <Compile Include="Areas\BackOffice\Controllers\ScriptTypesController.cs" />
     <Compile Include="Areas\BackOffice\Controllers\SieveMarksController.cs" />
     <Compile Include="Areas\BackOffice\Controllers\SourceStoriesController.cs" />
     <Compile Include="Areas\BackOffice\Controllers\StatesController.cs" />
@@ -294,6 +296,18 @@
     <Compile Include="Migrations\201905030407282_changtable.Designer.cs">
       <DependentUpon>201905030407282_changtable.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201905101420483_scriptype.cs" />
+    <Compile Include="Migrations\201905101420483_scriptype.Designer.cs">
+      <DependentUpon>201905101420483_scriptype.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201905130804202_changesWordSubclass.cs" />
+    <Compile Include="Migrations\201905130804202_changesWordSubclass.Designer.cs">
+      <DependentUpon>201905130804202_changesWordSubclass.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201905131519295_changeStory.cs" />
+    <Compile Include="Migrations\201905131519295_changeStory.Designer.cs">
+      <DependentUpon>201905131519295_changeStory.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AboutProject.cs" />
     <Compile Include="Common\CommonConstants.cs" />
@@ -312,6 +326,7 @@
     <Compile Include="Models\AnalyseMacroscopic.cs" />
     <Compile Include="Models\AnalyseMaterial.cs" />
     <Compile Include="Models\Bibliography.cs" />
+    <Compile Include="Models\ScriptType.cs" />
     <Compile Include="Models\Case.cs" />
     <Compile Include="Models\Catalogie.cs" />
     <Compile Include="Models\ChainLinesVisibility.cs" />
@@ -611,18 +626,8 @@
     <Content Include="Areas\BackOffice\Views\WordClasses\Details.cshtml" />
     <Content Include="Areas\BackOffice\Views\WordClasses\Edit.cshtml" />
     <Content Include="Areas\BackOffice\Views\WordClasses\Index.cshtml" />
-    <Content Include="Areas\BackOffice\Views\WordSubClasses\Create.cshtml" />
-    <Content Include="Areas\BackOffice\Views\WordSubClasses\Delete.cshtml" />
-    <Content Include="Areas\BackOffice\Views\WordSubClasses\Details.cshtml" />
-    <Content Include="Areas\BackOffice\Views\WordSubClasses\Edit.cshtml" />
-    <Content Include="Areas\BackOffice\Views\WordSubClasses\Index.cshtml" />
     <Content Include="Areas\BackOffice\Views\LinkAndPresses\Link.cshtml" />
     <Content Include="Areas\BackOffice\Views\LinkAndPresses\Press.cshtml" />
-    <Content Include="Areas\BackOffice\Views\TochPhrases\Create.cshtml" />
-    <Content Include="Areas\BackOffice\Views\TochPhrases\Delete.cshtml" />
-    <Content Include="Areas\BackOffice\Views\TochPhrases\Details.cshtml" />
-    <Content Include="Areas\BackOffice\Views\TochPhrases\Edit.cshtml" />
-    <Content Include="Areas\BackOffice\Views\TochPhrases\Index.cshtml" />
     <Content Include="Areas\BackOffice\Views\Cases\Create.cshtml" />
     <Content Include="Areas\BackOffice\Views\Cases\Delete.cshtml" />
     <Content Include="Areas\BackOffice\Views\Cases\Details.cshtml" />
@@ -758,11 +763,6 @@
     <Content Include="Areas\BackOffice\Views\RulingDetails\Details.cshtml" />
     <Content Include="Areas\BackOffice\Views\RulingDetails\Edit.cshtml" />
     <Content Include="Areas\BackOffice\Views\RulingDetails\Index.cshtml" />
-    <Content Include="Areas\BackOffice\Views\Scripts\Create.cshtml" />
-    <Content Include="Areas\BackOffice\Views\Scripts\Delete.cshtml" />
-    <Content Include="Areas\BackOffice\Views\Scripts\Details.cshtml" />
-    <Content Include="Areas\BackOffice\Views\Scripts\Edit.cshtml" />
-    <Content Include="Areas\BackOffice\Views\Scripts\Index.cshtml" />
     <Content Include="Areas\BackOffice\Views\ScriptAdds\Create.cshtml" />
     <Content Include="Areas\BackOffice\Views\ScriptAdds\Delete.cshtml" />
     <Content Include="Areas\BackOffice\Views\ScriptAdds\Details.cshtml" />
@@ -795,11 +795,6 @@
     <Content Include="Areas\BackOffice\Views\Manuscripts\MaterialManuscripts.cshtml" />
     <Content Include="Areas\BackOffice\Views\Manuscripts\TextContents.cshtml" />
     <Content Include="Areas\BackOffice\Views\Collaborations\AssociatedResearcher.cshtml" />
-    <Content Include="Areas\BackOffice\Views\TochStories\Create.cshtml" />
-    <Content Include="Areas\BackOffice\Views\TochStories\Delete.cshtml" />
-    <Content Include="Areas\BackOffice\Views\TochStories\Details.cshtml" />
-    <Content Include="Areas\BackOffice\Views\TochStories\Edit.cshtml" />
-    <Content Include="Areas\BackOffice\Views\TochStories\Index.cshtml" />
     <Content Include="App_Browsers\qt.browser" />
     <Content Include="Areas\BackOffice\Views\Abreviations\Create.cshtml" />
     <Content Include="Areas\BackOffice\Views\Abreviations\Delete.cshtml" />
@@ -879,6 +874,40 @@
     <Content Include="Areas\BackOffice\Views\LaidLinesRegularities\Details.cshtml" />
     <Content Include="Areas\BackOffice\Views\LaidLinesRegularities\Edit.cshtml" />
     <Content Include="Areas\BackOffice\Views\LaidLinesRegularities\Index.cshtml" />
+    <Content Include="Areas\BackOffice\Views\Shared\SpecialCharacter.cshtml" />
+    <Content Include="Areas\BackOffice\Views\ScriptTypes\Create.cshtml" />
+    <Content Include="Areas\BackOffice\Views\ScriptTypes\Delete.cshtml" />
+    <Content Include="Areas\BackOffice\Views\ScriptTypes\Details.cshtml" />
+    <Content Include="Areas\BackOffice\Views\ScriptTypes\Edit.cshtml" />
+    <Content Include="Areas\BackOffice\Views\ScriptTypes\Index.cshtml" />
+    <Content Include="Areas\BackOffice\Views\Scripts\Create.cshtml" />
+    <Content Include="Areas\BackOffice\Views\Scripts\Delete.cshtml" />
+    <Content Include="Areas\BackOffice\Views\Scripts\Details.cshtml" />
+    <Content Include="Areas\BackOffice\Views\Scripts\Edit.cshtml" />
+    <Content Include="Areas\BackOffice\Views\Scripts\Index.cshtml" />
+    <Content Include="Areas\BackOffice\Views\Scripts\Brahmi.cshtml" />
+    <Content Include="Areas\BackOffice\Views\Scripts\Kharosthi.cshtml" />
+    <Content Include="Areas\BackOffice\Views\Scripts\Ductus.cshtml" />
+    <Content Include="Areas\BackOffice\Views\WordSubClasses\Create.cshtml" />
+    <Content Include="Areas\BackOffice\Views\WordSubClasses\Delete.cshtml" />
+    <Content Include="Areas\BackOffice\Views\WordSubClasses\Details.cshtml" />
+    <Content Include="Areas\BackOffice\Views\WordSubClasses\Edit.cshtml" />
+    <Content Include="Areas\BackOffice\Views\WordSubClasses\Index.cshtml" />
+    <Content Include="Areas\BackOffice\Views\ProperNouns\Create.cshtml" />
+    <Content Include="Areas\BackOffice\Views\ProperNouns\Delete.cshtml" />
+    <Content Include="Areas\BackOffice\Views\ProperNouns\Details.cshtml" />
+    <Content Include="Areas\BackOffice\Views\ProperNouns\Edit.cshtml" />
+    <Content Include="Areas\BackOffice\Views\ProperNouns\Index.cshtml" />
+    <Content Include="Areas\BackOffice\Views\TochPhrases\Create.cshtml" />
+    <Content Include="Areas\BackOffice\Views\TochPhrases\Delete.cshtml" />
+    <Content Include="Areas\BackOffice\Views\TochPhrases\Details.cshtml" />
+    <Content Include="Areas\BackOffice\Views\TochPhrases\Edit.cshtml" />
+    <Content Include="Areas\BackOffice\Views\TochPhrases\Index.cshtml" />
+    <Content Include="Areas\BackOffice\Views\TochStories\Create.cshtml" />
+    <Content Include="Areas\BackOffice\Views\TochStories\Delete.cshtml" />
+    <Content Include="Areas\BackOffice\Views\TochStories\Details.cshtml" />
+    <Content Include="Areas\BackOffice\Views\TochStories\Edit.cshtml" />
+    <Content Include="Areas\BackOffice\Views\TochStories\Index.cshtml" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\cldr.js" />
     <Content Include="Scripts\cldr\event.js" />
@@ -1208,6 +1237,16 @@
     <Content Include="Views\FontManuscripts\MacroscopicAnalyse.cshtml" />
     <Content Include="Views\FontManuscripts\PageLayout.cshtml" />
     <Content Include="Views\FontManuscripts\SheetDescription.cshtml" />
+    <Content Include="Views\Home\SourceStory.cshtml" />
+    <Content Include="Views\Home\Missions.cshtml" />
+    <Content Include="Views\Home\Symposia.cshtml" />
+    <Content Include="Views\Home\Publications.cshtml" />
+    <Content Include="Views\Home\ConferencesAndSeminar.cshtml" />
+    <Content Include="Views\FontNews\Publications.cshtml" />
+    <Content Include="Views\FontNews\ConferencesAndSymposia.cshtml" />
+    <Content Include="Views\FontNews\ExpositionsAndMuseums.cshtml" />
+    <Content Include="Views\FontNews\Media.cshtml" />
+    <Content Include="Views\Home\DetailsStory.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -1252,6 +1291,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201905030407282_changtable.resx">
       <DependentUpon>201905030407282_changtable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201905101420483_scriptype.resx">
+      <DependentUpon>201905101420483_scriptype.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201905130804202_changesWordSubclass.resx">
+      <DependentUpon>201905130804202_changesWordSubclass.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201905131519295_changeStory.resx">
+      <DependentUpon>201905131519295_changeStory.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

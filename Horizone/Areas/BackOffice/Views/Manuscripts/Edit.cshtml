@@ -1,7 +1,9 @@
 ﻿@model Horizone.Models.Manuscript
 
 @{
-    ViewBag.Title = @StaticResource.Resources.Edit;
+                /**/
+
+                ViewBag.Title = @StaticResource.Resources.Edit;
 }
 <div class="detail">
     <h2>@StaticResource.Resources.Edit</h2>
@@ -12,41 +14,41 @@
                 {
                     @Html.AntiForgeryToken()
 
-                <div class="form-horizontal">
-                    <h4>@StaticResource.Resources.Manuscript</h4>
-                    <hr />
-                    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-                    @Html.HiddenFor(model => model.Id)
+                    <div class="form-horizontal">
+                        <h4>@StaticResource.Resources.Manuscript</h4>
+                        <hr />
+                        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                        @Html.HiddenFor(model => model.Id)
 
-                    <div class="row">
-                        <div class="form-group">
-                            @Html.LabelFor(model => model.Index, htmlAttributes: new { @class = "col-md-6" })
-                            <div class="col-md-6">
-                                <input class="form-control" type="text" id="Index" name="Index" value="@Model.Index" />
-                                @*@Html.EditorFor(model => model.Index, new { htmlAttributes = new { @class = "form-control" } })*@
-                                @Html.ValidationMessageFor(model => model.Index, "", new { @class = "text-danger" })
+                        <div class="row">
+                            <div class="form-group">
+                                @Html.LabelFor(model => model.Index, htmlAttributes: new { @class = "col-md-6" })
+                                <div class="col-md-6">
+                                    <input class="form-control" type="text" id="Index" name="Index" value="@Model.Index" />
+                                    @* @Html.EditorFor(model => model.Index, new { htmlAttributes = new { @class = "form-control" , @value = Model.Index} })*@
+                                    @Html.ValidationMessageFor(model => model.Index, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="form-group">
+                                @Html.LabelFor(model => model.CatalogieId, "CatalogieId", htmlAttributes: new { @class = "control-label col-md-6" })
+                                <div class="col-md-6">
+                                    @Html.DropDownList("CatalogieId", null, htmlAttributes: new { @class = "form-control" })
+                                    @Html.ValidationMessageFor(model => model.CatalogieId, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="form-group">
+                                @Html.LabelFor(model => model.Siglum, htmlAttributes: new { @class = "col-md-6" })
+                                <div class="col-md-6">
+                                    @Html.EditorFor(model => model.Siglum, new { htmlAttributes = new { @class = "form-control" } })
+                                    @Html.ValidationMessageFor(model => model.Siglum, "", new { @class = "text-danger" })
+                                </div>
                             </div>
                         </div>
                     </div>
-                    <div class="row">
-                        <div class="form-group">
-                            @Html.LabelFor(model => model.CatalogieId, "CatalogieId", htmlAttributes: new { @class = "control-label col-md-6" })
-                            <div class="col-md-6">
-                                @Html.DropDownList("CatalogieId", null, htmlAttributes: new { @class = "form-control" })
-                                @Html.ValidationMessageFor(model => model.CatalogieId, "", new { @class = "text-danger" })
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="form-group">
-                            @Html.LabelFor(model => model.Siglum, htmlAttributes: new { @class = "col-md-6" })
-                            <div class="col-md-6">
-                                @Html.EditorFor(model => model.Siglum, new { htmlAttributes = new { @class = "form-control" } })
-                                @Html.ValidationMessageFor(model => model.Siglum, "", new { @class = "text-danger" })
-                            </div>
-                        </div>
-                    </div>
-                </div>
                 }
             </div>
             <div class="col-md-6">

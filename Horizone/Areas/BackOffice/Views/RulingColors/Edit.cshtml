@@ -1,17 +1,15 @@
 ﻿@model Horizone.Models.RulingColor
-
 @{
-    ViewBag.Title = "Edit";
+    ViewBag.Title = @StaticResource.Resources.Edit;
 }
-
-<h2>Edit</h2>
+<h4>@StaticResource.Resources.Edit</h4>
 
 @using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
-    
+
     <div class="form-horizontal">
-        <h4>RulingColor</h4>
+        <h4>@StaticResource.Resources.RulingColor</h4>
         <hr />
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
         @Html.HiddenFor(model => model.Id)
@@ -42,12 +40,9 @@
 
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Save" class="btn btn-default" />
+                <input type="submit" value=@StaticResource.Resources.Save class="btn btn-primary" />
+                @Html.ActionLink(@StaticResource.Resources.Return, "Index", null, new { @class = "btn btn-default" })
             </div>
         </div>
     </div>
 }
-
-<div>
-    @Html.ActionLink("Back to List", "Index")
-</div>

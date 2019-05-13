@@ -1,15 +1,21 @@
 ﻿@model IEnumerable<Horizone.Models.WordSubClass>
+
 @{
     ViewBag.Title = @StaticResource.Resources.WordSubClass;
 }
 
-<h2>@StaticResource.Resources.WordSubClass</h2>
+<h2>@StaticResource.Resources.WordSubClass </h2>
 
 <p>
     @Html.ActionLink(@StaticResource.Resources.Add, "Create", null, new { @class = "btn btn-primary" })
 </p>
+
+
 <table class="table">
     <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.WordClass.ClassEn)
+        </th>
         <th>
             @Html.DisplayNameFor(model => model.SubClass)
         </th>
@@ -27,25 +33,28 @@
 
     @foreach (var item in Model)
     {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.SubClass)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.SubClassEn)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.SubClassFr)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.SubClassZh)
-        </td>
-        <td>
-            @Html.ActionLink(@StaticResource.Resources.Edit, "Edit", new { id = item.Id }, new { @class = "btn btn-info", style = "width:90px" })
-            @Html.ActionLink(@StaticResource.Resources.Details, "Details", new { id = item.Id }, new { @class = "btn btn-info", style = "width:90px" })
-            @Html.ActionLink(@StaticResource.Resources.Delete, "Delete", new { id = item.Id }, new { @class = "btn btn-info", style = "width:90px" })
-        </td>
-    </tr>
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.WordClass.ClassEn)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SubClass)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SubClassEn)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SubClassFr)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SubClassZh)
+            </td>
+            <td>
+                @Html.ActionLink(@StaticResource.Resources.Edit, "Edit", new { id = item.Id }, new { @class = "btn btn-info", style = "width:85px" })
+                @Html.ActionLink(@StaticResource.Resources.Details, "Details", new { id = item.Id }, new { @class = "btn btn-info", style = "width:85px" })
+                @Html.ActionLink(@StaticResource.Resources.Delete, "Delete", new { id = item.Id }, new { @class = "btn btn-info", style = "width:85px" })
+            </td>
+        </tr>
     }
 
 </table>

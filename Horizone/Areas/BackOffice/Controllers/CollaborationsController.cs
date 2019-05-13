@@ -34,9 +34,7 @@ namespace Horizone.Areas.BackOffice.Controllers
             {
                 return HttpNotFound();
             }
-           
             return View(collaboration);
-
         }
         // GET: BackOffice/Collaborations/Create
         public ActionResult Create()
