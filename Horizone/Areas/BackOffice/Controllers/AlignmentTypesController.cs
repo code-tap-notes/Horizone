@@ -21,20 +21,7 @@ namespace Horizone.Areas.BackOffice.Controllers
             return View(db.AlignmentTypes.ToList());
         }
 
-        // GET: BackOffice/AlignmentTypes/Details/5
-        public ActionResult Details(int? id)
-        {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            AlignmentType alignmentType = db.AlignmentTypes.Find(id);
-            if (alignmentType == null)
-            {
-                return HttpNotFound();
-            }
-            return View(alignmentType);
-        }
+         
 
         // GET: BackOffice/AlignmentTypes/Create
         public ActionResult Create()

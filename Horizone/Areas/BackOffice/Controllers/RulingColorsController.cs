@@ -19,21 +19,7 @@ namespace Horizone.Areas.BackOffice.Controllers
         {
             return View(db.RulingColors.ToList());
         }
-
-        // GET: BackOffice/RulingColors/Details/5
-        public ActionResult Details(int? id)
-        {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            RulingColor rulingColor = db.RulingColors.Find(id);
-            if (rulingColor == null)
-            {
-                return HttpNotFound();
-            }
-            return View(rulingColor);
-        }
+         
 
         // GET: BackOffice/RulingColors/Create
         public ActionResult Create()

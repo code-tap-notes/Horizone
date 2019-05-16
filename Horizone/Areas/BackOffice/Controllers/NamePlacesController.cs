@@ -19,21 +19,7 @@ namespace Horizone.Areas.BackOffice.Controllers
             return View(db.NamePlaces.ToList());
         }
 
-        // GET: BackOffice/NamePlaces/Details/5
-        public ActionResult Details(int? id)
-        {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            NamePlace namePlace = db.NamePlaces.Find(id);
-            if (namePlace == null)
-            {
-                return HttpNotFound();
-            }
-            return View(namePlace);
-        }
-
+         
         // GET: BackOffice/NamePlaces/Create
         public ActionResult Create()
         {

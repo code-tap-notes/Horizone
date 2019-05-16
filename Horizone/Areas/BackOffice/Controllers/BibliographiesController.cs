@@ -19,20 +19,7 @@ namespace Horizone.Areas.BackOffice.Controllers
         {
             return View(db.Bibliographys.OrderBy(x => x.Id).ToPagedList(page, pageSize));
         }
-        // GET: BackOffice/Bibliographies/Details/5
-        public ActionResult Details(int? id)
-        {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            Bibliography bibliography = db.Bibliographys.Find(id);
-            if (bibliography == null)
-            {
-                return HttpNotFound();
-            }
-            return View(bibliography);
-        }
+        
 
         // GET: BackOffice/Bibliographies/Create
         public ActionResult Create()

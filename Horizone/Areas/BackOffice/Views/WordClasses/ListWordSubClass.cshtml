@@ -1,0 +1,56 @@
+﻿@model IEnumerable<Horizone.Models.WordSubClass>
+
+@{
+    ViewBag.Title = @StaticResource.Resources.WordSubClass;
+}
+<h2>@ViewBag.Class</h2>
+<h3>@StaticResource.Resources.WordSubClass</h3>
+
+
+<a href="@Url.Action("Create", "WordSubClasses")" class="btn-primary"> @StaticResource.Resources.Add </a>
+@Html.ActionLink(@StaticResource.Resources.Return, "Index", null, new { @class = "btn btn-default" })
+
+
+<table class="table">
+    <tr>
+
+        <th>
+            @Html.DisplayNameFor(model => model.SubClass)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SubClassEn)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SubClassFr)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SubClassZh)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+
+            <td>
+                @Html.DisplayFor(modelItem => item.SubClass)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SubClassEn)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SubClassFr)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SubClassZh)
+            </td>
+
+            <td>
+                <a href="@Url.Action("Edit", "WordSubClasses")" class="btn-primary" style = "width:85px"> @StaticResource.Resources.Edit </a>
+                <a href="@Url.Action("Delete", "WordSubClasses")" class="btn-primary" style = "width:85px"> @StaticResource.Resources.Delete </a>
+            </td>
+        </tr>
+    }
+
+</table>

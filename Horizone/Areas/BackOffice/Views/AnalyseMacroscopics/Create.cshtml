@@ -125,6 +125,8 @@
                 <div class="checkbox">
                     @Html.EditorFor(model => model.Correction)
                     @Html.ValidationMessageFor(model => model.Correction, "", new { @class = "text-danger" })
+                    <label id="yes"> @StaticResource.Resources.Yes !</label>
+
                 </div>
             </div>
         </div>
@@ -215,6 +217,8 @@
                 <div class="checkbox">
                     @Html.EditorFor(model => model.SoftQuality)
                     @Html.ValidationMessageFor(model => model.SoftQuality, "", new { @class = "text-danger" })
+                    <label id="yes"> @StaticResource.Resources.Yes !</label>
+
                 </div>
             </div>
         </div>
@@ -222,11 +226,13 @@
         <div class="form-group">
             @Html.LabelFor(model => model.RattleQuality, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                <div class="checkbox">
+                <div class="checkbox" >
                     @Html.EditorFor(model => model.RattleQuality)
                     @Html.ValidationMessageFor(model => model.RattleQuality, "", new { @class = "text-danger" })
+                    <label id="yes"> @StaticResource.Resources.Yes !</label>  
                 </div>
             </div>
+            
         </div>
 
         <div class="form-group">
@@ -235,6 +241,8 @@
                 <div class="checkbox">
                     @Html.EditorFor(model => model.Transparency)
                     @Html.ValidationMessageFor(model => model.Transparency, "", new { @class = "text-danger" })
+                    <label id="yes"> @StaticResource.Resources.Yes !</label>
+
                 </div>
             </div>
         </div>
@@ -269,6 +277,8 @@
                 <div class="checkbox">
                     @Html.EditorFor(model => model.ClayOrSandParticules)
                     @Html.ValidationMessageFor(model => model.ClayOrSandParticules, "", new { @class = "text-danger" })
+                    <label id="yes"> @StaticResource.Resources.Yes !</label>
+
                 </div>
             </div>
         </div>
@@ -279,6 +289,8 @@
                 <div class="checkbox">
                     @Html.EditorFor(model => model.SurfaceOnBothSides)
                     @Html.ValidationMessageFor(model => model.SurfaceOnBothSides, "", new { @class = "text-danger" })
+                    <label id="yes"> @StaticResource.Resources.Yes !</label>
+
                 </div>
             </div>
         </div>
@@ -377,6 +389,8 @@
                 <div class="checkbox">
                     @Html.EditorFor(model => model.Visible)
                     @Html.ValidationMessageFor(model => model.Visible, "", new { @class = "text-danger" })
+                    <label id="yes"> @StaticResource.Resources.Yes !</label>
+
                 </div>
             </div>
         </div>

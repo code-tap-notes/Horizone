@@ -20,21 +20,7 @@ namespace Horizone.Areas.BackOffice.Controllers
             return View(db.Restores.ToList());
         }
 
-        // GET: BackOffice/Restores/Details/5
-        public ActionResult Details(int? id)
-        {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            Restore restore = db.Restores.Find(id);
-            if (restore == null)
-            {
-                return HttpNotFound();
-            }
-            return View(restore);
-        }
-
+        
         // GET: BackOffice/Restores/Create
         public ActionResult Create()
         {

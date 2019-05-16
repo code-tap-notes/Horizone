@@ -20,20 +20,7 @@ namespace Horizone.Areas.BackOffice.Controllers
             return View(db.RulingDetails.ToList());
         }
 
-        // GET: BackOffice/RulingDetails/Details/5
-        public ActionResult Details(int? id)
-        {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            RulingDetail rulingDetail = db.RulingDetails.Find(id);
-            if (rulingDetail == null)
-            {
-                return HttpNotFound();
-            }
-            return View(rulingDetail);
-        }
+        
 
         // GET: BackOffice/RulingDetails/Create
         public ActionResult Create()

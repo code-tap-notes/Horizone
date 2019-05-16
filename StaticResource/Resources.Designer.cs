@@ -565,6 +565,15 @@ namespace StaticResource {
         }
         
         /// <summary>
+        ///   Recherche une chaîne localisée semblable à Choisir class de mots.
+        /// </summary>
+        public static string ChooseClass {
+            get {
+                return ResourceManager.GetString("ChooseClass", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Recherche une chaîne localisée semblable à Argile ou particules de sable.
         /// </summary>
         public static string ClayOrSandParticules {
@@ -4351,6 +4360,15 @@ namespace StaticResource {
         public static string WritingToolZh {
             get {
                 return ResourceManager.GetString("WritingToolZh", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Oui.
+        /// </summary>
+        public static string Yes {
+            get {
+                return ResourceManager.GetString("Yes", resourceCulture);
             }
         }
     }

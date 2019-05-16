@@ -1537,4 +1537,10 @@ TochPhase</value>
   <data name="LiteraryForm" xml:space="preserve">
     <value>文学形式</value>
   </data>
+  <data name="ChooseClass" xml:space="preserve">
+    <value>选择单词类</value>
+  </data>
+  <data name="Yes" xml:space="preserve">
+    <value>是</value>
+  </data>
 </root>

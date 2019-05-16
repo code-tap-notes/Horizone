@@ -20,20 +20,7 @@ namespace Horizone.Areas.BackOffice.Controllers
             return View(db.WritingTools.ToList());
         }
 
-        // GET: BackOffice/WritingTools/Details/5
-        public ActionResult Details(int? id)
-        {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            WritingTool writingTool = db.WritingTools.Find(id);
-            if (writingTool == null)
-            {
-                return HttpNotFound();
-            }
-            return View(writingTool);
-        }
+         
 
         // GET: BackOffice/WritingTools/Create
         public ActionResult Create()

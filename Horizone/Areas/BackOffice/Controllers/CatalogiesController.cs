@@ -20,21 +20,7 @@ namespace Horizone.Areas.BackOffice.Controllers
             return View(db.Catalogies.ToList());
         }
 
-        // GET: BackOffice/Catalogies/Details/5
-        public ActionResult Details(int? id)
-        {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            Catalogie catalogie = db.Catalogies.Find(id);
-            if (catalogie == null)
-            {
-                return HttpNotFound();
-            }
-            return View(catalogie);
-        }
-
+        
         // GET: BackOffice/Catalogies/Create
         public ActionResult Create()
         {

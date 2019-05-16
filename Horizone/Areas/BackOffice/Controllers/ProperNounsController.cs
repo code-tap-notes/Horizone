@@ -20,20 +20,7 @@ namespace Horizone.Areas.BackOffice.Controllers
             return View(db.ProperNouns.ToList());
         }
 
-        // GET: BackOffice/ProperNouns/Details/5
-        public ActionResult Details(int? id)
-        {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            ProperNoun properNoun = db.ProperNouns.Find(id);
-            if (properNoun == null)
-            {
-                return HttpNotFound();
-            }
-            return View(properNoun);
-        }
+        
 
         // GET: BackOffice/ProperNouns/Create
         public ActionResult Create()

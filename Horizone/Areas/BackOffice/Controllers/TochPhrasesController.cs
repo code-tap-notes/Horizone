@@ -21,21 +21,7 @@ namespace Horizone.Areas.BackOffice.Controllers
             return View(tochPhrases.ToList());
         }
 
-        // GET: BackOffice/TochPhrases/Details/5
-        public ActionResult Details(int? id)
-        {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            TochPhrase tochPhrase = db.TochPhrases.Find(id);
-            if (tochPhrase == null)
-            {
-                return HttpNotFound();
-            }
-            return View(tochPhrase);
-        }
-
+        
         // GET: BackOffice/TochPhrases/Create
         public ActionResult Create()
         {

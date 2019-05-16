@@ -18,21 +18,7 @@ namespace Horizone.Areas.BackOffice.Controllers
         {
             return View(db.SourceStorys.ToList());
         }
-        // GET: BackOffice/SourceStories/Details/5
-        public ActionResult Details(int? id)
-        {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            SourceStory sourceStory = db.SourceStorys.Find(id);
-            if (sourceStory == null)
-            {
-                return HttpNotFound();
-            }
-            return View(sourceStory);
-        }
-
+         
         // GET: BackOffice/SourceStories/Create
         public ActionResult Create()
         {

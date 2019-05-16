@@ -19,21 +19,7 @@ namespace Horizone.Areas.BackOffice.Controllers
         {
             return View(db.Cases.ToList());
         }
-
-        // GET: BackOffice/Cases/Details/5
-        public ActionResult Details(int? id)
-        {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            Case cases = db.Cases.Find(id);
-            if (cases == null)
-            {
-                return HttpNotFound();
-            }
-            return View(cases);
-        }
+ 
 
         // GET: BackOffice/Cases/Create
         public ActionResult Create()

@@ -19,22 +19,7 @@ namespace Horizone.Areas.BackOffice.Controllers
         {
             return View(db.SieveMarks.ToList());
         }
-
-        // GET: BackOffice/SieveMarks/Details/5
-        public ActionResult Details(int? id)
-        {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            SieveMark sieveMark = db.SieveMarks.Find(id);
-            if (sieveMark == null)
-            {
-                return HttpNotFound();
-            }
-            return View(sieveMark);
-        }
-
+ 
         // GET: BackOffice/SieveMarks/Create
         public ActionResult Create()
         {

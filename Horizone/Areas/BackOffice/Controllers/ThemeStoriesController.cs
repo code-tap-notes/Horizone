@@ -20,21 +20,7 @@ namespace Horizone.Areas.BackOffice.Controllers
             return View(db.ThemeStorys.ToList());
         }
 
-        // GET: BackOffice/ThemeStories/Details/5
-        public ActionResult Details(int? id)
-        {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            ThemeStory themeStory = db.ThemeStorys.Find(id);
-            if (themeStory == null)
-            {
-                return HttpNotFound();
-            }
-            return View(themeStory);
-        }
-
+         
         // GET: BackOffice/ThemeStories/Create
         public ActionResult Create()
         {

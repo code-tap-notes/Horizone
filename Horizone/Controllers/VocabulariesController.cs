@@ -19,7 +19,7 @@ namespace Horizone.Controllers
         // GET: Vocabularies
         public ActionResult Vocabulaire()
         {
-            var dictionaryTocharians = db.DictionaryTocharians.Include(d => d.Language).Include(d => d.TochLanguage).Include(d => d.WordClass).Include(d => d.WordSubClass).Include("Cases").Include("Numbers").Include("Genders").Include("Persons");
+            var dictionaryTocharians = db.DictionaryTocharians.Include(d => d.TochLanguage).Include(d => d.WordClass).Include(d => d.WordSubClass).Include("Cases").Include("Numbers").Include("Genders").Include("Persons");
             return View(dictionaryTocharians.ToList());
         }
         
@@ -34,7 +34,7 @@ namespace Horizone.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            DictionaryTocharian dictionaryTocharian = db.DictionaryTocharians.Include(d => d.Language).Include(d => d.TochLanguage).Include(d => d.WordClass).Include(d => d.WordSubClass).Include("Cases").Include("Numbers").Include("Genders").Include("Persons").SingleOrDefault(y => y.Id == id);
+            DictionaryTocharian dictionaryTocharian = db.DictionaryTocharians.Include(d => d.TochLanguage).Include(d => d.WordClass).Include(d => d.WordSubClass).Include("Cases").Include("Numbers").Include("Genders").Include("Persons").SingleOrDefault(y => y.Id == id);
             if (dictionaryTocharian == null)
             {
                 return HttpNotFound();

@@ -17,24 +17,25 @@ namespace Horizone.Areas.BackOffice.Controllers
         // GET: BackOffice/WordClasses
         public ActionResult Index()
         {
-            return View(db.WordClasses.ToList());
+            return View(db.WordClasses.OrderBy(x=>x.ClassEn).ToList());
         }
-
-        // GET: BackOffice/WordClasses/Details/5
-        public ActionResult Details(int? id)
+        // GET: BackOffice/WordClasses
+         public ActionResult ListWordSubClass(int? id)
         {
+            WordClass wordClass = db.WordClasses.Find(id);
+            ViewBag.Class = wordClass.ClassEn;
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            WordClass wordClass = db.WordClasses.Find(id);
-            if (wordClass == null)
+
+            var wordSubClasses = db.WordSubClasses.Where(x=>x.WordClassId ==id).ToList();
+            if (wordSubClasses == null)
             {
                 return HttpNotFound();
             }
-            return View(wordClass);
+            return View(wordSubClasses.OrderBy(x => x.SubClassEn).ToList());
         }
-
         // GET: BackOffice/WordClasses/Create
         public ActionResult Create()
         {

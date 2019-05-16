@@ -19,22 +19,7 @@ namespace Horizone.Areas.BackOffice.Controllers
         {
             return View(db.DescriptionManuscripts.ToList());
         }
-
-        // GET: BackOffice/DescriptionManuscripts/Details/5
-        public ActionResult Details(int? id)
-        {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            DescriptionManuscript descriptionManuscript = db.DescriptionManuscripts.Find(id);
-            if (descriptionManuscript == null)
-            {
-                return HttpNotFound();
-            }
-            return View(descriptionManuscript);
-        }
-
+ 
         // GET: BackOffice/DescriptionManuscripts/Create
         public ActionResult Create()
         {

@@ -50,7 +50,7 @@ ul.dropdown-menu {
 }
 
 .dropdown-submenu {
-    top: 0;
+    top: -20px;
     Left: 100%;
     margin-top: -1px;
    

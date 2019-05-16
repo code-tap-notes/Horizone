@@ -19,21 +19,7 @@ namespace Horizone.Areas.BackOffice.Controllers
             return View(db.ManufaturingDefects.ToList());
         }
 
-        // GET: BackOffice/ManufaturingDefects/Details/5
-        public ActionResult Details(int? id)
-        {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            ManufaturingDefect manufaturingDefect = db.ManufaturingDefects.Find(id);
-            if (manufaturingDefect == null)
-            {
-                return HttpNotFound();
-            }
-            return View(manufaturingDefect);
-        }
-
+         
         // GET: BackOffice/ManufaturingDefects/Create
         public ActionResult Create()
         {

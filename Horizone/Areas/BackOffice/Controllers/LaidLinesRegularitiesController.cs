@@ -20,20 +20,7 @@ namespace Horizone.Areas.BackOffice.Controllers
             return View(db.LaidLinesRegularitys.ToList());
         }
 
-        // GET: BackOffice/LaidLinesRegularities/Details/5
-        public ActionResult Details(int? id)
-        {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            LaidLinesRegularity laidLinesRegularity = db.LaidLinesRegularitys.Find(id);
-            if (laidLinesRegularity == null)
-            {
-                return HttpNotFound();
-            }
-            return View(laidLinesRegularity);
-        }
+        
 
         // GET: BackOffice/LaidLinesRegularities/Create
         public ActionResult Create()

@@ -19,22 +19,7 @@ namespace Horizone.Areas.BackOffice.Controllers
         {
             return View(db.ChainLinesVisibilitys.ToList());
         }
-
-        // GET: BackOffice/ChainLinesVisibilities/Details/5
-        public ActionResult Details(int? id)
-        {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            ChainLinesVisibility chainLinesVisibility = db.ChainLinesVisibilitys.Find(id);
-            if (chainLinesVisibility == null)
-            {
-                return HttpNotFound();
-            }
-            return View(chainLinesVisibility);
-        }
-
+         
         // GET: BackOffice/ChainLinesVisibilities/Create
         public ActionResult Create()
         {

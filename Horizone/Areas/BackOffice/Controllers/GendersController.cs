@@ -20,20 +20,7 @@ namespace Horizone.Areas.BackOffice.Controllers
             return View(db.Genders.ToList());
         }
 
-        // GET: BackOffice/Genders/Details/5
-        public ActionResult Details(int? id)
-        {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            Gender gender = db.Genders.Find(id);
-            if (gender == null)
-            {
-                return HttpNotFound();
-            }
-            return View(gender);
-        }
+         
 
         // GET: BackOffice/Genders/Create
         public ActionResult Create()

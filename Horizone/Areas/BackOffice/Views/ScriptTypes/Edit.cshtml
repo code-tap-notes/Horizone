@@ -3,6 +3,13 @@
 @{
     ViewBag.Title = @StaticResource.Resources.Edit;
 }
+@using (Html.BeginForm())
+{
+    <div class="row">
+        @{Html.RenderAction("SpecialCharacter", "DashBoards"); }
+    </div>
+}
+
 <h4>@StaticResource.Resources.Edit</h4>
 
 @using (Html.BeginForm())
@@ -31,4 +38,17 @@
         </div>
     </div>
 }
- 
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+    @Scripts.Render("~/bundles/jquery")
+    <script>
+        function insertText(elemID, text) {
+            document.getElementById(elemID).value += text;
+        };
+
+        $(function () {
+            tinymce.init({ selector: '#Description' });
+            tinymce.init({ selector: '#Symbol' });
+        });
+    </script>
+}

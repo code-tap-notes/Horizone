@@ -20,21 +20,7 @@ namespace Horizone.Areas.BackOffice.Controllers
             return View(db.Numbers.ToList());
         }
 
-        // GET: BackOffice/Numbers/Details/5
-        public ActionResult Details(int? id)
-        {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            Number number = db.Numbers.Find(id);
-            if (number == null)
-            {
-                return HttpNotFound();
-            }
-            return View(number);
-        }
-
+         
         // GET: BackOffice/Numbers/Create
         public ActionResult Create()
         {

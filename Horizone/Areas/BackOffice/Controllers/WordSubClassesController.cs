@@ -17,29 +17,20 @@ namespace Horizone.Areas.BackOffice.Controllers
         // GET: BackOffice/WordSubClasses
         public ActionResult Index()
         {
-            var wordSubClasses = db.WordSubClasses.Include(w => w.WordClass);
-            return View(wordSubClasses.ToList());
+            
+                List<WordClass> listeWordClasses = new List<WordClass>();
+                listeWordClasses = db.WordClasses.ToList();
+                ViewBag.ListeWordClasses = new SelectList(db.WordClasses.ToList(), "Id", "ClassEn");            
+           var wordSubClasses = db.WordSubClasses.Include(w => w.WordClass);
+            return View(wordSubClasses.OrderBy(x=>x.WordClass.ClassEn).ToList());
+
         }
 
-        // GET: BackOffice/WordSubClasses/Details/5
-        public ActionResult Details(int? id)
-        {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            WordSubClass wordSubClass = db.WordSubClasses.Find(id);
-            if (wordSubClass == null)
-            {
-                return HttpNotFound();
-            }
-            return View(wordSubClass);
-        }
-
+        
         // GET: BackOffice/WordSubClasses/Create
         public ActionResult Create()
         {
-            ViewBag.WordClassId = new SelectList(db.WordClasses, "Id", "Class");
+            ViewBag.WordClassId = new SelectList(db.WordClasses, "Id", "ClassEn");
             return View();
         }
 
@@ -57,7 +48,7 @@ namespace Horizone.Areas.BackOffice.Controllers
                 return RedirectToAction("Index");
             }
 
-            ViewBag.WordClassId = new SelectList(db.WordClasses, "Id", "Class", wordSubClass.WordClassId);
+            ViewBag.WordClassId = new SelectList(db.WordClasses, "Id", "ClassEn", wordSubClass.WordClassId);
             return View(wordSubClass);
         }
 
@@ -73,7 +64,7 @@ namespace Horizone.Areas.BackOffice.Controllers
             {
                 return HttpNotFound();
             }
-            ViewBag.WordClassId = new SelectList(db.WordClasses, "Id", "Class", wordSubClass.WordClassId);
+            ViewBag.WordClassId = new SelectList(db.WordClasses, "Id", "ClassEn", wordSubClass.WordClassId);
             return View(wordSubClass);
         }
 
@@ -90,7 +81,7 @@ namespace Horizone.Areas.BackOffice.Controllers
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            ViewBag.WordClassId = new SelectList(db.WordClasses, "Id", "Class", wordSubClass.WordClassId);
+            ViewBag.WordClassId = new SelectList(db.WordClasses, "Id", "ClassEn", wordSubClass.WordClassId);
             return View(wordSubClass);
         }
 

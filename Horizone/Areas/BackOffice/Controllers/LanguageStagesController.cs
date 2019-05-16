@@ -20,20 +20,7 @@ namespace Horizone.Areas.BackOffice.Controllers
             return View(db.LanguageStages.ToList());
         }
 
-        // GET: BackOffice/LanguageStages/Details/5
-        public ActionResult Details(int? id)
-        {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            LanguageStage languageStage = db.LanguageStages.Find(id);
-            if (languageStage == null)
-            {
-                return HttpNotFound();
-            }
-            return View(languageStage);
-        }
+         
 
         // GET: BackOffice/LanguageStages/Create
         public ActionResult Create()

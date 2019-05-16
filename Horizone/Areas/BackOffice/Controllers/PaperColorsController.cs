@@ -21,20 +21,7 @@ namespace Horizone.Areas.BackOffice.Controllers
             return View(db.PaperColors.ToList());
         }
 
-        // GET: BackOffice/PaperColors/Details/5
-        public ActionResult Details(int? id)
-        {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            PaperColor paperColor = db.PaperColors.Find(id);
-            if (paperColor == null)
-            {
-                return HttpNotFound();
-            }
-            return View(paperColor);
-        }
+         
 
         // GET: BackOffice/PaperColors/Create
         public ActionResult Create()

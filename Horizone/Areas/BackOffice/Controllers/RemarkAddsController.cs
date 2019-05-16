@@ -21,20 +21,7 @@ namespace Horizone.Areas.BackOffice.Controllers
             return View(db.RemarkAdds.ToList());
         }
 
-        // GET: BackOffice/RemarkAdds/Details/5
-        public ActionResult Details(int? id)
-        {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            RemarkAdd remarkAdd = db.RemarkAdds.Find(id);
-            if (remarkAdd == null)
-            {
-                return HttpNotFound();
-            }
-            return View(remarkAdd);
-        }
+        
 
         // GET: BackOffice/RemarkAdds/Create
         public ActionResult Create()

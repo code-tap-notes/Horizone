@@ -20,20 +20,7 @@ namespace Horizone.Areas.BackOffice.Controllers
             return View(db.PreparationPaperBeforeUsings.ToList());
         }
 
-        // GET: BackOffice/PreparationPaperBeforeUsings/Details/5
-        public ActionResult Details(int? id)
-        {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            PreparationPaperBeforeUsing preparationPaperBeforeUsing = db.PreparationPaperBeforeUsings.Find(id);
-            if (preparationPaperBeforeUsing == null)
-            {
-                return HttpNotFound();
-            }
-            return View(preparationPaperBeforeUsing);
-        }
+         
 
         // GET: BackOffice/PreparationPaperBeforeUsings/Create
         public ActionResult Create()

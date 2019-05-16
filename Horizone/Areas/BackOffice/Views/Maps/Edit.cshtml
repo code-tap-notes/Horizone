@@ -1,4 +1,13 @@
 ﻿@model Horizone.Models.Map
+@using (Html.BeginForm())
+{
+    <div class="row">
+        @{Html.RenderAction("SpecialCharacter", "DashBoards"); }
+    </div>
+}
+<h2>@StaticResource.Resources.Edit</h2>
+
+
 <div class="detail">
     <h2>@StaticResource.Resources.Edit</h2>
     <div class="row container-fluid">
@@ -21,7 +30,7 @@
                             @Html.ValidationMessageFor(model => model.NamePicture, "", new { @class = "text-danger" })
                         </div>
                     </div>
-                
+
                     <div class="form-group">
                         <div class="col-md-offset-2 col-md-10">
                             <input type="submit" value=@StaticResource.Resources.Save class="btn btn-primary" />
@@ -62,10 +71,9 @@
     @Scripts.Render("~/bundles/jquery")
 
     <script>
-        $(function () {
-            tinymce.init({ selector: '#Summary' });
-            tinymce.init({ selector: '#Content' });
-        });
+        function insertText(elemID, text) {
+            document.getElementById(elemID).value += text;
+        };
         const btn = document.querySelector('#delete');
         btn.addEventListener('click', ev => {
             if (confirm(@StaticResource.Resources.AskDelete ) === false) {
@@ -88,3 +96,4 @@
             });
     </script>
 }
+ 

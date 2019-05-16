@@ -20,20 +20,7 @@ namespace Horizone.Areas.BackOffice.Controllers
             return View(db.FiberDirections.ToList());
         }
 
-        // GET: BackOffice/FiberDirections/Details/5
-        public ActionResult Details(int? id)
-        {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            FiberDirection fiberDirection = db.FiberDirections.Find(id);
-            if (fiberDirection == null)
-            {
-                return HttpNotFound();
-            }
-            return View(fiberDirection);
-        }
+        
 
         // GET: BackOffice/FiberDirections/Create
         public ActionResult Create()

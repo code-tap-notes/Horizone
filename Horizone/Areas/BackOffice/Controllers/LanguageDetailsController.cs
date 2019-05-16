@@ -21,21 +21,7 @@ namespace Horizone.Areas.BackOffice.Controllers
             return View(db.LanguageDetails.ToList());
         }
 
-        // GET: BackOffice/LanguageDetails/Details/5
-        public ActionResult Details(int? id)
-        {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            LanguageDetail languageDetail = db.LanguageDetails.Find(id);
-            if (languageDetail == null)
-            {
-                return HttpNotFound();
-            }
-            return View(languageDetail);
-        }
-
+         
         // GET: BackOffice/LanguageDetails/Create
         public ActionResult Create()
         {

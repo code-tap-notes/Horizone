@@ -3,6 +3,13 @@
 @{
     ViewBag.Title = @StaticResource.Resources.Add;
 }
+@using (Html.BeginForm())
+{
+    <div class="row">
+        @{Html.RenderAction("SpecialCharacter", "DashBoards"); }
+    </div>
+}
+
 
 <h2>@StaticResource.Resources.Add</h2>
 
@@ -11,23 +18,39 @@
 {
     @Html.AntiForgeryToken()
 
-<div class="form-horizontal">
-    <h4>@StaticResource.Resources.Maps</h4>
-    <hr />
-    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-    <div class="form-group">
-        @Html.LabelFor(model => model.NamePicture, htmlAttributes: new { @class = "control-label col-md-2" })
-        <div class="col-md-10">
-            @Html.EditorFor(model => model.NamePicture, new { htmlAttributes = new { @class = "form-control" } })
-            @Html.ValidationMessageFor(model => model.NamePicture, "", new { @class = "text-danger" })
+    <div class="form-horizontal">
+        <h4>@StaticResource.Resources.Maps</h4>
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        <div class="form-group">
+            @Html.LabelFor(model => model.NamePicture, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.NamePicture, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.NamePicture, "", new { @class = "text-danger" })
+            </div>
         </div>
-    </div>  
 
-    <div class="form-group">
-        <div class="col-md-offset-2 col-md-10">
-            <input type="submit" value=@StaticResource.Resources.Add class="btn btn-info" />
-            @Html.ActionLink(StaticResource.Resources.Cancel, "Index", null, new { @class = "btn btn-default" })
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value=@StaticResource.Resources.Add class="btn btn-info" />
+                @Html.ActionLink(StaticResource.Resources.Cancel, "Index", null, new { @class = "btn btn-default" })
+            </div>
         </div>
     </div>
-</div>
 }
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+    @Scripts.Render("~/bundles/jquery")
+    <script>
+        function insertText(elemID, text) {
+            document.getElementById(elemID).value += text;
+        };
+
+        $(function () {
+            tinymce.init({ selector: '#Description' });
+            tinymce.init({ selector: '#Symbol' });
+        });
+    </script>
+}
+

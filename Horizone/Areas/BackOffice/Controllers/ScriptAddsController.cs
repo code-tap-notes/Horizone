@@ -20,21 +20,7 @@ namespace Horizone.Areas.BackOffice.Controllers
             return View(db.ScriptAdds.ToList());
         }
 
-        // GET: BackOffice/ScriptAdds/Details/5
-        public ActionResult Details(int? id)
-        {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            ScriptAdd scriptAdd = db.ScriptAdds.Find(id);
-            if (scriptAdd == null)
-            {
-                return HttpNotFound();
-            }
-            return View(scriptAdd);
-        }
-
+        
         // GET: BackOffice/ScriptAdds/Create
         public ActionResult Create()
         {

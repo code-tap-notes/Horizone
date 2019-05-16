@@ -2,6 +2,13 @@
 @{
     ViewBag.Title = @StaticResource.Resources.Edit;
 }
+@using (Html.BeginForm())
+{
+    <div class="row">
+        @{Html.RenderAction("SpecialCharacter", "DashBoards"); }
+    </div>
+}
+
 <div class="detail">
     <h2>@StaticResource.Resources.Edit</h2>
     <div class="row container-fluid">
@@ -50,19 +57,19 @@
                     </div>
 
                     <div class="form-group">
-                        
-                            @Html.LabelFor(model => model.TopicId, "TopicId", htmlAttributes: new { @class = "control-label col-md-2" })
-                           
-                            <div class="col-md-10">
-                                @Html.DropDownList("TopicId", null, htmlAttributes: new { @class = "form-control" })
-                                @Html.ValidationMessageFor(model => model.TopicId, "", new { @class = "text-danger" })
-                            </div>
-                        </div>
 
-                <div class="form-group">
-                    <div class="col-md-2">
-                        @StaticResource.Resources.PublishedBy
+                        @Html.LabelFor(model => model.TopicId, "TopicId", htmlAttributes: new { @class = "control-label col-md-2" })
+
+                        <div class="col-md-10">
+                            @Html.DropDownList("TopicId", null, htmlAttributes: new { @class = "form-control" })
+                            @Html.ValidationMessageFor(model => model.TopicId, "", new { @class = "text-danger" })
+                        </div>
                     </div>
+
+                    <div class="form-group">
+                        <div class="col-md-2">
+                            @StaticResource.Resources.PublishedBy
+                        </div>
                         <div class="col-md-10">
                             @Html.DropDownList("CollaboratorId", null, htmlAttributes: new { @class = "form-control" })
                             @Html.ValidationMessageFor(model => model.CollaboratorId, "", new { @class = "text-danger" })
@@ -86,28 +93,28 @@
             }
         </div>
         <div class="col-md-6">
-                <h3>@StaticResource.Resources.Picture</h3>
-                <form action="@Url.Action("AddPicture", "News")" method="post" enctype="multipart/form-data">
+            <h3>@StaticResource.Resources.Picture</h3>
+            <form action="@Url.Action("AddPicture", "News")" method="post" enctype="multipart/form-data">
 
-                    @Html.HiddenFor(x => x.Id)
-                    <div class="form-group">
-                        <label for="if">@StaticResource.Resources.File</label>
-                        <input type="file" id="if" name="picture" />
-                    </div>
-                    <button type="submit" class="btn btn-info">@StaticResource.Resources.Add</button>
-                </form>
-                <div class="row">
-                    @if (Model.ImageNewses != null)
-                    {
-                        foreach (var picture in Model.ImageNewses)
-                        {
-                    <div class="col-md-2" id="@picture.Id">
-                        <img src="data:@picture.ContentType;base64,@Convert.ToBase64String(picture.Content)" class="img-thumbnail" />
-                        <p><a id="delete" class="delete" href="@Url.Action("DeletePicture", "News", new {id=picture.Id, idnews=picture.NewsId })"> <i class="glyphicon glyphicon-trash"></i> </a></p>
-                    </div>
-                        }
-                    }
+                @Html.HiddenFor(x => x.Id)
+                <div class="form-group">
+                    <label for="if">@StaticResource.Resources.File</label>
+                    <input type="file" id="if" name="picture" />
                 </div>
+                <button type="submit" class="btn btn-info">@StaticResource.Resources.Add</button>
+            </form>
+            <div class="row">
+                @if (Model.ImageNewses != null)
+                {
+                    foreach (var picture in Model.ImageNewses)
+                    {
+                        <div class="col-md-2" id="@picture.Id">
+                            <img src="data:@picture.ContentType;base64,@Convert.ToBase64String(picture.Content)" class="img-thumbnail" />
+                            <p><a id="delete" class="delete" href="@Url.Action("DeletePicture", "News", new {id=picture.Id, idnews=picture.NewsId })"> <i class="glyphicon glyphicon-trash"></i> </a></p>
+                        </div>
+                    }
+                }
+            </div>
         </div>
     </div>
 </div>
@@ -116,6 +123,9 @@
     @Scripts.Render("~/bundles/jquery")
 
     <script>
+        function insertText(elemID, text) {
+            document.getElementById(elemID).value += text;
+        };
         $(function () {
             tinymce.init({ selector: '#Summary' });
             tinymce.init({ selector: '#Content' });
@@ -142,3 +152,5 @@
             });
     </script>
 }
+
+

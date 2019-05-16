@@ -19,21 +19,7 @@ namespace Horizone.Areas.BackOffice.Controllers
             return View(db.TochLanguages.ToList());
         }
 
-        // GET: BackOffice/TochLanguages/Details/5
-        public ActionResult Details(int? id)
-        {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            TochLanguage tochLanguage = db.TochLanguages.Find(id);
-            if (tochLanguage == null)
-            {
-                return HttpNotFound();
-            }
-            return View(tochLanguage);
-        }
-
+        
         // GET: BackOffice/TochLanguages/Create
         public ActionResult Create()
         {

@@ -20,20 +20,7 @@ namespace Horizone.Areas.BackOffice.Controllers
             return View(db.Formats.ToList());
         }
 
-        // GET: BackOffice/Formats/Details/5
-        public ActionResult Details(int? id)
-        {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            Format format = db.Formats.Find(id);
-            if (format == null)
-            {
-                return HttpNotFound();
-            }
-            return View(format);
-        }
+        
 
         // GET: BackOffice/Formats/Create
         public ActionResult Create()

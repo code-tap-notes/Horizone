@@ -1543,4 +1543,13 @@ TochPhase</value>
   <data name="LiteraryForm" xml:space="preserve">
     <value>Literary form</value>
   </data>
+  <data name="ChooseClass" xml:space="preserve">
+    <value>Choose  word class</value>
+  </data>
+  <data name="String1" xml:space="preserve">
+    <value> </value>
+  </data>
+  <data name="Yes" xml:space="preserve">
+    <value>Yes</value>
+  </data>
 </root>

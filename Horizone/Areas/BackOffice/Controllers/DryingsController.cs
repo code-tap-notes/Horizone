@@ -20,20 +20,7 @@ namespace Horizone.Areas.BackOffice.Controllers
             return View(db.Dryings.ToList());
         }
 
-        // GET: BackOffice/Dryings/Details/5
-        public ActionResult Details(int? id)
-        {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            Drying drying = db.Dryings.Find(id);
-            if (drying == null)
-            {
-                return HttpNotFound();
-            }
-            return View(drying);
-        }
+        
 
         // GET: BackOffice/Dryings/Create
         public ActionResult Create()

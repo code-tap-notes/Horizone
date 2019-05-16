@@ -20,21 +20,7 @@ namespace Horizone.Areas.BackOffice.Controllers
             return View(db.Metrics.ToList());
         }
 
-        // GET: BackOffice/Metrics/Details/5
-        public ActionResult Details(int? id)
-        {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            Metric metric = db.Metrics.Find(id);
-            if (metric == null)
-            {
-                return HttpNotFound();
-            }
-            return View(metric);
-        }
-
+        
         // GET: BackOffice/Metrics/Create
         public ActionResult Create()
         {

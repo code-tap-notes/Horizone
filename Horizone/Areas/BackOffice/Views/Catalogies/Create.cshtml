@@ -3,6 +3,12 @@
 @{
     ViewBag.Title = @StaticResource.Resources.Add;
 }
+@using (Html.BeginForm())
+{
+    <div class="row">
+        @{Html.RenderAction("SpecialCharacter", "DashBoards"); }
+    </div>
+}
 
 <h2>@StaticResource.Resources.Add</h2>
 
@@ -38,4 +44,16 @@
             </div>
         </div>
     </div>
+}
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+
+    <script>
+
+
+        function insertText(elemID, text) {
+            document.getElementById(elemID).value += text;
+        }
+
+    </script>
 }
