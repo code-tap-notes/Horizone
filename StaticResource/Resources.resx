@@ -1552,7 +1552,16 @@ TochPhase</value>
   <data name="ChooseClass" xml:space="preserve">
     <value>Choisir class de mots</value>
   </data>
+  <data name="Book" xml:space="preserve">
+    <value>Livre</value>
+  </data>
   <data name="Yes" xml:space="preserve">
     <value>Oui</value>
+  </data>
+  <data name="TitleBook" xml:space="preserve">
+    <value>Title du livre</value>
+  </data>
+  <data name="AbbreviationDictionary" xml:space="preserve">
+    <value>Dictionnaire des abréviations</value>
   </data>
 </root>

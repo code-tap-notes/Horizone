@@ -84,7 +84,7 @@
                 var idPicture = $(this).data("id");
                 //alert(idPicture);
                 $.ajax({
-                    url: '@Url.Action("deletePicture", "News")',
+                    url: '@Url.Action("deletePicture","Maps")',
                     type: 'POST',
                     dataType: 'json',
                     data: { id: idPicture },

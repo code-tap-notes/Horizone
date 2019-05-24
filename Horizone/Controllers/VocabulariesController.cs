@@ -22,7 +22,13 @@ namespace Horizone.Controllers
             var dictionaryTocharians = db.DictionaryTocharians.Include(d => d.TochLanguage).Include(d => d.WordClass).Include(d => d.WordSubClass).Include("Cases").Include("Numbers").Include("Genders").Include("Persons");
             return View(dictionaryTocharians.ToList());
         }
+        public ActionResult Abbreviation()
+        {
+            var abbreviationDictionaries = db.AbbreviationDictionaries;
+            return View(abbreviationDictionaries.ToList());
+        }
         
+
             public ActionResult PrintVocabulaire()
         {
             var report = new ActionAsPdf("Details");

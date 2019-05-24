@@ -205,6 +205,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Areas\BackOffice\BackOfficeAreaRegistration.cs" />
+    <Compile Include="Areas\BackOffice\Controllers\AbbreviationDictionariesController.cs" />
     <Compile Include="Areas\BackOffice\Controllers\AboutProjectsController.cs" />
     <Compile Include="Areas\BackOffice\Controllers\AbreviationsController.cs" />
     <Compile Include="Areas\BackOffice\Controllers\ActivitiesController.cs" />
@@ -312,7 +313,20 @@
     <Compile Include="Migrations\201905161223338_changeVocabulaire.Designer.cs">
       <DependentUpon>201905161223338_changeVocabulaire.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201905200842101_changeAbreviation.cs" />
+    <Compile Include="Migrations\201905200842101_changeAbreviation.Designer.cs">
+      <DependentUpon>201905200842101_changeAbreviation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201905201005398_addImageBook.cs" />
+    <Compile Include="Migrations\201905201005398_addImageBook.Designer.cs">
+      <DependentUpon>201905201005398_addImageBook.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201905221311197_addAbreDictionary.cs" />
+    <Compile Include="Migrations\201905221311197_addAbreDictionary.Designer.cs">
+      <DependentUpon>201905221311197_addAbreDictionary.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Models\AbbreviationDictionary.cs" />
     <Compile Include="Models\AboutProject.cs" />
     <Compile Include="Common\CommonConstants.cs" />
     <Compile Include="Controllers\AccountController.cs" />
@@ -330,6 +344,7 @@
     <Compile Include="Models\AnalyseMacroscopic.cs" />
     <Compile Include="Models\AnalyseMaterial.cs" />
     <Compile Include="Models\Bibliography.cs" />
+    <Compile Include="Models\ImageBook.cs" />
     <Compile Include="Models\ScriptType.cs" />
     <Compile Include="Models\Case.cs" />
     <Compile Include="Models\Catalogie.cs" />
@@ -872,6 +887,12 @@
     <Content Include="Areas\BackOffice\Views\TochStories\Edit.cshtml" />
     <Content Include="Areas\BackOffice\Views\TochStories\Index.cshtml" />
     <Content Include="Areas\BackOffice\Views\WordClasses\ListWordSubClass.cshtml" />
+    <Content Include="Areas\BackOffice\Views\Bibliographies\Book.cshtml" />
+    <Content Include="Areas\BackOffice\Views\AbbreviationDictionaries\Create.cshtml" />
+    <Content Include="Areas\BackOffice\Views\AbbreviationDictionaries\Delete.cshtml" />
+    <Content Include="Areas\BackOffice\Views\AbbreviationDictionaries\Details.cshtml" />
+    <Content Include="Areas\BackOffice\Views\AbbreviationDictionaries\Edit.cshtml" />
+    <Content Include="Areas\BackOffice\Views\AbbreviationDictionaries\Index.cshtml" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\cldr.js" />
     <Content Include="Scripts\cldr\event.js" />
@@ -1211,6 +1232,8 @@
     <Content Include="Views\FontNews\ExpositionsAndMuseums.cshtml" />
     <Content Include="Views\FontNews\Media.cshtml" />
     <Content Include="Views\Home\DetailsStory.cshtml" />
+    <Content Include="Views\FontBibliographies\Book.cshtml" />
+    <Content Include="Views\Vocabularies\Abbreviation.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -1267,6 +1290,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201905161223338_changeVocabulaire.resx">
       <DependentUpon>201905161223338_changeVocabulaire.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201905200842101_changeAbreviation.resx">
+      <DependentUpon>201905200842101_changeAbreviation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201905201005398_addImageBook.resx">
+      <DependentUpon>201905201005398_addImageBook.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201905221311197_addAbreDictionary.resx">
+      <DependentUpon>201905221311197_addAbreDictionary.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

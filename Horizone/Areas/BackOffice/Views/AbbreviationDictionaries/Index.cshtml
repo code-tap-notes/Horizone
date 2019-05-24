@@ -1,11 +1,9 @@
-﻿@model PagedList.IPagedList<Horizone.Models.Abreviation>
-@using PagedList.Mvc;
-
+﻿@model IEnumerable<Horizone.Models.AbbreviationDictionary>
 @{
-    ViewBag.Title = @StaticResource.Resources.Abbreviations;
+    ViewBag.Title = @StaticResource.Resources.AbbreviationDictionary;
 }
 
-<h2>@StaticResource.Resources.Abbreviations</h2>
+<h2>@StaticResource.Resources.AbbreviationDictionary</h2>
 
 <p>
     @Html.ActionLink(@StaticResource.Resources.Add, "Create", null, new { @class = "btn btn-primary" })
@@ -15,16 +13,11 @@
 <table class="table">
     <tr>
         <th>
-            @StaticResource.Resources.Symbol
+            @Html.DisplayNameFor(model => model.Symbol)
         </th>
         <th>
-            @StaticResource.Resources.Description
+            @Html.DisplayNameFor(model => model.Description)
         </th>
-
-        <th>
-            @StaticResource.Resources.Link
-        </th>
-
         <th></th>
     </tr>
 
@@ -32,22 +25,18 @@
     {
     <tr>
         <td>
-            @Html.Raw(item.Symbol)
+            @Html.DisplayFor(modelItem => item.Symbol)
         </td>
         <td>
-            @Html.Raw(item.Description)
-        </td>
-        <td>
-            <a href=@item.Link class="btn btn-default"> @StaticResource.Resources.LearnMore</a>
+            @Html.DisplayFor(modelItem => item.Description)
         </td>
 
         <td>
             @Html.ActionLink(@StaticResource.Resources.Edit, "Edit", new { id = item.Id }, new { @class = "btn btn-info", style = "width:85px" })
+            @Html.ActionLink(@StaticResource.Resources.Details, "Details", new { id = item.Id }, new { @class = "btn btn-info", style = "width:85px" })
             @Html.ActionLink(@StaticResource.Resources.Delete, "Delete", new { id = item.Id }, new { @class = "btn btn-info", style = "width:85px" })
         </td>
-
     </tr>
     }
 
 </table>
-@Html.PagedListPager(Model, page => Url.Action("index", new { page }))

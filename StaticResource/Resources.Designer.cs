@@ -61,6 +61,15 @@ namespace StaticResource {
         }
         
         /// <summary>
+        ///   Recherche une chaîne localisée semblable à Dictionnaire des abréviations.
+        /// </summary>
+        public static string AbbreviationDictionary {
+            get {
+                return ResourceManager.GetString("AbbreviationDictionary", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Recherche une chaîne localisée semblable à Abréviations.
         /// </summary>
         public static string Abbreviations {
@@ -426,6 +435,15 @@ namespace StaticResource {
         public static string bnf {
             get {
                 return ResourceManager.GetString("bnf", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Livre.
+        /// </summary>
+        public static string Book {
+            get {
+                return ResourceManager.GetString("Book", resourceCulture);
             }
         }
         
@@ -3955,6 +3973,15 @@ namespace StaticResource {
         public static string TitleArticle {
             get {
                 return ResourceManager.GetString("TitleArticle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Title du livre.
+        /// </summary>
+        public static string TitleBook {
+            get {
+                return ResourceManager.GetString("TitleBook", resourceCulture);
             }
         }
         

@@ -17,13 +17,24 @@ namespace Horizone.Controllers
         // GET: FontBibliographies       
         public ActionResult Bibliographie(int page = 1, int pageSize = 20)
         {
-            return View(db.Bibliographys.OrderBy(x => x.Id).ToPagedList(page, pageSize));
+            var bibliographys = db.Bibliographys;
+
+            foreach (var item in db.Bibliographys)
+                if (!item.Book) bibliographys.Add(item);
+            return View(bibliographys.OrderBy(x => x.Id).ToPagedList(page, pageSize));
         }
         public ActionResult Abbreviation(int page = 1, int pageSize = 20)
         {
             return View(db.Abreviations.OrderBy(x => x.Symbol).ToPagedList(page, pageSize));
         }
+        public ActionResult Book()
+        {
+            var bibliographys = db.Bibliographys;
 
+            foreach (var item in db.Bibliographys)
+                if (item.Book) bibliographys.Add(item);
+            return View(bibliographys.Include("ImageBooks").OrderBy(x => x.Title).ToList());
+        }
         public ActionResult PrintAllReport()
         {
             var report = new ActionAsPdf("Bibliographie");

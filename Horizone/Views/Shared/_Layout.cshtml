@@ -59,7 +59,13 @@
                     <li><a href="@Url.Action("AnalyseMaterial", "FontManuscripts")">@StaticResource.Resources.AnalyseMicroscopic</a></li>
                 </ul>
             </li>
-            <li>@Html.ActionLink(@StaticResource.Resources.Vocabulary, "Vocabulaire", "Vocabularies")</li>
+            <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">@StaticResource.Resources.DictionaryTocharian <span class="caret"></span></a>
+                <ul class="dropdown-menu">
+                    <li><a href="@Url.Action( "Vocabulaire", "Vocabularies")"> @StaticResource.Resources.Vocabulary</a></li>
+                    <li>@Html.ActionLink(@StaticResource.Resources.AbbreviationDictionary, "Abbreviation", "Vocabularies")</li>
+                </ul>
+            </li>
             <li class="dropdown">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">@StaticResource.Resources.News_Blog <span class="caret"></span></a>
                 <ul class="dropdown-menu">
@@ -86,6 +92,7 @@
                 <ul class="dropdown-menu">
                     <li><a href="@Url.Action( "Bibliographie", "FontBibliographies")"> @StaticResource.Resources.Bibliography</a></li>
                     <li><a href="@Url.Action("abbreviation", "FontBibliographies")"> @StaticResource.Resources.Abbreviations </a></li>
+                    <li><a href="@Url.Action("Book", "FontBibliographies")"> @StaticResource.Resources.Book </a></li>
                 </ul>
             </li>
             <li>@Html.ActionLink(@StaticResource.Resources.Help, "Aide", "Home")</li>

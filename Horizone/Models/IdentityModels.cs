@@ -74,6 +74,7 @@ namespace Horizone.Models
         public DbSet<Person> Persons { get; set; }
         public DbSet<WordClass> WordClasses { get; set; }
         public DbSet<WordSubClass> WordSubClasses { get; set; }
+        public DbSet<AbbreviationDictionary> AbbreviationDictionaries { get; set; }
 
         //Manuscript
         public DbSet<Catalogie> Catalogies { get; set; }
@@ -125,5 +126,7 @@ namespace Horizone.Models
         //Reference
         public DbSet<Bibliography> Bibliographys { get; set; }
         public DbSet<Abreviation> Abreviations { get; set; }
+        public DbSet<ImageBook> ImageBooks { get; set; }
+
     }
 }

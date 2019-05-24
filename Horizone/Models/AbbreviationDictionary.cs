@@ -7,7 +7,7 @@ using System.Web.Mvc;
 
 namespace Horizone.Models
 {
-    public class Abreviation
+    public class AbbreviationDictionary
     {
         public int Id { get; set; }
 
@@ -18,10 +18,6 @@ namespace Horizone.Models
         [AllowHtml]
         [Display(Name = "Description", ResourceType = typeof(StaticResource.Resources))]
         public string Description { get; set; }
-
-        [AllowHtml]
-        [Display(Name = "Link", ResourceType = typeof(StaticResource.Resources))]
-        public string Link { get; set; }
 
     }
 }

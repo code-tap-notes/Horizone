@@ -34,6 +34,12 @@ namespace Horizone.Models
         [StringLength(500, MinimumLength = 1, ErrorMessageResourceName = "MinLength", ErrorMessageResourceType = typeof(StaticResource.Resources))]
         public string UlrBibliography { get; set; }
 
+        [Display(Name = "Book", ResourceType = typeof(StaticResource.Resources))]
+        public Boolean Book { get; set; }
+
+        [Display(Name = "Picture", ResourceType = typeof(StaticResource.Resources))]
+        public ICollection<ImageBook> ImageBooks { get; set; }
+
         [Display(Name = "TochStory", ResourceType = typeof(StaticResource.Resources))]
         public ICollection<TochStory> TochStories { get; set; }
 

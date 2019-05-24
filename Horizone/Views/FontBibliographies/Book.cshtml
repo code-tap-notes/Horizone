@@ -1,0 +1,67 @@
+﻿@model IEnumerable<Horizone.Models.Bibliography>
+
+@{
+    ViewBag.Title = @StaticResource.Resources.Book;
+}
+
+<h2>@StaticResource.Resources.Book</h2>
+
+@foreach (var item in Model)
+{
+    if (item.Book)
+    {
+
+        <div class="row">
+            <div class="col-lg-2">
+                <div class="autocontents">
+                    <ul>
+                        <li>
+                            @if (item.ImageBooks?.Count > 0)
+                            {
+                                foreach (var itemImage in item.ImageBooks)
+                                {
+                                    <img src="data:@itemImage.ContentType;base64,@Convert.ToBase64String(itemImage.Content)" alt="Photo" style="width:100%" />
+                                }
+                            }
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-lg-8">
+                <dl class="dl-horizontal">
+                    <dt>
+                        @StaticResource.Resources.Author
+
+                    </dt>
+                    <dd>
+                        @Html.DisplayFor(modelItem => item.Author)
+                    </dd>
+                    <dt>
+                        @StaticResource.Resources.PublicationDate
+
+                    </dt>
+                    <dd>
+                        @Html.DisplayFor(modelItem => item.PublicationDate)
+                    </dd>
+                    <dt>
+                        @StaticResource.Resources.TitleBook
+
+                    </dt>
+                    <dd>
+                        @Html.DisplayFor(modelItem => item.Title)
+
+                    </dd>
+                    <dt>
+                        @StaticResource.Resources.Link
+                    </dt>
+                    <dd>
+                        <a href=@(item.UlrBibliography) class="btn btn-info">@StaticResource.Resources.LearnMore &raquo;</a>
+                    </dd>
+                </dl>
+            </div>
+
+
+        </div>
+    }
+}
+

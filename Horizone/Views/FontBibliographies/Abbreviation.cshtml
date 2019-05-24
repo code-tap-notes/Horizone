@@ -46,23 +46,32 @@
             @StaticResource.Resources.Symbol
         </th>
         <th>
-            @StaticResource.Resources.Description 
+            @StaticResource.Resources.Description
         </th>
-       
+        <th>
+            @StaticResource.Resources.Link
+
+        </th>
+
         <th></th>
     </tr>
 
     @foreach (var item in Model)
     {
-        <tr>
-            <td>
-                @Html.Raw(item.Symbol)
-            </td>
-            <td>
-                @Html.Raw(item.Description)
-            </td>
-           
-        </tr>
+    <tr>
+        <td>
+            @Html.Raw(item.Symbol)
+        </td>
+        <td>
+            @Html.Raw(item.Description)
+        </td>
+        <td>
+            <a href=@item.Link class="btn btn-default">
+                @StaticResource.Resources.LearnMore
+            </a>
+        </td>
+
+    </tr>
     }
 
 </table>

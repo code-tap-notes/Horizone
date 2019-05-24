@@ -1540,7 +1540,16 @@ TochPhase</value>
   <data name="ChooseClass" xml:space="preserve">
     <value>选择单词类</value>
   </data>
+  <data name="Book" xml:space="preserve">
+    <value>书</value>
+  </data>
   <data name="Yes" xml:space="preserve">
     <value>是</value>
+  </data>
+  <data name="TitleBook" xml:space="preserve">
+    <value>标题书</value>
+  </data>
+  <data name="AbbreviationDictionary" xml:space="preserve">
+    <value>缩写词典</value>
   </data>
 </root>

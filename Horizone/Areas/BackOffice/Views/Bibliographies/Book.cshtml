@@ -1,0 +1,62 @@
+﻿@model IEnumerable<Horizone.Models.Bibliography>
+
+@{
+    ViewBag.Title = @StaticResource.Resources.Book;
+}
+
+<h2>@StaticResource.Resources.Book</h2>
+
+<p>
+    @Html.ActionLink(@StaticResource.Resources.Add, "Create", null, new { @class = "btn btn-primary" })
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Author)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PublicationDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Title)
+        </th>
+         <th>
+            @Html.DisplayNameFor(model => model.Book)
+        </th>
+        <th>
+            @StaticResource.Resources.Link
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        if (item.Book)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Author)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.PublicationDate)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Title)
+                </td>
+                 
+                <td>
+                    @Html.DisplayFor(modelItem => item.Book)
+                </td>
+                <td>
+                    <a href=@(item.UlrBibliography) class="btn btn-default">@StaticResource.Resources.LearnMore &raquo;</a>
+                </td>
+                <td>
+                    @Html.ActionLink(@StaticResource.Resources.Edit, "Edit", new { id = item.Id }, new { @class = "btn btn-info", style = "width:85px" })
+                    @Html.ActionLink(@StaticResource.Resources.Delete, "Delete", new { id = item.Id }, new { @class = "btn btn-info", style = "width:85px" })
+                </td>
+
+            </tr>
+        }
+    }
+
+</table>
