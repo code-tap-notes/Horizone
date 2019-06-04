@@ -1,0 +1,57 @@
+﻿@model Horizone.Models.Mood
+
+@{
+    ViewBag.Title = @StaticResource.Resources.Edit;
+}
+<h4>@StaticResource.Resources.Edit</h4>
+
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal">
+        <h4>Mood</h4>
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        @Html.HiddenFor(model => model.Id)
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.AbbreviationsMood, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.AbbreviationsMood, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.AbbreviationsMood, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.MoodEn, htmlAttributes: new { @class = "control-label col-md-2" }) @StaticResource.Resources.English
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.MoodEn, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.MoodEn, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.MoodFr, htmlAttributes: new { @class = "control-label col-md-2" }) @StaticResource.Resources.French
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.MoodFr, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.MoodFr, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.MoodZh, htmlAttributes: new { @class = "control-label col-md-2" }) @StaticResource.Resources.Chinese
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.MoodZh, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.MoodZh, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value=@StaticResource.Resources.Save class="btn btn-primary" />
+                @Html.ActionLink(@StaticResource.Resources.Return, "Index", null, new { @class = "btn btn-default" })
+            </div>
+        </div>
+    </div>
+}

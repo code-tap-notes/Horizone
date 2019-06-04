@@ -17,6 +17,17 @@ ul{ list-style:none}
 .form-control {
     width: 100% !important;
 }
+.btn_special {
+    background-color: #A8A2CC;
+    border-radius: 4px;
+    color: white;
+    border: none;
+    padding: 5px 2px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 15px;
+}
 #txt1 {
     border-color: lightcyan;
     width: 400px;

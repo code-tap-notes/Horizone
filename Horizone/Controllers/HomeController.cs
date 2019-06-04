@@ -1,6 +1,7 @@
 ﻿using Horizone.Common;
 using Horizone.Models;
 using Rotativa;
+using System.Collections.Generic;
 using System.Data;
 using System.Data.Entity;
 using System.IO;
@@ -235,6 +236,20 @@ namespace Horizone.Controllers
             var activitys = db.Activitys.Include("Language").Include("Topic").Where(x=>x.Topic.Id == 15);
             return View(activitys.OrderByDescending(x => x.DateofActivity).ToList());
         }
-        
+        public ActionResult SearchWord(string search)
+        {
+            IEnumerable<DictionaryTocharian> dictionaryTocharians = db.DictionaryTocharians.Include("TochLanguage").Include("WordClass").Include("WordSubClass").Include("Cases").Include("Numbers").Include("Genders").Include("Persons");
+
+            if (!string.IsNullOrWhiteSpace(search))
+            {
+                dictionaryTocharians = dictionaryTocharians.Where(x => x.Word.Contains(search));
+            }
+            if (dictionaryTocharians.Count() == 0)
+            {
+                Display("Aucun résultat");
+            }
+            return View("SearchWord", dictionaryTocharians.ToList());
+        }
+
     }
 }

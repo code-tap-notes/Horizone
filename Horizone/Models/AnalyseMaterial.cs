@@ -20,7 +20,6 @@ namespace Horizone.Models
         [Display(Name = "OtherImage", ResourceType = typeof(StaticResource.Resources))]
         public ICollection<ImageAnalyse> ImageAnalyses { get; set; }
 
-
         [Display(Name = "Description", ResourceType = typeof(StaticResource.Resources))]
         public string Description { get; set; }
 

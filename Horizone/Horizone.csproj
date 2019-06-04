@@ -238,6 +238,7 @@
     <Compile Include="Areas\BackOffice\Controllers\MapsController.cs" />
     <Compile Include="Areas\BackOffice\Controllers\MaterialsController.cs" />
     <Compile Include="Areas\BackOffice\Controllers\MetricsController.cs" />
+    <Compile Include="Areas\BackOffice\Controllers\MoodsController.cs" />
     <Compile Include="Areas\BackOffice\Controllers\NamePlacesController.cs" />
     <Compile Include="Areas\BackOffice\Controllers\NewsController.cs" />
     <Compile Include="Areas\BackOffice\Controllers\NumbersController.cs" />
@@ -250,6 +251,7 @@
     <Compile Include="Areas\BackOffice\Controllers\PublicationsController.cs" />
     <Compile Include="Areas\BackOffice\Controllers\RemarkAddsController.cs" />
     <Compile Include="Areas\BackOffice\Controllers\RestoresController.cs" />
+    <Compile Include="Areas\BackOffice\Controllers\ReverseDictionariesController.cs" />
     <Compile Include="Areas\BackOffice\Controllers\RulingColorsController.cs" />
     <Compile Include="Areas\BackOffice\Controllers\RulingDetailsController.cs" />
     <Compile Include="Areas\BackOffice\Controllers\RulingsController.cs" />
@@ -260,12 +262,15 @@
     <Compile Include="Areas\BackOffice\Controllers\SourceStoriesController.cs" />
     <Compile Include="Areas\BackOffice\Controllers\StatesController.cs" />
     <Compile Include="Areas\BackOffice\Controllers\SubGenderManuscriptsController.cs" />
+    <Compile Include="Areas\BackOffice\Controllers\TenseAndAspectsController.cs" />
     <Compile Include="Areas\BackOffice\Controllers\ThemeStoriesController.cs" />
     <Compile Include="Areas\BackOffice\Controllers\TochLanguagesController.cs" />
     <Compile Include="Areas\BackOffice\Controllers\TochPhrasesController.cs" />
     <Compile Include="Areas\BackOffice\Controllers\TochStoriesController.cs" />
     <Compile Include="Areas\BackOffice\Controllers\TopicsController.cs" />
+    <Compile Include="Areas\BackOffice\Controllers\ValenciesController.cs" />
     <Compile Include="Areas\BackOffice\Controllers\VisualAidsController.cs" />
+    <Compile Include="Areas\BackOffice\Controllers\VoicesController.cs" />
     <Compile Include="Areas\BackOffice\Controllers\WordClassesController.cs" />
     <Compile Include="Areas\BackOffice\Controllers\WordSubClassesController.cs" />
     <Compile Include="Areas\BackOffice\Controllers\WritingToolsController.cs" />
@@ -325,6 +330,30 @@
     <Compile Include="Migrations\201905221311197_addAbreDictionary.Designer.cs">
       <DependentUpon>201905221311197_addAbreDictionary.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201905271327004_changeDictionary.cs" />
+    <Compile Include="Migrations\201905271327004_changeDictionary.Designer.cs">
+      <DependentUpon>201905271327004_changeDictionary.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201905272056206_changeValency.cs" />
+    <Compile Include="Migrations\201905272056206_changeValency.Designer.cs">
+      <DependentUpon>201905272056206_changeValency.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201905291449035_addReserveDict.cs" />
+    <Compile Include="Migrations\201905291449035_addReserveDict.Designer.cs">
+      <DependentUpon>201905291449035_addReserveDict.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201905302021015_ChangeReserveDict.cs" />
+    <Compile Include="Migrations\201905302021015_ChangeReserveDict.Designer.cs">
+      <DependentUpon>201905302021015_ChangeReserveDict.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201906030757531_changeReverse.cs" />
+    <Compile Include="Migrations\201906030757531_changeReverse.Designer.cs">
+      <DependentUpon>201906030757531_changeReverse.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201906031203305_changeReverse1.cs" />
+    <Compile Include="Migrations\201906031203305_changeReverse1.Designer.cs">
+      <DependentUpon>201906031203305_changeReverse1.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AbbreviationDictionary.cs" />
     <Compile Include="Models\AboutProject.cs" />
@@ -345,6 +374,8 @@
     <Compile Include="Models\AnalyseMaterial.cs" />
     <Compile Include="Models\Bibliography.cs" />
     <Compile Include="Models\ImageBook.cs" />
+    <Compile Include="Models\Mood.cs" />
+    <Compile Include="Models\ReverseDictionary.cs" />
     <Compile Include="Models\ScriptType.cs" />
     <Compile Include="Models\Case.cs" />
     <Compile Include="Models\Catalogie.cs" />
@@ -404,14 +435,17 @@
     <Compile Include="Models\ProperNoun.cs" />
     <Compile Include="Models\SourceStory.cs" />
     <Compile Include="Models\SubGenderManuscript.cs" />
+    <Compile Include="Models\TenseAndAspect.cs" />
     <Compile Include="Models\ThemeStory.cs" />
     <Compile Include="Models\TransmittedLight.cs" />
+    <Compile Include="Models\Valency.cs" />
     <Compile Include="Models\VisualAid.cs" />
     <Compile Include="Models\Publication.cs" />
     <Compile Include="Models\TochLanguage.cs" />
     <Compile Include="Models\TochPhrase.cs" />
     <Compile Include="Models\TochStory.cs" />
     <Compile Include="Models\Topic.cs" />
+    <Compile Include="Models\Voice.cs" />
     <Compile Include="Models\WordClass .cs" />
     <Compile Include="Models\WordSubClass.cs" />
     <Compile Include="Models\WritingTool.cs" />
@@ -483,8 +517,10 @@
     <Content Include="Image\Central_Tian_Shan_mountains.jpg" />
     <Content Include="Image\China_Tarim.jpg" />
     <Content Include="Image\Dunhuang.png" />
+    <Content Include="Image\icon_search_web.gif" />
     <Content Include="Image\images.jpg" />
     <Content Include="Image\imagesToch.jpg" />
+    <Content Include="Image\img_logo_home.gif" />
     <Content Include="Image\logo2.png" />
     <Content Include="Image\Map\Chorchuk.jpg" />
     <Content Include="Image\Map\Dunhuang.png" />
@@ -628,11 +664,6 @@
     <Content Include="Areas\BackOffice\Views\Bibliographies\Delete.cshtml" />
     <Content Include="Areas\BackOffice\Views\Bibliographies\Edit.cshtml" />
     <Content Include="Areas\BackOffice\Views\Bibliographies\Index.cshtml" />
-    <Content Include="Areas\BackOffice\Views\DictionaryTocharians\Create.cshtml" />
-    <Content Include="Areas\BackOffice\Views\DictionaryTocharians\Delete.cshtml" />
-    <Content Include="Areas\BackOffice\Views\DictionaryTocharians\Details.cshtml" />
-    <Content Include="Areas\BackOffice\Views\DictionaryTocharians\Edit.cshtml" />
-    <Content Include="Areas\BackOffice\Views\DictionaryTocharians\Index.cshtml" />
     <Content Include="Areas\BackOffice\Views\LinkAndPresses\Create.cshtml" />
     <Content Include="Areas\BackOffice\Views\LinkAndPresses\Delete.cshtml" />
     <Content Include="Areas\BackOffice\Views\LinkAndPresses\Details.cshtml" />
@@ -893,6 +924,33 @@
     <Content Include="Areas\BackOffice\Views\AbbreviationDictionaries\Details.cshtml" />
     <Content Include="Areas\BackOffice\Views\AbbreviationDictionaries\Edit.cshtml" />
     <Content Include="Areas\BackOffice\Views\AbbreviationDictionaries\Index.cshtml" />
+    <Content Include="Areas\BackOffice\Views\Moods\Create.cshtml" />
+    <Content Include="Areas\BackOffice\Views\Moods\Delete.cshtml" />
+    <Content Include="Areas\BackOffice\Views\Moods\Edit.cshtml" />
+    <Content Include="Areas\BackOffice\Views\Moods\Index.cshtml" />
+    <Content Include="Areas\BackOffice\Views\TenseAndAspects\Create.cshtml" />
+    <Content Include="Areas\BackOffice\Views\TenseAndAspects\Delete.cshtml" />
+    <Content Include="Areas\BackOffice\Views\TenseAndAspects\Edit.cshtml" />
+    <Content Include="Areas\BackOffice\Views\TenseAndAspects\Index.cshtml" />
+    <Content Include="Areas\BackOffice\Views\Valencies\Create.cshtml" />
+    <Content Include="Areas\BackOffice\Views\Valencies\Delete.cshtml" />
+    <Content Include="Areas\BackOffice\Views\Valencies\Edit.cshtml" />
+    <Content Include="Areas\BackOffice\Views\Valencies\Index.cshtml" />
+    <Content Include="Areas\BackOffice\Views\Voices\Create.cshtml" />
+    <Content Include="Areas\BackOffice\Views\Voices\Delete.cshtml" />
+    <Content Include="Areas\BackOffice\Views\Voices\Edit.cshtml" />
+    <Content Include="Areas\BackOffice\Views\Voices\Index.cshtml" />
+    <Content Include="Areas\BackOffice\Views\DictionaryTocharians\Create.cshtml" />
+    <Content Include="Areas\BackOffice\Views\DictionaryTocharians\Delete.cshtml" />
+    <Content Include="Areas\BackOffice\Views\DictionaryTocharians\Details.cshtml" />
+    <Content Include="Areas\BackOffice\Views\DictionaryTocharians\Edit.cshtml" />
+    <Content Include="Areas\BackOffice\Views\DictionaryTocharians\Index.cshtml" />
+    <Content Include="Areas\BackOffice\Views\DictionaryTocharians\Reverse.cshtml" />
+    <Content Include="Areas\BackOffice\Views\ReverseDictionaries\Create.cshtml" />
+    <Content Include="Areas\BackOffice\Views\ReverseDictionaries\Delete.cshtml" />
+    <Content Include="Areas\BackOffice\Views\ReverseDictionaries\Edit.cshtml" />
+    <Content Include="Areas\BackOffice\Views\ReverseDictionaries\Index.cshtml" />
+    <Content Include="Areas\BackOffice\Views\DashBoards\SearchWord.cshtml" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\cldr.js" />
     <Content Include="Scripts\cldr\event.js" />
@@ -1234,6 +1292,11 @@
     <Content Include="Views\Home\DetailsStory.cshtml" />
     <Content Include="Views\FontBibliographies\Book.cshtml" />
     <Content Include="Views\Vocabularies\Abbreviation.cshtml" />
+    <Content Include="Views\Vocabularies\SearchAbbreviation.cshtml" />
+    <Content Include="Views\Home\SearchWord.cshtml" />
+    <Content Include="Views\Vocabularies\Reverse.cshtml" />
+    <Content Include="Views\Vocabularies\CheckReverse.cshtml" />
+    <Content Include="Views\Vocabularies\SearchReverse.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -1299,6 +1362,24 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201905221311197_addAbreDictionary.resx">
       <DependentUpon>201905221311197_addAbreDictionary.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201905271327004_changeDictionary.resx">
+      <DependentUpon>201905271327004_changeDictionary.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201905272056206_changeValency.resx">
+      <DependentUpon>201905272056206_changeValency.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201905291449035_addReserveDict.resx">
+      <DependentUpon>201905291449035_addReserveDict.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201905302021015_ChangeReserveDict.resx">
+      <DependentUpon>201905302021015_ChangeReserveDict.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201906030757531_changeReverse.resx">
+      <DependentUpon>201906030757531_changeReverse.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201906031203305_changeReverse1.resx">
+      <DependentUpon>201906031203305_changeReverse1.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

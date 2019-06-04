@@ -12,14 +12,9 @@
             @Html.DisplayNameFor(model => model.Symbol)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.DescriptionEn) @StaticResource.Resources.English
+            @Html.DisplayNameFor(model => model.Description) 
         </th>
-        <th>
-            @Html.DisplayNameFor(model => model.DescriptionFr) @StaticResource.Resources.French
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.DescriptionZh) @StaticResource.Resources.Chinese
-        </th>
+       
         <th></th>
     </tr>
 
@@ -30,14 +25,9 @@
                 @Html.DisplayFor(modelItem => item.Symbol)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.DescriptionEn)
+                @Html.DisplayFor(modelItem => item.Description)
             </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.DescriptionFr)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.DescriptionZh)
-            </td>
+            
            
         </tr>
     }

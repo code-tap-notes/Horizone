@@ -27,13 +27,55 @@ namespace Horizone.Controllers
             var abbreviationDictionaries = db.AbbreviationDictionaries;
             return View(abbreviationDictionaries.ToList());
         }
-        
-
-            public ActionResult PrintVocabulaire()
+        public ActionResult Reverse()
         {
-            var report = new ActionAsPdf("Details");
+            var reverseDictionaries = db.ReverseDictionaries;
+            return View(reverseDictionaries.ToList());
+        }
+        public ActionResult CheckReverse(int? id)
+        {           
+                if (id == null)
+                {
+                    return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+                }
+                DictionaryTocharian dictionaryTocharian = db.DictionaryTocharians.Include(d => d.TochLanguage).Include(d => d.WordClass).Include(d => d.WordSubClass).Include("Cases").Include("Numbers").Include("Genders").Include("Persons").SingleOrDefault(y => y.Id == id);
+
+                if (dictionaryTocharian.Cases.Count() == 0)
+                    dictionaryTocharian.Cases = db.Cases.Where(x => x.NameCaseEn == "No Case").ToList();
+                if (dictionaryTocharian.Genders.Count() == 0)
+                    dictionaryTocharian.Genders = db.Genders.Where(x => x.NameGenderEn == "No Gender").ToList();
+                if (dictionaryTocharian.Numbers.Count() == 0)
+                    dictionaryTocharian.Numbers = db.Numbers.Where(x => x.WordNumberEn == "No Number").ToList();
+                if (dictionaryTocharian.Persons.Count() == 0)
+                    dictionaryTocharian.Persons = db.Persons.Where(x => x.ConjugatedPersonEn == "No Person").ToList();
+                char[] cArray = dictionaryTocharian.Word.ToCharArray();
+                string reverse = String.Empty;
+                for (int i = cArray.Length - 1; i > -1; i--)
+                {
+                    reverse += cArray[i];
+                }
+                IEnumerable<ReverseDictionary> reverseDictionaries = db.ReverseDictionaries;
+                reverseDictionaries = reverseDictionaries.Where(x => (x.Word == reverse || x.ReverseWord == reverse));
+                if (reverseDictionaries.Count() == 0)
+                {
+                    Display("Aucun reverse");
+                }
+                if (reverseDictionaries == null)
+                {
+                    return HttpNotFound();
+                }
+                ViewBag.Id = id;
+                ViewBag.Reverse = reverse;
+
+                return View(reverseDictionaries.ToList());          
+        }
+
+        public ActionResult PrintVocabulaire()
+        {
+            var report = new ActionAsPdf("Vocabulaire");
             return report;
         }
+       
         public ActionResult Details(int? id)
         {
             if (id == null)
@@ -129,6 +171,35 @@ namespace Horizone.Controllers
                 Display("Aucun résultat");
             }
             return View("Search", dictionaryTocharians.ToList());
+        }
+       
+        public ActionResult SearchAbbreviation(string search)
+        {
+            IEnumerable<AbbreviationDictionary> abbreviationDictionarys = db.AbbreviationDictionaries;
+
+            if (!string.IsNullOrWhiteSpace(search))
+            {
+                abbreviationDictionarys = abbreviationDictionarys.Where(x => x.Symbol.Contains(search));
+            }
+            if (abbreviationDictionarys.Count() == 0)
+            {
+                Display("Aucun résultat");
+            }
+            return View("SearchAbbreviation", abbreviationDictionarys.ToList());
+        }
+        public ActionResult SearchReverse(string search)
+        {
+            IEnumerable<ReverseDictionary> reverseDictionarys = db.ReverseDictionaries;
+
+            if (!string.IsNullOrWhiteSpace(search))
+            {
+                reverseDictionarys = reverseDictionarys.Where(x => x.Word.Contains(search)|| x.ReverseWord.Contains(search));
+            }
+            if (reverseDictionarys.Count() == 0)
+            {
+                Display("Aucun résultat");
+            }
+            return View("SearchReverse", reverseDictionarys.ToList());
         }
     }
 }

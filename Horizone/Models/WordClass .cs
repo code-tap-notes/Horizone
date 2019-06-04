@@ -11,7 +11,7 @@ namespace Horizone.Models
     {
         public int Id { get; set; }
 
-        [Display(Name = "Abbreviations", ResourceType = typeof(StaticResource.Resources))]
+        [Display(Name = "WordClass", ResourceType = typeof(StaticResource.Resources))]
         public string Class { get; set; }
 
 

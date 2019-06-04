@@ -484,7 +484,7 @@
     <value>使役</value>
   </data>
   <data name="Comitative" xml:space="preserve">
-    <value>Comitative</value>
+    <value>定性</value>
   </data>
   <data name="Conjugation" xml:space="preserve">
     <value>共轭</value>
@@ -505,7 +505,7 @@
     <value>斜</value>
   </data>
   <data name="Perlative" xml:space="preserve">
-    <value>Perlative</value>
+    <value>相对</value>
   </data>
   <data name="PhilologicalCommentary" xml:space="preserve">
     <value>文献评论</value>
@@ -988,22 +988,22 @@
     <value>发生</value>
   </data>
   <data name="PerlativeFeminineDual" xml:space="preserve">
-    <value>Perlative 女性双重</value>
+    <value>相对 女性双重</value>
   </data>
   <data name="PerlativeFemininePlural" xml:space="preserve">
-    <value>Perlative 女性复数</value>
+    <value>相对 女性复数</value>
   </data>
   <data name="PerlativeFeminineSingular" xml:space="preserve">
-    <value>透明女性奇异</value>
+    <value>相对-女性 - 奇异</value>
   </data>
   <data name="PerlativeMasculineDual" xml:space="preserve">
-    <value>Perlative男性双重</value>
+    <value>相对-男性双重</value>
   </data>
   <data name="PerlativeMasculinePlural" xml:space="preserve">
-    <value>Perlative多个男性</value>
+    <value>相对-多个男性</value>
   </data>
   <data name="PerlativeMasculineSingular" xml:space="preserve">
-    <value>男性奇异的关系</value>
+    <value>相对-男性 - 奇异</value>
   </data>
   <data name="PronounSuffix" xml:space="preserve">
     <value>代名词后缀</value>
@@ -1551,5 +1551,152 @@ TochPhase</value>
   </data>
   <data name="AbbreviationDictionary" xml:space="preserve">
     <value>缩写词典</value>
+  </data>
+  <data name="AblativeNeuterDual" xml:space="preserve">
+    <value>相对 - 中性 - 双重</value>
+  </data>
+  <data name="AblativeNeuterPlural" xml:space="preserve">
+    <value>相对 - 中性 -复数</value>
+  </data>
+  <data name="AblativeNeuterSingular" xml:space="preserve">
+    <value>相对 - 中性 -奇异</value>
+  </data>
+  <data name="AllativeNeuterDual" xml:space="preserve">
+    <value>相对 - 中性 - 双重</value>
+  </data>
+  <data name="AllativeNeuterPlural" xml:space="preserve">
+    <value>相关 - 中性 - 多元化</value>
+  </data>
+  <data name="AllativeNeuterSingular" xml:space="preserve">
+    <value>相对 - 中性 - 奇异</value>
+  </data>
+  <data name="CausativeNeuterDual" xml:space="preserve">
+    <value>致使 - 中性 -双重</value>
+  </data>
+  <data name="CausativeNeuterPlural" xml:space="preserve">
+    <value>致使 - 中性 -多元化</value>
+  </data>
+  <data name="CausativeNeuterSingular" xml:space="preserve">
+    <value>激烈 - 中性 -性奇异</value>
+  </data>
+  <data name="ComitativeNeuterDual" xml:space="preserve">
+    <value>定性- 中性 - 双重</value>
+  </data>
+  <data name="ComitativeNeuterPlural" xml:space="preserve">
+    <value>定- 中性 - 双重</value>
+  </data>
+  <data name="ComitativeNeuterSingular" xml:space="preserve">
+    <value>定性- 中性 - 双重</value>
+  </data>
+  <data name="GenitiveNeuterDual" xml:space="preserve">
+    <value>所有格- 中性 -双重</value>
+  </data>
+  <data name="GenitiveNeuterPlural" xml:space="preserve">
+    <value>所有格- 中性 - 双重</value>
+  </data>
+  <data name="GenitiveNeuterSingular" xml:space="preserve">
+    <value>所有格- 中性 -性奇异</value>
+  </data>
+  <data name="InstrumentalNeuterDual" xml:space="preserve">
+    <value>仪器的- 中性 -双重</value>
+  </data>
+  <data name="InstrumentalNeuterPlural" xml:space="preserve">
+    <value>仪器的- 中性 - 双重</value>
+  </data>
+  <data name="InstrumentalNeuterSingular" xml:space="preserve">
+    <value>仪器的- 中性 -性奇异</value>
+  </data>
+  <data name="LocativeNeuterDual" xml:space="preserve">
+    <value>方位- 中性 -双重</value>
+  </data>
+  <data name="LocativeNeuterPlural" xml:space="preserve">
+    <value>方位- 中性 - 双重</value>
+  </data>
+  <data name="LocativeNeuterSingular" xml:space="preserve">
+    <value>方位- 中性 -性奇异</value>
+  </data>
+  <data name="Mood" xml:space="preserve">
+    <value>心情</value>
+  </data>
+  <data name="NominateNeuterDual" xml:space="preserve">
+    <value>提名- 中性 -双重</value>
+  </data>
+  <data name="NominateNeuterPlural" xml:space="preserve">
+    <value>提名- 中性 - 双重</value>
+  </data>
+  <data name="NominateNeuterSingular" xml:space="preserve">
+    <value>提名- 中性 -性奇异</value>
+  </data>
+  <data name="ObliqueNeuterDual" xml:space="preserve">
+    <value>斜- 中性 -双重</value>
+  </data>
+  <data name="ObliqueNeuterPlural" xml:space="preserve">
+    <value>斜- 中性 - 双重</value>
+  </data>
+  <data name="ObliqueNeuterSingular" xml:space="preserve">
+    <value>斜- 中性 -性奇异</value>
+  </data>
+  <data name="PerlativeNeuterDual" xml:space="preserve">
+    <value>相对 - 中性 - 双重</value>
+  </data>
+  <data name="PerlativeNeuterPlural" xml:space="preserve">
+    <value>相对 - 中性 - 多元化</value>
+  </data>
+  <data name="PerlativeNeuterSingular" xml:space="preserve">
+    <value>相对 - 中性 - 奇异</value>
+  </data>
+  <data name="Tense" xml:space="preserve">
+    <value>紧张</value>
+  </data>
+  <data name="TenseAndAspect" xml:space="preserve">
+    <value>时态和方面</value>
+  </data>
+  <data name="ValencyEn" xml:space="preserve">
+    <value>瓦伦西亚   - 英语</value>
+  </data>
+  <data name="ValencyFr" xml:space="preserve">
+    <value>瓦伦西亚 - 法国</value>
+  </data>
+  <data name="ValencyZh" xml:space="preserve">
+    <value>瓦伦西亚 -  中文</value>
+  </data>
+  <data name="VocativeNeuterDual" xml:space="preserve">
+    <value>呼，绝育，双</value>
+  </data>
+  <data name="VocativeNeuterPlural" xml:space="preserve">
+    <value>呼，绝育，复数</value>
+  </data>
+  <data name="VocativeNeuterSingular" xml:space="preserve">
+    <value>呼，绝育，奇异</value>
+  </data>
+  <data name="VoiceEn" xml:space="preserve">
+    <value>声音 - 英语</value>
+  </data>
+  <data name="VoiceFr" xml:space="preserve">
+    <value>声音 - 法国</value>
+  </data>
+  <data name="VoiceZh" xml:space="preserve">
+    <value>声音-中文</value>
+  </data>
+  <data name="Meaning" xml:space="preserve">
+    <value>含义</value>
+  </data>
+  <data name="ReverseDictionary" xml:space="preserve">
+    <value>反向字典</value>
+  </data>
+  <data name="Required" xml:space="preserve">
+    <value>字段是必需的。</value>
+  </data>
+  <data name="NoReverse" xml:space="preserve">
+    <value>在字典中没有找到反向词</value>
+  </data>
+  <data name="Reverse" xml:space="preserve">
+    <value>反向词</value>
+  </data>
+  <data name="AskAdd" xml:space="preserve">
+    <value>你想加入反向字典吗？</value>
+  </data>
+  <data name="NotFound" xml:space="preserve">
+    <value>找不到的词</value>
   </data>
 </root>

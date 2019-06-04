@@ -27,6 +27,11 @@ namespace Horizone.Controllers
             var report = new ActionAsPdf("Index");
             return report;
         }
+        public ActionResult PrintManuscript(int? id)
+        {
+            var report = new ActionAsPdf("Details", new { id = id });
+            return report;
+        }
         public ActionResult AnalyseMaterial()
         {
             return View(db.AnalyseMaterials.Include("ImageUVs").Include("ImageAnalyses").ToList());
@@ -105,11 +110,7 @@ namespace Horizone.Controllers
             }
             return View(manuscript);
         }
-        public ActionResult PrintManuscript()
-        {
-            var report = new ActionAsPdf("Details");
-            return report;
-        }
+       
         // GET: BackOffice/Manuscripts/Details/layout/5
         public ActionResult LayoutManuscripts(int? id)
         {

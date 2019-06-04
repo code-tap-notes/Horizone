@@ -9,7 +9,7 @@
     <form class="form-group row" action="@Url.Action("Search", "FontBibliographies")" method="post" enctype="multipart/form-data">
         <div class="form-group col-md-2">
             <br />
-            <button type="submit" class="btn btn-info bigBtn"> @StaticResource.Resources.Search </button>
+            <button type="submit" class="btn btn-info bigBtn"> <span class="glyphicon glyphicon-search"></span> @StaticResource.Resources.Search </button>
         </div>
 
         <div class="form-group col-md-4">
@@ -35,7 +35,10 @@
             <a onclick="insertText('Search','ß');" href="#" style="background-color: blanchedalmond; padding:5px"> ß  </a>
         </div>
         <div class="form-group col-md-2">
-            @Html.ActionLink(@StaticResource.Resources.Print, "PrintAllReport", "FontBibliographies", new { @class = "btn btn-info", style = "width:90px" })
+            <a href="@Url.Action("PrintAllReport", "FontBibliographies")" class="btn btn-info">
+                <span class="glyphicon glyphicon-print"></span> @StaticResource.Resources.Print
+            </a>
+
         </div>
     </form>
 </div>

@@ -1,0 +1,81 @@
+﻿@model Horizone.Models.ReverseDictionary
+
+@{
+    ViewBag.Title = @StaticResource.Resources.Edit;
+}
+<h4>@StaticResource.Resources.Edit</h4>
+
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal">
+        <h4>@StaticResource.Resources.ReverseDictionary</h4>
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        @Html.HiddenFor(model => model.Id)
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Word, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                <label for="search">@StaticResource.Resources.Insert @StaticResource.Resources.SpecialCharacter : </label>
+                <a onclick="insertText('Word','ā');" href="#">ā  </a>
+                <a onclick="insertText('Word','ä');" href="#">ä  </a>
+                <a onclick="insertText('Word','ī');" href="#">ī  </a>
+                <a onclick="insertText('Word','ö');" href="#">ö  </a>
+                <a onclick="insertText('Word','ū');" href="#">ū  </a>
+                <a onclick="insertText('Word','ü');" href="#">ü  </a>
+                <a onclick="insertText('Word','ṅ');" href="#">ṅ  </a>
+                <a onclick="insertText('Word','ñ');" href="#">ñ  </a>
+                <a onclick="insertText('Word','ṃ');" href="#">ṃ  </a>
+                <a onclick="insertText('Word','ś');" href="#">ś  </a>
+                <a onclick="insertText('Word','ṣ');" href="#">ṣ  </a>
+                <a onclick="insertText('Word','š');" href="#">š  </a>
+                <a onclick="insertText('Word','ß');" href="#">ß  </a>
+                @Html.EditorFor(model => model.Word, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Word, "", new { @class = "text-danger" })
+                <br />
+            </div>
+            @Html.LabelFor(model => model.ReverseWord, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                <label for="search">@StaticResource.Resources.Insert @StaticResource.Resources.SpecialCharacter : </label>
+                <a onclick="insertText('ReverseWord','ā');" href="#">ā  </a>
+                <a onclick="insertText('ReverseWord','ä');" href="#">ä  </a>
+                <a onclick="insertText('ReverseWord','ī');" href="#">ī  </a>
+                <a onclick="insertText('ReverseWord','ö');" href="#">ö  </a>
+                <a onclick="insertText('ReverseWord','ū');" href="#">ū  </a>
+                <a onclick="insertText('ReverseWord','ü');" href="#">ü  </a>
+                <a onclick="insertText('ReverseWord','ṅ');" href="#">ṅ  </a>
+                <a onclick="insertText('ReverseWord','ñ');" href="#">ñ  </a>
+                <a onclick="insertText('ReverseWord','ṃ');" href="#">ṃ  </a>
+                <a onclick="insertText('ReverseWord','ś');" href="#">ś  </a>
+                <a onclick="insertText('ReverseWord','ṣ');" href="#">ṣ  </a>
+                <a onclick="insertText('ReverseWord','š');" href="#">š  </a>
+                <a onclick="insertText('ReverseWord','ß');" href="#">ß  </a>
+                @Html.EditorFor(model => model.ReverseWord, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.ReverseWord, "", new { @class = "text-danger" })
+
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value=@StaticResource.Resources.Save class="btn btn-primary" />
+                @Html.ActionLink(@StaticResource.Resources.Return, "Index", null, new { @class = "btn btn-default" })
+            </div>
+        </div>
+
+    </div>
+}
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+    @Scripts.Render("~/bundles/jquery")
+    <script>
+        function insertText(elemID, text) {
+            document.getElementById(elemID).value += text;
+        }
+     
+    </script>
+}
+

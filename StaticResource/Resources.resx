@@ -244,7 +244,7 @@
     <value>Contenu principal</value>
   </data>
   <data name="ManagementManuscript" xml:space="preserve">
-    <value>Gestion Manuscript</value>
+    <value>Gestion Manuscrite</value>
   </data>
   <data name="ManagementPage" xml:space="preserve">
     <value>Gestion Page</value>
@@ -274,7 +274,7 @@
     <value>List des Messages Contact</value>
   </data>
   <data name="Manuscript" xml:space="preserve">
-    <value>Manuscrits</value>
+    <value>Manuscrit</value>
   </data>
   <data name="VietNamese" xml:space="preserve">
     <value>Vietnamien </value>
@@ -790,7 +790,7 @@
     <value>Première personne</value>
   </data>
   <data name="GenitiveFeminineDual" xml:space="preserve">
-    <value>Génitive-Féminine-Dual</value>
+    <value>Génitive-Féminine-Duo</value>
   </data>
   <data name="GenitiveFemininePlural" xml:space="preserve">
     <value>Génitive-Féminine-Pluriel</value>
@@ -799,7 +799,7 @@
     <value>Génitive-Féminine-Singulier</value>
   </data>
   <data name="GenitiveMasculineDual" xml:space="preserve">
-    <value>Génitive-Masculine-Dual</value>
+    <value>Génitive-Masculine-Duo</value>
   </data>
   <data name="GenitiveMasculinePlural" xml:space="preserve">
     <value>Génitive-Masculine-Pluriel</value>
@@ -811,7 +811,7 @@
     <value>Locative-Féminine-Singular</value>
   </data>
   <data name="LocativeMasculineDual" xml:space="preserve">
-    <value>Locative-Masculine-Dual</value>
+    <value>Locative-Masculine-Duo</value>
   </data>
   <data name="LocativeMasculinePlural" xml:space="preserve">
     <value>Locative-Masculine-Plural</value>
@@ -826,7 +826,7 @@
     <value>Neutre</value>
   </data>
   <data name="NominateFeminineDual" xml:space="preserve">
-    <value>Nominatif-Féminin-Dual</value>
+    <value>Nominatif-Féminin-Duo</value>
   </data>
   <data name="NominateFemininePlural" xml:space="preserve">
     <value>Nominatif-Féminin-Pluriel</value>
@@ -835,7 +835,7 @@
     <value>Nominatif-Féminin-Singulier</value>
   </data>
   <data name="NominateMasculineDual" xml:space="preserve">
-    <value>Nominatif-Masculin-Dual</value>
+    <value>Nominatif-Masculin-Duo</value>
   </data>
   <data name="NominateMasculinePlural" xml:space="preserve">
     <value>Nominatif-Masculin-Pluriel</value>
@@ -847,7 +847,7 @@
     <value>Pas de sous-classe</value>
   </data>
   <data name="ObliqueFeminineDual" xml:space="preserve">
-    <value>Oblique-Féminin-Dual</value>
+    <value>Oblique-Féminin-Duo</value>
   </data>
   <data name="ObliqueFemininePlural" xml:space="preserve">
     <value>Oblique-Féminin-Pluriel</value>
@@ -856,7 +856,7 @@
     <value>Oblique-Féminin-Singulier</value>
   </data>
   <data name="ObliqueMasculineDual" xml:space="preserve">
-    <value>Oblique-Masculin-Dual</value>
+    <value>Oblique-Masculin-Duo</value>
   </data>
   <data name="ObliqueMasculinePlural" xml:space="preserve">
     <value>Oblique-Masculin-Pluriel</value>
@@ -871,7 +871,7 @@
     <value>Pluriel</value>
   </data>
   <data name="VocativeFeminineDual" xml:space="preserve">
-    <value>Vocative-Féminine-Dual</value>
+    <value>Vocative-Féminine-Duo</value>
   </data>
   <data name="VocativeFemininePlural" xml:space="preserve">
     <value>Vocative-Féminine-Pluriel</value>
@@ -880,7 +880,7 @@
     <value>Vocative-Féminine-Singulier</value>
   </data>
   <data name="VocativeMasculineDual" xml:space="preserve">
-    <value>Vocative-Masculin-Dual</value>
+    <value>Vocative-Masculin-Duo</value>
   </data>
   <data name="VocativeMasculinePlural" xml:space="preserve">
     <value>Vocative-Masculin-Pluriel</value>
@@ -889,7 +889,7 @@
     <value>Vocatif-Masculin-Singulier</value>
   </data>
   <data name="AblativeFeminineDual" xml:space="preserve">
-    <value>Ablative-Feminine-Dual</value>
+    <value>Ablative-Feminine-Duo</value>
   </data>
   <data name="AblativeFemininePlural" xml:space="preserve">
     <value>Ablative-Feminine-Pluriel</value>
@@ -898,7 +898,7 @@
     <value>Ablative-Feminine-Singulier</value>
   </data>
   <data name="AblativeMasculineDual" xml:space="preserve">
-    <value>Ablative-Masculine-Dual</value>
+    <value>Ablative-Masculine-Duo</value>
   </data>
   <data name="AblativeMasculinePlural" xml:space="preserve">
     <value>Ablative-Masculine-Pluriel</value>
@@ -910,10 +910,10 @@
     <value>Allative-Féminine-Pluriel</value>
   </data>
   <data name="AllativeFeminineSingular" xml:space="preserve">
-    <value>Allative-Féminine-Singular</value>
+    <value>Allative-Féminine-Singulier</value>
   </data>
   <data name="AllativeMasculineDual" xml:space="preserve">
-    <value>Allative-Masculine-Dual</value>
+    <value>Allative-Masculine-Duo</value>
   </data>
   <data name="AllativeMasculinePlural" xml:space="preserve">
     <value>Allative-Masculine-Pluriel</value>
@@ -922,19 +922,19 @@
     <value>Allative-Masculine-Singulier</value>
   </data>
   <data name="AllativeFeminineDual" xml:space="preserve">
-    <value>Allative-Féminine-Dual</value>
+    <value>Allative-Féminine-Duo</value>
   </data>
   <data name="CausativeFeminineDual" xml:space="preserve">
-    <value>Causative-Féminine-Dual</value>
+    <value>Causative-Féminine-Duo</value>
   </data>
   <data name="CausativeFemininePlural" xml:space="preserve">
-    <value>Causative-Féminine-Plural</value>
+    <value>Causative-Féminine-Pluriel</value>
   </data>
   <data name="CausativeFeminineSingular" xml:space="preserve">
     <value>Causative-Féminine-Singulier</value>
   </data>
   <data name="CausativeMasculineDual" xml:space="preserve">
-    <value>Causative-Masculine-Dual</value>
+    <value>Causative-Masculine-Duo</value>
   </data>
   <data name="CausativeMasculinePlural" xml:space="preserve">
     <value>Causative-Masculine-Pluriel</value>
@@ -943,16 +943,16 @@
     <value>Causative-Masculine-Singulier</value>
   </data>
   <data name="ComitativeFeminineDual" xml:space="preserve">
-    <value>Comitative-Féminine-Dual</value>
+    <value>Comitative-Féminine-Duo</value>
   </data>
   <data name="ComitativeFemininePlural" xml:space="preserve">
     <value>Comitative-Féminine-Plural</value>
   </data>
   <data name="ComitativeFeminineSingular" xml:space="preserve">
-    <value>Comitative-Féminine-Singular</value>
+    <value>Comitative-Féminine-Singulier</value>
   </data>
   <data name="ComitativeMasculineDual" xml:space="preserve">
-    <value>Comitative-Masculine-Dual</value>
+    <value>Comitative-Masculine-Duo</value>
   </data>
   <data name="ComitativeMasculinePlural" xml:space="preserve">
     <value>Comitative-Masculine-Pluriel</value>
@@ -961,7 +961,7 @@
     <value>Comitative-Masculine-Singulier</value>
   </data>
   <data name="InstrumentalFeminineDual" xml:space="preserve">
-    <value>Instrumental-Féminine-Dual</value>
+    <value>Instrumental-Féminine-Duo</value>
   </data>
   <data name="InstrumentalFemininePlural" xml:space="preserve">
     <value>Instrumental-Féminine-Pluriel</value>
@@ -970,7 +970,7 @@
     <value>Instrumental-Féminine-Singulier</value>
   </data>
   <data name="InstrumentalMasculineDual" xml:space="preserve">
-    <value>Instrumental-Masculine-Dual</value>
+    <value>Instrumental-Masculine-Duo</value>
   </data>
   <data name="InstrumentalMasculinePlural" xml:space="preserve">
     <value>Instrumental-Masculine-Pluriel</value>
@@ -979,7 +979,7 @@
     <value>Instrumental-Masculine-Singulier</value>
   </data>
   <data name="LocativeFeminineDual" xml:space="preserve">
-    <value>Locative-Féminine-Dual</value>
+    <value>Locative-Féminine-Duo</value>
   </data>
   <data name="LocativeFemininePlural" xml:space="preserve">
     <value>Locative-Féminine-Pluriel</value>
@@ -988,7 +988,7 @@
     <value>Occurrence</value>
   </data>
   <data name="PerlativeFeminineDual" xml:space="preserve">
-    <value>Perlative-Féminine-Dual</value>
+    <value>Perlative-Féminine-Duo</value>
   </data>
   <data name="PerlativeFemininePlural" xml:space="preserve">
     <value>Perlative-Féminine-Pluriel</value>
@@ -997,7 +997,7 @@
     <value>Perlative-Féminine-Singulier</value>
   </data>
   <data name="PerlativeMasculineDual" xml:space="preserve">
-    <value>Perlative-Masculine-Dual</value>
+    <value>Perlative-Masculine-Duo</value>
   </data>
   <data name="PerlativeMasculinePlural" xml:space="preserve">
     <value>Perlative-Masculine-Pluriel</value>
@@ -1081,7 +1081,7 @@
     <value>Classe de mots -  Chinois</value>
   </data>
   <data name="WordSubClassEn" xml:space="preserve">
-    <value>Sous-classe de motss- Anglais</value>
+    <value>Sous-classe de mots- Anglais</value>
   </data>
   <data name="WordSubClassFr" xml:space="preserve">
     <value>Sous-classe de mots- Français</value>
@@ -1563,5 +1563,152 @@ TochPhase</value>
   </data>
   <data name="AbbreviationDictionary" xml:space="preserve">
     <value>Dictionnaire des abréviations</value>
+  </data>
+  <data name="AblativeNeuterDual" xml:space="preserve">
+    <value>Ablative-Neutre-Duo</value>
+  </data>
+  <data name="AblativeNeuterPlural" xml:space="preserve">
+    <value>Ablative-Neutre-Pluriel</value>
+  </data>
+  <data name="AblativeNeuterSingular" xml:space="preserve">
+    <value>Ablative-Neutre-Singulier</value>
+  </data>
+  <data name="AllativeNeuterDual" xml:space="preserve">
+    <value>Allative-Neutre-Duo</value>
+  </data>
+  <data name="AllativeNeuterPlural" xml:space="preserve">
+    <value>Allative-Féminine-Pluriel</value>
+  </data>
+  <data name="AllativeNeuterSingular" xml:space="preserve">
+    <value>Allative-Féminine-Singulier</value>
+  </data>
+  <data name="CausativeNeuterDual" xml:space="preserve">
+    <value>Causative-Neutre-Duo</value>
+  </data>
+  <data name="CausativeNeuterPlural" xml:space="preserve">
+    <value>Causative-Neutre-Plurier</value>
+  </data>
+  <data name="CausativeNeuterSingular" xml:space="preserve">
+    <value>Causative-Neutre-Singulier</value>
+  </data>
+  <data name="ComitativeNeuterDual" xml:space="preserve">
+    <value>Comitative-Neutre-Duo</value>
+  </data>
+  <data name="ComitativeNeuterPlural" xml:space="preserve">
+    <value>Comitative-Neutre-Pluriel</value>
+  </data>
+  <data name="ComitativeNeuterSingular" xml:space="preserve">
+    <value>Comitative-Neutre-Singulier</value>
+  </data>
+  <data name="GenitiveNeuterDual" xml:space="preserve">
+    <value>Génitive-Neutre-Duo</value>
+  </data>
+  <data name="GenitiveNeuterPlural" xml:space="preserve">
+    <value>Génitive-Neutre-Pluriel</value>
+  </data>
+  <data name="GenitiveNeuterSingular" xml:space="preserve">
+    <value>Génitive-Neutre-Singulier</value>
+  </data>
+  <data name="InstrumentalNeuterDual" xml:space="preserve">
+    <value>Instrumental-Neutre-Duo</value>
+  </data>
+  <data name="InstrumentalNeuterPlural" xml:space="preserve">
+    <value>Instrumental-Neutre-Pluriel</value>
+  </data>
+  <data name="InstrumentalNeuterSingular" xml:space="preserve">
+    <value>Instrumental-Neutre-Singulier</value>
+  </data>
+  <data name="LocativeNeutreDual" xml:space="preserve">
+    <value>Locative-Neutre-Duo</value>
+  </data>
+  <data name="LocativeNeutrePlural" xml:space="preserve">
+    <value>Locative-Neutre-Pluriel</value>
+  </data>
+  <data name="LocativeNeutreSingular" xml:space="preserve">
+    <value>Locative-Neutre-Singular</value>
+  </data>
+  <data name="Mood" xml:space="preserve">
+    <value>Ambiance</value>
+  </data>
+  <data name="NominateNeuterDual" xml:space="preserve">
+    <value>Nominate-Neutre-Duo</value>
+  </data>
+  <data name="NominateNeuterPlural" xml:space="preserve">
+    <value>Nominate-Neutre-Pluriel</value>
+  </data>
+  <data name="NominateNeuterSingular" xml:space="preserve">
+    <value>Nominate-Neutre-Singulier</value>
+  </data>
+  <data name="ObliqueNeuterDual" xml:space="preserve">
+    <value>Oblique-Neutre-Duo</value>
+  </data>
+  <data name="ObliqueNeuterPlural" xml:space="preserve">
+    <value>Oblique-Neutre-Pluriel</value>
+  </data>
+  <data name="ObliqueNeuterSingular" xml:space="preserve">
+    <value>Oblique-Neutre-Singulier</value>
+  </data>
+  <data name="PerlativeNeuterDual" xml:space="preserve">
+    <value>Perlative-Neutre-Duo</value>
+  </data>
+  <data name="PerlativeNeuterPlural" xml:space="preserve">
+    <value>Perlative--Neutre-Pluriel</value>
+  </data>
+  <data name="PerlativeNeuterSingular" xml:space="preserve">
+    <value>Perlative-Neutre-Singulier</value>
+  </data>
+  <data name="Tense" xml:space="preserve">
+    <value>Temps</value>
+  </data>
+  <data name="TenseAndAspect" xml:space="preserve">
+    <value>Temps et aspect</value>
+  </data>
+  <data name="ValencyEn" xml:space="preserve">
+    <value>Valence-Anglais</value>
+  </data>
+  <data name="ValencyFr" xml:space="preserve">
+    <value>Valence-Française</value>
+  </data>
+  <data name="ValencyZh" xml:space="preserve">
+    <value>Valence-Chinoise</value>
+  </data>
+  <data name="VocativeNeuterDual" xml:space="preserve">
+    <value>Vocative-Neutre-Duo</value>
+  </data>
+  <data name="VocativeNeuterPlural" xml:space="preserve">
+    <value>Vocative-Neutre-Pluriel</value>
+  </data>
+  <data name="VocativeNeuterSingular" xml:space="preserve">
+    <value>Vocative-Neutre-Singulier</value>
+  </data>
+  <data name="VoiceEn" xml:space="preserve">
+    <value>Voix-Anglais</value>
+  </data>
+  <data name="VoiceFr" xml:space="preserve">
+    <value>Voix-Française</value>
+  </data>
+  <data name="VoiceZh" xml:space="preserve">
+    <value>Voix-Chinoise</value>
+  </data>
+  <data name="Meaning" xml:space="preserve">
+    <value>Signification</value>
+  </data>
+  <data name="ReverseDictionary" xml:space="preserve">
+    <value>Dictionnaire inversé</value>
+  </data>
+  <data name="Required" xml:space="preserve">
+    <value>Le champ est obligatoire.</value>
+  </data>
+  <data name="NoReverse" xml:space="preserve">
+    <value>Le mot inverse n'a pas été trouvé dans le dictionnaire</value>
+  </data>
+  <data name="Reverse" xml:space="preserve">
+    <value>Mots inversé</value>
+  </data>
+  <data name="AskAdd" xml:space="preserve">
+    <value>Voulez-vous ajouter au dictionnaire inversé?</value>
+  </data>
+  <data name="NotFound" xml:space="preserve">
+    <value>Mot non trouvé</value>
   </data>
 </root>

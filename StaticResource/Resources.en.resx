@@ -1546,9 +1546,6 @@ TochPhase</value>
   <data name="ChooseClass" xml:space="preserve">
     <value>Choose  word class</value>
   </data>
-  <data name="String1" xml:space="preserve">
-    <value> </value>
-  </data>
   <data name="Book" xml:space="preserve">
     <value>Book</value>
   </data>
@@ -1560,5 +1557,152 @@ TochPhase</value>
   </data>
   <data name="AbbreviationDictionary" xml:space="preserve">
     <value>Abbreviation Dictionary</value>
+  </data>
+  <data name="AblativeNeuterDual" xml:space="preserve">
+    <value>Ablative-Neuter-Dual</value>
+  </data>
+  <data name="AblativeNeuterPlural" xml:space="preserve">
+    <value>Ablative-Neuter-Plural</value>
+  </data>
+  <data name="AblativeNeuterSingular" xml:space="preserve">
+    <value>Ablative-Neuter-Singular</value>
+  </data>
+  <data name="AllativeNeuterDual" xml:space="preserve">
+    <value>Allative-Neutre-Dual</value>
+  </data>
+  <data name="AllativeNeuterPlural" xml:space="preserve">
+    <value>Allative-Neutre-Plural</value>
+  </data>
+  <data name="AllativeNeuterSingular" xml:space="preserve">
+    <value>Allative-Neutre-Singular</value>
+  </data>
+  <data name="CausativeNeuterDual" xml:space="preserve">
+    <value>Causative-Neutre-Dual</value>
+  </data>
+  <data name="CausativeNeuterPlural" xml:space="preserve">
+    <value>Causative-Neutre-Plural</value>
+  </data>
+  <data name="CausativeNeuterSingular" xml:space="preserve">
+    <value>Causative-Neutre-Singular</value>
+  </data>
+  <data name="ComitativeNeuterDual" xml:space="preserve">
+    <value>Comitative-Neutre-Dual</value>
+  </data>
+  <data name="ComitativeNeuterPlural" xml:space="preserve">
+    <value>Comitative-Neutre-Plural</value>
+  </data>
+  <data name="ComitativeNeuterSingular" xml:space="preserve">
+    <value>Comitative-Neutre-Singular</value>
+  </data>
+  <data name="GenitiveNeuterDual" xml:space="preserve">
+    <value>Genitive-Neutre-Dual</value>
+  </data>
+  <data name="GenitiveNeuterPlural" xml:space="preserve">
+    <value>Genitive-Neutre-Plural</value>
+  </data>
+  <data name="GenitiveNeuterSingular" xml:space="preserve">
+    <value>Genitive-Neutre-Singular</value>
+  </data>
+  <data name="InstrumentalNeuterDual" xml:space="preserve">
+    <value>Instrumental-Neutre-Dual</value>
+  </data>
+  <data name="InstrumentalNeuterPlural" xml:space="preserve">
+    <value>Instrumental-Neutre-Plural</value>
+  </data>
+  <data name="InstrumentalNeuterSingular" xml:space="preserve">
+    <value>Instrumental-Neutre-Singular</value>
+  </data>
+  <data name="LocativeNeuterDual" xml:space="preserve">
+    <value>Locative-Neutre-Dual</value>
+  </data>
+  <data name="LocativeNeuterPlural" xml:space="preserve">
+    <value>Locative-Neutre-Plural</value>
+  </data>
+  <data name="LocativeNeuterSingular" xml:space="preserve">
+    <value>Locative-Neutre-Singular</value>
+  </data>
+  <data name="Mood" xml:space="preserve">
+    <value>Mood</value>
+  </data>
+  <data name="NominateNeuterDual" xml:space="preserve">
+    <value>Nominate-Neuter-Dual</value>
+  </data>
+  <data name="NominateNeuterPlural" xml:space="preserve">
+    <value>Nominate-Neuter-Plural</value>
+  </data>
+  <data name="NominateNeuterSingular" xml:space="preserve">
+    <value>Nominate-Neuter-Singular</value>
+  </data>
+  <data name="ObliqueNeuterDual" xml:space="preserve">
+    <value>Oblique-Neuter-Dual</value>
+  </data>
+  <data name="ObliqueNeuterPlural" xml:space="preserve">
+    <value>Oblique-Neuter-Plural</value>
+  </data>
+  <data name="ObliqueNeuterSingular" xml:space="preserve">
+    <value>Oblique-Neuter-Singular</value>
+  </data>
+  <data name="PerlativeNeuterDual" xml:space="preserve">
+    <value>Perlative-Neuter-Dual</value>
+  </data>
+  <data name="PerlativeNeuterPlural" xml:space="preserve">
+    <value>Perlative-Neuter-Plural</value>
+  </data>
+  <data name="PerlativeNeuterSingular" xml:space="preserve">
+    <value>Perlative-Neuter-Singular</value>
+  </data>
+  <data name="Tense" xml:space="preserve">
+    <value>Tense</value>
+  </data>
+  <data name="TenseAndAspect" xml:space="preserve">
+    <value>Tense And Aspect</value>
+  </data>
+  <data name="ValencyEn" xml:space="preserve">
+    <value>Valency-English</value>
+  </data>
+  <data name="ValencyFr" xml:space="preserve">
+    <value>Valency - French</value>
+  </data>
+  <data name="ValencyZh" xml:space="preserve">
+    <value>Valency - Chinese</value>
+  </data>
+  <data name="VocativeNeuterDual" xml:space="preserve">
+    <value>Vocative-Neuter-Dual</value>
+  </data>
+  <data name="VocativeNeuterPlural" xml:space="preserve">
+    <value>Vocative-Neuter-Plural</value>
+  </data>
+  <data name="VocativeNeuterSingular" xml:space="preserve">
+    <value>Vocative-Neuter-Singular</value>
+  </data>
+  <data name="VoiceEn" xml:space="preserve">
+    <value>Voice - English</value>
+  </data>
+  <data name="VoiceFr" xml:space="preserve">
+    <value>Voice- French</value>
+  </data>
+  <data name="VoiceZh" xml:space="preserve">
+    <value>Voice-Chinese</value>
+  </data>
+  <data name="Meaning" xml:space="preserve">
+    <value>Meaning</value>
+  </data>
+  <data name="ReverseDictionary" xml:space="preserve">
+    <value>Reverse Dictionary</value>
+  </data>
+  <data name="Required" xml:space="preserve">
+    <value>Field  is required</value>
+  </data>
+  <data name="NoReverse" xml:space="preserve">
+    <value>Reverse word has not been found in dictionary</value>
+  </data>
+  <data name="Reverse" xml:space="preserve">
+    <value>Reverse word</value>
+  </data>
+  <data name="AskAdd" xml:space="preserve">
+    <value>Do you want add to reverse dictionary?</value>
+  </data>
+  <data name="NotFound" xml:space="preserve">
+    <value>Word not found</value>
   </data>
 </root>

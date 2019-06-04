@@ -9,96 +9,42 @@
 <div>
     <h4>@StaticResource.Resources.DictionaryTocharian</h4>
     <hr />
+    @*Partie Commun*@
     <dl class="dl-horizontal">
-         
-
-        <dt>
-            @Html.DisplayNameFor(model => model.TochLanguage.Language)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.TochLanguage.Language)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.WordClass.ClassEn)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.WordClass.ClassEn)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.WordSubClass.SubClassEn)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.WordSubClass.SubClassEn)
-        </dd>
 
         <dt>
             @Html.DisplayNameFor(model => model.Word)
         </dt>
-
         <dd>
             @Html.DisplayFor(model => model.Word)
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.English)
+            @Html.DisplayNameFor(model => model.TochLanguage.Language)
         </dt>
-
         <dd>
-            @Html.DisplayFor(model => model.English)
+            @Html.DisplayFor(model => model.TochLanguage.Language)
         </dd>
+        @if (Model.TochLanguage.Language == "TA")
+        {
+            <dt>
+                @Html.DisplayNameFor(model => model.EquivalentTB)
+            </dt>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Francaise)
-        </dt>
+            <dd>
+                @Html.DisplayFor(model => model.EquivalentTB)
+            </dd>
+        }
+        @if (Model.TochLanguage.Language == "TB")
+        {
+            <dt>
+                @Html.DisplayNameFor(model => model.EquivalentTA)
+            </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.Francaise)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.German)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.German)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Latin)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Latin)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Chinese)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Chinese)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.EquivalentTA)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.EquivalentTA)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.EquivalentTB)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.EquivalentTB)
-        </dd>
+            <dd>
+                @Html.DisplayFor(model => model.EquivalentTA)
+            </dd>
+        }
 
         <dt>
             @Html.DisplayNameFor(model => model.EquivalentInOther)
@@ -107,6 +53,161 @@
         <dd>
             @Html.DisplayFor(model => model.EquivalentInOther)
         </dd>
+        <dt>
+            @StaticResource.Resources.Meaning @Html.DisplayNameFor(model => model.English)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.English)
+        </dd>
+        <dt>
+            @StaticResource.Resources.Meaning @Html.DisplayNameFor(model => model.Francaise)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Francaise)
+        </dd>
+        <dt>
+            @StaticResource.Resources.Meaning @Html.DisplayNameFor(model => model.German)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.German)
+        </dd>
+
+        <dt>
+            @StaticResource.Resources.Meaning @Html.DisplayNameFor(model => model.Latin)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Latin)
+        </dd>
+        <dt>
+            @StaticResource.Resources.Meaning  @Html.DisplayNameFor(model => model.Chinese)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Chinese)
+        </dd>
+
+        @if (Session[Horizone.Common.CommonConstants.CurrentCulture].ToString() == "en")
+        {
+            <dt>
+                @Html.DisplayNameFor(model => model.WordClass.Class)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.WordClass.ClassEn)
+            </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.WordSubClass.SubClass)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.WordSubClass.SubClassEn)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Mood.MoodEn)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.Mood.MoodEn)
+            </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.TenseAndAspect.TenseEn)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.TenseAndAspect.TenseEn)
+            </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.Valency.AbbreviationValency)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.Valency.ValencyEn)
+            </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.Voice.AbbreviationVoice)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.Voice.VoiceEn)
+            </dd>
+        }
+
+        @if (Session[Horizone.Common.CommonConstants.CurrentCulture].ToString() == "fr")
+        {
+            <dt>
+                @Html.DisplayNameFor(model => model.WordClass.Class)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.WordClass.ClassFr)
+            </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.WordSubClass.SubClass)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.WordSubClass.SubClassFr)
+            </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.Mood.MoodFr)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.Mood.MoodFr)
+            </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.TenseAndAspect.TenseFr)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.TenseAndAspect.TenseFr)
+            </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.Valency.AbbreviationValency)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.Valency.ValencyFr)
+            </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.Voice.AbbreviationVoice)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.Voice.VoiceFr)
+            </dd>
+        }
+
+        @if (Session[Horizone.Common.CommonConstants.CurrentCulture].ToString() == "zh")
+        {
+            <dt>
+                @Html.DisplayNameFor(model => model.WordClass.Class)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.WordClass.ClassZh)
+            </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.WordSubClass.SubClass)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.WordSubClass.SubClassZh)
+            </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.Mood.MoodZh)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.Mood.MoodZh)
+            </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.TenseAndAspect.Tense)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.TenseAndAspect.TenseZh)
+            </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.Valency.AbbreviationValency)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.Valency.ValencyZh)
+            </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.Voice.AbbreviationVoice)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.Voice.VoiceZh)
+            </dd>
+        }
 
         <dt>
             @Html.DisplayNameFor(model => model.DerivedFrom)
@@ -139,7 +240,6 @@
         <dd>
             @Html.DisplayFor(model => model.InternalRootVowel)
         </dd>
-
         <dt>
             @StaticResource.Resources.Case
         </dt>
@@ -188,17 +288,20 @@
 
             </table>
         </dd>
-
-
     </dl>
+
     <h4>@StaticResource.Resources.Paradigm</h4>
     <table class="table-bordered">
         <tr>
             <th rowspan="2">@StaticResource.Resources.Term</th>
             <th colspan="3">@StaticResource.Resources.Masculine</th>
             <th colspan="3">@StaticResource.Resources.Feminine</th>
+            <th colspan="3">@StaticResource.Resources.Neuter</th>
         </tr>
         <tr>
+            <td class="col-md-1">@StaticResource.Resources.Singular</td>
+            <td class="col-md-1">@StaticResource.Resources.Dual</td>
+            <td class="col-md-1">@StaticResource.Resources.Plural</td>
             <td class="col-md-1">@StaticResource.Resources.Singular</td>
             <td class="col-md-1">@StaticResource.Resources.Dual</td>
             <td class="col-md-1">@StaticResource.Resources.Plural</td>
@@ -227,7 +330,15 @@
             <td>
                 @Html.DisplayFor(model => model.NominateFemininePlural)
             </td>
-
+            <td>
+                @Html.DisplayFor(model => model.NominateNeuterSingular)
+            </td>
+            <td>
+                @Html.DisplayFor(model => model.NominateNeuterDual)
+            </td>
+            <td>
+                @Html.DisplayFor(model => model.NominateNeuterPlural)
+            </td>
         </tr>
         <tr>
             <td class="col-md-1">@StaticResource.Resources.Oblique</td>
@@ -249,6 +360,16 @@
             <td>
                 @Html.DisplayFor(model => model.ObliqueFemininePlural)
             </td>
+            <td>
+                @Html.DisplayFor(model => model.ObliqueNeuterSingular)
+            </td>
+            <td>
+                @Html.DisplayFor(model => model.ObliqueNeuterDual)
+            </td>
+            <td>
+                @Html.DisplayFor(model => model.ObliqueNeuterPlural)
+            </td>
+
         </tr>
         <tr>
             <td class="col-md-1">@StaticResource.Resources.Vocative</td>
@@ -271,6 +392,16 @@
             <td>
                 @Html.DisplayFor(model => model.VocativeFemininePlural)
             </td>
+            <td>
+                @Html.DisplayFor(model => model.VocativeNeuterSingular)
+            </td>
+            <td>
+                @Html.DisplayFor(model => model.VocativeNeuterDual)
+            </td>
+            <td>
+                @Html.DisplayFor(model => model.VocativeNeuterPlural)
+            </td>
+
         </tr>
         <tr>
             <td class="col-md-1">@StaticResource.Resources.Genitive</td>
@@ -292,13 +423,20 @@
             </td>
             <td>
                 @Html.DisplayFor(model => model.GenitiveFemininePlural)
-
+            </td>
+            <td>
+                @Html.DisplayFor(model => model.GenitiveNeuterSingular)
+            </td>
+            <td>
+                @Html.DisplayFor(model => model.GenitiveNeuterDual)
+            </td>
+            <td>
+                @Html.DisplayFor(model => model.GenitiveNeuterPlural)
             </td>
         </tr>
         <tr>
             <td class="col-md-1">@StaticResource.Resources.Locative</td>
             <td>
-
                 @Html.DisplayFor(model => model.LocativeMasculineSingular)
             </td>
             <td>
@@ -315,6 +453,15 @@
             </td>
             <td>
                 @Html.DisplayFor(model => model.LocativeFemininePlural)
+            </td>
+            <td>
+                @Html.DisplayFor(model => model.LocativeNeuterSingular)
+            </td>
+            <td>
+                @Html.DisplayFor(model => model.LocativeNeuterDual)
+            </td>
+            <td>
+                @Html.DisplayFor(model => model.LocativeNeuterPlural)
             </td>
         </tr>
         <tr>
@@ -338,6 +485,16 @@
             <td>
                 @Html.DisplayFor(model => model.AblativeFemininePlural)
             </td>
+            <td>
+                @Html.DisplayFor(model => model.AblativeNeuterSingular)
+            </td>
+            <td>
+                @Html.DisplayFor(model => model.AblativeNeuterDual)
+            </td>
+            <td>
+                @Html.DisplayFor(model => model.AblativeNeuterPlural)
+            </td>
+
         </tr>
         <tr>
             <td class="col-md-1">@StaticResource.Resources.Allative</td>
@@ -358,13 +515,20 @@
             </td>
             <td>
                 @Html.DisplayFor(model => model.AllativeFemininePlural)
-
+            </td>
+            <td>
+                @Html.DisplayFor(model => model.AllativeNeuterSingular)
+            </td>
+            <td>
+                @Html.DisplayFor(model => model.AllativeNeuterDual)
+            </td>
+            <td>
+                @Html.DisplayFor(model => model.AllativeNeuterPlural)
             </td>
         </tr>
         <tr>
             <td class="col-md-1">@StaticResource.Resources.Perlative</td>
             <td>
-
                 @Html.DisplayFor(model => model.PerlativeMasculineSingular)
             </td>
             <td>
@@ -381,7 +545,15 @@
             </td>
             <td>
                 @Html.DisplayFor(model => model.PerlativeFemininePlural)
-
+            </td>
+            <td>
+                @Html.DisplayFor(model => model.PerlativeNeuterSingular)
+            </td>
+            <td>
+                @Html.DisplayFor(model => model.PerlativeNeuterDual)
+            </td>
+            <td>
+                @Html.DisplayFor(model => model.PerlativeNeuterPlural)
             </td>
         </tr>
         <tr>
@@ -403,7 +575,15 @@
             </td>
             <td>
                 @Html.DisplayFor(model => model.InstrumentalFemininePlural)
-
+            </td>
+            <td>
+                @Html.DisplayFor(model => model.InstrumentalNeuterSingular)
+            </td>
+            <td>
+                @Html.DisplayFor(model => model.InstrumentalNeuterDual)
+            </td>
+            <td>
+                @Html.DisplayFor(model => model.InstrumentalNeuterPlural)
             </td>
         </tr>
         <tr>
@@ -419,14 +599,21 @@
             </td>
             <td>
                 @Html.DisplayFor(model => model.ComitativeFeminineSingular)
-
             </td>
             <td>
                 @Html.DisplayFor(model => model.ComitativeFeminineDual)
             </td>
             <td>
                 @Html.DisplayFor(model => model.ComitativeFemininePlural)
-
+            </td>
+            <td>
+                @Html.DisplayFor(model => model.ComitativeNeuterSingular)
+            </td>
+            <td>
+                @Html.DisplayFor(model => model.ComitativeNeuterDual)
+            </td>
+            <td>
+                @Html.DisplayFor(model => model.ComitativeNeuterPlural)
             </td>
         </tr>
         <tr>
@@ -434,7 +621,6 @@
                 @StaticResource.Resources.Causative
             </td>
             <td>
-
                 @Html.DisplayFor(model => model.CausativeMasculineSingular)
             </td>
             <td>
@@ -452,56 +638,35 @@
             <td>
                 @Html.DisplayFor(model => model.CausativeFemininePlural)
             </td>
+            <td>
+                @Html.DisplayFor(model => model.CausativeNeuterSingular)
+            </td>
+            <td>
+                @Html.DisplayFor(model => model.CausativeNeuterDual)
+            </td>
+            <td>
+                @Html.DisplayFor(model => model.CausativeNeuterPlural)
+            </td>
         </tr>
     </table>
     <dl class="dl-horizontal">
-
         <dt>
             @Html.DisplayNameFor(model => model.Stem)
         </dt>
-
         <dd>
             @Html.DisplayFor(model => model.Stem)
         </dd>
-
         <dt>
             @Html.DisplayNameFor(model => model.StemClass)
         </dt>
-
         <dd>
             @Html.DisplayFor(model => model.StemClass)
         </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Voice)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Voice)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Valency)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Valency)
-        </dd>
-
         <dt>
             @Html.DisplayNameFor(model => model.PronounSuffix)
         </dt>
-
         <dd>
             @Html.DisplayFor(model => model.PronounSuffix)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.TenseMood)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.TenseMood)
         </dd>
 
         <dt>
@@ -511,10 +676,10 @@
         <dd>
             @Html.DisplayFor(model => model.Visible)
         </dd>
-
     </dl>
 </div>
 <p>
-    @Html.ActionLink(StaticResource.Resources.Edit, "Edit", new { id = Model.Id }, new { @class = "btn btn-info" }) |
-    @Html.ActionLink(StaticResource.Resources.Return, "Index", null, new { @class = "btn btn-primary" })
+    @Html.ActionLink(StaticResource.Resources.Edit, "Edit", new { id = Model.Id }, new { @class = "btn btn-info", style = "width:85px" }) |
+    @Html.ActionLink(StaticResource.Resources.Return, "Index", null, new { @class = "btn btn-primary", style = "width:85px" }) |
+    @Html.ActionLink(StaticResource.Resources.ReverseDictionary, "Reverse", new { id = Model.Id }, new { @class = "btn_special", style = "width:185px" })
 </p>

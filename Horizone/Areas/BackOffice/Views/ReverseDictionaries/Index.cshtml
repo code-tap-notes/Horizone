@@ -1,0 +1,44 @@
+﻿@model IEnumerable<Horizone.Models.ReverseDictionary>
+@{
+    ViewBag.Title = @StaticResource.Resources.ReverseDictionary;
+}
+
+<h2>@StaticResource.Resources.ReverseDictionary</h2>
+
+<p>
+    @Html.ActionLink(@StaticResource.Resources.Add, "Create", null, new { @class = "btn btn-primary" })
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Word)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ReverseWord)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                <form class="form-group row" action="@Url.Action("SearchWord", "DashBoards")" method="post" enctype="multipart/form-data">
+                    <button type="submit" class="btn btn-default" style="width:400px"> @Html.DisplayFor(modelItem => item.Word) </button>
+                    <input class="form-control" type="hidden" id="Search" name="search" value=@item.Word />
+                </form>
+            </td>
+            <td>
+                <form class="form-group row" action="@Url.Action("SearchWord", "DashBoards")" method="post" enctype="multipart/form-data">
+                    <button type="submit" class="btn btn-default" style="width:400px"> @Html.DisplayFor(modelItem => item.ReverseWord) </button>
+                    <input class="form-control" type="hidden" id="Search" name="search" value=@item.ReverseWord />
+                </form>
+            </td>
+            <td>
+                @Html.ActionLink(@StaticResource.Resources.Edit, "Edit", new { id = item.Id }, new { @class = "btn btn-info", style = "width:85px" })
+                @Html.ActionLink(@StaticResource.Resources.Delete, "Delete", new { id = item.Id }, new { @class = "btn btn-info", style = "width:85px" })
+            </td>
+        </tr>
+    }
+
+</table>

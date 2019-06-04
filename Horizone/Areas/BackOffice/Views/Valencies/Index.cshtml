@@ -1,0 +1,52 @@
+﻿@model IEnumerable<Horizone.Models.Valency>
+
+@{
+    ViewBag.Title = @StaticResource.Resources.Valency;
+}
+
+<h2>@StaticResource.Resources.Valency</h2>
+
+<p>
+    @Html.ActionLink(@StaticResource.Resources.Add, "Create", null, new { @class = "btn btn-primary" })
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.AbbreviationValency)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ValencyEn)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ValencyFr)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ValencyZh)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.AbbreviationValency)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ValencyEn)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ValencyFr)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ValencyZh)
+            </td>
+
+            <td>
+                @Html.ActionLink(@StaticResource.Resources.Edit, "Edit", new { id = item.Id }, new { @class = "btn btn-info", style = "width:85px" })
+                @Html.ActionLink(@StaticResource.Resources.Delete, "Delete", new { id = item.Id }, new { @class = "btn btn-info", style = "width:85px" })
+            </td>
+        </tr>
+    }
+
+</table>

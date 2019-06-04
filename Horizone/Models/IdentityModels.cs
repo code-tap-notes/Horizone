@@ -72,9 +72,14 @@ namespace Horizone.Models
         public DbSet<Gender> Genders { get; set; }
         public DbSet<Number>Numbers { get; set; }
         public DbSet<Person> Persons { get; set; }
+        public DbSet<TenseAndAspect> TenseAndAspects { get; set; }
+        public DbSet<Valency> Valencies { get; set; }
+        public DbSet<Voice> Voices { get; set; }
+        public DbSet<Mood> Moods { get; set; }
         public DbSet<WordClass> WordClasses { get; set; }
         public DbSet<WordSubClass> WordSubClasses { get; set; }
         public DbSet<AbbreviationDictionary> AbbreviationDictionaries { get; set; }
+        public DbSet<ReverseDictionary> ReverseDictionaries { get; set; }
 
         //Manuscript
         public DbSet<Catalogie> Catalogies { get; set; }

@@ -73,12 +73,12 @@
 
                                     <table>
                                         <tr>
-                                            <th> &diams; @StaticResource.Resources.CVName -  </th>
-                                            <th>  Link </th>
+                                            <th width="30%"> &diams; @StaticResource.Resources.CVName -  </th>
+                                            <th width="30%">  Link </th>
                                         </tr>
                                         <tr>
                                             <td>@item.CV   </td>
-                                            <td>@Html.ActionLink("DownLoad", "Home", new { cvName = item.CV }) </td>
+                                            <td>@Html.ActionLink("DownLoad", "Home", new { cvName = item.CV }) <span class="glyphicon glyphicon-download"></span></td>
                                         </tr>
                                     </table>
                                     <br />
@@ -91,7 +91,7 @@
                                         <br />
                                     }
                                     <br />
-                                    <a href="mailto:@item.Email" )>&diams; @StaticResource.Resources.SendEmail       </a>
+                                    <a href="mailto:@item.Email" )>&diams; @StaticResource.Resources.SendEmail   <span class="glyphicon glyphicon-envelope"></span>    </a>
                                     <br />
                                 </div>
                                 <div class="col-md-2">

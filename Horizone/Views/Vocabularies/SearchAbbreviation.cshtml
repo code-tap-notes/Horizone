@@ -1,0 +1,36 @@
+﻿@model IEnumerable<Horizone.Models.AbbreviationDictionary>
+
+@{
+    ViewBag.Title = @StaticResource.Resources.AbbreviationDictionary;
+}
+
+<h2>@StaticResource.Resources.AbbreviationDictionary</h2>
+<h4>@StaticResource.Resources.SearchResult</h4>
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Symbol)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Description)
+        </th>
+        
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Symbol)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Description)
+        </td>
+       
+    </tr>
+}
+
+</table>
+<p>
+    @Html.ActionLink(StaticResource.Resources.Return, "Abbreviation", null, new { @class = "btn btn-primary", style = "width:85px" })
+</p>

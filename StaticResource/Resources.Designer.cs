@@ -88,7 +88,7 @@ namespace StaticResource {
         }
         
         /// <summary>
-        ///   Recherche une chaîne localisée semblable à Ablative-Feminine-Dual.
+        ///   Recherche une chaîne localisée semblable à Ablative-Feminine-Duo.
         /// </summary>
         public static string AblativeFeminineDual {
             get {
@@ -115,7 +115,7 @@ namespace StaticResource {
         }
         
         /// <summary>
-        ///   Recherche une chaîne localisée semblable à Ablative-Masculine-Dual.
+        ///   Recherche une chaîne localisée semblable à Ablative-Masculine-Duo.
         /// </summary>
         public static string AblativeMasculineDual {
             get {
@@ -138,6 +138,33 @@ namespace StaticResource {
         public static string AblativeMasculineSingular {
             get {
                 return ResourceManager.GetString("AblativeMasculineSingular", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Ablative-Neutre-Duo.
+        /// </summary>
+        public static string AblativeNeuterDual {
+            get {
+                return ResourceManager.GetString("AblativeNeuterDual", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Ablative-Neutre-Pluriel.
+        /// </summary>
+        public static string AblativeNeuterPlural {
+            get {
+                return ResourceManager.GetString("AblativeNeuterPlural", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Ablative-Neutre-Singulier.
+        /// </summary>
+        public static string AblativeNeuterSingular {
+            get {
+                return ResourceManager.GetString("AblativeNeuterSingular", resourceCulture);
             }
         }
         
@@ -277,7 +304,7 @@ namespace StaticResource {
         }
         
         /// <summary>
-        ///   Recherche une chaîne localisée semblable à Allative-Féminine-Dual.
+        ///   Recherche une chaîne localisée semblable à Allative-Féminine-Duo.
         /// </summary>
         public static string AllativeFeminineDual {
             get {
@@ -295,7 +322,7 @@ namespace StaticResource {
         }
         
         /// <summary>
-        ///   Recherche une chaîne localisée semblable à Allative-Féminine-Singular.
+        ///   Recherche une chaîne localisée semblable à Allative-Féminine-Singulier.
         /// </summary>
         public static string AllativeFeminineSingular {
             get {
@@ -304,7 +331,7 @@ namespace StaticResource {
         }
         
         /// <summary>
-        ///   Recherche une chaîne localisée semblable à Allative-Masculine-Dual.
+        ///   Recherche une chaîne localisée semblable à Allative-Masculine-Duo.
         /// </summary>
         public static string AllativeMasculineDual {
             get {
@@ -327,6 +354,33 @@ namespace StaticResource {
         public static string AllativeMasculineSingular {
             get {
                 return ResourceManager.GetString("AllativeMasculineSingular", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Allative-Neutre-Duo.
+        /// </summary>
+        public static string AllativeNeuterDual {
+            get {
+                return ResourceManager.GetString("AllativeNeuterDual", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Allative-Féminine-Pluriel.
+        /// </summary>
+        public static string AllativeNeuterPlural {
+            get {
+                return ResourceManager.GetString("AllativeNeuterPlural", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Allative-Féminine-Singulier.
+        /// </summary>
+        public static string AllativeNeuterSingular {
+            get {
+                return ResourceManager.GetString("AllativeNeuterSingular", resourceCulture);
             }
         }
         
@@ -372,6 +426,15 @@ namespace StaticResource {
         public static string And {
             get {
                 return ResourceManager.GetString("And", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Voulez-vous ajouter au dictionnaire inversé?.
+        /// </summary>
+        public static string AskAdd {
+            get {
+                return ResourceManager.GetString("AskAdd", resourceCulture);
             }
         }
         
@@ -511,7 +574,7 @@ namespace StaticResource {
         }
         
         /// <summary>
-        ///   Recherche une chaîne localisée semblable à Causative-Féminine-Dual.
+        ///   Recherche une chaîne localisée semblable à Causative-Féminine-Duo.
         /// </summary>
         public static string CausativeFeminineDual {
             get {
@@ -520,7 +583,7 @@ namespace StaticResource {
         }
         
         /// <summary>
-        ///   Recherche une chaîne localisée semblable à Causative-Féminine-Plural.
+        ///   Recherche une chaîne localisée semblable à Causative-Féminine-Pluriel.
         /// </summary>
         public static string CausativeFemininePlural {
             get {
@@ -538,7 +601,7 @@ namespace StaticResource {
         }
         
         /// <summary>
-        ///   Recherche une chaîne localisée semblable à Causative-Masculine-Dual.
+        ///   Recherche une chaîne localisée semblable à Causative-Masculine-Duo.
         /// </summary>
         public static string CausativeMasculineDual {
             get {
@@ -561,6 +624,33 @@ namespace StaticResource {
         public static string CausativeMasculineSingular {
             get {
                 return ResourceManager.GetString("CausativeMasculineSingular", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Causative-Neutre-Duo.
+        /// </summary>
+        public static string CausativeNeuterDual {
+            get {
+                return ResourceManager.GetString("CausativeNeuterDual", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Causative-Neutre-Plurier.
+        /// </summary>
+        public static string CausativeNeuterPlural {
+            get {
+                return ResourceManager.GetString("CausativeNeuterPlural", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Causative-Neutre-Singulier.
+        /// </summary>
+        public static string CausativeNeuterSingular {
+            get {
+                return ResourceManager.GetString("CausativeNeuterSingular", resourceCulture);
             }
         }
         
@@ -673,7 +763,7 @@ namespace StaticResource {
         }
         
         /// <summary>
-        ///   Recherche une chaîne localisée semblable à Comitative-Féminine-Dual.
+        ///   Recherche une chaîne localisée semblable à Comitative-Féminine-Duo.
         /// </summary>
         public static string ComitativeFeminineDual {
             get {
@@ -691,7 +781,7 @@ namespace StaticResource {
         }
         
         /// <summary>
-        ///   Recherche une chaîne localisée semblable à Comitative-Féminine-Singular.
+        ///   Recherche une chaîne localisée semblable à Comitative-Féminine-Singulier.
         /// </summary>
         public static string ComitativeFeminineSingular {
             get {
@@ -700,7 +790,7 @@ namespace StaticResource {
         }
         
         /// <summary>
-        ///   Recherche une chaîne localisée semblable à Comitative-Masculine-Dual.
+        ///   Recherche une chaîne localisée semblable à Comitative-Masculine-Duo.
         /// </summary>
         public static string ComitativeMasculineDual {
             get {
@@ -723,6 +813,33 @@ namespace StaticResource {
         public static string ComitativeMasculineSingular {
             get {
                 return ResourceManager.GetString("ComitativeMasculineSingular", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Comitative-Neutre-Duo.
+        /// </summary>
+        public static string ComitativeNeuterDual {
+            get {
+                return ResourceManager.GetString("ComitativeNeuterDual", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Comitative-Neutre-Pluriel.
+        /// </summary>
+        public static string ComitativeNeuterPlural {
+            get {
+                return ResourceManager.GetString("ComitativeNeuterPlural", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Comitative-Neutre-Singulier.
+        /// </summary>
+        public static string ComitativeNeuterSingular {
+            get {
+                return ResourceManager.GetString("ComitativeNeuterSingular", resourceCulture);
             }
         }
         
@@ -1321,7 +1438,7 @@ namespace StaticResource {
         }
         
         /// <summary>
-        ///   Recherche une chaîne localisée semblable à Génitive-Féminine-Dual.
+        ///   Recherche une chaîne localisée semblable à Génitive-Féminine-Duo.
         /// </summary>
         public static string GenitiveFeminineDual {
             get {
@@ -1348,7 +1465,7 @@ namespace StaticResource {
         }
         
         /// <summary>
-        ///   Recherche une chaîne localisée semblable à Génitive-Masculine-Dual.
+        ///   Recherche une chaîne localisée semblable à Génitive-Masculine-Duo.
         /// </summary>
         public static string GenitiveMasculineDual {
             get {
@@ -1371,6 +1488,33 @@ namespace StaticResource {
         public static string GenitiveMasculineSingular {
             get {
                 return ResourceManager.GetString("GenitiveMasculineSingular", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Génitive-Neutre-Duo.
+        /// </summary>
+        public static string GenitiveNeuterDual {
+            get {
+                return ResourceManager.GetString("GenitiveNeuterDual", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Génitive-Neutre-Pluriel.
+        /// </summary>
+        public static string GenitiveNeuterPlural {
+            get {
+                return ResourceManager.GetString("GenitiveNeuterPlural", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Génitive-Neutre-Singulier.
+        /// </summary>
+        public static string GenitiveNeuterSingular {
+            get {
+                return ResourceManager.GetString("GenitiveNeuterSingular", resourceCulture);
             }
         }
         
@@ -1519,7 +1663,7 @@ namespace StaticResource {
         }
         
         /// <summary>
-        ///   Recherche une chaîne localisée semblable à Instrumental-Féminine-Dual.
+        ///   Recherche une chaîne localisée semblable à Instrumental-Féminine-Duo.
         /// </summary>
         public static string InstrumentalFeminineDual {
             get {
@@ -1546,7 +1690,7 @@ namespace StaticResource {
         }
         
         /// <summary>
-        ///   Recherche une chaîne localisée semblable à Instrumental-Masculine-Dual.
+        ///   Recherche une chaîne localisée semblable à Instrumental-Masculine-Duo.
         /// </summary>
         public static string InstrumentalMasculineDual {
             get {
@@ -1569,6 +1713,33 @@ namespace StaticResource {
         public static string InstrumentalMasculineSingular {
             get {
                 return ResourceManager.GetString("InstrumentalMasculineSingular", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Instrumental-Neutre-Duo.
+        /// </summary>
+        public static string InstrumentalNeuterDual {
+            get {
+                return ResourceManager.GetString("InstrumentalNeuterDual", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Instrumental-Neutre-Pluriel.
+        /// </summary>
+        public static string InstrumentalNeuterPlural {
+            get {
+                return ResourceManager.GetString("InstrumentalNeuterPlural", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Instrumental-Neutre-Singulier.
+        /// </summary>
+        public static string InstrumentalNeuterSingular {
+            get {
+                return ResourceManager.GetString("InstrumentalNeuterSingular", resourceCulture);
             }
         }
         
@@ -1825,7 +1996,7 @@ namespace StaticResource {
         }
         
         /// <summary>
-        ///   Recherche une chaîne localisée semblable à Locative-Féminine-Dual.
+        ///   Recherche une chaîne localisée semblable à Locative-Féminine-Duo.
         /// </summary>
         public static string LocativeFeminineDual {
             get {
@@ -1852,7 +2023,7 @@ namespace StaticResource {
         }
         
         /// <summary>
-        ///   Recherche une chaîne localisée semblable à Locative-Masculine-Dual.
+        ///   Recherche une chaîne localisée semblable à Locative-Masculine-Duo.
         /// </summary>
         public static string LocativeMasculineDual {
             get {
@@ -1875,6 +2046,33 @@ namespace StaticResource {
         public static string LocativeMasculineSingular {
             get {
                 return ResourceManager.GetString("LocativeMasculineSingular", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Locative-Neutre-Duo.
+        /// </summary>
+        public static string LocativeNeutreDual {
+            get {
+                return ResourceManager.GetString("LocativeNeutreDual", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Locative-Neutre-Pluriel.
+        /// </summary>
+        public static string LocativeNeutrePlural {
+            get {
+                return ResourceManager.GetString("LocativeNeutrePlural", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Locative-Neutre-Singular.
+        /// </summary>
+        public static string LocativeNeutreSingular {
+            get {
+                return ResourceManager.GetString("LocativeNeutreSingular", resourceCulture);
             }
         }
         
@@ -1924,7 +2122,7 @@ namespace StaticResource {
         }
         
         /// <summary>
-        ///   Recherche une chaîne localisée semblable à Gestion Manuscript.
+        ///   Recherche une chaîne localisée semblable à Gestion Manuscrite.
         /// </summary>
         public static string ManagementManuscript {
             get {
@@ -1960,7 +2158,7 @@ namespace StaticResource {
         }
         
         /// <summary>
-        ///   Recherche une chaîne localisée semblable à Manuscrits.
+        ///   Recherche une chaîne localisée semblable à Manuscrit.
         /// </summary>
         public static string Manuscript {
             get {
@@ -2086,6 +2284,15 @@ namespace StaticResource {
         }
         
         /// <summary>
+        ///   Recherche une chaîne localisée semblable à Signification.
+        /// </summary>
+        public static string Meaning {
+            get {
+                return ResourceManager.GetString("Meaning", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Recherche une chaîne localisée semblable à Médias.
         /// </summary>
         public static string Media {
@@ -2172,6 +2379,15 @@ namespace StaticResource {
         public static string ModuleWidth {
             get {
                 return ResourceManager.GetString("ModuleWidth", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Ambiance.
+        /// </summary>
+        public static string Mood {
+            get {
+                return ResourceManager.GetString("Mood", resourceCulture);
             }
         }
         
@@ -2356,7 +2572,7 @@ namespace StaticResource {
         }
         
         /// <summary>
-        ///   Recherche une chaîne localisée semblable à Nominatif-Féminin-Dual.
+        ///   Recherche une chaîne localisée semblable à Nominatif-Féminin-Duo.
         /// </summary>
         public static string NominateFeminineDual {
             get {
@@ -2383,7 +2599,7 @@ namespace StaticResource {
         }
         
         /// <summary>
-        ///   Recherche une chaîne localisée semblable à Nominatif-Masculin-Dual.
+        ///   Recherche une chaîne localisée semblable à Nominatif-Masculin-Duo.
         /// </summary>
         public static string NominateMasculineDual {
             get {
@@ -2410,11 +2626,56 @@ namespace StaticResource {
         }
         
         /// <summary>
+        ///   Recherche une chaîne localisée semblable à Nominate-Neutre-Duo.
+        /// </summary>
+        public static string NominateNeuterDual {
+            get {
+                return ResourceManager.GetString("NominateNeuterDual", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Nominate-Neutre-Pluriel.
+        /// </summary>
+        public static string NominateNeuterPlural {
+            get {
+                return ResourceManager.GetString("NominateNeuterPlural", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Nominate-Neutre-Singulier.
+        /// </summary>
+        public static string NominateNeuterSingular {
+            get {
+                return ResourceManager.GetString("NominateNeuterSingular", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Le mot inverse n&apos;a pas été trouvé dans le dictionnaire.
+        /// </summary>
+        public static string NoReverse {
+            get {
+                return ResourceManager.GetString("NoReverse", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Recherche une chaîne localisée semblable à Pas de sous-classe.
         /// </summary>
         public static string NoSubClass {
             get {
                 return ResourceManager.GetString("NoSubClass", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Mot non trouvé.
+        /// </summary>
+        public static string NotFound {
+            get {
+                return ResourceManager.GetString("NotFound", resourceCulture);
             }
         }
         
@@ -2518,7 +2779,7 @@ namespace StaticResource {
         }
         
         /// <summary>
-        ///   Recherche une chaîne localisée semblable à Oblique-Féminin-Dual.
+        ///   Recherche une chaîne localisée semblable à Oblique-Féminin-Duo.
         /// </summary>
         public static string ObliqueFeminineDual {
             get {
@@ -2545,7 +2806,7 @@ namespace StaticResource {
         }
         
         /// <summary>
-        ///   Recherche une chaîne localisée semblable à Oblique-Masculin-Dual.
+        ///   Recherche une chaîne localisée semblable à Oblique-Masculin-Duo.
         /// </summary>
         public static string ObliqueMasculineDual {
             get {
@@ -2568,6 +2829,33 @@ namespace StaticResource {
         public static string ObliqueMasculineSingular {
             get {
                 return ResourceManager.GetString("ObliqueMasculineSingular", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Oblique-Neutre-Duo.
+        /// </summary>
+        public static string ObliqueNeuterDual {
+            get {
+                return ResourceManager.GetString("ObliqueNeuterDual", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Oblique-Neutre-Pluriel.
+        /// </summary>
+        public static string ObliqueNeuterPlural {
+            get {
+                return ResourceManager.GetString("ObliqueNeuterPlural", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Oblique-Neutre-Singulier.
+        /// </summary>
+        public static string ObliqueNeuterSingular {
+            get {
+                return ResourceManager.GetString("ObliqueNeuterSingular", resourceCulture);
             }
         }
         
@@ -2788,7 +3076,7 @@ namespace StaticResource {
         }
         
         /// <summary>
-        ///   Recherche une chaîne localisée semblable à Perlative-Féminine-Dual.
+        ///   Recherche une chaîne localisée semblable à Perlative-Féminine-Duo.
         /// </summary>
         public static string PerlativeFeminineDual {
             get {
@@ -2815,7 +3103,7 @@ namespace StaticResource {
         }
         
         /// <summary>
-        ///   Recherche une chaîne localisée semblable à Perlative-Masculine-Dual.
+        ///   Recherche une chaîne localisée semblable à Perlative-Masculine-Duo.
         /// </summary>
         public static string PerlativeMasculineDual {
             get {
@@ -2838,6 +3126,33 @@ namespace StaticResource {
         public static string PerlativeMasculineSingular {
             get {
                 return ResourceManager.GetString("PerlativeMasculineSingular", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Perlative-Neutre-Duo.
+        /// </summary>
+        public static string PerlativeNeuterDual {
+            get {
+                return ResourceManager.GetString("PerlativeNeuterDual", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Perlative--Neutre-Pluriel.
+        /// </summary>
+        public static string PerlativeNeuterPlural {
+            get {
+                return ResourceManager.GetString("PerlativeNeuterPlural", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Perlative-Neutre-Singulier.
+        /// </summary>
+        public static string PerlativeNeuterSingular {
+            get {
+                return ResourceManager.GetString("PerlativeNeuterSingular", resourceCulture);
             }
         }
         
@@ -3221,6 +3536,15 @@ namespace StaticResource {
         }
         
         /// <summary>
+        ///   Recherche une chaîne localisée semblable à Le champ est obligatoire..
+        /// </summary>
+        public static string Required {
+            get {
+                return ResourceManager.GetString("Required", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Recherche une chaîne localisée semblable à Feuilles restaurées.
         /// </summary>
         public static string Restore {
@@ -3235,6 +3559,24 @@ namespace StaticResource {
         public static string Return {
             get {
                 return ResourceManager.GetString("Return", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Mots inversé.
+        /// </summary>
+        public static string Reverse {
+            get {
+                return ResourceManager.GetString("Reverse", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Dictionnaire inversé.
+        /// </summary>
+        public static string ReverseDictionary {
+            get {
+                return ResourceManager.GetString("ReverseDictionary", resourceCulture);
             }
         }
         
@@ -3851,6 +4193,24 @@ namespace StaticResource {
         }
         
         /// <summary>
+        ///   Recherche une chaîne localisée semblable à Temps.
+        /// </summary>
+        public static string Tense {
+            get {
+                return ResourceManager.GetString("Tense", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Temps et aspect.
+        /// </summary>
+        public static string TenseAndAspect {
+            get {
+                return ResourceManager.GetString("TenseAndAspect", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Recherche une chaîne localisée semblable à Temps et forme.
         /// </summary>
         public static string TenseMood {
@@ -4148,6 +4508,33 @@ namespace StaticResource {
         }
         
         /// <summary>
+        ///   Recherche une chaîne localisée semblable à Valence-Anglais.
+        /// </summary>
+        public static string ValencyEn {
+            get {
+                return ResourceManager.GetString("ValencyEn", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Valence-Française.
+        /// </summary>
+        public static string ValencyFr {
+            get {
+                return ResourceManager.GetString("ValencyFr", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Valence-Chinoise.
+        /// </summary>
+        public static string ValencyZh {
+            get {
+                return ResourceManager.GetString("ValencyZh", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Recherche une chaîne localisée semblable à Abstrait Verbal.
         /// </summary>
         public static string VerbalAbstract {
@@ -4211,7 +4598,7 @@ namespace StaticResource {
         }
         
         /// <summary>
-        ///   Recherche une chaîne localisée semblable à Vocative-Féminine-Dual.
+        ///   Recherche une chaîne localisée semblable à Vocative-Féminine-Duo.
         /// </summary>
         public static string VocativeFeminineDual {
             get {
@@ -4238,7 +4625,7 @@ namespace StaticResource {
         }
         
         /// <summary>
-        ///   Recherche une chaîne localisée semblable à Vocative-Masculin-Dual.
+        ///   Recherche une chaîne localisée semblable à Vocative-Masculin-Duo.
         /// </summary>
         public static string VocativeMasculineDual {
             get {
@@ -4265,11 +4652,65 @@ namespace StaticResource {
         }
         
         /// <summary>
+        ///   Recherche une chaîne localisée semblable à Vocative-Neutre-Duo.
+        /// </summary>
+        public static string VocativeNeuterDual {
+            get {
+                return ResourceManager.GetString("VocativeNeuterDual", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Vocative-Neutre-Pluriel.
+        /// </summary>
+        public static string VocativeNeuterPlural {
+            get {
+                return ResourceManager.GetString("VocativeNeuterPlural", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Vocative-Neutre-Singulier.
+        /// </summary>
+        public static string VocativeNeuterSingular {
+            get {
+                return ResourceManager.GetString("VocativeNeuterSingular", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Recherche une chaîne localisée semblable à Voix.
         /// </summary>
         public static string Voice {
             get {
                 return ResourceManager.GetString("Voice", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Voix-Anglais.
+        /// </summary>
+        public static string VoiceEn {
+            get {
+                return ResourceManager.GetString("VoiceEn", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Voix-Française.
+        /// </summary>
+        public static string VoiceFr {
+            get {
+                return ResourceManager.GetString("VoiceFr", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Voix-Chinoise.
+        /// </summary>
+        public static string VoiceZh {
+            get {
+                return ResourceManager.GetString("VoiceZh", resourceCulture);
             }
         }
         
@@ -4328,7 +4769,7 @@ namespace StaticResource {
         }
         
         /// <summary>
-        ///   Recherche une chaîne localisée semblable à Sous-classe de motss- Anglais.
+        ///   Recherche une chaîne localisée semblable à Sous-classe de mots- Anglais.
         /// </summary>
         public static string WordSubClassEn {
             get {

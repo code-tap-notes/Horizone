@@ -140,5 +140,19 @@ namespace Horizone.Areas.BackOffice.Controllers
             }
             return PartialView("Search", bibliographies.ToList());
         }
+        public ActionResult SearchWord(string search)
+        {
+            IEnumerable<DictionaryTocharian> dictionaryTocharians = db.DictionaryTocharians.Include("TochLanguage").Include("WordClass").Include("WordSubClass").Include("Cases").Include("Numbers").Include("Genders").Include("Persons");
+
+            if (!string.IsNullOrWhiteSpace(search))
+            {
+                dictionaryTocharians = dictionaryTocharians.Where(x => x.Word.Contains(search));
+            }
+            if (dictionaryTocharians.Count() == 0)
+            {
+                Display("Aucun résultat");
+            }
+            return View("SearchWord", dictionaryTocharians.ToList());
+        }
     }
 }

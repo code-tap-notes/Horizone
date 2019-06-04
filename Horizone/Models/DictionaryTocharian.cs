@@ -107,6 +107,15 @@ namespace Horizone.Models
         [Display(Name = "NominateFemininePlural", ResourceType = typeof(StaticResource.Resources))]
         public string NominateFemininePlural { get; set; }
 
+        [Display(Name = "NominateNeuterSingular", ResourceType = typeof(StaticResource.Resources))]
+        public string NominateNeuterSingular { get; set; }
+
+        [Display(Name = "NominateNeuterDual", ResourceType = typeof(StaticResource.Resources))]
+        public string NominateNeuterDual { get; set; }
+
+        [Display(Name = "NominateNeuterPlural", ResourceType = typeof(StaticResource.Resources))]
+        public string NominateNeuterPlural { get; set; }
+
         [Display(Name = "ObliqueMasculineSingular", ResourceType = typeof(StaticResource.Resources))]
         public string ObliqueMasculineSingular { get; set; }
 
@@ -124,6 +133,15 @@ namespace Horizone.Models
 
         [Display(Name = "ObliqueFemininePlural", ResourceType = typeof(StaticResource.Resources))]
         public string ObliqueFemininePlural { get; set; }
+
+        [Display(Name = "ObliqueNeuterSingular", ResourceType = typeof(StaticResource.Resources))]
+        public string ObliqueNeuterSingular { get; set; }
+
+        [Display(Name = "ObliqueNeuterDual", ResourceType = typeof(StaticResource.Resources))]
+        public string ObliqueNeuterDual { get; set; }
+
+        [Display(Name = "ObliqueNeuterPlural", ResourceType = typeof(StaticResource.Resources))]
+        public string ObliqueNeuterPlural { get; set; }
 
         [Display(Name = "VocativeMasculineSingular", ResourceType = typeof(StaticResource.Resources))]
         public string VocativeMasculineSingular { get; set; }
@@ -143,6 +161,15 @@ namespace Horizone.Models
         [Display(Name = "VocativeFemininePlural", ResourceType = typeof(StaticResource.Resources))]
         public string VocativeFemininePlural { get; set; }
 
+        [Display(Name = "VocativeNeuterSingular", ResourceType = typeof(StaticResource.Resources))]
+        public string VocativeNeuterSingular { get; set; }
+
+        [Display(Name = "VocativeNeuterDual", ResourceType = typeof(StaticResource.Resources))]
+        public string VocativeNeuterDual { get; set; }
+
+        [Display(Name = "VocativeNeuterPlural", ResourceType = typeof(StaticResource.Resources))]
+        public string VocativeNeuterPlural { get; set; }
+
         [Display(Name = "GenitiveMasculineSingular", ResourceType = typeof(StaticResource.Resources))]
         public string GenitiveMasculineSingular { get; set; }
 
@@ -160,6 +187,15 @@ namespace Horizone.Models
 
         [Display(Name = "GenitiveFemininePlural", ResourceType = typeof(StaticResource.Resources))]
         public string GenitiveFemininePlural { get; set; }
+
+        [Display(Name = "GenitiveNeuterSingular", ResourceType = typeof(StaticResource.Resources))]
+        public string GenitiveNeuterSingular { get; set; }
+
+        [Display(Name = "GenitiveNeuterDual", ResourceType = typeof(StaticResource.Resources))]
+        public string GenitiveNeuterDual { get; set; }
+
+        [Display(Name = "GenitiveNeuterPlural", ResourceType = typeof(StaticResource.Resources))]
+        public string GenitiveNeuterPlural { get; set; }
 
         [Display(Name = "LocativeMasculineSingular", ResourceType = typeof(StaticResource.Resources))]
         public string LocativeMasculineSingular { get; set; }
@@ -179,6 +215,15 @@ namespace Horizone.Models
         [Display(Name = "LocativeFemininePlural", ResourceType = typeof(StaticResource.Resources))]
         public string LocativeFemininePlural { get; set; }
 
+        [Display(Name = "LocativeNeuterSingular", ResourceType = typeof(StaticResource.Resources))]
+        public string LocativeNeuterSingular { get; set; }
+
+        [Display(Name = "LocativeNeuterDual", ResourceType = typeof(StaticResource.Resources))]
+        public string LocativeNeuterDual { get; set; }
+
+        [Display(Name = "LocativeNeuterPlural", ResourceType = typeof(StaticResource.Resources))]
+        public string LocativeNeuterPlural { get; set; }
+
         [Display(Name = "AblativeMasculineSingular", ResourceType = typeof(StaticResource.Resources))]
         public string AblativeMasculineSingular { get; set; }
 
@@ -196,6 +241,15 @@ namespace Horizone.Models
 
         [Display(Name = "AblativeFemininePlural", ResourceType = typeof(StaticResource.Resources))]
         public string AblativeFemininePlural { get; set; }
+
+        [Display(Name = "AblativeNeuterSingular", ResourceType = typeof(StaticResource.Resources))]
+        public string AblativeNeuterSingular { get; set; }
+
+        [Display(Name = "AblativeNeuterDual", ResourceType = typeof(StaticResource.Resources))]
+        public string AblativeNeuterDual { get; set; }
+
+        [Display(Name = "AblativeNeuterPlural", ResourceType = typeof(StaticResource.Resources))]
+        public string AblativeNeuterPlural { get; set; }
 
         [Display(Name = "AllativeMasculineSingular", ResourceType = typeof(StaticResource.Resources))]
         public string AllativeMasculineSingular { get; set; }
@@ -215,6 +269,15 @@ namespace Horizone.Models
         [Display(Name = "AllativeFemininePlural", ResourceType = typeof(StaticResource.Resources))]
         public string AllativeFemininePlural { get; set; }
 
+        [Display(Name = "AllativeNeuterSingular", ResourceType = typeof(StaticResource.Resources))]
+        public string AllativeNeuterSingular { get; set; }
+
+        [Display(Name = "AllativeNeuterDual", ResourceType = typeof(StaticResource.Resources))]
+        public string AllativeNeuterDual { get; set; }
+
+        [Display(Name = "AllativeNeuterPlural", ResourceType = typeof(StaticResource.Resources))]
+        public string AllativeNeuterPlural { get; set; }
+
         [Display(Name = "PerlativeMasculineSingular", ResourceType = typeof(StaticResource.Resources))]
         public string PerlativeMasculineSingular { get; set; }
 
@@ -232,6 +295,15 @@ namespace Horizone.Models
 
         [Display(Name = "PerlativeFemininePlural", ResourceType = typeof(StaticResource.Resources))]
         public string PerlativeFemininePlural { get; set; }
+
+        [Display(Name = "PerlativeNeuterSingular", ResourceType = typeof(StaticResource.Resources))]
+        public string PerlativeNeuterSingular { get; set; }
+
+        [Display(Name = "PerlativeNeuterDual", ResourceType = typeof(StaticResource.Resources))]
+        public string PerlativeNeuterDual { get; set; }
+
+        [Display(Name = "PerlativeNeuterPlural", ResourceType = typeof(StaticResource.Resources))]
+        public string PerlativeNeuterPlural { get; set; }
 
         [Display(Name = "InstrumentalMasculineSingular", ResourceType = typeof(StaticResource.Resources))]
         public string InstrumentalMasculineSingular { get; set; }
@@ -251,6 +323,15 @@ namespace Horizone.Models
         [Display(Name = "InstrumentalFemininePlural", ResourceType = typeof(StaticResource.Resources))]
         public string InstrumentalFemininePlural { get; set; }
 
+        [Display(Name = "InstrumentalNeuterSingular", ResourceType = typeof(StaticResource.Resources))]
+        public string InstrumentalNeuterSingular { get; set; }
+
+        [Display(Name = "InstrumentalFeminineDual", ResourceType = typeof(StaticResource.Resources))]
+        public string InstrumentalNeuterDual { get; set; }
+
+        [Display(Name = "InstrumentalNeuterPlural", ResourceType = typeof(StaticResource.Resources))]
+        public string InstrumentalNeuterPlural { get; set; }
+
         [Display(Name = "ComitativeMasculineSingular", ResourceType = typeof(StaticResource.Resources))]
         public string ComitativeMasculineSingular { get; set; }
 
@@ -268,6 +349,15 @@ namespace Horizone.Models
 
         [Display(Name = "ComitativeFemininePlural", ResourceType = typeof(StaticResource.Resources))]
         public string ComitativeFemininePlural { get; set; }
+
+        [Display(Name = "ComitativeNeuterSingular", ResourceType = typeof(StaticResource.Resources))]
+        public string ComitativeNeuterSingular { get; set; }
+
+        [Display(Name = "ComitativeNeuterDual", ResourceType = typeof(StaticResource.Resources))]
+        public string ComitativeNeuterDual { get; set; }
+
+        [Display(Name = "ComitativeNeuterPlural", ResourceType = typeof(StaticResource.Resources))]
+        public string ComitativeNeuterPlural { get; set; }
 
         [Display(Name = "CausativeMasculineSingular", ResourceType = typeof(StaticResource.Resources))]
         public string CausativeMasculineSingular { get; set; }
@@ -287,6 +377,14 @@ namespace Horizone.Models
         [Display(Name = "CausativeFemininePlural", ResourceType = typeof(StaticResource.Resources))]
         public string CausativeFemininePlural { get; set; }
 
+        [Display(Name = "CausativeNeuterSingular", ResourceType = typeof(StaticResource.Resources))]
+        public string CausativeNeuterSingular { get; set; }
+
+        [Display(Name = "CausativeNeuterDual", ResourceType = typeof(StaticResource.Resources))]
+        public string CausativeNeuterDual { get; set; }
+
+        [Display(Name = "CausativeNeuterPlural", ResourceType = typeof(StaticResource.Resources))]
+        public string CausativeNeuterPlural { get; set; }
         //Verb and adj
         [Display(Name = "Stem", ResourceType = typeof(StaticResource.Resources))]
         public string Stem { get; set; }
@@ -295,25 +393,39 @@ namespace Horizone.Models
         public string StemClass { get; set; }
 
         [Display(Name = "Voice", ResourceType = typeof(StaticResource.Resources))]
-        public string Voice { get; set; }
+        public int VoiceId { get; set; }
+
+        [ForeignKey("VoiceId")]
+        public Voice Voice { get; set; }
 
         [Display(Name = "Valency", ResourceType = typeof(StaticResource.Resources))]
-        public string Valency { get; set; }               
+        public int ValencyId { get; set; }
+
+        [ForeignKey("ValencyId")]
+        public Valency Valency { get; set; }
+
+        [Display(Name = "TenseAndAspect", ResourceType = typeof(StaticResource.Resources))]
+        public int TenseAndAspectId { get; set; }
+
+        [ForeignKey("TenseAndAspectId")]
+        public TenseAndAspect TenseAndAspect { get; set; }
+
+        [Display(Name = "Mood", ResourceType = typeof(StaticResource.Resources))]
+        public int MoodId { get; set; }
+
+        [ForeignKey("MoodId")]
+        public Mood Mood { get; set; }
 
         [AllowHtml]
         [Display(Name = "PronounSuffix", ResourceType = typeof(StaticResource.Resources))]
         public string PronounSuffix { get; set; }
-       
-        [Display(Name = "TenseMood", ResourceType = typeof(StaticResource.Resources))]
-        public string TenseMood { get; set; }
-        
+              
         [Display(Name = "Bibliography", ResourceType = typeof(StaticResource.Resources))]
         public ICollection<Bibliography> Bibliographys { get; set; }
 
         [Display(Name = "Visible", ResourceType = typeof(StaticResource.Resources))]
         public Boolean Visible { get; set; }
-
-        
+      
     }
 
 }
