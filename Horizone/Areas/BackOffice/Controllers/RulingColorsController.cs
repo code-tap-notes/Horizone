@@ -11,6 +11,7 @@ using Horizone.Models;
 
 namespace Horizone.Areas.BackOffice.Controllers
 {
+    [Authorize(Roles = "Collaborator,Admin")]
     public class RulingColorsController : BaseController
     {
 

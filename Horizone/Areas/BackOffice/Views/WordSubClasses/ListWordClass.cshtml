@@ -1,0 +1,13 @@
+﻿@model List<Horizone.Models.WordClass>
+
+    @foreach (var item in Model)
+    {
+    
+        <form class="form-group row" action="@Url.Action("ListSubClass", "WordSubClasses")" method="post" enctype="multipart/form-data">
+        <input type="submit" style="width:150px" id="Search" name="search"  value=@item.ClassEn>
+        </form>
+    
+    }
+
+
+

@@ -12,6 +12,7 @@ using Horizone.Models;
 
 namespace Horizone.Areas.BackOffice.Controllers
 {
+    [Authorize(Roles = "Collaborator,Admin")]
     public class AnalyseMacroscopicsController : BaseController
     {
 
@@ -216,7 +217,7 @@ namespace Horizone.Areas.BackOffice.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            AnalyseMacroscopic analyseMacroscopic = db.AnalyseMacroscopics.Find(id);
+            AnalyseMacroscopic analyseMacroscopic = db.AnalyseMacroscopics.SingleOrDefault(x => x.Id == id);
             if (analyseMacroscopic == null)
             {
                 return HttpNotFound();
@@ -229,7 +230,7 @@ namespace Horizone.Areas.BackOffice.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            AnalyseMacroscopic analyseMacroscopic = db.AnalyseMacroscopics.Find(id);
+            AnalyseMacroscopic analyseMacroscopic = db.AnalyseMacroscopics.SingleOrDefault(x => x.Id == id);
             db.AnalyseMacroscopics.Remove(analyseMacroscopic);
             db.SaveChanges();
             return RedirectToAction("Index");

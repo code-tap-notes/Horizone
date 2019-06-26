@@ -11,6 +11,7 @@ using Horizone.Controllers;
 
 namespace Horizone.Areas.BackOffice.Controllers
 {
+    [Authorize(Roles = "Collaborator,Admin")]
     public class WordClassesController : BaseController
     {
       
@@ -19,11 +20,12 @@ namespace Horizone.Areas.BackOffice.Controllers
         {
             return View(db.WordClasses.OrderBy(x=>x.ClassEn).ToList());
         }
+      
         // GET: BackOffice/WordClasses
-         public ActionResult ListWordSubClass(int? id)
+        public ActionResult ListWordSubClass(int? id)
         {
             WordClass wordClass = db.WordClasses.Find(id);
-            ViewBag.Class = wordClass.ClassEn;
+            ViewBag.Class = wordClass.ClassEn; //Pour le titre sous classe
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);

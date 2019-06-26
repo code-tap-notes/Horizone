@@ -8,33 +8,20 @@ using System.Web;
 using System.Web.Mvc;
 using Horizone.Controllers;
 using Horizone.Models;
+using PagedList;
 
 namespace Horizone.Areas.BackOffice.Controllers
 {
+    [Authorize(Roles = "Collaborator,Admin")]
     public class AbbreviationDictionariesController : BaseController
     {
  
         // GET: BackOffice/AbbreviationDictionaries
-        public ActionResult Index()
+        public ActionResult Index(int page = 1, int pageSize = 20)
         {
-            return View(db.AbbreviationDictionaries.ToList());
+            return View(db.AbbreviationDictionaries.OrderBy(x=>x.Symbol).ToPagedList(page, pageSize));
         }
-
-        // GET: BackOffice/AbbreviationDictionaries/Details/5
-        public ActionResult Details(int? id)
-        {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            AbbreviationDictionary abbreviationDictionary = db.AbbreviationDictionaries.Find(id);
-            if (abbreviationDictionary == null)
-            {
-                return HttpNotFound();
-            }
-            return View(abbreviationDictionary);
-        }
-
+  
         // GET: BackOffice/AbbreviationDictionaries/Create
         public ActionResult Create()
         {
@@ -46,7 +33,7 @@ namespace Horizone.Areas.BackOffice.Controllers
         // plus de détails, voir  https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,Symbol,Description")] AbbreviationDictionary abbreviationDictionary)
+        public ActionResult Create([Bind(Include = "Id,Symbol,Description,OtherAbbreviation, AbbreviationManuscript,AbbreviationsLanguage, GrammaticalAbbreviation")] AbbreviationDictionary abbreviationDictionary)
         {
             if (ModelState.IsValid)
             {
@@ -78,7 +65,7 @@ namespace Horizone.Areas.BackOffice.Controllers
         // plus de détails, voir  https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,Symbol,Description")] AbbreviationDictionary abbreviationDictionary)
+        public ActionResult Edit([Bind(Include = "Id,Symbol,Description,OtherAbbreviation, AbbreviationManuscript,AbbreviationsLanguage, GrammaticalAbbreviation")] AbbreviationDictionary abbreviationDictionary)
         {
             if (ModelState.IsValid)
             {

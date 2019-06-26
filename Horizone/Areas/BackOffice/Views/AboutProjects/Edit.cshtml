@@ -1,4 +1,11 @@
 ﻿@model Horizone.Models.AboutProject
+@using (Html.BeginForm())
+{
+    <div class="row">
+        @{Html.RenderAction("SpecialCharacter", "DashBoards"); }
+    </div>
+}
+
 <div class="detail">
     <h2>@StaticResource.Resources.Edit</h2>
     <div class="row container-fluid">
@@ -104,10 +111,7 @@
     @Scripts.Render("~/bundles/jquery")
 
     <script>
-        $(function () {
-            tinymce.init({ selector: '#Summary' });
-            tinymce.init({ selector: '#Content' });
-        });
+
         const btn = document.querySelector('#delete');
         btn.addEventListener('click', ev => {
             if (confirm(@StaticResource.Resources.AskDelete ) === false) {
@@ -128,6 +132,9 @@
                     }
                 });
         });
+        function insertText(elemID, text) {
+            document.getElementById(elemID).value += text;
+        };
 
         $(function () {
             tinymce.init({ selector: '#Aim' });
@@ -139,5 +146,3 @@
         });
     </script>
 }
-
-

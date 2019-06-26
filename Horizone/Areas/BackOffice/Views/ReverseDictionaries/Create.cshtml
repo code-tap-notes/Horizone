@@ -10,60 +10,64 @@
 {
     @Html.AntiForgeryToken()
 
-    <div class="form-horizontal">
-        <h4>ReverseDictionary</h4>
-        <hr />
-        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-        <div class="form-group">
-            @Html.LabelFor(model => model.Word, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                <label for="search">@StaticResource.Resources.Insert @StaticResource.Resources.SpecialCharacter : </label>
-                <a onclick="insertText('Word','ā');" href="#">ā  </a>
-                <a onclick="insertText('Word','ä');" href="#">ä  </a>
-                <a onclick="insertText('Word','ī');" href="#">ī  </a>
-                <a onclick="insertText('Word','ö');" href="#">ö  </a>
-                <a onclick="insertText('Word','ū');" href="#">ū  </a>
-                <a onclick="insertText('Word','ü');" href="#">ü  </a>
-                <a onclick="insertText('Word','ṅ');" href="#">ṅ  </a>
-                <a onclick="insertText('Word','ñ');" href="#">ñ  </a>
-                <a onclick="insertText('Word','ṃ');" href="#">ṃ  </a>
-                <a onclick="insertText('Word','ś');" href="#">ś  </a>
-                <a onclick="insertText('Word','ṣ');" href="#">ṣ  </a>
-                <a onclick="insertText('Word','š');" href="#">š  </a>
-                <a onclick="insertText('Word','ß');" href="#">ß  </a>
-                @Html.EditorFor(model => model.Word, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.Word, "", new { @class = "text-danger" })
-
-            </div>
-            @Html.LabelFor(model => model.ReverseWord, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                <label for="search">@StaticResource.Resources.Insert @StaticResource.Resources.SpecialCharacter : </label>
-                <a onclick="insertText('ReverseWord','ā');" href="#">ā  </a>
-                <a onclick="insertText('ReverseWord','ä');" href="#">ä  </a>
-                <a onclick="insertText('ReverseWord','ī');" href="#">ī  </a>
-                <a onclick="insertText('ReverseWord','ö');" href="#">ö  </a>
-                <a onclick="insertText('ReverseWord','ū');" href="#">ū  </a>
-                <a onclick="insertText('ReverseWord','ü');" href="#">ü  </a>
-                <a onclick="insertText('ReverseWord','ṅ');" href="#">ṅ  </a>
-                <a onclick="insertText('ReverseWord','ñ');" href="#">ñ  </a>
-                <a onclick="insertText('ReverseWord','ṃ');" href="#">ṃ  </a>
-                <a onclick="insertText('ReverseWord','ś');" href="#">ś  </a>
-                <a onclick="insertText('ReverseWord','ṣ');" href="#">ṣ  </a>
-                <a onclick="insertText('ReverseWord','š');" href="#">š  </a>
-                <a onclick="insertText('ReverseWord','ß');" href="#">ß  </a>
-                @Html.EditorFor(model => model.ReverseWord, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.ReverseWord, "", new { @class = "text-danger" })
-
-            </div>
-        </div>
-
-        <div class="form-group">
-            <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value=@StaticResource.Resources.Add class="btn btn-info" />
-                @Html.ActionLink(StaticResource.Resources.Cancel, "Index", null, new { @class = "btn btn-default" })
-            </div>
+<div class="form-horizontal">
+    <h4>@StaticResource.Resources.ReverseDictionary</h4>
+    <hr />
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+    <div class="form-group">
+        @Html.LabelFor(model => model.SymbolPrefix, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.SymbolPrefix, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.SymbolPrefix, "", new { @class = "text-danger" })
         </div>
     </div>
+    <div class="form-group">
+        @Html.LabelFor(model => model.ReverseWord, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            <label for="search">@StaticResource.Resources.Insert @StaticResource.Resources.SpecialCharacter : </label>
+            <a onclick="insertText('ReverseWord','ā');" href="#" style="background-color: blanchedalmond; padding:5px"> ā  </a>
+            <a onclick="insertText('ReverseWord','ä');" href="#" style="background-color: blanchedalmond; padding:5px"> ä  </a>
+            <a onclick="insertText('ReverseWord','ī');" href="#" style="background-color: blanchedalmond; padding:5px"> ī  </a>
+            <a onclick="insertText('ReverseWord','ö');" href="#" style="background-color: blanchedalmond; padding:5px"> ö  </a>
+            <a onclick="insertText('ReverseWord','ū');" href="#" style="background-color: blanchedalmond; padding:5px"> ū  </a>
+            <a onclick="insertText('ReverseWord','ü');" href="#" style="background-color: blanchedalmond; padding:5px"> ü  </a>
+            <a onclick="insertText('ReverseWord','ṅ');" href="#" style="background-color: blanchedalmond; padding:5px"> ṅ  </a>
+            <a onclick="insertText('ReverseWord','ñ');" href="#" style="background-color: blanchedalmond; padding:5px"> ñ  </a>
+            <a onclick="insertText('ReverseWord','ṇ');" href="#" style="background-color: blanchedalmond; padding:5px"> ṇ  </a>
+            <a onclick="insertText('ReverseWord','ṃ');" href="#" style="background-color: blanchedalmond; padding:5px"> ṃ  </a>
+            <a onclick="insertText('ReverseWord','ś');" href="#" style="background-color: blanchedalmond; padding:5px"> ś  </a>
+            <a onclick="insertText('ReverseWord','ṣ');" href="#" style="background-color: blanchedalmond; padding:5px"> ṣ  </a>
+            <a onclick="insertText('ReverseWord','ṛ');" href="#" style="background-color: blanchedalmond; padding:5px"> ṛ  </a>
+            <a onclick="insertText('ReverseWord','ṭ');" href="#" style="background-color: blanchedalmond; padding:5px"> ṭ  </a>
+            <a onclick="insertText('ReverseWord','š');" href="#" style="background-color: blanchedalmond; padding:5px"> š  </a>
+            <a onclick="insertText('ReverseWord','ß');" href="#" style="background-color: blanchedalmond; padding:5px"> ß  </a>
+            <a onclick="insertText('ReverseWord','ḍ');" href="#" style="background-color: blanchedalmond; padding:5px"> ḍ  </a>
+            <a onclick="insertText('ReverseWord','Ā');" href="#" style="background-color: blanchedalmond; padding:5px"> Ā  </a>
+            <a onclick="insertText('ReverseWord','Ū');" href="#" style="background-color: blanchedalmond; padding:5px"> Ū  </a>
+            <a onclick="insertText('ReverseWord','Ṃ');" href="#" style="background-color: blanchedalmond; padding:5px"> Ṃ  </a>
+            <a onclick="insertText('ReverseWord','Ṇ');" href="#" style="background-color: blanchedalmond; padding:5px"> Ṇ  </a>
+            <a onclick="insertText('ReverseWord','Ñ');" href="#" style="background-color: blanchedalmond; padding:5px"> Ñ  </a>
+            @Html.EditorFor(model => model.ReverseWord, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.ReverseWord, "", new { @class = "text-danger" })
+
+        </div>
+
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(model => model.SymbolSufix, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.SymbolSufix, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.SymbolSufix, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <input type="submit" value=@StaticResource.Resources.Add class="btn btn-info" />
+            @Html.ActionLink(StaticResource.Resources.Cancel, "Index", null, new { @class = "btn btn-default" })
+        </div>
+    </div>
+</div>
 }
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")

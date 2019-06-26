@@ -385,6 +385,15 @@ namespace StaticResource {
         }
         
         /// <summary>
+        ///   Recherche une chaîne localisée semblable à Tous les mots.
+        /// </summary>
+        public static string AllWords {
+            get {
+                return ResourceManager.GetString("AllWords", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Recherche une chaîne localisée semblable à Alternant.
         /// </summary>
         public static string Alternant {
@@ -435,6 +444,15 @@ namespace StaticResource {
         public static string AskAdd {
             get {
                 return ResourceManager.GetString("AskAdd", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Voulez-vous ajouter au dictionnaire Tocharian?.
+        /// </summary>
+        public static string AskAddDic {
+            get {
+                return ResourceManager.GetString("AskAddDic", resourceCulture);
             }
         }
         
@@ -669,6 +687,15 @@ namespace StaticResource {
         public static string Chinese {
             get {
                 return ResourceManager.GetString("Chinese", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Chosir.
+        /// </summary>
+        public static string Choose {
+            get {
+                return ResourceManager.GetString("Choose", resourceCulture);
             }
         }
         
@@ -1555,6 +1582,15 @@ namespace StaticResource {
         }
         
         /// <summary>
+        ///   Recherche une chaîne localisée semblable à Abréviation grammaticale.
+        /// </summary>
+        public static string GrammaticalAbbreviation {
+            get {
+                return ResourceManager.GetString("GrammaticalAbbreviation", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Recherche une chaîne localisée semblable à Aide.
         /// </summary>
         public static string Help {
@@ -2383,7 +2419,7 @@ namespace StaticResource {
         }
         
         /// <summary>
-        ///   Recherche une chaîne localisée semblable à Ambiance.
+        ///   Recherche une chaîne localisée semblable à Mode.
         /// </summary>
         public static string Mood {
             get {
@@ -2559,6 +2595,15 @@ namespace StaticResource {
         public static string NomenAgentis {
             get {
                 return ResourceManager.GetString("NomenAgentis", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Catégories nominales.
+        /// </summary>
+        public static string NominalCategories {
+            get {
+                return ResourceManager.GetString("NominalCategories", resourceCulture);
             }
         }
         
@@ -2932,6 +2977,15 @@ namespace StaticResource {
         }
         
         /// <summary>
+        ///   Recherche une chaîne localisée semblable à Autre abréviation.
+        /// </summary>
+        public static string OtherAbbreviation {
+            get {
+                return ResourceManager.GetString("OtherAbbreviation", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Recherche une chaîne localisée semblable à Autre image.
         /// </summary>
         public static string OtherImage {
@@ -3045,6 +3099,15 @@ namespace StaticResource {
         public static string Parallel {
             get {
                 return ResourceManager.GetString("Parallel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Dictionnaire parallèle TA-TB.
+        /// </summary>
+        public static string ParallelDictionary {
+            get {
+                return ResourceManager.GetString("ParallelDictionary", resourceCulture);
             }
         }
         
@@ -4355,6 +4418,15 @@ namespace StaticResource {
         }
         
         /// <summary>
+        ///   Recherche une chaîne localisée semblable à Correspondance Tokharien.
+        /// </summary>
+        public static string TochCorrespondence {
+            get {
+                return ResourceManager.GetString("TochCorrespondence", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Recherche une chaîne localisée semblable à Tokharien Language.
         /// </summary>
         public static string TochLanguage {
@@ -4535,11 +4607,29 @@ namespace StaticResource {
         }
         
         /// <summary>
+        ///   Recherche une chaîne localisée semblable à Verbe.
+        /// </summary>
+        public static string Verb {
+            get {
+                return ResourceManager.GetString("Verb", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Recherche une chaîne localisée semblable à Abstrait Verbal.
         /// </summary>
         public static string VerbalAbstract {
             get {
                 return ResourceManager.GetString("VerbalAbstract", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Catégories verbales.
+        /// </summary>
+        public static string VerbalCategories {
+            get {
+                return ResourceManager.GetString("VerbalCategories", resourceCulture);
             }
         }
         

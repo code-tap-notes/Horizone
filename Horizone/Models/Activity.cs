@@ -5,6 +5,7 @@ using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Web;
+using System.Web.Mvc;
 
 namespace Horizone.Models
 {
@@ -16,6 +17,7 @@ namespace Horizone.Models
         [Required(ErrorMessageResourceName = "FieldRequired", ErrorMessageResourceType = typeof(StaticResource.Resources))]
         public string DateofActivity { get; set; }
 
+        [AllowHtml]
         [Display(Name = "Place", ResourceType = typeof(StaticResource.Resources))]
         [Required(ErrorMessageResourceName = "FieldRequired", ErrorMessageResourceType = typeof(StaticResource.Resources))]
         public string Place { get; set; }
@@ -24,6 +26,7 @@ namespace Horizone.Models
         [Required(ErrorMessageResourceName = "FieldRequired", ErrorMessageResourceType = typeof(StaticResource.Resources))]
         public string NameActivity { get; set; }
 
+        [AllowHtml]
         [Display(Name = "Description", ResourceType = typeof(StaticResource.Resources))]
         public string Description { get; set; }
 

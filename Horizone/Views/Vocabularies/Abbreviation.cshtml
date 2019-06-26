@@ -1,5 +1,8 @@
-﻿@model IEnumerable<Horizone.Models.AbbreviationDictionary>
+﻿@model PagedList.IPagedList<Horizone.Models.AbbreviationDictionary>
+@using PagedList.Mvc;
 
+@*model IEnumerable<Horizone.Models.AbbreviationDictionary>
+*@
 @{
     ViewBag.Title = @StaticResource.Resources.AbbreviationDictionary;
 }
@@ -25,36 +28,53 @@
             <a onclick="insertText('Search','ü');" href="#" style="background-color: blanchedalmond; padding:5px"> ü  </a>
             <a onclick="insertText('Search','ṅ');" href="#" style="background-color: blanchedalmond; padding:5px"> ṅ  </a>
             <a onclick="insertText('Search','ñ');" href="#" style="background-color: blanchedalmond; padding:5px"> ñ  </a>
+            <a onclick="insertText('Search','ṇ');" href="#" style="background-color: blanchedalmond; padding:5px"> ṇ  </a>
             <a onclick="insertText('Search','ṃ');" href="#" style="background-color: blanchedalmond; padding:5px"> ṃ  </a>
             <a onclick="insertText('Search','ś');" href="#" style="background-color: blanchedalmond; padding:5px"> ś  </a>
             <a onclick="insertText('Search','ṣ');" href="#" style="background-color: blanchedalmond; padding:5px"> ṣ  </a>
+            <a onclick="insertText('Search','ṛ');" href="#" style="background-color: blanchedalmond; padding:5px"> ṛ  </a>
+            <a onclick="insertText('Search','ṭ');" href="#" style="background-color: blanchedalmond; padding:5px"> ṭ  </a>
+
             <a onclick="insertText('Search','š');" href="#" style="background-color: blanchedalmond; padding:5px"> š  </a>
             <a onclick="insertText('Search','ß');" href="#" style="background-color: blanchedalmond; padding:5px"> ß  </a>
-        </div>       
+        </div>
     </form>
 </div>
 
 <table class="table">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.Symbol)
+            @StaticResource.Resources.Symbol
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Description)
+            @StaticResource.Resources.Description
         </th>
         <th></th>
     </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.Symbol)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Description)
-        </td>
-        
-    </tr>
-}
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Symbol)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Description)
+            </td>
+
+        </tr>
+    }
 
 </table>
+@Html.PagedListPager(Model, page => Url.Action("Abbreviation", new { page }))
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+
+    <script>
+
+        function insertText(elemID, text) {
+            document.getElementById(elemID).value += text;
+        }
+
+    </script>
+}

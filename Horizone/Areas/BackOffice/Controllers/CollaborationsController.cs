@@ -12,6 +12,7 @@ using Horizone.Models;
 
 namespace Horizone.Areas.BackOffice.Controllers
 {
+    [Authorize(Roles = "Collaborator,Admin")]
     public class CollaborationsController : BaseController
     {       
         // GET: BackOffice/Collaborations
@@ -115,7 +116,8 @@ namespace Horizone.Areas.BackOffice.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Collaboration collaboration = db.Collaborations.Find(id);
+            Collaboration collaboration = db.Collaborations.Include("ImageCollaborations").Include("Publications").SingleOrDefault(x => x.Id == id);
+
             if (collaboration == null)
             {
                 return HttpNotFound();
@@ -128,7 +130,8 @@ namespace Horizone.Areas.BackOffice.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            Collaboration collaboration = db.Collaborations.Find(id);
+            Collaboration collaboration = db.Collaborations.Include("ImageCollaborations").Include("Publications").SingleOrDefault(x => x.Id == id);
+
             db.Collaborations.Remove(collaboration);
             db.SaveChanges();
             return RedirectToAction("Index");

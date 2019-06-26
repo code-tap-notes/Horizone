@@ -13,6 +13,7 @@ using Horizone.Models;
 
 namespace Horizone.Areas.BackOffice.Controllers
 {
+    [Authorize(Roles = "Collaborator,Admin")]
     public class NewsController : BaseController
     {      
         // GET: BackOffice/News
@@ -107,7 +108,7 @@ namespace Horizone.Areas.BackOffice.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            News news = db.Newses.Find(id);
+            News news = db.Newses.Include("ImageNewses").SingleOrDefault(x => x.Id == id);
             if (news == null)
             {
                 return HttpNotFound();
@@ -119,7 +120,7 @@ namespace Horizone.Areas.BackOffice.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            News news = db.Newses.Find(id);
+            News news = db.Newses.Include("ImageNewses").SingleOrDefault(x => x.Id == id);
             db.Newses.Remove(news);
             db.SaveChanges();
             return RedirectToAction("Index");

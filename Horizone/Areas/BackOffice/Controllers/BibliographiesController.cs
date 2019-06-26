@@ -13,6 +13,7 @@ using PagedList;
 
 namespace Horizone.Areas.BackOffice.Controllers
 {
+    [Authorize(Roles = "Collaborator,Admin")]
     public class BibliographiesController : BaseController
     {        
         // GET: BackOffice/Bibliographies
@@ -93,7 +94,7 @@ namespace Horizone.Areas.BackOffice.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Bibliography bibliography = db.Bibliographys.Find(id);
+            Bibliography bibliography = db.Bibliographys.Include("ImageBooks").SingleOrDefault(x => x.Id == id);
             if (bibliography == null)
             {
                 return HttpNotFound();
@@ -106,7 +107,7 @@ namespace Horizone.Areas.BackOffice.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            Bibliography bibliography = db.Bibliographys.Find(id);
+            Bibliography bibliography = db.Bibliographys.Include("ImageBooks").SingleOrDefault(x => x.Id == id);
             db.Bibliographys.Remove(bibliography);
             db.SaveChanges();
             return RedirectToAction("Index");

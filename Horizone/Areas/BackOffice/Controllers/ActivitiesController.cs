@@ -12,6 +12,7 @@ using Horizone.Models;
 
 namespace Horizone.Areas.BackOffice.Controllers
 {
+    [Authorize(Roles = "Collaborator,Admin")]
     public class ActivitiesController : BaseController
     {
 
@@ -20,6 +21,26 @@ namespace Horizone.Areas.BackOffice.Controllers
         {
             var activitys = db.Activitys.Include(a => a.Language).Include(a => a.Topic);
             return View(activitys.ToList());
+        }
+        public ActionResult Symposia()
+        {
+            var activitys = db.Activitys.Include("Language").Include("Topic").Where(x => x.Topic.Id == 14);
+            return View(activitys.OrderByDescending(x => x.Id).ToList());
+        }
+        public ActionResult Publications()
+        {
+            var activitys = db.Activitys.Include("Language").Include("Topic").Where(x => x.Topic.Id == 10);
+            return View(activitys.OrderByDescending(x => x.Id).ToList());
+        }
+        public ActionResult ConferencesAndSeminar()
+        {
+            var activitys = db.Activitys.Include("Language").Include("Topic").Where(x => x.Topic.Id == 13 || x.Topic.Id == 9);
+            return View(activitys.OrderByDescending(x => x.Id).ToList());
+        }
+        public ActionResult Missions()
+        {
+            var activitys = db.Activitys.Include("Language").Include("Topic").Where(x => x.Topic.Id == 15);
+            return View(activitys.OrderByDescending(x => x.Id).ToList());
         }
 
         // GET: BackOffice/Activities/Details/5

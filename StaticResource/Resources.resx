@@ -1628,7 +1628,7 @@ TochPhase</value>
     <value>Locative-Neutre-Singular</value>
   </data>
   <data name="Mood" xml:space="preserve">
-    <value>Ambiance</value>
+    <value>Mode</value>
   </data>
   <data name="NominateNeuterDual" xml:space="preserve">
     <value>Nominate-Neutre-Duo</value>
@@ -1710,5 +1710,35 @@ TochPhase</value>
   </data>
   <data name="NotFound" xml:space="preserve">
     <value>Mot non trouvé</value>
+  </data>
+  <data name="AllWords" xml:space="preserve">
+    <value>Tous les mots</value>
+  </data>
+  <data name="Verb" xml:space="preserve">
+    <value>Verbe</value>
+  </data>
+  <data name="AskAddDic" xml:space="preserve">
+    <value>Voulez-vous ajouter au dictionnaire Tocharian?</value>
+  </data>
+  <data name="ParallelDictionary" xml:space="preserve">
+    <value>Dictionnaire parallèle TA-TB</value>
+  </data>
+  <data name="GrammaticalAbbreviation" xml:space="preserve">
+    <value>Abréviation grammaticale</value>
+  </data>
+  <data name="OtherAbbreviation" xml:space="preserve">
+    <value>Autre abréviation</value>
+  </data>
+  <data name="NominalCategories" xml:space="preserve">
+    <value>Catégories nominales</value>
+  </data>
+  <data name="TochCorrespondence" xml:space="preserve">
+    <value>Correspondance Tokharien</value>
+  </data>
+  <data name="VerbalCategories" xml:space="preserve">
+    <value>Catégories verbales</value>
+  </data>
+  <data name="Choose" xml:space="preserve">
+    <value>Chosir</value>
   </data>
 </root>

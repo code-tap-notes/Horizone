@@ -16,48 +16,111 @@
 {
     @Html.AntiForgeryToken()
 
-    <div class="form-horizontal">
-        <h4>@StaticResource.Resources.AbbreviationDictionary</h4>
-        <hr />
-        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-        @Html.HiddenFor(model => model.Id)
+<div class="form-horizontal">
+    <h4>@StaticResource.Resources.AbbreviationDictionary</h4>
+    <hr />
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+    @Html.HiddenFor(model => model.Id)
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.Symbol, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.Symbol, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.Symbol, "", new { @class = "text-danger" })
-            </div>
+    <div class="form-group">
+        @Html.LabelFor(model => model.Symbol, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+
+            <label for="search">@StaticResource.Resources.Insert @StaticResource.Resources.SpecialCharacter : </label>
+            <a onclick="insertText('Symbol','ā');" href="#">ā  </a>
+            <a onclick="insertText('Symbol','ä');" href="#">ä  </a>
+            <a onclick="insertText('Symbol','ī');" href="#">ī  </a>
+            <a onclick="insertText('Symbol','ö');" href="#">ö  </a>
+            <a onclick="insertText('Symbol','ū');" href="#">ū  </a>
+            <a onclick="insertText('Symbol','ü');" href="#">ü  </a>
+            <a onclick="insertText('Symbol','ṅ');" href="#">ṅ  </a>
+            <a onclick="insertText('Symbol','ñ');" href="#">ñ  </a>
+            <a onclick="insertText('Symbol','ṃ');" href="#">ṃ  </a>
+            <a onclick="insertText('Symbol','ś');" href="#">ś  </a>
+            <a onclick="insertText('Symbol','ṣ');" href="#">ṣ  </a>
+            <a onclick="insertText('Symbol','š');" href="#">š  </a>
+            <a onclick="insertText('Symbol','ß');" href="#">ß  </a>
+
+            @Html.EditorFor(model => model.Symbol, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.Symbol, "", new { @class = "text-danger" })
         </div>
+    </div>
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.Description, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.Description, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.Description, "", new { @class = "text-danger" })
-            </div>
+    <div class="form-group">
+        @Html.LabelFor(model => model.Description, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            <label for="search">@StaticResource.Resources.Insert @StaticResource.Resources.SpecialCharacter : </label>
+            <a onclick="insertText('Description','ā');" href="#">ā  </a>
+            <a onclick="insertText('Description','ä');" href="#">ä  </a>
+            <a onclick="insertText('Description','ī');" href="#">ī  </a>
+            <a onclick="insertText('Description','ö');" href="#">ö  </a>
+            <a onclick="insertText('Description','ū');" href="#">ū  </a>
+            <a onclick="insertText('Description','ü');" href="#">ü  </a>
+            <a onclick="insertText('Description','ṅ');" href="#">ṅ  </a>
+            <a onclick="insertText('Description','ñ');" href="#">ñ  </a>
+            <a onclick="insertText('Description','ṃ');" href="#">ṃ  </a>
+            <a onclick="insertText('Description','ś');" href="#">ś  </a>
+            <a onclick="insertText('Description','ṣ');" href="#">ṣ  </a>
+            <a onclick="insertText('Description','š');" href="#">š  </a>
+            <a onclick="insertText('Description','ß');" href="#">ß  </a>
+
+            @Html.EditorFor(model => model.Description, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.Description, "", new { @class = "text-danger" })
         </div>
+    </div>
 
-        <div class="form-group">
-            <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value=@StaticResource.Resources.Save class="btn btn-primary" />
-                @Html.ActionLink(@StaticResource.Resources.Return, "Index", null, new { @class = "btn btn-default" })
+    <div class="form-group">
+        @Html.LabelFor(model => model.AbbreviationManuscript, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            <div class="checkbox">
+                @Html.EditorFor(model => model.AbbreviationManuscript)
+                @Html.ValidationMessageFor(model => model.AbbreviationManuscript, "", new { @class = "text-danger" })
             </div>
         </div>
     </div>
+    <div class="form-group">
+        @Html.LabelFor(model => model.AbbreviationsLanguage, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            <div class="checkbox">
+                @Html.EditorFor(model => model.AbbreviationsLanguage)
+                @Html.ValidationMessageFor(model => model.AbbreviationsLanguage, "", new { @class = "text-danger" })
+            </div>
+        </div>
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(model => model.GrammaticalAbbreviation, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            <div class="checkbox">
+                @Html.EditorFor(model => model.GrammaticalAbbreviation)
+                @Html.ValidationMessageFor(model => model.GrammaticalAbbreviation, "", new { @class = "text-danger" })
+            </div>
+        </div>
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(model => model.OtherAbbreviation, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            <div class="checkbox">
+                @Html.EditorFor(model => model.OtherAbbreviation)
+                @Html.ValidationMessageFor(model => model.OtherAbbreviation, "", new { @class = "text-danger" })
+            </div>
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <input type="submit" value=@StaticResource.Resources.Save class="btn btn-primary" />
+            @Html.ActionLink(@StaticResource.Resources.Return, "Index", null, new { @class = "btn btn-default" })
+        </div>
+    </div>
+</div>
 }
-
 
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")
 
     <script>
-
-
         function insertText(elemID, text) {
             document.getElementById(elemID).value += text;
         }
-
     </script>
 }
 

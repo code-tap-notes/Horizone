@@ -1027,7 +1027,7 @@
     <value>字段{0}必须具有正数</value>
   </data>
   <data name="TochLanguage" xml:space="preserve">
-    <value>Tocharian语言</value>
+    <value>吐火罗 语言</value>
   </data>
   <data name="ListedPosition" xml:space="preserve">
     <value>上市地位</value>
@@ -1698,5 +1698,35 @@ TochPhase</value>
   </data>
   <data name="NotFound" xml:space="preserve">
     <value>找不到的词</value>
+  </data>
+  <data name="AllWords" xml:space="preserve">
+    <value>所有的话</value>
+  </data>
+  <data name="Verb" xml:space="preserve">
+    <value>动词</value>
+  </data>
+  <data name="AskAddDic" xml:space="preserve">
+    <value>你要加入Tocharian字典吗？</value>
+  </data>
+  <data name="ParallelDictionary" xml:space="preserve">
+    <value>并行字典TA-TB</value>
+  </data>
+  <data name="GrammaticalAbbreviation" xml:space="preserve">
+    <value>语法缩写</value>
+  </data>
+  <data name="OtherAbbreviation" xml:space="preserve">
+    <value>其他缩写</value>
+  </data>
+  <data name="Choose" xml:space="preserve">
+    <value>选择</value>
+  </data>
+  <data name="NominalCategories" xml:space="preserve">
+    <value>名义类别</value>
+  </data>
+  <data name="TochCorrespondence" xml:space="preserve">
+    <value>吐火罗通信</value>
+  </data>
+  <data name="VerbalCategories" xml:space="preserve">
+    <value>言语类别</value>
   </data>
 </root>

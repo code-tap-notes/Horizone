@@ -11,21 +11,33 @@ using Horizone.Models;
 
 namespace Horizone.Areas.BackOffice.Controllers
 {
+    [Authorize(Roles = "Collaborator,Admin")]
     public class WordSubClassesController : BaseController
     {
 
         // GET: BackOffice/WordSubClasses
         public ActionResult Index()
         {
-            
-                List<WordClass> listeWordClasses = new List<WordClass>();
-                listeWordClasses = db.WordClasses.ToList();
-                ViewBag.ListeWordClasses = new SelectList(db.WordClasses.ToList(), "Id", "ClassEn");            
-           var wordSubClasses = db.WordSubClasses.Include(w => w.WordClass);
+            ViewBag.WordClassId = new SelectList(db.WordClasses, "Id", "ClassEn");
+            var wordSubClasses = db.WordSubClasses.Include(w => w.WordClass);
             return View(wordSubClasses.OrderBy(x=>x.WordClass.ClassEn).ToList());
 
         }
 
+        // GET: BackOffice/WordSubClasses/SubClass
+        [ChildActionOnly]
+        public ActionResult ListWordClass()
+        {
+            var wordClass = db.WordClasses;        
+            return PartialView(wordClass.ToList());
+            
+        }
+        public ActionResult ListSubClass(string search)
+        {
+            ViewBag.Class = search;
+            var wordSubClass = db.WordSubClasses.Include(x=>x.WordClass).Where(x=>x.WordClass.ClassEn== search);
+            return View(wordSubClass.ToList());
+        }
         
         // GET: BackOffice/WordSubClasses/Create
         public ActionResult Create()

@@ -1,20 +1,52 @@
-﻿@model IEnumerable<Horizone.Models.ReverseDictionary>
+﻿@model PagedList.IPagedList<Horizone.Models.ReverseDictionary>
+@using PagedList.Mvc;
 @{
     ViewBag.Title = @StaticResource.Resources.ReverseDictionary;
 }
 
 <h2>@StaticResource.Resources.ReverseDictionary</h2>
+<div id="search">
+    <form class="form-group row" action="@Url.Action("SearchReverse", "ReverseDictionaries")" method="post" enctype="multipart/form-data">
+        <div class="form-group col-md-2">
+            <br />
+            <button type="submit" class="btn btn-info bigBtn"><span class="glyphicon glyphicon-search"></span> @StaticResource.Resources.Search </button>
+        </div>
+        <div class="form-group col-md-4">
+            <label for="Title"> @StaticResource.Resources.SearchWord </label>
+            <input class="form-control" type="text" id="Search" name="search" />
+        </div>
+        <div class="form-group col-md-4">
+            <p><strong>Insert:  </strong> </p>
+            <a onclick="insertText('Search','ā');" href="#" style="background-color: blanchedalmond; padding:5px"> ā  </a><a> </a>
+            <a onclick="insertText('Search','ä');" href="#" style="background-color: blanchedalmond; padding:5px"> ä  </a>
+            <a onclick="insertText('Search','ī');" href="#" style="background-color: blanchedalmond; padding:5px"> ī  </a>
+            <a onclick="insertText('Search','ö');" href="#" style="background-color: blanchedalmond; padding:5px"> ö  </a>
+            <a onclick="insertText('Search','ū');" href="#" style="background-color: blanchedalmond; padding:5px"> ū  </a>
+            <a onclick="insertText('Search','ü');" href="#" style="background-color: blanchedalmond; padding:5px"> ü  </a>
+            <a onclick="insertText('Search','ṅ');" href="#" style="background-color: blanchedalmond; padding:5px"> ṅ  </a>
+            <a onclick="insertText('Search','ñ');" href="#" style="background-color: blanchedalmond; padding:5px"> ñ  </a>
+            <a onclick="insertText('Search','ṇ');" href="#" style="background-color: blanchedalmond; padding:5px"> ṇ  </a>
+            <a onclick="insertText('Search','ṃ');" href="#" style="background-color: blanchedalmond; padding:5px"> ṃ  </a>
+            <a onclick="insertText('Search','ś');" href="#" style="background-color: blanchedalmond; padding:5px"> ś  </a>
+            <a onclick="insertText('Search','ṣ');" href="#" style="background-color: blanchedalmond; padding:5px"> ṣ  </a>
+            <a onclick="insertText('Search','ṛ');" href="#" style="background-color: blanchedalmond; padding:5px"> ṛ  </a>
+            <a onclick="insertText('Search','ṭ');" href="#" style="background-color: blanchedalmond; padding:5px"> ṭ  </a>
+            <a onclick="insertText('Search','š');" href="#" style="background-color: blanchedalmond; padding:5px"> š  </a>
+            <a onclick="insertText('Search','ß');" href="#" style="background-color: blanchedalmond; padding:5px"> ß  </a>
+        </div>
+    </form>
+</div>
 
 <p>
     @Html.ActionLink(@StaticResource.Resources.Add, "Create", null, new { @class = "btn btn-primary" })
 </p>
 <table class="table">
     <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.Word)
+        <th hidden>
+            @StaticResource.Resources.Words
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.ReverseWord)
+            @StaticResource.Resources.Reverse
         </th>
         <th></th>
     </tr>
@@ -22,15 +54,17 @@
     @foreach (var item in Model)
     {
         <tr>
-            <td>
+            <td hidden>
                 <form class="form-group row" action="@Url.Action("SearchWord", "DashBoards")" method="post" enctype="multipart/form-data">
                     <button type="submit" class="btn btn-default" style="width:400px"> @Html.DisplayFor(modelItem => item.Word) </button>
+                    <input type="submit" style="width:150px" id="Search" name="search" value=@item.ClassEn>
+
                     <input class="form-control" type="hidden" id="Search" name="search" value=@item.Word />
                 </form>
             </td>
             <td>
                 <form class="form-group row" action="@Url.Action("SearchWord", "DashBoards")" method="post" enctype="multipart/form-data">
-                    <button type="submit" class="btn btn-default" style="width:400px"> @Html.DisplayFor(modelItem => item.ReverseWord) </button>
+                    <button type="submit" class="btn btn-default" style="width:80%"> @Html.DisplayFor(modelItem => item.SymbolPrefix) @Html.DisplayFor(modelItem => item.ReverseWord) @Html.DisplayFor(modelItem => item.SymbolSufix)  </button>
                     <input class="form-control" type="hidden" id="Search" name="search" value=@item.ReverseWord />
                 </form>
             </td>
@@ -42,3 +76,15 @@
     }
 
 </table>
+@Html.PagedListPager(Model, page => Url.Action("index", new { page }))
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+
+    <script>
+
+        function insertText(elemID, text) {
+            document.getElementById(elemID).value += text;
+        }
+
+    </script>
+}

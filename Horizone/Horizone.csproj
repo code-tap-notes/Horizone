@@ -278,81 +278,13 @@
     <Compile Include="Controllers\FontNewsController.cs" />
     <Compile Include="Controllers\FontTochPhrasesController.cs" />
     <Compile Include="Controllers\VocabulariesController.cs" />
-    <Compile Include="Migrations\201903251655000_Init.cs" />
-    <Compile Include="Migrations\201903251655000_Init.Designer.cs">
-      <DependentUpon>201903251655000_Init.cs</DependentUpon>
+    <Compile Include="Migrations\201906190735271_init.cs" />
+    <Compile Include="Migrations\201906190735271_init.Designer.cs">
+      <DependentUpon>201906190735271_init.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201904291216071_changeActivity.cs" />
-    <Compile Include="Migrations\201904291216071_changeActivity.Designer.cs">
-      <DependentUpon>201904291216071_changeActivity.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201905012107365_AnalyseMacroscopic.cs" />
-    <Compile Include="Migrations\201905012107365_AnalyseMacroscopic.Designer.cs">
-      <DependentUpon>201905012107365_AnalyseMacroscopic.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201905021252474_addGender.cs" />
-    <Compile Include="Migrations\201905021252474_addGender.Designer.cs">
-      <DependentUpon>201905021252474_addGender.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201905021418013_ChangeGender.cs" />
-    <Compile Include="Migrations\201905021418013_ChangeGender.Designer.cs">
-      <DependentUpon>201905021418013_ChangeGender.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201905030407282_changtable.cs" />
-    <Compile Include="Migrations\201905030407282_changtable.Designer.cs">
-      <DependentUpon>201905030407282_changtable.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201905101420483_scriptype.cs" />
-    <Compile Include="Migrations\201905101420483_scriptype.Designer.cs">
-      <DependentUpon>201905101420483_scriptype.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201905130804202_changesWordSubclass.cs" />
-    <Compile Include="Migrations\201905130804202_changesWordSubclass.Designer.cs">
-      <DependentUpon>201905130804202_changesWordSubclass.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201905131519295_changeStory.cs" />
-    <Compile Include="Migrations\201905131519295_changeStory.Designer.cs">
-      <DependentUpon>201905131519295_changeStory.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201905161223338_changeVocabulaire.cs" />
-    <Compile Include="Migrations\201905161223338_changeVocabulaire.Designer.cs">
-      <DependentUpon>201905161223338_changeVocabulaire.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201905200842101_changeAbreviation.cs" />
-    <Compile Include="Migrations\201905200842101_changeAbreviation.Designer.cs">
-      <DependentUpon>201905200842101_changeAbreviation.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201905201005398_addImageBook.cs" />
-    <Compile Include="Migrations\201905201005398_addImageBook.Designer.cs">
-      <DependentUpon>201905201005398_addImageBook.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201905221311197_addAbreDictionary.cs" />
-    <Compile Include="Migrations\201905221311197_addAbreDictionary.Designer.cs">
-      <DependentUpon>201905221311197_addAbreDictionary.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201905271327004_changeDictionary.cs" />
-    <Compile Include="Migrations\201905271327004_changeDictionary.Designer.cs">
-      <DependentUpon>201905271327004_changeDictionary.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201905272056206_changeValency.cs" />
-    <Compile Include="Migrations\201905272056206_changeValency.Designer.cs">
-      <DependentUpon>201905272056206_changeValency.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201905291449035_addReserveDict.cs" />
-    <Compile Include="Migrations\201905291449035_addReserveDict.Designer.cs">
-      <DependentUpon>201905291449035_addReserveDict.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201905302021015_ChangeReserveDict.cs" />
-    <Compile Include="Migrations\201905302021015_ChangeReserveDict.Designer.cs">
-      <DependentUpon>201905302021015_ChangeReserveDict.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201906030757531_changeReverse.cs" />
-    <Compile Include="Migrations\201906030757531_changeReverse.Designer.cs">
-      <DependentUpon>201906030757531_changeReverse.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201906031203305_changeReverse1.cs" />
-    <Compile Include="Migrations\201906031203305_changeReverse1.Designer.cs">
-      <DependentUpon>201906031203305_changeReverse1.cs</DependentUpon>
+    <Compile Include="Migrations\201906232002361_changeDic.cs" />
+    <Compile Include="Migrations\201906232002361_changeDic.Designer.cs">
+      <DependentUpon>201906232002361_changeDic.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AbbreviationDictionary.cs" />
@@ -634,7 +566,6 @@
     <Content Include="Areas\BackOffice\Views\DashBoards\AboutUs.cshtml" />
     <Content Include="Areas\BackOffice\Views\AboutProjects\Create.cshtml" />
     <Content Include="Areas\BackOffice\Views\AboutProjects\Delete.cshtml" />
-    <Content Include="Areas\BackOffice\Views\AboutProjects\Details.cshtml" />
     <Content Include="Areas\BackOffice\Views\AboutProjects\Edit.cshtml" />
     <Content Include="Areas\BackOffice\Views\AboutProjects\Index.cshtml" />
     <Content Include="Areas\BackOffice\Views\DashBoards\PresenteProjet.cshtml" />
@@ -775,7 +706,6 @@
     <Content Include="Areas\BackOffice\Views\RemarkAdds\Index.cshtml" />
     <Content Include="Areas\BackOffice\Views\Materials\Create.cshtml" />
     <Content Include="Areas\BackOffice\Views\Materials\Delete.cshtml" />
-    <Content Include="Areas\BackOffice\Views\Materials\Details.cshtml" />
     <Content Include="Areas\BackOffice\Views\Materials\Edit.cshtml" />
     <Content Include="Areas\BackOffice\Views\Materials\Index.cshtml" />
     <Content Include="Areas\BackOffice\Views\Rulings\Create.cshtml" />
@@ -921,7 +851,6 @@
     <Content Include="Areas\BackOffice\Views\Bibliographies\Book.cshtml" />
     <Content Include="Areas\BackOffice\Views\AbbreviationDictionaries\Create.cshtml" />
     <Content Include="Areas\BackOffice\Views\AbbreviationDictionaries\Delete.cshtml" />
-    <Content Include="Areas\BackOffice\Views\AbbreviationDictionaries\Details.cshtml" />
     <Content Include="Areas\BackOffice\Views\AbbreviationDictionaries\Edit.cshtml" />
     <Content Include="Areas\BackOffice\Views\AbbreviationDictionaries\Index.cshtml" />
     <Content Include="Areas\BackOffice\Views\Moods\Create.cshtml" />
@@ -951,6 +880,14 @@
     <Content Include="Areas\BackOffice\Views\ReverseDictionaries\Edit.cshtml" />
     <Content Include="Areas\BackOffice\Views\ReverseDictionaries\Index.cshtml" />
     <Content Include="Areas\BackOffice\Views\DashBoards\SearchWord.cshtml" />
+    <Content Include="Areas\BackOffice\Views\Activities\Symposia.cshtml" />
+    <Content Include="Areas\BackOffice\Views\Activities\Publications.cshtml" />
+    <Content Include="Areas\BackOffice\Views\Activities\ConferencesAndSeminar.cshtml" />
+    <Content Include="Areas\BackOffice\Views\Activities\Missions.cshtml" />
+    <Content Include="Areas\BackOffice\Views\Manuscripts\Search.cshtml" />
+    <Content Include="Areas\BackOffice\Views\ReverseDictionaries\SearchReverse.cshtml" />
+    <Content Include="Areas\BackOffice\Views\WordSubClasses\ListWordClass.cshtml" />
+    <Content Include="Areas\BackOffice\Views\WordSubClasses\ListSubClass.cshtml" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\cldr.js" />
     <Content Include="Scripts\cldr\event.js" />
@@ -1297,6 +1234,17 @@
     <Content Include="Views\Vocabularies\Reverse.cshtml" />
     <Content Include="Views\Vocabularies\CheckReverse.cshtml" />
     <Content Include="Views\Vocabularies\SearchReverse.cshtml" />
+    <Content Include="Views\Vocabularies\Verb.cshtml" />
+    <Content Include="Views\Vocabularies\Adverb.cshtml" />
+    <Content Include="Views\Vocabularies\Noun.cshtml" />
+    <Content Include="Views\Vocabularies\Pronoun.cshtml" />
+    <Content Include="Views\Vocabularies\Adjective.cshtml" />
+    <Content Include="Views\Vocabularies\TocharianA.cshtml" />
+    <Content Include="Views\Vocabularies\TocharianB.cshtml" />
+    <Content Include="Views\Vocabularies\Parallel.cshtml" />
+    <Content Include="Views\Vocabularies\AbbreviationGrammatical.cshtml" />
+    <Content Include="Views\Vocabularies\AbbreviationLanguage.cshtml" />
+    <Content Include="Views\Vocabularies\AbbreviationManuscript.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -1324,62 +1272,11 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201903251655000_Init.resx">
-      <DependentUpon>201903251655000_Init.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201906190735271_init.resx">
+      <DependentUpon>201906190735271_init.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201904291216071_changeActivity.resx">
-      <DependentUpon>201904291216071_changeActivity.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201905012107365_AnalyseMacroscopic.resx">
-      <DependentUpon>201905012107365_AnalyseMacroscopic.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201905021252474_addGender.resx">
-      <DependentUpon>201905021252474_addGender.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201905021418013_ChangeGender.resx">
-      <DependentUpon>201905021418013_ChangeGender.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201905030407282_changtable.resx">
-      <DependentUpon>201905030407282_changtable.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201905101420483_scriptype.resx">
-      <DependentUpon>201905101420483_scriptype.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201905130804202_changesWordSubclass.resx">
-      <DependentUpon>201905130804202_changesWordSubclass.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201905131519295_changeStory.resx">
-      <DependentUpon>201905131519295_changeStory.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201905161223338_changeVocabulaire.resx">
-      <DependentUpon>201905161223338_changeVocabulaire.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201905200842101_changeAbreviation.resx">
-      <DependentUpon>201905200842101_changeAbreviation.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201905201005398_addImageBook.resx">
-      <DependentUpon>201905201005398_addImageBook.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201905221311197_addAbreDictionary.resx">
-      <DependentUpon>201905221311197_addAbreDictionary.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201905271327004_changeDictionary.resx">
-      <DependentUpon>201905271327004_changeDictionary.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201905272056206_changeValency.resx">
-      <DependentUpon>201905272056206_changeValency.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201905291449035_addReserveDict.resx">
-      <DependentUpon>201905291449035_addReserveDict.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201905302021015_ChangeReserveDict.resx">
-      <DependentUpon>201905302021015_ChangeReserveDict.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201906030757531_changeReverse.resx">
-      <DependentUpon>201906030757531_changeReverse.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201906031203305_changeReverse1.resx">
-      <DependentUpon>201906031203305_changeReverse1.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201906232002361_changeDic.resx">
+      <DependentUpon>201906232002361_changeDic.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

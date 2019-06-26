@@ -11,6 +11,7 @@ using Horizone.Controllers;
 
 namespace Horizone.Areas.BackOffice.Controllers
 {
+    [Authorize(Roles = "Collaborator,Admin")]
     public class GendersController : BaseController
     {
         
@@ -18,9 +19,7 @@ namespace Horizone.Areas.BackOffice.Controllers
         public ActionResult Index()
         {
             return View(db.Genders.ToList());
-        }
-
-         
+        }   
 
         // GET: BackOffice/Genders/Create
         public ActionResult Create()
@@ -84,6 +83,13 @@ namespace Horizone.Areas.BackOffice.Controllers
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
             Gender gender = db.Genders.Find(id);
+
+            if (gender.DictionaryTocharians?.Count() > 0)
+            {
+                Display("Impossible, Cases en cours", MessageType.ERROR);
+                return RedirectToAction("Index");
+            }
+
             if (gender == null)
             {
                 return HttpNotFound();

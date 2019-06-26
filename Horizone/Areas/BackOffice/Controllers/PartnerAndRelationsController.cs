@@ -12,6 +12,7 @@ using Horizone.Models;
 
 namespace Horizone.Areas.BackOffice.Controllers
 {
+    [Authorize(Roles = "Collaborator,Admin")]
     public class PartnerAndRelationsController : BaseController
     {
 
@@ -114,7 +115,7 @@ namespace Horizone.Areas.BackOffice.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            PartnerAndRelation partnerAndRelation = db.PartnerAndRelations.Find(id);
+            PartnerAndRelation partnerAndRelation = db.PartnerAndRelations.Include("ImagePartners").SingleOrDefault(x => x.Id == id);
             if (partnerAndRelation == null)
             {
                 return HttpNotFound();
@@ -127,7 +128,7 @@ namespace Horizone.Areas.BackOffice.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            PartnerAndRelation partnerAndRelation = db.PartnerAndRelations.Find(id);
+            PartnerAndRelation partnerAndRelation = db.PartnerAndRelations.Include("ImagePartners").SingleOrDefault(x => x.Id == id);
             db.PartnerAndRelations.Remove(partnerAndRelation);
             db.SaveChanges();
             return RedirectToAction("Index");

@@ -207,34 +207,34 @@ namespace Horizone.Controllers
         public ActionResult Activity()
         {
             var activitys = db.Activitys.Include("Language").Include("Topic");
-            return View(activitys.OrderByDescending(x => x.DateofActivity).ToList());
+            return View(activitys.OrderByDescending(x => x.Id).ToList());
         }
         //Activity Home page
         [ChildActionOnly]
         public ActionResult PageActivity()
         {
             var activitys = db.Activitys.Include("Language").Include("Topic");
-            return PartialView(activitys.OrderByDescending(x => x.DateofActivity).ToList());
+            return PartialView(activitys.OrderByDescending(x => x.Id).Take(6).ToList());
         }
         public ActionResult Symposia()
         {
             var activitys = db.Activitys.Include("Language").Include("Topic").Where(x => x.Topic.Id == 14);
-            return View(activitys.OrderByDescending(x => x.DateofActivity).ToList());
+            return View(activitys.OrderByDescending(x => x.Id).ToList());
         }
         public ActionResult Publications()
         {
             var activitys = db.Activitys.Include("Language").Include("Topic").Where(x => x.Topic.Id == 10);
-            return View(activitys.OrderByDescending(x => x.DateofActivity).ToList());
+            return View(activitys.OrderByDescending(x => x.Id).ToList());
         }
         public ActionResult ConferencesAndSeminar()
         {
             var activitys = db.Activitys.Include("Language").Include("Topic").Where(x => x.Topic.Id == 13 || x.Topic.Id == 9 );
-            return View(activitys.OrderByDescending(x => x.DateofActivity).ToList());
+            return View(activitys.OrderByDescending(x => x.Id).ToList());
         }
         public ActionResult Missions()
         {
             var activitys = db.Activitys.Include("Language").Include("Topic").Where(x=>x.Topic.Id == 15);
-            return View(activitys.OrderByDescending(x => x.DateofActivity).ToList());
+            return View(activitys.OrderByDescending(x => x.Id).ToList());
         }
         public ActionResult SearchWord(string search)
         {

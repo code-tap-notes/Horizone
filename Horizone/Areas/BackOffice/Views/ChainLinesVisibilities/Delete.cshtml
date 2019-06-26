@@ -10,7 +10,7 @@
 
 
 <div>
-    <h4>ChainLinesVisibility</h4>
+    <h4>@StaticResource.Resources.ChainLinesVisibility</h4>
     <hr />
     <dl class="dl-horizontal">
         <dt>
@@ -44,7 +44,7 @@
         @Html.AntiForgeryToken()
 
     <div class="form-actions no-color">
-        <input type="submit" value="Delete" class="btn btn-danger" /> |
+        <input type="submit" value=@StaticResource.Resources.Delete class="btn btn-danger" /> |
         @Html.ActionLink(@StaticResource.Resources.Return, "Index", null, new { @class = "btn btn-default" })
     </div>
     }

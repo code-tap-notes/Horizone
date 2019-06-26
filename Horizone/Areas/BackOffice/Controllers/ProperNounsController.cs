@@ -11,13 +11,14 @@ using Horizone.Models;
 
 namespace Horizone.Areas.BackOffice.Controllers
 {
+    [Authorize(Roles = "Collaborator,Admin")]
     public class ProperNounsController : BaseController
     {
 
         // GET: BackOffice/ProperNouns
         public ActionResult Index()
         {
-            return View(db.ProperNouns.ToList());
+            return View(db.ProperNouns.OrderBy(x=>x.Name).ToList());
         }
 
         

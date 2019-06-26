@@ -12,6 +12,7 @@ using Horizone.Models;
 
 namespace Horizone.Areas.BackOffice.Controllers
 {
+    [Authorize(Roles = "Collaborator,Admin")]
     public class AnalyseMaterialsController : BaseController
     {      
         // GET: BackOffice/AnalyseMaterials

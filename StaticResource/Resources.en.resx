@@ -1705,4 +1705,34 @@ TochPhase</value>
   <data name="NotFound" xml:space="preserve">
     <value>Word not found</value>
   </data>
+  <data name="AllWords" xml:space="preserve">
+    <value>All words</value>
+  </data>
+  <data name="Verb" xml:space="preserve">
+    <value>Verb</value>
+  </data>
+  <data name="AskAddDic" xml:space="preserve">
+    <value>Do you want add to Tocharien dictionary?</value>
+  </data>
+  <data name="ParallelDictionary" xml:space="preserve">
+    <value>Parallel Dictionary TA-TB</value>
+  </data>
+  <data name="GrammaticalAbbreviation" xml:space="preserve">
+    <value>Grammatical Abbreviation</value>
+  </data>
+  <data name="OtherAbbreviation" xml:space="preserve">
+    <value>Other Abbreviation</value>
+  </data>
+  <data name="Choose" xml:space="preserve">
+    <value>Choose</value>
+  </data>
+  <data name="NominalCategories" xml:space="preserve">
+    <value>Nominal categories</value>
+  </data>
+  <data name="TochCorrespondence" xml:space="preserve">
+    <value>Tocharian Correspondence</value>
+  </data>
+  <data name="VerbalCategories" xml:space="preserve">
+    <value>Verbal categories</value>
+  </data>
 </root>

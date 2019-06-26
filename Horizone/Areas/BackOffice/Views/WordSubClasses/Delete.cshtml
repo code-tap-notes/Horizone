@@ -59,7 +59,7 @@
         @Html.AntiForgeryToken()
 
     <div class="form-actions no-color">
-        <input type="submit" value="Delete" class="btn btn-danger" /> |
+        <input type="submit" value=@StaticResource.Resources.Delete class="btn btn-danger" /> |
         @Html.ActionLink(@StaticResource.Resources.Return, "Index", null, new { @class = "btn btn-default" })
     </div>
     }

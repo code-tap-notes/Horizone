@@ -283,7 +283,7 @@
                                     <li class="dropdown-submenu">
                                         <a class="test" href="#"> @StaticResource.Resources.ScriptType <span class="caret"></span></a>
                                         <ul class="dropdown-menu">
-                                             
+
                                             <li><a href="@Url.Action("create", "ScriptTypes")">@StaticResource.Resources.Add</a></li>
                                             <li><a href="@Url.Action("index", "ScriptTypes")">@StaticResource.Resources.List</a></li>
                                         </ul>
@@ -318,8 +318,8 @@
                                         </ul>
                                     </li>
                                 </ul>
-                            </li>                             
-                            
+                            </li>
+
                             <li class="dropdown-submenu">
                                 <a class="test" tabindex="-1" href="#">&diams; @StaticResource.Resources.Genre<span class="caret"></span></a>
                                 <ul class="dropdown-menu">
@@ -456,7 +456,7 @@
                             </li>
                         </ul>
                     </li>
-                   
+
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">@StaticResource.Resources.Linguistics <span class="caret"></span></a>
                         <ul class="dropdown-menu">
@@ -474,92 +474,176 @@
                                     <li><a href="@Url.Action("index", "WordSubClasses")">@StaticResource.Resources.List</a></li>
                                 </ul>
                             </li>
+                            <li class="dropdown-submenu">
+                                <a class="test" tabindex="-1" href="#">&diams; @StaticResource.Resources.NominalCategories <span class="caret"></span></a>
+                                <ul class="dropdown-menu">
+                                    
+                                    <li class="dropdown-submenu">
+                                        <a class="test" href="#"> @StaticResource.Resources.Case <span class="caret"></span></a>
+                                        <ul class="dropdown-menu">
+                                            <li>
+                                                <a href="@Url.Action("create", "Cases")">@StaticResource.Resources.Add</a>
+                                            </li>
+                                            <li>
+                                                <a href="@Url.Action("index", "Cases")">@StaticResource.Resources.List</a>
+                                            </li>
+                                        </ul>
+                                    </li>
 
+                                    <li class="dropdown-submenu">
+                                        <a class="test" href="#">  @StaticResource.Resources.Gender <span class="caret"></span></a>
+                                        <ul class="dropdown-menu">
+                                            <li>
+                                                <a href="@Url.Action("create", "Genders")">@StaticResource.Resources.Add</a>
+                                            </li>
+                                            <li>
+                                                <a href="@Url.Action("index", "Genders")">@StaticResource.Resources.List</a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li class="dropdown-submenu">
+                                        <a class="test" href="#"> @StaticResource.Resources.Number <span class="caret"></span></a>
+                                        <ul class="dropdown-menu">
+                                            <li>
+                                                <a href="@Url.Action("create", "Numbers")">@StaticResource.Resources.Add</a>
+                                            </li>
+                                            <li>
+                                                <a href="@Url.Action("index", "Numbers")">@StaticResource.Resources.List</a>
+                                            </li>
+                                        </ul>
+                                    </li>
+
+                                    <li class="dropdown-submenu">
+                                        <a class="test" href="#"> @StaticResource.Resources.Noun <span class="caret"></span></a>
+                                        <ul class="dropdown-menu">
+                                            <li>
+                                                <a href="@Url.Action("create", "Nouns")">@StaticResource.Resources.Add</a>
+                                            </li>
+                                            <li>
+                                                <a href="@Url.Action("index", "Nouns")">@StaticResource.Resources.List</a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </li>
                             <li class="dropdown-submenu">
-                                <a class="test" tabindex="-1" href="#">&diams; @StaticResource.Resources.Case<span class="caret"></span></a>
+                                <a class="test" tabindex="-1" href="#">&diams; @StaticResource.Resources.VerbalCategories<span class="caret"></span></a>
                                 <ul class="dropdown-menu">
-                                    <li><a href="@Url.Action("create", "Cases")">@StaticResource.Resources.Add</a></li>
-                                    <li><a href="@Url.Action("index", "Cases")">@StaticResource.Resources.List</a></li>
+                                   
+                                    <li class="dropdown-submenu">
+                                        <a class="test" href="#">  @StaticResource.Resources.Person <span class="caret"></span></a>
+                                        <ul class="dropdown-menu">
+                                            <li>
+                                                <a href="@Url.Action("create", "Persons")">@StaticResource.Resources.Add</a>
+                                            </li>
+                                            <li>
+                                                <a href="@Url.Action("index", "Persons")">@StaticResource.Resources.List</a>
+                                            </li>
+                                        </ul>
+                                    </li>
+
+
+                                    <li class="dropdown-submenu">
+                                        <a class="test" href="#"> @StaticResource.Resources.Voice <span class="caret"></span></a>
+                                        <ul class="dropdown-menu">
+                                            <li>
+                                                <a href="@Url.Action("create", "Voices")">@StaticResource.Resources.Add</a>
+                                            </li>
+                                            <li>
+                                                <a href="@Url.Action("index", "Voices")">@StaticResource.Resources.List</a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li class="dropdown-submenu">
+                                        <a class="test" href="#"> @StaticResource.Resources.TenseAndAspect <span class="caret"></span></a>
+                                        <ul class="dropdown-menu">
+                                            <li>
+                                                <a href="@Url.Action("create", "TenseAndAspects")">@StaticResource.Resources.Add</a>
+                                            </li>
+                                            <li>
+                                                <a href="@Url.Action("index", "TenseAndAspects")">@StaticResource.Resources.List</a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li class="dropdown-submenu">
+                                        <a class="test" href="#"> @StaticResource.Resources.Valency <span class="caret"></span></a>
+                                        <ul class="dropdown-menu">
+                                            <li>
+                                                <a href="@Url.Action("create", "Valencies")">@StaticResource.Resources.Add</a>
+                                            </li>
+                                            <li>
+                                                <a href="@Url.Action("index", "Valencies")">@StaticResource.Resources.List</a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li class="dropdown-submenu">
+                                        <a class="test" href="#"> @StaticResource.Resources.Mood <span class="caret"></span></a>
+                                        <ul class="dropdown-menu">
+                                            <li>
+                                                <a href="@Url.Action("create", "Moods")">@StaticResource.Resources.Add</a>
+                                            </li>
+                                            <li>
+                                                <a href="@Url.Action("index", "Moods")">@StaticResource.Resources.List</a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li class="dropdown-submenu">
+                                        <a class="test" href="#"> @StaticResource.Resources.Verb <span class="caret"></span></a>
+                                        <ul class="dropdown-menu">
+                                            <li>
+                                                <a href="@Url.Action("create", "Verbs")">@StaticResource.Resources.Add</a>
+                                            </li>
+                                            <li>
+                                                <a href="@Url.Action("index", "Verbs")">@StaticResource.Resources.List</a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="dropdown-submenu">
+                                <a class="test" tabindex="-1" href="#">&diams; @StaticResource.Resources.DictionaryTocharian <span class="caret"></span></a>
+                                <ul class="dropdown-menu">
+                                    
+                                    <li class="dropdown-submenu">
+                                        <a class="test" href="#">  @StaticResource.Resources.AbbreviationDictionary <span class="caret"></span></a>
+                                        <ul class="dropdown-menu">
+                                            <li>
+                                                <a href="@Url.Action("create", "AbbreviationDictionaries")">@StaticResource.Resources.Add</a>
+                                            </li>
+                                            <li>
+                                                <a href="@Url.Action("index", "AbbreviationDictionaries")">@StaticResource.Resources.List</a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li class="dropdown-submenu">
+                                        <a class="test" href="#"> @StaticResource.Resources.ReverseDictionary <span class="caret"></span></a>
+                                        <ul class="dropdown-menu">
+                                            <li>
+                                                <a href="@Url.Action("create", "ReverseDictionaries")">@StaticResource.Resources.Add</a>
+                                            </li>
+                                            <li>
+                                                <a href="@Url.Action("index", "ReverseDictionaries")">@StaticResource.Resources.List</a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li class="dropdown-submenu">
+                                        <a class="test" href="#"> @StaticResource.Resources.DictionaryTocharian <span class="caret"></span></a>
+                                        <ul class="dropdown-menu">
+                                            <li>
+                                                <a href="@Url.Action("create", "DictionaryTocharians")">@StaticResource.Resources.Add</a>
+                                            </li>
+                                            <li>
+                                                <a href="@Url.Action("index", "DictionaryTocharians")">@StaticResource.Resources.List</a>
+                                            </li>
+                                        </ul>
+                                    </li>
+
                                 </ul>
                             </li>
 
-                            <li class="dropdown-submenu">
-                                <a class="test" tabindex="-1" href="#">&diams; @StaticResource.Resources.Gender<span class="caret"></span></a>
-                                <ul class="dropdown-menu">
-                                    <li><a href="@Url.Action("create", "Genders")">@StaticResource.Resources.Add</a></li>
-                                    <li><a href="@Url.Action("index", "Genders")">@StaticResource.Resources.List</a></li>
-                                </ul>
-                            </li>
-
-                            <li class="dropdown-submenu">
-                                <a class="test" tabindex="-1" href="#">&diams; @StaticResource.Resources.Number<span class="caret"></span></a>
-                                <ul class="dropdown-menu">
-                                    <li><a href="@Url.Action("create", "Numbers")">@StaticResource.Resources.Add</a></li>
-                                    <li><a href="@Url.Action("index", "Numbers")">@StaticResource.Resources.List</a></li>
-                                </ul>
-                            </li>
-
-                            <li class="dropdown-submenu">
-                                <a class="test" tabindex="-1" href="#">&diams; @StaticResource.Resources.Person<span class="caret"></span></a>
-                                <ul class="dropdown-menu">
-                                    <li><a href="@Url.Action("create", "Persons")">@StaticResource.Resources.Add</a></li>
-                                    <li><a href="@Url.Action("index", "Persons")">@StaticResource.Resources.List</a></li>
-                                </ul>
-                            </li>
-                            <li class="dropdown-submenu">
-                                <a class="test" tabindex="-1" href="#">&diams; @StaticResource.Resources.Voice<span class="caret"></span></a>
-                                <ul class="dropdown-menu">
-                                    <li><a href="@Url.Action("create", "Voices")">@StaticResource.Resources.Add</a></li>
-                                    <li><a href="@Url.Action("index", "Voices")">@StaticResource.Resources.List</a></li>
-                                </ul>
-                            </li>
-                            <li class="dropdown-submenu">
-                                <a class="test" tabindex="-1" href="#">&diams; @StaticResource.Resources.TenseAndAspect<span class="caret"></span></a>
-                                <ul class="dropdown-menu">
-                                    <li><a href="@Url.Action("create", "TenseAndAspects")">@StaticResource.Resources.Add</a></li>
-                                    <li><a href="@Url.Action("index", "TenseAndAspects")">@StaticResource.Resources.List</a></li>
-                                </ul>
-                            </li>
-                            <li class="dropdown-submenu">
-                                <a class="test" tabindex="-1" href="#">&diams; @StaticResource.Resources.Valency<span class="caret"></span></a>
-                                <ul class="dropdown-menu">
-                                    <li><a href="@Url.Action("create", "Valencies")">@StaticResource.Resources.Add</a></li>
-                                    <li><a href="@Url.Action("index", "Valencies")">@StaticResource.Resources.List</a></li>
-                                </ul>
-                            </li>
-                            <li class="dropdown-submenu">
-                                <a class="test" tabindex="-1" href="#">&diams; @StaticResource.Resources.Mood<span class="caret"></span></a>
-                                <ul class="dropdown-menu">
-                                    <li><a href="@Url.Action("create", "Moods")">@StaticResource.Resources.Add</a></li>
-                                    <li><a href="@Url.Action("index", "Moods")">@StaticResource.Resources.List</a></li>
-                                </ul>
-                            </li>
-                            <li class="dropdown-submenu">
-                                <a class="test" tabindex="-1" href="#">&diams; @StaticResource.Resources.DictionaryTocharian<span class="caret"></span></a>
-                                <ul class="dropdown-menu">
-                                    <li><a href="@Url.Action("create", "DictionaryTocharians")">@StaticResource.Resources.Add</a></li>
-                                    <li><a href="@Url.Action("index", "DictionaryTocharians")">@StaticResource.Resources.List</a></li>
-
-                                </ul>
-                            </li>
-
-                            <li class="dropdown-submenu">
-                                <a class="test" tabindex="-1" href="#">&diams;@StaticResource.Resources.AbbreviationDictionary<span class="caret"></span></a>
-                                <ul class="dropdown-menu">
-                                    <li><a href="@Url.Action("create", "AbbreviationDictionaries")">@StaticResource.Resources.Add</a></li>
-                                    <li><a href="@Url.Action("index", "AbbreviationDictionaries")">@StaticResource.Resources.List</a></li>
-
-                                </ul>
-                            </li>
-                            <li class="dropdown-submenu">
-                                <a class="test" tabindex="-1" href="#">&diams;@StaticResource.Resources.ReverseDictionary<span class="caret"></span></a>
-                                <ul class="dropdown-menu">
-                                    <li><a href="@Url.Action("create", "ReverseDictionaries")">@StaticResource.Resources.Add</a></li>
-                                    <li><a href="@Url.Action("index", "ReverseDictionaries")">@StaticResource.Resources.List</a></li>
-                                </ul>
-                            </li>
                         </ul>
                     </li>
+
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">@StaticResource.Resources.PageNews <span class="caret"></span></a>
                         <ul class="dropdown-menu">
@@ -604,7 +688,7 @@
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">@StaticResource.Resources.DictionaryTocharian <span class="caret"></span></a>
                     <ul class="dropdown-menu">
-                        <li><a href="@Url.Action("Index", "Abreviations")"> @StaticResource.Resources.Abbreviations - @StaticResource.Resources.Vocabulary</a></li>
+                        <li><a href="@Url.Action("Index", "AbbreviationDictionaries")"> @StaticResource.Resources.Abbreviations - @StaticResource.Resources.Vocabulary</a></li>
                         <li>@Html.ActionLink(@StaticResource.Resources.Vocabulary, "Index", "DictionaryTocharians")</li>
                         <li>@Html.ActionLink(@StaticResource.Resources.ReverseDictionary, "Index", "ReverseDictionaries")</li>
                     </ul>
@@ -621,10 +705,10 @@
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">@StaticResource.Resources.Activity <span class="caret"></span></a>
                     <ul class="dropdown-menu">
-                        <li><a href="@Url.Action("index", "Activities")"> @StaticResource.Resources.Publications</a></li>
-                        <li><a href="@Url.Action("index", "Activities")"> @StaticResource.Resources.Conferences , @StaticResource.Resources.Seminars</a></li>
-                        <li><a href="@Url.Action("index", "Activities")">  @StaticResource.Resources.Symposia</a></li>
-                        <li><a href="@Url.Action("index", "Activities")">  @StaticResource.Resources.Missions</a></li>
+                        <li><a href="@Url.Action("Publications", "Activities")"> @StaticResource.Resources.Publications</a></li>
+                        <li><a href="@Url.Action("ConferencesAndSeminar", "Activities")"> @StaticResource.Resources.Conferences , @StaticResource.Resources.Seminars</a></li>
+                        <li><a href="@Url.Action("Symposia", "Activities")">  @StaticResource.Resources.Symposia</a></li>
+                        <li><a href="@Url.Action("Missions", "Activities")">  @StaticResource.Resources.Missions</a></li>
                     </ul>
                 </li>
                 <li>
@@ -669,7 +753,7 @@
         </div>
     </div>
     <div class="container body-content">
-        
+
         @RenderBody()
         <hr />
         <footer>

@@ -132,7 +132,7 @@ namespace Horizone.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Manuscript manuscript = db.Manuscripts.Include(y => y.ImageManuscripts).Include(m => m.AlignmentType).Include(m => m.DescriptionManuscript).Include(m => m.Format).Include(m => m.GenderManuscript).Include(m => m.LanguageDetail).Include(m => m.LanguageStage).Include(m => m.Material).Include(m => m.Metric).Include(m => m.PaperColor).Include(m => m.RemarkAdd).Include(m => m.Ruling).Include(m => m.RulingColor).Include(m => m.RulingDetail).Include(m => m.Script).Include(m => m.ScriptAdd).Include(m => m.State).Include(m => m.SubGenderManuscript).Include(m => m.TochLanguage).Include(m => m.WritingTool).SingleOrDefault(m => m.Id == id);
+            Manuscript manuscript = db.Manuscripts.Include(y => y.ImageManuscripts).Include(m => m.Map).Include(m => m.AlignmentType).Include(m => m.DescriptionManuscript).Include(m => m.Format).Include(m => m.GenderManuscript).Include(m => m.LanguageDetail).Include(m => m.LanguageStage).Include(m => m.Material).Include(m => m.Metric).Include(m => m.PaperColor).Include(m => m.RemarkAdd).Include(m => m.Ruling).Include(m => m.RulingColor).Include(m => m.RulingDetail).Include(m => m.Script).Include(m => m.ScriptAdd).Include(m => m.State).Include(m => m.SubGenderManuscript).Include(m => m.TochLanguage).Include(m => m.WritingTool).SingleOrDefault(m => m.Id == id);
             if (manuscript == null)
             {
                 return HttpNotFound();
@@ -195,25 +195,16 @@ namespace Horizone.Controllers
             }
             return View(manuscript);
         }
-        public ActionResult Search(string search, string index, string language)
+        public ActionResult Search(string search)
         {
 
-            IEnumerable<Manuscript> manuscripts = db.Manuscripts;
+            IEnumerable<Manuscript> manuscripts = db.Manuscripts.Include("Catalogie").Include("Map").Include("ImageManuscripts").Include("State").Include("DescriptionManuscript").Include("RemarkAdd").Include("Format").Include("Ruling").Include("RulingColor").Include("RulingDetail").Include("Material").Include("PaperColor").Include("WritingTool").Include("AlignmentType").Include("Script").Include("ScriptAdd").Include("LanguageStage").Include("Tochlanguage").Include("LanguageDetail").Include("GenderManuscript").Include("SubGenderManuscript").Include("Metric").Include("Bibliographys");
 
             if (!string.IsNullOrWhiteSpace(search))
             {
-                manuscripts = manuscripts.Where(x => x.Transliteration.Contains(search));
-
-                //bibliographies = bibliographies.Where(x => x.PublicationDate.Contains(search));
-                //bibliographies = bibliographies.Where(x => x.Title.Contains(search));
-                //|| || (x=> x.PublicationDate.Contains(search)
-                //|| x.Journal.Contains(search)
-                //|| x.Title.Contains(search));
-            }
-            //if (!string.IsNullOrWhiteSpace(title))
-            //    bibliographies = bibliographies.Where(y => y.Title.Contains(title));
-            //if (!string.IsNullOrWhiteSpace(journal))
-            //    bibliographies = bibliographies.Where(y => y.Journal.Contains(journal));
+                manuscripts = db.Manuscripts.Include(m => m.AlignmentType).Include(m => m.DescriptionManuscript).Include(m => m.Format).Include(m => m.GenderManuscript).Include(m => m.LanguageDetail).Include(m => m.LanguageStage).Include(m => m.Material).Include(m => m.Metric).Include(m => m.PaperColor).Include(m => m.RemarkAdd).Include(m => m.Ruling).Include(m => m.RulingColor).Include(m => m.RulingDetail).Include(m => m.Script).Include(m => m.Script.ScriptType).Include(m => m.ScriptAdd).Include(m => m.State).Include(m => m.SubGenderManuscript).Include(m => m.TochLanguage).Include(m => m.WritingTool).Where(x => x.Transliteration.Contains(search));
+             
+            }           
 
             if (manuscripts.Count() == 0)
             {

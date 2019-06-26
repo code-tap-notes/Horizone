@@ -59,12 +59,35 @@
                     <li><a href="@Url.Action("AnalyseMaterial", "FontManuscripts")">@StaticResource.Resources.AnalyseMicroscopic</a></li>
                 </ul>
             </li>
-            <li class="dropdown">
+                    <li class="dropdown">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">@StaticResource.Resources.DictionaryTocharian <span class="caret"></span></a>
                 <ul class="dropdown-menu">
-                    <li><a href="@Url.Action( "Vocabulaire", "Vocabularies")"> @StaticResource.Resources.Vocabulary</a></li>
-                    <li>@Html.ActionLink(@StaticResource.Resources.AbbreviationDictionary, "Abbreviation", "Vocabularies")</li>
+                    <li class="dropdown-submenu">
+                        <a class="test" tabindex="-1" href="#">@StaticResource.Resources.Vocabulary<span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="@Url.Action("Verb", "Vocabularies")">&diams; @StaticResource.Resources.Verb</a></li>
+                            <li><a href="@Url.Action("Adverb", "Vocabularies")">&diams; @StaticResource.Resources.Adverb</a></li>
+                            <li><a href="@Url.Action("Noun", "Vocabularies")">&diams; @StaticResource.Resources.Noun</a></li>
+                            <li><a href="@Url.Action("Pronoun", "Vocabularies")">&diams; @StaticResource.Resources.Pronoun</a></li>
+                            <li><a href="@Url.Action("Adjective", "Vocabularies")">&diams; @StaticResource.Resources.Adjective</a></li>
+                            <li><a href="@Url.Action("TocharianA", "Vocabularies")">&diams; @StaticResource.Resources.DictionaryTocharian A</a></li>
+                            <li><a href="@Url.Action("TocharianB", "Vocabularies")">&diams; @StaticResource.Resources.DictionaryTocharian B</a></li>
+                            <li><a href="@Url.Action("Vocabulaire", "Vocabularies")">&diams; @StaticResource.Resources.AllWords</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown-submenu">
+                        <a class="test" tabindex="-1" href="#">@StaticResource.Resources.AbbreviationDictionary<span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="@Url.Action("AbbreviationGrammatical", "Vocabularies")">&diams; @StaticResource.Resources.GrammaticalAbbreviation</a></li>
+                            <li><a href="@Url.Action("AbbreviationLanguage", "Vocabularies")">&diams; @StaticResource.Resources.Language - @StaticResource.Resources.Abbreviations</a></li>
+                            <li><a href="@Url.Action("AbbreviationManuscript", "Vocabularies")">&diams; @StaticResource.Resources.Abbreviations - @StaticResource.Resources.Manuscript </a></li>
+
+                            <li><a href="@Url.Action("Abbreviation", "Vocabularies")">&diams; @StaticResource.Resources.OtherAbbreviation</a></li>
+                        </ul>
+                    </li>
                     <li>@Html.ActionLink(@StaticResource.Resources.ReverseDictionary, "Reverse", "Vocabularies")</li>
+                    <li>@Html.ActionLink(@StaticResource.Resources.ParallelDictionary, "Parallel", "Vocabularies")</li>
+
                 </ul>
             </li>
             <li class="dropdown">
@@ -130,6 +153,26 @@
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
     @RenderSection("scripts", required: false)
+ 
+    <script>
+        $(document).ready(function () {
+            $('.dropdown-submenu a.test').on("click", function (e) {
+                $(this).next('ul').toggle();
+                e.stopPropagation();
+                e.preventDefault();
+            });
+        },
 
+            function insertText(elemID, text) {
+                var elem = document.getElementById(elemID);
+                elem.innerHTML += text;
+            },
+            function () {
+                $(this).find("ul:first").slideDown(500);
+            },
+            function () {
+                $(this).find("ul:first").hide(300);
+            });
+    </script>
 </body>
 </html>

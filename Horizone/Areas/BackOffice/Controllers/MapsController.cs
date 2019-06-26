@@ -12,6 +12,7 @@ using Horizone.Models;
 
 namespace Horizone.Areas.BackOffice.Controllers
 {
+    [Authorize(Roles = "Collaborator,Admin")]
     public class MapsController : BaseController
     {
 
@@ -99,7 +100,7 @@ namespace Horizone.Areas.BackOffice.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Map map = db.Maps.Find(id);
+            Map map = db.Maps.Include("ImageMaps").SingleOrDefault(x => x.Id == id);
             if (map == null)
             {
                 return HttpNotFound();
@@ -112,7 +113,7 @@ namespace Horizone.Areas.BackOffice.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            Map map = db.Maps.Find(id);
+            Map map = db.Maps.Include("ImageMaps").SingleOrDefault(x => x.Id == id);
             db.Maps.Remove(map);
             db.SaveChanges();
             return RedirectToAction("Index");

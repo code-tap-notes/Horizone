@@ -1,4 +1,5 @@
-﻿@model IEnumerable<Horizone.Models.DictionaryTocharian>
+﻿@model PagedList.IPagedList<Horizone.Models.DictionaryTocharian>
+@using PagedList.Mvc;
 
 @{
     ViewBag.Title = @StaticResource.Resources.DictionaryTocharian;
@@ -19,7 +20,7 @@
                 <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
                     <span class="caret"></span>
                 </button>
-                <ul class="dropdown-menu" style="width: 820px !important" role="menu">
+                <ul class="dropdown-menu" style="width: 900px !important" role="menu">
                     <li>
                         <form class="form-group row" action="@Url.Action("Search", "Vocabularies")" method="post" enctype="multipart/form-data">
 
@@ -41,9 +42,13 @@
                                 <a onclick="insertText('Search','ü');" href="#">ü  </a>
                                 <a onclick="insertText('Search','ṅ');" href="#">ṅ  </a>
                                 <a onclick="insertText('Search','ñ');" href="#">ñ  </a>
+                                <a onclick="insertText('Search','ṇ');" href="#"> ṇ  </a>
+
                                 <a onclick="insertText('Search','ṃ');" href="#">ṃ  </a>
                                 <a onclick="insertText('Search','ś');" href="#">ś  </a>
                                 <a onclick="insertText('Search','ṣ');" href="#">ṣ  </a>
+                                <a onclick="insertText('Search','ṛ');" href="#"> ṛ  </a>
+                                <a onclick="insertText('Search','ṭ');" href="#"> ṭ  </a>
                                 <a onclick="insertText('Search','š');" href="#">š  </a>
                                 <a onclick="insertText('Search','ß');" href="#">ß  </a>
                             </div>
@@ -68,6 +73,7 @@
                             <div class="form-group col-md-4">
                                 <input class="form-control" type="text" id="Search" name="search" />
                             </div>
+                           
                         </form>
                     </li>
                     <li>
@@ -78,6 +84,7 @@
                             <div class="form-group col-md-4">
                                 <input class="form-control" type="text" id="Search" name="search" />
                             </div>
+                         
                         </form>
                     </li>
                     <li>
@@ -88,6 +95,7 @@
                             <div class="form-group col-md-4">
                                 <input class="form-control" type="text" id="Search" name="search" />
                             </div>
+                           
                         </form>
                     </li>
                 </ul>
@@ -97,43 +105,43 @@
 </div>
 
 <div class="col-md-2" style="float:right;">
-          <a href="@Url.Action("PrintVocabulaire", "Vocabularies")" class="btn btn-info">
-            <span class="glyphicon glyphicon-print"></span> @StaticResource.Resources.Print
-        </a>
-    
+    <a href="@Url.Action("PrintVocabulaire", "Vocabularies")" class="btn btn-info">
+        <span class="glyphicon glyphicon-print"></span> @StaticResource.Resources.Print
+    </a>
+
     @*(Bo Layout) @Html.ActionLink(@StaticResource.Resources.Print, "PrintHistoire", "Home", new { @class = "btn btn-info", style = "width:90px" },new { onclick= "popitup(this.value);"})*@
 </div>
 <table class="table">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.TochLanguage.Language)
+            @StaticResource.Resources.Language
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Word)
+            @StaticResource.Resources.Words
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.English)
+            @StaticResource.Resources.English
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Francaise)
+            @StaticResource.Resources.French
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.German)
+            @StaticResource.Resources.German
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Latin)
+            @StaticResource.Resources.Latin
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Chinese)
+            @StaticResource.Resources.Chinese
         </th>
-       
-            <th>
-                @Html.DisplayNameFor(model => model.WordClass.Class)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.WordSubClass.SubClass)
-            </th>
-       
+
+        <th>
+            @StaticResource.Resources.WordClass
+        </th>
+        <th>
+            @StaticResource.Resources.WordSubClass 
+        </th>
+
         <th></th>
     </tr>
     @foreach (var item in Model)
@@ -193,6 +201,7 @@
         </tr>
     }
 </table>
+@Html.PagedListPager(Model, page => Url.Action("Vocabulaire", new { page }))
 
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")

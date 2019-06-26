@@ -105,7 +105,7 @@ namespace Horizone.Areas.BackOffice.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            AboutProject aboutProject = db.AboutProjets.Find(id);
+            AboutProject aboutProject = db.AboutProjets.Include("ImageProjects").SingleOrDefault(x=>x.Id==id);
             if (aboutProject == null)
             {
                 return HttpNotFound();
@@ -118,7 +118,7 @@ namespace Horizone.Areas.BackOffice.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            AboutProject aboutProject = db.AboutProjets.Find(id);
+            AboutProject aboutProject = db.AboutProjets.Include("ImageProjects").SingleOrDefault(x => x.Id == id);
             db.AboutProjets.Remove(aboutProject);
             db.SaveChanges();
             return RedirectToAction("Index");

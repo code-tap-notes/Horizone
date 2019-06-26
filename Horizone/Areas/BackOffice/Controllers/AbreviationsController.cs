@@ -12,6 +12,7 @@ using PagedList;
 
 namespace Horizone.Areas.BackOffice.Controllers
 {
+    [Authorize(Roles = "Collaborator,Admin")]
     public class AbreviationsController : BaseController
     {
 

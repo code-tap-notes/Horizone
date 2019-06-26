@@ -1,4 +1,6 @@
-﻿@model IEnumerable<Horizone.Models.AbbreviationDictionary>
+﻿@model PagedList.IPagedList<Horizone.Models.AbbreviationDictionary>
+@using PagedList.Mvc;
+
 @{
     ViewBag.Title = @StaticResource.Resources.AbbreviationDictionary;
 }
@@ -13,10 +15,22 @@
 <table class="table">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.Symbol)
+            @StaticResource.Resources.Symbol
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Description)
+            @StaticResource.Resources.Description
+        </th>
+        <th>
+            @StaticResource.Resources.Abbreviations  @StaticResource.Resources.Language
+        </th>
+        <th>
+            @StaticResource.Resources.Abbreviations  @StaticResource.Resources.Manuscript
+        </th>
+        <th>
+            @StaticResource.Resources.GrammaticalAbbreviation
+        </th>
+        <th>
+            @StaticResource.Resources.OtherAbbreviation
         </th>
         <th></th>
     </tr>
@@ -30,13 +44,24 @@
         <td>
             @Html.DisplayFor(modelItem => item.Description)
         </td>
-
+        <td>
+            @Html.DisplayFor(modelItem => item.AbbreviationsLanguage)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.AbbreviationManuscript)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.GrammaticalAbbreviation)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.OtherAbbreviation)
+        </td>
         <td>
             @Html.ActionLink(@StaticResource.Resources.Edit, "Edit", new { id = item.Id }, new { @class = "btn btn-info", style = "width:85px" })
-            @Html.ActionLink(@StaticResource.Resources.Details, "Details", new { id = item.Id }, new { @class = "btn btn-info", style = "width:85px" })
             @Html.ActionLink(@StaticResource.Resources.Delete, "Delete", new { id = item.Id }, new { @class = "btn btn-info", style = "width:85px" })
         </td>
     </tr>
     }
 
 </table>
+@Html.PagedListPager(Model, page => Url.Action("index", new { page }))

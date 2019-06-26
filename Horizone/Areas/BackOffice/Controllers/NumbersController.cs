@@ -11,6 +11,7 @@ using Horizone.Controllers;
 
 namespace Horizone.Areas.BackOffice.Controllers
 {
+    [Authorize(Roles = "Collaborator,Admin")]
     public class NumbersController : BaseController
     {
        
@@ -83,6 +84,13 @@ namespace Horizone.Areas.BackOffice.Controllers
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
             Number number = db.Numbers.Find(id);
+            if (number.DictionaryTocharians?.Count() > 0)
+            {
+                Display("Impossible, Cases en cours", MessageType.ERROR);
+                return RedirectToAction("Index");
+            }
+
+
             if (number == null)
             {
                 return HttpNotFound();

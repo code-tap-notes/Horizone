@@ -8,16 +8,18 @@ using System.Web;
 using System.Web.Mvc;
 using Horizone.Controllers;
 using Horizone.Models;
+using PagedList;
 
 namespace Horizone.Areas.BackOffice.Controllers
 {
+    [Authorize(Roles = "Collaborator,Admin")]
     public class ReverseDictionariesController : BaseController
     {
 
         // GET: BackOffice/ReverseDictionaries
-        public ActionResult Index()
+        public ActionResult Index(int page = 1, int pageSize = 20)
         {
-            return View(db.ReverseDictionaries.ToList());
+            return View(db.ReverseDictionaries.OrderBy(x=>x.Word).ToPagedList(page, pageSize));
         }
 
         // GET: BackOffice/ReverseDictionaries/Details/5
@@ -46,8 +48,25 @@ namespace Horizone.Areas.BackOffice.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,Word,ReverseWord")] ReverseDictionary reverseDictionary)
+        public ActionResult Create([Bind(Include = "Id,Word,SymbolPrefix,ReverseWord,SymbolSufix")] ReverseDictionary reverseDictionary)
         {
+            char[] cArray = reverseDictionary.ReverseWord.ToCharArray();
+            string reverse = String.Empty;
+            for (int i = cArray.Length - 1; i > -1; i--)
+            {
+                if(cArray[i] == ')')
+                {
+                    reverse += '(';
+                }
+                else if (cArray[i] == '(')
+                {
+                    reverse += ')';
+                }
+                else
+                reverse += cArray[i];
+            }
+            reverseDictionary.Word = reverse;
+
             if (ModelState.IsValid)
             {
                 db.ReverseDictionaries.Add(reverseDictionary);
@@ -77,11 +96,18 @@ namespace Horizone.Areas.BackOffice.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,Word,ReverseWord")] ReverseDictionary reverseDictionary)
+        public ActionResult Edit([Bind(Include = "Id,Word,SymbolPrefix,ReverseWord,SymbolSufix")] ReverseDictionary reverseDictionary)
         {
             if (ModelState.IsValid)
             {
                 db.Entry(reverseDictionary).State = EntityState.Modified;
+                char[] cArray = reverseDictionary.ReverseWord.ToCharArray();
+                string reverse = String.Empty;
+                for (int i = cArray.Length - 1; i > -1; i--)
+                {
+                    reverse += cArray[i];
+                }
+                reverseDictionary.Word = reverse;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
@@ -112,6 +138,20 @@ namespace Horizone.Areas.BackOffice.Controllers
             db.ReverseDictionaries.Remove(reverseDictionary);
             db.SaveChanges();
             return RedirectToAction("Index");
-        }   
+        }
+        public ActionResult SearchReverse(string search)
+        {
+            IEnumerable<ReverseDictionary> reverseDictionarys = db.ReverseDictionaries;
+
+            if (!string.IsNullOrWhiteSpace(search))
+            {
+                reverseDictionarys = reverseDictionarys.Where(x => x.Word.Contains(search) || x.ReverseWord.Contains(search));
+            }
+            if (reverseDictionarys.Count() == 0)
+            {
+                Display("Aucun résultat");
+            }
+            return View("SearchReverse", reverseDictionarys.ToList());
+        }
     }
 }

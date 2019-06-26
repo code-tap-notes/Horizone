@@ -152,7 +152,32 @@ namespace Horizone.Areas.BackOffice.Controllers
             {
                 Display("Aucun résultat");
             }
+            ViewBag.Search = search; 
             return View("SearchWord", dictionaryTocharians.ToList());
         }
+        public ActionResult AddDic(string search)
+        {
+            var dictionaryTocharian = new DictionaryTocharian();
+            if (ModelState.IsValid)
+            {
+                dictionaryTocharian.Cases = db.Cases.Where(x => x.Id == 1).ToList();
+                dictionaryTocharian.Genders = db.Genders.Where(x => x.Id == 1).ToList();
+                dictionaryTocharian.Numbers = db.Numbers.Where(x => x.Id == 1).ToList();
+                dictionaryTocharian.Persons = db.Persons.Where(x => x.Id == 1).ToList();
+                dictionaryTocharian.Word = search;
+                dictionaryTocharian.MoodId = 1;
+                dictionaryTocharian.TochLanguageId = 1;
+                dictionaryTocharian.TenseAndAspectId = 1;
+                dictionaryTocharian.ValencyId = 1;
+                dictionaryTocharian.WordClassId = 1;
+                dictionaryTocharian.WordSubClassId = 1;
+                dictionaryTocharian.VoiceId = 1;
+                db.DictionaryTocharians.Add(dictionaryTocharian);
+                db.SaveChanges();
+                return RedirectToAction("Index", "DictionaryTocharians");
+            }
+            return View();
+        }
+
     }
 }

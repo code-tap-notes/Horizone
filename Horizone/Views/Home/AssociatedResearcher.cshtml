@@ -78,7 +78,7 @@
                                         </tr>
                                         <tr>
                                             <td>@item.CV   </td>
-                                            <td>@Html.ActionLink("DownLoad", "Home", new { cvName = item.CV }) <span class="glyphicon glyphicon-download"></span></td>
+                                            <td>@Html.ActionLink(@StaticResource.Resources.DownLoad, "Home", new { cvName = item.CV }) <span class="glyphicon glyphicon-download"></span></td>
                                         </tr>
                                     </table>
                                     <br />

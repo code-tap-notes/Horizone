@@ -49,13 +49,13 @@
             @Html.DisplayFor(modelItem => item.DateofActivity)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.Place)
+            @Html.Raw(item.Place)
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.NameActivity)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.Description)
+            @Html.Raw(item.Description)
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.UlrActivity)

@@ -3,6 +3,7 @@
 @{
     ViewBag.Title = @StaticResource.Resources.WordSubClass;
 }
+
 <h2>@ViewBag.Class</h2>
 <h3>@StaticResource.Resources.WordSubClass</h3>
 
@@ -47,8 +48,8 @@
             </td>
 
             <td>
-                <a href="@Url.Action("Edit", "WordSubClasses")" class="btn btn-info" style = "width:85px"> @StaticResource.Resources.Edit </a>
-                <a href="@Url.Action("Delete", "WordSubClasses")" class="btn btn-info" style = "width:85px"> @StaticResource.Resources.Delete </a>
+                <a href="@Url.Action("Edit", "WordSubClasses",new { id=item.Id })",  class="btn btn-info" style="width:85px"> @StaticResource.Resources.Edit </a>
+                <a href="@Url.Action("Delete", "WordSubClasses",new { id=item.Id })" , class="btn btn-info" style="width:85px"> @StaticResource.Resources.Delete </a>
             </td>
         </tr>
     }
