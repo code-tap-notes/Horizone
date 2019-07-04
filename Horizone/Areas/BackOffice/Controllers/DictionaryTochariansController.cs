@@ -8,6 +8,7 @@ using System.Web;
 using System.Web.Mvc;
 using Horizone.Controllers;
 using Horizone.Models;
+using PagedList;
 
 namespace Horizone.Areas.BackOffice.Controllers
 {
@@ -16,10 +17,10 @@ namespace Horizone.Areas.BackOffice.Controllers
     {
 
         // GET: BackOffice/DictionaryTocharians
-        public ActionResult Index()
+        public ActionResult Index(int page = 1, int pageSize = 50)
         {
             var dictionaryTocharians = db.DictionaryTocharians.Include(d => d.Mood).Include(d => d.TenseAndAspect).Include(d => d.TochLanguage).Include(d => d.Valency).Include(d => d.Voice).Include(d => d.WordClass).Include(d => d.WordSubClass).Include("Cases").Include("Numbers").Include("Genders").Include("Persons");
-            return View(dictionaryTocharians.OrderBy(x=>x.Word).ToList());
+            return View(dictionaryTocharians.OrderBy(x=>x.Word).ToPagedList(page, pageSize));
         }
 
         // GET: BackOffice/DictionaryTocharians/Details/5
@@ -45,107 +46,197 @@ namespace Horizone.Areas.BackOffice.Controllers
             }
             return View(dictionaryTocharian);
         }
-        // GET: BackOffice/DictionaryTocharians/Reverse/5
-        public ActionResult Reverse(int? id)
+        // GET: BackOffice/DictionaryTocharians/Details/5
+        public ActionResult AddNounAdjective(int? id)
         {
+                  
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            DictionaryTocharian dictionaryTocharian = db.DictionaryTocharians.Include(d => d.TochLanguage).Include(d => d.WordClass).Include(d => d.WordSubClass).Include("Cases").Include("Numbers").Include("Genders").Include("Persons").SingleOrDefault(y => y.Id == id);
-           
-            if (dictionaryTocharian.Cases.Count() == 0)
-                dictionaryTocharian.Cases = db.Cases.Where(x => x.NameCaseEn == "No Case").ToList();
-            if (dictionaryTocharian.Genders.Count() == 0)
-                dictionaryTocharian.Genders = db.Genders.Where(x => x.NameGenderEn == "No Gender").ToList();
-            if (dictionaryTocharian.Numbers.Count() == 0)
-                dictionaryTocharian.Numbers = db.Numbers.Where(x => x.WordNumberEn == "No Number").ToList();
-            if (dictionaryTocharian.Persons.Count() == 0)
-                dictionaryTocharian.Persons = db.Persons.Where(x => x.ConjugatedPersonEn == "No Person").ToList();
-            char[] cArray = dictionaryTocharian.Word.ToCharArray();
-            ViewBag.Word = dictionaryTocharian.Word;
-            string reverse = String.Empty;
-            for (int i = cArray.Length - 1; i > -1; i--)
-            {
-                 
-                    if (cArray[i] == ')')
-                    {
-                        reverse += '(';
-                    }
-                    else if (cArray[i] == '(')
-                    {
-                        reverse += ')';
-                    }
-                    else
-                        reverse += cArray[i];
-                 
-            }
-            IEnumerable<ReverseDictionary> reverseDictionaries = db.ReverseDictionaries;
-            reverseDictionaries = reverseDictionaries.Where(x => (x.Word == reverse || x.ReverseWord == reverse));
-            if (reverseDictionaries.Count() == 0)
-            {
-                Display("Aucun reverse");
-            }
-            if (reverseDictionaries == null)
+            DictionaryTocharian dictionaryTocharian = db.DictionaryTocharians.Include(d => d.TochLanguage).Include(d => d.WordClass).Include(d => d.Valency).Include(d => d.Voice).Include(d => d.TenseAndAspect).Include(d => d.Mood).Include(d => d.WordSubClass).Include("Cases").Include("Numbers").Include("Genders").Include("Persons").SingleOrDefault(y => y.Id == id);
+            var nounAdjective = new NounAdjective();
+            if (dictionaryTocharian == null)
             {
                 return HttpNotFound();
             }
-            ViewBag.Id = id;
-            ViewBag.Reverse = reverse;
 
-            return View(reverseDictionaries.OrderBy(x => x.Word).ToList());
+            if (ModelState.IsValid)
+            {
+                nounAdjective.Cases = dictionaryTocharian.Cases.ToList();
+                nounAdjective.Genders = dictionaryTocharian.Genders.ToList();
+                nounAdjective.Numbers = dictionaryTocharian.Numbers.ToList();
+                nounAdjective.TochWord = dictionaryTocharian.Word;
+                nounAdjective.English = dictionaryTocharian.English;
+                nounAdjective.Francaise = dictionaryTocharian.Francaise;
+                nounAdjective.German = dictionaryTocharian.German;
+                nounAdjective.Latin = dictionaryTocharian.Latin;
+                nounAdjective.Stem = dictionaryTocharian.Stem;
+                nounAdjective.StemClass = dictionaryTocharian.StemClass;
+                nounAdjective.Visible = true;
+                nounAdjective.EquivalentTA = dictionaryTocharian.EquivalentTA;
+                nounAdjective.EquivalentTB = dictionaryTocharian.EquivalentTB;
+                nounAdjective.TochCorrespondence = dictionaryTocharian.TochCorrespondence;
+                nounAdjective.RelatedLexemes = dictionaryTocharian.RelatedLexemes;
+                nounAdjective.RootCharacter = dictionaryTocharian.RootCharacter;
+                nounAdjective.EquivalentInOther = dictionaryTocharian.EquivalentInOther;
+                nounAdjective.InternalRootVowel = dictionaryTocharian.InternalRootVowel;
+
+                nounAdjective.TochLanguageId = dictionaryTocharian.TochLanguageId;
+                nounAdjective.WordClassId = dictionaryTocharian.WordClassId;
+                nounAdjective.WordSubClassId = dictionaryTocharian.WordSubClassId;
+                db.NounAdjectives.Add(nounAdjective);
+                db.SaveChanges();
+                return RedirectToAction("Edit", "nounAdjectives", new { id = nounAdjective.Id });
+            }
+            ViewBag.NewwordId = nounAdjective.Id;
+            return View();
+                       
         }
-       
-        public ActionResult AddReverse(int? id)
+        // GET: BackOffice/DictionaryTocharians/Details/5
+        public ActionResult AddVerb(int? id)
         {
+
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            DictionaryTocharian dictionaryTocharian = db.DictionaryTocharians.Include(d => d.TochLanguage).Include(d => d.WordClass).Include(d => d.WordSubClass).Include("Cases").Include("Numbers").Include("Genders").Include("Persons").SingleOrDefault(y => y.Id == id);
-            if (dictionaryTocharian.Cases.Count() == 0)
-                dictionaryTocharian.Cases = db.Cases.Where(x => x.NameCaseEn == "No Case").ToList();
-            if (dictionaryTocharian.Genders.Count() == 0)
-                dictionaryTocharian.Genders = db.Genders.Where(x => x.NameGenderEn == "No Gender").ToList();
-            if (dictionaryTocharian.Numbers.Count() == 0)
-                dictionaryTocharian.Numbers = db.Numbers.Where(x => x.WordNumberEn == "No Number").ToList();
-            if (dictionaryTocharian.Persons.Count() == 0)
-                dictionaryTocharian.Persons = db.Persons.Where(x => x.ConjugatedPersonEn == "No Person").ToList();
+            DictionaryTocharian dictionaryTocharian = db.DictionaryTocharians.Include(d => d.TochLanguage).Include(d => d.WordClass).Include(d => d.Valency).Include(d => d.Voice).Include(d => d.TenseAndAspect).Include(d => d.Mood).Include(d => d.WordSubClass).Include("Cases").Include("Numbers").Include("Genders").Include("Persons").SingleOrDefault(y => y.Id == id);
+            var verb = new Verb();
+            if (dictionaryTocharian == null)
+            {
+                return HttpNotFound();
+            }
 
-            var reverseDictionary = new ReverseDictionary();
-           
-                char[] cArray = dictionaryTocharian.Word.ToCharArray();
-                string reverse = String.Empty;
-                for (int i = cArray.Length - 1; i > -1; i--)
-                {
-                
-                    if (cArray[i] == ')')
-                    {
-                        reverse += '(';
-                    }
-                    else if (cArray[i] == '(')
-                    {
-                        reverse += ')';
-                    }
-                    else
-                        reverse += cArray[i];
-                
-                }
             if (ModelState.IsValid)
             {
-                reverseDictionary.Word = dictionaryTocharian.Word;
-                reverseDictionary.ReverseWord = reverse;
-                db.ReverseDictionaries.Add(reverseDictionary);
+                verb.MoodId = dictionaryTocharian.MoodId;
+                verb.ValencyId = dictionaryTocharian.ValencyId;
+                verb.VoiceId = dictionaryTocharian.VoiceId;
+                verb.TenseAndAspectId = dictionaryTocharian.TenseAndAspectId;
+                verb.Numbers = dictionaryTocharian.Numbers.ToList();
+                verb.Persons = dictionaryTocharian.Persons.ToList();
+                verb.TochWord = dictionaryTocharian.Word;
+                verb.English = dictionaryTocharian.English;
+                verb.Francaise = dictionaryTocharian.Francaise;
+                verb.German = dictionaryTocharian.German;
+                verb.Latin = dictionaryTocharian.Latin;
+                verb.Stem = dictionaryTocharian.Stem;
+                verb.StemClass = dictionaryTocharian.StemClass;
+                verb.InternalRootVowel = dictionaryTocharian.InternalRootVowel;
+
+                verb.Visible = true;
+                verb.EquivalentTA = dictionaryTocharian.EquivalentTA;
+                verb.EquivalentTB = dictionaryTocharian.EquivalentTB;
+                verb.TochCorrespondence = dictionaryTocharian.TochCorrespondence;
+                verb.RelatedLexemes = dictionaryTocharian.RelatedLexemes;
+                verb.RootCharacter = dictionaryTocharian.RootCharacter;
+                verb.EquivalentInOther = dictionaryTocharian.EquivalentInOther;
+                verb.PronounSuffix = dictionaryTocharian.PronounSuffix;
+                verb.TochLanguageId = dictionaryTocharian.TochLanguageId;
+                verb.WordClassId = dictionaryTocharian.WordClassId;
+                verb.WordSubClassId = dictionaryTocharian.WordSubClassId;
+                db.Verbs.Add(verb);
                 db.SaveChanges();
-
-                return RedirectToAction("Index", "ReverseDictionaries");
+                return RedirectToAction("Edit", "verbs", new { id = verb.Id });
             }
-            ViewBag.Reverse = reverse;
-            ViewBag.Id = id;
+            ViewBag.NewwordId = verb.Id;
             return View();
-        }
-       
 
+        }
+        // GET: BackOffice/DictionaryTocharians/Details/5
+        public ActionResult AddPronoun(int? id)
+        {
+
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            DictionaryTocharian dictionaryTocharian = db.DictionaryTocharians.Include(d => d.TochLanguage).Include(d => d.WordClass).Include(d => d.Valency).Include(d => d.Voice).Include(d => d.TenseAndAspect).Include(d => d.Mood).Include(d => d.WordSubClass).Include("Cases").Include("Numbers").Include("Genders").Include("Persons").SingleOrDefault(y => y.Id == id);
+            var pronoun = new Pronoun();
+            if (dictionaryTocharian == null)
+            {
+                return HttpNotFound();
+            }
+
+            if (ModelState.IsValid)
+            {
+                pronoun.Cases = dictionaryTocharian.Cases.ToList();
+                pronoun.Genders = dictionaryTocharian.Genders.ToList();
+                pronoun.Numbers = dictionaryTocharian.Numbers.ToList();
+                pronoun.Persons = dictionaryTocharian.Persons.ToList();
+                pronoun.TochWord = dictionaryTocharian.Word;
+                pronoun.English = dictionaryTocharian.English;
+                pronoun.Francaise = dictionaryTocharian.Francaise;
+                pronoun.German = dictionaryTocharian.German;
+                pronoun.Latin = dictionaryTocharian.Latin;
+                pronoun.Stem = dictionaryTocharian.Stem;
+                pronoun.StemClass = dictionaryTocharian.StemClass;
+                pronoun.Visible = true;
+                pronoun.EquivalentTA = dictionaryTocharian.EquivalentTA;
+                pronoun.EquivalentTB = dictionaryTocharian.EquivalentTB;
+                pronoun.TochCorrespondence = dictionaryTocharian.TochCorrespondence;
+                pronoun.RelatedLexemes = dictionaryTocharian.RelatedLexemes;
+                pronoun.RootCharacter = dictionaryTocharian.RootCharacter;
+                pronoun.EquivalentInOther = dictionaryTocharian.EquivalentInOther;
+                pronoun.InternalRootVowel = dictionaryTocharian.InternalRootVowel;
+                
+                pronoun.TochLanguageId = dictionaryTocharian.TochLanguageId;
+                pronoun.WordClassId = dictionaryTocharian.WordClassId;
+                pronoun.WordSubClassId = dictionaryTocharian.WordSubClassId;
+                db.Pronouns.Add(pronoun);
+                db.SaveChanges();
+                return RedirectToAction("Edit", "pronouns", new { id = pronoun.Id });
+            }
+            ViewBag.NewwordId = pronoun.Id;
+            return View();
+
+        }
+        // GET: BackOffice/DictionaryTocharians/Details/5
+        public ActionResult AddWord(int? id)
+        {
+
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            DictionaryTocharian dictionaryTocharian = db.DictionaryTocharians.Include(d => d.TochLanguage).Include(d => d.WordClass).Include(d => d.Valency).Include(d => d.Voice).Include(d => d.TenseAndAspect).Include(d => d.Mood).Include(d => d.WordSubClass).Include("Cases").Include("Numbers").Include("Genders").Include("Persons").SingleOrDefault(y => y.Id == id);
+            var otherWord = new OtherWord();
+            if (dictionaryTocharian == null)
+            {
+                return HttpNotFound();
+            }
+
+            if (ModelState.IsValid)
+            {
+                otherWord.Numbers = dictionaryTocharian.Numbers.ToList();
+                otherWord.TochWord = dictionaryTocharian.Word;
+                otherWord.English = dictionaryTocharian.English;
+                otherWord.Francaise = dictionaryTocharian.Francaise;
+                otherWord.German = dictionaryTocharian.German;
+                otherWord.Latin = dictionaryTocharian.Latin;
+                otherWord.Stem = dictionaryTocharian.Stem;
+                otherWord.StemClass = dictionaryTocharian.StemClass;
+                otherWord.Visible = true;
+                otherWord.EquivalentTA = dictionaryTocharian.EquivalentTA;
+                otherWord.EquivalentTB = dictionaryTocharian.EquivalentTB;
+                otherWord.TochCorrespondence = dictionaryTocharian.TochCorrespondence;
+                otherWord.RelatedLexemes = dictionaryTocharian.RelatedLexemes;
+                otherWord.RootCharacter = dictionaryTocharian.RootCharacter;
+                otherWord.EquivalentInOther = dictionaryTocharian.EquivalentInOther;
+                otherWord.InternalRootVowel = dictionaryTocharian.InternalRootVowel;
+
+                otherWord.TochLanguageId = dictionaryTocharian.TochLanguageId;
+                otherWord.WordClassId = dictionaryTocharian.WordClassId;
+                otherWord.WordSubClassId = dictionaryTocharian.WordSubClassId;
+                db.OtherWords.Add(otherWord);
+                db.SaveChanges();
+                return RedirectToAction("Edit", "OtherWords", new { id = otherWord.Id });
+            }
+            ViewBag.NewwordId = otherWord.Id;
+            return View();
+
+        }
         // GET: BackOffice/DictionaryTocharians/Create
         public ActionResult Create()
         {
@@ -189,7 +280,7 @@ namespace Horizone.Areas.BackOffice.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,Word,English,Francaise,German,Latin,Chinese,WordClassId,WordSubClassId,TochLanguageId,EquivalentTA,EquivalentTB,EquivalentInOther,DerivedFrom,RelatedLexemes,RootCharacter,InternalRootVowel,Stem,StemClass,VoiceId,ValencyId,TenseAndAspectId,MoodId,PronounSuffix,Visible")] DictionaryTocharian dictionaryTocharian, int[] CaseId, int[] GenderId, int[] NumberId, int[] PersonId)
+        public ActionResult Create([Bind(Include = "Id,Word,English,Francaise,German,Latin,Chinese,WordClassId,WordSubClassId,TochLanguageId,EquivalentTA,EquivalentTB,TochCorrespondence,EquivalentInOther,DerivedFrom,RelatedLexemes,RootCharacter,InternalRootVowel,Stem,StemClass,VoiceId,ValencyId,TenseAndAspectId,MoodId,PronounSuffix,Visible")] DictionaryTocharian dictionaryTocharian, int[] CaseId, int[] GenderId, int[] NumberId, int[] PersonId)
         {
             if (ModelState.IsValid)
             {
@@ -269,7 +360,7 @@ namespace Horizone.Areas.BackOffice.Controllers
             ViewBag.PersonsZh = new SelectList(db.Persons, "Id", "ConjugatedPersonZh");
             return View(dictionaryTocharian);
         }
-
+               
         // GET: BackOffice/DictionaryTocharians/Edit/5
         public ActionResult Edit(int? id)
         {
@@ -322,20 +413,23 @@ namespace Horizone.Areas.BackOffice.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,Word,English,Francaise,German,Latin,Chinese,WordClassId,WordSubClassId,TochLanguageId,EquivalentTA,EquivalentTB,EquivalentInOther,DerivedFrom,RelatedLexemes,RootCharacter,InternalRootVowel,Stem,StemClass,VoiceId,ValencyId,TenseAndAspectId,MoodId,PronounSuffix,Visible")] DictionaryTocharian dictionaryTocharian, int[] CaseId, int[] GenderId, int[] NumberId, int[] PersonId)
+        public ActionResult Edit([Bind(Include = "Id,Word,English,Francaise,German,Latin,Chinese,WordClassId,WordSubClassId,TochLanguageId,EquivalentTA,EquivalentTB,TochCorrespondence,EquivalentInOther,DerivedFrom,RelatedLexemes,RootCharacter,InternalRootVowel,Stem,StemClass,VoiceId,ValencyId,TenseAndAspectId,MoodId,PronounSuffix,Visible")] DictionaryTocharian dictionaryTocharian, int[] CaseId, int[] GenderId, int[] NumberId, int[] PersonId)
         {
             db.Entry(dictionaryTocharian).State = EntityState.Modified;
             db.DictionaryTocharians.Include(t => t.TochLanguage).Include("Cases").Include("Genders").Include("Numbers").Include("Persons").SingleOrDefault(x => x.Id == dictionaryTocharian.Id);
-            if (dictionaryTocharian.TochLanguage.Language == "TA")
-            {
-                dictionaryTocharian.EquivalentTA = dictionaryTocharian.Word;
-            }
-            if (dictionaryTocharian.TochLanguage.Language == "TB")
-            {
-                dictionaryTocharian.EquivalentTB = dictionaryTocharian.Word;
-            }
+            
             if (ModelState.IsValid)
             {
+                if (dictionaryTocharian.TochLanguageId == 1 || dictionaryTocharian.TochLanguageId == 3)
+                {
+                    dictionaryTocharian.EquivalentTA = dictionaryTocharian.Word;
+                }
+                if (dictionaryTocharian.TochLanguageId == 2 || dictionaryTocharian.TochLanguageId == 4)
+                {
+                    dictionaryTocharian.EquivalentTB = dictionaryTocharian.Word;
+                }
+                
+
                 if (CaseId != null)
                     dictionaryTocharian.Cases = db.Cases.Where(x => CaseId.Contains(x.Id)).ToList();
                 if (GenderId != null)

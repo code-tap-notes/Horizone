@@ -1,9 +1,45 @@
-﻿@model IEnumerable<Horizone.Models.DictionaryTocharian>
+﻿@model PagedList.IPagedList<Horizone.Models.DictionaryTocharian>
+@using PagedList.Mvc;
 @{
     ViewBag.Title = @StaticResource.Resources.DictionaryTocharian;
 }
 
 <h2>@StaticResource.Resources.DictionaryTocharian </h2>
+<div id="search">
+    <form class="form-group row" action="@Url.Action("SearchWord", "DashBoards")" method="post" enctype="multipart/form-data">
+        <div class="form-group col-md-2">
+            <br />
+            <button type="submit" class="btn btn-info bigBtn"><span class="glyphicon glyphicon-search"></span> @StaticResource.Resources.Search </button>
+        </div>
+
+        <div class="form-group col-md-4">
+            <label for="Title"> @StaticResource.Resources.SearchWord </label>
+            <input class="form-control" type="text" id="Search" name="search" />
+        </div>
+
+        <div class="form-group col-md-4">
+            <p><strong>Insert:  </strong> </p>
+            <a onclick="insertText('Search','ā');" href="#" style="background-color: blanchedalmond; padding:5px"> ā  </a><a> </a>
+            <a onclick="insertText('Search','ä');" href="#" style="background-color: blanchedalmond; padding:5px"> ä  </a>
+            <a onclick="insertText('Search','ī');" href="#" style="background-color: blanchedalmond; padding:5px"> ī  </a>
+            <a onclick="insertText('Search','ö');" href="#" style="background-color: blanchedalmond; padding:5px"> ö  </a>
+            <a onclick="insertText('Search','ū');" href="#" style="background-color: blanchedalmond; padding:5px"> ū  </a>
+            <a onclick="insertText('Search','ü');" href="#" style="background-color: blanchedalmond; padding:5px"> ü  </a>
+            <a onclick="insertText('Search','ṅ');" href="#" style="background-color: blanchedalmond; padding:5px"> ṅ  </a>
+            <a onclick="insertText('Search','ñ');" href="#" style="background-color: blanchedalmond; padding:5px"> ñ  </a>
+            <a onclick="insertText('Search','ṇ');" href="#" style="background-color: blanchedalmond; padding:5px"> ṇ  </a>
+            <a onclick="insertText('Search','ṃ');" href="#" style="background-color: blanchedalmond; padding:5px"> ṃ  </a>
+            <a onclick="insertText('Search','ś');" href="#" style="background-color: blanchedalmond; padding:5px"> ś  </a>
+            <a onclick="insertText('Search','ṣ');" href="#" style="background-color: blanchedalmond; padding:5px"> ṣ  </a>
+            <a onclick="insertText('Search','ṛ');" href="#" style="background-color: blanchedalmond; padding:5px"> ṛ  </a>
+            <a onclick="insertText('Search','ṭ');" href="#" style="background-color: blanchedalmond; padding:5px"> ṭ  </a>
+
+            <a onclick="insertText('Search','š');" href="#" style="background-color: blanchedalmond; padding:5px"> š  </a>
+            <a onclick="insertText('Search','ß');" href="#" style="background-color: blanchedalmond; padding:5px"> ß  </a>
+        </div>
+    </form>
+
+</div>
 
 <p>
     @Html.ActionLink(@StaticResource.Resources.Add, "Create", null, new { @class = "btn btn-primary" })
@@ -11,97 +47,34 @@
 <table class="table">
     <tr>
 
+
         <th>
-            @Html.DisplayNameFor(model => model.Word)
+            @StaticResource.Resources.Words
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.TochLanguage.Language)
+            @StaticResource.Resources.Language
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.English)
+            @StaticResource.Resources.English
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Francaise)
+            @StaticResource.Resources.French
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.German)
+            @StaticResource.Resources.German
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Latin)
+            @StaticResource.Resources.Latin
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Chinese)
+            @StaticResource.Resources.Chinese
         </th>
-
-        @if (Session[Horizone.Common.CommonConstants.CurrentCulture].ToString() == "en")
-
-        {
-            <th>
-                @Html.DisplayNameFor(model => model.WordClass.Class)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.WordSubClass.SubClass)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Mood.MoodEn)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.TenseAndAspect.TenseEn)
-            </th>
-
-            <th>
-                @Html.DisplayNameFor(model => model.Valency.AbbreviationValency)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Voice.AbbreviationVoice)
-            </th>
-        }
-        @if (Session[Horizone.Common.CommonConstants.CurrentCulture].ToString() == "fr")
-
-        {
-            <th>
-                @Html.DisplayNameFor(model => model.WordClass.Class)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.WordSubClass.SubClass)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Mood.MoodFr)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.TenseAndAspect.TenseFr)
-            </th>
-
-            <th>
-                @Html.DisplayNameFor(model => model.Valency.AbbreviationValency)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Voice.AbbreviationVoice)
-            </th>
-
-        }
-        @if (Session[Horizone.Common.CommonConstants.CurrentCulture].ToString() == "zh")
-
-        {
-            <th>
-                @Html.DisplayNameFor(model => model.WordClass.Class)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.WordSubClass.SubClass)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Mood.MoodZh)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.TenseAndAspect.TenseZh)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Valency.AbbreviationValency)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Voice.AbbreviationVoice)
-            </th>
-        }
+        <th>
+            @StaticResource.Resources.WordClass
+        </th>
+        <th>
+            @StaticResource.Resources.WordSubClass
+        </th>
 
         <th></th>
     </tr>
@@ -110,6 +83,7 @@
     {
     <tr>
 
+        
         <td>
             @Html.DisplayFor(modelItem => item.Word)
         </td>
@@ -139,19 +113,6 @@
             <td>
                 @Html.DisplayFor(modelItem => item.WordSubClass.SubClassEn)
             </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Mood.MoodEn)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.TenseAndAspect.TenseEn)
-            </td>
-
-            <td>
-                @Html.DisplayFor(modelItem => item.Valency.ValencyEn)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Voice.VoiceEn)
-            </td>
 
         }
         @if (Session[Horizone.Common.CommonConstants.CurrentCulture].ToString() == "fr")
@@ -161,19 +122,6 @@
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.WordSubClass.SubClassFr)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Mood.MoodFr)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.TenseAndAspect.TenseFr)
-            </td>
-
-            <td>
-                @Html.DisplayFor(modelItem => item.Valency.ValencyFr)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Voice.VoiceFr)
             </td>
 
         }
@@ -185,22 +133,8 @@
             <td>
                 @Html.DisplayFor(modelItem => item.WordSubClass.SubClassZh)
             </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Mood.MoodZh)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.TenseAndAspect.TenseZh)
-            </td>
-
-            <td>
-                @Html.DisplayFor(modelItem => item.Valency.ValencyZh)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Voice.VoiceZh)
-            </td>
 
         }
-
         <td>
             @Html.ActionLink(@StaticResource.Resources.Edit, "Edit", new { id = item.Id }, new { @class = "btn btn-info", style = "width:85px" })
             @Html.ActionLink(@StaticResource.Resources.Details, "Details", new { id = item.Id }, new { @class = "btn btn-info", style = "width:85px" })
@@ -210,3 +144,14 @@
     }
 
 </table>
+@Html.PagedListPager(Model, page => Url.Action("Vocabulaire", new { page }))
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+    <script>
+
+        function insertText(elemID, text) {
+            document.getElementById(elemID).value += text;
+        }
+    </script>
+}

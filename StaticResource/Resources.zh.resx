@@ -466,7 +466,7 @@
     <value>语音</value>
   </data>
   <data name="WordClass" xml:space="preserve">
-    <value>词类</value>
+    <value>词类和语素</value>
   </data>
   <data name="Words" xml:space="preserve">
     <value>话</value>
@@ -1728,5 +1728,107 @@ TochPhase</value>
   </data>
   <data name="VerbalCategories" xml:space="preserve">
     <value>言语类别</value>
+  </data>
+  <data name="AccountLink" xml:space="preserve">
+    <value>关联您的帐户</value>
+  </data>
+  <data name="AccountSetting" xml:space="preserve">
+    <value>更改您的帐户设置</value>
+  </data>
+  <data name="AccountSignIn" xml:space="preserve">
+    <value>使用本地帐户登录</value>
+  </data>
+  <data name="AskEmail" xml:space="preserve">
+    <value>输入电子邮件地址</value>
+  </data>
+  <data name="ChangePassword" xml:space="preserve">
+    <value>更改密码</value>
+  </data>
+  <data name="CheckCode" xml:space="preserve">
+    <value>检查代码</value>
+  </data>
+  <data name="CheckEmailResetPassword" xml:space="preserve">
+    <value>检查您的电子邮件地址以重置密码</value>
+  </data>
+  <data name="ClickLogin" xml:space="preserve">
+    <value>点击这里登录</value>
+  </data>
+  <data name="ConfirmEmail" xml:space="preserve">
+    <value>感谢您确认电子邮件。请</value>
+  </data>
+  <data name="ConnectFailed" xml:space="preserve">
+    <value>无法连接到该服务</value>
+  </data>
+  <data name="EmailLink" xml:space="preserve">
+    <value>电邮链接</value>
+  </data>
+  <data name="EnterCode" xml:space="preserve">
+    <value>输入验证码</value>
+  </data>
+  <data name="EnterUsername" xml:space="preserve">
+    <value>请在下面输入此站点的用户名，然后单击“注册”按钮以验证 连接</value>
+  </data>
+  <data name="Error" xml:space="preserve">
+    <value>错误</value>
+  </data>
+  <data name="ErrorRequest" xml:space="preserve">
+    <value>处理您的请求时出错</value>
+  </data>
+  <data name="ForgotPassword" xml:space="preserve">
+    <value>忘记密码了？</value>
+  </data>
+  <data name="LoginSuccess" xml:space="preserve">
+    <value>您已成功通过身份验证</value>
+  </data>
+  <data name="Manage" xml:space="preserve">
+    <value>管理</value>
+  </data>
+  <data name="NewUser" xml:space="preserve">
+    <value>注册为新用户</value>
+  </data>
+  <data name="Password" xml:space="preserve">
+    <value>密码</value>
+  </data>
+  <data name="PasswordResetSuccess" xml:space="preserve">
+    <value>您的密码已被重置。请</value>
+  </data>
+  <data name="Register" xml:space="preserve">
+    <value>注册</value>
+  </data>
+  <data name="ResetPassword" xml:space="preserve">
+    <value>重置密码</value>
+  </data>
+  <data name="SendCode" xml:space="preserve">
+    <value>发送验证码</value>
+  </data>
+  <data name="Min2" xml:space="preserve">
+    <value>字符串{0}必须至少包含{2}个字符。</value>
+  </data>
+  <data name="RememberBrowser" xml:space="preserve">
+    <value>记得这个浏览器？</value>
+  </data>
+  <data name="RememberPassword" xml:space="preserve">
+    <value>记得密码？</value>
+  </data>
+  <data name="AccountLocked" xml:space="preserve">
+    <value>此帐号已被锁定，请重试。</value>
+  </data>
+  <data name="ConnexionsInscrites" xml:space="preserve">
+    <value>连接已注册</value>
+  </data>
+  <data name="ConnexionYourAccount" xml:space="preserve">
+    <value>使用您的帐户登录</value>
+  </data>
+  <data name="LocalConnection" xml:space="preserve">
+    <value>创建本地连接</value>
+  </data>
+  <data name="NewAccount" xml:space="preserve">
+    <value>创建一个新帐户</value>
+  </data>
+  <data name="YourAccount" xml:space="preserve">
+    <value>你的帐户</value>
+  </data>
+  <data name="OtherWords" xml:space="preserve">
+    <value>换句话说</value>
   </data>
 </root>

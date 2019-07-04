@@ -9,7 +9,7 @@
 
 <table class="table">
     <tr>
-        <th>
+        <th hidden>
             @Html.DisplayNameFor(model => model.Word)
         </th>
         <th>
@@ -22,7 +22,7 @@
     {
 
         <tr>
-            <td>
+            <td hidden>
                 <form class="form-group row" action="@Url.Action("SearchWord", "DashBoards")" method="post" enctype="multipart/form-data">
                     <button type="submit" class="btn btn-default" style="width:95%; text-align:left;">  @Html.DisplayFor(modelItem => item.Word) </button>
                     <input class="form-control" type="hidden" id="Search" name="search" value=@item.Word />

@@ -41,8 +41,8 @@ namespace Horizone.Controllers
         }
         public ActionResult Verb()
         {
-            var dictionaryTocharians = db.DictionaryTocharians.Where(x => x.WordClass.ClassEn == "Verb").Include(d => d.TochLanguage).Include(d => d.WordClass).Include(d => d.WordSubClass).Include("Cases").Include("Numbers").Include("Genders").Include("Persons");
-            return View(dictionaryTocharians.OrderBy(x => x.Word).ToList());
+            var verbs = db.Verbs.Where(x => x.WordClass.ClassEn == "Verb").Include(d => d.TochLanguage).Include(d => d.WordClass).Include(d => d.WordSubClass).Include("Numbers").Include("Persons");
+            return View(verbs.OrderBy(x => x.TochWord).ToList());
         }
         public ActionResult Adverb()
         {
@@ -51,18 +51,18 @@ namespace Horizone.Controllers
         }
         public ActionResult Noun()
         {
-            var dictionaryTocharians = db.DictionaryTocharians.Where(x => x.WordClass.ClassEn == "Noun").Include(d => d.TochLanguage).Include(d => d.WordClass).Include(d => d.WordSubClass).Include("Cases").Include("Numbers").Include("Genders").Include("Persons");
-            return View(dictionaryTocharians.OrderBy(x => x.Word).ToList());
+            var nounAdjectives = db.NounAdjectives.Where(x => x.WordClass.ClassEn == "Noun").Include(d => d.TochLanguage).Include(d => d.WordClass).Include(d => d.WordSubClass).Include("Cases").Include("Numbers").Include("Genders");
+            return View(nounAdjectives.OrderBy(x => x.TochWord).ToList());
         }
         public ActionResult Pronoun()
         {
-            var dictionaryTocharians = db.DictionaryTocharians.Where(x => x.WordClass.ClassEn == "Pronoun").Include(d => d.TochLanguage).Include(d => d.WordClass).Include(d => d.WordSubClass).Include("Cases").Include("Numbers").Include("Genders").Include("Persons");
-            return View(dictionaryTocharians.OrderBy(x => x.Word).ToList());
+            var pronouns = db.Pronouns.Where(x => x.WordClass.ClassEn == "Pronoun").Include(d => d.TochLanguage).Include(d => d.WordClass).Include(d => d.WordSubClass).Include("Cases").Include("Numbers").Include("Genders").Include("Persons");
+            return View(pronouns.OrderBy(x => x.TochWord).ToList());
         }
         public ActionResult Adjective()
         {
-            var dictionaryTocharians = db.DictionaryTocharians.Where(x => x.WordClass.ClassEn == "Adjective").Include(d => d.TochLanguage).Include(d => d.WordClass).Include(d => d.WordSubClass).Include("Cases").Include("Numbers").Include("Genders").Include("Persons");
-            return View(dictionaryTocharians.OrderBy(x => x.Word).ToList());
+            var nounAdjectives = db.NounAdjectives.Where(x => x.WordClass.ClassEn == "Adjective").Include(d => d.TochLanguage).Include(d => d.WordClass).Include(d => d.WordSubClass).Include("Cases").Include("Numbers").Include("Genders");
+            return View(nounAdjectives.OrderBy(x => x.TochWord).ToList());
         }
 
         public ActionResult Abbreviation(int page = 1, int pageSize = 30)
@@ -90,55 +90,7 @@ namespace Horizone.Controllers
             var reverseDictionaries = db.ReverseDictionaries;
             return View(reverseDictionaries.OrderBy(x => x.Word).ToPagedList(page, pageSize));
         }
-        public ActionResult CheckReverse(int? id)
-        {           
-                if (id == null)
-                {
-                    return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-                }
-                DictionaryTocharian dictionaryTocharian = db.DictionaryTocharians.Include(d => d.TochLanguage).Include(d => d.WordClass).Include(d => d.WordSubClass).Include("Cases").Include("Numbers").Include("Genders").Include("Persons").SingleOrDefault(y => y.Id == id);
-
-                if (dictionaryTocharian.Cases.Count() == 0)
-                    dictionaryTocharian.Cases = db.Cases.Where(x => x.NameCaseEn == "No Case").ToList();
-                if (dictionaryTocharian.Genders.Count() == 0)
-                    dictionaryTocharian.Genders = db.Genders.Where(x => x.NameGenderEn == "No Gender").ToList();
-                if (dictionaryTocharian.Numbers.Count() == 0)
-                    dictionaryTocharian.Numbers = db.Numbers.Where(x => x.WordNumberEn == "No Number").ToList();
-                if (dictionaryTocharian.Persons.Count() == 0)
-                    dictionaryTocharian.Persons = db.Persons.Where(x => x.ConjugatedPersonEn == "No Person").ToList();
-                char[] cArray = dictionaryTocharian.Word.ToCharArray();
-                string reverse = String.Empty;
-                for (int i = cArray.Length - 1; i > -1; i--)
-             
-                {
-                    if (cArray[i] == ')')
-                    {
-                        reverse += '(';
-                    }
-                    else if (cArray[i] == '(')
-                    {
-                        reverse += ')';
-                    }
-                    else
-                        reverse += cArray[i];
-                
-                }
-                IEnumerable<ReverseDictionary> reverseDictionaries = db.ReverseDictionaries;
-                reverseDictionaries = reverseDictionaries.Where(x => (x.Word == reverse || x.ReverseWord == reverse));
-                if (reverseDictionaries.Count() == 0)
-                {
-                    Display("Aucun reverse");
-                }
-                if (reverseDictionaries == null)
-                {
-                    return HttpNotFound();
-                }
-                ViewBag.Id = id;
-                ViewBag.Reverse = reverse;
-
-                return View(reverseDictionaries.ToList());          
-        }
-
+       
         public ActionResult PrintVocabulaire()
         {
             var report = new ActionAsPdf("Vocabulaire");

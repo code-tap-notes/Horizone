@@ -7,16 +7,9 @@
         <form class="form-group row" action="@Url.Action("Search", "Dashboards")" method="post" enctype="multipart/form-data">
             <div class="form-group col-md-2">
                 <br />
-                <button type="submit" class="btn btn-info bigBtn"> Rechercher</button>
+                <button type="submit" class="btn btn-info bigBtn"> @StaticResource.Resources.Search</button>
             </div>
-            <div class="form-group col-md-2">
-                <label for="Topic">Topic:</label>
-                <a> <input type="text" class="form-control" id="Word" name="Word" /> </a> <br />
-            </div>
-            <div class="form-group col-md-2">
-                <label for="Date">Date Public:</label>
-                <input class="form-control" type="number" id="Date" name="Date" />
-            </div>
+            
             <div class="form-group col-md-2">
                 <label for="Manuscript">Manuscript</label>
                 <input class="form-control" type="text" id="Manuscript" name="search" />

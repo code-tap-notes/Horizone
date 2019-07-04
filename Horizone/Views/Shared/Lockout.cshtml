@@ -1,10 +1,9 @@
 ﻿@model System.Web.Mvc.HandleErrorInfo
 
 @{
-    ViewBag.Title = "Verrouillé";
+    ViewBag.Title = @StaticResource.Resources.AccountLocked;
 }
 
 <hgroup>
-    <h1 class="text-danger">Verrouillé.</h1>
-    <h2 class="text-danger">Ce compte a été verrouillé, veuillez réessayer.</h2>
+    <h2 class="text-danger">@StaticResource.Resources.AccountLocked</h2>
 </hgroup>

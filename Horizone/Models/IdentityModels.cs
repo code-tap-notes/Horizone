@@ -80,6 +80,10 @@ namespace Horizone.Models
         public DbSet<WordSubClass> WordSubClasses { get; set; }
         public DbSet<AbbreviationDictionary> AbbreviationDictionaries { get; set; }
         public DbSet<ReverseDictionary> ReverseDictionaries { get; set; }
+        public DbSet<Verb> Verbs { get; set; }
+        public DbSet<NounAdjective> NounAdjectives { get; set; }
+        public DbSet<Pronoun> Pronouns { get; set; }
+        public DbSet<OtherWord> OtherWords { get; set; }
 
         //Manuscript
         public DbSet<Catalogie> Catalogies { get; set; }

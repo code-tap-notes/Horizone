@@ -174,10 +174,11 @@ namespace Horizone.Areas.BackOffice.Controllers
                 dictionaryTocharian.VoiceId = 1;
                 db.DictionaryTocharians.Add(dictionaryTocharian);
                 db.SaveChanges();
-                return RedirectToAction("Index", "DictionaryTocharians");
+                return RedirectToAction("Edit", "DictionaryTocharians", new {id=dictionaryTocharian.Id });
             }
+            ViewBag.Newword = search;
             return View();
         }
-
+       
     }
 }

@@ -1,0 +1,197 @@
+﻿@model Horizone.Models.NounAdjective
+
+@{
+    ViewBag.Title = @StaticResource.Resources.Delete;
+}
+
+<h2> @StaticResource.Resources.Delete</h2>
+
+<h3 class="text-danger"> @StaticResource.Resources.AskDelete</h3>
+
+
+
+
+<div>
+    <h4>NounAdjective</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.TochLanguage.Language)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TochLanguage.Language)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.WordClass.Class)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.WordClass.Class)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.WordSubClass.SubClass)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.WordSubClass.SubClass)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TochWord)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TochWord)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.English)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.English)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Francaise)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Francaise)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.German)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.German)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Latin)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Latin)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Chinese)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Chinese)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.EquivalentTA)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EquivalentTA)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.EquivalentTB)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EquivalentTB)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TochCorrespondence)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TochCorrespondence)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.EquivalentInOther)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EquivalentInOther)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DerivedFrom)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DerivedFrom)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.RelatedLexemes)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.RelatedLexemes)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.RootCharacter)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.RootCharacter)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.InternalRootVowel)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.InternalRootVowel)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Stem)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Stem)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.StemClass)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.StemClass)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Visible)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Visible)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+    <div class="form-actions no-color">
+        <input type="submit" value=@StaticResource.Resources.Delete class="btn btn-danger" /> |
+        @if (Model.WordClassId == 2)
+        {
+            @Html.ActionLink(@StaticResource.Resources.Return, "IndexNoun", null, new { @class = "btn btn-default", style = "width:85px" })
+        }
+        @if (Model.WordClassId == 4)
+        {
+            @Html.ActionLink(@StaticResource.Resources.Return, "IndexAdjective", null, new { @class = "btn btn-default", style = "width:85px" })
+        }
+
+    </div>
+    }
+</div>

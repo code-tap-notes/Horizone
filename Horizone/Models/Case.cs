@@ -25,5 +25,10 @@ namespace Horizone.Models
 
         [Display(Name = "Word", ResourceType = typeof(StaticResource.Resources))]
         public ICollection<DictionaryTocharian> DictionaryTocharians { get; set; }
+        [Display(Name = "DictionaryTocharian", ResourceType = typeof(StaticResource.Resources))]
+        public ICollection<NounAdjective> NounAdjectives { get; set; }
+        [Display(Name = "DictionaryTocharian", ResourceType = typeof(StaticResource.Resources))]
+        public ICollection<Pronoun> Pronouns { get; set; }
+
     }
 }

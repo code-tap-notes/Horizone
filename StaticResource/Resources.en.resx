@@ -463,7 +463,7 @@
     <value>Voice</value>
   </data>
   <data name="WordClass" xml:space="preserve">
-    <value>Word Class</value>
+    <value>Word and morpheme Classes</value>
   </data>
   <data name="Words" xml:space="preserve">
     <value>Words</value>
@@ -1734,5 +1734,107 @@ TochPhase</value>
   </data>
   <data name="VerbalCategories" xml:space="preserve">
     <value>Verbal categories</value>
+  </data>
+  <data name="AccountLink" xml:space="preserve">
+    <value>Link your account</value>
+  </data>
+  <data name="AccountSetting" xml:space="preserve">
+    <value>Change your account settings</value>
+  </data>
+  <data name="AccountSignIn" xml:space="preserve">
+    <value>Use a local account to sign in.</value>
+  </data>
+  <data name="AskEmail" xml:space="preserve">
+    <value>Enter an email address.</value>
+  </data>
+  <data name="ChangePassword" xml:space="preserve">
+    <value>Change the password</value>
+  </data>
+  <data name="CheckCode" xml:space="preserve">
+    <value>Check the code</value>
+  </data>
+  <data name="CheckEmailResetPassword" xml:space="preserve">
+    <value>Check your e-mail address to reset your password</value>
+  </data>
+  <data name="ClickLogin" xml:space="preserve">
+    <value>Click here to login</value>
+  </data>
+  <data name="ConfirmEmail" xml:space="preserve">
+    <value>Thank you for confirming your email. Please</value>
+  </data>
+  <data name="ConnectFailed" xml:space="preserve">
+    <value>Failed to connect to the service.</value>
+  </data>
+  <data name="EmailLink" xml:space="preserve">
+    <value>Email link</value>
+  </data>
+  <data name="EnterCode" xml:space="preserve">
+    <value>Enter the verification code</value>
+  </data>
+  <data name="EnterUsername" xml:space="preserve">
+    <value>Please enter a username for this site below and click the Register button to validate the connection</value>
+  </data>
+  <data name="Error" xml:space="preserve">
+    <value>Error</value>
+  </data>
+  <data name="ErrorRequest" xml:space="preserve">
+    <value>An error occurred while processing your request.</value>
+  </data>
+  <data name="ForgotPassword" xml:space="preserve">
+    <value>Forgot your password ?</value>
+  </data>
+  <data name="LoginSuccess" xml:space="preserve">
+    <value>You have been successfully authenticated with</value>
+  </data>
+  <data name="Manage" xml:space="preserve">
+    <value>Manage</value>
+  </data>
+  <data name="NewUser" xml:space="preserve">
+    <value>Register as a new user</value>
+  </data>
+  <data name="Password" xml:space="preserve">
+    <value>Password</value>
+  </data>
+  <data name="PasswordResetSuccess" xml:space="preserve">
+    <value>Your password has been reset. Please</value>
+  </data>
+  <data name="Register" xml:space="preserve">
+    <value>Register</value>
+  </data>
+  <data name="ResetPassword" xml:space="preserve">
+    <value>Reset password</value>
+  </data>
+  <data name="SendCode" xml:space="preserve">
+    <value>Send the verification code</value>
+  </data>
+  <data name="Min2" xml:space="preserve">
+    <value>The string {0} must have at least {2} characters.</value>
+  </data>
+  <data name="RememberBrowser" xml:space="preserve">
+    <value>Remember this browser?</value>
+  </data>
+  <data name="RememberPassword" xml:space="preserve">
+    <value>Remember password ?</value>
+  </data>
+  <data name="AccountLocked" xml:space="preserve">
+    <value>This account has been locked, please try again.</value>
+  </data>
+  <data name="ConnexionsInscrites" xml:space="preserve">
+    <value>Connexions inscrites</value>
+  </data>
+  <data name="ConnexionYourAccount" xml:space="preserve">
+    <value>Login with your account</value>
+  </data>
+  <data name="LocalConnection" xml:space="preserve">
+    <value>Create a local connection</value>
+  </data>
+  <data name="NewAccount" xml:space="preserve">
+    <value>Create a new account.</value>
+  </data>
+  <data name="YourAccount" xml:space="preserve">
+    <value>Your Account</value>
+  </data>
+  <data name="OtherWords" xml:space="preserve">
+    <value>Other words</value>
   </data>
 </root>

@@ -3,57 +3,72 @@
 @{
     ViewBag.Title = @StaticResource.Resources.WordSubClass;
 }
-<h2>@Model.First().WordClass.ClassEn</h2>
-<h2>@StaticResource.Resources.List @StaticResource.Resources.WordSubClass</h2>
 
-<p>
-    @Html.ActionLink(@StaticResource.Resources.Add, "Create", null, new { @class = "btn btn-primary" })
-    @Html.ActionLink(@StaticResource.Resources.Return, "Index", null, new { @class = "btn btn-default" })
 
-</p>
+<div class="row">
+    <div class="col-md-4">
+        <h3>@StaticResource.Resources.WordClass</h3>
 
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.WordClass.Class)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.SubClass)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.SubClassEn)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.SubClassFr)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.SubClassZh)
-        </th>
-        <th></th>
-    </tr>
+        @{Html.RenderAction("ListWordClass", "WordSubClasses");}
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.WordClass.ClassEn)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.SubClass)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.SubClassEn)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.SubClassFr)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.SubClassZh)
-        </td>
-        <td>
-            @Html.ActionLink(@StaticResource.Resources.Edit, "Edit", new { id = item.Id }, new { @class = "btn btn-info", style = "width:85px" })
-            @Html.ActionLink(@StaticResource.Resources.Delete, "Delete", new { id = item.Id }, new { @class = "btn btn-info", style = "width:85px" })
-        </td>
-    </tr>
-}
+    </div>
+    <div class="col-md-8">
 
-</table>
+        <h3>@ViewBag.Class</h3>
+
+        <h4>@StaticResource.Resources.List @StaticResource.Resources.WordSubClass</h4>
+        <p>
+            @Html.ActionLink(@StaticResource.Resources.Add, "Create", null, new { @class = "btn btn-primary" })
+            @Html.ActionLink(@StaticResource.Resources.Return, "Index", null, new { @class = "btn btn-default" })
+
+        </p>
+
+
+        <table class="table">
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.WordClass.Class)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.SubClass)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.SubClassEn)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.SubClassFr)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.SubClassZh)
+                </th>
+                <th></th>
+            </tr>
+
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.WordClass.ClassEn)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.SubClass)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.SubClassEn)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.SubClassFr)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.SubClassZh)
+                    </td>
+                    <td>
+                        @Html.ActionLink(@StaticResource.Resources.Edit, "Edit", new { id = item.Id }, new { @class = "btn btn-info", style = "width:85px" })
+                        @Html.ActionLink(@StaticResource.Resources.Delete, "Delete", new { id = item.Id }, new { @class = "btn btn-info", style = "width:85px" })
+                    </td>
+                </tr>
+            }
+
+        </table>
+    </div>
+</div>

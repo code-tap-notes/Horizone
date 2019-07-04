@@ -14,7 +14,6 @@ namespace Horizone.Models
         [Display(Name = "Abbreviations", ResourceType = typeof(StaticResource.Resources))]
         public string WordNumber { get; set; }
 
-
         [Display(Name = "NumberEn", ResourceType = typeof(StaticResource.Resources))]
         public string WordNumberEn { get; set; }
 
@@ -26,5 +25,13 @@ namespace Horizone.Models
 
         [Display(Name = "DictionaryTocharian", ResourceType = typeof(StaticResource.Resources))]
         public ICollection<DictionaryTocharian> DictionaryTocharians { get; set; }
+        [Display(Name = "DictionaryTocharian", ResourceType = typeof(StaticResource.Resources))]
+        public ICollection<NounAdjective> NounAdjectives { get; set; }
+        [Display(Name = "DictionaryTocharian", ResourceType = typeof(StaticResource.Resources))]
+        public ICollection<Verb> Verbs { get; set; }
+        [Display(Name = "DictionaryTocharian", ResourceType = typeof(StaticResource.Resources))]
+        public ICollection<OtherWord> OtherWords { get; set; }
+        [Display(Name = "DictionaryTocharian", ResourceType = typeof(StaticResource.Resources))]
+        public ICollection<Pronoun> Pronouns { get; set; }
     }
 }

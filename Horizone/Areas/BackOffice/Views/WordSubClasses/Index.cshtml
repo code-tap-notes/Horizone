@@ -4,14 +4,70 @@
     ViewBag.Title = @StaticResource.Resources.WordSubClass;
 }
 
-<hr />
-<hr />
-<div class="content">
-    <p>
-        @Html.ActionLink(@StaticResource.Resources.Add, "Create", null, new { @class = "btn btn-primary" })
-    </p>
 
-    @{Html.RenderAction("ListWordClass", "WordSubClasses");}
+<div class="row">
+    <div class="col-md-4">
+        <h3>@StaticResource.Resources.WordClass</h3>
 
-   
+        @{Html.RenderAction("ListWordClass", "WordSubClasses");}
+    </div>
+
+    <div class="col-md-8">
+
+        <h3>@ViewBag.Class</h3>
+
+        <h4>@StaticResource.Resources.List @StaticResource.Resources.WordSubClass</h4>
+        <p>
+            @Html.ActionLink(@StaticResource.Resources.Add, "Create", null, new { @class = "btn btn-primary" })
+
+        </p>
+
+
+        <table class="table">
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.WordClass.Class)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.SubClass)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.SubClassEn)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.SubClassFr)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.SubClassZh)
+                </th>
+                <th></th>
+            </tr>
+
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.WordClass.ClassEn)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.SubClass)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.SubClassEn)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.SubClassFr)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.SubClassZh)
+                    </td>
+                    <td>
+                        @Html.ActionLink(@StaticResource.Resources.Edit, "Edit", new { id = item.Id }, new { @class = "btn btn-info", style = "width:85px" })
+                        @Html.ActionLink(@StaticResource.Resources.Delete, "Delete", new { id = item.Id }, new { @class = "btn btn-info", style = "width:85px" })
+                    </td>
+                </tr>
+            }
+
+        </table>
+    </div>
 </div>

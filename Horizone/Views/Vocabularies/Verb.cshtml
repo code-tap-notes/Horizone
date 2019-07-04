@@ -1,4 +1,4 @@
-﻿@model IEnumerable<Horizone.Models.DictionaryTocharian>
+﻿@model IEnumerable<Horizone.Models.Verb>
 
 @{
     ViewBag.Title = @StaticResource.Resources.DictionaryTocharian;
@@ -113,7 +113,7 @@
             @Html.DisplayNameFor(model => model.TochLanguage.Language)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Word)
+            @Html.DisplayNameFor(model => model.TochWord)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.English)
@@ -149,7 +149,7 @@
                 @Html.DisplayFor(modelItem => item.TochLanguage.Language)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Word)
+                @Html.DisplayFor(modelItem => item.TochWord)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.English)

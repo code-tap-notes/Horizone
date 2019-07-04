@@ -469,7 +469,7 @@
     <value>Voix</value>
   </data>
   <data name="WordClass" xml:space="preserve">
-    <value>Classe de mots</value>
+    <value>Classe de mots et morphèmes</value>
   </data>
   <data name="Words" xml:space="preserve">
     <value>Mots</value>
@@ -1740,5 +1740,107 @@ TochPhase</value>
   </data>
   <data name="Choose" xml:space="preserve">
     <value>Chosir</value>
+  </data>
+  <data name="AccountLink" xml:space="preserve">
+    <value>Associer votre compte</value>
+  </data>
+  <data name="AccountSetting" xml:space="preserve">
+    <value>Changer les paramètres de votre compte</value>
+  </data>
+  <data name="AccountSignIn" xml:space="preserve">
+    <value>Utilisez un compte local pour vous connecter.</value>
+  </data>
+  <data name="AskEmail" xml:space="preserve">
+    <value>Entrez une adresse de messagerie.</value>
+  </data>
+  <data name="ChangePassword" xml:space="preserve">
+    <value>Changer le mot de passe</value>
+  </data>
+  <data name="CheckCode" xml:space="preserve">
+    <value>Vérifier le code</value>
+  </data>
+  <data name="CheckEmailResetPassword" xml:space="preserve">
+    <value>Vérifiez votre adresse de messagerie pour réinitialiser votre mot de passe</value>
+  </data>
+  <data name="ClickLogin" xml:space="preserve">
+    <value>Cliquer ici pour vous connecter</value>
+  </data>
+  <data name="ConfirmEmail" xml:space="preserve">
+    <value>Merci d'avoir confirmé votre e-mail. Veuillez</value>
+  </data>
+  <data name="ConnectFailed" xml:space="preserve">
+    <value>Échec de la connexion auprès du service.</value>
+  </data>
+  <data name="EmailLink" xml:space="preserve">
+    <value>Lien de courrier électronique</value>
+  </data>
+  <data name="EnterCode" xml:space="preserve">
+    <value>Entrer le code de vérification</value>
+  </data>
+  <data name="EnterUsername" xml:space="preserve">
+    <value>Veuillez entrer ci-dessous un nom d'utilisateur pour ce site et cliquer sur le bouton S'inscrire pour valider la connexion.</value>
+  </data>
+  <data name="Error" xml:space="preserve">
+    <value>Erreur</value>
+  </data>
+  <data name="ErrorRequest" xml:space="preserve">
+    <value>Une erreur s'est produite pendant le traitement de votre demande.</value>
+  </data>
+  <data name="ForgotPassword" xml:space="preserve">
+    <value>Vous avez oublié votre mot de passe ?</value>
+  </data>
+  <data name="LoginSuccess" xml:space="preserve">
+    <value>Vous avez été authentifié avec succès avec</value>
+  </data>
+  <data name="Manage" xml:space="preserve">
+    <value>Gérer</value>
+  </data>
+  <data name="NewUser" xml:space="preserve">
+    <value>S'inscrire comme nouvel utilisateur</value>
+  </data>
+  <data name="Password" xml:space="preserve">
+    <value>Mot de passe</value>
+  </data>
+  <data name="PasswordResetSuccess" xml:space="preserve">
+    <value>Votre mot de passe a été réinitialisé. Veuillez</value>
+  </data>
+  <data name="Register" xml:space="preserve">
+    <value>S’inscrire</value>
+  </data>
+  <data name="ResetPassword" xml:space="preserve">
+    <value>Réinitialiser le mot de passe</value>
+  </data>
+  <data name="SendCode" xml:space="preserve">
+    <value>Envoyer le code de vérification</value>
+  </data>
+  <data name="Min2" xml:space="preserve">
+    <value>La chaîne {0} doit comporter au moins {2} caractères.</value>
+  </data>
+  <data name="RememberBrowser" xml:space="preserve">
+    <value>Mémoriser ce navigateur ?</value>
+  </data>
+  <data name="RememberPassword" xml:space="preserve">
+    <value>Mémoriser le mot de passe ?</value>
+  </data>
+  <data name="AccountLocked" xml:space="preserve">
+    <value>Ce compte a été verrouillé, veuillez réessayer.</value>
+  </data>
+  <data name="ConnexionsInscrites" xml:space="preserve">
+    <value>Connexions inscrites</value>
+  </data>
+  <data name="ConnexionYourAccount" xml:space="preserve">
+    <value>Connexion avec votre compte</value>
+  </data>
+  <data name="LocalConnection" xml:space="preserve">
+    <value>Créer une connexion locale</value>
+  </data>
+  <data name="NewAccount" xml:space="preserve">
+    <value>Créer un nouveau compte.</value>
+  </data>
+  <data name="YourAccount" xml:space="preserve">
+    <value>Votre Compte</value>
+  </data>
+  <data name="OtherWords" xml:space="preserve">
+    <value>Autre mots</value>
   </data>
 </root>

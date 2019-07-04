@@ -10,7 +10,8 @@ namespace Horizone.Models
     public class ExternalLoginConfirmationViewModel
     {
         [Required]
-        [Display(Name = "Courrier électronique")]
+        [Display(Name = "Email", ResourceType = typeof(StaticResource.Resources))]
+
         public string Email { get; set; }
     }
 
@@ -33,11 +34,11 @@ namespace Horizone.Models
         public string Provider { get; set; }
 
         [Required]
-        [Display(Name = "Code")]
+        [Display(Name = "Code", ResourceType = typeof(StaticResource.Resources))]
         public string Code { get; set; }
         public string ReturnUrl { get; set; }
 
-        [Display(Name = "Mémoriser ce navigateur ?")]
+        [Display(Name = "RemenberBrowser", ResourceType = typeof(StaticResource.Resources))]
         public bool RememberBrowser { get; set; }
 
         public bool RememberMe { get; set; }
@@ -46,23 +47,23 @@ namespace Horizone.Models
     public class ForgotViewModel
     {
         [Required]
-        [Display(Name = "Courrier électronique")]
+        [Display(Name = "Email", ResourceType = typeof(StaticResource.Resources))]
         public string Email { get; set; }
     }
 
     public class LoginViewModel
     {
         [Required]
-        [Display(Name = "Courrier électronique")]
+        [Display(Name = "Email", ResourceType = typeof(StaticResource.Resources))]
         [EmailAddress]
         public string Email { get; set; }
 
         [Required]
         [DataType(DataType.Password)]
-        [Display(Name = "Mot de passe")]
+        [Display(Name = "Password", ResourceType = typeof(StaticResource.Resources))]
         public string Password { get; set; }
 
-        [Display(Name = "Mémoriser le mot de passe ?")]
+        [Display(Name = "RememberPassword", ResourceType = typeof(StaticResource.Resources))]
         public bool RememberMe { get; set; }
     }
 
@@ -70,42 +71,42 @@ namespace Horizone.Models
     {
         [Required]
         [EmailAddress]
-        [Display(Name = "Courrier électronique")]
+        [Display(Name = "Email", ResourceType = typeof(StaticResource.Resources))]
         public string Email { get; set; }
 
         [Required]
-        [StringLength(100, ErrorMessage = "La chaîne {0} doit comporter au moins {2} caractères.", MinimumLength = 6)]
+        [StringLength(100, MinimumLength = 2, ErrorMessageResourceName = "Min2", ErrorMessageResourceType = typeof(StaticResource.Resources))]
         [DataType(DataType.Password)]
-        [Display(Name = "Mot de passe")]
+        [Display(Name = "Password", ResourceType = typeof(StaticResource.Resources))]
         public string Password { get; set; }
 
         [DataType(DataType.Password)]
-        [Display(Name = "Confirmer le mot de passe ")]
-        [Compare("Password", ErrorMessage = "Le mot de passe et le mot de passe de confirmation ne correspondent pas.")]
+        [Display(Name = "ConfirmPassword", ResourceType = typeof(StaticResource.Resources))]
+        [Compare("Password", ErrorMessageResourceName = "ConfirmError", ErrorMessageResourceType = typeof(StaticResource.Resources))]
         public string ConfirmPassword { get; set; }
 
-        [RegularExpression(@"([a-zA-Z])*\s*$", ErrorMessage = "Le champ {0} ne doit contenir que des lettres")]
-        [Display(Name = "M/Mme")]
-        [Required(ErrorMessage = "Le champ {0} est obligatoire.")]
-        [StringLength(20, MinimumLength = 1, ErrorMessage = "La civilite doit avoir de 1 à 20 caractères")]
+        [RegularExpression(@"([a-zA-Z])*\s*$", ErrorMessageResourceName = "OnlyLetters", ErrorMessageResourceType = typeof(StaticResource.Resources))]
+        [Display(Name = "Title", ResourceType = typeof(StaticResource.Resources))]
+        [Required(ErrorMessageResourceName = "FieldRequired", ErrorMessageResourceType = typeof(StaticResource.Resources))]
+        [StringLength(20, MinimumLength = 1, ErrorMessageResourceName = "MaxLength20", ErrorMessageResourceType = typeof(StaticResource.Resources))]
         public string Title { get; set; }
 
-        [RegularExpression(@"([a-zA-Zéàèïëüêâîôöç\-\s])*$", ErrorMessage = "Le champ {0} ne doit contenir que des lettres")]
-        [Display(Name = "Nom")]
-        [Required(ErrorMessage = "Le champ {0} est obligatoire.")]
-        [StringLength(30, MinimumLength = 2, ErrorMessage = "Le nom doit avoir de 2 à 30 caractères")]
+        [RegularExpression(@"([a-zA-Zéàèïëüêâîôöç\-\s])*$", ErrorMessageResourceName = "OnlyLetters", ErrorMessageResourceType = typeof(StaticResource.Resources))]
+        [Display(Name = "LastName", ResourceType = typeof(StaticResource.Resources))]
+        [Required(ErrorMessageResourceName = "FieldRequired", ErrorMessageResourceType = typeof(StaticResource.Resources))]
+        [StringLength(30, MinimumLength = 2, ErrorMessageResourceName = "MaxLength30", ErrorMessageResourceType = typeof(StaticResource.Resources))]
         public string LastName { get; set; }
 
-        [RegularExpression(@"([a-zA-Zéàèïëüêâîôöç\-\s])*$", ErrorMessage = "Le champ {0} ne doit contenir que des lettres")]
-        [Display(Name = "Prénom")]
-        [Required(ErrorMessage = "Le champ {0} est obligatoire.")]
-        [StringLength(30, MinimumLength = 2, ErrorMessage = "La prénom doit avoir de 2 à 30 caractères")]
+        [RegularExpression(@"([a-zA-Zéàèïëüêâîôöç\-\s])*$", ErrorMessageResourceName = "OnlyLetters", ErrorMessageResourceType = typeof(StaticResource.Resources))]
+        [Display(Name = "FirstName", ResourceType = typeof(StaticResource.Resources))]
+        [Required(ErrorMessageResourceName = "FieldRequired", ErrorMessageResourceType = typeof(StaticResource.Resources))]
+        [StringLength(30, MinimumLength = 2, ErrorMessageResourceName = "MaxLength30", ErrorMessageResourceType = typeof(StaticResource.Resources))]
         public string FisrtName { get; set; }
 
-        [Display(Name = "Téléphone")]
-        [Required(ErrorMessage = "Le champ {0} est obligatoire.")]
-        [RegularExpression(@"^([0-9])*\s*$", ErrorMessage = "Le champ {0} ne doit contenir que des chiffres")]
-        [StringLength(20, MinimumLength = 3, ErrorMessage = "Le numéro de telephone doit avoir de 3 à 20 caractères")]
+        [Display(Name = "PhoneNumber", ResourceType = typeof(StaticResource.Resources))]
+        [Required(ErrorMessageResourceName = "FieldRequired", ErrorMessageResourceType = typeof(StaticResource.Resources))]
+        [RegularExpression(@"^([0-9])*\s*$", ErrorMessageResourceName = "OnlyNumbers", ErrorMessageResourceType = typeof(StaticResource.Resources))]
+        [StringLength(20, MinimumLength = 3, ErrorMessageResourceName = "MaxLength20", ErrorMessageResourceType = typeof(StaticResource.Resources))]
         public string PhoneNumber { get; set; }
 
     }
@@ -114,18 +115,18 @@ namespace Horizone.Models
     {
         [Required]
         [EmailAddress]
-        [Display(Name = "Courrier électronique")]
+        [Display(Name = "Email", ResourceType = typeof(StaticResource.Resources))]
         public string Email { get; set; }
 
         [Required]
-        [StringLength(100, ErrorMessage = "La chaîne {0} doit comporter au moins {2} caractères.", MinimumLength = 6)]
+        [StringLength(100, ErrorMessageResourceName = "Min2", ErrorMessageResourceType = typeof(StaticResource.Resources), MinimumLength = 6)]
         [DataType(DataType.Password)]
-        [Display(Name = "Mot de passe")]
+        [Display(Name = "Password", ResourceType = typeof(StaticResource.Resources))]
         public string Password { get; set; }
 
         [DataType(DataType.Password)]
-        [Display(Name = "Confirmer le mot de passe")]
-        [Compare("Password", ErrorMessage = "Le nouveau mot de passe et le mot de passe de confirmation ne correspondent pas.")]
+        [Display(Name = "ConfirmPassword", ResourceType = typeof(StaticResource.Resources))]
+        [Compare("Password", ErrorMessageResourceName = "ConfirmError", ErrorMessageResourceType = typeof(StaticResource.Resources))]
         public string ConfirmPassword { get; set; }
 
         public string Code { get; set; }
@@ -135,7 +136,7 @@ namespace Horizone.Models
     {
         [Required]
         [EmailAddress]
-        [Display(Name = "E-mail")]
+        [Display(Name = "Email", ResourceType = typeof(StaticResource.Resources))]
         public string Email { get; set; }
     }
 }

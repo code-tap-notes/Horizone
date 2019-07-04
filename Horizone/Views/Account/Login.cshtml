@@ -1,7 +1,7 @@
 ﻿@using Horizone.Models
 @model LoginViewModel
 @{
-    ViewBag.Title = "Connexion";
+    ViewBag.Title = @StaticResource.Resources.Login;
 }
 
 <h2>@ViewBag.Title.</h2>
@@ -11,7 +11,7 @@
             @using (Html.BeginForm("Login", "Account", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
             {
                 @Html.AntiForgeryToken()
-                <h4>Utilisez un compte local pour vous connecter.</h4>
+            <h4>@StaticResource.Resources.AccountSignIn</h4>
                 <hr />
                 @Html.ValidationSummary(true, "", new { @class = "text-danger" })
                 <div class="form-group">
@@ -38,11 +38,11 @@
                 </div>
                 <div class="form-group">
                     <div class="col-md-offset-2 col-md-10">
-                        <input type="submit" value="Connexion" class="btn btn-default" />
+                        <input type="submit" value="@StaticResource.Resources.Login" class="btn btn-default" style="width:180px" />
                     </div>
                 </div>
                 <p>
-                    @Html.ActionLink("S'inscrire comme nouvel utilisateur", "Register")
+                    @Html.ActionLink(@StaticResource.Resources.NewUser, "Register")
                 </p>
                 @* Activer ceci une fois que la confirmation de votre compte est activée pour la fonctionnalité de réinitialisation du mot de passe
                     <p>

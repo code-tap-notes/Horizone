@@ -241,12 +241,15 @@
     <Compile Include="Areas\BackOffice\Controllers\MoodsController.cs" />
     <Compile Include="Areas\BackOffice\Controllers\NamePlacesController.cs" />
     <Compile Include="Areas\BackOffice\Controllers\NewsController.cs" />
+    <Compile Include="Areas\BackOffice\Controllers\NounAdjectivesController.cs" />
     <Compile Include="Areas\BackOffice\Controllers\NumbersController.cs" />
+    <Compile Include="Areas\BackOffice\Controllers\OtherWordsController.cs" />
     <Compile Include="Areas\BackOffice\Controllers\PaperColorsController.cs" />
     <Compile Include="Areas\BackOffice\Controllers\PartnerAndRelationsController.cs" />
     <Compile Include="Areas\BackOffice\Controllers\PersonsController.cs" />
     <Compile Include="Areas\BackOffice\Controllers\PreparationPaperBeforeUsingsController.cs" />
     <Compile Include="Areas\BackOffice\Controllers\PresentationsController.cs" />
+    <Compile Include="Areas\BackOffice\Controllers\PronounsController.cs" />
     <Compile Include="Areas\BackOffice\Controllers\ProperNounsController.cs" />
     <Compile Include="Areas\BackOffice\Controllers\PublicationsController.cs" />
     <Compile Include="Areas\BackOffice\Controllers\RemarkAddsController.cs" />
@@ -269,6 +272,7 @@
     <Compile Include="Areas\BackOffice\Controllers\TochStoriesController.cs" />
     <Compile Include="Areas\BackOffice\Controllers\TopicsController.cs" />
     <Compile Include="Areas\BackOffice\Controllers\ValenciesController.cs" />
+    <Compile Include="Areas\BackOffice\Controllers\VerbsController.cs" />
     <Compile Include="Areas\BackOffice\Controllers\VisualAidsController.cs" />
     <Compile Include="Areas\BackOffice\Controllers\VoicesController.cs" />
     <Compile Include="Areas\BackOffice\Controllers\WordClassesController.cs" />
@@ -285,6 +289,18 @@
     <Compile Include="Migrations\201906232002361_changeDic.cs" />
     <Compile Include="Migrations\201906232002361_changeDic.Designer.cs">
       <DependentUpon>201906232002361_changeDic.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201906301558495_Word.cs" />
+    <Compile Include="Migrations\201906301558495_Word.Designer.cs">
+      <DependentUpon>201906301558495_Word.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201906301617292_ChangeWord.cs" />
+    <Compile Include="Migrations\201906301617292_ChangeWord.Designer.cs">
+      <DependentUpon>201906301617292_ChangeWord.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201907011009091_changeMultiselect.cs" />
+    <Compile Include="Migrations\201907011009091_changeMultiselect.Designer.cs">
+      <DependentUpon>201907011009091_changeMultiselect.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AbbreviationDictionary.cs" />
@@ -307,6 +323,9 @@
     <Compile Include="Models\Bibliography.cs" />
     <Compile Include="Models\ImageBook.cs" />
     <Compile Include="Models\Mood.cs" />
+    <Compile Include="Models\NounAdjective.cs" />
+    <Compile Include="Models\OtherWord.cs" />
+    <Compile Include="Models\Pronoun.cs" />
     <Compile Include="Models\ReverseDictionary.cs" />
     <Compile Include="Models\ScriptType.cs" />
     <Compile Include="Models\Case.cs" />
@@ -371,6 +390,7 @@
     <Compile Include="Models\ThemeStory.cs" />
     <Compile Include="Models\TransmittedLight.cs" />
     <Compile Include="Models\Valency.cs" />
+    <Compile Include="Models\Verb.cs" />
     <Compile Include="Models\VisualAid.cs" />
     <Compile Include="Models\Publication.cs" />
     <Compile Include="Models\TochLanguage.cs" />
@@ -378,6 +398,7 @@
     <Compile Include="Models\TochStory.cs" />
     <Compile Include="Models\Topic.cs" />
     <Compile Include="Models\Voice.cs" />
+    <Compile Include="Models\Word.cs" />
     <Compile Include="Models\WordClass .cs" />
     <Compile Include="Models\WordSubClass.cs" />
     <Compile Include="Models\WritingTool.cs" />
@@ -874,7 +895,6 @@
     <Content Include="Areas\BackOffice\Views\DictionaryTocharians\Details.cshtml" />
     <Content Include="Areas\BackOffice\Views\DictionaryTocharians\Edit.cshtml" />
     <Content Include="Areas\BackOffice\Views\DictionaryTocharians\Index.cshtml" />
-    <Content Include="Areas\BackOffice\Views\DictionaryTocharians\Reverse.cshtml" />
     <Content Include="Areas\BackOffice\Views\ReverseDictionaries\Create.cshtml" />
     <Content Include="Areas\BackOffice\Views\ReverseDictionaries\Delete.cshtml" />
     <Content Include="Areas\BackOffice\Views\ReverseDictionaries\Edit.cshtml" />
@@ -888,6 +908,28 @@
     <Content Include="Areas\BackOffice\Views\ReverseDictionaries\SearchReverse.cshtml" />
     <Content Include="Areas\BackOffice\Views\WordSubClasses\ListWordClass.cshtml" />
     <Content Include="Areas\BackOffice\Views\WordSubClasses\ListSubClass.cshtml" />
+    <Content Include="Areas\BackOffice\Views\NounAdjectives\Create.cshtml" />
+    <Content Include="Areas\BackOffice\Views\NounAdjectives\Delete.cshtml" />
+    <Content Include="Areas\BackOffice\Views\NounAdjectives\Details.cshtml" />
+    <Content Include="Areas\BackOffice\Views\NounAdjectives\Edit.cshtml" />
+    <Content Include="Areas\BackOffice\Views\NounAdjectives\IndexNoun.cshtml" />
+    <Content Include="Areas\BackOffice\Views\OtherWords\Create.cshtml" />
+    <Content Include="Areas\BackOffice\Views\OtherWords\Delete.cshtml" />
+    <Content Include="Areas\BackOffice\Views\OtherWords\Details.cshtml" />
+    <Content Include="Areas\BackOffice\Views\OtherWords\Edit.cshtml" />
+    <Content Include="Areas\BackOffice\Views\OtherWords\Index.cshtml" />
+    <Content Include="Areas\BackOffice\Views\Pronouns\Create.cshtml" />
+    <Content Include="Areas\BackOffice\Views\Pronouns\Delete.cshtml" />
+    <Content Include="Areas\BackOffice\Views\Pronouns\Details.cshtml" />
+    <Content Include="Areas\BackOffice\Views\Pronouns\Edit.cshtml" />
+    <Content Include="Areas\BackOffice\Views\Pronouns\Index.cshtml" />
+    <Content Include="Areas\BackOffice\Views\Verbs\Create.cshtml" />
+    <Content Include="Areas\BackOffice\Views\Verbs\Delete.cshtml" />
+    <Content Include="Areas\BackOffice\Views\Verbs\Details.cshtml" />
+    <Content Include="Areas\BackOffice\Views\Verbs\Edit.cshtml" />
+    <Content Include="Areas\BackOffice\Views\Verbs\Index.cshtml" />
+    <Content Include="Areas\BackOffice\Views\NounAdjectives\IndexAdjective.cshtml" />
+    <Content Include="Areas\BackOffice\Views\NounAdjectives\Index.cshtml" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\cldr.js" />
     <Content Include="Scripts\cldr\event.js" />
@@ -1232,7 +1274,6 @@
     <Content Include="Views\Vocabularies\SearchAbbreviation.cshtml" />
     <Content Include="Views\Home\SearchWord.cshtml" />
     <Content Include="Views\Vocabularies\Reverse.cshtml" />
-    <Content Include="Views\Vocabularies\CheckReverse.cshtml" />
     <Content Include="Views\Vocabularies\SearchReverse.cshtml" />
     <Content Include="Views\Vocabularies\Verb.cshtml" />
     <Content Include="Views\Vocabularies\Adverb.cshtml" />
@@ -1277,6 +1318,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201906232002361_changeDic.resx">
       <DependentUpon>201906232002361_changeDic.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201906301558495_Word.resx">
+      <DependentUpon>201906301558495_Word.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201906301617292_ChangeWord.resx">
+      <DependentUpon>201906301617292_ChangeWord.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201907011009091_changeMultiselect.resx">
+      <DependentUpon>201907011009091_changeMultiselect.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

@@ -196,6 +196,42 @@ namespace StaticResource {
         }
         
         /// <summary>
+        ///   Recherche une chaîne localisée semblable à Associer votre compte.
+        /// </summary>
+        public static string AccountLink {
+            get {
+                return ResourceManager.GetString("AccountLink", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Ce compte a été verrouillé, veuillez réessayer..
+        /// </summary>
+        public static string AccountLocked {
+            get {
+                return ResourceManager.GetString("AccountLocked", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Changer les paramètres de votre compte.
+        /// </summary>
+        public static string AccountSetting {
+            get {
+                return ResourceManager.GetString("AccountSetting", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Utilisez un compte local pour vous connecter..
+        /// </summary>
+        public static string AccountSignIn {
+            get {
+                return ResourceManager.GetString("AccountSignIn", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Recherche une chaîne localisée semblable à Activités.
         /// </summary>
         public static string Activity {
@@ -466,6 +502,15 @@ namespace StaticResource {
         }
         
         /// <summary>
+        ///   Recherche une chaîne localisée semblable à Entrez une adresse de messagerie..
+        /// </summary>
+        public static string AskEmail {
+            get {
+                return ResourceManager.GetString("AskEmail", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Recherche une chaîne localisée semblable à Chercheurs associés.
         /// </summary>
         public static string AssociatedResearcher {
@@ -682,6 +727,33 @@ namespace StaticResource {
         }
         
         /// <summary>
+        ///   Recherche une chaîne localisée semblable à Changer le mot de passe.
+        /// </summary>
+        public static string ChangePassword {
+            get {
+                return ResourceManager.GetString("ChangePassword", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Vérifier le code.
+        /// </summary>
+        public static string CheckCode {
+            get {
+                return ResourceManager.GetString("CheckCode", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Vérifiez votre adresse de messagerie pour réinitialiser votre mot de passe.
+        /// </summary>
+        public static string CheckEmailResetPassword {
+            get {
+                return ResourceManager.GetString("CheckEmailResetPassword", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Recherche une chaîne localisée semblable à Chinoise.
         /// </summary>
         public static string Chinese {
@@ -714,6 +786,15 @@ namespace StaticResource {
         public static string ClayOrSandParticules {
             get {
                 return ResourceManager.GetString("ClayOrSandParticules", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Cliquer ici pour vous connecter.
+        /// </summary>
+        public static string ClickLogin {
+            get {
+                return ResourceManager.GetString("ClickLogin", resourceCulture);
             }
         }
         
@@ -898,6 +979,15 @@ namespace StaticResource {
         }
         
         /// <summary>
+        ///   Recherche une chaîne localisée semblable à Merci d&apos;avoir confirmé votre e-mail. Veuillez.
+        /// </summary>
+        public static string ConfirmEmail {
+            get {
+                return ResourceManager.GetString("ConfirmEmail", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Recherche une chaîne localisée semblable à Le nouveau mot de passe et le mot de passe de confirmation ne correspondent pas..
         /// </summary>
         public static string ConfirmError {
@@ -921,6 +1011,33 @@ namespace StaticResource {
         public static string Conjugation {
             get {
                 return ResourceManager.GetString("Conjugation", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Échec de la connexion auprès du service..
+        /// </summary>
+        public static string ConnectFailed {
+            get {
+                return ResourceManager.GetString("ConnectFailed", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Connexions inscrites.
+        /// </summary>
+        public static string ConnexionsInscrites {
+            get {
+                return ResourceManager.GetString("ConnexionsInscrites", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Connexion avec votre compte.
+        /// </summary>
+        public static string ConnexionYourAccount {
+            get {
+                return ResourceManager.GetString("ConnexionYourAccount", resourceCulture);
             }
         }
         
@@ -1168,11 +1285,38 @@ namespace StaticResource {
         }
         
         /// <summary>
+        ///   Recherche une chaîne localisée semblable à Lien de courrier électronique.
+        /// </summary>
+        public static string EmailLink {
+            get {
+                return ResourceManager.GetString("EmailLink", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Recherche une chaîne localisée semblable à Anglaise.
         /// </summary>
         public static string English {
             get {
                 return ResourceManager.GetString("English", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Entrer le code de vérification.
+        /// </summary>
+        public static string EnterCode {
+            get {
+                return ResourceManager.GetString("EnterCode", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Veuillez entrer ci-dessous un nom d&apos;utilisateur pour ce site et cliquer sur le bouton S&apos;inscrire pour valider la connexion..
+        /// </summary>
+        public static string EnterUsername {
+            get {
+                return ResourceManager.GetString("EnterUsername", resourceCulture);
             }
         }
         
@@ -1209,6 +1353,24 @@ namespace StaticResource {
         public static string EquivalentTocharianB {
             get {
                 return ResourceManager.GetString("EquivalentTocharianB", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Erreur.
+        /// </summary>
+        public static string Error {
+            get {
+                return ResourceManager.GetString("Error", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Une erreur s&apos;est produite pendant le traitement de votre demande..
+        /// </summary>
+        public static string ErrorRequest {
+            get {
+                return ResourceManager.GetString("ErrorRequest", resourceCulture);
             }
         }
         
@@ -1335,6 +1497,15 @@ namespace StaticResource {
         public static string Fonction {
             get {
                 return ResourceManager.GetString("Fonction", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Vous avez oublié votre mot de passe ?.
+        /// </summary>
+        public static string ForgotPassword {
+            get {
+                return ResourceManager.GetString("ForgotPassword", resourceCulture);
             }
         }
         
@@ -2023,6 +2194,15 @@ namespace StaticResource {
         }
         
         /// <summary>
+        ///   Recherche une chaîne localisée semblable à Créer une connexion locale.
+        /// </summary>
+        public static string LocalConnection {
+            get {
+                return ResourceManager.GetString("LocalConnection", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Recherche une chaîne localisée semblable à Locative.
         /// </summary>
         public static string Locative {
@@ -2122,6 +2302,15 @@ namespace StaticResource {
         }
         
         /// <summary>
+        ///   Recherche une chaîne localisée semblable à Vous avez été authentifié avec succès avec.
+        /// </summary>
+        public static string LoginSuccess {
+            get {
+                return ResourceManager.GetString("LoginSuccess", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Recherche une chaîne localisée semblable à Se déconnecter.
         /// </summary>
         public static string Logout {
@@ -2154,6 +2343,15 @@ namespace StaticResource {
         public static string MainFindSpot {
             get {
                 return ResourceManager.GetString("MainFindSpot", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Gérer.
+        /// </summary>
+        public static string Manage {
+            get {
+                return ResourceManager.GetString("Manage", resourceCulture);
             }
         }
         
@@ -2383,6 +2581,15 @@ namespace StaticResource {
         }
         
         /// <summary>
+        ///   Recherche une chaîne localisée semblable à La chaîne {0} doit comporter au moins {2} caractères..
+        /// </summary>
+        public static string Min2 {
+            get {
+                return ResourceManager.GetString("Min2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Recherche une chaîne localisée semblable à Le champ {0}  doit avoir au moins de 2 caractères.
         /// </summary>
         public static string MinLength {
@@ -2545,6 +2752,15 @@ namespace StaticResource {
         }
         
         /// <summary>
+        ///   Recherche une chaîne localisée semblable à Créer un nouveau compte..
+        /// </summary>
+        public static string NewAccount {
+            get {
+                return ResourceManager.GetString("NewAccount", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Recherche une chaîne localisée semblable à Nouveau mot de passe.
         /// </summary>
         public static string NewPass {
@@ -2577,6 +2793,15 @@ namespace StaticResource {
         public static string Newspaper {
             get {
                 return ResourceManager.GetString("Newspaper", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à S&apos;inscrire comme nouvel utilisateur.
+        /// </summary>
+        public static string NewUser {
+            get {
+                return ResourceManager.GetString("NewUser", resourceCulture);
             }
         }
         
@@ -3013,6 +3238,15 @@ namespace StaticResource {
         }
         
         /// <summary>
+        ///   Recherche une chaîne localisée semblable à Autre mots.
+        /// </summary>
+        public static string OtherWords {
+            get {
+                return ResourceManager.GetString("OtherWords", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Recherche une chaîne localisée semblable à Description générale.
         /// </summary>
         public static string OverallDescription {
@@ -3126,6 +3360,24 @@ namespace StaticResource {
         public static string Passage {
             get {
                 return ResourceManager.GetString("Passage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Mot de passe.
+        /// </summary>
+        public static string Password {
+            get {
+                return ResourceManager.GetString("Password", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Votre mot de passe a été réinitialisé. Veuillez.
+        /// </summary>
+        public static string PasswordResetSuccess {
+            get {
+                return ResourceManager.GetString("PasswordResetSuccess", resourceCulture);
             }
         }
         
@@ -3536,6 +3788,15 @@ namespace StaticResource {
         }
         
         /// <summary>
+        ///   Recherche une chaîne localisée semblable à S’inscrire.
+        /// </summary>
+        public static string Register {
+            get {
+                return ResourceManager.GetString("Register", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Recherche une chaîne localisée semblable à Lexèmes connexes.
         /// </summary>
         public static string RelatedLexemes {
@@ -3590,6 +3851,24 @@ namespace StaticResource {
         }
         
         /// <summary>
+        ///   Recherche une chaîne localisée semblable à Mémoriser ce navigateur ?.
+        /// </summary>
+        public static string RememberBrowser {
+            get {
+                return ResourceManager.GetString("RememberBrowser", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Mémoriser le mot de passe ?.
+        /// </summary>
+        public static string RememberPassword {
+            get {
+                return ResourceManager.GetString("RememberPassword", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Recherche une chaîne localisée semblable à Dépôt.
         /// </summary>
         public static string Repository {
@@ -3604,6 +3883,15 @@ namespace StaticResource {
         public static string Required {
             get {
                 return ResourceManager.GetString("Required", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Réinitialiser le mot de passe.
+        /// </summary>
+        public static string ResetPassword {
+            get {
+                return ResourceManager.GetString("ResetPassword", resourceCulture);
             }
         }
         
@@ -3964,6 +4252,15 @@ namespace StaticResource {
         public static string Send {
             get {
                 return ResourceManager.GetString("Send", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Envoyer le code de vérification.
+        /// </summary>
+        public static string SendCode {
+            get {
+                return ResourceManager.GetString("SendCode", resourceCulture);
             }
         }
         
@@ -4805,7 +5102,7 @@ namespace StaticResource {
         }
         
         /// <summary>
-        ///   Recherche une chaîne localisée semblable à Classe de mots.
+        ///   Recherche une chaîne localisée semblable à Classe de mots et morphèmes.
         /// </summary>
         public static string WordClass {
             get {
@@ -4927,6 +5224,15 @@ namespace StaticResource {
         public static string Yes {
             get {
                 return ResourceManager.GetString("Yes", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Votre Compte.
+        /// </summary>
+        public static string YourAccount {
+            get {
+                return ResourceManager.GetString("YourAccount", resourceCulture);
             }
         }
     }
