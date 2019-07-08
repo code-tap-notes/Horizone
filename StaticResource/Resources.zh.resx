@@ -1831,4 +1831,7 @@ TochPhase</value>
   <data name="OtherWords" xml:space="preserve">
     <value>换句话说</value>
   </data>
+  <data name="FormNominal" xml:space="preserve">
+    <value>动词中的名词形式</value>
+  </data>
 </root>

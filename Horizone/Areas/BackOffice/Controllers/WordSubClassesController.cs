@@ -29,16 +29,22 @@ namespace Horizone.Areas.BackOffice.Controllers
         public ActionResult ListWordClass()
         {
             var wordClass = db.WordClasses;        
-            return PartialView(wordClass.ToList());
+            return PartialView(wordClass.OrderBy(x=>x.ClassEn).ToList());
             
         }
         public ActionResult ListSubClass(string search)
         {
             ViewBag.Class = search;
             var wordSubClass = db.WordSubClasses.Include(x=>x.WordClass).Where(x=>x.WordClass.ClassEn== search);
-            return View(wordSubClass.ToList());
+            return View(wordSubClass.OrderBy(x=>x.SubClassEn).ToList());
         }
-        
+        public ActionResult FormNominal()
+        {
+            ViewBag.WordClassId = new SelectList(db.WordClasses, "Id", "ClassEn");
+            var wordSubClasses = db.WordSubClasses.Include(w => w.WordClass).Where(x=>x.SubClassEn.Contains("Nominal Form of the verb"));
+            return View(wordSubClasses.OrderBy(x => x.SubClassEn).ToList());
+        }
+
         // GET: BackOffice/WordSubClasses/Create
         public ActionResult Create()
         {

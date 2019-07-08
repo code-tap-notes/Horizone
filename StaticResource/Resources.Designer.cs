@@ -1555,6 +1555,15 @@ namespace StaticResource {
         }
         
         /// <summary>
+        ///   Recherche une chaîne localisée semblable à Forme nominale au verbe.
+        /// </summary>
+        public static string FormNominal {
+            get {
+                return ResourceManager.GetString("FormNominal", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Recherche une chaîne localisée semblable à Française.
         /// </summary>
         public static string French {

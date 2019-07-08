@@ -930,6 +930,7 @@
     <Content Include="Areas\BackOffice\Views\Verbs\Index.cshtml" />
     <Content Include="Areas\BackOffice\Views\NounAdjectives\IndexAdjective.cshtml" />
     <Content Include="Areas\BackOffice\Views\NounAdjectives\Index.cshtml" />
+    <Content Include="Areas\BackOffice\Views\WordSubClasses\FormNominal.cshtml" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\cldr.js" />
     <Content Include="Scripts\cldr\event.js" />

@@ -1,0 +1,51 @@
+﻿@model IEnumerable<Horizone.Models.WordSubClass>
+
+@{
+    ViewBag.Title = @StaticResource.Resources.FormNominal;
+}
+
+<h2>@StaticResource.Resources.FormNominal</h2>
+
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.WordClass.ClassEn)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SubClass)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SubClassEn)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SubClassFr)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SubClassZh)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.WordClass.ClassEn)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SubClass)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SubClassEn)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SubClassFr)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SubClassZh)
+        </td>
+       
+    </tr>
+}
+
+</table>

@@ -1837,4 +1837,7 @@ TochPhase</value>
   <data name="OtherWords" xml:space="preserve">
     <value>Other words</value>
   </data>
+  <data name="FormNominal" xml:space="preserve">
+    <value>Nominal form of the verb</value>
+  </data>
 </root>

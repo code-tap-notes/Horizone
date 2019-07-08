@@ -71,6 +71,7 @@ namespace Horizone.Areas.BackOffice.Controllers
                 nounAdjective.Francaise = dictionaryTocharian.Francaise;
                 nounAdjective.German = dictionaryTocharian.German;
                 nounAdjective.Latin = dictionaryTocharian.Latin;
+                nounAdjective.Chinese = dictionaryTocharian.Chinese;
                 nounAdjective.Stem = dictionaryTocharian.Stem;
                 nounAdjective.StemClass = dictionaryTocharian.StemClass;
                 nounAdjective.Visible = true;
@@ -120,6 +121,7 @@ namespace Horizone.Areas.BackOffice.Controllers
                 verb.English = dictionaryTocharian.English;
                 verb.Francaise = dictionaryTocharian.Francaise;
                 verb.German = dictionaryTocharian.German;
+                verb.Chinese = dictionaryTocharian.Chinese;
                 verb.Latin = dictionaryTocharian.Latin;
                 verb.Stem = dictionaryTocharian.Stem;
                 verb.StemClass = dictionaryTocharian.StemClass;
@@ -170,6 +172,7 @@ namespace Horizone.Areas.BackOffice.Controllers
                 pronoun.Francaise = dictionaryTocharian.Francaise;
                 pronoun.German = dictionaryTocharian.German;
                 pronoun.Latin = dictionaryTocharian.Latin;
+                pronoun.Chinese = dictionaryTocharian.Chinese;
                 pronoun.Stem = dictionaryTocharian.Stem;
                 pronoun.StemClass = dictionaryTocharian.StemClass;
                 pronoun.Visible = true;
@@ -215,6 +218,7 @@ namespace Horizone.Areas.BackOffice.Controllers
                 otherWord.Francaise = dictionaryTocharian.Francaise;
                 otherWord.German = dictionaryTocharian.German;
                 otherWord.Latin = dictionaryTocharian.Latin;
+                otherWord.Chinese = dictionaryTocharian.Chinese;
                 otherWord.Stem = dictionaryTocharian.Stem;
                 otherWord.StemClass = dictionaryTocharian.StemClass;
                 otherWord.Visible = true;
