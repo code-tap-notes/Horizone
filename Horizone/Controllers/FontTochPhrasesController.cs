@@ -7,6 +7,7 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using Horizone.Models;
+using Rotativa;
 
 namespace Horizone.Controllers
 {
@@ -27,12 +28,17 @@ namespace Horizone.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            TochPhrase tochPhrase = db.TochPhrases.Include("Language").Include("TochLanguage").SingleOrDefault(x=>x.Id==id);
+            TochPhrase tochPhrase = db.TochPhrases.Include("TochLanguage").SingleOrDefault(x=>x.Id==id);
             if (tochPhrase == null)
             {
                 return HttpNotFound();
             }
             return View(tochPhrase);
+        }
+        public ActionResult PrintPhrase()
+        {
+            var report = new ActionAsPdf("Index");
+            return report;
         }
         public ActionResult Search(string search)
         {
@@ -41,19 +47,10 @@ namespace Horizone.Controllers
 
             if (!string.IsNullOrWhiteSpace(search))
             {
-                tochPhrases = tochPhrases.Where(x => x.Phrase.Contains(search));
-
-                //bibliographies = bibliographies.Where(x => x.PublicationDate.Contains(search));
-                //bibliographies = bibliographies.Where(x => x.Title.Contains(search));
-                //|| || (x=> x.PublicationDate.Contains(search)
-                //|| x.Journal.Contains(search)
-                //|| x.Title.Contains(search));
+                tochPhrases = db.TochPhrases.Include("TochLanguage").Where(x => x.Phrase.Contains(search) ||x.English.Contains(search) || x.Francaise.Contains(search));
+            
             }
-            //if (!string.IsNullOrWhiteSpace(title))
-            //    bibliographies = bibliographies.Where(y => y.Title.Contains(title));
-            //if (!string.IsNullOrWhiteSpace(journal))
-            //    bibliographies = bibliographies.Where(y => y.Journal.Contains(journal));
-
+           
             if (tochPhrases.Count() == 0)
             {
                 Display("Aucun résultat");

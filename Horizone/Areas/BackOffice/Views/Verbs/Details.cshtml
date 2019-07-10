@@ -20,6 +20,13 @@
         </dd>
 
         <dt>
+            @StaticResource.Resources.Meaning  @Html.DisplayNameFor(model => model.Sanskrit)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Sanskrit)
+        </dd>
+        <dt>
             @StaticResource.Resources.Meaning  @Html.DisplayNameFor(model => model.English)
         </dt>
 
@@ -67,7 +74,7 @@
         <dd>
             @Html.DisplayFor(model => model.TochLanguage.Language)
         </dd>
-        @if (Model.TochLanguageId == 1|| Model.TochLanguageId == 3)
+        @if (Model.TochLanguageId == 1 || Model.TochLanguageId == 3)
         {
             <dt>
                 @Html.DisplayNameFor(model => model.EquivalentTB)
@@ -77,7 +84,7 @@
                 @Html.DisplayFor(model => model.EquivalentTB)
             </dd>
         }
-        @if (Model.TochLanguageId == 2|| Model.TochLanguageId == 4)
+        @if (Model.TochLanguageId == 2 || Model.TochLanguageId == 4)
         {
             <dt>
                 @Html.DisplayNameFor(model => model.EquivalentTA)

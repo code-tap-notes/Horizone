@@ -17,9 +17,12 @@ namespace Horizone.Models
         //Common
         public int Id { get; set; }
 
-        [Display(Name = "Words", ResourceType = typeof(StaticResource.Resources))]
+        [Display(Name = "Tocharian", ResourceType = typeof(StaticResource.Resources))]
         [Required(ErrorMessageResourceName = "FieldRequired", ErrorMessageResourceType = typeof(StaticResource.Resources))]
         public string Word { get; set; }
+
+        [Display(Name = "Sanskrit", ResourceType = typeof(StaticResource.Resources))]
+        public string Sanskrit { get; set; }
 
         [Display(Name = "English", ResourceType = typeof(StaticResource.Resources))]
         public string English { get; set; }

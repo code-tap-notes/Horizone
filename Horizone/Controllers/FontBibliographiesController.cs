@@ -63,24 +63,17 @@ namespace Horizone.Controllers
 
         // GET: Bibliographies/Search/
 
-        public ActionResult Search(string search, string title, string journal)
+        public ActionResult Search(string search)
         {
             IEnumerable<Bibliography> bibliographies = db.Bibliographys;
 
             if (!string.IsNullOrWhiteSpace(search))
             {
-                bibliographies = bibliographies.Where(x => x.Author.Contains(search));
+                bibliographies = bibliographies.Where(x => x.Author.Contains(search)
+                || x.Title.Contains(search));
+                //|| x.PublicationDate.Contains(search));
 
-                //bibliographies = bibliographies.Where(x => x.PublicationDate.Contains(search));
-                //bibliographies = bibliographies.Where(x => x.Title.Contains(search));
-                //|| || (x=> x.PublicationDate.Contains(search)
-                //|| x.Journal.Contains(search)
-                //|| x.Title.Contains(search));
             }
-            //if (!string.IsNullOrWhiteSpace(title))
-            //    bibliographies = bibliographies.Where(y => y.Title.Contains(title));
-            //if (!string.IsNullOrWhiteSpace(journal))
-            //    bibliographies = bibliographies.Where(y => y.Journal.Contains(journal));
 
             if (bibliographies.Count() == 0)
             {
@@ -97,23 +90,13 @@ namespace Horizone.Controllers
             if (!string.IsNullOrWhiteSpace(search))
             {
                 abreviations = abreviations.Where(x => x.Symbol.Contains(search));
-
-                //bibliographies = bibliographies.Where(x => x.PublicationDate.Contains(search));
-                //bibliographies = bibliographies.Where(x => x.Title.Contains(search));
-                //|| || (x=> x.PublicationDate.Contains(search)
-                //|| x.Journal.Contains(search)
-                //|| x.Title.Contains(search));
+              
             }
-            //if (!string.IsNullOrWhiteSpace(title))
-            //    bibliographies = bibliographies.Where(y => y.Title.Contains(title));
-            //if (!string.IsNullOrWhiteSpace(journal))
-            //    bibliographies = bibliographies.Where(y => y.Journal.Contains(journal));
-
+            
             if (abreviations.Count() == 0)
             {
                 Display("Aucun résultat");
             }
-
             return View("SearchAbreviation", abreviations.ToList());
 
         }

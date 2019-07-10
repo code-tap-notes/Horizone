@@ -23,9 +23,12 @@ namespace Horizone.Models
         [Display(Name = "Photography", ResourceType = typeof(StaticResource.Resources))]
         public Boolean Photography { get; set; }
 
-        [Display(Name = "Maps", ResourceType = typeof(StaticResource.Resources))]
-        public Boolean Map { get; set; }
+        [Display(Name = "Glossary", ResourceType = typeof(StaticResource.Resources))]
+        public Boolean Glosary { get; set; }
 
+        [Display(Name = "Question", ResourceType = typeof(StaticResource.Resources))]
+        public Boolean Question { get; set; }
+        
         [Display(Name = "Language", ResourceType = typeof(StaticResource.Resources))]
         public int LanguageId { get; set; }
 

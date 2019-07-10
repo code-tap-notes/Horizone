@@ -33,6 +33,10 @@ namespace Horizone.Controllers
         public ActionResult Aide()
         {
             var visualAids = db.VisualAids.Include(v => v.Language);
+            var question = db.VisualAids.Include(v => v.Language).Where(x=>x.Question==true);
+
+            ViewBag.Aide = new SelectList(question, "Id", "Aids");
+           
             return View(visualAids.ToList());
         }
         //Pas fait//
@@ -198,11 +202,13 @@ namespace Horizone.Controllers
         {
             return View(db.SourceStorys.ToList());
         }
-        public ActionResult PrintHistoire()
+        public ActionResult PrintHistoire(int? id)
         {
-            var report = new ActionAsPdf("TochHistoire");
+           
+            var report = new ActionAsPdf("DetailsStory", new { id = id });
             return report;
         }
+       
         //Activity sur menu
         public ActionResult Activity()
         {
@@ -214,7 +220,7 @@ namespace Horizone.Controllers
         public ActionResult PageActivity()
         {
             var activitys = db.Activitys.Include("Language").Include("Topic");
-            return PartialView(activitys.OrderByDescending(x => x.Id).Take(6).ToList());
+            return PartialView(activitys.OrderByDescending(x => x.Id).Take(5).ToList());
         }
         public ActionResult Symposia()
         {
@@ -222,9 +228,13 @@ namespace Horizone.Controllers
             return View(activitys.OrderByDescending(x => x.Id).ToList());
         }
         public ActionResult Publications()
+        {           
+                return View(db.Publications.OrderByDescending(x => x.Id).ToList());            
+        }
+        [ChildActionOnly]
+        public ActionResult PagePublication()
         {
-            var activitys = db.Activitys.Include("Language").Include("Topic").Where(x => x.Topic.Id == 10);
-            return View(activitys.OrderByDescending(x => x.Id).ToList());
+            return PartialView(db.Publications.OrderByDescending(x => x.Id).Take(5).ToList());
         }
         public ActionResult ConferencesAndSeminar()
         {
@@ -250,6 +260,50 @@ namespace Horizone.Controllers
             }
             return View("SearchWord", dictionaryTocharians.ToList());
         }
+        public ActionResult SearchStory(string search)
+        {
+            IEnumerable<TochStory> tochStories = db.TochStorys.Include("SourceStory").Include("ThemeStory").Include("ProperNouns").Include("NamePlaces");
 
+            if (!string.IsNullOrWhiteSpace(search))
+            {
+                tochStories = tochStories.Where(x => x.English.Contains(search) || x.Francaise.Contains(search)
+                || x.Content.Contains(search) || x.SourceStory.Source.Contains(search) 
+                || x.ThemeStory.ThemeEn.Contains(search) || x.ThemeStory.ThemeFr.Contains(search) || x.ThemeStory.ThemeZn.Contains(search));
+            }
+            if (tochStories.Count() == 0)
+            {
+                Display("Aucun résultat");
+            }
+            return View("SearchStory", tochStories.ToList());
+        }
+        [ChildActionOnly]
+        public ActionResult SearchMap(string search)
+        {
+            IEnumerable<Map> maps = db.Maps.Include("ImageMap");
+
+            if (!string.IsNullOrWhiteSpace(search))
+            {
+                maps = maps.Where(x => x.NamePicture == search);
+            }
+            if (maps.Count() == 0)
+            {
+                Display("Aucun résultat");
+            }
+            return PartialView("Map", maps.ToList());
+        }
+        public ActionResult SearchQuestion(string search)
+        {
+            IEnumerable<VisualAid> visualAids = db.VisualAids.Where(x=>x.Question==true);
+           
+             if (!string.IsNullOrWhiteSpace(search))
+           {
+             visualAids = visualAids.Where(x => x.Aids.Contains(search));
+           }
+            if (visualAids.Count() == 0)
+            {
+                Display("Aucun résultat");
+            }
+            return View("SearchQuestion", visualAids.ToList());
+        }
     }
 }

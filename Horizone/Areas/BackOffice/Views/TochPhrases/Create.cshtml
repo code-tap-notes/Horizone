@@ -23,6 +23,29 @@
         <div class="form-group">
             @Html.LabelFor(model => model.Phrase, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
+                <label for="search">@StaticResource.Resources.Insert @StaticResource.Resources.SpecialCharacter : </label>
+                <a onclick="insertText('Phrase','ā');" href="#" style="background-color: blanchedalmond; padding:5px"> ā  </a>
+                <a onclick="insertText('Phrase','ä');" href="#" style="background-color: blanchedalmond; padding:5px"> ä  </a>
+                <a onclick="insertText('Phrase','ī');" href="#" style="background-color: blanchedalmond; padding:5px"> ī  </a>
+                <a onclick="insertText('Phrase','ö');" href="#" style="background-color: blanchedalmond; padding:5px"> ö  </a>
+                <a onclick="insertText('Phrase','ū');" href="#" style="background-color: blanchedalmond; padding:5px"> ū  </a>
+                <a onclick="insertText('Phrase','ü');" href="#" style="background-color: blanchedalmond; padding:5px"> ü  </a>
+                <a onclick="insertText('Phrase','ṅ');" href="#" style="background-color: blanchedalmond; padding:5px"> ṅ  </a>
+                <a onclick="insertText('Phrase','ñ');" href="#" style="background-color: blanchedalmond; padding:5px"> ñ  </a>
+                <a onclick="insertText('Phrase','ṇ');" href="#" style="background-color: blanchedalmond; padding:5px"> ṇ  </a>
+                <a onclick="insertText('Phrase','ṃ');" href="#" style="background-color: blanchedalmond; padding:5px"> ṃ  </a>
+                <a onclick="insertText('Phrase','ś');" href="#" style="background-color: blanchedalmond; padding:5px"> ś  </a>
+                <a onclick="insertText('Phrase','ṣ');" href="#" style="background-color: blanchedalmond; padding:5px"> ṣ  </a>
+                <a onclick="insertText('Phrase','ṛ');" href="#" style="background-color: blanchedalmond; padding:5px"> ṛ  </a>
+                <a onclick="insertText('Phrase','ṭ');" href="#" style="background-color: blanchedalmond; padding:5px"> ṭ  </a>
+                <a onclick="insertText('Phrase','š');" href="#" style="background-color: blanchedalmond; padding:5px"> š  </a>
+                <a onclick="insertText('Phrase','ß');" href="#" style="background-color: blanchedalmond; padding:5px"> ß  </a>
+                <a onclick="insertText('Phrase','ḍ');" href="#" style="background-color: blanchedalmond; padding:5px"> ḍ  </a>
+                <a onclick="insertText('Phrase','Ā');" href="#" style="background-color: blanchedalmond; padding:5px"> Ā  </a>
+                <a onclick="insertText('Phrase','Ū');" href="#" style="background-color: blanchedalmond; padding:5px"> Ū  </a>
+                <a onclick="insertText('Phrase','Ṃ');" href="#" style="background-color: blanchedalmond; padding:5px"> Ṃ  </a>
+                <a onclick="insertText('Phrase','Ṇ');" href="#" style="background-color: blanchedalmond; padding:5px"> Ṇ  </a>
+                <a onclick="insertText('Phrase','Ñ');" href="#" style="background-color: blanchedalmond; padding:5px"> Ñ  </a>
                 @Html.EditorFor(model => model.Phrase, new { htmlAttributes = new { @class = "form-control" } })
                 @Html.ValidationMessageFor(model => model.Phrase, "", new { @class = "text-danger" })
             </div>

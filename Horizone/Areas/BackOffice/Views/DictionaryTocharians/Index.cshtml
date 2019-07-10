@@ -49,11 +49,15 @@
 
 
         <th>
-            @StaticResource.Resources.Words
+            @StaticResource.Resources.Tocharian
         </th>
         <th>
             @StaticResource.Resources.Language
         </th>
+        <th>
+            @StaticResource.Resources.Sanskrit
+        </th>
+
         <th>
             @StaticResource.Resources.English
         </th>
@@ -83,12 +87,15 @@
     {
     <tr>
 
-        
+
         <td>
             @Html.DisplayFor(modelItem => item.Word)
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.TochLanguage.Language)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Sanskrit)
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.English)

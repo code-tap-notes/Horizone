@@ -1840,4 +1840,34 @@ TochPhase</value>
   <data name="FormNominal" xml:space="preserve">
     <value>Nominal form of the verb</value>
   </data>
+  <data name="SearchContain" xml:space="preserve">
+    <value>Search words that contain element</value>
+  </data>
+  <data name="SearchElement" xml:space="preserve">
+    <value>Entre element to look for</value>
+  </data>
+  <data name="SearchEnd" xml:space="preserve">
+    <value>Search words with element at the end</value>
+  </data>
+  <data name="Sanskrit" xml:space="preserve">
+    <value>Sanskrit</value>
+  </data>
+  <data name="OtherWord" xml:space="preserve">
+    <value>Other word</value>
+  </data>
+  <data name="All" xml:space="preserve">
+    <value>All</value>
+  </data>
+  <data name="Answer" xml:space="preserve">
+    <value>Answer</value>
+  </data>
+  <data name="Question" xml:space="preserve">
+    <value>Question</value>
+  </data>
+  <data name="SearchBy" xml:space="preserve">
+    <value>Search by</value>
+  </data>
+  <data name="SiteMap" xml:space="preserve">
+    <value>Site Map</value>
+  </data>
 </root>

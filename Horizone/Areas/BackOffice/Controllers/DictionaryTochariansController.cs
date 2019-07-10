@@ -67,6 +67,7 @@ namespace Horizone.Areas.BackOffice.Controllers
                 nounAdjective.Genders = dictionaryTocharian.Genders.ToList();
                 nounAdjective.Numbers = dictionaryTocharian.Numbers.ToList();
                 nounAdjective.TochWord = dictionaryTocharian.Word;
+                nounAdjective.Sanskrit = dictionaryTocharian.Sanskrit;
                 nounAdjective.English = dictionaryTocharian.English;
                 nounAdjective.Francaise = dictionaryTocharian.Francaise;
                 nounAdjective.German = dictionaryTocharian.German;
@@ -118,6 +119,7 @@ namespace Horizone.Areas.BackOffice.Controllers
                 verb.Numbers = dictionaryTocharian.Numbers.ToList();
                 verb.Persons = dictionaryTocharian.Persons.ToList();
                 verb.TochWord = dictionaryTocharian.Word;
+                verb.Sanskrit = dictionaryTocharian.Sanskrit;
                 verb.English = dictionaryTocharian.English;
                 verb.Francaise = dictionaryTocharian.Francaise;
                 verb.German = dictionaryTocharian.German;
@@ -168,6 +170,7 @@ namespace Horizone.Areas.BackOffice.Controllers
                 pronoun.Numbers = dictionaryTocharian.Numbers.ToList();
                 pronoun.Persons = dictionaryTocharian.Persons.ToList();
                 pronoun.TochWord = dictionaryTocharian.Word;
+                pronoun.Sanskrit = dictionaryTocharian.Sanskrit;
                 pronoun.English = dictionaryTocharian.English;
                 pronoun.Francaise = dictionaryTocharian.Francaise;
                 pronoun.German = dictionaryTocharian.German;
@@ -214,6 +217,7 @@ namespace Horizone.Areas.BackOffice.Controllers
             {
                 otherWord.Numbers = dictionaryTocharian.Numbers.ToList();
                 otherWord.TochWord = dictionaryTocharian.Word;
+                otherWord.Sanskrit = dictionaryTocharian.Sanskrit;
                 otherWord.English = dictionaryTocharian.English;
                 otherWord.Francaise = dictionaryTocharian.Francaise;
                 otherWord.German = dictionaryTocharian.German;
@@ -284,7 +288,7 @@ namespace Horizone.Areas.BackOffice.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,Word,English,Francaise,German,Latin,Chinese,WordClassId,WordSubClassId,TochLanguageId,EquivalentTA,EquivalentTB,TochCorrespondence,EquivalentInOther,DerivedFrom,RelatedLexemes,RootCharacter,InternalRootVowel,Stem,StemClass,VoiceId,ValencyId,TenseAndAspectId,MoodId,PronounSuffix,Visible")] DictionaryTocharian dictionaryTocharian, int[] CaseId, int[] GenderId, int[] NumberId, int[] PersonId)
+        public ActionResult Create([Bind(Include = "Id,Word,Sanskrit,English,Francaise,German,Latin,Chinese,WordClassId,WordSubClassId,TochLanguageId,EquivalentTA,EquivalentTB,TochCorrespondence,EquivalentInOther,DerivedFrom,RelatedLexemes,RootCharacter,InternalRootVowel,Stem,StemClass,VoiceId,ValencyId,TenseAndAspectId,MoodId,PronounSuffix,Visible")] DictionaryTocharian dictionaryTocharian, int[] CaseId, int[] GenderId, int[] NumberId, int[] PersonId)
         {
             if (ModelState.IsValid)
             {
@@ -417,7 +421,7 @@ namespace Horizone.Areas.BackOffice.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,Word,English,Francaise,German,Latin,Chinese,WordClassId,WordSubClassId,TochLanguageId,EquivalentTA,EquivalentTB,TochCorrespondence,EquivalentInOther,DerivedFrom,RelatedLexemes,RootCharacter,InternalRootVowel,Stem,StemClass,VoiceId,ValencyId,TenseAndAspectId,MoodId,PronounSuffix,Visible")] DictionaryTocharian dictionaryTocharian, int[] CaseId, int[] GenderId, int[] NumberId, int[] PersonId)
+        public ActionResult Edit([Bind(Include = "Id,Word,Sanskrit,English,Francaise,German,Latin,Chinese,WordClassId,WordSubClassId,TochLanguageId,EquivalentTA,EquivalentTB,TochCorrespondence,EquivalentInOther,DerivedFrom,RelatedLexemes,RootCharacter,InternalRootVowel,Stem,StemClass,VoiceId,ValencyId,TenseAndAspectId,MoodId,PronounSuffix,Visible")] DictionaryTocharian dictionaryTocharian, int[] CaseId, int[] GenderId, int[] NumberId, int[] PersonId)
         {
             db.Entry(dictionaryTocharian).State = EntityState.Modified;
             db.DictionaryTocharians.Include(t => t.TochLanguage).Include("Cases").Include("Genders").Include("Numbers").Include("Persons").SingleOrDefault(x => x.Id == dictionaryTocharian.Id);

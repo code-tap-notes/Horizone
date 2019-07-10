@@ -24,7 +24,10 @@
             @Html.DisplayNameFor(model => model.Photography)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Map)
+            @Html.DisplayNameFor(model => model.Glosary)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Question)
         </th>
         <th></th>
     </tr>
@@ -45,8 +48,11 @@
             @Html.DisplayFor(modelItem => item.Photography)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.Map)
-        </td>      
+            @Html.DisplayFor(modelItem => item.Glosary)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Question)
+        </td>
         <td>
             @Html.ActionLink(@StaticResource.Resources.Edit, "Edit", new { id = item.Id }, new { @class = "btn btn-info", style = "width:85px" })
             @Html.ActionLink(@StaticResource.Resources.Details, "Details", new { id = item.Id }, new { @class = "btn btn-info", style = "width:85px" })

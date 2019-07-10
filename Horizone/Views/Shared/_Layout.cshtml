@@ -48,7 +48,7 @@
                     <li><a href="@Url.Action("SourceStory", "Home")"> @StaticResource.Resources.SourceStory </a></li>
                     <li><a href="@Url.Action("NamePlace", "Home")">@StaticResource.Resources.NamePlaces</a></li>
                     <li><a href="@Url.Action("ProperNoun", "Home")">@StaticResource.Resources.ProperNoun</a></li>
-                    <li><a href="@Url.Action("TochHistoire", "Home")">@StaticResource.Resources.TochStory</a></li>
+                    <li><a href="@Url.Action("TochHistoire", "Home")">@StaticResource.Resources.All @StaticResource.Resources.TochStory</a></li>
                 </ul>
             </li>
             <li class="dropdown">
@@ -70,6 +70,7 @@
                             <li><a href="@Url.Action("Noun", "Vocabularies")">&diams; @StaticResource.Resources.Noun</a></li>
                             <li><a href="@Url.Action("Pronoun", "Vocabularies")">&diams; @StaticResource.Resources.Pronoun</a></li>
                             <li><a href="@Url.Action("Adjective", "Vocabularies")">&diams; @StaticResource.Resources.Adjective</a></li>
+                            <li><a href="@Url.Action("OtherWord", "Vocabularies")">&diams; @StaticResource.Resources.OtherWords</a></li>
                             <li><a href="@Url.Action("TocharianA", "Vocabularies")">&diams; @StaticResource.Resources.DictionaryTocharian A</a></li>
                             <li><a href="@Url.Action("TocharianB", "Vocabularies")">&diams; @StaticResource.Resources.DictionaryTocharian B</a></li>
                             <li><a href="@Url.Action("Vocabulaire", "Vocabularies")">&diams; @StaticResource.Resources.AllWords</a></li>
@@ -93,7 +94,6 @@
             <li class="dropdown">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">@StaticResource.Resources.News_Blog <span class="caret"></span></a>
                 <ul class="dropdown-menu">
-                    <li><a href="@Url.Action("Publications", "FontNews")"> @StaticResource.Resources.Publications</a></li>
                     <li><a href="@Url.Action("ConferencesAndSymposia", "FontNews")"> @StaticResource.Resources.Conferences , @StaticResource.Resources.Symposia</a></li>
                     <li><a href="@Url.Action("ExpositionsAndMuseums", "FontNews")">  @StaticResource.Resources.Expositions , @StaticResource.Resources.Museums </a></li>
                     <li><a href="@Url.Action("Media", "FontNews")">  @StaticResource.Resources.Media</a></li>

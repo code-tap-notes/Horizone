@@ -5,25 +5,7 @@
 }
 <h2>@StaticResource.Resources.SearchResult</h2>
 
-<div class="col-md-2">
 
-    <form class="form-group row" action="@Url.Action("Search", "FontTochPhrases")" method="post" enctype="multipart/form-data">
-        <div class="form-group ">
-            <label for="search">@StaticResource.Resources.Phrase</label>
-            <input type="text" class="form-control" id="search" name="search" /><br />
-        </div>                
-    </form>
-</div>
-<div class="col-md-2">
-    <div class="form-group">
-        <br />
-        <button type="submit" class="btn btn-info"> @StaticResource.Resources.Search</button>
-    </div>
-
-</div>
-
-
-<div class="col-md-8">
 
     <div class="bibliography row">
         <table class="table">
@@ -59,7 +41,7 @@
             }
         </table>
     </div>
-</div>
+
 
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")

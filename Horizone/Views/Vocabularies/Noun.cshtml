@@ -19,79 +19,92 @@
                 <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
                     <span class="caret"></span>
                 </button>
-                <ul class="dropdown-menu" style="width: 900px !important" role="menu">
+                <ul class="dropdown-menu" style="width: 1150px !important" role="menu">
                     <li>
                         <form class="form-group row" action="@Url.Action("Search", "Vocabularies")" method="post" enctype="multipart/form-data">
 
-                            <div class="form-group col-md-3">
-                                <button type="submit" class="btn btn-info bigBtn" style="width:180px"> <span class="glyphicon glyphicon-search"></span> @StaticResource.Resources.SearchToch</button>
+                            <div class="form-group col-md-5">
+                                <button type="submit" class="btn btn-info bigBtn" style="width: 100%"> <span class="glyphicon glyphicon-search"></span> @StaticResource.Resources.Tocharian - @StaticResource.Resources.English / @StaticResource.Resources.French / @StaticResource.Resources.Sanskrit / @StaticResource.Resources.German / ... </button>
                             </div>
-                            <div class="form-group col-md-4">
+                            <div class="form-group col-md-2">
                                 <input class="form-control" type="text" id="Search" name="search" />
                             </div>
                             <div class="form-group col-md-1" style="font-size:medium; ">
                                 <p><strong>@StaticResource.Resources.Insert  </strong> </p>
                             </div>
-                            <div class="form-group col-md-3" style="font-size:medium; background-color: white;">
-                                <a onclick="insertText('Search','ā');" href="#">ā  </a>
-                                <a onclick="insertText('Search','ä');" href="#">ä  </a>
-                                <a onclick="insertText('Search','ī');" href="#">ī  </a>
-                                <a onclick="insertText('Search','ö');" href="#">ö  </a>
-                                <a onclick="insertText('Search','ū');" href="#">ū  </a>
-                                <a onclick="insertText('Search','ü');" href="#">ü  </a>
-                                <a onclick="insertText('Search','ṅ');" href="#">ṅ  </a>
-                                <a onclick="insertText('Search','ñ');" href="#">ñ  </a>
-                                <a onclick="insertText('Search','ṇ');" href="#"> ṇ  </a>
+                            <div class="form-group col-md-4" style="font-size:medium;">
+                                <a onclick="insertText('Search','ā');" href="#" style="background-color: blanchedalmond; padding:5px">ā  </a>
+                                <a onclick="insertText('Search','ä');" href="#" style="background-color: blanchedalmond; padding:5px">ä  </a>
+                                <a onclick="insertText('Search','ī');" href="#" style="background-color: blanchedalmond; padding:5px">ī  </a>
+                                <a onclick="insertText('Search','ö');" href="#" style="background-color: blanchedalmond; padding:5px">ö  </a>
+                                <a onclick="insertText('Search','ū');" href="#" style="background-color: blanchedalmond; padding:5px">ū  </a>
+                                <a onclick="insertText('Search','ü');" href="#" style="background-color: blanchedalmond; padding:5px">ü  </a>
+                                <a onclick="insertText('Search','ṅ');" href="#" style="background-color: blanchedalmond; padding:5px">ṅ  </a>
+                                <a onclick="insertText('Search','ñ');" href="#" style="background-color: blanchedalmond; padding:5px">ñ  </a>
+                                <a onclick="insertText('Search','ṇ');" href="#" style="background-color: blanchedalmond; padding:5px"> ṇ  </a>
 
-                                <a onclick="insertText('Search','ṃ');" href="#">ṃ  </a>
-                                <a onclick="insertText('Search','ś');" href="#">ś  </a>
-                                <a onclick="insertText('Search','ṣ');" href="#">ṣ  </a>
-                                <a onclick="insertText('Search','ṛ');" href="#"> ṛ  </a>
-                                <a onclick="insertText('Search','ṭ');" href="#"> ṭ  </a>
-                                <a onclick="insertText('Search','š');" href="#">š  </a>
-                                <a onclick="insertText('Search','ß');" href="#">ß  </a>
+                                <a onclick="insertText('Search','ṃ');" href="#" style="background-color: blanchedalmond; padding:5px">ṃ  </a>
+                                <a onclick="insertText('Search','ś');" href="#" style="background-color: blanchedalmond; padding:5px">ś  </a>
+                                <a onclick="insertText('Search','ṣ');" href="#" style="background-color: blanchedalmond; padding:5px">ṣ  </a>
+                                <a onclick="insertText('Search','ṛ');" href="#" style="background-color: blanchedalmond; padding:5px"> ṛ  </a>
+                                <a onclick="insertText('Search','ṭ');" href="#" style="background-color: blanchedalmond; padding:5px"> ṭ  </a>
+                                <a onclick="insertText('Search','š');" href="#" style="background-color: blanchedalmond; padding:5px">š  </a>
+                                <a onclick="insertText('Search','ß');" href="#" style="background-color: blanchedalmond; padding:5px">ß  </a>
                             </div>
 
                         </form>
                     </li>
                     <li>
-                        <form class="form-group row" action="@Url.Action("SearchEnglish", "Vocabularies")" method="post" enctype="multipart/form-data">
-                            <div class="form-group col-md-3">
-                                <button type="submit" class="btn btn-info bigBtn" style="width:180px"> <span class="glyphicon glyphicon-search"></span> @StaticResource.Resources.SearchEnglish</button>
+                        <form class="form-group row" action="@Url.Action("SearchSanskrit", "Vocabularies")" method="post" enctype="multipart/form-data">
+                            <div class="form-group col-md-5">
+                                <button type="submit" class="btn btn-info bigBtn" style="width:100%"> <span class="glyphicon glyphicon-search"></span> @StaticResource.Resources.Sanskrit -  @StaticResource.Resources.Tocharian </button>
                             </div>
-                            <div class="form-group col-md-4">
+                            <div class="form-group col-md-2">
+                                <input class="form-control" type="text" id="Search" name="search" />
+                            </div>
+                        </form>
+                    </li>
+                    <li>
+                        <form class="form-group row" action="@Url.Action("SearchEnglish", "Vocabularies")" method="post" enctype="multipart/form-data">
+                            <div class="form-group col-md-5">
+                                <button type="submit" class="btn btn-info bigBtn" style="width:100%"> <span class="glyphicon glyphicon-search"></span> @StaticResource.Resources.English -  @StaticResource.Resources.Tocharian </button>
+                            </div>
+                            <div class="form-group col-md-2">
                                 <input class="form-control" type="text" id="Search" name="search" />
                             </div>
                         </form>
                     </li>
                     <li>
                         <form class="form-group row" action="@Url.Action("SearchFrench", "Vocabularies")" method="post" enctype="multipart/form-data">
-                            <div class="form-group col-md-3">
-                                <button type="submit" class="btn btn-info bigBtn" style="width:180px"> <span class="glyphicon glyphicon-search"></span> @StaticResource.Resources.SearchFrench</button>
+                            <div class="form-group col-md-5">
+                                <button type="submit" class="btn btn-info bigBtn" style="width:100%"> <span class="glyphicon glyphicon-search"></span> @StaticResource.Resources.French -  @StaticResource.Resources.Tocharian</button>
                             </div>
-                            <div class="form-group col-md-4">
+                            <div class="form-group col-md-2">
                                 <input class="form-control" type="text" id="Search" name="search" />
                             </div>
+
                         </form>
                     </li>
                     <li>
                         <form class="form-group row" action="@Url.Action("SearchGerman", "Vocabularies")" method="post" enctype="multipart/form-data">
-                            <div class="form-group col-md-3">
-                                <button type="submit" class="btn btn-info bigBtn" style="width:180px"> <span class="glyphicon glyphicon-search"></span> @StaticResource.Resources.SearchGerman</button>
+                            <div class="form-group col-md-5">
+                                <button type="submit" class="btn btn-info bigBtn" style="width:100%"> <span class="glyphicon glyphicon-search"></span> @StaticResource.Resources.German -  @StaticResource.Resources.Tocharian</button>
                             </div>
-                            <div class="form-group col-md-4">
+                            <div class="form-group col-md-2">
                                 <input class="form-control" type="text" id="Search" name="search" />
                             </div>
+
                         </form>
                     </li>
                     <li>
                         <form class="form-group row" action="@Url.Action("SearchLatin", "Vocabularies")" method="post" enctype="multipart/form-data">
-                            <div class="form-group col-md-3">
-                                <button type="submit" class="btn btn-info bigBtn" style="width:180px"> <span class="glyphicon glyphicon-search"></span> @StaticResource.Resources.SearchLatin</button>
+                            <div class="form-group col-md-5">
+                                <button type="submit" class="btn btn-info bigBtn" style="width:100%"> <span class="glyphicon glyphicon-search"></span> @StaticResource.Resources.Latin -  @StaticResource.Resources.Tocharian</button>
                             </div>
-                            <div class="form-group col-md-4">
+                            <div class="form-group col-md-2">
                                 <input class="form-control" type="text" id="Search" name="search" />
                             </div>
+
                         </form>
                     </li>
                 </ul>
@@ -100,20 +113,17 @@
     </div>
 </div>
 
-<div class="col-md-2" style="float:right;">
-    <a href="@Url.Action("PrintVocabulaire", "Vocabularies")" class="btn btn-info">
-        <span class="glyphicon glyphicon-print"></span> @StaticResource.Resources.Print
-    </a>
 
-    @*(Bo Layout) @Html.ActionLink(@StaticResource.Resources.Print, "PrintHistoire", "Home", new { @class = "btn btn-info", style = "width:90px" },new { onclick= "popitup(this.value);"})*@
-</div>
 <table class="table">
     <tr>
         <th>
             @Html.DisplayNameFor(model => model.TochLanguage.Language)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.TochWord)
+            @StaticResource.Resources.Tocharian
+        </th>
+        <th>
+            @Html.DisplayNameFor(model=> model.Sanskrit)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.English)
@@ -144,59 +154,62 @@
     {
         if (item.WordClass.ClassEn == "Noun")
         {
-            <tr>
-                <td>
-                    @Html.DisplayFor(modelItem => item.TochLanguage.Language)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.TochWord)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.English)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Francaise)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.German)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Latin)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Chinese)
-                </td>
-                @if (Session[Horizone.Common.CommonConstants.CurrentCulture].ToString() == "en")
-                {
-                    <td>
-                        @Html.DisplayFor(modelItem => item.WordClass.ClassEn)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.WordSubClass.SubClassEn)
-                    </td>
-                }
-                @if (Session[Horizone.Common.CommonConstants.CurrentCulture].ToString() == "fr")
-                {
-                    <td>
-                        @Html.DisplayFor(modelItem => item.WordClass.ClassFr)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.WordSubClass.SubClassFr)
-                    </td>
-                }
-                @if (Session[Horizone.Common.CommonConstants.CurrentCulture].ToString() == "zh")
-                {
-                    <td>
-                        @Html.DisplayFor(modelItem => item.WordClass.ClassZh)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.WordSubClass.SubClassZh)
-                    </td>
-                }
-                <td>
-                    @Html.ActionLink(@StaticResource.Resources.Details, "Details", new { id = item.Id }, new { @class = "btn btn-info" })
-                </td>
-            </tr>
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.TochLanguage.Language)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TochWord)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Sanskrit)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.English)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Francaise)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.German)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Latin)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Chinese)
+        </td>
+        @if (Session[Horizone.Common.CommonConstants.CurrentCulture].ToString() == "en")
+        {
+            <td>
+                @Html.DisplayFor(modelItem => item.WordClass.ClassEn)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.WordSubClass.SubClassEn)
+            </td>
+        }
+        @if (Session[Horizone.Common.CommonConstants.CurrentCulture].ToString() == "fr")
+        {
+            <td>
+                @Html.DisplayFor(modelItem => item.WordClass.ClassFr)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.WordSubClass.SubClassFr)
+            </td>
+        }
+        @if (Session[Horizone.Common.CommonConstants.CurrentCulture].ToString() == "zh")
+        {
+            <td>
+                @Html.DisplayFor(modelItem => item.WordClass.ClassZh)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.WordSubClass.SubClassZh)
+            </td>
+        }
+        <td>
+            @Html.ActionLink(@StaticResource.Resources.Details, "DetailsNoun", new { id = item.Id }, new { @class = "btn btn-info" })
+        </td>
+    </tr>
         }
     }
 </table>

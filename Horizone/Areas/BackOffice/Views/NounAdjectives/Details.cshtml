@@ -23,7 +23,7 @@
         <dd>
             @Html.DisplayFor(model => model.TochLanguage.Language)
         </dd>
-        @if (Model.TochLanguageId == 1|| Model.TochLanguageId == 3)
+        @if (Model.TochLanguageId == 1 || Model.TochLanguageId == 3)
         {
             <dt>
                 @Html.DisplayNameFor(model => model.EquivalentTB)
@@ -33,7 +33,7 @@
                 @Html.DisplayFor(model => model.EquivalentTB)
             </dd>
         }
-        @if (Model.TochLanguageId == 2|| Model.TochLanguageId == 4)
+        @if (Model.TochLanguageId == 2 || Model.TochLanguageId == 4)
         {
             <dt>
                 @Html.DisplayNameFor(model => model.EquivalentTA)
@@ -58,6 +58,13 @@
 
         <dd>
             @Html.DisplayFor(model => model.EquivalentInOther)
+        </dd>
+        <dt>
+            @StaticResource.Resources.Meaning   @Html.DisplayNameFor(model => model.Sanskrit)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Sanskrit)
         </dd>
 
         <dt>
@@ -116,7 +123,7 @@
                 @Html.DisplayFor(model => model.WordSubClass.SubClassEn)
             </dd>
 
-          
+
             <dt>
                 @StaticResource.Resources.Case
             </dt>
@@ -171,7 +178,7 @@
                 @Html.DisplayFor(model => model.WordSubClass.SubClassFr)
             </dd>
 
-           
+
             <dt>
                 @StaticResource.Resources.Case
             </dt>
@@ -226,7 +233,7 @@
                 @Html.DisplayFor(model => model.WordSubClass.SubClassZh)
             </dd>
 
-           
+
 
             <dt>
                 @StaticResource.Resources.Case

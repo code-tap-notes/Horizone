@@ -4,35 +4,17 @@
     ViewBag.Title = @StaticResource.Resources.NamePlaces;
 }
 
-<h2>@StaticResource.Resources.NamePlaces</h2>
+<h4>@StaticResource.Resources.TochStory @StaticResource.Resources.SearchBy @StaticResource.Resources.NamePlaces</h4>
 
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.PlaceEn)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.PlaceFr)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.PlaceZh)
-        </th>
-        <th></th>
-    </tr>
-
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.PlaceEn)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.PlaceFr)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.PlaceZh)
-        </td>
-       
-    </tr>
+@foreach (var item in Model)
+{
+    <div class="row">
+        <div class="col-md-4">
+            <form class="form-group row" action="@Url.Action("SearchStory", "Home")" method="post" enctype="multipart/form-data">
+                <button type="submit" class="btn btn-default" style="width:95%; text-align:left;">  @Html.DisplayFor(modelItem => item.PlaceEn) </button>
+                <input class="form-control" type="hidden" id="Search" name="search" value="@item.PlaceEn" />
+            </form>
+        </div>
+    </div>
 }
 
-</table>

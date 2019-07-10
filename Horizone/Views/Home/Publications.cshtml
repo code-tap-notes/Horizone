@@ -1,62 +1,45 @@
-﻿@model IEnumerable<Horizone.Models.Activity>
+﻿@model IEnumerable<Horizone.Models.Publication>
 
 @{
     ViewBag.Title = @StaticResource.Resources.Publications;
 }
 
-<h2> @StaticResource.Resources.Publications</h2>
+<h2>@StaticResource.Resources.Publications</h2>
 
 <table class="table">
     <tr>
-         
         <th>
-            @Html.DisplayNameFor(model => model.Topic.TopicEn)
+            @Html.DisplayNameFor(model => model.PublicationDate)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.DateofActivity)
+            @Html.DisplayNameFor(model => model.Title)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Place)
+            @Html.DisplayNameFor(model => model.Journal)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.NameActivity)
+            @Html.DisplayNameFor(model => model.UlrBibliography)
         </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Description)
-        </th>
-        <th>
-            @StaticResource.Resources.LearnMore
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Picture)
-        </th>
+        
         <th></th>
     </tr>
+
 @foreach (var item in Model) {
     <tr>
-        
         <td>
-            @Html.DisplayFor(modelItem => item.Topic.TopicEn)
+            @Html.DisplayFor(modelItem => item.PublicationDate)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.DateofActivity)
+            @Html.DisplayFor(modelItem => item.Title)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.Place)
+            @Html.DisplayFor(modelItem => item.Journal)
         </td>
+      
         <td>
-            @Html.DisplayFor(modelItem => item.NameActivity)
+            <a href=@item.UlrBibliography>@StaticResource.Resources.LearnMore &raquo;</a>
         </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Description)
-        </td>
-        <td>
-            <a href=@item.UlrActivity class="btn btn-info">@StaticResource.Resources.LearnMore &raquo;</a>
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Picture)
-        </td>
-
+       
     </tr>
 }
 

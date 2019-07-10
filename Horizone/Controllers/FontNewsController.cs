@@ -21,11 +21,6 @@ namespace Horizone.Controllers
             return View(newses.ToList());
         }     
 
-        public ActionResult Publications()
-        {
-            var newses = db.Newses.Include(n => n.Collaborator).Include(n => n.Language).Include(n => n.Topic).Where(x => x.Topic.Id == 10);
-            return View(newses.ToList());
-        }
         public ActionResult ConferencesAndSymposia()
         {
             var newses = db.Newses.Include(n => n.Collaborator).Include(n => n.Language).Include(n => n.Topic).Where(x => x.Topic.Id == 9 || x.Topic.Id == 14);

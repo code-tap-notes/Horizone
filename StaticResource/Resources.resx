@@ -292,10 +292,10 @@
     <value>Aide</value>
   </data>
   <data name="TochPhrase" xml:space="preserve">
-    <value>TochPhrase</value>
+    <value>Toch Phrase</value>
   </data>
   <data name="TochStory" xml:space="preserve">
-    <value>TochNarration</value>
+    <value>Toch Narration</value>
   </data>
   <data name="Vocabulary" xml:space="preserve">
     <value>Vocabulaire</value>
@@ -1841,9 +1841,39 @@ TochPhase</value>
     <value>Votre Compte</value>
   </data>
   <data name="OtherWords" xml:space="preserve">
-    <value>Autre mots</value>
+    <value>Autres mots</value>
   </data>
   <data name="FormNominal" xml:space="preserve">
     <value>Forme nominale au verbe</value>
+  </data>
+  <data name="SearchContain" xml:space="preserve">
+    <value>Rechercher mots contenant un élément</value>
+  </data>
+  <data name="SearchElement" xml:space="preserve">
+    <value>Entre élément à rechercher</value>
+  </data>
+  <data name="SearchEnd" xml:space="preserve">
+    <value>Rechercher mots avec élément à la fin</value>
+  </data>
+  <data name="Sanskrit" xml:space="preserve">
+    <value>Sanskrit</value>
+  </data>
+  <data name="OtherWord" xml:space="preserve">
+    <value>Autre mot</value>
+  </data>
+  <data name="All" xml:space="preserve">
+    <value>Tous</value>
+  </data>
+  <data name="SearchBy" xml:space="preserve">
+    <value>Rechercher par</value>
+  </data>
+  <data name="Answer" xml:space="preserve">
+    <value>Répondre</value>
+  </data>
+  <data name="Question" xml:space="preserve">
+    <value>Question</value>
+  </data>
+  <data name="SiteMap" xml:space="preserve">
+    <value>Plan du site</value>
   </data>
 </root>

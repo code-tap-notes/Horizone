@@ -47,6 +47,13 @@
     </div>
 
     <div class="form-group">
+        @Html.LabelFor(model => model.Sanskrit, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.Sanskrit, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.Sanskrit, "", new { @class = "text-danger" })
+        </div>
+    </div>
+    <div class="form-group">
         @Html.LabelFor(model => model.English, htmlAttributes: new { @class = "control-label col-md-2" })
         <div class="col-md-10">
             @Html.EditorFor(model => model.English, new { htmlAttributes = new { @class = "form-control" } })
@@ -145,67 +152,67 @@
                 @Html.ValidationMessageFor(model => model.WordSubClassId, "", new { @class = "text-danger" })
             </div>
         </div>
-          <div class="form-group">
-                <label class="control-label col-md-2">@StaticResource.Resources.Case</label>
-                <div class="col-md-10">
-                    @Html.ListBox("CaseId", (MultiSelectList)ViewBag.CasesEn, new { @class = "form-control" })
-                </div>
+        <div class="form-group">
+            <label class="control-label col-md-2">@StaticResource.Resources.Case</label>
+            <div class="col-md-10">
+                @Html.ListBox("CaseId", (MultiSelectList)ViewBag.CasesEn, new { @class = "form-control" })
             </div>
+        </div>
 
-            <div class="form-group">
-                <label class="control-label col-md-2">@StaticResource.Resources.Number</label>
-                <div class="col-md-10">
-                    @Html.ListBox("NumberId", (MultiSelectList)ViewBag.NumbersEn, new { @class = "form-control" })
-                </div>
+        <div class="form-group">
+            <label class="control-label col-md-2">@StaticResource.Resources.Number</label>
+            <div class="col-md-10">
+                @Html.ListBox("NumberId", (MultiSelectList)ViewBag.NumbersEn, new { @class = "form-control" })
             </div>
-            <div class="form-group">
-                <label class="control-label col-md-2">@StaticResource.Resources.Gender</label>
-                <div class="col-md-10">
-                    @Html.ListBox("GenderId", (MultiSelectList)ViewBag.GendersEn, new { @class = "form-control" })
-                </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label col-md-2">@StaticResource.Resources.Gender</label>
+            <div class="col-md-10">
+                @Html.ListBox("GenderId", (MultiSelectList)ViewBag.GendersEn, new { @class = "form-control" })
             </div>
-           
+        </div>
 
-         
-            <div class="form-group">
-                <label class="control-label col-md-2">@StaticResource.Resources.Person</label>
-                <div class="col-md-10">
-                    @Html.ListBox("PersonId", (MultiSelectList)ViewBag.PersonsEn, new { @class = "form-control" })
-                </div>
-            </div>
 
-            <div class="form-group">
-                @Html.LabelFor(model => model.VoiceId, @StaticResource.Resources.Voice, htmlAttributes: new { @class = "control-label col-md-2" })
-                <div class="col-md-10">
-                    @Html.DropDownList("VoiceId", (SelectList)ViewBag.VoiceEnId, htmlAttributes: new { @class = "form-control" })
-                    @Html.ValidationMessageFor(model => model.VoiceId, "", new { @class = "text-danger" })
-                </div>
-            </div>
 
-            <div class="form-group">
-                @Html.LabelFor(model => model.ValencyId, @StaticResource.Resources.Valency, htmlAttributes: new { @class = "control-label col-md-2" })
-                <div class="col-md-10">
-                    @Html.DropDownList("ValencyId", (SelectList)ViewBag.ValencyEnId, htmlAttributes: new { @class = "form-control" })
-                    @Html.ValidationMessageFor(model => model.ValencyId, "", new { @class = "text-danger" })
-                </div>
+        <div class="form-group">
+            <label class="control-label col-md-2">@StaticResource.Resources.Person</label>
+            <div class="col-md-10">
+                @Html.ListBox("PersonId", (MultiSelectList)ViewBag.PersonsEn, new { @class = "form-control" })
             </div>
+        </div>
 
-            <div class="form-group">
-                @Html.LabelFor(model => model.TenseAndAspectId, @StaticResource.Resources.TenseAndAspect, htmlAttributes: new { @class = "control-label col-md-2" })
-                <div class="col-md-10">
-                    @Html.DropDownList("TenseAndAspectId", (SelectList)ViewBag.TenseAndAspecteEnId, htmlAttributes: new { @class = "form-control" })
-                    @Html.ValidationMessageFor(model => model.TenseAndAspectId, "", new { @class = "text-danger" })
-                </div>
+        <div class="form-group">
+            @Html.LabelFor(model => model.VoiceId, @StaticResource.Resources.Voice, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownList("VoiceId", (SelectList)ViewBag.VoiceEnId, htmlAttributes: new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.VoiceId, "", new { @class = "text-danger" })
             </div>
+        </div>
 
-            <div class="form-group">
-                @Html.LabelFor(model => model.MoodId, @StaticResource.Resources.Mood, htmlAttributes: new { @class = "control-label col-md-2" })
-                <div class="col-md-10">
-                    @Html.DropDownList("MoodId", (SelectList)ViewBag.MoodEnId, htmlAttributes: new { @class = "form-control" })
-                    @Html.ValidationMessageFor(model => model.MoodId, "", new { @class = "text-danger" })
-                </div>
+        <div class="form-group">
+            @Html.LabelFor(model => model.ValencyId, @StaticResource.Resources.Valency, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownList("ValencyId", (SelectList)ViewBag.ValencyEnId, htmlAttributes: new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.ValencyId, "", new { @class = "text-danger" })
             </div>
-         
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.TenseAndAspectId, @StaticResource.Resources.TenseAndAspect, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownList("TenseAndAspectId", (SelectList)ViewBag.TenseAndAspecteEnId, htmlAttributes: new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.TenseAndAspectId, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.MoodId, @StaticResource.Resources.Mood, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownList("MoodId", (SelectList)ViewBag.MoodEnId, htmlAttributes: new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.MoodId, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
     }
     @if (Session[Horizone.Common.CommonConstants.CurrentCulture].ToString() == "fr")
     {
@@ -225,64 +232,64 @@
                 @Html.ValidationMessageFor(model => model.WordSubClassId, "", new { @class = "text-danger" })
             </div>
         </div>
-          <div class="form-group">
-                <label class="control-label col-md-2">@StaticResource.Resources.Case</label>
-                <div class="col-md-10">
-                    @Html.ListBox("CaseId", (MultiSelectList)ViewBag.CasesFr, new { @class = "form-control" })
-                </div>
+        <div class="form-group">
+            <label class="control-label col-md-2">@StaticResource.Resources.Case</label>
+            <div class="col-md-10">
+                @Html.ListBox("CaseId", (MultiSelectList)ViewBag.CasesFr, new { @class = "form-control" })
             </div>
-            <div class="form-group">
-                <label class="control-label col-md-2">@StaticResource.Resources.Number</label>
-                <div class="col-md-10">
-                    @Html.ListBox("NumberId", (MultiSelectList)ViewBag.NumbersFr, new { @class = "form-control" })
-                </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label col-md-2">@StaticResource.Resources.Number</label>
+            <div class="col-md-10">
+                @Html.ListBox("NumberId", (MultiSelectList)ViewBag.NumbersFr, new { @class = "form-control" })
             </div>
-            <div class="form-group">
-                <label class="control-label col-md-2">@StaticResource.Resources.Gender</label>
-                <div class="col-md-10">
-                    @Html.ListBox("GenderId", (MultiSelectList)ViewBag.GendersFr, new { @class = "form-control" })
-                </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label col-md-2">@StaticResource.Resources.Gender</label>
+            <div class="col-md-10">
+                @Html.ListBox("GenderId", (MultiSelectList)ViewBag.GendersFr, new { @class = "form-control" })
             </div>
-        
-            <div class="form-group">
-                <label class="control-label col-md-2">@StaticResource.Resources.Person</label>
-                <div class="col-md-10">
-                    @Html.ListBox("PersonId", (MultiSelectList)ViewBag.PersonsFr, new { @class = "form-control" })
-                </div>
-            </div>
+        </div>
 
-            <div class="form-group">
-                @Html.LabelFor(model => model.VoiceId, @StaticResource.Resources.Voice, htmlAttributes: new { @class = "control-label col-md-2" })
-                <div class="col-md-10">
-                    @Html.DropDownList("VoiceId", (SelectList)ViewBag.VoiceFrId, htmlAttributes: new { @class = "form-control" })
-                    @Html.ValidationMessageFor(model => model.VoiceId, "", new { @class = "text-danger" })
-                </div>
+        <div class="form-group">
+            <label class="control-label col-md-2">@StaticResource.Resources.Person</label>
+            <div class="col-md-10">
+                @Html.ListBox("PersonId", (MultiSelectList)ViewBag.PersonsFr, new { @class = "form-control" })
             </div>
+        </div>
 
-            <div class="form-group">
-                @Html.LabelFor(model => model.ValencyId, @StaticResource.Resources.Valency, htmlAttributes: new { @class = "control-label col-md-2" })
-                <div class="col-md-10">
-                    @Html.DropDownList("ValencyId", (SelectList)ViewBag.ValencyFrId, htmlAttributes: new { @class = "form-control" })
-                    @Html.ValidationMessageFor(model => model.ValencyId, "", new { @class = "text-danger" })
-                </div>
+        <div class="form-group">
+            @Html.LabelFor(model => model.VoiceId, @StaticResource.Resources.Voice, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownList("VoiceId", (SelectList)ViewBag.VoiceFrId, htmlAttributes: new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.VoiceId, "", new { @class = "text-danger" })
             </div>
+        </div>
 
-            <div class="form-group">
-                @Html.LabelFor(model => model.TenseAndAspectId, @StaticResource.Resources.TenseAndAspect, htmlAttributes: new { @class = "control-label col-md-2" })
-                <div class="col-md-10">
-                    @Html.DropDownList("TenseAndAspectId", (SelectList)ViewBag.TenseAndAspectFrId, htmlAttributes: new { @class = "form-control" })
-                    @Html.ValidationMessageFor(model => model.TenseAndAspectId, "", new { @class = "text-danger" })
-                </div>
+        <div class="form-group">
+            @Html.LabelFor(model => model.ValencyId, @StaticResource.Resources.Valency, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownList("ValencyId", (SelectList)ViewBag.ValencyFrId, htmlAttributes: new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.ValencyId, "", new { @class = "text-danger" })
             </div>
+        </div>
 
-            <div class="form-group">
-                @Html.LabelFor(model => model.MoodId, @StaticResource.Resources.Mood, htmlAttributes: new { @class = "control-label col-md-2" })
-                <div class="col-md-10">
-                    @Html.DropDownList("MoodId", (SelectList)ViewBag.MoodFrId, htmlAttributes: new { @class = "form-control" })
-                    @Html.ValidationMessageFor(model => model.MoodId, "", new { @class = "text-danger" })
-                </div>
+        <div class="form-group">
+            @Html.LabelFor(model => model.TenseAndAspectId, @StaticResource.Resources.TenseAndAspect, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownList("TenseAndAspectId", (SelectList)ViewBag.TenseAndAspectFrId, htmlAttributes: new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.TenseAndAspectId, "", new { @class = "text-danger" })
             </div>
-        
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.MoodId, @StaticResource.Resources.Mood, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownList("MoodId", (SelectList)ViewBag.MoodFrId, htmlAttributes: new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.MoodId, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
     }
     @if (Session[Horizone.Common.CommonConstants.CurrentCulture].ToString() == "zh")
     {
@@ -302,66 +309,66 @@
                 @Html.ValidationMessageFor(model => model.WordSubClassId, "", new { @class = "text-danger" })
             </div>
         </div>
-        
-            <div class="form-group">
-                <label class="control-label col-md-2">@StaticResource.Resources.Case</label>
-                <div class="col-md-10">
-                    @Html.ListBox("CaseId", (MultiSelectList)ViewBag.CasesZh, new { @class = "form-control" })
-                </div>
-            </div>
-            <div class="form-group">
-                <label class="control-label col-md-2">@StaticResource.Resources.Number</label>
-                <div class="col-md-10">
-                    @Html.ListBox("NumberId", (MultiSelectList)ViewBag.NumbersZh, new { @class = "form-control" })
-                </div>
-            </div>
-            <div class="form-group">
-                <label class="control-label col-md-2">@StaticResource.Resources.Gender</label>
-                <div class="col-md-10">
-                    @Html.ListBox("GenderId", (MultiSelectList)ViewBag.GendersZh, new { @class = "form-control" })
 
-                </div>
+        <div class="form-group">
+            <label class="control-label col-md-2">@StaticResource.Resources.Case</label>
+            <div class="col-md-10">
+                @Html.ListBox("CaseId", (MultiSelectList)ViewBag.CasesZh, new { @class = "form-control" })
             </div>
-        
-            <div class="form-group">
-                <label class="control-label col-md-2">@StaticResource.Resources.Person</label>
-                <div class="col-md-10">
-                    @Html.ListBox("PersonId", (MultiSelectList)ViewBag.PersonsZh, new { @class = "form-control" })
-                </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label col-md-2">@StaticResource.Resources.Number</label>
+            <div class="col-md-10">
+                @Html.ListBox("NumberId", (MultiSelectList)ViewBag.NumbersZh, new { @class = "form-control" })
             </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label col-md-2">@StaticResource.Resources.Gender</label>
+            <div class="col-md-10">
+                @Html.ListBox("GenderId", (MultiSelectList)ViewBag.GendersZh, new { @class = "form-control" })
 
-            <div class="form-group">
-                @Html.LabelFor(model => model.VoiceId, @StaticResource.Resources.Voice, htmlAttributes: new { @class = "control-label col-md-2" })
-                <div class="col-md-10">
-                    @Html.DropDownList("VoiceId", (SelectList)ViewBag.VoiceZhId, htmlAttributes: new { @class = "form-control" })
-                    @Html.ValidationMessageFor(model => model.VoiceId, "", new { @class = "text-danger" })
-                </div>
             </div>
+        </div>
 
-            <div class="form-group">
-                @Html.LabelFor(model => model.ValencyId, @StaticResource.Resources.Valency, htmlAttributes: new { @class = "control-label col-md-2" })
-                <div class="col-md-10">
-                    @Html.DropDownList("ValencyId", (SelectList)ViewBag.ValencyZhId, htmlAttributes: new { @class = "form-control" })
-                    @Html.ValidationMessageFor(model => model.ValencyId, "", new { @class = "text-danger" })
-                </div>
+        <div class="form-group">
+            <label class="control-label col-md-2">@StaticResource.Resources.Person</label>
+            <div class="col-md-10">
+                @Html.ListBox("PersonId", (MultiSelectList)ViewBag.PersonsZh, new { @class = "form-control" })
             </div>
+        </div>
 
-            <div class="form-group">
-                @Html.LabelFor(model => model.TenseAndAspectId, @StaticResource.Resources.TenseAndAspect, htmlAttributes: new { @class = "control-label col-md-2" })
-                <div class="col-md-10">
-                    @Html.DropDownList("TenseAndAspectId", (SelectList)ViewBag.TenseAndAspectZhId, htmlAttributes: new { @class = "form-control" })
-                    @Html.ValidationMessageFor(model => model.TenseAndAspectId, "", new { @class = "text-danger" })
-                </div>
+        <div class="form-group">
+            @Html.LabelFor(model => model.VoiceId, @StaticResource.Resources.Voice, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownList("VoiceId", (SelectList)ViewBag.VoiceZhId, htmlAttributes: new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.VoiceId, "", new { @class = "text-danger" })
             </div>
+        </div>
 
-            <div class="form-group">
-                @Html.LabelFor(model => model.MoodId, @StaticResource.Resources.Mood, htmlAttributes: new { @class = "control-label col-md-2" })
-                <div class="col-md-10">
-                    @Html.DropDownList("MoodId", (SelectList)ViewBag.MoodZhId, htmlAttributes: new { @class = "form-control" })
-                    @Html.ValidationMessageFor(model => model.MoodId, "", new { @class = "text-danger" })
-                </div>
+        <div class="form-group">
+            @Html.LabelFor(model => model.ValencyId, @StaticResource.Resources.Valency, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownList("ValencyId", (SelectList)ViewBag.ValencyZhId, htmlAttributes: new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.ValencyId, "", new { @class = "text-danger" })
             </div>
-         
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.TenseAndAspectId, @StaticResource.Resources.TenseAndAspect, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownList("TenseAndAspectId", (SelectList)ViewBag.TenseAndAspectZhId, htmlAttributes: new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.TenseAndAspectId, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.MoodId, @StaticResource.Resources.Mood, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownList("MoodId", (SelectList)ViewBag.MoodZhId, htmlAttributes: new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.MoodId, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
     }
     <div class="form-group">
         @Html.LabelFor(model => model.DerivedFrom, htmlAttributes: new { @class = "control-label col-md-2" })

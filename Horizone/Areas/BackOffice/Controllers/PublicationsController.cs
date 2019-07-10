@@ -17,7 +17,8 @@ namespace Horizone.Areas.BackOffice.Controllers
         // GET: BackOffice/Publications
         public ActionResult Index()
         {
-            return View(db.Publications.ToList());
+            return View(db.Publications.OrderByDescending(x => x.Id).ToList());
+
         }
 
         // GET: BackOffice/Publications/Details/5

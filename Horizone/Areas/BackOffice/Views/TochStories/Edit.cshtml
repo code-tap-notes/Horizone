@@ -131,7 +131,6 @@
         </div>
     </div>
 }
-
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")
     @Scripts.Render("~/bundles/jquery")
@@ -141,8 +140,10 @@
         };
 
         $(function () {
-            tinymce.init({ selector: '#Description' });
-            tinymce.init({ selector: '#Symbol' });
+            tinymce.init({ selector: '#Content' });
+            tinymce.init({ selector: '#English' });
+            tinymce.init({ selector: '#Francaise' });
+            tinymce.init({ selector: '#Chinese' });
         });
     </script>
 }

@@ -100,7 +100,13 @@
             @Html.ValidationMessageFor(model => model.English, "", new { @class = "text-danger" })
         </div>
     </div>
-
+    <div class="form-group">
+        @Html.LabelFor(model => model.Sanskrit, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.Sanskrit, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.Sanskrit, "", new { @class = "text-danger" })
+        </div>
+    </div>
     <div class="form-group">
         @Html.LabelFor(model => model.Francaise, htmlAttributes: new { @class = "control-label col-md-2" })
         <div class="col-md-10">
@@ -154,19 +160,19 @@
         <div class="form-group">
             <label class="control-label col-md-2">@StaticResource.Resources.Case</label>
             <div class="col-md-10">
-                @Html.ListBox("CaseId", (MultiSelectList)ViewBag.CasesEn, new { @class = "form-control" }) 
+                @Html.ListBox("CaseId", (MultiSelectList)ViewBag.CasesEn, new { @class = "form-control" })
             </div>
         </div>
         <div class="form-group">
             <label class="control-label col-md-2">@StaticResource.Resources.Number</label>
             <div class="col-md-10">
-                @Html.ListBox("NumberId", (MultiSelectList)ViewBag.NumbersEn, new { @class = "form-control" }) 
+                @Html.ListBox("NumberId", (MultiSelectList)ViewBag.NumbersEn, new { @class = "form-control" })
             </div>
         </div>
         <div class="form-group">
             <label class="control-label col-md-2">@StaticResource.Resources.Gender</label>
             <div class="col-md-10">
-                @Html.ListBox("GenderId", (MultiSelectList)ViewBag.GendersEn, new { @class = "form-control" }) 
+                @Html.ListBox("GenderId", (MultiSelectList)ViewBag.GendersEn, new { @class = "form-control" })
             </div>
         </div>
 
@@ -193,7 +199,7 @@
         <div class="form-group">
             <label class="control-label col-md-2">@StaticResource.Resources.Case</label>
             <div class="col-md-10">
-                @Html.ListBox("CaseId", (MultiSelectList)ViewBag.CasesFr, new { @class = "form-control" }) 
+                @Html.ListBox("CaseId", (MultiSelectList)ViewBag.CasesFr, new { @class = "form-control" })
                 @Html.ValidationMessageFor(model => model.Cases, "", new { @class = "text-danger" })
 
             </div>
@@ -201,7 +207,7 @@
         <div class="form-group">
             <label class="control-label col-md-2">@StaticResource.Resources.Number</label>
             <div class="col-md-10">
-                @Html.ListBox("NumberId", (MultiSelectList)ViewBag.NumbersFr, new { @class = "form-control" })  
+                @Html.ListBox("NumberId", (MultiSelectList)ViewBag.NumbersFr, new { @class = "form-control" })
                 @Html.ValidationMessageFor(model => model.WordSubClassId, "", new { @class = "text-danger" })
 
             </div>
@@ -209,7 +215,7 @@
         <div class="form-group">
             <label class="control-label col-md-2">@StaticResource.Resources.Gender</label>
             <div class="col-md-10">
-                @Html.ListBox("GenderId", (MultiSelectList)ViewBag.GendersFr, new { @class = "form-control" })  
+                @Html.ListBox("GenderId", (MultiSelectList)ViewBag.GendersFr, new { @class = "form-control" })
                 @Html.ValidationMessageFor(model => model.Genders, "", new { @class = "text-danger" })
 
             </div>
@@ -236,19 +242,19 @@
         <div class="form-group">
             <label class="control-label col-md-2">@StaticResource.Resources.Case</label>
             <div class="col-md-10">
-                @Html.ListBox("CaseId", (MultiSelectList)ViewBag.CasesZh, new { @class = "form-control" })  
+                @Html.ListBox("CaseId", (MultiSelectList)ViewBag.CasesZh, new { @class = "form-control" })
             </div>
         </div>
         <div class="form-group">
             <label class="control-label col-md-2">@StaticResource.Resources.Number</label>
             <div class="col-md-10">
-                @Html.ListBox("NumberId", (MultiSelectList)ViewBag.NumbersZh, new { @class = "form-control" })  
+                @Html.ListBox("NumberId", (MultiSelectList)ViewBag.NumbersZh, new { @class = "form-control" })
             </div>
         </div>
         <div class="form-group">
             <label class="control-label col-md-2">@StaticResource.Resources.Gender</label>
             <div class="col-md-10">
-                @Html.ListBox("GenderId", (MultiSelectList)ViewBag.GendersZh, new { @class = "form-control" })  
+                @Html.ListBox("GenderId", (MultiSelectList)ViewBag.GendersZh, new { @class = "form-control" })
             </div>
         </div>
 

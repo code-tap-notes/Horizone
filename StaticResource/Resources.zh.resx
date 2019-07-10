@@ -1834,4 +1834,34 @@ TochPhase</value>
   <data name="FormNominal" xml:space="preserve">
     <value>动词中的名词形式</value>
   </data>
+  <data name="SearchContain" xml:space="preserve">
+    <value>搜索包含元素的单词</value>
+  </data>
+  <data name="SearchElement" xml:space="preserve">
+    <value>键入要查找的元素</value>
+  </data>
+  <data name="SearchEnd" xml:space="preserve">
+    <value>在结尾处搜索带有元素的单词</value>
+  </data>
+  <data name="Sanskrit" xml:space="preserve">
+    <value>梵文</value>
+  </data>
+  <data name="OtherWord" xml:space="preserve">
+    <value>换句话说</value>
+  </data>
+  <data name="All" xml:space="preserve">
+    <value>所有</value>
+  </data>
+  <data name="SearchBy" xml:space="preserve">
+    <value>搜索</value>
+  </data>
+  <data name="Answer" xml:space="preserve">
+    <value>回答</value>
+  </data>
+  <data name="Question" xml:space="preserve">
+    <value>题</value>
+  </data>
+  <data name="SiteMap" xml:space="preserve">
+    <value>网站地图</value>
+  </data>
 </root>

@@ -27,11 +27,7 @@ namespace Horizone.Areas.BackOffice.Controllers
             var activitys = db.Activitys.Include("Language").Include("Topic").Where(x => x.Topic.Id == 14);
             return View(activitys.OrderByDescending(x => x.Id).ToList());
         }
-        public ActionResult Publications()
-        {
-            var activitys = db.Activitys.Include("Language").Include("Topic").Where(x => x.Topic.Id == 10);
-            return View(activitys.OrderByDescending(x => x.Id).ToList());
-        }
+        
         public ActionResult ConferencesAndSeminar()
         {
             var activitys = db.Activitys.Include("Language").Include("Topic").Where(x => x.Topic.Id == 13 || x.Topic.Id == 9);
@@ -50,7 +46,7 @@ namespace Horizone.Areas.BackOffice.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Activity activity = db.Activitys.Find(id);
+            Activity activity = db.Activitys.Include("language").Include("Topic").SingleOrDefault(x=>x.Id==id);
             if (activity == null)
             {
                 return HttpNotFound();

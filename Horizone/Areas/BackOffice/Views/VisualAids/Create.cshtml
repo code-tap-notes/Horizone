@@ -40,15 +40,23 @@
     </div>
 
     <div class="form-group">
-        @Html.LabelFor(model => model.Map, htmlAttributes: new { @class = "control-label col-md-2" })
+        @Html.LabelFor(model => model.Question, htmlAttributes: new { @class = "control-label col-md-2" })
         <div class="col-md-10">
             <div class="checkbox">
-                @Html.EditorFor(model => model.Map)
-                @Html.ValidationMessageFor(model => model.Map, "", new { @class = "text-danger" })
+                @Html.EditorFor(model => model.Question)
+                @Html.ValidationMessageFor(model => model.Question, "", new { @class = "text-danger" })
             </div>
         </div>
     </div>
-
+    <div class="form-group">
+        @Html.LabelFor(model => model.Glosary, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            <div class="checkbox">
+                @Html.EditorFor(model => model.Glosary)
+                @Html.ValidationMessageFor(model => model.Glosary, "", new { @class = "text-danger" })
+            </div>
+        </div>
+    </div>
     <div class="form-group">
         @Html.LabelFor(model => model.LanguageId, "LanguageId", htmlAttributes: new { @class = "control-label col-md-2" })
         <div class="col-md-10">

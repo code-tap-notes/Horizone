@@ -10,6 +10,7 @@
     <link href="~/Content/layout.css" rel="stylesheet" />
 </head>
 <body class="parallax" style="background-color: lightcyan">
+
     <div class="navbar navbar-expand-sm navbar-light navbar-fixed-top" style="background-color: lightgrey; color: mediumseagreen ; font-weight:bold;">
         <div class="container">
             <div class="navbar-header">
@@ -713,6 +714,7 @@
             </div>
         </div>
     </div>
+
     <div class="navbar navbar-expand-sm" style="background-color: lightblue; font-size: inherit; font-weight:bold">
         <div class="navbar-collapse collapse">
             <ul class="nav navbar-nav">
@@ -723,7 +725,7 @@
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">@StaticResource.Resources.Manuscript <span class="caret"></span></a>
                     <ul class="dropdown-menu">
                         <li><a href="@Url.Action("Index", "Manuscripts")"> @StaticResource.Resources.Manuscript - @StaticResource.Resources.Text</a></li>
-                        <li><a href="@Url.Action("Index", "AnalyseMaterials")">@StaticResource.Resources.AnalyseMacroscopic</a></li>
+                        <li><a href="@Url.Action("index", "AnalyseMacroscopics")">@StaticResource.Resources.AnalyseMacroscopic</a></li>
                         <li><a href="@Url.Action("Index", "AnalyseMaterials")">@StaticResource.Resources.AnalyseMicroscopic</a></li>
                     </ul>
                 </li>
@@ -747,7 +749,7 @@
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">@StaticResource.Resources.Activity <span class="caret"></span></a>
                     <ul class="dropdown-menu">
-                        <li><a href="@Url.Action("Publications", "Activities")"> @StaticResource.Resources.Publications</a></li>
+                        <li><a href="@Url.Action("Index", "Publications")"> @StaticResource.Resources.Publications</a></li>
                         <li><a href="@Url.Action("ConferencesAndSeminar", "Activities")"> @StaticResource.Resources.Conferences , @StaticResource.Resources.Seminars</a></li>
                         <li><a href="@Url.Action("Symposia", "Activities")">  @StaticResource.Resources.Symposia</a></li>
                         <li><a href="@Url.Action("Missions", "Activities")">  @StaticResource.Resources.Missions</a></li>
@@ -777,7 +779,6 @@
                         <li><a href="@Url.Action("Create", "Maps")">@StaticResource.Resources.Add</a></li>
                         <li><a href="@Url.Action("index", "Maps")">@StaticResource.Resources.List</a></li>
                         <li><h6 class="dropdownTitle">&#9733; @StaticResource.Resources.Help</h6></li>
-                        <li><a href="@Url.Action("Create", "Abreviations")">@StaticResource.Resources.Add</a></li>
                         <li><a href="@Url.Action("help", "dashboards")">@StaticResource.Resources.Help</a></li>
                     </ul>
                 </li>
@@ -794,6 +795,8 @@
             </ul>
         </div>
     </div>
+   
+
     <div class="container body-content">
 
         @RenderBody()

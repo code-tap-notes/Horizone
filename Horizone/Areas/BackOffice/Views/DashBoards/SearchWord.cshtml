@@ -32,7 +32,10 @@ else
             @Html.DisplayNameFor(model => model.WordSubClass.SubClass)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Word)
+            @StaticResource.Resources.Tocharian
+        </th>
+        <th>
+            @StaticResource.Resources.Sanskrit
         </th>
         <th>
             @Html.DisplayNameFor(model => model.English)
@@ -70,6 +73,9 @@ else
             @Html.DisplayFor(modelItem => item.Word)
         </td>
         <td>
+            @Html.DisplayFor(modelItem => item.Sanskrit)
+        </td>
+        <td>
             @Html.DisplayFor(modelItem => item.English)
         </td>
         <td>
@@ -85,10 +91,10 @@ else
             @Html.DisplayFor(modelItem => item.Chinese)
         </td>
         <td>
-            
-            @Html.ActionLink(@StaticResource.Resources.Edit, "Edit", new {Controller= "DictionaryTocharians", action= "Edit", id = item.Id }, new { @class = "btn btn-info", style = "width:85px" })
-            @Html.ActionLink(@StaticResource.Resources.Details, "Details", new {Controller= "DictionaryTocharians", action= "Details", id = item.Id }, new { @class = "btn btn-info", style = "width:85px" })
-            @Html.ActionLink(@StaticResource.Resources.Delete, "Delete", new {Controller= "DictionaryTocharians", action= "Delete", id = item.Id }, new { @class = "btn btn-info", style = "width:85px" })
+
+            @Html.ActionLink(@StaticResource.Resources.Edit, "Edit", new { Controller = "DictionaryTocharians", action = "Edit", id = item.Id }, new { @class = "btn btn-info", style = "width:85px" })
+            @Html.ActionLink(@StaticResource.Resources.Details, "Details", new { Controller = "DictionaryTocharians", action = "Details", id = item.Id }, new { @class = "btn btn-info", style = "width:85px" })
+            @Html.ActionLink(@StaticResource.Resources.Delete, "Delete", new { Controller = "DictionaryTocharians", action = "Delete", id = item.Id }, new { @class = "btn btn-info", style = "width:85px" })
         </td>
     </tr>
     }

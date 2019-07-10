@@ -43,6 +43,7 @@ namespace Horizone.Areas.BackOffice.Controllers
             var aboutProjets = db.AboutProjets.Include("Language").Include("ImageProjects");
             return PartialView(aboutProjets.ToList());
         }
+
         [ChildActionOnly]
         public ActionResult SpecialCharacter()
         {
@@ -72,7 +73,13 @@ namespace Horizone.Areas.BackOffice.Controllers
         public ActionResult PageActivity()
         {
             var activitys = db.Activitys.Include("Language");
-            return PartialView(activitys.OrderByDescending(x => x.DateofActivity).ToList());
+            return PartialView(activitys.OrderByDescending(x => x.DateofActivity).Take(5).ToList());
+        }
+        [ChildActionOnly]
+        public ActionResult PagePublication()
+        {
+            return PartialView(db.Publications.OrderByDescending(x => x.Id).Take(5).ToList());
+
         }
         // 3 news have max view
         [ChildActionOnly]
@@ -118,22 +125,15 @@ namespace Horizone.Areas.BackOffice.Controllers
             return PartialView(linkAndPresses.ToList());
         }
         [ChildActionOnly]
-        public ActionResult Search(string search, string title, string journal)
+        public ActionResult Search(string search)
         {
             IEnumerable<Bibliography> bibliographies = db.Bibliographys;
             if (!string.IsNullOrWhiteSpace(search))
             {
-                bibliographies = bibliographies.Where(x => x.Author.Contains(search));
-                //bibliographies = bibliographies.Where(x => x.PublicationDate.Contains(search));
-                //bibliographies = bibliographies.Where(x => x.Title.Contains(search));
-                //|| || (x=> x.PublicationDate.Contains(search)
-                //|| x.Journal.Contains(search)
-                //|| x.Title.Contains(search));
+                bibliographies = bibliographies.Where(x => x.Author.Contains(search)
+                || x.Journal.Contains(search)
+                || x.Title.Contains(search));
             }
-            //if (!string.IsNullOrWhiteSpace(title))
-            //    bibliographies = bibliographies.Where(y => y.Title.Contains(title));
-            //if (!string.IsNullOrWhiteSpace(journal))
-            //    bibliographies = bibliographies.Where(y => y.Journal.Contains(journal));
             if (bibliographies.Count() == 0)
             {
                 Display("Aucun résultat");

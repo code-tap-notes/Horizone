@@ -75,81 +75,81 @@
             <dd>
                 @Html.DisplayFor(model => model.WordSubClass.SubClassEn)
             </dd>
-           
-                <dt>
-                    @Html.DisplayNameFor(model => model.Mood.MoodEn)
-                </dt>
-                <dd>
-                    @Html.DisplayFor(model => model.Mood.MoodEn)
-                </dd>
-                <dt>
-                    @Html.DisplayNameFor(model => model.TenseAndAspect.TenseEn)
-                </dt>
-                <dd>
-                    @Html.DisplayFor(model => model.TenseAndAspect.TenseEn)
-                </dd>
-                <dt>
-                    @Html.DisplayNameFor(model => model.Valency.AbbreviationValency)
-                </dt>
-                <dd>
-                    @Html.DisplayFor(model => model.Valency.ValencyEn)
-                </dd>
-                <dt>
-                    @Html.DisplayNameFor(model => model.Voice.AbbreviationVoice)
-                </dt>
-                <dd>
-                    @Html.DisplayFor(model => model.Voice.VoiceEn)
-                </dd>
-                <dt>
-                    @StaticResource.Resources.Person
-                </dt>
-                <dd>
-                    <table class="table table-striped">
-                        @foreach (var item in Model.Persons)
-                        {
-                            <tr><td>@item.ConjugatedPersonEn</td></tr>
-                        }
 
-                    </table>
-                </dd>
-            
-                <dt>
-                    @StaticResource.Resources.Case
-                </dt>
-                <dd>
-                    <table class="table table-striped">
-                        @foreach (var item in Model.Cases)
-                        {
-                            <tr><td>@item.NameCaseEn</td></tr>
-                        }
+            <dt>
+                @Html.DisplayNameFor(model => model.Mood.MoodEn)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.Mood.MoodEn)
+            </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.TenseAndAspect.TenseEn)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.TenseAndAspect.TenseEn)
+            </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.Valency.AbbreviationValency)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.Valency.ValencyEn)
+            </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.Voice.AbbreviationVoice)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.Voice.VoiceEn)
+            </dd>
+            <dt>
+                @StaticResource.Resources.Person
+            </dt>
+            <dd>
+                <table class="table table-striped">
+                    @foreach (var item in Model.Persons)
+                    {
+                        <tr><td>@item.ConjugatedPersonEn</td></tr>
+                    }
 
-                    </table>
-                </dd>
-                <dt>
-                    @StaticResource.Resources.Gender
-                </dt>
-                <dd>
-                    <table class="table table-striped">
-                        @foreach (var item in Model.Genders)
-                        {
-                            <tr><td>@item.NameGenderEn</td></tr>
-                        }
+                </table>
+            </dd>
 
-                    </table>
-                </dd>
-                <dt>
-                    @StaticResource.Resources.Number
-                </dt>
-                <dd>
-                    <table class="table table-striped">
-                        @foreach (var item in Model.Numbers)
-                        {
-                            <tr><td>@item.WordNumberEn</td></tr>
-                        }
+            <dt>
+                @StaticResource.Resources.Case
+            </dt>
+            <dd>
+                <table class="table table-striped">
+                    @foreach (var item in Model.Cases)
+                    {
+                        <tr><td>@item.NameCaseEn</td></tr>
+                    }
 
-                    </table>
-                </dd>
-           
+                </table>
+            </dd>
+            <dt>
+                @StaticResource.Resources.Gender
+            </dt>
+            <dd>
+                <table class="table table-striped">
+                    @foreach (var item in Model.Genders)
+                    {
+                        <tr><td>@item.NameGenderEn</td></tr>
+                    }
+
+                </table>
+            </dd>
+            <dt>
+                @StaticResource.Resources.Number
+            </dt>
+            <dd>
+                <table class="table table-striped">
+                    @foreach (var item in Model.Numbers)
+                    {
+                        <tr><td>@item.WordNumberEn</td></tr>
+                    }
+
+                </table>
+            </dd>
+
         }
 
         @if (Session[Horizone.Common.CommonConstants.CurrentCulture].ToString() == "fr")
@@ -166,81 +166,81 @@
             <dd>
                 @Html.DisplayFor(model => model.WordSubClass.SubClassFr)
             </dd>
-            
-                <dt>
-                    @Html.DisplayNameFor(model => model.Mood.MoodFr)
-                </dt>
-                <dd>
-                    @Html.DisplayFor(model => model.Mood.MoodFr)
-                </dd>
-                <dt>
-                    @Html.DisplayNameFor(model => model.TenseAndAspect.TenseFr)
-                </dt>
-                <dd>
-                    @Html.DisplayFor(model => model.TenseAndAspect.TenseFr)
-                </dd>
-                <dt>
-                    @Html.DisplayNameFor(model => model.Valency.AbbreviationValency)
-                </dt>
-                <dd>
-                    @Html.DisplayFor(model => model.Valency.ValencyFr)
-                </dd>
-                <dt>
-                    @Html.DisplayNameFor(model => model.Voice.AbbreviationVoice)
-                </dt>
-                <dd>
-                    @Html.DisplayFor(model => model.Voice.VoiceFr)
-                </dd>
-                <dt>
-                    @StaticResource.Resources.Person
-                </dt>
-                <dd>
-                    <table class="table table-striped">
-                        @foreach (var item in Model.Persons)
-                        {
-                            <tr><td>@item.ConjugatedPersonFr</td></tr>
-                        }
 
-                    </table>
-                </dd>
-           
-                <dt>
-                    @StaticResource.Resources.Case
-                </dt>
-                <dd>
-                    <table class="table table-striped">
-                        @foreach (var item in Model.Cases)
-                        {
-                            <tr><td>@item.NameCaseFr</td></tr>
-                        }
+            <dt>
+                @Html.DisplayNameFor(model => model.Mood.MoodFr)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.Mood.MoodFr)
+            </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.TenseAndAspect.TenseFr)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.TenseAndAspect.TenseFr)
+            </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.Valency.AbbreviationValency)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.Valency.ValencyFr)
+            </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.Voice.AbbreviationVoice)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.Voice.VoiceFr)
+            </dd>
+            <dt>
+                @StaticResource.Resources.Person
+            </dt>
+            <dd>
+                <table class="table table-striped">
+                    @foreach (var item in Model.Persons)
+                    {
+                        <tr><td>@item.ConjugatedPersonFr</td></tr>
+                    }
 
-                    </table>
-                </dd>
-                <dt>
-                    @StaticResource.Resources.Gender
-                </dt>
-                <dd>
-                    <table class="table table-striped">
-                        @foreach (var item in Model.Genders)
-                        {
-                            <tr><td>@item.NameGenderFr</td></tr>
-                        }
+                </table>
+            </dd>
 
-                    </table>
-                </dd>
-                <dt>
-                    @StaticResource.Resources.Number
-                </dt>
-                <dd>
-                    <table class="table table-striped">
-                        @foreach (var item in Model.Numbers)
-                        {
-                            <tr><td>@item.WordNumberFr</td></tr>
-                        }
+            <dt>
+                @StaticResource.Resources.Case
+            </dt>
+            <dd>
+                <table class="table table-striped">
+                    @foreach (var item in Model.Cases)
+                    {
+                        <tr><td>@item.NameCaseFr</td></tr>
+                    }
 
-                    </table>
-                </dd>
-           
+                </table>
+            </dd>
+            <dt>
+                @StaticResource.Resources.Gender
+            </dt>
+            <dd>
+                <table class="table table-striped">
+                    @foreach (var item in Model.Genders)
+                    {
+                        <tr><td>@item.NameGenderFr</td></tr>
+                    }
+
+                </table>
+            </dd>
+            <dt>
+                @StaticResource.Resources.Number
+            </dt>
+            <dd>
+                <table class="table table-striped">
+                    @foreach (var item in Model.Numbers)
+                    {
+                        <tr><td>@item.WordNumberFr</td></tr>
+                    }
+
+                </table>
+            </dd>
+
         }
 
         @if (Session[Horizone.Common.CommonConstants.CurrentCulture].ToString() == "zh")
@@ -257,82 +257,88 @@
             <dd>
                 @Html.DisplayFor(model => model.WordSubClass.SubClassZh)
             </dd>
-             
-                <dt>
-                    @Html.DisplayNameFor(model => model.Mood.MoodZh)
-                </dt>
-                <dd>
-                    @Html.DisplayFor(model => model.Mood.MoodZh)
-                </dd>
-                <dt>
-                    @Html.DisplayNameFor(model => model.TenseAndAspect.Tense)
-                </dt>
-                <dd>
-                    @Html.DisplayFor(model => model.TenseAndAspect.TenseZh)
-                </dd>
-                <dt>
-                    @Html.DisplayNameFor(model => model.Valency.AbbreviationValency)
-                </dt>
-                <dd>
-                    @Html.DisplayFor(model => model.Valency.ValencyZh)
-                </dd>
-                <dt>
-                    @Html.DisplayNameFor(model => model.Voice.AbbreviationVoice)
-                </dt>
-                <dd>
-                    @Html.DisplayFor(model => model.Voice.VoiceZh)
-                </dd>
-                <dt>
-                    @StaticResource.Resources.Person
-                </dt>
-                <dd>
-                    <table class="table table-striped">
-                        @foreach (var item in Model.Persons)
-                        {
-                            <tr><td>@item.ConjugatedPersonZh</td></tr>
-                        }
 
-                    </table>
-                </dd>
-            
-                <dt>
-                    @StaticResource.Resources.Case
-                </dt>
-                <dd>
-                    <table class="table table-striped">
-                        @foreach (var item in Model.Cases)
-                        {
-                            <tr><td>@item.NameCaseZh</td></tr>
-                        }
+            <dt>
+                @Html.DisplayNameFor(model => model.Mood.MoodZh)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.Mood.MoodZh)
+            </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.TenseAndAspect.Tense)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.TenseAndAspect.TenseZh)
+            </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.Valency.AbbreviationValency)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.Valency.ValencyZh)
+            </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.Voice.AbbreviationVoice)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.Voice.VoiceZh)
+            </dd>
+            <dt>
+                @StaticResource.Resources.Person
+            </dt>
+            <dd>
+                <table class="table table-striped">
+                    @foreach (var item in Model.Persons)
+                    {
+                        <tr><td>@item.ConjugatedPersonZh</td></tr>
+                    }
 
-                    </table>
-                </dd>
-                <dt>
-                    @StaticResource.Resources.Gender
-                </dt>
-                <dd>
-                    <table class="table table-striped">
-                        @foreach (var item in Model.Genders)
-                        {
-                            <tr><td>@item.NameGenderZh</td></tr>
-                        }
+                </table>
+            </dd>
 
-                    </table>
-                </dd>
-                <dt>
-                    @StaticResource.Resources.Number
-                </dt>
-                <dd>
-                    <table class="table table-striped">
-                        @foreach (var item in Model.Numbers)
-                        {
-                            <tr><td>@item.WordNumberZh</td></tr>
-                        }
+            <dt>
+                @StaticResource.Resources.Case
+            </dt>
+            <dd>
+                <table class="table table-striped">
+                    @foreach (var item in Model.Cases)
+                    {
+                        <tr><td>@item.NameCaseZh</td></tr>
+                    }
 
-                    </table>
-                </dd>
-             
+                </table>
+            </dd>
+            <dt>
+                @StaticResource.Resources.Gender
+            </dt>
+            <dd>
+                <table class="table table-striped">
+                    @foreach (var item in Model.Genders)
+                    {
+                        <tr><td>@item.NameGenderZh</td></tr>
+                    }
+
+                </table>
+            </dd>
+            <dt>
+                @StaticResource.Resources.Number
+            </dt>
+            <dd>
+                <table class="table table-striped">
+                    @foreach (var item in Model.Numbers)
+                    {
+                        <tr><td>@item.WordNumberZh</td></tr>
+                    }
+
+                </table>
+            </dd>
+
         }
+        <dt>
+            @StaticResource.Resources.Meaning @Html.DisplayNameFor(model => model.Sanskrit)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Sanskrit)
+        </dd>
         <dt>
             @StaticResource.Resources.Meaning @Html.DisplayNameFor(model => model.English)
         </dt>
@@ -428,11 +434,16 @@
     </dl>
 </div>
 <p>
-    @Html.ActionLink(StaticResource.Resources.Edit, "Edit", new { id = Model.Id }, new { @class = "btn btn-info", style = "width:85px" }) |
-    @Html.ActionLink(StaticResource.Resources.Noun, "AddNounAdjective", new { id = Model.Id }, new { @class = "btn btn-info", style = "width:85px" }) |
-    @Html.ActionLink(StaticResource.Resources.Verb, "AddVerb", new { id = Model.Id }, new { @class = "btn btn-info", style = "width:85px" }) |
-    @Html.ActionLink(StaticResource.Resources.Pronoun, "AddPronoun", new { id = Model.Id }, new { @class = "btn btn-info", style = "width:85px" }) |
-    @Html.ActionLink(StaticResource.Resources.OtherWords, "AddWord", new { id = Model.Id }, new { @class = "btn btn-info", style = "width:85px" }) |
-    @Html.ActionLink(StaticResource.Resources.Return, "Index", null, new { @class = "btn btn-primary", style = "width:85px" }) |
-    
+
+    @Html.ActionLink(StaticResource.Resources.Edit, "Edit", new { id = Model.Id }, new { @class = "btn btn-info", style = "width:85px" })
+    @Html.ActionLink(StaticResource.Resources.Return, "Index", null, new { @class = "btn btn-primary", style = "width:85px" }) 
+
+    <br />
+    <h4>@StaticResource.Resources.Add @StaticResource.Resources.Catalogue </h4>
+    <br/>
+    @Html.ActionLink(StaticResource.Resources.Noun, "AddNounAdjective", new { id = Model.Id }, new { @class = "btn btn-default", style = "background-color: #A8A2CC; width:95px" }) |
+    @Html.ActionLink(StaticResource.Resources.Verb, "AddVerb", new { id = Model.Id }, new { @class = "btn btn-default", style = "background-color: #A8A2CC; width:95px;" }) |
+    @Html.ActionLink(StaticResource.Resources.Pronoun, "AddPronoun", new { id = Model.Id }, new { @class = "btn btn-default", style = "background-color: #A8A2CC; width:95px;" }) |
+    @Html.ActionLink(StaticResource.Resources.OtherWords, "AddWord", new { id = Model.Id }, new { @class = "btn btn-default", style = "background-color: #A8A2CC; width:95px;" }) 
+
 </p>

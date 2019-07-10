@@ -55,6 +55,9 @@
             @StaticResource.Resources.Language
         </th>
         <th>
+            @StaticResource.Resources.Meaning @StaticResource.Resources.Sanskrit
+        </th>
+        <th>
             @StaticResource.Resources.Meaning @StaticResource.Resources.English
         </th>
         <th>
@@ -88,6 +91,10 @@
         <td>
             @Html.DisplayFor(modelItem => item.TochLanguage.Language)
         </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Sanskrit)
+        </td>
+
         <td>
             @Html.DisplayFor(modelItem => item.English)
         </td>

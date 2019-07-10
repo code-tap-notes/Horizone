@@ -1,0 +1,10 @@
+﻿@model IEnumerable<Horizone.Models.Publication>
+
+@foreach (var item in Model)
+{
+
+    <p>&diams; @Html.Raw(item.PublicationDate)| @Html.Raw(item.Title)| @Html.Raw(item.Journal)</p>
+    <a href=@item.UlrBibliography> @StaticResource.Resources.LearnMore  &raquo;</a>
+
+}
+

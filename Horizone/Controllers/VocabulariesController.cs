@@ -46,8 +46,8 @@ namespace Horizone.Controllers
         }
         public ActionResult Adverb()
         {
-            var dictionaryTocharians = db.DictionaryTocharians.Where(x => x.WordClass.ClassEn == "Adverb"|| x.WordSubClass.SubClassEn =="Adverb").Include(d => d.TochLanguage).Include(d => d.WordClass).Include(d => d.WordSubClass).Include("Cases").Include("Numbers").Include("Genders").Include("Persons");
-            return View(dictionaryTocharians.OrderBy(x => x.Word).ToList());
+            var otherWords = db.OtherWords.Where(x => x.WordClass.ClassEn == "Adverb"|| x.WordSubClass.SubClassEn =="Adverb").Include(d => d.TochLanguage).Include(d => d.WordClass).Include(d => d.WordSubClass).Include("Numbers");
+            return View(otherWords.OrderBy(x => x.TochWord).ToList());
         }
         public ActionResult Noun()
         {
@@ -64,7 +64,11 @@ namespace Horizone.Controllers
             var nounAdjectives = db.NounAdjectives.Where(x => x.WordClass.ClassEn == "Adjective").Include(d => d.TochLanguage).Include(d => d.WordClass).Include(d => d.WordSubClass).Include("Cases").Include("Numbers").Include("Genders");
             return View(nounAdjectives.OrderBy(x => x.TochWord).ToList());
         }
-
+        public ActionResult OtherWord()
+        {
+            var otherWords = db.OtherWords.Include(d => d.TochLanguage).Include(d => d.WordClass).Include(d => d.WordSubClass).Include("Numbers");
+            return View(otherWords.OrderBy(x => x.TochWord).ToList());
+        }
         public ActionResult Abbreviation(int page = 1, int pageSize = 30)
         {
             var abbreviationDictionaries = db.AbbreviationDictionaries.Where(x => x.OtherAbbreviation == true);
@@ -110,6 +114,60 @@ namespace Horizone.Controllers
             }
             return View(dictionaryTocharian);
         }
+        public ActionResult DetailsVerb(int? id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            Verb verb = db.Verbs.Include(d => d.TochLanguage).Include(d => d.WordClass).Include(d => d.WordSubClass).Include("Numbers").Include("Persons").SingleOrDefault(y => y.Id == id);
+            if (verb == null)
+            {
+                return HttpNotFound();
+            }
+            return View(verb);
+        }
+        public ActionResult DetailsOtherWord(int? id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            OtherWord otherWord  = db.OtherWords.Include(d => d.TochLanguage).Include(d => d.WordClass).Include(d => d.WordSubClass).Include("Numbers").SingleOrDefault(y => y.Id == id);
+            if (otherWord == null)
+            {
+                return HttpNotFound();
+            }
+            return View(otherWord);
+        }
+        public ActionResult DetailsNoun(int? id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+
+            NounAdjective nounAdjective = db.NounAdjectives.Include(d => d.TochLanguage).Include(d => d.WordClass).Include(d => d.WordSubClass).Include("Cases").Include("Numbers").Include("Genders").SingleOrDefault(y => y.Id == id);
+            if (nounAdjective == null)
+            {
+                return HttpNotFound();
+            }
+            return View(nounAdjective);
+        }
+        public ActionResult DetailsPronoun(int? id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+
+            Pronoun pronoun = db.Pronouns.Include(d => d.TochLanguage).Include(d => d.WordClass).Include(d => d.WordSubClass).Include("Cases").Include("Numbers").Include("Genders").Include("Persons").SingleOrDefault(y => y.Id == id);
+            if (pronoun == null)
+            {
+                return HttpNotFound();
+            }
+            return View(pronoun);
+        }
         public ActionResult Search(string search)
         {
             IEnumerable<DictionaryTocharian> dictionaryTocharians = db.DictionaryTocharians;
@@ -117,6 +175,21 @@ namespace Horizone.Controllers
             {
                 dictionaryTocharians = dictionaryTocharians.Where(x => x.Word.Contains(search));              
             }          
+            if (dictionaryTocharians.Count() == 0)
+            {
+                Display("Aucun résultat");
+            }
+            return View("Search", dictionaryTocharians.OrderBy(x => x.Word).ToList());
+        }
+        
+             public ActionResult SearchSanskrit(string search)
+        {
+            IEnumerable<DictionaryTocharian> dictionaryTocharians = db.DictionaryTocharians;
+            if (!string.IsNullOrWhiteSpace(search))
+            {
+                dictionaryTocharians = dictionaryTocharians.Where(x => x.Sanskrit != null);
+                dictionaryTocharians = dictionaryTocharians.Where(x => x.Sanskrit.Contains(search));
+            }
             if (dictionaryTocharians.Count() == 0)
             {
                 Display("Aucun résultat");
@@ -214,7 +287,23 @@ namespace Horizone.Controllers
 
             if (!string.IsNullOrWhiteSpace(search))
             {
-                reverseDictionarys = reverseDictionarys.Where(x => x.Word.Contains(search)|| x.ReverseWord.Contains(search));
+                reverseDictionarys = reverseDictionarys.Where(x=>x.ReverseWord.Contains(search));
+            }
+            if (reverseDictionarys.Count() == 0)
+            {
+                Display("Aucun résultat");
+            }
+            return View("SearchReverse", reverseDictionarys.ToList());
+        }
+        
+        public ActionResult SearchEnd(string searchEnd)
+        {
+            IEnumerable<ReverseDictionary> reverseDictionarys = db.ReverseDictionaries;
+            int i = searchEnd.Length;
+
+            if (!string.IsNullOrWhiteSpace(searchEnd))
+            {
+                reverseDictionarys = reverseDictionarys.Where(x => x.ReverseWord.Length >=i &&  x.ReverseWord.Substring(x.ReverseWord.Length-i,i) ==searchEnd);
             }
             if (reverseDictionarys.Count() == 0)
             {

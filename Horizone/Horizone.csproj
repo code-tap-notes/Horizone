@@ -286,22 +286,6 @@
     <Compile Include="Migrations\201906190735271_init.Designer.cs">
       <DependentUpon>201906190735271_init.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201906232002361_changeDic.cs" />
-    <Compile Include="Migrations\201906232002361_changeDic.Designer.cs">
-      <DependentUpon>201906232002361_changeDic.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201906301558495_Word.cs" />
-    <Compile Include="Migrations\201906301558495_Word.Designer.cs">
-      <DependentUpon>201906301558495_Word.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201906301617292_ChangeWord.cs" />
-    <Compile Include="Migrations\201906301617292_ChangeWord.Designer.cs">
-      <DependentUpon>201906301617292_ChangeWord.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201907011009091_changeMultiselect.cs" />
-    <Compile Include="Migrations\201907011009091_changeMultiselect.Designer.cs">
-      <DependentUpon>201907011009091_changeMultiselect.cs</DependentUpon>
-    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AbbreviationDictionary.cs" />
     <Compile Include="Models\AboutProject.cs" />
@@ -430,72 +414,12 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
-    <Content Include="Image\10.jpg" />
-    <Content Include="Image\11.jpg" />
-    <Content Include="Image\12.jpg" />
-    <Content Include="Image\13.jpg" />
-    <Content Include="Image\14.jpg" />
     <Content Include="Image\15.jpg" />
-    <Content Include="Image\16.jpg" />
-    <Content Include="Image\17.jpg" />
-    <Content Include="Image\18.jpg" />
-    <Content Include="Image\19.jpg" />
-    <Content Include="Image\1_045609.jpg" />
-    <Content Include="Image\2.jpg" />
-    <Content Include="Image\20.jpg" />
-    <Content Include="Image\21.jpg" />
-    <Content Include="Image\22.jpg" />
-    <Content Include="Image\23.jpg" />
-    <Content Include="Image\24.jpg" />
-    <Content Include="Image\25.jpg" />
-    <Content Include="Image\26-silk-road-map.jpg" />
-    <Content Include="Image\26.jpg" />
-    <Content Include="Image\27.jpg" />
-    <Content Include="Image\3.jpg" />
-    <Content Include="Image\4-iran.jpg" />
-    <Content Include="Image\4.jpg" />
-    <Content Include="Image\5.jpg" />
-    <Content Include="Image\6.jpg" />
-    <Content Include="Image\7.jpg" />
-    <Content Include="Image\8.jpg" />
-    <Content Include="Image\9.jpg" />
     <Content Include="Image\bar.jpg" />
     <Content Include="Image\bar1.jpg" />
     <Content Include="Image\bar2.jpg" />
     <Content Include="Image\basin.jpg" />
-    <Content Include="Image\BBAW.jpg" />
-    <Content Include="Image\BNF.jfif" />
-    <Content Include="Image\BNHM.jfif" />
-    <Content Include="Image\carte.jpg" />
-    <Content Include="Image\Central_Tian_Shan_mountains.jpg" />
-    <Content Include="Image\China_Tarim.jpg" />
-    <Content Include="Image\Dunhuang.png" />
-    <Content Include="Image\icon_search_web.gif" />
-    <Content Include="Image\images.jpg" />
-    <Content Include="Image\imagesToch.jpg" />
-    <Content Include="Image\img_logo_home.gif" />
-    <Content Include="Image\logo2.png" />
-    <Content Include="Image\Map\Chorchuk.jpg" />
-    <Content Include="Image\Map\Dunhuang.png" />
-    <Content Include="Image\Map\Gaochang.jpg" />
-    <Content Include="Image\Map\Khotan.jpg" />
-    <Content Include="Image\Map\Qiuci.jpg" />
-    <Content Include="Image\Map\Turfan.jpg" />
-    <Content Include="Image\open-book.jpg" />
-    <Content Include="Image\pr1.jfif" />
-    <Content Include="Image\Silk-Road-Map-full.jpg" />
-    <Content Include="Image\silk-road-map3.png" />
-    <Content Include="Image\silk-road3.jpg" />
-    <Content Include="Image\SilkRoad1.jpg" />
-    <Content Include="Image\SilkRoad2.jpg" />
-    <Content Include="Image\SilkRoad4.jpg" />
-    <Content Include="Image\SilkRoad5.jpg" />
-    <Content Include="Image\SilkRoad6.jpg" />
     <Content Include="Image\tarim.jpg" />
-    <Content Include="Image\th.jpg" />
-    <Content Include="Image\Tocharian.jpg" />
-    <Content Include="Image\Wfm_tarim_basin.jpg" />
-    <Content Include="Image\ưien.jfif" />
     <Content Include="Rotativa\help-wkhtmltoimage.txt" />
     <Content Include="Rotativa\help-wkhtmltopdf.txt" />
     <Content Include="Rotativa\wkhtmltoimage.exe" />
@@ -901,7 +825,6 @@
     <Content Include="Areas\BackOffice\Views\ReverseDictionaries\Index.cshtml" />
     <Content Include="Areas\BackOffice\Views\DashBoards\SearchWord.cshtml" />
     <Content Include="Areas\BackOffice\Views\Activities\Symposia.cshtml" />
-    <Content Include="Areas\BackOffice\Views\Activities\Publications.cshtml" />
     <Content Include="Areas\BackOffice\Views\Activities\ConferencesAndSeminar.cshtml" />
     <Content Include="Areas\BackOffice\Views\Activities\Missions.cshtml" />
     <Content Include="Areas\BackOffice\Views\Manuscripts\Search.cshtml" />
@@ -931,6 +854,7 @@
     <Content Include="Areas\BackOffice\Views\NounAdjectives\IndexAdjective.cshtml" />
     <Content Include="Areas\BackOffice\Views\NounAdjectives\Index.cshtml" />
     <Content Include="Areas\BackOffice\Views\WordSubClasses\FormNominal.cshtml" />
+    <Content Include="Areas\BackOffice\Views\DashBoards\PagePublication.cshtml" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\cldr.js" />
     <Content Include="Scripts\cldr\event.js" />
@@ -1244,7 +1168,6 @@
     <Content Include="Views\Home\Partner.cshtml" />
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Photographs.cshtml" />
-    <Content Include="Views\Home\Glossary.cshtml" />
     <Content Include="Views\FontNews\LatestNewsFr.cshtml" />
     <Content Include="Views\FontNews\LatestNewsEn.cshtml" />
     <Content Include="Views\FontNews\LatestNewsZh.cshtml" />
@@ -1263,9 +1186,7 @@
     <Content Include="Views\Home\SourceStory.cshtml" />
     <Content Include="Views\Home\Missions.cshtml" />
     <Content Include="Views\Home\Symposia.cshtml" />
-    <Content Include="Views\Home\Publications.cshtml" />
     <Content Include="Views\Home\ConferencesAndSeminar.cshtml" />
-    <Content Include="Views\FontNews\Publications.cshtml" />
     <Content Include="Views\FontNews\ConferencesAndSymposia.cshtml" />
     <Content Include="Views\FontNews\ExpositionsAndMuseums.cshtml" />
     <Content Include="Views\FontNews\Media.cshtml" />
@@ -1287,11 +1208,21 @@
     <Content Include="Views\Vocabularies\AbbreviationGrammatical.cshtml" />
     <Content Include="Views\Vocabularies\AbbreviationLanguage.cshtml" />
     <Content Include="Views\Vocabularies\AbbreviationManuscript.cshtml" />
+    <Content Include="Views\Vocabularies\DetailsNoun.cshtml" />
+    <Content Include="Views\Vocabularies\DetailsPronoun.cshtml" />
+    <Content Include="Views\Vocabularies\DetailsVerb.cshtml" />
+    <Content Include="Views\Vocabularies\DetailsOtherWord.cshtml" />
+    <Content Include="Views\Vocabularies\OtherWord.cshtml" />
+    <Content Include="Views\Home\Publications.cshtml" />
+    <Content Include="Views\Home\PagePublication.cshtml" />
+    <Content Include="Views\Home\SearchStory.cshtml" />
+    <Content Include="Views\Home\SearchQuestion.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Areas\BackOffice\Models\" />
     <Folder Include="Image\Activity\" />
+    <Folder Include="Image\Map\" />
     <Folder Include="Image\Projet\" />
   </ItemGroup>
   <ItemGroup>
@@ -1316,18 +1247,6 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201906190735271_init.resx">
       <DependentUpon>201906190735271_init.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201906232002361_changeDic.resx">
-      <DependentUpon>201906232002361_changeDic.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201906301558495_Word.resx">
-      <DependentUpon>201906301558495_Word.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201906301617292_ChangeWord.resx">
-      <DependentUpon>201906301617292_ChangeWord.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201907011009091_changeMultiselect.resx">
-      <DependentUpon>201907011009091_changeMultiselect.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

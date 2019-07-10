@@ -15,8 +15,8 @@
         <dt>
             @Html.DisplayNameFor(model => model.Word)
         </dt>
-        <dd>
-            @Html.DisplayFor(model => model.Word)
+        <dd style="font-size: medium; font-weight:bold;">
+            <strong> @Html.DisplayFor(model => model.Word) </strong>
         </dd>
 
         <dt>
@@ -139,19 +139,20 @@
 
                     </table>
                 </dd>
-                <dt>
-                    @StaticResource.Resources.Number
-                </dt>
-                <dd>
-                    <table class="table table-striped">
-                        @foreach (var item in Model.Numbers)
-                        {
-                            <tr><td>@item.WordNumberEn</td></tr>
-                        }
 
-                    </table>
-                </dd>
             }
+            <dt>
+                @StaticResource.Resources.Number
+            </dt>
+            <dd>
+                <table class="table table-striped">
+                    @foreach (var item in Model.Numbers)
+                    {
+                        <tr><td>@item.WordNumberEn</td></tr>
+                    }
+
+                </table>
+            </dd>
 
         }
 
@@ -235,19 +236,20 @@
 
                     </table>
                 </dd>
-                <dt>
-                    @StaticResource.Resources.Number
-                </dt>
-                <dd>
-                    <table class="table table-striped">
-                        @foreach (var item in Model.Numbers)
-                        {
-                            <tr><td>@item.WordNumberFr</td></tr>
-                        }
 
-                    </table>
-                </dd>
             }
+            <dt>
+                @StaticResource.Resources.Number
+            </dt>
+            <dd>
+                <table class="table table-striped">
+                    @foreach (var item in Model.Numbers)
+                    {
+                        <tr><td>@item.WordNumberFr</td></tr>
+                    }
+
+                </table>
+            </dd>
 
         }
 
@@ -331,21 +333,28 @@
 
                     </table>
                 </dd>
-                <dt>
-                    @StaticResource.Resources.Number
-                </dt>
-                <dd>
-                    <table class="table table-striped">
-                        @foreach (var item in Model.Numbers)
-                        {
-                            <tr><td>@item.WordNumberZh</td></tr>
-                        }
 
-                    </table>
-                </dd>
             }
+            <dt>
+                @StaticResource.Resources.Number
+            </dt>
+            <dd>
+                <table class="table table-striped">
+                    @foreach (var item in Model.Numbers)
+                    {
+                        <tr><td>@item.WordNumberZh</td></tr>
+                    }
+
+                </table>
+            </dd>
 
         }
+        <dt>
+            @StaticResource.Resources.Meaning @Html.DisplayNameFor(model => model.Sanskrit)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Sanskrit)
+        </dd>
         <dt>
             @StaticResource.Resources.Meaning @Html.DisplayNameFor(model => model.English)
         </dt>

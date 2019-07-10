@@ -3,13 +3,21 @@
 @{
     ViewBag.Title = @StaticResource.Resources.Details;
 }
-
-<h2>@StaticResource.Resources.Details</h2>
-
-
-<div>
-    <h4>@StaticResource.Resources.TochStory</h4>
-    <hr />
+<div class="row">
+    <div class="form-group col-md-10">
+        <hr />
+        <h4>
+            @Html.DisplayNameFor(model => model.Name) : <strong> @Html.DisplayFor(model => model.Name) </strong>
+        </h4>
+    </div>
+    <div class="form-group col-md-2">
+        <div class="col-md-10">
+            @Html.ActionLink(@StaticResource.Resources.Print, "PrintHistoire", "Home", new { id = Model.Id }, new { @class = "btn btn-info", style = "width:90px" })
+            <span class="glyphicon glyphicon-print"></span>
+        </div>
+    </div>
+</div>
+<div class="content">
     <dl class="dl-horizontal">
         <dt>
             @Html.DisplayNameFor(model => model.SourceStory.Source)
@@ -19,22 +27,35 @@
             @Html.DisplayFor(model => model.SourceStory.Source)
         </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.ThemeStory.ThemeEn)
-        </dt>
+        @if (Session[Horizone.Common.CommonConstants.CurrentCulture].ToString() == "en")
+        {
+            <dt>
+                @Html.DisplayNameFor(model => model.ThemeStory.ThemeEn)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.ThemeStory.ThemeEn)
+            </dd>
+        }
+        @if (Session[Horizone.Common.CommonConstants.CurrentCulture].ToString() == "fr")
+        {
+            <dt>
+                @Html.DisplayNameFor(model => model.ThemeStory.ThemeFr)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.ThemeStory.ThemeFr)
+            </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.ThemeStory.ThemeEn)
-        </dd>
+        }
+        @if (Session[Horizone.Common.CommonConstants.CurrentCulture].ToString() == "Zh")
+        {
+            <dt>
+                @Html.DisplayNameFor(model => model.ThemeStory.ThemeZn)
+            </dt>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Name)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Name)
-        </dd>
-
+            <dd>
+                @Html.DisplayFor(model => model.ThemeStory.ThemeZn)
+            </dd>
+        }
         <dt>
             @Html.DisplayNameFor(model => model.PlasticRepresentation)
         </dt>
@@ -42,65 +63,60 @@
         <dd>
             @Html.DisplayFor(model => model.PlasticRepresentation)
         </dd>
-
         <dt>
             @Html.DisplayNameFor(model => model.MainFindSpot)
         </dt>
-
         <dd>
             @Html.DisplayFor(model => model.MainFindSpot)
         </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Content)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Content)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.English)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.English)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Francaise)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Francaise)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Chinese)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Chinese)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Description)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Description)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Visible)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Visible)
-        </dd>
-
     </dl>
+    <div class="autocontents">
+        <h5 style="font-weight: bold">
+            @Html.DisplayNameFor(model => model.Content) @StaticResource.Resources.Tocharian
+        </h5>
+
+        @Html.DisplayFor(model => model.Content)
+
+    </div>
+    <div class="autocontents">
+        @if (Session[Horizone.Common.CommonConstants.CurrentCulture].ToString() == "en")
+        {
+
+            <h5 style="font-weight: bold">
+                @StaticResource.Resources.Meaning    @Html.DisplayNameFor(model => model.English)
+            </h5>
+
+            @Html.Raw(Model.English)
+
+        }
+        @if (Session[Horizone.Common.CommonConstants.CurrentCulture].ToString() == "fr")
+        {
+            <h5 style="font-weight: bold">
+                @StaticResource.Resources.Meaning @Html.DisplayNameFor(model => model.Francaise)
+            </h5>
+
+            @Html.Raw(Model.Francaise)
+
+        }
+        @if (Session[Horizone.Common.CommonConstants.CurrentCulture].ToString() == "zh")
+        {
+            <h5 style="font-weight: bold">
+                @StaticResource.Resources.Meaning  @Html.DisplayNameFor(model => model.Chinese)
+            </h5>
+
+
+            @Html.DisplayFor(model => model.Chinese)
+        }
+    </div>
+
+    <div>
+        <h6 style="font-weight: bold">
+            @Html.DisplayNameFor(model => model.Description)
+        </h6>
+        @Html.Raw(Model.Description)
+
+    </div>
 </div>
 <p>
-@Html.ActionLink(StaticResource.Resources.Return, "Index", null, new { @class = "btn btn-primary" })
+    @Html.ActionLink(StaticResource.Resources.Return, "Index", null, new { @class = "btn btn-primary" })
 </p>
