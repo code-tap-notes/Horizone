@@ -12,6 +12,12 @@ namespace Horizone.Models
         public int Id { get; set; }
 
         [Display(Name = "SourceStory", ResourceType = typeof(StaticResource.Resources))]
-        public string Source { get; set; }
+        public string SourceEn { get; set; }
+
+        [Display(Name = "SourceStory", ResourceType = typeof(StaticResource.Resources))]
+        public string SourceFr { get; set; }
+
+        [Display(Name = "SourceStory", ResourceType = typeof(StaticResource.Resources))]
+        public string SourceZh { get; set; }
     }
 }

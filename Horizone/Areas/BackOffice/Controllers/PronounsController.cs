@@ -84,7 +84,7 @@ namespace Horizone.Areas.BackOffice.Controllers
         // plus de détails, voir  https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,TochWord,English,Francaise,German,Latin,Chinese,TochLanguageId,WordClassId,WordSubClassId,EquivalentTA,EquivalentTB,TochCorrespondence,EquivalentInOther,DerivedFrom,RelatedLexemes,RootCharacter,InternalRootVowel,Stem,StemClass,Visible")] Pronoun pronoun, int[] CaseId, int[] GenderId, int[] NumberId, int[] PersonId)
+        public ActionResult Create([Bind(Include = "Id,TochWord,English,Francaise,German,Latin,Chinese,TochLanguageId,WordClassId,WordSubClassId,EquivalentTA,EquivalentTB,TochCommon,TochCorrespondence,EquivalentInOther,DerivedFrom,RelatedLexemes,RootCharacter,InternalRootVowel,Stem,StemClass,Visible")] Pronoun pronoun, int[] CaseId, int[] GenderId, int[] NumberId, int[] PersonId)
         {
             if (ModelState.IsValid)
             {
@@ -203,7 +203,7 @@ namespace Horizone.Areas.BackOffice.Controllers
         // plus de détails, voir  https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,TochWord,English,Francaise,German,Latin,Chinese,TochLanguageId,WordClassId,WordSubClassId,EquivalentTA,EquivalentTB,TochCorrespondence,EquivalentInOther,DerivedFrom,RelatedLexemes,RootCharacter,InternalRootVowel,Stem,StemClass,Visible")] Pronoun pronoun, int[] CaseId, int[] GenderId, int[] NumberId, int[] PersonId)
+        public ActionResult Edit([Bind(Include = "Id,TochWord,English,Francaise,German,Latin,Chinese,TochLanguageId,WordClassId,WordSubClassId,EquivalentTA,EquivalentTB,TochCommon,TochCorrespondence,EquivalentInOther,DerivedFrom,RelatedLexemes,RootCharacter,InternalRootVowel,Stem,StemClass,Visible")] Pronoun pronoun, int[] CaseId, int[] GenderId, int[] NumberId, int[] PersonId)
         {
             db.Entry(pronoun).State = EntityState.Modified;
             db.Pronouns.Include(t => t.TochLanguage).Include(p => p.WordClass).Include(p => p.WordSubClass).Include("Cases").Include("Genders").Include("Numbers").Include("Persons").SingleOrDefault(x => x.Id == pronoun.Id);

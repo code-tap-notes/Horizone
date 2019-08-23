@@ -14,15 +14,12 @@ namespace Horizone.Areas.BackOffice.Controllers
     [Authorize(Roles = "Collaborator,Admin")]
     public class ProperNounsController : BaseController
     {
-
         // GET: BackOffice/ProperNouns
         public ActionResult Index()
         {
             return View(db.ProperNouns.OrderBy(x=>x.Name).ToList());
         }
-
-        
-
+       
         // GET: BackOffice/ProperNouns/Create
         public ActionResult Create()
         {

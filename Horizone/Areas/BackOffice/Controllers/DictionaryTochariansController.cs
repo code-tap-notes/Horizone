@@ -78,6 +78,7 @@ namespace Horizone.Areas.BackOffice.Controllers
                 nounAdjective.Visible = true;
                 nounAdjective.EquivalentTA = dictionaryTocharian.EquivalentTA;
                 nounAdjective.EquivalentTB = dictionaryTocharian.EquivalentTB;
+                nounAdjective.TochCommon = dictionaryTocharian.TochCommon;
                 nounAdjective.TochCorrespondence = dictionaryTocharian.TochCorrespondence;
                 nounAdjective.RelatedLexemes = dictionaryTocharian.RelatedLexemes;
                 nounAdjective.RootCharacter = dictionaryTocharian.RootCharacter;
@@ -132,6 +133,7 @@ namespace Horizone.Areas.BackOffice.Controllers
                 verb.Visible = true;
                 verb.EquivalentTA = dictionaryTocharian.EquivalentTA;
                 verb.EquivalentTB = dictionaryTocharian.EquivalentTB;
+                verb.TochCommon = dictionaryTocharian.TochCommon;
                 verb.TochCorrespondence = dictionaryTocharian.TochCorrespondence;
                 verb.RelatedLexemes = dictionaryTocharian.RelatedLexemes;
                 verb.RootCharacter = dictionaryTocharian.RootCharacter;
@@ -181,6 +183,7 @@ namespace Horizone.Areas.BackOffice.Controllers
                 pronoun.Visible = true;
                 pronoun.EquivalentTA = dictionaryTocharian.EquivalentTA;
                 pronoun.EquivalentTB = dictionaryTocharian.EquivalentTB;
+                pronoun.TochCommon = dictionaryTocharian.TochCommon;
                 pronoun.TochCorrespondence = dictionaryTocharian.TochCorrespondence;
                 pronoun.RelatedLexemes = dictionaryTocharian.RelatedLexemes;
                 pronoun.RootCharacter = dictionaryTocharian.RootCharacter;
@@ -228,6 +231,7 @@ namespace Horizone.Areas.BackOffice.Controllers
                 otherWord.Visible = true;
                 otherWord.EquivalentTA = dictionaryTocharian.EquivalentTA;
                 otherWord.EquivalentTB = dictionaryTocharian.EquivalentTB;
+                otherWord.TochCommon = dictionaryTocharian.TochCommon;
                 otherWord.TochCorrespondence = dictionaryTocharian.TochCorrespondence;
                 otherWord.RelatedLexemes = dictionaryTocharian.RelatedLexemes;
                 otherWord.RootCharacter = dictionaryTocharian.RootCharacter;
@@ -288,7 +292,7 @@ namespace Horizone.Areas.BackOffice.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,Word,Sanskrit,English,Francaise,German,Latin,Chinese,WordClassId,WordSubClassId,TochLanguageId,EquivalentTA,EquivalentTB,TochCorrespondence,EquivalentInOther,DerivedFrom,RelatedLexemes,RootCharacter,InternalRootVowel,Stem,StemClass,VoiceId,ValencyId,TenseAndAspectId,MoodId,PronounSuffix,Visible")] DictionaryTocharian dictionaryTocharian, int[] CaseId, int[] GenderId, int[] NumberId, int[] PersonId)
+        public ActionResult Create([Bind(Include = "Id,Word,Sanskrit,English,Francaise,German,Latin,Chinese,WordClassId,WordSubClassId,TochLanguageId,EquivalentTA,EquivalentTB,TochCommon,TochCorrespondence,EquivalentInOther,DerivedFrom,RelatedLexemes,RootCharacter,InternalRootVowel,Stem,StemClass,VoiceId,ValencyId,TenseAndAspectId,MoodId,PronounSuffix,Visible")] DictionaryTocharian dictionaryTocharian, int[] CaseId, int[] GenderId, int[] NumberId, int[] PersonId)
         {
             if (ModelState.IsValid)
             {
@@ -421,7 +425,7 @@ namespace Horizone.Areas.BackOffice.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,Word,Sanskrit,English,Francaise,German,Latin,Chinese,WordClassId,WordSubClassId,TochLanguageId,EquivalentTA,EquivalentTB,TochCorrespondence,EquivalentInOther,DerivedFrom,RelatedLexemes,RootCharacter,InternalRootVowel,Stem,StemClass,VoiceId,ValencyId,TenseAndAspectId,MoodId,PronounSuffix,Visible")] DictionaryTocharian dictionaryTocharian, int[] CaseId, int[] GenderId, int[] NumberId, int[] PersonId)
+        public ActionResult Edit([Bind(Include = "Id,Word,Sanskrit,English,Francaise,German,Latin,Chinese,WordClassId,WordSubClassId,TochLanguageId,EquivalentTA,EquivalentTB,,TochCommon,TochCorrespondence,EquivalentInOther,DerivedFrom,RelatedLexemes,RootCharacter,InternalRootVowel,Stem,StemClass,VoiceId,ValencyId,TenseAndAspectId,MoodId,PronounSuffix,Visible")] DictionaryTocharian dictionaryTocharian, int[] CaseId, int[] GenderId, int[] NumberId, int[] PersonId)
         {
             db.Entry(dictionaryTocharian).State = EntityState.Modified;
             db.DictionaryTocharians.Include(t => t.TochLanguage).Include("Cases").Include("Genders").Include("Numbers").Include("Persons").SingleOrDefault(x => x.Id == dictionaryTocharian.Id);

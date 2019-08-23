@@ -1864,4 +1864,7 @@ TochPhase</value>
   <data name="SiteMap" xml:space="preserve">
     <value>网站地图</value>
   </data>
+  <data name="TochCommon" xml:space="preserve">
+    <value>Tocharian常见</value>
+  </data>
 </root>

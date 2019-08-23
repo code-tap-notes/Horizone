@@ -1876,4 +1876,7 @@ TochPhase</value>
   <data name="SiteMap" xml:space="preserve">
     <value>Plan du site</value>
   </data>
+  <data name="TochCommon" xml:space="preserve">
+    <value>Tokharien commun</value>
+  </data>
 </root>

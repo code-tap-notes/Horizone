@@ -4814,6 +4814,15 @@ namespace StaticResource {
         }
         
         /// <summary>
+        ///   Recherche une chaîne localisée semblable à Tokharien commun.
+        /// </summary>
+        public static string TochCommon {
+            get {
+                return ResourceManager.GetString("TochCommon", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Recherche une chaîne localisée semblable à Correspondance Tokharien.
         /// </summary>
         public static string TochCorrespondence {

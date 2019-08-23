@@ -98,30 +98,7 @@
         <dd>
             @Html.DisplayFor(model => model.Visible)
         </dd>
-        <dt>
-            @StaticResource.Resources.ProperNoun
-        </dt>
-        <dd>
-            <table class="table table-striped">
-                @foreach (var item in Model.ProperNouns)
-                {
-                    <tr><td>@item.Name</td></tr>
-                }
-
-            </table>
-        </dd>
-        <dt>
-            @StaticResource.Resources.NamePlaces
-        </dt>
-        <dd>
-            <table class="table table-striped">
-                @foreach (var item in Model.NamePlaces)
-                {
-                    <tr><td>@item.PlaceEn </td></tr>
-                }
-
-            </table>
-        </dd>
+       
     </dl>
 </div>
 <p>

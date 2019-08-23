@@ -10,18 +10,17 @@ namespace Horizone.Models
     {
         public int Id { get; set; }
 
-        [Display(Name = "NamePlaceEn", ResourceType = typeof(StaticResource.Resources))]
-        public string PlaceEn { get; set; }
+        [Display(Name = "NamePlaces", ResourceType = typeof(StaticResource.Resources))]
+        public string Place { get; set; }
 
-        [Display(Name = "NamePlaceFr", ResourceType = typeof(StaticResource.Resources))]
-        public string PlaceFr { get; set; }
+        [Display(Name = "Description", ResourceType = typeof(StaticResource.Resources))]
+        public string DescriptionEn { get; set; }
 
-        [Display(Name = "NamePlaceZh", ResourceType = typeof(StaticResource.Resources))]
-        public string PlaceZh { get; set; }
+        [Display(Name = "Description", ResourceType = typeof(StaticResource.Resources))]
+        public string DescriptionFr { get; set; }
 
-        [Display(Name = "TochStory", ResourceType = typeof(StaticResource.Resources))]
-        public ICollection<TochStory> TochStories { get; set; }
-
+        [Display(Name = "Description", ResourceType = typeof(StaticResource.Resources))]
+        public string DescriptionZh { get; set; }
 
     }
 }

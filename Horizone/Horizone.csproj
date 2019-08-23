@@ -286,6 +286,18 @@
     <Compile Include="Migrations\201906190735271_init.Designer.cs">
       <DependentUpon>201906190735271_init.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201907102138165_changetable.cs" />
+    <Compile Include="Migrations\201907102138165_changetable.Designer.cs">
+      <DependentUpon>201907102138165_changetable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201907121558367_ChangeStory.cs" />
+    <Compile Include="Migrations\201907121558367_ChangeStory.Designer.cs">
+      <DependentUpon>201907121558367_ChangeStory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201907121625276_changeCommon.cs" />
+    <Compile Include="Migrations\201907121625276_changeCommon.Designer.cs">
+      <DependentUpon>201907121625276_changeCommon.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AbbreviationDictionary.cs" />
     <Compile Include="Models\AboutProject.cs" />
@@ -1247,6 +1259,15 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201906190735271_init.resx">
       <DependentUpon>201906190735271_init.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201907102138165_changetable.resx">
+      <DependentUpon>201907102138165_changetable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201907121558367_ChangeStory.resx">
+      <DependentUpon>201907121558367_ChangeStory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201907121625276_changeCommon.resx">
+      <DependentUpon>201907121625276_changeCommon.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

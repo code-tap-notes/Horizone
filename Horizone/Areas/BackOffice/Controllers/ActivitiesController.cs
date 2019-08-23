@@ -67,7 +67,7 @@ namespace Horizone.Areas.BackOffice.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,DateofActivity,Place,NameActivity,Description,UlrActivity,TopicId,LanguageId")] Activity activity)
+        public ActionResult Create([Bind(Include = "Id,DateofActivity,Place,NameActivity,Description,UlrActivity,Picture,TopicId,LanguageId")] Activity activity)
         {
             if (ModelState.IsValid)
             {
@@ -103,7 +103,7 @@ namespace Horizone.Areas.BackOffice.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,DateofActivity,Place,NameActivity,Description,UlrActivity,TopicId,LanguageId")] Activity activity)
+        public ActionResult Edit([Bind(Include = "Id,DateofActivity,Place,NameActivity,Description,UlrActivity,Picture,TopicId,LanguageId")] Activity activity)
         {
             db.Entry(activity).State = EntityState.Modified;
             db.Activitys.SingleOrDefault(x => x.Id == activity.Id);

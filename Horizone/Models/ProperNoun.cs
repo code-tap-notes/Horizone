@@ -12,9 +12,6 @@ namespace Horizone.Models
 
         [Display(Name = "ProperNoun", ResourceType = typeof(StaticResource.Resources))]
         public string Name { get; set; }
-
-        [Display(Name = "TochStory", ResourceType = typeof(StaticResource.Resources))]
-        public ICollection<TochStory> TochStories { get; set; }
-
+       
     }
 }

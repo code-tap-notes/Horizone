@@ -163,7 +163,7 @@ namespace Horizone.Controllers
         //TochStory
         public ActionResult TochHistoire()
         {
-            return View(db.TochStorys.Include("SourceStory").Include("ThemeStory").ToList());
+            return View(db.TochStorys.Include("SourceStory").Include("ThemeStory").OrderBy(x=>x.Name).ToList());
         }
 
         // GET: BackOffice/TochStories/Details/5
@@ -174,11 +174,8 @@ namespace Horizone.Controllers
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
 
-            TochStory tochStory = db.TochStorys.Include("SourceStory").Include("ThemeStory").Include("NamePlaces").Include("ProperNouns").SingleOrDefault(x => x.Id == id);
-            if (tochStory.NamePlaces.Count() == 0)
-                tochStory.NamePlaces = db.NamePlaces.Where(x => x.PlaceEn == "NA").ToList();
-            if (tochStory.ProperNouns.Count() == 0)
-                tochStory.ProperNouns = db.ProperNouns.Where(x => x.Name == "NA").ToList();
+            TochStory tochStory = db.TochStorys.Include("SourceStory").Include("ThemeStory").SingleOrDefault(x => x.Id == id);
+             
             if (tochStory == null)
             {
                 return HttpNotFound();
@@ -188,19 +185,19 @@ namespace Horizone.Controllers
 
         public ActionResult ThemeStory()
         {
-            return View(db.ThemeStorys.ToList());
+            return View(db.ThemeStorys.OrderBy(x => x.ThemeEn).ToList());
         }
         public ActionResult NamePlace()
         {
-            return View(db.NamePlaces.ToList());
+            return View(db.NamePlaces.OrderBy(x=>x.Place).ToList());
         }
         public ActionResult ProperNoun()
         {
-            return View(db.ProperNouns.ToList());
+            return View(db.ProperNouns.OrderBy(x => x.Name).ToList());
         }
         public ActionResult SourceStory()
         {
-            return View(db.SourceStorys.ToList());
+            return View(db.SourceStorys.OrderBy(x => x.SourceEn).ToList());
         }
         public ActionResult PrintHistoire(int? id)
         {
@@ -262,12 +259,12 @@ namespace Horizone.Controllers
         }
         public ActionResult SearchStory(string search)
         {
-            IEnumerable<TochStory> tochStories = db.TochStorys.Include("SourceStory").Include("ThemeStory").Include("ProperNouns").Include("NamePlaces");
+            IEnumerable<TochStory> tochStories = db.TochStorys.Include("SourceStory").Include("ThemeStory");
 
             if (!string.IsNullOrWhiteSpace(search))
             {
                 tochStories = tochStories.Where(x => x.English.Contains(search) || x.Francaise.Contains(search)
-                || x.Content.Contains(search) || x.SourceStory.Source.Contains(search) 
+                || x.Content.Contains(search) || x.SourceStory.SourceEn.Contains(search) 
                 || x.ThemeStory.ThemeEn.Contains(search) || x.ThemeStory.ThemeFr.Contains(search) || x.ThemeStory.ThemeZn.Contains(search));
             }
             if (tochStories.Count() == 0)

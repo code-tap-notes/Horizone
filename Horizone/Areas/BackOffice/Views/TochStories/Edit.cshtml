@@ -46,18 +46,7 @@
                 @Html.ValidationMessageFor(model => model.ThemeStoryId, "", new { @class = "text-danger" })
             </div>
         </div>
-        <div class="form-group">
-            <label class="control-label col-md-2">@StaticResource.Resources.ProperNoun</label>
-            <div class="col-md-10">
-                @Html.ListBox("ProperNounId", (MultiSelectList)ViewBag.ProperNouns, new { @class = "form-control" })
-            </div>
-        </div>
-        <div class="form-group">
-            <label class="control-label col-md-2">@StaticResource.Resources.NamePlaces</label>
-            <div class="col-md-10">
-                @Html.ListBox("NamePlaceId", (MultiSelectList)ViewBag.NamePlaces, new { @class = "form-control" })
-            </div>
-        </div>
+        
         <div class="form-group">
             @Html.LabelFor(model => model.PlasticRepresentation, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">

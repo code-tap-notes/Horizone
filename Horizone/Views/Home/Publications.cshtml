@@ -25,6 +25,8 @@
     </tr>
 
 @foreach (var item in Model) {
+    if (item.Title != "No visible")
+    {
     <tr>
         <td>
             @Html.DisplayFor(modelItem => item.PublicationDate)
@@ -41,6 +43,7 @@
         </td>
        
     </tr>
+    }
 }
 
 </table>

@@ -18,22 +18,28 @@
         @Html.LabelFor(model => model.Name, htmlAttributes: new { @class = "control-label col-md-2" })
         <div class="col-md-10">
             <label for="search">@StaticResource.Resources.Insert @StaticResource.Resources.SpecialCharacter : </label>
-            <a onclick="insertText('Name','ā');" href="#"> ā  </a>
-            <a onclick="insertText('Name','ä');" href="#"> ä  </a>
-            <a onclick="insertText('Name','ī');" href="#"> ī  </a>
-            <a onclick="insertText('Name','ö');" href="#"> ö  </a>
-            <a onclick="insertText('Name','ū');" href="#"> ū  </a>
-            <a onclick="insertText('Name','ü');" href="#"> ü  </a>
-            <a onclick="insertText('Name','ṅ');" href="#"> ṅ  </a>
-            <a onclick="insertText('Name','ñ');" href="#"> ñ  </a>
-            <a onclick="insertText('Name','ṇ');" href="#"> ṇ  </a>
-            <a onclick="insertText('Name','ṃ');" href="#"> ṃ  </a>
-            <a onclick="insertText('Name','ś');" href="#"> ś  </a>
-            <a onclick="insertText('Name','ṣ');" href="#"> ṣ  </a>
-            <a onclick="insertText('Name','ṛ');" href="#"> ṛ  </a>
-            <a onclick="insertText('Name','ṭ');" href="#"> ṭ  </a>
-            <a onclick="insertText('Name','š');" href="#"> š  </a>
-            <a onclick="insertText('Name','ß');" href="#"> ß  </a>
+            <a onclick="insertText('Name','ā');" href="#" style="background-color: blanchedalmond; padding:5px"> ā  </a>
+            <a onclick="insertText('Name','ä');" href="#" style="background-color: blanchedalmond; padding:5px"> ä  </a>
+            <a onclick="insertText('Name','ī');" href="#" style="background-color: blanchedalmond; padding:5px"> ī  </a>
+            <a onclick="insertText('Name','ö');" href="#" style="background-color: blanchedalmond; padding:5px"> ö  </a>
+            <a onclick="insertText('Name','ū');" href="#" style="background-color: blanchedalmond; padding:5px"> ū  </a>
+            <a onclick="insertText('Name','ü');" href="#" style="background-color: blanchedalmond; padding:5px"> ü  </a>
+            <a onclick="insertText('Name','ṅ');" href="#" style="background-color: blanchedalmond; padding:5px"> ṅ  </a>
+            <a onclick="insertText('Name','ñ');" href="#" style="background-color: blanchedalmond; padding:5px"> ñ  </a>
+            <a onclick="insertText('Name','ṇ');" href="#" style="background-color: blanchedalmond; padding:5px"> ṇ  </a>
+            <a onclick="insertText('Name','ṃ');" href="#" style="background-color: blanchedalmond; padding:5px"> ṃ  </a>
+            <a onclick="insertText('Name','ś');" href="#" style="background-color: blanchedalmond; padding:5px"> ś  </a>
+            <a onclick="insertText('Name','ṣ');" href="#" style="background-color: blanchedalmond; padding:5px"> ṣ  </a>
+            <a onclick="insertText('Name','ṛ');" href="#" style="background-color: blanchedalmond; padding:5px"> ṛ  </a>
+            <a onclick="insertText('Name','ṭ');" href="#" style="background-color: blanchedalmond; padding:5px"> ṭ  </a>
+            <a onclick="insertText('Name','š');" href="#" style="background-color: blanchedalmond; padding:5px"> š  </a>
+            <a onclick="insertText('Name','ß');" href="#" style="background-color: blanchedalmond; padding:5px"> ß  </a>
+            <a onclick="insertText('Name','Ś');" href="#" style="background-color: blanchedalmond; padding:5px"> Ś  </a>
+            <a onclick="insertText('Name','Ā');" href="#" style="background-color: blanchedalmond; padding:5px"> Ā  </a>
+            <a onclick="insertText('Name','Ū');" href="#" style="background-color: blanchedalmond; padding:5px"> Ū  </a>
+            <a onclick="insertText('Name','Ṃ');" href="#" style="background-color: blanchedalmond; padding:5px"> Ṃ  </a>
+            <a onclick="insertText('Name','Ṇ');" href="#" style="background-color: blanchedalmond; padding:5px"> Ṇ  </a>
+            <a onclick="insertText('Name','Ñ');" href="#" style="background-color: blanchedalmond; padding:5px"> Ñ  </a>
             @Html.EditorFor(model => model.Name, new { htmlAttributes = new { @class = "form-control" } })
             @Html.ValidationMessageFor(model => model.Name, "", new { @class = "text-danger" })
         </div>
