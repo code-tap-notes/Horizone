@@ -8,18 +8,64 @@
 {
     @Html.AntiForgeryToken()
 
-    <div class="form-horizontal">
-        <h4>@StaticResource.Resources.SourceStory</h4>
-        <hr />
-        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-        @Html.HiddenFor(model => model.Id)
-
+<div class="form-horizontal">
+    <h4>@StaticResource.Resources.SourceStory</h4>
+    <hr />
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+    @Html.HiddenFor(model => model.Id)
+    <div class="col-md-10">
         <div class="form-group">
-            @Html.LabelFor(model => model.Source, htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.SourceEn, htmlAttributes: new { @class = "control-label col-md-2" }) @StaticResource.Resources.English
             <div class="col-md-10">
-                @Html.EditorFor(model => model.Source, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.Source, "", new { @class = "text-danger" })
+                <label for="search">@StaticResource.Resources.Insert @StaticResource.Resources.SpecialCharacter : </label>
+                <a onclick="insertText('SourceEn','ā');" href="#" style="background-color: blanchedalmond; padding:5px"> ā  </a>
+                <a onclick="insertText('SourceEn','ä');" href="#" style="background-color: blanchedalmond; padding:5px"> ä  </a>
+                <a onclick="insertText('SourceEn','ī');" href="#" style="background-color: blanchedalmond; padding:5px"> ī  </a>
+                <a onclick="insertText('SourceEn','ö');" href="#" style="background-color: blanchedalmond; padding:5px"> ö  </a>
+                <a onclick="insertText('SourceEn','ū');" href="#" style="background-color: blanchedalmond; padding:5px"> ū  </a>
+                <a onclick="insertText('SourceEn','ü');" href="#" style="background-color: blanchedalmond; padding:5px"> ü  </a>
+                <a onclick="insertText('SourceEn','ṅ');" href="#" style="background-color: blanchedalmond; padding:5px"> ṅ  </a>
+                <a onclick="insertText('SourceEn','ñ');" href="#" style="background-color: blanchedalmond; padding:5px"> ñ  </a>
+                <a onclick="insertText('SourceEn','ṇ');" href="#" style="background-color: blanchedalmond; padding:5px"> ṇ  </a>
+                <a onclick="insertText('SourceEn','ṃ');" href="#" style="background-color: blanchedalmond; padding:5px"> ṃ  </a>
+                <a onclick="insertText('SourceEn','ś');" href="#" style="background-color: blanchedalmond; padding:5px"> ś  </a>
+                <a onclick="insertText('SourceEn','ṣ');" href="#" style="background-color: blanchedalmond; padding:5px"> ṣ  </a>
+                <a onclick="insertText('SourceEn','ṛ');" href="#" style="background-color: blanchedalmond; padding:5px"> ṛ  </a>
+                <a onclick="insertText('SourceEn','ṭ');" href="#" style="background-color: blanchedalmond; padding:5px"> ṭ  </a>
+                <a onclick="insertText('SourceEn','š');" href="#" style="background-color: blanchedalmond; padding:5px"> š  </a>
+                <a onclick="insertText('SourceEn','ß');" href="#" style="background-color: blanchedalmond; padding:5px"> ß  </a>
+                <a onclick="insertText('SourceEn','ḍ');" href="#" style="background-color: blanchedalmond; padding:5px"> ḍ  </a>
+                <a onclick="insertText('SourceEn','Ś');" href="#" style="background-color: blanchedalmond; padding:5px"> Ś  </a>
+                <a onclick="insertText('SourceEn','Ā');" href="#" style="background-color: blanchedalmond; padding:5px"> Ā  </a>
+                <a onclick="insertText('SourceEn','Ū');" href="#" style="background-color: blanchedalmond; padding:5px"> Ū  </a>
+                <a onclick="insertText('SourceEn','Ṃ');" href="#" style="background-color: blanchedalmond; padding:5px"> Ṃ  </a>
+                <a onclick="insertText('SourceEn','Ṇ');" href="#" style="background-color: blanchedalmond; padding:5px"> Ṇ  </a>
+                <a onclick="insertText('SourceEn','Ñ');" href="#" style="background-color: blanchedalmond; padding:5px"> Ñ  </a>
+
+                @Html.EditorFor(model => model.SourceEn, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.SourceEn, "", new { @class = "text-danger" })
             </div>
+        </div>
+    </div>
+        <div class="col-md-10">
+            <div class="form-group">
+                @Html.LabelFor(model => model.SourceFr, htmlAttributes: new { @class = "control-label col-md-2" }) @StaticResource.Resources.French
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.SourceFr, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.SourceFr, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+        </div>
+        <div class="col-md-10">
+            <div class="form-group">
+                @Html.LabelFor(model => model.SourceZh, htmlAttributes: new { @class = "control-label col-md-2" }) @StaticResource.Resources.Chinese
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.SourceZh, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.SourceZh, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
         </div>
 
         <div class="form-group">
@@ -29,5 +75,16 @@
             </div>
         </div>
     </div>
-}
- 
+    }
+
+    @section Scripts {
+        @Scripts.Render("~/bundles/jqueryval")
+
+        <script>
+
+            function insertText(elemID, text) {
+                document.getElementById(elemID).value += text;
+            }
+
+        </script>
+    }

@@ -17,7 +17,7 @@ namespace Horizone.Areas.BackOffice.Controllers
         // GET: BackOffice/SourceStories
         public ActionResult Index()
         {
-            return View(db.SourceStorys.ToList());
+            return View(db.SourceStorys.OrderBy(x => x.SourceEn).ToList());
         }
          
         // GET: BackOffice/SourceStories/Create
@@ -31,7 +31,7 @@ namespace Horizone.Areas.BackOffice.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,Source")] SourceStory sourceStory)
+        public ActionResult Create([Bind(Include = "Id,SourceEn,SourceFr,SourceZh")] SourceStory sourceStory)
         {
             if (ModelState.IsValid)
             {
@@ -61,7 +61,7 @@ namespace Horizone.Areas.BackOffice.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,Source")] SourceStory sourceStory)
+        public ActionResult Edit([Bind(Include = "Id,SourceEn,SourceFr,SourceZh")] SourceStory sourceStory)
         {
             if (ModelState.IsValid)
             {

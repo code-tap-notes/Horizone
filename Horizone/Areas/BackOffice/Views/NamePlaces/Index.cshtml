@@ -14,34 +14,40 @@
 <table class="table">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.PlaceEn)
+            @Html.DisplayNameFor(model => model.Place)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.PlaceFr)
+            @Html.DisplayNameFor(model => model.DescriptionEn) @StaticResource.Resources.English
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.PlaceZh)
+            @Html.DisplayNameFor(model => model.DescriptionFr) @StaticResource.Resources.French
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DescriptionZh) @StaticResource.Resources.Chinese
         </th>
         <th></th>
     </tr>
 
     @foreach (var item in Model)
     {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.PlaceEn)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.PlaceFr)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.PlaceZh)
-            </td>
-            <td>
-                @Html.ActionLink(@StaticResource.Resources.Edit, "Edit", new { id = item.Id }, new { @class = "btn btn-info", style = "width:85px" })
-                 @Html.ActionLink(@StaticResource.Resources.Delete, "Delete", new { id = item.Id }, new { @class = "btn btn-info", style = "width:85px" })
-            </td>
-        </tr>
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Place)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DescriptionEn)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DescriptionFr)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DescriptionZh)
+        </td>
+        <td>
+            @Html.ActionLink(@StaticResource.Resources.Edit, "Edit", new { id = item.Id }, new { @class = "btn btn-info", style = "width:85px" })
+            @Html.ActionLink(@StaticResource.Resources.Delete, "Delete", new { id = item.Id }, new { @class = "btn btn-info", style = "width:85px" })
+        </td>
+    </tr>
     }
 
 </table>

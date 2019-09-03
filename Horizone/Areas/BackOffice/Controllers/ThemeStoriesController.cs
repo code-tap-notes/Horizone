@@ -18,7 +18,7 @@ namespace Horizone.Areas.BackOffice.Controllers
         // GET: BackOffice/ThemeStories
         public ActionResult Index()
         {
-            return View(db.ThemeStorys.ToList());
+            return View(db.ThemeStorys.OrderBy(x => x.ThemeEn).ToList());
         }
 
          

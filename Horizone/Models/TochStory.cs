@@ -28,13 +28,7 @@ namespace Horizone.Models
 
         [ForeignKey("ThemeStoryId")]
         public ThemeStory ThemeStory { get; set; }
-
-        [Display(Name = "ProperNoun", ResourceType = typeof(StaticResource.Resources))]
-        public ICollection<ProperNoun> ProperNouns { get; set; }
-
-        [Display(Name = "NamePlace", ResourceType = typeof(StaticResource.Resources))]
-        public ICollection<NamePlace> NamePlaces { get; set; }
-
+    
         [Display(Name = "PlasticRepresentation", ResourceType = typeof(StaticResource.Resources))]
         public string PlasticRepresentation { get; set; }
 

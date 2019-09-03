@@ -18,41 +18,71 @@
 {
     @Html.AntiForgeryToken()
 
-    <div class="form-horizontal">
-        <h4>NamePlace</h4>
-        <hr />
-        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-        <div class="form-group">
-            @Html.LabelFor(model => model.PlaceEn, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.PlaceEn, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.PlaceEn, "", new { @class = "text-danger" })
-            </div>
-        </div>
+<div class="form-horizontal">
+    <h4>NamePlace</h4>
+    <hr />
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+    <div class="form-group">
+        @Html.LabelFor(model => model.Place, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            <label for="search">@StaticResource.Resources.Insert @StaticResource.Resources.SpecialCharacter : </label>
+            <a onclick="insertText('Place','ā');" href="#" style="background-color: blanchedalmond; padding:5px"> ā  </a>
+            <a onclick="insertText('Place','ä');" href="#" style="background-color: blanchedalmond; padding:5px"> ä  </a>
+            <a onclick="insertText('Place','ī');" href="#" style="background-color: blanchedalmond; padding:5px"> ī  </a>
+            <a onclick="insertText('Place','ö');" href="#" style="background-color: blanchedalmond; padding:5px"> ö  </a>
+            <a onclick="insertText('Place','ū');" href="#" style="background-color: blanchedalmond; padding:5px"> ū  </a>
+            <a onclick="insertText('Place','ü');" href="#" style="background-color: blanchedalmond; padding:5px"> ü  </a>
+            <a onclick="insertText('Place','ṅ');" href="#" style="background-color: blanchedalmond; padding:5px"> ṅ  </a>
+            <a onclick="insertText('Place','ñ');" href="#" style="background-color: blanchedalmond; padding:5px"> ñ  </a>
+            <a onclick="insertText('Place','ṇ');" href="#" style="background-color: blanchedalmond; padding:5px"> ṇ  </a>
+            <a onclick="insertText('Place','ṃ');" href="#" style="background-color: blanchedalmond; padding:5px"> ṃ  </a>
+            <a onclick="insertText('Place','ś');" href="#" style="background-color: blanchedalmond; padding:5px"> ś  </a>
+            <a onclick="insertText('Place','ṣ');" href="#" style="background-color: blanchedalmond; padding:5px"> ṣ  </a>
+            <a onclick="insertText('Place','ṛ');" href="#" style="background-color: blanchedalmond; padding:5px"> ṛ  </a>
+            <a onclick="insertText('Place','ṭ');" href="#" style="background-color: blanchedalmond; padding:5px"> ṭ  </a>
+            <a onclick="insertText('Place','š');" href="#" style="background-color: blanchedalmond; padding:5px"> š  </a>
+            <a onclick="insertText('Place','ß');" href="#" style="background-color: blanchedalmond; padding:5px"> ß  </a>
+            <a onclick="insertText('Place','ḍ');" href="#" style="background-color: blanchedalmond; padding:5px"> ḍ  </a>
+            <a onclick="insertText('Place','Ś');" href="#" style="background-color: blanchedalmond; padding:5px"> Ś  </a>
+            <a onclick="insertText('Place','Ā');" href="#" style="background-color: blanchedalmond; padding:5px"> Ā  </a>
+            <a onclick="insertText('Place','Ū');" href="#" style="background-color: blanchedalmond; padding:5px"> Ū  </a>
+            <a onclick="insertText('Place','Ṃ');" href="#" style="background-color: blanchedalmond; padding:5px"> Ṃ  </a>
+            <a onclick="insertText('Place','Ṇ');" href="#" style="background-color: blanchedalmond; padding:5px"> Ṇ  </a>
+            <a onclick="insertText('Place','Ñ');" href="#" style="background-color: blanchedalmond; padding:5px"> Ñ  </a>
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.PlaceFr, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.PlaceFr, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.PlaceFr, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.PlaceZh, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.PlaceZh, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.PlaceZh, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value=@StaticResource.Resources.Add class="btn btn-info" />
-                @Html.ActionLink(StaticResource.Resources.Cancel, "Index", null, new { @class = "btn btn-default" })
-            </div>
+            @Html.EditorFor(model => model.Place, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.Place, "", new { @class = "text-danger" })
         </div>
     </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.DescriptionEn, htmlAttributes: new { @class = "control-label col-md-2" })  @StaticResource.Resources.English
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.DescriptionEn, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.DescriptionEn, "", new { @class = "text-danger" })
+        </div>
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(model => model.DescriptionFr, htmlAttributes: new { @class = "control-label col-md-2" })  @StaticResource.Resources.French
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.DescriptionFr, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.DescriptionFr, "", new { @class = "text-danger" })
+        </div>
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(model => model.DescriptionZh, htmlAttributes: new { @class = "control-label col-md-2" })  @StaticResource.Resources.Chinese
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.DescriptionZh, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.DescriptionZh, "", new { @class = "text-danger" })
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <input type="submit" value=@StaticResource.Resources.Add class="btn btn-info" />
+            @Html.ActionLink(StaticResource.Resources.Cancel, "Index", null, new { @class = "btn btn-default" })
+        </div>
+    </div>
+</div>
 }
 
 @section Scripts {
@@ -64,7 +94,9 @@
         };
 
         $(function () {
-            tinymce.init({ selector: '#Description' });
+            tinymce.init({ selector: '#DescriptionEn' });
+            tinymce.init({ selector: '#DescriptionFr' });
+            tinymce.init({ selector: '#DescriptionZh' });
          });
     </script>
 }

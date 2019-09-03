@@ -59,6 +59,10 @@ namespace Horizone.Models
         [Display(Name = "EquivalentTocharianB", ResourceType = typeof(StaticResource.Resources))]
         public string EquivalentTB { get; set; }
 
+        [Display(Name = "TochCommon", ResourceType = typeof(StaticResource.Resources))]
+        public string TochCommon { get; set; }
+
+
         [Display(Name = "TochCorrespondence", ResourceType = typeof(StaticResource.Resources))]
         public string TochCorrespondence { get; set; }
 

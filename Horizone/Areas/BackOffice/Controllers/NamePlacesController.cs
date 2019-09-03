@@ -17,7 +17,7 @@ namespace Horizone.Areas.BackOffice.Controllers
         // GET: BackOffice/NamePlaces
         public ActionResult Index()
         {
-            return View(db.NamePlaces.ToList());
+            return View(db.NamePlaces.OrderBy(x => x.Place).ToList());
         }
 
          
@@ -32,7 +32,7 @@ namespace Horizone.Areas.BackOffice.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,PlaceEn,PlaceFr,PlaceZh")] NamePlace namePlace)
+        public ActionResult Create([Bind(Include = "Id,Place,DescriptionEn,DescriptionFr,DescriptionZh")] NamePlace namePlace)
         {
             if (ModelState.IsValid)
             {
@@ -64,7 +64,7 @@ namespace Horizone.Areas.BackOffice.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,PlaceEn,PlaceFr,PlaceZh")] NamePlace namePlace)
+        public ActionResult Edit([Bind(Include = "Id,Place,DescriptionEn,DescriptionFr,DescriptionZh")] NamePlace namePlace)
         {
             if (ModelState.IsValid)
             {

@@ -1870,4 +1870,7 @@ TochPhase</value>
   <data name="SiteMap" xml:space="preserve">
     <value>Site Map</value>
   </data>
+  <data name="TochCommon" xml:space="preserve">
+    <value>Tocharian Common</value>
+  </data>
 </root>

@@ -84,7 +84,13 @@
             @Html.ValidationMessageFor(model => model.TochCorrespondence, "", new { @class = "text-danger" })
         </div>
     </div>
-
+    <div class="form-group">
+        @Html.LabelFor(model => model.TochCommon, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.TochCommon, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.TochCommon, "", new { @class = "text-danger" })
+        </div>
+    </div>
     <div class="form-group">
         @Html.LabelFor(model => model.EquivalentInOther, htmlAttributes: new { @class = "control-label col-md-2" })
         <div class="col-md-10">
