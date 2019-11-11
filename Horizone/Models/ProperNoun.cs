@@ -13,5 +13,6 @@ namespace Horizone.Models
         [Display(Name = "ProperNoun", ResourceType = typeof(StaticResource.Resources))]
         public string Name { get; set; }
        
+
     }
 }
