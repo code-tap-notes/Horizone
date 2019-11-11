@@ -31,7 +31,7 @@ namespace Horizone.Areas.BackOffice.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,Name")] ProperNoun properNoun)
+        public ActionResult Create([Bind(Include = "Id,Name,DescriptionEn,DescriptionFr,DescriptionZh,InStory")] ProperNoun properNoun)
         {
             if (ModelState.IsValid)
             {
@@ -63,7 +63,7 @@ namespace Horizone.Areas.BackOffice.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,Name")] ProperNoun properNoun)
+        public ActionResult Edit([Bind(Include = "Id,Name,DescriptionEn,DescriptionFr,DescriptionZh,InStory")] ProperNoun properNoun)
         {
             if (ModelState.IsValid)
             {
@@ -98,6 +98,22 @@ namespace Horizone.Areas.BackOffice.Controllers
             db.ProperNouns.Remove(properNoun);
             db.SaveChanges();
             return RedirectToAction("Index");
-        }       
+        }
+        public ActionResult SearchName(string search)
+        {
+            IEnumerable<ProperNoun> properNouns = db.ProperNouns;
+
+            if (!string.IsNullOrWhiteSpace(search))
+            {
+                properNouns = properNouns.Where(x => x.Name.Contains(search));
+            }
+            if (properNouns.Count() == 0)
+            {
+                Display("Aucun résultat");
+            }
+            ViewBag.Search = search;
+
+            return View("SearchName", properNouns.OrderBy(x => x.Name).ToList());
+        }
     }
 }

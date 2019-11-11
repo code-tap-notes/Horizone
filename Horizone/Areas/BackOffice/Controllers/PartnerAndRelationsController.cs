@@ -19,7 +19,7 @@ namespace Horizone.Areas.BackOffice.Controllers
         // GET: BackOffice/PartnerAndRelations
         public ActionResult Index()
         {
-            return View(db.PartnerAndRelations.ToList());
+            return View(db.PartnerAndRelations.Include("ImagePartners").ToList());
         }
         public ActionResult Partner()
         {
@@ -27,7 +27,7 @@ namespace Horizone.Areas.BackOffice.Controllers
 
             foreach (var item in db.PartnerAndRelations)
                 if (item.Partner) partnerAndRelations.Add(item);
-            return View(partnerAndRelations.OrderBy(x => x.Order).ToList());
+            return View(partnerAndRelations.Include("ImagePartners").OrderBy(x => x.Order).ToList());
         }
         public ActionResult Relation()
         {
@@ -35,7 +35,7 @@ namespace Horizone.Areas.BackOffice.Controllers
 
             foreach (var item in db.PartnerAndRelations)
                 if (item.Relation) partnerAndRelations.Add(item);
-            return View(partnerAndRelations.OrderBy(x => x.Order).ToList());
+            return View(partnerAndRelations.Include("ImagePartners").OrderBy(x => x.Order).ToList());
         }
         // GET: BackOffice/PartnerAndRelations/Details/5
         public ActionResult Details(int? id)
@@ -44,7 +44,7 @@ namespace Horizone.Areas.BackOffice.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            PartnerAndRelation partnerAndRelation = db.PartnerAndRelations.Find(id);
+            PartnerAndRelation partnerAndRelation = db.PartnerAndRelations.Include("ImagePartners").SingleOrDefault(x=>x.Id==id);
             if (partnerAndRelation == null)
             {
                 return HttpNotFound();

@@ -4,120 +4,88 @@
 <div class="container body-content">
     <!--Recherche-->
     <div id="search">
-        <form class="form-group row" action="@Url.Action("Search", "Dashboards")" method="post" enctype="multipart/form-data">
-            <div class="form-group col-md-2">
-                <br />
-                <button type="submit" class="btn btn-info bigBtn"> @StaticResource.Resources.Search</button>
-            </div>
-            
-            <div class="form-group col-md-2">
-                <label for="Manuscript">Manuscript</label>
-                <input class="form-control" type="text" id="Manuscript" name="search" />
+        <form class="form-group row" action="@Url.Action("SearchIndex", "Dashboards")" method="post" enctype="multipart/form-data">
+            <div>
+                @{Html.RenderAction("SearchForm", "DashBoards"); }
             </div>
         </form>
     </div>
     <!--Information principal-->
-    <div id="midheader-vp">      
-            @{Html.RenderAction("PresenteProjet", "Dashboards"); }        
+    <div id="midheader-vp">
+        @{Html.RenderAction("PresenteProject", "Dashboards"); }
     </div>
     <div class="clear"></div>
     <!--Last News-->
     <div id="slide-vp">
-        
-            <div id="slide-left">
-                <div id="slideleft-main">
-                    @{Html.RenderAction("LatestNewsFr", "Dashboards"); }
-                    @{Html.RenderAction("LatestNewsEn", "Dashboards"); }
-                    @{Html.RenderAction("LatestNewsZh", "Dashboards"); }
 
+        <div id="slide-left">
+            <div id="slideleft-main">
+                @{Html.RenderAction("LatestNewsFr", "Dashboards"); }
+                @{Html.RenderAction("LatestNewsEn", "Dashboards"); }
+                @{Html.RenderAction("LatestNewsZh", "Dashboards"); }
+
+            </div>
+            <div id="slideleft-scroll">
+                <!--Seen Frequently-->
+                <div class="content_scoller width_common">
+                    <ul>
+                        <li>
+                            <div class="title_news">
+                                @{Html.RenderAction("News", "Dashboards"); }
+                            </div>
+                        </li>
+                    </ul>
                 </div>
-                <div id="slideleft-scroll">
-                    <!--Seen Frequently-->
-                    <div class="content_scoller width_common">
-                        <ul>
-                            <li>
-                                <div class="title_news">
-                                    @{Html.RenderAction("News", "Dashboards"); }
-                                </div>
-                            </li>
-                        </ul>
-                    </div>
-                </div>           
-            </div>    
-            <!--Main-Right-->
-        <div id="slide-right">
-                <img style="width:90px;height:90px;" src="~/Image/15.jpg" />
-                @{Html.RenderAction("PageActivity", "Dashboards"); }
+            </div>
         </div>
-            <!--Logo Histochtech-->
-        <div id="gocnhin">
-                <img class="moyenImage" alt="" src="~/Image/basin.jpg">
-                <div class="title_news"></div>
+        <!--Main-Right-->
+        <div id="slide-right">
+            <img style="width:90px;height:90px;" src="~/Image/15.jpg" />
+            @{Html.RenderAction("PageActivity", "Dashboards"); }
+            <hr />
+        </div>
+        <!--Logo Histochtech-->
+        <div id="image-activity">
+            <img class="moyenImage" alt="" src="~/Image/basin.jpg">
+            <div class="title_news"></div>
         </div>
         <div id="slideleft-scroll">
-                <div id="content-vp">
-                    <div class="box-cat">
-                        <div class="cat">
-                            <div class="content_scoller width_common">
-                                <ul>
-                                    <li>
-                                        <div class="main-cat">
-                                            <a href="#" class="content-title">@StaticResource.Resources.Publications</a>
-                                            <br />
-                                            @{Html.RenderAction("PagePublication", "Dashboards"); }
-
-                                            <div class="clear"></div>
-                                        </div>
-                                    </li>
-                                </ul>
-                            </div>
+            <div id="content-vp">
+                <div class="box-cat">
+                    <div class="cat">
+                        <div class="content_scoller width_common">
+                            <ul>
+                                <li>
+                                    <div class="main-cat">
+                                        <a href="#" class="content-title">@StaticResource.Resources.Publications</a>
+                                        <br/>                                  
+                                        @{Html.RenderAction("PagePublication", "Dashboards"); }
+                                        <div class="clear"></div>
+                                    </div>
+                                </li>
+                            </ul>
                         </div>
                     </div>
                 </div>
+            </div>
         </div>
     </div>
-      
-        <!--Group of tochStory-->
-        <div id="midheader-vp">
-            <div id="content-vp">
-                <div class="clear"></div>
-                <div class="clear"></div>
-                <div class="cat">
-                    <div class="main-cat">
-                        <a href="#">TochStory</a>
-                    </div>
-                    <div class="clear"></div>
-                    <div class="cat-content">
-                        <div class="col-md-4">
-                            <div class="news">
-                                <h3 class="title"><a href="#"> Story 1 </a></h3>
-                                <img class="images_news" src="~/Image/tarim.jpg" />/" align="left" />
-                                <div class="des">show  </div>
-                                <div class="clear"></div>
-                            </div>
-                        </div>
-                        <div class="col-md-4">
-                            <div class="news">
-                                <h3 class="title"><a href="#"> Story 2 </a></h3>
-                                <img class="images_news" src="~/Image/tarim.jpg" />/" align="left" />
-                                <div class="des">show  </div>
-                                <div class="clear"></div>
-                            </div>
-                        </div>
-                        <div class="col-md-4">
-                            <div class="news">
-                                <h3 class="title"><a href="#"> Story 3 </a></h3>
-                                <img class="images_news" src="~/Image/tarim.jpg" />/" align="left" />
-                                <div class="des">show  </div>
-                                <div class="clear"></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="clear"></div>
-            </div>
-            <div class="clear"></div>
+
+    <!--Group of latest tochStory-->
+    <div id="midheader-vp">
+        <div class="row">
+            @{Html.RenderAction("LatestStory", "DashBoards"); }
         </div>
-        <div id="footer"></div>
+    </div>
+    <div id="footer"></div>
 </div>
 
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+    <script>
+        function insertText(elemID, text) {
+            document.getElementById(elemID).value += text;
+        }
+    </script>
+}

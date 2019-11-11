@@ -8,6 +8,7 @@ using System.Web;
 using System.Web.Mvc;
 using Horizone.Common;
 using Horizone.Models;
+using Microsoft.AspNet.Identity;
 
 namespace Horizone.Controllers
 {
@@ -48,18 +49,29 @@ namespace Horizone.Controllers
         public ActionResult LatestNewsFr()
         {
             var news = db.Newses.Include("Language").Include("Collaborator").Include("Topic").Include("ImageNewses").Where(x=>x.LanguageId == 1);
+            if (news.Count() != 0)
+            {
+                ViewBag.NewsIdFr = news.OrderByDescending(x => x.Id).First().Id;
+            }
             return PartialView(news.OrderByDescending(x => x.Id).ToList());
         }
         [ChildActionOnly]
         public ActionResult LatestNewsEn()
         {
             var news = db.Newses.Include("Language").Include("Collaborator").Include("Topic").Include("ImageNewses").Where(x => x.LanguageId == 2);
+            if (news.Count() != 0)
+            { 
+                ViewBag.NewsIdEn = news.OrderByDescending(x => x.Id).First().Id;
+        }
             return PartialView(news.OrderByDescending(x => x.Id).ToList());
         }
         [ChildActionOnly]
         public ActionResult LatestNewsZh()
         {
             var news = db.Newses.Include("Language").Include("Collaborator").Include("Topic").Include("ImageNewses").Where(x => x.LanguageId == 3);
+            if(news.Count()!=0)
+            { ViewBag.NewsIdZh = news.OrderByDescending(x => x.Id).First().Id;
+            }
             return PartialView(news.OrderByDescending(x => x.Id).ToList());
         }
 
@@ -78,20 +90,34 @@ namespace Horizone.Controllers
             }
             return View(news);
         }
-        // POST: BackOffice/Comments/Create
-        [HttpPost]
-        [ValidateAntiForgeryToken]
+        
         [ChildActionOnly]
-        public ActionResult CreateComment([Bind(Include = "Id,Content,NewsId,UserId")] Comment comment)
-        {          
-            ViewBag.Message = "Comment";
+        public ActionResult ListComment(int? id)
+        {
+            var comments = db.Comments.Include("News").Include("Client").Where(x=>x.NewsId==id);
+            ViewBag.NewsId = id;
+            return PartialView(comments.OrderByDescending(x => x.Id).ToList());
+        }
+        
+        public ActionResult NewComment(string search,int id)
+        { string userId = User.Identity.GetUserId();
+            var comment = new Comment();
+            Client client = db.Clients.Include("ApplicationUser").SingleOrDefault(x => x.UserId == userId);
+            if (id != 0)
+            {
+                comment.Content = search;
+                comment.Date = DateTime.Now;
+                comment.NewsId = id;
+                comment.ClientId = client.Id;
+            }
             if (ModelState.IsValid)
             {
                 db.Comments.Add(comment);
                 db.SaveChanges();
-                return RedirectToAction("CreatComment");
+                return RedirectToAction("Index","Home");
             }
+           
             return View(comment);
-        }  
-       }
+        }
+    }
 }

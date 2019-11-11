@@ -77,6 +77,15 @@
         </div>
     </div>
     <div class="form-group">
+        @Html.LabelFor(model => model.InStory, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            <div class="checkbox">
+                @Html.EditorFor(model => model.InStory)
+                @Html.ValidationMessageFor(model => model.InStory, "", new { @class = "text-danger" })
+            </div>
+        </div>
+    </div>
+    <div class="form-group">
         <div class="col-md-offset-2 col-md-10">
             <input type="submit" value=@StaticResource.Resources.Add class="btn btn-info" />
             @Html.ActionLink(StaticResource.Resources.Cancel, "Index", null, new { @class = "btn btn-default" })

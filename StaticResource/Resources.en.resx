@@ -1688,7 +1688,7 @@ TochPhase</value>
     <value>Meaning</value>
   </data>
   <data name="ReverseDictionary" xml:space="preserve">
-    <value>Reverse Dictionary</value>
+    <value>Inverted index</value>
   </data>
   <data name="Required" xml:space="preserve">
     <value>Field  is required</value>
@@ -1872,5 +1872,41 @@ TochPhase</value>
   </data>
   <data name="TochCommon" xml:space="preserve">
     <value>Tocharian Common</value>
+  </data>
+  <data name="IndexSource" xml:space="preserve">
+    <value>Index Source</value>
+  </data>
+  <data name="Source" xml:space="preserve">
+    <value>Source</value>
+  </data>
+  <data name="Found" xml:space="preserve">
+    <value>Found</value>
+  </data>
+  <data name="Update" xml:space="preserve">
+    <value>Update</value>
+  </data>
+  <data name="AddNP" xml:space="preserve">
+    <value>Add Proper Noun</value>
+  </data>
+  <data name="AskAddNP" xml:space="preserve">
+    <value>Do you want to add to the dictionary of proper Noun?</value>
+  </data>
+  <data name="AskSearchAdvantage" xml:space="preserve">
+    <value>Do you want to search advantage?</value>
+  </data>
+  <data name="CheckDictionary" xml:space="preserve">
+    <value>Check word in dictionary</value>
+  </data>
+  <data name="OtherLanguage" xml:space="preserve">
+    <value>Other Language</value>
+  </data>
+  <data name="Use" xml:space="preserve">
+    <value>Use</value>
+  </data>
+  <data name="With" xml:space="preserve">
+    <value>With</value>
+  </data>
+  <data name="OtherWebPage" xml:space="preserve">
+    <value>Other Web Page</value>
   </data>
 </root>

@@ -2,9 +2,11 @@
 
 @foreach (var item in Model)
 {
+    if (item.Title != "No visible")
+    {
 
     <p>&diams; @Html.Raw(item.PublicationDate)| @Html.Raw(item.Title)| @Html.Raw(item.Journal)</p>
-    <a href=@item.UlrBibliography> @StaticResource.Resources.LearnMore  &raquo;</a>
-
+    <a href=@item.UlrBibliography style="font-size:initial"> @StaticResource.Resources.LearnMore  &raquo;</a>
+    <hr />
+    }
 }
-

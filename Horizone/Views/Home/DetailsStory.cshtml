@@ -3,32 +3,33 @@
 @{
     ViewBag.Title = @StaticResource.Resources.Details;
 }
-<div class="row">
-    <div class="form-group col-md-10">
-        <hr />
-        <h4>
-            @Html.DisplayNameFor(model => model.Name) : <strong> @Html.DisplayFor(model => model.Name) </strong>
-        </h4>
-    </div>
-    <div class="form-group col-md-2">
-        <div class="col-md-10">
+
+<div class="content">
+    <div class="row">
+        <div class="form-group col-md-10">
+            <hr />
+            <h4>
+                @Html.DisplayNameFor(model => model.Name) : <strong> @Html.DisplayFor(model => model.Name) </strong>
+            </h4>
+        </div>
+        <div class="form-group col-md-2">
+
             @Html.ActionLink(@StaticResource.Resources.Print, "PrintHistoire", "Home", new { id = Model.Id }, new { @class = "btn btn-info", style = "width:90px" })
             <span class="glyphicon glyphicon-print"></span>
         </div>
     </div>
-</div>
-<div class="content">
     <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.SourceStory.Source)
-        </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.SourceStory.Source)
-        </dd>
 
         @if (Session[Horizone.Common.CommonConstants.CurrentCulture].ToString() == "en")
         {
+            <dt>
+                @Html.DisplayNameFor(model => model.SourceStory.SourceEn)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.SourceStory.SourceEn)
+            </dd>
             <dt>
                 @Html.DisplayNameFor(model => model.ThemeStory.ThemeEn)
             </dt>
@@ -39,6 +40,13 @@
         @if (Session[Horizone.Common.CommonConstants.CurrentCulture].ToString() == "fr")
         {
             <dt>
+                @Html.DisplayNameFor(model => model.SourceStory.SourceFr)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.SourceStory.SourceFr)
+            </dd>
+            <dt>
                 @Html.DisplayNameFor(model => model.ThemeStory.ThemeFr)
             </dt>
             <dd>
@@ -46,8 +54,14 @@
             </dd>
 
         }
-        @if (Session[Horizone.Common.CommonConstants.CurrentCulture].ToString() == "Zh")
+        @if (Session[Horizone.Common.CommonConstants.CurrentCulture].ToString() == "zh")
         {
+            <dt>
+                @Html.DisplayNameFor(model => model.SourceStory.SourceZh)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.SourceStory.SourceZh)
+            </dd>
             <dt>
                 @Html.DisplayNameFor(model => model.ThemeStory.ThemeZn)
             </dt>
@@ -75,7 +89,7 @@
             @Html.DisplayNameFor(model => model.Content) @StaticResource.Resources.Tocharian
         </h5>
 
-        @Html.DisplayFor(model => model.Content)
+        @Html.Raw(Model.Content)
 
     </div>
     <div class="autocontents">

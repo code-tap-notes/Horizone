@@ -8,71 +8,21 @@
 <h2>@StaticResource.Resources.ReverseDictionary</h2>
 <div id="search">
     <form class="form-group row" action="@Url.Action("SearchReverse", "Vocabularies")" method="post" enctype="multipart/form-data">
-        <div class="form-group col-md-4">
-            <br />
-            <button type="submit" class="btn btn-info bigBtn" style="width:100%"><span class="glyphicon glyphicon-search"></span> @StaticResource.Resources.SearchContain </button>
+        <label for="Title"><strong> @StaticResource.Resources.SearchContain </strong></label>
+        <div>
+            @{Html.RenderAction("SearchForm", "Home"); }
         </div>
 
-        <div class="form-group col-md-4">
-            <label for="Title"> @StaticResource.Resources.SearchElement </label>
-            <input class="form-control" type="text" id="Search" name="search" />
-        </div>
-
-        <div class="form-group col-md-4">
-            <p><strong>Insert:  </strong> </p>
-            <a onclick="insertText('Search','ā');" href="#" style="background-color: blanchedalmond; padding:5px"> ā  </a><a> </a>
-            <a onclick="insertText('Search','ä');" href="#" style="background-color: blanchedalmond; padding:5px"> ä  </a>
-            <a onclick="insertText('Search','ī');" href="#" style="background-color: blanchedalmond; padding:5px"> ī  </a>
-            <a onclick="insertText('Search','ö');" href="#" style="background-color: blanchedalmond; padding:5px"> ö  </a>
-            <a onclick="insertText('Search','ū');" href="#" style="background-color: blanchedalmond; padding:5px"> ū  </a>
-            <a onclick="insertText('Search','ü');" href="#" style="background-color: blanchedalmond; padding:5px"> ü  </a>
-            <a onclick="insertText('Search','ṅ');" href="#" style="background-color: blanchedalmond; padding:5px"> ṅ  </a>
-            <a onclick="insertText('Search','ñ');" href="#" style="background-color: blanchedalmond; padding:5px"> ñ  </a>
-            <a onclick="insertText('Search','ṇ');" href="#" style="background-color: blanchedalmond; padding:5px"> ṇ  </a>
-            <a onclick="insertText('Search','ṃ');" href="#" style="background-color: blanchedalmond; padding:5px"> ṃ  </a>
-            <a onclick="insertText('Search','ś');" href="#" style="background-color: blanchedalmond; padding:5px"> ś  </a>
-            <a onclick="insertText('Search','ṣ');" href="#" style="background-color: blanchedalmond; padding:5px"> ṣ  </a>
-            <a onclick="insertText('Search','ṛ');" href="#" style="background-color: blanchedalmond; padding:5px"> ṛ  </a>
-            <a onclick="insertText('Search','ṭ');" href="#" style="background-color: blanchedalmond; padding:5px"> ṭ  </a>
-
-            <a onclick="insertText('Search','š');" href="#" style="background-color: blanchedalmond; padding:5px"> š  </a>
-            <a onclick="insertText('Search','ß');" href="#" style="background-color: blanchedalmond; padding:5px"> ß  </a>
-        </div>
     </form>
 
 </div>
 <div id="search">
     <form class="form-group row" action="@Url.Action("SearchEnd", "Vocabularies")" method="post" enctype="multipart/form-data">
-        <div class="form-group col-md-4">
-            <br />
-            <button type="submit" class="btn btn-info bigBtn" style="width:100%"><span class="glyphicon glyphicon-search"></span> @StaticResource.Resources.SearchEnd </button>
+        <label for="Title"><strong> @StaticResource.Resources.SearchEnd </strong></label>
+        <div>
+            @{Html.RenderAction("SearchForm", "Home"); }
         </div>
 
-        <div class="form-group col-md-4">
-            <label for="Title"> @StaticResource.Resources.SearchElement </label>
-            <input class="form-control" type="text" id="SearchEnd" name="searchEnd" />
-        </div>
-
-        <div class="form-group col-md-4">
-            <p><strong>Insert:  </strong> </p>
-            <a onclick="insertText('SearchEnd','ā');" href="#" style="background-color: blanchedalmond; padding:5px"> ā  </a><a> </a>
-            <a onclick="insertText('SearchEnd','ä');" href="#" style="background-color: blanchedalmond; padding:5px"> ä  </a>
-            <a onclick="insertText('SearchEnd','ī');" href="#" style="background-color: blanchedalmond; padding:5px"> ī  </a>
-            <a onclick="insertText('SearchEnd','ö');" href="#" style="background-color: blanchedalmond; padding:5px"> ö  </a>
-            <a onclick="insertText('SearchEnd','ū');" href="#" style="background-color: blanchedalmond; padding:5px"> ū  </a>
-            <a onclick="insertText('SearchEnd','ü');" href="#" style="background-color: blanchedalmond; padding:5px"> ü  </a>
-            <a onclick="insertText('SearchEnd','ṅ');" href="#" style="background-color: blanchedalmond; padding:5px"> ṅ  </a>
-            <a onclick="insertText('SearchEnd','ñ');" href="#" style="background-color: blanchedalmond; padding:5px"> ñ  </a>
-            <a onclick="insertText('SearchEnd','ṇ');" href="#" style="background-color: blanchedalmond; padding:5px"> ṇ  </a>
-            <a onclick="insertText('SearchEnd','ṃ');" href="#" style="background-color: blanchedalmond; padding:5px"> ṃ  </a>
-            <a onclick="insertText('SearchEnd','ś');" href="#" style="background-color: blanchedalmond; padding:5px"> ś  </a>
-            <a onclick="insertText('SearchEnd','ṣ');" href="#" style="background-color: blanchedalmond; padding:5px"> ṣ  </a>
-            <a onclick="insertText('SearchEnd','ṛ');" href="#" style="background-color: blanchedalmond; padding:5px"> ṛ  </a>
-            <a onclick="insertText('SearchEnd','ṭ');" href="#" style="background-color: blanchedalmond; padding:5px"> ṭ  </a>
-
-            <a onclick="insertText('SearchEnd','š');" href="#" style="background-color: blanchedalmond; padding:5px"> š  </a>
-            <a onclick="insertText('SearchEnd','ß');" href="#" style="background-color: blanchedalmond; padding:5px"> ß  </a>
-        </div>
     </form>
 
 </div>
@@ -93,15 +43,10 @@
     @foreach (var item in Model)
     {
         <tr>
-            <td hidden>
-                <form class="form-group row" action="@Url.Action("SearchWord", "Home")" method="post" enctype="multipart/form-data">
-                    <button type="submit" class="btn btn-default" style="width:95%; text-align:left;">  @Html.DisplayFor(modelItem => item.Word) </button>
-                    <input class="form-control" type="hidden" id="Search" name="search" value=@item.Word />
-                </form>
-            </td>
+            
             <td>
-                <form class="form-group row" action="@Url.Action("SearchWord", "Home")" method="post" enctype="multipart/form-data">
-                    <button type="submit" class="btn btn-default" style="width:95%; text-align:left;">  @Html.DisplayFor(modelItem => item.ReverseWord) </button>
+                <form class="form-group row" action="@Url.Action("Search", "Vocabularies")" method="post" enctype="multipart/form-data">
+                    <button type="submit" class="btn btn-default" style="width:35%; text-align:left;">  @Html.DisplayFor(modelItem => item.ReverseWord) </button>
                     <input class="form-control" type="hidden" id="Search" name="search" value=@item.ReverseWord />
                 </form>
             </td>

@@ -17,5 +17,7 @@
                     </div>
                     <p class="tlq"><a href=@Model.First().Content> @StaticResource.Resources.LearnMore  &raquo;</a> </p>
                 </div>
+        { Html.RenderAction("ListComment", "News", new { id = @ViewBag.NewsIdZh }); }
+
     }*@
 

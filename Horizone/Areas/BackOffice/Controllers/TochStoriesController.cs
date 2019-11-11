@@ -43,8 +43,18 @@ namespace Horizone.Areas.BackOffice.Controllers
         public ActionResult Create()
         {
             ViewBag.SourceStoryId = new SelectList(db.SourceStorys, "Id", "SourceEn");
-            ViewBag.ThemeStoryId = new SelectList(db.ThemeStorys, "Id", "ThemeEn");
- 
+            if (Session[Horizone.Common.CommonConstants.CurrentCulture].ToString() == "en")
+            {
+                ViewBag.ThemeStoryId = new SelectList(db.ThemeStorys.OrderBy(x => x.ThemeEn), "Id", "ThemeEn");
+            }
+            if (Session[Horizone.Common.CommonConstants.CurrentCulture].ToString() == "fr")
+            {
+                ViewBag.ThemeStoryId = new SelectList(db.ThemeStorys.OrderBy(x => x.ThemeFr), "Id", "ThemeFr");
+            }
+            if (Session[Horizone.Common.CommonConstants.CurrentCulture].ToString() == "zh")
+            {
+                ViewBag.ThemeStoryId = new SelectList(db.ThemeStorys.OrderBy(x => x.ThemeZn), "Id", "ThemeZn");
+            }
             return View();
         }
 
@@ -64,8 +74,19 @@ namespace Horizone.Areas.BackOffice.Controllers
             }
                        
             ViewBag.SourceStoryId = new SelectList(db.SourceStorys, "Id", "SourceEn", tochStory.SourceStoryId);
-            ViewBag.ThemeStoryId = new SelectList(db.ThemeStorys, "Id", "ThemeEn", tochStory.ThemeStoryId);
-            
+            if (Session[Horizone.Common.CommonConstants.CurrentCulture].ToString() == "en")
+            {
+
+                ViewBag.ThemeStoryId = new SelectList(db.ThemeStorys.OrderBy(x => x.ThemeEn), "Id", "ThemeEn", tochStory.ThemeStoryId);
+            }
+            if (Session[Horizone.Common.CommonConstants.CurrentCulture].ToString() == "fr")
+            {
+                ViewBag.ThemeStoryId = new SelectList(db.ThemeStorys.OrderBy(x => x.ThemeFr), "Id", "ThemeFr", tochStory.ThemeStoryId);
+            }
+            if (Session[Horizone.Common.CommonConstants.CurrentCulture].ToString() == "zh")
+            {
+                ViewBag.ThemeStoryId = new SelectList(db.ThemeStorys.OrderBy(x => x.ThemeZn), "Id", "ThemeZn", tochStory.ThemeStoryId);
+            }
             return View(tochStory);
         }
 
@@ -82,8 +103,19 @@ namespace Horizone.Areas.BackOffice.Controllers
                 return HttpNotFound();
             }
             ViewBag.SourceStoryId = new SelectList(db.SourceStorys, "Id", "SourceEn", tochStory.SourceStoryId);
-            ViewBag.ThemeStoryId = new SelectList(db.ThemeStorys, "Id", "ThemeEn", tochStory.ThemeStoryId);
-            
+            if (Session[Horizone.Common.CommonConstants.CurrentCulture].ToString() == "en")
+            {
+
+                ViewBag.ThemeStoryId = new SelectList(db.ThemeStorys.OrderBy(x => x.ThemeEn), "Id", "ThemeEn", tochStory.ThemeStoryId);
+            }
+            if (Session[Horizone.Common.CommonConstants.CurrentCulture].ToString() == "fr")
+            {
+                ViewBag.ThemeStoryId = new SelectList(db.ThemeStorys.OrderBy(x => x.ThemeFr), "Id", "ThemeFr", tochStory.ThemeStoryId);
+            }
+            if (Session[Horizone.Common.CommonConstants.CurrentCulture].ToString() == "zh")
+            {
+                ViewBag.ThemeStoryId = new SelectList(db.ThemeStorys.OrderBy(x => x.ThemeZn), "Id", "ThemeZn", tochStory.ThemeStoryId);
+            }
             return View(tochStory);
         }
 
@@ -103,7 +135,19 @@ namespace Horizone.Areas.BackOffice.Controllers
             }
            
             ViewBag.SourceStoryId = new SelectList(db.SourceStorys, "Id", "SourceEn", tochStory.SourceStoryId);
-            ViewBag.ThemeStoryId = new SelectList(db.ThemeStorys, "Id", "ThemeEn", tochStory.ThemeStoryId);
+            if (Session[Horizone.Common.CommonConstants.CurrentCulture].ToString() == "en")
+            {
+
+                ViewBag.ThemeStoryId = new SelectList(db.ThemeStorys.OrderBy(x => x.ThemeEn), "Id", "ThemeEn", tochStory.ThemeStoryId);
+            }
+            if (Session[Horizone.Common.CommonConstants.CurrentCulture].ToString() == "fr")
+            {
+                ViewBag.ThemeStoryId = new SelectList(db.ThemeStorys.OrderBy(x => x.ThemeFr), "Id", "ThemeFr", tochStory.ThemeStoryId);
+            }
+            if (Session[Horizone.Common.CommonConstants.CurrentCulture].ToString() == "zh")
+            {
+                ViewBag.ThemeStoryId = new SelectList(db.ThemeStorys.OrderBy(x => x.ThemeZn), "Id", "ThemeZn", tochStory.ThemeStoryId);
+            }
 
             return View(tochStory);
         }
@@ -132,6 +176,27 @@ namespace Horizone.Areas.BackOffice.Controllers
             db.TochStorys.Remove(tochStory);
             db.SaveChanges();
             return RedirectToAction("Index");
+        }
+
+        // Search
+             
+        public ActionResult SearchStory(string search)
+        {
+            IEnumerable<TochStory> tochStories = db.TochStorys.Include("SourceStory").Include("ThemeStory");
+
+            if (!string.IsNullOrWhiteSpace(search))
+            {
+                tochStories = tochStories.Where(x => x.English.Contains(search) || x.Francaise.Contains(search)
+                || x.Content.Contains(search) || x.SourceStory.SourceEn.Contains(search) || x.Name.Contains(search) || x.Description.Contains(search)
+                || x.ThemeStory.ThemeEn.Contains(search) || x.ThemeStory.ThemeFr.Contains(search) || x.ThemeStory.ThemeZn.Contains(search));
+            }
+            if (tochStories.Count() == 0)
+            {
+                Display("Aucun résultat");
+            }
+            ViewBag.Search = search;
+
+            return View("SearchStory", tochStories.OrderBy(x => x.Name).ToList());
         }
 
     }

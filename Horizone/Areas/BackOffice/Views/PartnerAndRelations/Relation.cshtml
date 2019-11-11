@@ -2,72 +2,60 @@
 @{
     ViewBag.Title = @StaticResource.Resources.RelationInternational;
 }
-
-<h2>@StaticResource.Resources.RelationInternational</h2>
-
+<h2> @StaticResource.Resources.RelationInternational</h2>
 <p>
     @Html.ActionLink(@StaticResource.Resources.Add, "Create", null, new { @class = "btn btn-primary" })
 </p>
 
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.Name)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Description)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Link)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Partner)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Relation)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Order)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Visible)
-        </th>
-        <th></th>
-    </tr>
+<div class="autocontents">
+    <p>
+        <b> @StaticResource.Resources.SeeAlso : </b>
+    </p>
+    <ul>
+        <li>&#10063; @Html.ActionLink(StaticResource.Resources.AboutProject, "About", "DashBoards")</li>
+        <li>&#10063; @Html.ActionLink(StaticResource.Resources.AboutUs, "AboutUs", "DashBoards")</li>
+        <li>&#10063; @Html.ActionLink(StaticResource.Resources.AssociatedResearcher, "AssociatedResearcher", "Collaborations")</li>
+        <li>&#10063; @Html.ActionLink(StaticResource.Resources.Collaboration, "Collaboration", "Collaborations")</li>
+        <li>&#10063; @Html.ActionLink(StaticResource.Resources.Partner, "Partner", "PartnerAndrelations")</li>
+        <li>&#10063; @Html.ActionLink(StaticResource.Resources.Contact, "Contact", "DashBoards")</li>
+    </ul>
+</div>
+<div class="autocontents">
+    <div class="row">
 
-    @foreach (var item in Model)
-    {
-        if (item.Relation)
+        @foreach (var item in Model)
         {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.Name)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Description)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Link)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Partner)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Relation)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Order)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Visible)
-        </td>
-        <td>
-            @Html.ActionLink(@StaticResource.Resources.Edit, "Edit", new { id = item.Id }, new { @class = "btn btn-info", style = "width:85px" })
-            @Html.ActionLink(@StaticResource.Resources.Details, "Details", new { id = item.Id }, new { @class = "btn btn-info", style = "width:85px" })
-            @Html.ActionLink(@StaticResource.Resources.Delete, "Delete", new { id = item.Id }, new { @class = "btn btn-info", style = "width:85px" })
-        </td>
-    </tr>
-        }
-    }
+            if (item.Relation)
+            {
+                <div class="col-md-2">
+                    @if (item.ImagePartners?.Count > 0)
+                    {
+                        <img style="width:80px;height:60px;" src="data:@item.ImagePartners.First().ContentType;base64,@Convert.ToBase64String(item.ImagePartners.First().Content)" alt="Photo" />
+                    }
 
-</table>
+                    <h4>  @Html.DisplayFor(modelItem => item.Name)</h4>
+                    <p>
+                        @Html.DisplayFor(modelItem => item.Description)
+                    </p>
+                    <hr />
+                </div>
+            }
+        }
+    </div>
+    <div class="row">
+        @foreach (var item in Model)
+        {
+            if (item.Relation)
+            {
+        <div class="col-md-2">
+            <p><a class="btn btn-default" style="background-color: #A8A2CC; width:105px" href=@item.Link>@StaticResource.Resources.LearnMore &raquo;</a></p>
+
+            @Html.ActionLink(@StaticResource.Resources.Edit, "Edit", new { id = item.Id }, new { @class = "btn btn-info", style = "width:105px" })
+            @Html.ActionLink(@StaticResource.Resources.Details, "Details", new { id = item.Id }, new { @class = "btn btn-info", style = "width:105px" })
+            @Html.ActionLink(@StaticResource.Resources.Delete, "Delete", new { id = item.Id }, new { @class = "btn btn-info", style = "width:105px" })
+        </div>
+            }
+        }
+    </div>
+</div>
+

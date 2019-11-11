@@ -250,6 +250,15 @@ namespace StaticResource {
         }
         
         /// <summary>
+        ///   Recherche une chaîne localisée semblable à Ajouter Nom Propre.
+        /// </summary>
+        public static string AddNP {
+            get {
+                return ResourceManager.GetString("AddNP", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Recherche une chaîne localisée semblable à Adresse.
         /// </summary>
         public static string Address {
@@ -511,6 +520,15 @@ namespace StaticResource {
         }
         
         /// <summary>
+        ///   Recherche une chaîne localisée semblable à Voulez vous ajouter au dictionaire des noms propres?.
+        /// </summary>
+        public static string AskAddNP {
+            get {
+                return ResourceManager.GetString("AskAddNP", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Recherche une chaîne localisée semblable à Êtes-vous sûr de vouloir supprimer ceci?.
         /// </summary>
         public static string AskDelete {
@@ -525,6 +543,15 @@ namespace StaticResource {
         public static string AskEmail {
             get {
                 return ResourceManager.GetString("AskEmail", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Voulez-vous rechercher un avantage?.
+        /// </summary>
+        public static string AskSearchAdvantage {
+            get {
+                return ResourceManager.GetString("AskSearchAdvantage", resourceCulture);
             }
         }
         
@@ -759,6 +786,15 @@ namespace StaticResource {
         public static string CheckCode {
             get {
                 return ResourceManager.GetString("CheckCode", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Vérifier mot dans dictionnaire.
+        /// </summary>
+        public static string CheckDictionary {
+            get {
+                return ResourceManager.GetString("CheckDictionary", resourceCulture);
             }
         }
         
@@ -1582,6 +1618,15 @@ namespace StaticResource {
         }
         
         /// <summary>
+        ///   Recherche une chaîne localisée semblable à Trouvé.
+        /// </summary>
+        public static string Found {
+            get {
+                return ResourceManager.GetString("Found", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Recherche une chaîne localisée semblable à Française.
         /// </summary>
         public static string French {
@@ -1843,6 +1888,15 @@ namespace StaticResource {
         }
         
         /// <summary>
+        ///   Recherche une chaîne localisée semblable à Dans.
+        /// </summary>
+        public static string In {
+            get {
+                return ResourceManager.GetString("In", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Recherche une chaîne localisée semblable à Indéclinable.
         /// </summary>
         public static string Indeclinable {
@@ -1866,6 +1920,15 @@ namespace StaticResource {
         public static string Index {
             get {
                 return ResourceManager.GetString("Index", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Index Source.
+        /// </summary>
+        public static string IndexSource {
+            get {
+                return ResourceManager.GetString("IndexSource", resourceCulture);
             }
         }
         
@@ -3247,6 +3310,15 @@ namespace StaticResource {
         }
         
         /// <summary>
+        ///   Recherche une chaîne localisée semblable à Autre langue.
+        /// </summary>
+        public static string OtherLanguage {
+            get {
+                return ResourceManager.GetString("OtherLanguage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Recherche une chaîne localisée semblable à Autre pronom.
         /// </summary>
         public static string OtherPronoun {
@@ -3261,6 +3333,15 @@ namespace StaticResource {
         public static string OtherSiglum {
             get {
                 return ResourceManager.GetString("OtherSiglum", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Autre page Web.
+        /// </summary>
+        public static string OtherWebPage {
+            get {
+                return ResourceManager.GetString("OtherWebPage", resourceCulture);
             }
         }
         
@@ -3968,7 +4049,7 @@ namespace StaticResource {
         }
         
         /// <summary>
-        ///   Recherche une chaîne localisée semblable à Dictionnaire inversé.
+        ///   Recherche une chaîne localisée semblable à Index inversé.
         /// </summary>
         public static string ReverseDictionary {
             get {
@@ -4472,6 +4553,15 @@ namespace StaticResource {
         }
         
         /// <summary>
+        ///   Recherche une chaîne localisée semblable à Source.
+        /// </summary>
+        public static string Source {
+            get {
+                return ResourceManager.GetString("Source", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Recherche une chaîne localisée semblable à Source de la narration.
         /// </summary>
         public static string SourceStory {
@@ -4958,11 +5048,29 @@ namespace StaticResource {
         }
         
         /// <summary>
+        ///   Recherche une chaîne localisée semblable à Mise à jour.
+        /// </summary>
+        public static string Update {
+            get {
+                return ResourceManager.GetString("Update", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Recherche une chaîne localisée semblable à Télécharger.
         /// </summary>
         public static string Upload {
             get {
                 return ResourceManager.GetString("Upload", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Utilisation.
+        /// </summary>
+        public static string Use {
+            get {
+                return ResourceManager.GetString("Use", resourceCulture);
             }
         }
         
@@ -5206,6 +5314,15 @@ namespace StaticResource {
         public static string VoiceZh {
             get {
                 return ResourceManager.GetString("VoiceZh", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Avec.
+        /// </summary>
+        public static string With {
+            get {
+                return ResourceManager.GetString("With", resourceCulture);
             }
         }
         

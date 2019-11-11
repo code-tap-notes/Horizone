@@ -5,80 +5,87 @@
 }
 
 <h2>@StaticResource.Resources.TochPhrase</h2>
+<div class="autocontents">
+    <p>
+        <b> @StaticResource.Resources.Presentation @StaticResource.Resources.TochPhrase </b>
+        @{Html.RenderAction("PresentationTochPhrase", "DashBoards"); }
+    </p>
+</div>
 
 <p>
     @Html.ActionLink(@StaticResource.Resources.Add, "Create", null, new { @class = "btn btn-primary" })
 </p>
 
-
-<table class="table">
-    <tr>
-        <th>
+@foreach (var item in Model)
+{
+    <dl class="dl-horizontal">
+        <dt>
             @Html.DisplayNameFor(model => model.TochLanguage.Language)
-        </th>
-        <th>
+        </dt>
+        <dd>
+            @Html.DisplayFor(modelItem => item.TochLanguage.Language)
+        </dd>
+
+        <dt>
             @Html.DisplayNameFor(model => model.Phrase)
-        </th>
-        <th>
+        </dt>
+        <dd>
+            @Html.DisplayFor(modelItem => item.Phrase)
+        </dd>
+
+        <dt>
             @Html.DisplayNameFor(model => model.English)
-        </th>
-        <th>
+        </dt>
+        <dd>
+            @Html.DisplayFor(modelItem => item.English)
+        </dd>
+
+        <dt>
             @Html.DisplayNameFor(model => model.Francaise)
-        </th>
-        <th>
+        </dt>
+        <dd>
+            @Html.DisplayFor(modelItem => item.Francaise)
+        </dd>
+
+        <dt>
             @Html.DisplayNameFor(model => model.Chinese)
-        </th>
-        <th>
+        </dt>
+        <dd>
+            @Html.DisplayFor(modelItem => item.Chinese)
+        </dd>
+
+        <dt>
             @Html.DisplayNameFor(model => model.DerivedFrom)
-        </th>
-        <th>
+        </dt>
+        <dd>
+            @Html.DisplayFor(modelItem => item.DerivedFrom)
+        </dd>
+
+        <dt>
             @Html.DisplayNameFor(model => model.RelatedLexemes)
-        </th>
-        <th>
+        </dt>
+        <dd>
+            @Html.Raw(item.RelatedLexemes)
+        </dd>
+
+        <dt>
             @Html.DisplayNameFor(model => model.Description)
-        </th>
-        <th>
+        </dt>
+        <dd>
+            @Html.Raw(item.Description)
+        </dd>
+
+        <dt>
             @Html.DisplayNameFor(model => model.Visible)
-        </th>
-        <th></th>
-    </tr>
+        </dt>
+        <dd>
+            @Html.DisplayFor(modelItem => item.Visible)
+        </dd>
+    </dl>
+    <dl>
+        @Html.ActionLink(@StaticResource.Resources.Edit, "Edit", new { id = item.Id }, new { @class = "btn btn-info" })
+        @Html.ActionLink(@StaticResource.Resources.Delete, "Delete", new { id = item.Id }, new { @class = "btn btn-info" })
 
-    @foreach (var item in Model)
-    {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.TochLanguage.Language)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Phrase)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.English)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Francaise)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Chinese)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.DerivedFrom)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.RelatedLexemes)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Description)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Visible)
-            </td>
-            <td>
-                @Html.ActionLink(@StaticResource.Resources.Edit, "Edit", new { id = item.Id }, new { @class = "btn btn-info", style = "width:85px" })
-                @Html.ActionLink(@StaticResource.Resources.Details, "Details", new { id = item.Id }, new { @class = "btn btn-info", style = "width:85px" })
-                @Html.ActionLink(@StaticResource.Resources.Delete, "Delete", new { id = item.Id }, new { @class = "btn btn-info", style = "width:85px" })
-            </td>
-        </tr>
-    }
+    </dl>
+}
 
-</table>

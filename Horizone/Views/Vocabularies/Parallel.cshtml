@@ -5,8 +5,16 @@
 }
 
 <h2>@StaticResource.Resources.ParallelDictionary</h2>
+<div id="search">
+    <form class="form-group row" action="@Url.Action("SearchWord", "Vocabularies")" method="post" enctype="multipart/form-data">
+        <label for="Title"><strong> @StaticResource.Resources.Search </strong></label>
+        <div>
+            @{Html.RenderAction("SearchForm", "Home"); }
+        </div>
 
- 
+    </form>
+</div>
+
 <table class="table">
     <tr>
         <th>
@@ -44,41 +52,65 @@
         <th></th>
     </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.Word)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.EquivalentTA)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.EquivalentTB)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.TochCorrespondence)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Sanskrit)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.English)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Francaise)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.German)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Latin)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Chinese)
-        </td>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Word)
+            </td>
+            <td>
+                @if (item.TochLanguage.Language == "TA")
+                {
+                    @Html.DisplayFor(modelItem => item.Word)
+                }
+                else
+                {
+                    @Html.DisplayFor(modelItem => item.EquivalentTA)
+                }
+            </td>
+            <td>
+                @if (item.TochLanguage.Language == "TB")
+                {
+                    @Html.DisplayFor(modelItem => item.Word)
+                }
+                else
+                {
+                    @Html.DisplayFor(modelItem => item.EquivalentTB)
+                }
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TochCorrespondence)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Sanskrit)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.English)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Francaise)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.German)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Latin)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Chinese)
+            </td>
 
 
-    </tr>
-}
+        </tr>
+    }
 
 </table>
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+    <script>
+
+        function insertText(elemID, text) {
+            document.getElementById(elemID).value += text;
+        }
+    </script>
+}

@@ -300,12 +300,12 @@ namespace Horizone.Areas.BackOffice.Controllers
         public ActionResult Search(string search)
         {
 
-            IEnumerable<Manuscript> manuscripts = db.Manuscripts.Include(m => m.AlignmentType).Include(m => m.DescriptionManuscript).Include(m => m.Format).Include(m => m.GenderManuscript).Include(m => m.LanguageDetail).Include(m => m.LanguageStage).Include(m => m.Material).Include(m => m.Metric).Include(m => m.PaperColor).Include(m => m.RemarkAdd).Include(m => m.Ruling).Include(m => m.RulingColor).Include(m => m.RulingDetail).Include(m => m.Script).Include(m => m.Script.ScriptType).Include(m => m.ScriptAdd).Include(m => m.State).Include(m => m.SubGenderManuscript).Include(m => m.TochLanguage).Include(m => m.WritingTool);
-
+            IEnumerable<Manuscript> manuscripts = db.Manuscripts.Include("Catalogie").Include("Map").Include("ImageManuscripts").Include("State").Include("DescriptionManuscript").Include("RemarkAdd").Include("Format").Include("Ruling").Include("RulingColor").Include("RulingDetail").Include("Material").Include("PaperColor").Include("WritingTool").Include("AlignmentType").Include("Script").Include("ScriptAdd").Include("LanguageStage").Include("Tochlanguage").Include("LanguageDetail").Include("GenderManuscript").Include("SubGenderManuscript").Include("Metric").Include("Bibliographys");
 
             if (!string.IsNullOrWhiteSpace(search))
             {
-                manuscripts = db.Manuscripts.Include(m => m.AlignmentType).Include(m => m.DescriptionManuscript).Include(m => m.Format).Include(m => m.GenderManuscript).Include(m => m.LanguageDetail).Include(m => m.LanguageStage).Include(m => m.Material).Include(m => m.Metric).Include(m => m.PaperColor).Include(m => m.RemarkAdd).Include(m => m.Ruling).Include(m => m.RulingColor).Include(m => m.RulingDetail).Include(m => m.Script).Include(m => m.Script.ScriptType).Include(m => m.ScriptAdd).Include(m => m.State).Include(m => m.SubGenderManuscript).Include(m => m.TochLanguage).Include(m => m.WritingTool).Where(x => x.Transliteration.Contains(search));
+                manuscripts = db.Manuscripts.Include(m => m.AlignmentType).Include(m => m.DescriptionManuscript).Include(m => m.Format).Include(m => m.GenderManuscript).Include(m => m.LanguageDetail).Include(m => m.LanguageStage).Include(m => m.Material).Include(m => m.Metric).Include(m => m.PaperColor).Include(m => m.RemarkAdd).Include(m => m.Ruling).Include(m => m.RulingColor).Include(m => m.RulingDetail).Include(m => m.Script).Include(m => m.Script.ScriptType).Include(m => m.ScriptAdd).Include(m => m.State).Include(m => m.SubGenderManuscript).Include(m => m.TochLanguage).Include(m => m.WritingTool).Where(x => x.Transliteration.Contains(search)
+                || x.Index.Contains(search) || x.Transcription.Contains(search) || x.TochLanguage.Language.Contains(search));
 
             }
 
@@ -313,6 +313,7 @@ namespace Horizone.Areas.BackOffice.Controllers
             {
                 Display("Aucun résultat");
             }
+            ViewBag.Search = search;
 
             return View("Search", manuscripts.ToList());
         }

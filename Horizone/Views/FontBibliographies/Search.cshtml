@@ -2,32 +2,14 @@
 
 @{
     ViewBag.Title = @StaticResource.Resources.Search;
-
 }
 
-
 <h2>@StaticResource.Resources.SearchResult</h2>
-
-
-<div class="col-md-2">
-
-    <form class="form-group row" action="@Url.Action("Search", "FontBibliographies")" method="post" enctype="multipart/form-data">
-        <div class="form-group ">
-            <label for="search">@StaticResource.Resources.SearchWord</label>
-            <input type="text" class="form-control" id="Search" name="search" /><br />
-        </div>
-    </form>
-</div>
-<div class="col-md-2">
-    <div class="form-group">
-        <br />
-        <button type="submit" class="btn btn-info"> @StaticResource.Resources.Search</button>
-    </div>
-
-</div>
-
-
-<div class="col-md-8">
+@Model.Count() @StaticResource.Resources.SearchResult <b> " @ViewBag.Search " </b> @StaticResource.Resources.Found
+<br/>
+<p>
+    @Html.ActionLink(StaticResource.Resources.Return, "Bibliographie", null, new { @class = "btn btn-primary", style = "width:85px" })
+</p>
 
     <div class="bibliography row">
         <table class="table">
@@ -52,33 +34,27 @@
 
             @foreach (var item in Model)
             {
-            <tr>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Author)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.PublicationDate)
-                </td>
-                <td>
-                    @Html.Raw(item.Title)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Journal)
-                </td>                
-                <td>
-                    <a href=@item.UlrBibliography class="btn btn-info">@StaticResource.Resources.LearnMore &raquo;</a>
-                </td>
-            </tr>
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Author)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.PublicationDate)
+                    </td>
+                    <td>
+                        @Html.Raw(item.Title)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Journal)
+                    </td>
+                    <td>
+                        <a href=@item.UlrBibliography class="btn btn-info">@StaticResource.Resources.LearnMore &raquo;</a>
+                    </td>
+                </tr>
             }
-
         </table>
-
     </div>
-</div>
-
 
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")
-
 }
-

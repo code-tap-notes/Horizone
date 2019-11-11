@@ -105,6 +105,28 @@ namespace Horizone.Areas.BackOffice.Controllers
             db.TochPhrases.Remove(tochPhrase);
             db.SaveChanges();
             return RedirectToAction("Index");
-        }      
+        }
+        public ActionResult SearchPhrase(string search)
+        {
+
+            IEnumerable<TochPhrase> tochPhrases = db.TochPhrases;
+
+            if (!string.IsNullOrWhiteSpace(search))
+            {
+                tochPhrases = db.TochPhrases.Include("TochLanguage").Where(x => x.Phrase.Contains(search)
+                || (x.English != null && x.English.Contains(search))
+                || (x.Francaise != null && x.Francaise.Contains(search))
+                || (x.Chinese != null && x.Chinese.Contains(search)));
+
+            }
+
+            if (tochPhrases.Count() == 0)
+            {
+                Display("Aucun résultat");
+            }
+            ViewBag.Search = search;
+
+            return View(tochPhrases.ToList());
+        }
     }
 }

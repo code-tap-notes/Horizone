@@ -7,28 +7,28 @@
 
 
 <h2>@StaticResource.Resources.SearchResult</h2>
+@Model.Count() @StaticResource.Resources.SearchResult <b> " @ViewBag.Search " </b> @StaticResource.Resources.Found
 
-  
 
-    <div class="bibliography row">
-        <table class="table">
-            <tr>
-                <th>
-                    @StaticResource.Resources.CodeIndex
-                </th>
-                <th>
-                    @StaticResource.Resources.TochLanguage
-                </th>
-                <th>
-                    @StaticResource.Resources.Transliteration
-                </th>
-                
-               
-                <th></th>
-            </tr>
+<div class="bibliography row">
+    <table class="table">
+        <tr>
+            <th>
+                @StaticResource.Resources.CodeIndex
+            </th>
+            <th>
+                @StaticResource.Resources.TochLanguage
+            </th>
+            <th>
+                @StaticResource.Resources.Transliteration
+            </th>
 
-            @foreach (var item in Model)
-            {
+
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
             <tr>
                 <td>
                     @Html.DisplayFor(modelItem => item.Index)
@@ -39,17 +39,17 @@
                 <td>
                     @Html.Raw(item.Transliteration)
                 </td>
-                
+
                 <td>
                     @Html.ActionLink(@StaticResource.Resources.Details, "Details", new { id = item.Id }, new { @class = "btn btn-info", style = "width:90px" })
                 </td>
             </tr>
-            }
+        }
 
-        </table>
+    </table>
 
-    </div>
- 
+</div>
+
 
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")

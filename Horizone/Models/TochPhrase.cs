@@ -37,7 +37,7 @@ namespace Horizone.Models
 
         [Display(Name = "DerivedFrom", ResourceType = typeof(StaticResource.Resources))]
         public string DerivedFrom { get; set; }
-
+        [AllowHtml]
         [Display(Name = "RelatedLexemes", ResourceType = typeof(StaticResource.Resources))]
         public string RelatedLexemes { get; set; }
 

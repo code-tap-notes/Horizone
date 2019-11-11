@@ -1,61 +1,32 @@
-﻿@{
+﻿@using Microsoft.AspNet.Identity
+@{
     ViewBag.Title = StaticResource.Resources.Home;
 }
 <div class="container body-content">
     <!--Recherche-->
     <div id="search">
-        <form class="form-group row" action="@Url.Action("Search", "FrontBibliographys")" method="post" enctype="multipart/form-data">
-            <div class="form-group col-md-2">
-                <br />
-                <button type="submit" class="btn btn-info bigBtn"> @StaticResource.Resources.Search</button>
-            </div>
-
-            <div class="form-group col-md-4">
-                <label for="search">@StaticResource.Resources.SearchWord </label>
-                <input class="form-control" type="text" id="Search" name="search" />
-            </div>
+        <form class="form-group row" action="@Url.Action("SearchIndex", "Home")" method="post" enctype="multipart/form-data">
             <div>
-                <p><strong>Insert:  </strong> </p>
-                <a onclick="insertText('Place','ā');" href="#" style="font-size:medium; padding:5px"> ā  </a>
-                <a onclick="insertText('Place','ä');" href="#" style="font-size:medium; padding:5px"> ä  </a>
-                <a onclick="insertText('Place','ī');" href="#" style="font-size:medium; padding:5px"> ī  </a>
-                <a onclick="insertText('Place','ö');" href="#" style="font-size:medium; padding:5px"> ö  </a>
-                <a onclick="insertText('Place','ū');" href="#" style="font-size:medium; padding:5px"> ū  </a>
-                <a onclick="insertText('Place','ü');" href="#" style="font-size:medium; padding:5px"> ü  </a>
-                <a onclick="insertText('Place','ṅ');" href="#" style="font-size:medium; padding:5px"> ṅ  </a>
-                <a onclick="insertText('Place','ñ');" href="#" style="font-size:medium; padding:5px"> ñ  </a>
-                <a onclick="insertText('Place','ṇ');" href="#" style="font-size:medium; padding:5px"> ṇ  </a>
-                <a onclick="insertText('Place','ṃ');" href="#" style="font-size:medium; padding:5px"> ṃ  </a>
-                <a onclick="insertText('Place','ś');" href="#" style="font-size:medium; padding:5px"> ś  </a>
-                <a onclick="insertText('Place','ṣ');" href="#" style="font-size:medium; padding:5px"> ṣ  </a>
-                <a onclick="insertText('Place','ṛ');" href="#" style="font-size:medium; padding:5px"> ṛ  </a>
-                <a onclick="insertText('Place','ṭ');" href="#" style="font-size:medium; padding:5px"> ṭ  </a>
-                <a onclick="insertText('Place','š');" href="#" style="font-size:medium; padding:5px"> š  </a>
-                <a onclick="insertText('Place','ß');" href="#" style="font-size:medium; padding:5px"> ß  </a>
-                <a onclick="insertText('Place','ḍ');" href="#" style="font-size:medium; padding:5px"> ḍ  </a>
-                <a onclick="insertText('Place','Ś');" href="#" style="font-size:medium; padding:5px"> Ś  </a>
-                <a onclick="insertText('Place','Ā');" href="#" style="font-size:medium; padding:5px"> Ā  </a>
-                <a onclick="insertText('Place','Ū');" href="#" style="font-size:medium; padding:5px"> Ū  </a>
-                <a onclick="insertText('Place','Ṃ');" href="#" style="font-size:medium; padding:5px"> Ṃ  </a>
-                <a onclick="insertText('Place','Ṇ');" href="#" style="font-size:medium; padding:5px"> Ṇ  </a>
-                <a onclick="insertText('Place','Ñ');" href="#" style="font-size:medium; padding:5px"> Ñ  </a>
-
+                @{Html.RenderAction("SearchForm", "Home"); }
             </div>
+
         </form>
     </div>
     <!--Information principal-->
-    <div id="midheader-vp">        
-            @{Html.RenderAction("PresenteProject", "Home"); }        
+    <div id="midheader-vp">
+        @{Html.RenderAction("PresenteProject", "Home"); }
     </div>
     <div class="clear"></div>
     <!--Last News-->
-    <div id="slide-vp">       
+    <div id="slide-vp">
         <div id="slide-left">
-            <div id="slideleft-main">              
-                @{Html.RenderAction("LatestNewsFr", "FontNews"); }                              
-                @{Html.RenderAction("LatestNewsEn", "FontNews"); }                
-                @{Html.RenderAction("LatestNewsZh", "FontNews"); }
+            <div id="slideleft-main">
+                @{Html.RenderAction("LatestNewsFr", "FontNews"); }
+                @{Html.RenderAction("LatestNewsEn", "FontNews"); }
+                @{Html.RenderAction("LatestNewsZh", "FontNews"); }                
             </div>
+
+
             <div id="slideleft-scroll">
                 <!--Frequntly-->
                 <div class="content_scoller width_common">
@@ -75,11 +46,11 @@
 
         </div>
         <!--Logo Histochtech-->
-        <div id="gocnhin">
+        <div>
             <img class="moyenImage" alt="" src="~/Image/basin.jpg">
             <div class="title_news"></div>
         </div>
-        
+
         <div id="slideleft-scroll">
             <div id="content-vp">
                 <div class="box-cat">
@@ -100,59 +71,28 @@
                 </div>
             </div>
         </div>
-    </div>
-   
-    <!--Group of tochStory-->
-    <div id="midheader-vp">
-        <div id="content-vp">           
-            <div class="clear"></div>
-            <div class="cat">
-                <div class="main-cat">
-                    <a href="#">TochStory</a>
-                </div>
-                <div class="clear"></div>
-                <div class="cat-content">
-                    <div class="col-md-4">
-                        <div class="news">
-                            <h3 class="title"><a href="#"> Story 1 </a></h3>
-                            <img class="images_news" src="~/Image/tarim.jpg" />/" align="left" />
-                            <div class="des">1  </div>
-                            <div class="clear"></div>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="news">
-                            <h3 class="title"><a href="#"> Story 2 </a></h3>
-                            <img class="images_news" src="~/Image/tarim.jpg" />/" align="left" />
-                            <div class="des">2  </div>
-                            <div class="clear"></div>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="news">
-                            <h3 class="title"><a href="#"> Story 3 </a></h3>
-                            <img class="images_news" src="~/Image/tarim.jpg" />/" align="left" />
-                            <div class="des">3  </div>
-                            <div class="clear"></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="clear"></div>
-        </div>
         <div class="clear"></div>
     </div>
+
+    <!--Group of latest tochStory-->
+    <div id="midheader-vp">
+        <div class="row">
+            @{Html.RenderAction("LatestStory", "Home"); }
+        </div>
+    </div>
     <div id="footer">
-        
+
     </div>
 </div>
 
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")
-<script>
-   
-    function insertText(elemID, text) {
-        document.getElementById(elemID).value += text;       
-    }
- </script>
+    <script>
+        function insertText(elemID, text) {
+            document.getElementById(elemID).value += text;
+        }
+       // $(function () {
+         //   tinymce.init({ selector: '#Content' });
+       // });
+    </script>
 }

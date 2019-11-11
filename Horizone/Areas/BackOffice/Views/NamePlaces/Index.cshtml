@@ -1,53 +1,71 @@
 ﻿@model IEnumerable<Horizone.Models.NamePlace>
 
 @{
-    ViewBag.Title = @StaticResource.Resources.Place;
+    ViewBag.Title = @StaticResource.Resources.NamePlaces;
 }
 
-<h2>@StaticResource.Resources.Place</h2>
-
+<h3>@StaticResource.Resources.TochStory </h3>
+<h4> @StaticResource.Resources.SearchBy : @StaticResource.Resources.NamePlaces</h4>
 <p>
     @Html.ActionLink(@StaticResource.Resources.Add, "Create", null, new { @class = "btn btn-primary" })
 </p>
-
-
 <table class="table">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.Place)
+            @StaticResource.Resources.NamePlaces
+
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.DescriptionEn) @StaticResource.Resources.English
+            @StaticResource.Resources.Description
         </th>
-        <th>
-            @Html.DisplayNameFor(model => model.DescriptionFr) @StaticResource.Resources.French
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.DescriptionZh) @StaticResource.Resources.Chinese
-        </th>
+
+        <th> @StaticResource.Resources.In  @StaticResource.Resources.TochStory</th>
+        <th></th>
+        <th></th>
         <th></th>
     </tr>
 
+
     @foreach (var item in Model)
     {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.Place)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.DescriptionEn)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.DescriptionFr)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.DescriptionZh)
-        </td>
-        <td>
-            @Html.ActionLink(@StaticResource.Resources.Edit, "Edit", new { id = item.Id }, new { @class = "btn btn-info", style = "width:85px" })
-            @Html.ActionLink(@StaticResource.Resources.Delete, "Delete", new { id = item.Id }, new { @class = "btn btn-info", style = "width:85px" })
-        </td>
-    </tr>
-    }
+        <tr>
+            <td>
 
+                <form class="form-group row" action="@Url.Action("SearchStory", "TochStories")" method="post" enctype="multipart/form-data">
+                    <button type="submit" class="btn btn-default" style="width:70%; text-align:left;">  @Html.DisplayFor(modelItem => item.Place) </button>
+                    <input class="form-control" type="hidden" id="Search" name="search" value="@item.Place" />
+                </form>
+            </td>
+            <td>
+                @if (Session[Horizone.Common.CommonConstants.CurrentCulture].ToString() == "en")
+                {
+
+                    @Html.Raw(item.DescriptionEn)
+
+                }
+                @if (Session[Horizone.Common.CommonConstants.CurrentCulture].ToString() == "fr")
+                {
+
+                    @Html.Raw(item.DescriptionFr)
+
+                }
+                @if (Session[Horizone.Common.CommonConstants.CurrentCulture].ToString() == "zh")
+                {
+
+                    @Html.Raw(item.DescriptionZh)
+
+                }
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.InStory)
+            </td>
+            <td>
+                @Html.ActionLink(@StaticResource.Resources.Edit, "Edit", new { id = item.Id }, new { @class = "btn btn-info", style = "width:85px" })
+                @Html.ActionLink(@StaticResource.Resources.Delete, "Delete", new { id = item.Id }, new { @class = "btn btn-info", style = "width:85px" })
+            </td>
+
+            <td></td>
+            <td></td>
+        </tr>
+    }
 </table>

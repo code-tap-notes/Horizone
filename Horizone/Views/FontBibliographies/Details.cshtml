@@ -1,66 +1,65 @@
 ﻿@model Horizone.Models.Bibliography
 
 @{
-    Layout = null;
+    ViewBag.Title = @StaticResource.Resources.Details;
 }
 
-<!DOCTYPE html>
+<h2>@StaticResource.Resources.Details</h2>
 
-<html>
-<head>
-    <meta name="viewport" content="width=device-width" />
-    <title>Details</title>
-</head>
-<body>
-    <div>
-        <h4>Bibliography</h4>
-        <hr />
-        <dl class="dl-horizontal">
-            <dt>
-                @Html.DisplayNameFor(model => model.Author)
-            </dt>
-    
-            <dd>
-                @Html.DisplayFor(model => model.Author)
-            </dd>
-    
-            <dt>
-                @Html.DisplayNameFor(model => model.PublicationDate)
-            </dt>
-    
-            <dd>
-                @Html.DisplayFor(model => model.PublicationDate)
-            </dd>
-    
-            <dt>
-                @Html.DisplayNameFor(model => model.Title)
-            </dt>
-    
-            <dd>
-                @Html.DisplayFor(model => model.Title)
-            </dd>
-    
-            <dt>
-                @Html.DisplayNameFor(model => model.Journal)
-            </dt>
-    
-            <dd>
-                @Html.DisplayFor(model => model.Journal)
-            </dd>
-    
-            <dt>
-                @Html.DisplayNameFor(model => model.UlrBibliography)
-            </dt>
-    
-            <dd>
-                @Html.DisplayFor(model => model.UlrBibliography)
-            </dd>
-    
-        </dl>
-    </div>
-    <p>
-        @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
-        @Html.ActionLink("Back to List", "Index")
-    </p>
-</body>
-</html>
+<div>
+    <h4>@StaticResource.Resources.Bibliography</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Author)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Author)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PublicationDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PublicationDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Title)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Title)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Journal)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Journal)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.UlrBibliography)
+        </dt>
+
+        <dd>
+            <a href=@Model.UlrBibliography>  @StaticResource.Resources.LearnMore &raquo;</a>
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Book)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Book)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink(@StaticResource.Resources.Return, "SearchIndex","Home")
+</p>

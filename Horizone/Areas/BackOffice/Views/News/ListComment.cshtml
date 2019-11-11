@@ -1,0 +1,28 @@
+﻿@using Microsoft.AspNet.Identity
+@model IEnumerable<Horizone.Models.Comment>
+<h4 style="color:saddlebrown; font-weight:bold;">@StaticResource.Resources.Comment</h4>
+
+@foreach (var item in Model)
+{
+    <div style="border: 0.5px solid lightgray; padding-left:5px">
+        <p>@item.Content </p>
+    </div>
+    <p>&diams; @item.Date|@StaticResource.Resources.PublishedBy  @item.Client.FirstName</p>
+    <br />
+}
+
+<br />
+
+<h6><i class="fa fa-address-card-o" style="font-size:24px"></i> @StaticResource.Resources.Add @StaticResource.Resources.Comment </h6>
+<form class="form-group row" style="width : 100%;" action="@Url.Action("NewComment", "News")" method="post" enctype="multipart/form-data">
+    <div class="form-group">
+        <label for="Title"> @StaticResource.Resources.Comment </label>
+        <textarea class="form-control" type="text" id="Search" name="search"></textarea>
+        <input class="form-control" type="hidden" id="id" name="id" Value=@ViewBag.NewsId />
+    </div>
+    <div class="form-group">
+        <p style="float:left">@StaticResource.Resources.PublishedBy @StaticResource.Resources.User  :  @User.Identity.GetUserName()  !  </p>
+        <button type="submit" style="width:125px; float:right;" class="btn btn-default"> <i class="fa fa-comments-o"></i> @StaticResource.Resources.Comment </button>
+    </div>
+</form>
+

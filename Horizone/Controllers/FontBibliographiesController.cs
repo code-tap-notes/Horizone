@@ -70,7 +70,7 @@ namespace Horizone.Controllers
             if (!string.IsNullOrWhiteSpace(search))
             {
                 bibliographies = bibliographies.Where(x => x.Author.Contains(search)
-                || x.Title.Contains(search));
+                || x.Title.Contains(search) || x.Journal.Contains(search));
                 //|| x.PublicationDate.Contains(search));
 
             }
@@ -79,6 +79,7 @@ namespace Horizone.Controllers
             {
                 Display("Aucun résultat");
             }
+            ViewBag.Search = search;
 
             return View("Search", bibliographies.ToList());
 
@@ -89,16 +90,31 @@ namespace Horizone.Controllers
 
             if (!string.IsNullOrWhiteSpace(search))
             {
-                abreviations = abreviations.Where(x => x.Symbol.Contains(search));
+                abreviations = abreviations.Where(x => x.Symbol == search);
               
             }
-            
+          
             if (abreviations.Count() == 0)
             {
                 Display("Aucun résultat");
             }
+            ViewBag.Search = search;
             return View("SearchAbreviation", abreviations.ToList());
+        }
+        // GET: BackOffice/Verbs/Details/5
+        public ActionResult DetailsAbbreviation(int? id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            Abreviation abreviation = db.Abreviations.SingleOrDefault(y => y.Id == id);
 
+            if (abreviation == null)
+            {
+                return HttpNotFound();
+            }
+            return View(abreviation);
         }
     }
 }

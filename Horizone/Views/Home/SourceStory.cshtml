@@ -6,19 +6,50 @@
 
 <h3>@StaticResource.Resources.TochStory </h3>
 <h4>    @StaticResource.Resources.SearchBy :  @StaticResource.Resources.SourceStory</h4>
-   
-    @foreach (var item in Model)
-    {
-        <div class="row">
-            <div class="col-md-4">
-                <form class="form-group row" action="@Url.Action("SearchStory", "Home")" method="post" enctype="multipart/form-data">
+
+@if (Session[Horizone.Common.CommonConstants.CurrentCulture].ToString() == "en")
+{
+    var source = Model.OrderBy(x => x.SourceEn).ToList();
+    <div class="row">
+        @foreach (var item in source)
+        {
+            <div class="col-md-3">
+                <form class="form-group row" action="@Url.Action("SearchStory", "Home" )" method="post" enctype="multipart/form-data">
                     <button type="submit" class="btn btn-default" style="width:95%; text-align:left;">  @Html.DisplayFor(modelItem => item.SourceEn) </button>
                     <input class="form-control" type="hidden" id="Search" name="search" value="@item.SourceEn" />
                 </form>
             </div>
-
-        </div>
-    }
-
-
+        }
+    </div>
+}
+@if (Session[Horizone.Common.CommonConstants.CurrentCulture].ToString() == "fr")
+{
+    var source = Model.OrderBy(x => x.SourceFr).ToList();
+    <div class="row">
+        @foreach (var item in source)
+        {
+            <div class="col-md-3">
+                <form class="form-group row" action="@Url.Action("SearchStory", "Home" )" method="post" enctype="multipart/form-data">
+                    <button type="submit" class="btn btn-default" style="width:95%; text-align:left;">  @Html.DisplayFor(modelItem => item.SourceFr) </button>
+                    <input class="form-control" type="hidden" id="Search" name="search" value="@item.SourceFr" />
+                </form>
+            </div>
+        }
+    </div>
+}
+@if (Session[Horizone.Common.CommonConstants.CurrentCulture].ToString() == "zh")
+{
+    var source = Model.OrderBy(x => x.SourceZh).ToList();
+    <div class="row">
+        @foreach (var item in source)
+        {
+            <div class="col-md-3">
+                <form class="form-group row" action="@Url.Action("SearchStory", "Home" )" method="post" enctype="multipart/form-data">
+                    <button type="submit" class="btn btn-default" style="width:95%; text-align:left;">  @Html.DisplayFor(modelItem => item.SourceZh) </button>
+                    <input class="form-control" type="hidden" id="Search" name="search" value="@item.SourceZh" />
+                </form>
+            </div>
+        }
+    </div>
+}
 

@@ -42,7 +42,7 @@
                 @Html.ValidationMessageFor(model => model.ThemeStoryId, "", new { @class = "text-danger" })
             </div>
         </div>
-        
+
         <div class="form-group">
             @Html.LabelFor(model => model.PlasticRepresentation, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
@@ -153,6 +153,7 @@
             tinymce.init({ selector: '#English' });
             tinymce.init({ selector: '#Francaise' });
             tinymce.init({ selector: '#Chinese' });
+            tinymce.init({ selector: '#Description' });
         });
     </script>
 }

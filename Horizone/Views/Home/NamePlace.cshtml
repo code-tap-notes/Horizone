@@ -4,18 +4,56 @@
     ViewBag.Title = @StaticResource.Resources.NamePlaces;
 }
 
-<h3>@StaticResource.Resources.TochStory </h3>
-    <h4> @StaticResource.Resources.SearchBy : @StaticResource.Resources.NamePlaces</h4>
+<h3>@StaticResource.Resources.TochStory </h3> 
+<h4> @StaticResource.Resources.SearchBy : @StaticResource.Resources.NamePlaces</h4>
+<table class="table">
+    <tr>
+        <th>
+            @StaticResource.Resources.NamePlaces
 
-@foreach (var item in Model)
-{
-    <div class="row">
-        <div class="col-md-4">
-            <form class="form-group row" action="@Url.Action("SearchStory", "Home")" method="post" enctype="multipart/form-data">
-                <button type="submit" class="btn btn-default" style="width:95%; text-align:left;">  @Html.DisplayFor(modelItem => item.Place) </button>
-                <input class="form-control" type="hidden" id="Search" name="search" value="@item.Place" />
-            </form>
-        </div>
-    </div>
-}
+        </th>
+        <th>
+            @StaticResource.Resources.Description
+        </th>
+        <th></th>
+        <th></th>
+        <th></th>
+    </tr>
 
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+
+                <form class="form-group row" action="@Url.Action("SearchStory", "Home")" method="post" enctype="multipart/form-data">
+                    <button type="submit" class="btn btn-default" style="width:45%; text-align:left;">  @Html.DisplayFor(modelItem => item.Place) </button>
+                    <input class="form-control" type="hidden" id="Search" name="search" value="@item.Place" />
+                </form>
+            </td>
+            <td>
+                @if (Session[Horizone.Common.CommonConstants.CurrentCulture].ToString() == "en")
+                {
+                    
+                        @Html.Raw(item.DescriptionEn)
+                   
+                }
+                @if (Session[Horizone.Common.CommonConstants.CurrentCulture].ToString() == "fr")
+                {
+                   
+                        @Html.Raw(item.DescriptionFr)
+                   
+                }
+                @if (Session[Horizone.Common.CommonConstants.CurrentCulture].ToString() == "zh")
+                {
+                    
+                        @Html.Raw(item.DescriptionZh)
+                   
+                }
+            </td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+    }
+</table>

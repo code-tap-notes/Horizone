@@ -1,0 +1,46 @@
+﻿@model IEnumerable<Horizone.Models.SearchResult>
+
+@{
+    ViewBag.Title = @StaticResource.Resources.AbbreviationDictionary;
+}
+
+<h2>@StaticResource.Resources.AbbreviationDictionary</h2>
+<h4>@StaticResource.Resources.SearchResult</h4>
+@Model.Count() @StaticResource.Resources.SearchResult <b> " @ViewBag.Search " </b> @StaticResource.Resources.Found
+<br />
+@if (Model.Count() == 0)
+{
+    @StaticResource.Resources.AskSearchAdvantage;
+    <form class="form-group row" action="@Url.Action("SearchIndex", "Dashboard" )" method="post" enctype="multipart/form-data">
+        <button type="submit" class="btn btn-default" style="width:20%; text-align:left;"> @StaticResource.Resources.Search <b> " @ViewBag.Search " </b> </button>
+        <input class="form-control" type="hidden" id="Search" name="search" value="@ViewBag.Search" />
+    </form>
+}
+
+<br />
+
+@foreach (var item in Model)
+{
+    if (item.NameTable == "AbbreviationDictionaries")
+    {
+        <a href="@Url.Action("Details", "AbbreviationDictionaries", new { id = item.IdResult })"> @StaticResource.Resources.AbbreviationDictionary </a>
+        <br />
+        <p>@Html.DisplayFor(modelItem => item.Summary) ...</p>
+    }
+
+    if (item.NameTable == "Abbreviations")
+    {
+        <a href="@Url.Action("Details", "Abbreviations", new { id = item.IdResult })"> @StaticResource.Resources.Abbreviations </a>
+        <br />
+        <p>@Html.DisplayFor(modelItem => item.Summary)...</p>
+
+    }
+
+}
+<br />
+
+@Html.ActionLink(StaticResource.Resources.Return, "Abbreviation", null, new { @class = "btn btn-primary", style = "width:90px" })
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

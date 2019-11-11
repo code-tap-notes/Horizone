@@ -1,0 +1,40 @@
+﻿@model IEnumerable<Horizone.Models.VisualAid>
+
+@{
+    ViewBag.Title = @StaticResource.Resources.Question;
+}
+
+<h2>@StaticResource.Resources.Question</h2>
+@Model.Count() @StaticResource.Resources.SearchResult <b> " @ViewBag.Search " </b> @StaticResource.Resources.Found
+<br />
+@Html.ActionLink(StaticResource.Resources.Return, "Help", null, new { @class = "btn btn-primary" })
+
+
+<table class="table">
+    <tr>
+
+        <th>
+            @Html.DisplayNameFor(model => model.Aids)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Description)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+
+        <tr>
+
+            <td>
+                @Html.DisplayFor(modelItem => item.Aids)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Description)
+            </td>
+            <td></td>
+        </tr>
+    }
+
+</table>

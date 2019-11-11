@@ -6,7 +6,7 @@
 
 <h2>@StaticResource.Resources.Details</h2>
 <div>
-    <h4>NounAdjective</h4>
+    <h4> @StaticResource.Resources.Noun - @StaticResource.Resources.Adjective</h4>
     <hr />
     <dl class="dl-horizontal">
         <dt>
@@ -351,3 +351,5 @@
     }
 
 </p>
+<h5>@StaticResource.Resources.AskAddDic</h5>
+@Html.ActionLink(@StaticResource.Resources.Add, "AddDictionary", "NounAdjectives", new { id = Model.Id }, new { @class = "btn btn-default", style = "background-color: #A8A2CC; width:95px" }) 

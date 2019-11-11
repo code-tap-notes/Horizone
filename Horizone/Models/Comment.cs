@@ -15,13 +15,9 @@ namespace Horizone.Models
         
         [DataType(DataType.DateTime)]
         [Display(Name = "Date ")]
-        public DateTime Date
-        {
-            get
-            {
-                return DateTime.Now;
-            }
-        }
+        public DateTime Date { get; set; }
+        
+        [AllowHtml]
         [Display(Name = "Content", ResourceType = typeof(StaticResource.Resources))]      
         public string Content { get; set; }
 
@@ -31,10 +27,10 @@ namespace Horizone.Models
         [ForeignKey("NewsId")]
         public News News { get; set; }
 
-        [Display(Name = "PublishedBy", ResourceType = typeof(StaticResource.Resources))]
-        public string UserId { get; set; }
+        [Display(Name = "Client", ResourceType = typeof(StaticResource.Resources))]
+        public int ClientId { get; set; }
 
-        [ForeignKey("UserId")]
-        public ApplicationUser ApplicationUser { get; set; }
+        [ForeignKey("ClientId")]
+        public Client Client { get; set; }
     }
 }
