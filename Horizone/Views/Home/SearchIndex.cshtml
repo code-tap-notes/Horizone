@@ -12,49 +12,49 @@
 {
     if (item.NameTable == "TochStorys")
     {
-        <a href="@Url.Action("DetailsStory", "Home", new { id = item.IdResult })"> @StaticResource.Resources.TochStory </a>
+<a href="@Url.Action("DetailsStory", "Home", new { id = item.IdResult })"> " @ViewBag.Search " @StaticResource.Resources.Found @StaticResource.Resources.In @StaticResource.Resources.TochStory </a>
         <br />
         <p>@Html.DisplayFor(modelItem => item.Summary) ...</p>
     }
 
     if (item.NameTable == "DictionaryTocharians")
     {
-        <a href="@Url.Action("Details", "Vocabularies", new { id = item.IdResult })"> @StaticResource.Resources.DictionaryTocharian </a>
+        <a href="@Url.Action("Details", "Vocabularies", new { id = item.IdResult })">  " @ViewBag.Search "  @StaticResource.Resources.Found @StaticResource.Resources.In @StaticResource.Resources.DictionaryTocharian </a>
         <br />
         <p>@Html.DisplayFor(modelItem => item.Summary)...</p>
 
     }
     if (item.NameTable == "Manuscripts")
     {
-        <a href="@Url.Action("Details", "FontManuscripts", new { id = item.IdResult })"> @StaticResource.Resources.Manuscript </a>
+        <a href="@Url.Action("Details", "FontManuscripts", new { id = item.IdResult })"> " @ViewBag.Search " @StaticResource.Resources.Found @StaticResource.Resources.In @StaticResource.Resources.Manuscript </a>
         <br />
         <p>@Html.DisplayFor(modelItem => item.Summary)...</p>
 
     }
     if (item.NameTable == "TochPhrases")
     {
-        <a href="@Url.Action("Details", "FontTochPhrases", new { id = item.IdResult })"> @StaticResource.Resources.TochPhrase </a>
+        <a href="@Url.Action("Details", "FontTochPhrases", new { id = item.IdResult })"> " @ViewBag.Search "  @StaticResource.Resources.Found @StaticResource.Resources.In @StaticResource.Resources.TochPhrase </a>
         <br />
         <p>@Html.DisplayFor(modelItem => item.Summary)...</p>
 
     }
     if (item.NameTable == "Bibliographys")
     {
-        <a href="@Url.Action("Details", "FontBibliographies", new { id = item.IdResult })"> @StaticResource.Resources.Bibliography </a>
+        <a href="@Url.Action("Details", "FontBibliographies", new { id = item.IdResult })"> " @ViewBag.Search "  @StaticResource.Resources.Found @StaticResource.Resources.In @StaticResource.Resources.Bibliography </a>
         <br />
         <p>@Html.DisplayFor(modelItem => item.Summary)...</p>
 
     }
     if (item.NameTable == "ProperNouns")
     {
-        <a href="#"> @StaticResource.Resources.ProperNoun </a>
+        <a href="#"> " @ViewBag.Search "  @StaticResource.Resources.Found @StaticResource.Resources.In @StaticResource.Resources.ProperNoun </a>
         <br />
         <p>@Html.DisplayFor(modelItem => item.Summary)...</p>
 
     }
     if (item.NameTable == "NamePlaces")
     {
-        <a href="#"> @StaticResource.Resources.NamePlaces </a>
+        <a href="#"> " @ViewBag.Search "  @StaticResource.Resources.Found @StaticResource.Resources.In @StaticResource.Resources.NamePlaces </a>
         <br />
         <p>@Html.DisplayFor(modelItem => item.Summary)...</p>
 

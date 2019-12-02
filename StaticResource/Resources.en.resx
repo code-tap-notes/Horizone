@@ -1909,4 +1909,10 @@ TochPhase</value>
   <data name="OtherWebPage" xml:space="preserve">
     <value>Other Web Page</value>
   </data>
+  <data name="UpdateDictionary" xml:space="preserve">
+    <value>Update Dictionary</value>
+  </data>
+  <data name="AskUpdate" xml:space="preserve">
+    <value>Update morpheme category</value>
+  </data>
 </root>

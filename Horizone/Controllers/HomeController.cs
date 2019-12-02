@@ -201,9 +201,17 @@ namespace Horizone.Controllers
         {
             return View(db.NamePlaces.OrderBy(x => x.Place).ToList());
         }
+        public ActionResult PlaceInStory()
+        {
+            return View("NamePlace",db.NamePlaces.Where(x => x.InStory == true).OrderBy(x => x.Place).ToList());
+        }
         public ActionResult ProperNoun()
         {
-            return View(db.ProperNouns.Where(x=>x.InStory==true).OrderBy(x => x.Name).ToList());
+            return View(db.ProperNouns.OrderBy(x => x.Name).ToList());
+        }
+        public ActionResult NameInStory()
+        {
+            return View("ProperNoun",db.ProperNouns.Where(x=>x.InStory==true).OrderBy(x => x.Name).ToList());
         }
         public ActionResult SourceStory()
         {
@@ -380,6 +388,8 @@ namespace Horizone.Controllers
             ViewBag.Search = search;
            return View("SearchIndex",db.SearchResults.ToList());
         }
+      
+
         [ChildActionOnly]
         public ActionResult SearchMap(string search)
         {

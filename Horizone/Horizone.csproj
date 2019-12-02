@@ -919,6 +919,9 @@
     <Content Include="Areas\BackOffice\Views\AbbreviationDictionaries\Details.cshtml" />
     <Content Include="Areas\BackOffice\Views\Abreviations\Details.cshtml" />
     <Content Include="Areas\BackOffice\Views\ReverseDictionaries\SortReverse.cshtml" />
+    <Content Include="Areas\BackOffice\Views\DictionaryTocharians\UpdateDictionary.cshtml" />
+    <Content Include="Areas\BackOffice\Views\ProperNouns\NameInStory.cshtml" />
+    <Content Include="Areas\BackOffice\Views\NamePlaces\PlaceInStory.cshtml" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\cldr.js" />
     <Content Include="Scripts\cldr\event.js" />
@@ -1290,7 +1293,7 @@
     <Content Include="Views\FontNews\ListComment.cshtml" />
     <Content Include="Views\FontBibliographies\DetailsAbbreviation.cshtml" />
     <Content Include="Views\Vocabularies\DetailsAbbreviationDictionary.cshtml" />
-    <Content Include="Views\Vocabularies\AllProperNoun.cshtml" />
+    <Content Include="Views\Home\SearchVocabularies.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

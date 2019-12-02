@@ -1903,4 +1903,10 @@ TochPhase</value>
   <data name="OtherWebPage" xml:space="preserve">
     <value>其他网页</value>
   </data>
+  <data name="UpdateDictionary" xml:space="preserve">
+    <value>更新字典</value>
+  </data>
+  <data name="AskUpdate" xml:space="preserve">
+    <value>更新词素类别</value>
+  </data>
 </root>

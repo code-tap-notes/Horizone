@@ -1,0 +1,76 @@
+﻿@model IEnumerable<Horizone.Models.SearchResult>
+
+@{
+    ViewBag.Title = "Dictionary";
+}
+
+<h2>@StaticResource.Resources.List @StaticResource.Resources.Words</h2>
+
+
+@foreach (var item in Model)
+{
+    var found = item.Summary.IndexOf(":");
+<div class="row">
+    @if (@item.NameTable == "Verbs")
+    {
+        <div class="col-3">
+
+            <a href="@Url.Action("DetailsVerb", "Vocabularies", new { id = item.IdResult })">&diams;  @item.Summary.Substring(0, found - 1) </a>
+        </div>
+        <div class="col-9">
+            <p>  @item.Summary.Substring(found + 1, item.Summary.Length- (found + 2)) </p>
+
+        </div>
+    }
+
+    @if (@item.NameTable == "NounsAdjectives")
+
+    {
+        <div class="col-3">
+
+            <a href="@Url.Action("DetailsNoun", "Vocabularies", new { id = item.IdResult })">&diams;  @item.Summary.Substring(0, found - 1) </a>
+        </div>
+        <div class="col-9">
+            <p>  @item.Summary.Substring(found + 1, item.Summary.Length- (found + 2)) </p>
+
+        </div>
+    }
+
+    @if (@item.NameTable == "Pronouns")
+
+    {
+        <div class="col-3">
+
+            <a href="@Url.Action("DetailsPronoun", "Vocabularies", new { id = item.IdResult })">&diams;  @item.Summary.Substring(0, found - 1) </a>
+        </div>
+        <div class="col-9">
+            <p>   @item.Summary.Substring(found + 1, item.Summary.Length- (found + 2)) </p>
+
+        </div>
+    }
+    @if (@item.NameTable == "OtherWords")
+
+    {
+        <div class="col-3">
+
+            <a href="@Url.Action("DetailsOtherWord", "Vocabularies", new { id = item.IdResult })">&diams;  @item.Summary.Substring(0, found - 1) </a>
+        </div>
+        <div class="col-9">
+            <p>   @item.Summary.Substring(found + 1, item.Summary.Length-(found+2)) </p>
+
+        </div>
+    }
+    @if (@item.NameTable == "DictionaryTocharians")
+
+    {
+        <div class="col-3">
+
+            <a href="@Url.Action("Details", "Vocabularies", new { id = item.IdResult })">&diams;  @item.Summary.Substring(0, found - 1) </a>
+        </div>
+        <div class="col-9">
+            <p>   @item.Summary.Substring(found + 1, item.Summary.Length-(found+2)) </p>
+
+        </div>
+    }
+</div>
+}

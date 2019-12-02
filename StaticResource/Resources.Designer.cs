@@ -556,6 +556,15 @@ namespace StaticResource {
         }
         
         /// <summary>
+        ///   Recherche une chaîne localisée semblable à Mettre à jour catégorie morpheme.
+        /// </summary>
+        public static string AskUpdate {
+            get {
+                return ResourceManager.GetString("AskUpdate", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Recherche une chaîne localisée semblable à Chercheurs associés.
         /// </summary>
         public static string AssociatedResearcher {
@@ -5053,6 +5062,15 @@ namespace StaticResource {
         public static string Update {
             get {
                 return ResourceManager.GetString("Update", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Mise à jour Dictionaire.
+        /// </summary>
+        public static string UpdateDictionary {
+            get {
+                return ResourceManager.GetString("UpdateDictionary", resourceCulture);
             }
         }
         

@@ -160,10 +160,7 @@
                                         <a class="test" href="#">  @StaticResource.Resources.NamePlaces <span class="caret"></span></a>
                                         <ul class="dropdown-menu">
                                             <li>
-                                                <a href="@Url.Action("create", "NamePlaces")">@StaticResource.Resources.Add</a>
-                                            </li>
-                                            <li>
-                                                <a href="@Url.Action("index", "NamePlaces")">@StaticResource.Resources.List</a>
+                                                <a href="@Url.Action("PlaceInStory", "NamePlaces")">@StaticResource.Resources.List</a>
                                             </li>
                                         </ul>
                                     </li>
@@ -181,11 +178,9 @@
                                     <li class="dropdown-submenu">
                                         <a class="test" href="#"> @StaticResource.Resources.ProperNoun <span class="caret"></span></a>
                                         <ul class="dropdown-menu">
+                                           
                                             <li>
-                                                <a href="@Url.Action("create", "ProperNouns")">@StaticResource.Resources.Add</a>
-                                            </li>
-                                            <li>
-                                                <a href="@Url.Action("index", "ProperNouns")">@StaticResource.Resources.List</a>
+                                                <a href="@Url.Action("NameInStory", "ProperNouns")">@StaticResource.Resources.List</a>
                                             </li>
                                         </ul>
                                     </li>
@@ -553,6 +548,29 @@
                                         </ul>
                                     </li>
                                     <li class="dropdown-submenu">
+                                        <a class="test" href="#"> @StaticResource.Resources.ProperNoun <span class="caret"></span></a>
+                                        <ul class="dropdown-menu">
+                                            <li>
+                                                <a href="@Url.Action("create", "ProperNouns")">@StaticResource.Resources.Add</a>
+                                            </li>
+                                            <li>
+                                                <a href="@Url.Action("index", "ProperNouns")">@StaticResource.Resources.List</a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li class="dropdown-submenu">
+                                        <a class="test" href="#">  @StaticResource.Resources.NamePlaces <span class="caret"></span></a>
+                                        <ul class="dropdown-menu">
+                                            <li>
+                                                <a href="@Url.Action("create", "NamePlaces")">@StaticResource.Resources.Add</a>
+                                            </li>
+                                            <li>
+                                                <a href="@Url.Action("index", "NamePlaces")">@StaticResource.Resources.List</a>
+                                            </li>
+                                        </ul>
+                                    </li>
+
+                                    <li class="dropdown-submenu">
                                         <a class="test" href="#">  @StaticResource.Resources.Adjective <span class="caret"></span></a>
                                         <ul class="dropdown-menu">
                                             <li>
@@ -634,7 +652,6 @@
                                             </li>
                                         </ul>
                                     </li>
-
                                     <li class="dropdown-submenu">
                                         <a class="test" href="#"> @StaticResource.Resources.Verb <span class="caret"></span></a>
                                         <ul class="dropdown-menu">
@@ -696,10 +713,8 @@
                                             </li>
                                         </ul>
                                     </li>
-
                                 </ul>
                             </li>
-
                         </ul>
                     </li>
 
@@ -766,6 +781,8 @@
                                     <li><a href="@Url.Action("Adverb", "OtherWords")">&diams; @StaticResource.Resources.Adverb</a></li>
                                     <li><a href="@Url.Action("IndexNoun", "NounAdjectives")">&diams; @StaticResource.Resources.Noun</a></li>
                                     <li><a href="@Url.Action("Index", "Pronouns")">&diams; @StaticResource.Resources.Pronoun</a></li>
+                                    <li><a href="@Url.Action("Index", "ProperNouns")">&diams; @StaticResource.Resources.ProperNoun</a></li>
+                                    <li><a href="@Url.Action("Index", "NamePlaces")">&diams; @StaticResource.Resources.NamePlaces</a></li>
                                     <li><a href="@Url.Action("IndexAdjective", "NounAdjectives")">&diams; @StaticResource.Resources.Adjective</a></li>
                                     <li><a href="@Url.Action("Index", "OtherWords")">&diams; @StaticResource.Resources.OtherWords</a></li>
                                     <li><a href="@Url.Action("TocharianA", "DictionaryTocharians")">&diams; @StaticResource.Resources.DictionaryTocharian A</a></li>

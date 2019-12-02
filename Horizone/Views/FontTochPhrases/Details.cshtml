@@ -64,7 +64,7 @@
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.RelatedLexemes)
+            @Html.Raw(Model.RelatedLexemes)
         </dd>
 
         <dt>
@@ -72,19 +72,11 @@
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.Description)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Visible)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Visible)
-        </dd>
+            @Html.Raw(Model.Description)
+        </dd>        
 
     </dl>
 </div>
 <p>
-    @Html.ActionLink(StaticResource.Resources.Return, "Index", null, new { @class = "btn btn-primary" })
+    @Html.ActionLink(StaticResource.Resources.Return, "Index","FontTochPhrases", new { @class = "btn btn-primary" })
 </p>

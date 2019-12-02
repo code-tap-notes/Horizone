@@ -54,7 +54,7 @@
             @Html.DisplayNameFor(model => model.WordSubClass.SubClass)
         </th>
 
-        <th></th>
+       
     </tr>
     @foreach (var item in Model)
     {
@@ -65,7 +65,8 @@
                     @Html.DisplayFor(modelItem => item.TochLanguage.Language)
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => item.TochWord)
+                    <a href="@Url.Action("DetailsNoun", "Vocabularies", new { id = item.Id })">&diams;  @item.TochWord </a>
+
                 </td>
                 <td>
                     @Html.DisplayFor(modelItem => item.Sanskrit)
@@ -112,9 +113,7 @@
                         @Html.DisplayFor(modelItem => item.WordSubClass.SubClassZh)
                     </td>
                 }
-                <td>
-                    @Html.ActionLink(@StaticResource.Resources.Details, "DetailsNoun", new { id = item.Id }, new { @class = "btn btn-info" })
-                </td>
+               
             </tr>
         }
     }

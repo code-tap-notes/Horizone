@@ -1,0 +1,76 @@
+﻿@model IEnumerable<Horizone.Models.ProperNoun>
+
+@{
+    ViewBag.Title = @StaticResource.Resources.ProperNoun;
+}
+
+<h3>@StaticResource.Resources.TochStory </h3>
+<h4>   @StaticResource.Resources.SearchBy @StaticResource.Resources.ProperNoun</h4>
+<p>
+    @Html.ActionLink(@StaticResource.Resources.Add, "Create", null, new { @class = "btn btn-primary" })
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @StaticResource.Resources.ProperNoun
+
+        </th>
+        <th>
+
+        </th>
+        <th>
+
+        </th>
+        <th>
+            @StaticResource.Resources.Description  @StaticResource.Resources.English
+        </th>
+        <th>
+            @StaticResource.Resources.Description  @StaticResource.Resources.French
+        </th>
+        <th>
+            @StaticResource.Resources.Description  @StaticResource.Resources.Chinese
+        </th>
+
+        <th> @StaticResource.Resources.In  @StaticResource.Resources.TochStory</th>
+
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                <form class="form-group row" action="@Url.Action("SearchStory", "TochStories" )" method="post" enctype="multipart/form-data">
+                    <button type="submit" class="btn btn-default" style="width:95%; text-align:left;">  @Html.DisplayFor(modelItem => item.Name) </button>
+                    <input class="form-control" type="hidden" id="Search" name="search" value="@item.Name" />
+
+                </form>
+            </td>
+            <td>
+                @Html.ActionLink(@StaticResource.Resources.Edit, "Edit", new { id = item.Id }, new { @class = "btn btn-info", style = "width:85px;float:left; " })
+
+            </td>
+            <td>
+                @Html.ActionLink(@StaticResource.Resources.Delete, "Delete", new { id = item.Id }, new { @class = "btn btn-info", style = "width:85px;float:left;" })
+
+            </td>
+            <td>
+                @Html.Raw(item.DescriptionEn)
+
+            </td>
+            <td>
+                @Html.Raw(item.DescriptionFr)
+
+            </td>
+            <td>
+                @Html.Raw(item.DescriptionZh)
+
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.InStory)
+
+            </td>
+
+        </tr>
+    }
+
+</table>
+

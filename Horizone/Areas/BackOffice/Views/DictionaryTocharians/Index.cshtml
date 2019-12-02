@@ -127,21 +127,22 @@
                         if (item.TochLanguage.Language == "TA")
                         {
                             var ulr = "https://www.univie.ac.at/tocharian/?E_A_" + item.Word;
-                            <a href="@ulr"> @StaticResource.Resources.Details </a>
+                            <a href="@ulr" class="btn btn-info" style="width:225px"> @StaticResource.Resources.Details </a>
 
                         }
                         if (item.TochLanguage.Language == "TB")
                         {
                             var ulr = "https://www.univie.ac.at/tocharian/?E_B_" + item.Word;
-
-                            <a href="@ulr"> @StaticResource.Resources.Details </a>
+                            <a href="@ulr" class="btn btn-info" style="width:225px"> @StaticResource.Resources.Details </a>
                         }
+                            @Html.ActionLink(@StaticResource.Resources.AskUpdate, "UpdateDictionary", new { id = item.Id }, new { @class = "btn btn-info", style = "width:225px" })
                     }
                     else
                     {
-                        @Html.ActionLink(@StaticResource.Resources.Details, "Details", new { id = item.Id }, new { @class = "btn btn-info", style = "width:85px" })
+                        @Html.ActionLink(@StaticResource.Resources.Details, "Details", new { id = item.Id }, new { @class = "btn btn-info", style = "width:225px" })
                     }
-                    @Html.ActionLink(@StaticResource.Resources.Delete, "Delete", new { id = item.Id }, new { @class = "btn btn-info", style = "width:85px" })
+
+                    @Html.ActionLink(@StaticResource.Resources.Delete, "Delete", new { id = item.Id }, new { @class = "btn btn-info", style = "width:225px" })
                 </td>
         </tr>
     }

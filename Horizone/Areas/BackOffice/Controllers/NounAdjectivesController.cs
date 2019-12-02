@@ -269,8 +269,7 @@ namespace Horizone.Areas.BackOffice.Controllers
                     nounAdjective.Genders = db.Genders.Where(x => GenderId.Contains(x.Id)).ToList();
                 if (NumberId != null)
                     nounAdjective.Numbers = db.Numbers.Where(x => NumberId.Contains(x.Id)).ToList();
-                EditDictionary(nounAdjective.Id);
-
+               EditDictionary(nounAdjective.Id);
 
                 db.SaveChanges();
                 return RedirectToAction("Index");

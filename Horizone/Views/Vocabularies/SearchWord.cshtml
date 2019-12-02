@@ -22,49 +22,49 @@
 {
     if (item.NameTable == "Verbs")
     {
-        <a href="@Url.Action("DetailsVerb", "vocabularies", new { id = item.IdResult })"> @StaticResource.Resources.Verb </a>
+<a href="@Url.Action("DetailsVerb", "vocabularies", new { id = item.IdResult })">" @ViewBag.Search "  @StaticResource.Resources.Found @StaticResource.Resources.In @StaticResource.Resources.Verb </a>
         <br />
         <p>@Html.DisplayFor(modelItem => item.Summary) ...</p>
     }
 
     if (item.NameTable == "DictionaryTocharians")
     {
-        <a href="@Url.Action("Details", "Vocabularies", new { id = item.IdResult })"> @StaticResource.Resources.DictionaryTocharian </a>
+        <a href="@Url.Action("Details", "Vocabularies", new { id = item.IdResult })">" @ViewBag.Search "  @StaticResource.Resources.Found @StaticResource.Resources.In @StaticResource.Resources.DictionaryTocharian </a>
         <br />
         <p>@Html.DisplayFor(modelItem => item.Summary)...</p>
 
     }
     if (item.NameTable == "NounAdjectives")
     {
-        <a href="@Url.Action("DetailsNoun", "Vocabularies", new { id = item.IdResult })"> @StaticResource.Resources.Noun  - @StaticResource.Resources.Adjective  </a>
+        <a href="@Url.Action("DetailsNoun", "Vocabularies", new { id = item.IdResult })">" @ViewBag.Search "  @StaticResource.Resources.Found @StaticResource.Resources.In @StaticResource.Resources.Noun  - @StaticResource.Resources.Adjective  </a>
         <br />
         <p>@Html.DisplayFor(modelItem => item.Summary)...</p>
 
     }
     if (item.NameTable == "Pronouns")
     {
-        <a href="@Url.Action("DetailsPronoun", "Vocabularies", new { id = item.IdResult })"> @StaticResource.Resources.Pronoun </a>
+        <a href="@Url.Action("DetailsPronoun", "Vocabularies", new { id = item.IdResult })">" @ViewBag.Search "  @StaticResource.Resources.Found @StaticResource.Resources.In @StaticResource.Resources.Pronoun </a>
         <br />
         <p>@Html.DisplayFor(modelItem => item.Summary)...</p>
 
     }
     if (item.NameTable == "OtherWords")
     {
-        <a href="@Url.Action("DetailsOtherWord", "Vocabularies", new { id = item.IdResult })"> @StaticResource.Resources.OtherWords </a>
+        <a href="@Url.Action("DetailsOtherWord", "Vocabularies", new { id = item.IdResult })">" @ViewBag.Search "  @StaticResource.Resources.Found @StaticResource.Resources.In @StaticResource.Resources.OtherWords </a>
         <br />
         <p>@Html.DisplayFor(modelItem => item.Summary)...</p>
 
     }
     if (item.NameTable == "ProperNouns")
     {
-        <a href="#"> @StaticResource.Resources.ProperNoun </a>
+        <a href="#">" @ViewBag.Search "  @StaticResource.Resources.Found @StaticResource.Resources.In @StaticResource.Resources.ProperNoun </a>
         <br />
         <p>@Html.DisplayFor(modelItem => item.Summary)...</p>
 
     }
     if (item.NameTable == "NamePlaces")
     {
-        <a href="#"> @StaticResource.Resources.NamePlaces </a>
+        <a href="#">" @ViewBag.Search "  @StaticResource.Resources.Found @StaticResource.Resources.In @StaticResource.Resources.NamePlaces </a>
         <br />
         <p>@Html.DisplayFor(modelItem => item.Summary)...</p>
     }

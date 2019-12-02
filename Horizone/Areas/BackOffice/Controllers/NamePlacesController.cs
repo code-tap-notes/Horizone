@@ -19,8 +19,11 @@ namespace Horizone.Areas.BackOffice.Controllers
         {
             return View(db.NamePlaces.OrderBy(x => x.Place).ToList());
         }
+        public ActionResult PlaceInStory()
+        {
+            return View(db.NamePlaces.Where(x=>x.InStory==true).OrderBy(x => x.Place).ToList());
+        }
 
-         
         // GET: BackOffice/NamePlaces/Create
         public ActionResult Create()
         {

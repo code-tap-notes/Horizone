@@ -40,8 +40,18 @@ namespace Horizone.Controllers
             return View(dictionaryTocharians.OrderBy(x => x.Word).ToPagedList(page, pageSize));
         }
         public ActionResult Verb()
-        {
-            var verbs = db.Verbs.Where(x => x.WordClass.ClassEn == "Verb").Include(d => d.TochLanguage).Include(d => d.WordClass).Include(d => d.WordSubClass).Include("Numbers").Include("Persons");
+        {           
+                var verbs = db.Verbs.Where(x => x.WordClass.ClassEn == "Verb").Include(d => d.TochLanguage).Include(d => d.WordClass).Include(d => d.WordSubClass).Include("Numbers").Include("Persons");
+            List<Verb> listVerbs = db.Verbs.Where(x => x.WordClass.ClassEn == "Verb").Include(d => d.TochLanguage).Include(d => d.WordClass).Include(d => d.WordSubClass).Include("Numbers").Include("Persons").ToList();
+            List<DictionaryTocharian> dictionaryTocharians = db.DictionaryTocharians.Where(x => x.WordClass.ClassEn == "Verb").ToList();
+
+            if (dictionaryTocharians.Count() != 0)
+            {
+                foreach (var item in dictionaryTocharians)
+                {
+                    listVerbs.Add(new Verb() { TochWord = item.Word, English = item.English, Francaise = item.Francaise, Chinese= item.Chinese, German= item.German, Latin= item.Latin, MoodId = 1, TenseAndAspectId=1, ValencyId = 1, Visible=true, VoiceId=1, WordClassId= item.WordClassId, WordSubClassId= item.WordSubClassId });
+                }
+            }
             return View(verbs.OrderBy(x => x.TochWord).ToList());
         }
         public ActionResult Adverb()
@@ -58,10 +68,6 @@ namespace Horizone.Controllers
         {
             var pronouns = db.Pronouns.Where(x => x.WordClass.ClassEn == "Pronoun").Include(d => d.TochLanguage).Include(d => d.WordClass).Include(d => d.WordSubClass).Include("Cases").Include("Numbers").Include("Genders").Include("Persons");
             return View(pronouns.OrderBy(x => x.TochWord).ToList());
-        }
-        public ActionResult AllProperNoun()
-        {
-            return View(db.ProperNouns.OrderBy(x => x.Name).ToList());
         }
         public ActionResult Adjective()
         {
@@ -97,14 +103,12 @@ namespace Horizone.Controllers
         {
             var reverseDictionaries = db.ReverseDictionaries;
             return View(reverseDictionaries.OrderBy(x => x.Word).ToPagedList(page, pageSize));
-        }
-       
+        }      
         public ActionResult PrintVocabulaire()
         {
             var report = new ActionAsPdf("Vocabulaire");
             return report;
-        }
-       
+        }       
         public ActionResult Details(int? id)
         {
             if (id == null)

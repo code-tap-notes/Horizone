@@ -19,7 +19,11 @@ namespace Horizone.Areas.BackOffice.Controllers
         {
             return View(db.ProperNouns.OrderBy(x=>x.Name).ToList());
         }
-       
+        // GET: BackOffice/ProperNouns
+        public ActionResult NameInStory()
+        {
+            return View(db.ProperNouns.Where(x=>x.InStory==true).OrderBy(x => x.Name).ToList());
+        }
         // GET: BackOffice/ProperNouns/Create
         public ActionResult Create()
         {

@@ -52,15 +52,10 @@
         <th>
             @Html.DisplayNameFor(model => model.Chinese)
         </th>
-
-        <th>
-            @Html.DisplayNameFor(model => model.WordClass.Class)
-        </th>
         <th>
             @Html.DisplayNameFor(model => model.WordSubClass.SubClass)
         </th>
 
-        <th></th>
     </tr>
     @foreach (var item in Model)
     {
@@ -71,7 +66,7 @@
                     @Html.DisplayFor(modelItem => item.TochLanguage.Language)
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => item.TochWord)
+                    <a href="@Url.Action("DetailsPronoun", "Vocabularies", new { id = item.Id })">&diams;  @item.TochWord </a>
                 </td>
                 <td>
                     @Html.DisplayFor(modelItem => item.Sanskrit)
@@ -93,34 +88,25 @@
                 </td>
                 @if (Session[Horizone.Common.CommonConstants.CurrentCulture].ToString() == "en")
                 {
-                    <td>
-                        @Html.DisplayFor(modelItem => item.WordClass.ClassEn)
-                    </td>
+                   
                     <td>
                         @Html.DisplayFor(modelItem => item.WordSubClass.SubClassEn)
                     </td>
                 }
                 @if (Session[Horizone.Common.CommonConstants.CurrentCulture].ToString() == "fr")
                 {
-                    <td>
-                        @Html.DisplayFor(modelItem => item.WordClass.ClassFr)
-                    </td>
+                   
                     <td>
                         @Html.DisplayFor(modelItem => item.WordSubClass.SubClassFr)
                     </td>
                 }
                 @if (Session[Horizone.Common.CommonConstants.CurrentCulture].ToString() == "zh")
                 {
-                    <td>
-                        @Html.DisplayFor(modelItem => item.WordClass.ClassZh)
-                    </td>
+                   
                     <td>
                         @Html.DisplayFor(modelItem => item.WordSubClass.SubClassZh)
                     </td>
                 }
-                <td>
-                    @Html.ActionLink(@StaticResource.Resources.Details, "DetailsPronoun", new { id = item.Id }, new { @class = "btn btn-info" })
-                </td>
             </tr>
         }
     }

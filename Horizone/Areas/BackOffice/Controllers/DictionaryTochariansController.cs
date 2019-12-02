@@ -1,14 +1,12 @@
-﻿using System;
+﻿using Horizone.Controllers;
+using Horizone.Models;
+using PagedList;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.Entity;
 using System.Linq;
 using System.Net;
-using System.Web;
 using System.Web.Mvc;
-using Horizone.Controllers;
-using Horizone.Models;
-using PagedList;
 
 namespace Horizone.Areas.BackOffice.Controllers
 {
@@ -20,7 +18,7 @@ namespace Horizone.Areas.BackOffice.Controllers
         public ActionResult Index(int page = 1, int pageSize = 50)
         {
             var dictionaryTocharians = db.DictionaryTocharians.Include(d => d.TochLanguage).Include(d => d.WordClass).Include(d => d.WordSubClass);
-            return View(dictionaryTocharians.OrderBy(x=>x.Word).ToPagedList(page, pageSize));
+            return View(dictionaryTocharians.OrderBy(x => x.Word).ToPagedList(page, pageSize));
         }
 
         // GET: BackOffice/DictionaryTocharians/Details/5
@@ -47,8 +45,240 @@ namespace Horizone.Areas.BackOffice.Controllers
         {
             return View();
         }
-             
-        
+        public ActionResult UpdateDictionary(int? id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            DictionaryTocharian dictionaryTocharian = db.DictionaryTocharians.Include(d => d.TochLanguage).Include(d => d.WordClass).Include(d => d.WordSubClass).SingleOrDefault(y => y.Id == id);
+            if (dictionaryTocharian == null)
+            {
+                return HttpNotFound();
+            }
+            if (dictionaryTocharian.WordClass.ClassEn == "Noun" || dictionaryTocharian.WordClass.ClassEn == "Adjective")
+            {
+                IEnumerable<NounAdjective> nounAdjectives = db.NounAdjectives.Include(n => n.WordClass).Include(n => n.TochLanguage).Where(n => n.TochWord == dictionaryTocharian.Word);
+                if (nounAdjectives.Count() == 0)
+                {
+                           ViewBag.Check = "NominalCategories: Noun-Adjective";
+                    AddNounAdjective(id);
+
+                }
+                return RedirectToAction("index", "NounAdjectives");
+            }
+            if (dictionaryTocharian.WordClass.ClassEn == "Verb")
+            {
+                IEnumerable <Verb> verbs = db.Verbs.Include(n => n.WordClass).Include(n => n.TochLanguage).Where(n => n.TochWord == dictionaryTocharian.Word);
+                if (verbs.Count() == 0)
+                {
+                    ViewBag.Check = "VerbalCategories";
+                    AddVerb(id);
+                }
+                return RedirectToAction("index", "Verbs");
+            }
+            if (dictionaryTocharian.WordClass.ClassEn == "Pronoun")
+            {
+                IEnumerable <Pronoun> pronouns = db.Pronouns.Include(n => n.WordClass).Include(n => n.TochLanguage).Where(n => n.TochWord == dictionaryTocharian.Word);
+                if (pronouns.Count() == 0)
+                {
+                    ViewBag.Check="Pronoun";
+                    AddPronoun(id);
+                }
+                return RedirectToAction("index", "Pronouns");
+            }
+            if (dictionaryTocharian.WordClass.ClassEn != "Noun" && dictionaryTocharian.WordClass.ClassEn != "Adjective" && dictionaryTocharian.WordClass.ClassEn != "Verb" && dictionaryTocharian.WordClass.ClassEn != "Pronoun" && dictionaryTocharian.WordClass.ClassEn != "Proper Name" && dictionaryTocharian.WordClass.ClassEn != "Name Place" && dictionaryTocharian.WordClass.ClassEn != "Phrase")
+            {
+                IEnumerable <OtherWord> otherWords = db.OtherWords.Include(n => n.WordClass).Include(n => n.TochLanguage).Where(n => n.TochWord == dictionaryTocharian.Word);
+                if (otherWords.Count() == 0)
+                {
+                    ViewBag.Check="OtherWord";
+                    AddOtherWord(id);
+                }
+                return RedirectToAction("index", "OtherWords");
+            }
+            return View();
+        }
+        //Add a new word to dictionary
+        public ActionResult AddNounAdjective(int? id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            DictionaryTocharian dictionaryTocharian = db.DictionaryTocharians.SingleOrDefault(x => x.Id == id);
+            var nounAdjective = new NounAdjective();
+            if (dictionaryTocharian.Word != null)
+            {
+                IEnumerable<NounAdjective> nounAdjectives = db.NounAdjectives.Include(n => n.TochLanguage).Include(n => n.WordClass).Include(n => n.WordSubClass).Where(y => y.TochWord == dictionaryTocharian.Word);
+
+                if (nounAdjectives.Count() == 0)
+                {
+                    nounAdjective.TochWord = dictionaryTocharian.Word;
+                    nounAdjective.English = dictionaryTocharian.English;
+                    nounAdjective.Francaise = dictionaryTocharian.Francaise;
+                    nounAdjective.German = dictionaryTocharian.German;
+                    nounAdjective.Latin = dictionaryTocharian.Latin;
+                    nounAdjective.Chinese = dictionaryTocharian.Chinese;
+                    nounAdjective.Sanskrit = dictionaryTocharian.Sanskrit;
+                    nounAdjective.EquivalentTA = dictionaryTocharian.EquivalentTA;
+                    nounAdjective.EquivalentTB = dictionaryTocharian.EquivalentTB;
+                    nounAdjective.EquivalentInOther = dictionaryTocharian.EquivalentInOther;
+                    nounAdjective.TochLanguageId = dictionaryTocharian.TochLanguageId;
+                    nounAdjective.WordClassId = dictionaryTocharian.WordClassId;
+                    nounAdjective.WordSubClassId = dictionaryTocharian.WordSubClassId;
+                    nounAdjective.Visible = true;
+                    db.NounAdjectives.Add(nounAdjective);
+                }
+                else
+                {
+                    Display("Mots existé");
+                }
+
+                db.SaveChanges();
+                ViewBag.NewWordId = nounAdjective.Id;
+                return RedirectToAction("index");
+            }
+            return View();
+        }
+        public ActionResult AddVerb(int? id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            DictionaryTocharian dictionaryTocharian = db.DictionaryTocharians.SingleOrDefault(x => x.Id == id);
+            var verb = new Verb(); 
+            if (dictionaryTocharian.Word != null)
+            {
+                IEnumerable<Verb> verbs = db.Verbs.Include(n => n.TochLanguage).Include(n => n.WordClass).Include(n => n.WordSubClass).Where(y => y.TochWord == dictionaryTocharian.Word);
+
+                if (verbs.Count() == 0)
+                {
+                    verb.TochWord = dictionaryTocharian.Word;
+                    verb.English = dictionaryTocharian.English;
+                    verb.Francaise = dictionaryTocharian.Francaise;
+                    verb.German = dictionaryTocharian.German;
+                    verb.Chinese = dictionaryTocharian.Chinese;
+                    verb.Latin = dictionaryTocharian.Latin;
+                    verb.EquivalentTA = dictionaryTocharian.EquivalentTA;
+                    verb.EquivalentTB = dictionaryTocharian.EquivalentTB;
+                    verb.TochCommon = dictionaryTocharian.TochCommon;
+                    verb.TochCorrespondence = dictionaryTocharian.TochCorrespondence;
+                    verb.EquivalentInOther = dictionaryTocharian.EquivalentInOther;
+                    verb.MoodId = 1;
+                    verb.VoiceId = 1;
+                    verb.TenseAndAspectId = 1;
+                    verb.ValencyId = 1;
+                    verb.Visible = true;
+                    verb.TochLanguageId = dictionaryTocharian.TochLanguageId;
+                    verb.WordClassId = dictionaryTocharian.WordClassId;
+                    verb.WordSubClassId = dictionaryTocharian.WordSubClassId;
+
+                    db.Verbs.Add(verb);
+                }
+                else
+                {
+                    Display("Mots existé");
+                }
+
+                db.SaveChanges();
+                ViewBag.NewWordId = verb.Id;
+
+                return RedirectToAction("index");
+            }
+            return View();
+        }
+        public ActionResult AddPronoun(int? id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            DictionaryTocharian dictionaryTocharian = db.DictionaryTocharians.SingleOrDefault(x => x.Id == id);
+            var pronoun = new Pronoun();
+            if (dictionaryTocharian.Word != null)
+            {
+                IEnumerable<Pronoun> pronouns = db.Pronouns.Include(n => n.TochLanguage).Include(n => n.WordClass).Include(n => n.WordSubClass).Where(y => y.TochWord == dictionaryTocharian.Word);
+
+                if (pronouns.Count() == 0)
+                {
+                    pronoun.TochWord = dictionaryTocharian.Word;
+                    pronoun.English = dictionaryTocharian.English;
+                    pronoun.Francaise = dictionaryTocharian.Francaise;
+                    pronoun.German = dictionaryTocharian.German;
+                    pronoun.Latin = dictionaryTocharian.Latin;
+                    pronoun.Sanskrit = dictionaryTocharian.Sanskrit;
+                    pronoun.Chinese = dictionaryTocharian.Chinese;
+                    pronoun.EquivalentTA = dictionaryTocharian.EquivalentTA;
+                    pronoun.EquivalentTB = dictionaryTocharian.EquivalentTB;
+                    pronoun.TochCommon = dictionaryTocharian.TochCommon;
+                    pronoun.TochCorrespondence = dictionaryTocharian.TochCorrespondence;
+                    pronoun.EquivalentInOther = dictionaryTocharian.EquivalentInOther;
+                    pronoun.TochLanguageId = dictionaryTocharian.TochLanguageId;
+                    pronoun.WordClassId = dictionaryTocharian.WordClassId;
+                    pronoun.WordSubClassId = dictionaryTocharian.WordSubClassId;
+
+                    pronoun.Visible = true;
+
+                    db.Pronouns.Add(pronoun);
+                }
+                else
+                {
+                    Display("Mots existé");
+                }
+
+                db.SaveChanges();
+                ViewBag.NewWordId = pronoun.Id;
+
+                return RedirectToAction("index");
+            }
+            return View();
+        }
+        public ActionResult AddOtherWord(int? id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            DictionaryTocharian dictionaryTocharian = db.DictionaryTocharians.SingleOrDefault(x => x.Id == id);
+            var otherWord = new OtherWord(); 
+
+            if (dictionaryTocharian.Word != null)
+            {
+                IEnumerable<OtherWord> otherWords = db.OtherWords.Where(x => x.TochWord == dictionaryTocharian.Word);
+                if (otherWords.Count() == 0)
+                {                  
+                    otherWord.TochWord = dictionaryTocharian.Word;
+                    otherWord.English = dictionaryTocharian.English;
+                    otherWord.Francaise = dictionaryTocharian.Francaise;
+                    otherWord.German = dictionaryTocharian.German;
+                    otherWord.Latin = dictionaryTocharian.Latin;
+                    otherWord.Chinese = dictionaryTocharian.Chinese;
+                    otherWord.Sanskrit = dictionaryTocharian.Sanskrit;
+                    otherWord.EquivalentTA = dictionaryTocharian.EquivalentTA;
+                    otherWord.EquivalentTB = dictionaryTocharian.EquivalentTB;
+                    otherWord.TochCorrespondence = dictionaryTocharian.TochCorrespondence;
+                    otherWord.TochCommon = dictionaryTocharian.TochCommon;
+                    otherWord.EquivalentInOther = dictionaryTocharian.EquivalentInOther;
+                    otherWord.TochLanguageId = dictionaryTocharian.TochLanguageId;
+                    otherWord.WordClassId = dictionaryTocharian.WordClassId;
+                    otherWord.WordSubClassId = dictionaryTocharian.WordSubClassId;
+                    otherWord.Visible = true;
+                    db.OtherWords.Add(otherWord);
+                }
+                else
+                {
+                    Display("Mots existé");
+                }
+                db.SaveChanges();
+                ViewBag.NewWordId = otherWord.Id;
+
+                return RedirectToAction("index");
+            }
+            return View();
+        }
+      
         // GET: BackOffice/DictionaryTocharians/Delete/5
         public ActionResult Delete(int? id)
         {
@@ -56,7 +286,7 @@ namespace Horizone.Areas.BackOffice.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            DictionaryTocharian dictionaryTocharian = db.DictionaryTocharians.SingleOrDefault(x => x.Id == id); 
+            DictionaryTocharian dictionaryTocharian = db.DictionaryTocharians.SingleOrDefault(x => x.Id == id);
             if (dictionaryTocharian == null)
             {
                 return HttpNotFound();
@@ -69,13 +299,13 @@ namespace Horizone.Areas.BackOffice.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            DictionaryTocharian dictionaryTocharian = db.DictionaryTocharians.SingleOrDefault(x => x.Id == id); 
+            DictionaryTocharian dictionaryTocharian = db.DictionaryTocharians.SingleOrDefault(x => x.Id == id);
             //Case cases = dictionaryTocharian.Cases.Where(X=>X.Id ==id);
             db.DictionaryTocharians.Remove(dictionaryTocharian);
             db.SaveChanges();
             return RedirectToAction("Index");
         }
-     
+
         public ActionResult Parallel(int page = 1, int pageSize = 50)
         {
             var dictionaryTocharians = db.DictionaryTocharians.Include(d => d.TochLanguage).Include(d => d.WordClass).Include(d => d.WordSubClass);

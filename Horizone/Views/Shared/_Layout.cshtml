@@ -45,10 +45,10 @@
             <li class="dropdown">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">@StaticResource.Resources.TochStory <span class="caret"></span></a>
                 <ul class="dropdown-menu">
-                    <li><a href="@Url.Action("ThemeStory", "Home")"> @StaticResource.Resources.ThemeStory </a></li>
-                    <li><a href="@Url.Action("SourceStory", "Home")"> @StaticResource.Resources.SourceStory </a></li>
-                    <li><a href="@Url.Action("NamePlace", "Home")">@StaticResource.Resources.NamePlaces</a></li>
-                    <li><a href="@Url.Action("ProperNoun", "Home")">@StaticResource.Resources.ProperNoun</a></li>
+                    <li><a href="@Url.Action("ThemeStory", "Home")"> @StaticResource.Resources.SearchBy @StaticResource.Resources.ThemeStory </a></li>
+                    <li><a href="@Url.Action("SourceStory", "Home")"> @StaticResource.Resources.SearchBy @StaticResource.Resources.SourceStory </a></li>
+                    <li><a href="@Url.Action("PlaceInStory", "Home")"> @StaticResource.Resources.SearchBy @StaticResource.Resources.NamePlaces</a></li>
+                    <li><a href="@Url.Action("NameInStory", "Home")"> @StaticResource.Resources.SearchBy @StaticResource.Resources.ProperNoun</a></li>
                     <li><a href="@Url.Action("TochHistoire", "Home")">@StaticResource.Resources.All @StaticResource.Resources.TochStory</a></li>
                 </ul>
             </li>
@@ -70,7 +70,8 @@
                             <li><a href="@Url.Action("Adverb", "Vocabularies")">&diams; @StaticResource.Resources.Adverb</a></li>
                             <li><a href="@Url.Action("Noun", "Vocabularies")">&diams; @StaticResource.Resources.Noun</a></li>
                             <li><a href="@Url.Action("Pronoun", "Vocabularies")">&diams; @StaticResource.Resources.Pronoun</a></li>
-                            <li><a href="@Url.Action("AllProperNoun", "Vocabularies")">&diams; @StaticResource.Resources.ProperNoun</a></li>
+                            <li><a href="@Url.Action("NamePlace", "home")">&diams; @StaticResource.Resources.NamePlaces</a></li>
+                            <li><a href="@Url.Action("ProperNoun", "Home")">&diams; @StaticResource.Resources.ProperNoun</a></li>
                             <li><a href="@Url.Action("Adjective", "Vocabularies")">&diams; @StaticResource.Resources.Adjective</a></li>
                             <li><a href="@Url.Action("OtherWord", "Vocabularies")">&diams; @StaticResource.Resources.OtherWords</a></li>
                             <li><a href="@Url.Action("TocharianA", "Vocabularies")">&diams; @StaticResource.Resources.DictionaryTocharian A</a></li>
