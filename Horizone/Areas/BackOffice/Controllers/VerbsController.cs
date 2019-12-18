@@ -17,7 +17,7 @@ namespace Horizone.Areas.BackOffice.Controllers
     {
 
         // GET: BackOffice/Verbs
-        public ActionResult Index(int page = 1, int pageSize = 50)
+        public ActionResult Index(int page = 1, int pageSize = 200)
         {
             var verbs = db.Verbs.Include(v => v.Mood).Include(v => v.TenseAndAspect).Include(v => v.TochLanguage).Include(v => v.Valency).Include(v => v.Voice).Include(v => v.WordClass).Include(v => v.WordSubClass).Include("Numbers").Include("Persons"); ;
             return View(verbs.OrderBy(x => x.TochWord).ToPagedList(page, pageSize));
@@ -78,6 +78,8 @@ namespace Horizone.Areas.BackOffice.Controllers
                     dictionaryTocharian.TochLanguageId = verb.TochLanguageId;
                     dictionaryTocharian.WordClassId = verb.WordClassId;
                     dictionaryTocharian.WordSubClassId = verb.WordSubClassId;
+                    dictionaryTocharian.IdClassSource = verb.Id;
+
                     db.DictionaryTocharians.Add(dictionaryTocharian);
                 }
                 else
@@ -96,7 +98,7 @@ namespace Horizone.Areas.BackOffice.Controllers
         public ActionResult EditDictionary(int? id)
         {
             Verb verb = db.Verbs.Include("WordClass").Include("WordSubClass").Include("TochLanguage").SingleOrDefault(x => x.Id == id);
-            DictionaryTocharian dictionaryTocharian = db.DictionaryTocharians.Include("TochLanguage").Include("WordClass").Include("WordSubClass").SingleOrDefault(x => x.Word == verb.TochWord);
+            DictionaryTocharian dictionaryTocharian = db.DictionaryTocharians.Include("TochLanguage").Include("WordClass").Include("WordSubClass").SingleOrDefault(x => x.Word == verb.TochWord && x.WordClass.ClassEn == "Verb" && x.IdClassSource == verb.Id);
             if (dictionaryTocharian == null)
             {
                 AddDictionary(verb.Id);
@@ -120,6 +122,7 @@ namespace Horizone.Areas.BackOffice.Controllers
                 dictionaryTocharian.TochLanguageId = verb.TochLanguageId;
                 dictionaryTocharian.WordClassId = verb.WordClassId;
                 dictionaryTocharian.WordSubClassId = verb.WordSubClassId;
+                dictionaryTocharian.IdClassSource = verb.Id;
 
                 db.SaveChanges();
                 return RedirectToAction("Index");
@@ -195,13 +198,17 @@ namespace Horizone.Areas.BackOffice.Controllers
                 {
                     verb.Persons = db.Persons.Where(x => x.Id == 1).ToList();
                 }
-                if (verb.TochLanguageId == 1)
+                if (verb.TochLanguageId == 1 || verb.TochLanguageId == 3 || verb.TochLanguageId == 6)
                 {
                     verb.EquivalentTA = verb.TochWord;
                 }
-                if (verb.TochLanguageId == 2)
+                if (verb.TochLanguageId == 2 || verb.TochLanguageId == 4 || verb.TochLanguageId == 6 || verb.TochLanguageId == 8)
                 {
                     verb.EquivalentTB = verb.TochWord;
+                }
+                if (verb.TochLanguageId == 7)
+                {
+                    verb.Sanskrit = verb.TochWord;
                 }
                 db.Verbs.Add(verb);
                 db.SaveChanges();
@@ -311,13 +318,17 @@ namespace Horizone.Areas.BackOffice.Controllers
 
             if (ModelState.IsValid)
             {
-                if (verb.TochLanguageId == 1 || verb.TochLanguageId == 3)
+                if (verb.TochLanguageId == 1 || verb.TochLanguageId == 3 || verb.TochLanguageId == 6)
                 {
                     verb.EquivalentTA = verb.TochWord;
                 }
-                if (verb.TochLanguageId == 2 || verb.TochLanguageId == 4)
+                if (verb.TochLanguageId == 2 || verb.TochLanguageId == 4 || verb.TochLanguageId == 6 || verb.TochLanguageId == 8)
                 {
                     verb.EquivalentTB = verb.TochWord;
+                }
+                if (verb.TochLanguageId == 7)
+                {
+                    verb.Sanskrit = verb.TochWord;
                 }
 
                 if (NumberId != null)
@@ -391,7 +402,24 @@ namespace Horizone.Areas.BackOffice.Controllers
             db.SaveChanges();
             return RedirectToAction("Index");
         }
+        public ActionResult SearchVerb(string search)
+        {
+            IEnumerable<Verb> verbs = db.Verbs.Include("WordClass").Include("WordSubClass").Include("TochLanguage").Include("Voice").Include("Valency").Include("TenseAndAspect").Include(" Mood").Include("Persons").Where(x => x.TochWord.Contains(search)
+                    || (x.Sanskrit != null && x.Sanskrit.Contains(search))
+                    || (x.English != null && x.English.Contains(search))
+                    || (x.Francaise != null && x.Francaise.Contains(search))
+                    || (x.German != null && x.German.Contains(search))
+                    || (x.Latin != null && x.Latin.Contains(search))
+                    || (x.Chinese != null && x.Chinese.Contains(search))
+                    ); ;
 
-       
+            if (verbs.Count() == 0)
+            {
+                Display("Aucun résultat");
+            }
+            ViewBag.Search = search;
+            return View("SearchVerb", verbs.ToList());
+        }
+
     }
 }

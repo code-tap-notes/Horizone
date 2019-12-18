@@ -17,7 +17,7 @@ namespace Horizone.Areas.BackOffice.Controllers
     {
 
         // GET: BackOffice/Pronouns
-        public ActionResult Index(int page = 1, int pageSize = 50)
+        public ActionResult Index(int page = 1, int pageSize = 200)
         {
             var pronouns = db.Pronouns.Include(p => p.TochLanguage).Include(p => p.WordClass).Include(p => p.WordSubClass).Include("Cases").Include("Numbers").Include("Genders").Include("Persons"); ;
             return View(pronouns.OrderBy(x => x.TochWord).ToPagedList(page, pageSize));
@@ -81,6 +81,8 @@ namespace Horizone.Areas.BackOffice.Controllers
                     dictionaryTocharian.TochLanguageId = pronoun.TochLanguageId;
                     dictionaryTocharian.WordClassId = pronoun.WordClassId;
                     dictionaryTocharian.WordSubClassId = pronoun.WordSubClassId;
+                    dictionaryTocharian.IdClassSource = pronoun.Id;
+
                     db.DictionaryTocharians.Add(dictionaryTocharian);
 
                 }
@@ -98,7 +100,7 @@ namespace Horizone.Areas.BackOffice.Controllers
         public ActionResult EditDictionary(int? id)
         {
             Pronoun pronoun = db.Pronouns.Include("WordClass").Include("WordSubClass").Include("TochLanguage").SingleOrDefault(x => x.Id == id);
-            DictionaryTocharian dictionaryTocharian = db.DictionaryTocharians.Include("TochLanguage").Include("WordClass").Include("WordSubClass").SingleOrDefault(x => x.Word == pronoun.TochWord);
+            DictionaryTocharian dictionaryTocharian = db.DictionaryTocharians.Include("TochLanguage").Include("WordClass").Include("WordSubClass").SingleOrDefault(x => x.Word == pronoun.TochWord && x.WordClass.ClassEn == "Pronoun" && x.IdClassSource == pronoun.Id);
             if (dictionaryTocharian == null)
             {
                 AddDictionary(pronoun.Id);
@@ -121,11 +123,10 @@ namespace Horizone.Areas.BackOffice.Controllers
                 dictionaryTocharian.TochLanguageId = pronoun.TochLanguageId;
                 dictionaryTocharian.WordClassId = pronoun.WordClassId;
                 dictionaryTocharian.WordSubClassId = pronoun.WordSubClassId;
-
+                dictionaryTocharian.IdClassSource = pronoun.Id;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-
             return View();
         }
 
@@ -204,16 +205,19 @@ namespace Horizone.Areas.BackOffice.Controllers
                 {
                     pronoun.Persons = db.Persons.Where(x => PersonId.Contains(x.Id)).ToList();
                 }
-                
-                if (pronoun.TochLanguageId == 1)
+
+                if (pronoun.TochLanguageId == 1 || pronoun.TochLanguageId == 3 || pronoun.TochLanguageId == 6)
                 {
                     pronoun.EquivalentTA = pronoun.TochWord;
                 }
-                if (pronoun.TochLanguageId == 2)
+                if (pronoun.TochLanguageId == 2 || pronoun.TochLanguageId == 4 || pronoun.TochLanguageId == 6 || pronoun.TochLanguageId == 8)
                 {
                     pronoun.EquivalentTB = pronoun.TochWord;
                 }
-                
+                if (pronoun.TochLanguageId == 7)
+                {
+                    pronoun.Sanskrit = pronoun.TochWord;
+                }
 
                 db.Pronouns.Add(pronoun);
                 db.SaveChanges();
@@ -301,13 +305,17 @@ namespace Horizone.Areas.BackOffice.Controllers
 
             if (ModelState.IsValid)
             {
-                if (pronoun.TochLanguageId == 1 || pronoun.TochLanguageId == 3)
+                if (pronoun.TochLanguageId == 1 || pronoun.TochLanguageId == 3 || pronoun.TochLanguageId == 6)
                 {
                     pronoun.EquivalentTA = pronoun.TochWord;
                 }
-                if (pronoun.TochLanguageId == 2 || pronoun.TochLanguageId == 4)
+                if (pronoun.TochLanguageId == 2 || pronoun.TochLanguageId == 4 || pronoun.TochLanguageId == 6 || pronoun.TochLanguageId == 8)
                 {
                     pronoun.EquivalentTB = pronoun.TochWord;
+                }
+                if (pronoun.TochLanguageId == 7)
+                {
+                    pronoun.Sanskrit = pronoun.TochWord;
                 }
 
                 if (CaseId != null)
@@ -386,5 +394,23 @@ namespace Horizone.Areas.BackOffice.Controllers
             return RedirectToAction("Index");
         }
        
+        public ActionResult SearchPronoun(string search)
+        {           
+                IEnumerable<Pronoun> pronouns = db.Pronouns.Include("WordClass").Include("WordSubClass").Include("TochLanguage").Include("Genders").Include("Cases").Include("Persons").Where(x => x.TochWord.Contains(search)
+                    || (x.Sanskrit != null && x.Sanskrit.Contains(search))
+                    || (x.English != null && x.English.Contains(search))
+                    || (x.Francaise != null && x.Francaise.Contains(search))
+                    || (x.German != null && x.German.Contains(search))
+                    || (x.Latin != null && x.Latin.Contains(search))
+                    || (x.Chinese != null && x.Chinese.Contains(search))
+                  );
+
+                if (pronouns.Count() == 0)
+                {
+                    Display("Aucun résultat");
+                }
+            ViewBag.Search = search;
+            return View("SearchPronoun", pronouns.ToList());
+        }
     }
 }

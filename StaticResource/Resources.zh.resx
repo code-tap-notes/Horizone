@@ -1886,7 +1886,7 @@ TochPhase</value>
     <value>你想在字典中添加自己的名字吗？</value>
   </data>
   <data name="AskSearchAdvantage" xml:space="preserve">
-    <value>你想搜索优势吗？</value>
+    <value>你想搜索优势吗</value>
   </data>
   <data name="CheckDictionary" xml:space="preserve">
     <value>检查字典中的单词</value>
@@ -1908,5 +1908,17 @@ TochPhase</value>
   </data>
   <data name="AskUpdate" xml:space="preserve">
     <value>更新词素类别</value>
+  </data>
+  <data name="ClickButton" xml:space="preserve">
+    <value>点击按钮</value>
+  </data>
+  <data name="OtherSite" xml:space="preserve">
+    <value>其他网站</value>
+  </data>
+  <data name="SilkRoad" xml:space="preserve">
+    <value>丝绸之路</value>
+  </data>
+  <data name="In" xml:space="preserve">
+    <value>在</value>
   </data>
 </root>

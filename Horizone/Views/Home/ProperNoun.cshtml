@@ -14,45 +14,46 @@
         </div>
     </form>
 </div>
-<div class="row">
-    <div class="col-md-3">
-        <strong> @StaticResource.Resources.ProperNoun </strong>
 
-    </div>
-    <div class="col-md-3">
-        <strong>   @StaticResource.Resources.Description </strong>
-    </div>
-</div>
+<h5>&#9658; @StaticResource.Resources.ClickButton @StaticResource.Resources.SearchBy @StaticResource.Resources.ProperNoun @StaticResource.Resources.In @StaticResource.Resources.TochStory</h5>
+<Table>
+    <tr>
+        <th>
+            <strong> @StaticResource.Resources.ProperNoun </strong>
+        </th>
+        <th>
+            <strong>   @StaticResource.Resources.Description </strong>
+        </th>
+    </tr>
 
-@foreach (var item in Model)
-{
-    <div class="row">
-        <div class="col-md-3">
-            <form class="form-group row" action="@Url.Action("SearchStory", "Home" )" method="post" enctype="multipart/form-data">
-                <button type="submit" class="btn btn-default" style="width:95%; text-align:left;">  @Html.DisplayFor(modelItem => item.Name) </button>
-                <input class="form-control" type="hidden" id="Search" name="search" value="@item.Name" />
-            </form>
-        </div>
-        <div class="col-md-9">
-            @if (Session[Horizone.Common.CommonConstants.CurrentCulture].ToString() == "en")
-            {
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                <form class="form-group row" action="@Url.Action("SearchStory", "Home" )" method="post" enctype="multipart/form-data">
+                    <button type="submit" class="btn btn-default" style="width:90%; text-align:left;">  @Html.DisplayFor(modelItem => item.Name) </button>
+                    <input class="form-control" type="hidden" id="Search" name="search" value="@item.Name" />
+                </form>
+            </td>
+            <td>
+                @if (Session[Horizone.Common.CommonConstants.CurrentCulture].ToString() == "en")
+                {
+                    <strong> @Html.Raw(item.DescriptionEn)</strong>
+                }
+                @if (Session[Horizone.Common.CommonConstants.CurrentCulture].ToString() == "fr")
+                {
+                    <strong>  @Html.Raw(item.DescriptionFr) </strong>
+                }
+                @if (Session[Horizone.Common.CommonConstants.CurrentCulture].ToString() == "zh")
+                {
+                    <strong> @Html.Raw(item.DescriptionZh) </strong>
+                }
 
-                @Html.Raw(item.DescriptionEn)
+            </td>
+        </tr>
+    }
 
-            }
-            @if (Session[Horizone.Common.CommonConstants.CurrentCulture].ToString() == "fr")
-            {
-
-                @Html.Raw(item.DescriptionFr)
-
-            }
-            @if (Session[Horizone.Common.CommonConstants.CurrentCulture].ToString() == "zh")
-            {
-                @Html.Raw(item.DescriptionZh)
-            }
-        </div>
-    </div>
-}
+</Table>
 
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")

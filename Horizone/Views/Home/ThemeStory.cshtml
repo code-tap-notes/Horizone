@@ -3,8 +3,7 @@
     ViewBag.Title = @StaticResource.Resources.ThemeStory;
 }
 
-<h3>@StaticResource.Resources.TochStory </h3>
-<h4> @StaticResource.Resources.SearchBy : @StaticResource.Resources.ThemeStory</h4>
+<h3>@StaticResource.Resources.ThemeStory </h3>
 
 <div id="search">
     <form class="form-group row" action="@Url.Action("SearchTheme", "Home")" method="post" enctype="multipart/form-data">
@@ -15,7 +14,7 @@
     </form>
 
 </div>
-
+<h5>&#9658; @StaticResource.Resources.ClickButton @StaticResource.Resources.SearchBy @StaticResource.Resources.ThemeStory @StaticResource.Resources.In @StaticResource.Resources.TochStory</h5>
 @if (Session[Horizone.Common.CommonConstants.CurrentCulture].ToString() == "en")
 {
     var theme = Model.OrderBy(x => x.ThemeEn).ToList();

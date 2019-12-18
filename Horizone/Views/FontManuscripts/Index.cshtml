@@ -30,7 +30,7 @@
         </div>
         <div class="form-group col-md-2">
             <a href="@Url.Action("PrintIndex", "FontManuscripts")" class="btn btn-default" style="background-color: #A8A2CC;">
-                <span class="glyphicon glyphicon-print" ></span> @StaticResource.Resources.Print
+                <span class="glyphicon glyphicon-print"></span> @StaticResource.Resources.Print
             </a>
 
             @*(Bo Layout) @Html.ActionLink(@StaticResource.Resources.Print, "PrintHistoire", "Home", new { @class = "btn btn-info", style = "width:90px" },new { onclick= "popitup(this.value);"})*@
@@ -38,53 +38,63 @@
     </form>
 </div>
 
-<table class="table">
-    <tr>
-        <th>
-            @StaticResource.Resources.Manuscript
-        </th>
-        <th>
-            @StaticResource.Resources.OtherSiglum
-        </th>
-        <th>
-            @StaticResource.Resources.Language
-        </th>
-        <th>
-            @StaticResource.Resources.LeafNumber
-        </th>
-        <th>
-            @StaticResource.Resources.NumberOfLine
-        </th>
-        <th></th>
-    </tr>
 
+<div class="row">
+    <div class="col-md-2">
+        @StaticResource.Resources.Manuscript
+    </div>
+    <div class="col-md-3">
+        @StaticResource.Resources.OtherSiglum
+    </div>
+    <div class="col-md-2">
+        @StaticResource.Resources.Language
+    </div>
+    <div class="col-md-2">
+        @StaticResource.Resources.Source
+    </div>
+</div>
+@foreach (var item in Model)
+{
+    <div class="row">
+        <div div class="col-md-2">
+            @if (item.NumberOfLine != 0)
+            {
+                <a href="@Url.Action("Details", "FontManuscripts", new { id = item.Id })">&diams; @item.Index </a>
+            }
+            else
+            {
+                var newIndex = "";
+                for (var i = 0; i < item.Index.Length; i++)
+                {
+                    if (item.Index.Substring(i, 1) != " ")
+                    {
+                        newIndex += item.Index.Substring(i, 1).ToLower();                        
+                    }
+                }
+                var ulrManuscript = "https://www.univie.ac.at/tocharian/?m-" + newIndex;
+                <a href="@ulrManuscript">&diams; @item.Index</a>
+            }
+        </div>
+        <div div class="col-md-3">
+            @Html.DisplayFor(modelItem => item.OtherSiglum)
+        </div>
+        <div div class="col-md-2">
+            @Html.DisplayFor(modelItem => item.TochLanguage.Language)
+        </div>
+        <div div class="col-md-2">
+            @if (item.NumberOfLine != 0)
+            {
+            <p> HisTochText </p>
+            }
+            else
+            {
+            <p>Cetom</p>
+            }
+        </div>
+    </div>
 
-    @foreach (var item in Model)
-    {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Index)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.OtherSiglum)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.TochLanguage.Language)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.LeafNumber)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.NumberOfLine)
-            </td>
+}
 
-            <td>
-                @Html.ActionLink(@StaticResource.Resources.Details, "Details", new { id = item.Id }, new { @class = "btn btn-info", style = "width:90px" })
-            </td>
-        </tr>
-    }
-
-</table>
 @Html.PagedListPager(Model, page => Url.Action("index", new { page }))
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")

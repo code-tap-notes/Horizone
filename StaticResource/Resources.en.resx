@@ -1892,7 +1892,7 @@ TochPhase</value>
     <value>Do you want to add to the dictionary of proper Noun?</value>
   </data>
   <data name="AskSearchAdvantage" xml:space="preserve">
-    <value>Do you want to search advantage?</value>
+    <value>Do you want to search advantage </value>
   </data>
   <data name="CheckDictionary" xml:space="preserve">
     <value>Check word in dictionary</value>
@@ -1914,5 +1914,17 @@ TochPhase</value>
   </data>
   <data name="AskUpdate" xml:space="preserve">
     <value>Update morpheme category</value>
+  </data>
+  <data name="ClickButton" xml:space="preserve">
+    <value>Click on the button to</value>
+  </data>
+  <data name="OtherSite" xml:space="preserve">
+    <value>Other site</value>
+  </data>
+  <data name="SilkRoad" xml:space="preserve">
+    <value>Silk Road</value>
+  </data>
+  <data name="In" xml:space="preserve">
+    <value>In</value>
   </data>
 </root>

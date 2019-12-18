@@ -4,7 +4,7 @@
 }
 
 <h2>@StaticResource.Resources.SearchResult</h2>
-@Model.Count() @StaticResource.Resources.SearchResult <b> " @ViewBag.Search " </b> @StaticResource.Resources.Found
+&#10063; @Model.Count() @StaticResource.Resources.SearchResult <b> " @ViewBag.Search " </b> @StaticResource.Resources.Found
 <br />
 @Html.ActionLink(StaticResource.Resources.Return, "Index", null, new { @class = "btn btn-primary", style = "width:90px" })
 <br />
@@ -74,7 +74,10 @@
 
 @if (@ViewBag.Search != null)
 {
-    @StaticResource.Resources.AskSearchAdvantage;
+    <p>
+        &#10067;
+        @StaticResource.Resources.AskSearchAdvantage @StaticResource.Resources.In @StaticResource.Resources.OtherSite
+    </p>
     <br />
     var ulrA = "https://www.univie.ac.at/tocharian/?A_" + @ViewBag.Search;
     var ulrB = "https://www.univie.ac.at/tocharian/?B_" + @ViewBag.Search;

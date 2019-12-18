@@ -1,4 +1,5 @@
-﻿@model IEnumerable<Horizone.Models.DictionaryTocharian>
+﻿@model PagedList.IPagedList<Horizone.Models.DictionaryTocharian>
+@using PagedList.Mvc;
 
 @{
     ViewBag.Title = @StaticResource.Resources.ParallelDictionary;
@@ -7,7 +8,7 @@
 <h2>@StaticResource.Resources.ParallelDictionary</h2>
 
 <div id="search">
-    <form class="form-group row" action="@Url.Action("SearchWord", "DashBoards")" method="post" enctype="multipart/form-data">
+    <form class="form-group row" action="@Url.Action("SearchParallel", "DictionaryTocharians")" method="post" enctype="multipart/form-data">
         <div>
             @{Html.RenderAction("SearchForm", "DashBoards"); }
         </div>
@@ -16,91 +17,78 @@
 </div>
 <table class="table">
     <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.Word)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.EquivalentTA)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.EquivalentTB)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.TochCorrespondence)
-        </th>
 
         <th>
-            @Html.DisplayNameFor(model => model.Sanskrit)
+            @StaticResource.Resources.EquivalentTocharianA
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.English)
+            @StaticResource.Resources.EquivalentTocharianB
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Francaise)
+            @StaticResource.Resources.TochCorrespondence
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.German)
+            @StaticResource.Resources.TochCommon
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Latin)
+            @StaticResource.Resources.Sanskrit
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Chinese)
+            @StaticResource.Resources.English
         </th>
-
+        <th>
+            @StaticResource.Resources.French
+        </th>
+        <th>
+            @StaticResource.Resources.German
+        </th>
+        <th>
+            @StaticResource.Resources.Latin
+        </th>
+        
         <th></th>
     </tr>
-
     @foreach (var item in Model)
     {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Word)
-            </td>
-            <td>
-                @if (item.TochLanguage.Language == "TA")
-                {
-                    @Html.DisplayFor(modelItem => item.Word)
-                }
-                else
-                {
-                    @Html.DisplayFor(modelItem => item.EquivalentTA)
-                }
-            </td>
-            <td>
-                @if (item.TochLanguage.Language == "TB")
-                {
-                    @Html.DisplayFor(modelItem => item.Word)
-                }
-                else
-                {
-                    @Html.DisplayFor(modelItem => item.EquivalentTB)
-                }
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.TochCorrespondence)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Sanskrit)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.English)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Francaise)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.German)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Latin)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Chinese)
-            </td>
-
-
-        </tr>
+    <tr>
+        <td>
+            <a href="@Url.Action("Details", "DictionaryTocharians", new { id = item.Id })">&diams;  @item.EquivalentTA </a>
+        </td>
+        <td>
+            <a href="@Url.Action("Details", "DictionaryTocharians", new { id = item.Id })">&diams;  @item.EquivalentTB </a>
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TochCorrespondence)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TochCommon)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Sanskrit)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.English)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Francaise)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.German)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Latin)
+        </td>
+        
+    </tr>
     }
-
 </table>
+@Html.PagedListPager(Model, page => Url.Action("Parallel", new { page }))
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+    <script>
+        function insertText(elemID, text) {
+            document.getElementById(elemID).value += text;
+        }
+    </script>
+}
+

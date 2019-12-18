@@ -5,75 +5,87 @@
 }
 
 <h2>@StaticResource.Resources.SearchResult</h2>
-@Model.Count() @StaticResource.Resources.SearchResult <b> " @ViewBag.Search " </b> @StaticResource.Resources.Found
+&#10063; @Model.Count() @StaticResource.Resources.SearchResult <b> " @ViewBag.Search " </b> @StaticResource.Resources.Found @StaticResource.Resources.In  @StaticResource.Resources.List @StaticResource.Resources.ThemeStory
 <br />
 @if (Model.Count() == 0)
 {
-    @StaticResource.Resources.AskSearchAdvantage;
-    <form class="form-group row" action="@Url.Action("SearchIndex", "Home" )" method="post" enctype="multipart/form-data">
-        <button type="submit" class="btn btn-default" style="width:20%; text-align:left;"> @StaticResource.Resources.Search <b> " @ViewBag.Search " </b> </button>
-        <input class="form-control" type="hidden" id="Search" name="search" value="@ViewBag.Search" />
-    </form>
+    <p>
+        &#10067; @StaticResource.Resources.AskSearchAdvantage;
+    </p>
+    <h5>&#9658; @StaticResource.Resources.ClickButton @StaticResource.Resources.SearchBy @StaticResource.Resources.Theme <b> " @ViewBag.Search " </b> </h5>
+    <div class="row">
+        <div class="col-md-3">
+            <form class="form-group row" action="@Url.Action("SearchIndex", "Home" )" method="post" enctype="multipart/form-data">
+                <button type="submit" class="btn btn-default" style="width:95%; text-align:left;"> @StaticResource.Resources.Search <b> " @ViewBag.Search " </b> </button>
+                <input class="form-control" type="hidden" id="Search" name="search" value="@ViewBag.Search" />
+            </form>
+        </div>
+    </div>
 }
 
 <br />
+@if (Model.Count() != 0)
+{
+    <h5>&#9658; @StaticResource.Resources.ClickButton @StaticResource.Resources.Search  @StaticResource.Resources.Theme <b> " @ViewBag.Search " </b> @StaticResource.Resources.In @StaticResource.Resources.TochStory</h5>
 
+    if (Session[Horizone.Common.CommonConstants.CurrentCulture].ToString() == "en")
+    {
+        <div class="row">
+            @foreach (var item in Model)
+            {
+                <div class="col-md-3">
+                    <form class="form-group row" action="@Url.Action("SearchStory", "Home" )" method="post" enctype="multipart/form-data">
+                        <button type="submit" class="btn btn-default" style="width:95%; text-align:left;">  @Html.DisplayFor(modelItem => item.ThemeEn) </button>
+                        <input class="form-control" type="hidden" id="Search" name="search" value="@item.ThemeEn" />
+                    </form>
+                </div>
+            }
+        </div>
+    }
+    if (Session[Horizone.Common.CommonConstants.CurrentCulture].ToString() == "fr")
+    {
+        <div class="row">
+            @foreach (var item in Model)
+            {
+
+
+                <div class="col-md-3">
+                    <form class="form-group row" action="@Url.Action("SearchStory", "Home")" method="post" enctype="multipart/form-data">
+                        <button type="submit" class="btn btn-default" style="width:95%; text-align:left;">  @Html.DisplayFor(modelItem => item.ThemeFr) </button>
+                        <input class="form-control" type="hidden" id="Search" name="search" value="@item.ThemeFr" />
+                    </form>
+                </div>
+            }
+        </div>
+    }
+
+
+    if (Session[Horizone.Common.CommonConstants.CurrentCulture].ToString() == "zh")
+    {
+        <div class="row">
+            @foreach (var item in Model)
+            {
+
+                <div class="col-md-3">
+                    <form class="form-group row" action="@Url.Action("SearchStory", "Home")" method="post" enctype="multipart/form-data">
+                        <button type="submit" class="btn btn-default" style="width:50%; text-align:left;">  @Html.DisplayFor(modelItem => item.ThemeZn) </button>
+                        <input class="form-control" type="hidden" id="Search" name="search" value="@item.ThemeZn" />
+                    </form>
+                </div>
+
+
+            }
+
+        </div>
+    }
+}
 @Html.ActionLink(StaticResource.Resources.Return, "ThemeStory", null, new { @class = "btn btn-primary", style = "width:90px" })
-
-@if (Session[Horizone.Common.CommonConstants.CurrentCulture].ToString() == "en")
-{
-    <div class="row">
-        @foreach (var item in Model)
-        {
-            <div class="col-md-3">
-                <form class="form-group row" action="@Url.Action("SearchStory", "Home" )" method="post" enctype="multipart/form-data">
-                    <button type="submit" class="btn btn-default" style="width:95%; text-align:left;">  @Html.DisplayFor(modelItem => item.ThemeEn) </button>
-                    <input class="form-control" type="hidden" id="Search" name="search" value="@item.ThemeEn" />
-                </form>
-            </div>
-        }
-    </div>
-}
-@if (Session[Horizone.Common.CommonConstants.CurrentCulture].ToString() == "fr")
-{
-    <div class="row">
-        @foreach (var item in Model)
-        {
-
-
-            <div class="col-md-3">
-                <form class="form-group row" action="@Url.Action("SearchStory", "Home")" method="post" enctype="multipart/form-data">
-                    <button type="submit" class="btn btn-default" style="width:95%; text-align:left;">  @Html.DisplayFor(modelItem => item.ThemeFr) </button>
-                    <input class="form-control" type="hidden" id="Search" name="search" value="@item.ThemeFr" />
-                </form>
-            </div>
-        }
-    </div>
-}
-
-
-@if (Session[Horizone.Common.CommonConstants.CurrentCulture].ToString() == "zh")
-{
-    <div class="row">
-        @foreach (var item in Model)
-        {
-
-            <div class="col-md-3">
-                <form class="form-group row" action="@Url.Action("SearchStory", "Home")" method="post" enctype="multipart/form-data">
-                    <button type="submit" class="btn btn-default" style="width:95%; text-align:left;">  @Html.DisplayFor(modelItem => item.ThemeZn) </button>
-                    <input class="form-control" type="hidden" id="Search" name="search" value="@item.ThemeZn" />
-                </form>
-            </div>
-
-
-        }
-    </div>
-}
-
+<br />
 @if (@ViewBag.Search != null)
 {
-    @StaticResource.Resources.AskSearchAdvantage;
-    <br />
+    <p>
+        &#10067; @StaticResource.Resources.AskSearchAdvantage   @StaticResource.Resources.In  @StaticResource.Resources.OtherSite;
+    </p>
     var ulrA = "https://www.univie.ac.at/tocharian/?A_" + @ViewBag.Search;
     var ulrB = "https://www.univie.ac.at/tocharian/?B_" + @ViewBag.Search;
     var ulrG = "https://www.google.com/search?q=" + @ViewBag.Search + "&rlz=1C1CHBF_frFR865FR865&oq=" + @ViewBag.Search + " &aqs=chrome..69i57j35i39j69i60l2.1406j0j8&sourceid=chrome&ie=UTF-8";
@@ -82,6 +94,5 @@
     <a href="@ulrB"> @StaticResource.Resources.Search @StaticResource.Resources.Tocharian B <b> " @ViewBag.Search " @StaticResource.Resources.With CETOM </b></a>
     <br />
     <a href="@ulrG"> @StaticResource.Resources.Search <b> " @ViewBag.Search " @StaticResource.Resources.With Google</b></a>
-
 }
 

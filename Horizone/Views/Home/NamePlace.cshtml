@@ -5,6 +5,8 @@
 }
 
 <h3> @StaticResource.Resources.NamePlaces</h3>
+<h5>&#9658; @StaticResource.Resources.ClickButton @StaticResource.Resources.SearchBy @StaticResource.Resources.NamePlaces @StaticResource.Resources.In @StaticResource.Resources.TochStory</h5>
+
 <table class="table">
     <tr>
         <th>
@@ -12,14 +14,12 @@
 
         </th>
         <th>
-            @StaticResource.Resources.Description
+             @StaticResource.Resources.Description
         </th>
         <th></th>
         <th></th>
         <th></th>
     </tr>
-
-
     @foreach (var item in Model)
     {
         <tr>
@@ -33,21 +33,21 @@
             <td>
                 @if (Session[Horizone.Common.CommonConstants.CurrentCulture].ToString() == "en")
                 {
-                    
-                        @Html.Raw(item.DescriptionEn)
-                   
+
+                    @Html.Raw(item.DescriptionEn)
+
                 }
                 @if (Session[Horizone.Common.CommonConstants.CurrentCulture].ToString() == "fr")
                 {
-                   
-                        @Html.Raw(item.DescriptionFr)
-                   
+
+                    @Html.Raw(item.DescriptionFr)
+
                 }
                 @if (Session[Horizone.Common.CommonConstants.CurrentCulture].ToString() == "zh")
                 {
-                    
-                        @Html.Raw(item.DescriptionZh)
-                   
+
+                    @Html.Raw(item.DescriptionZh)
+
                 }
             </td>
             <td></td>

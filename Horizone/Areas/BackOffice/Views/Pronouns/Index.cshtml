@@ -6,13 +6,11 @@
 
 <h2>@StaticResource.Resources.DictionaryTocharian - @StaticResource.Resources.Pronoun</h2>
 <div id="search">
-    <form class="form-group row" action="@Url.Action("SearchWord", "DashBoards")" method="post" enctype="multipart/form-data">
+    <form class="form-group row" action="@Url.Action("SearchPronoun", "Pronouns")" method="post" enctype="multipart/form-data">
         <div>
             @{Html.RenderAction("SearchForm", "DashBoards"); }
         </div>
-
     </form>
-
 </div>
 
 <p>
@@ -57,10 +55,9 @@
     @foreach (var item in Model)
     {
     <tr>
-
-
         <td>
-            @Html.DisplayFor(modelItem => item.TochWord)
+            <a href="@Url.Action("Details","Pronouns", new { id = item.Id })">&diams;  @item.TochWord </a>
+          
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.TochLanguage.Language)
@@ -113,11 +110,9 @@
             <td>
                 @Html.DisplayFor(modelItem => item.WordSubClass.SubClassZh)
             </td>
-
         }
         <td>
             @Html.ActionLink(@StaticResource.Resources.Edit, "Edit", new { id = item.Id }, new { @class = "btn btn-info", style = "width:85px" })
-            @Html.ActionLink(@StaticResource.Resources.Details, "Details", new { id = item.Id }, new { @class = "btn btn-info", style = "width:85px" })
             @Html.ActionLink(@StaticResource.Resources.Delete, "Delete", new { id = item.Id }, new { @class = "btn btn-info", style = "width:85px" })
         </td>
     </tr>

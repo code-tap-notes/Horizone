@@ -547,7 +547,7 @@ namespace StaticResource {
         }
         
         /// <summary>
-        ///   Recherche une chaîne localisée semblable à Voulez-vous rechercher un avantage?.
+        ///   Recherche une chaîne localisée semblable à Voulez-vous rechercher un avantage.
         /// </summary>
         public static string AskSearchAdvantage {
             get {
@@ -849,6 +849,15 @@ namespace StaticResource {
         public static string ClayOrSandParticules {
             get {
                 return ResourceManager.GetString("ClayOrSandParticules", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Cliquez sur le bouton pour.
+        /// </summary>
+        public static string ClickButton {
+            get {
+                return ResourceManager.GetString("ClickButton", resourceCulture);
             }
         }
         
@@ -3346,6 +3355,15 @@ namespace StaticResource {
         }
         
         /// <summary>
+        ///   Recherche une chaîne localisée semblable à Autre site.
+        /// </summary>
+        public static string OtherSite {
+            get {
+                return ResourceManager.GetString("OtherSite", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Recherche une chaîne localisée semblable à Autre page Web.
         /// </summary>
         public static string OtherWebPage {
@@ -4513,6 +4531,15 @@ namespace StaticResource {
         public static string SignUp {
             get {
                 return ResourceManager.GetString("SignUp", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Route de la soie.
+        /// </summary>
+        public static string SilkRoad {
+            get {
+                return ResourceManager.GetString("SilkRoad", resourceCulture);
             }
         }
         

@@ -3,11 +3,15 @@
     ViewBag.Title = @StaticResource.Resources.Search;
 }
 <h2>@StaticResource.Resources.SearchResult</h2>
-@Model.Count() @StaticResource.Resources.SearchResult <b> " @ViewBag.Search " </b> @StaticResource.Resources.Found
+&#10063; @Model.Count() @StaticResource.Resources.SearchResult <b> " @ViewBag.Search " </b> @StaticResource.Resources.Found
 <br />
 @if (Model.Count() == 0)
 {
-    @StaticResource.Resources.AskSearchAdvantage;
+    <p>
+        &#10067; @StaticResource.Resources.AskSearchAdvantage
+    </p>
+    <h5>&#9658; @StaticResource.Resources.ClickButton @StaticResource.Resources.Search <b> " @ViewBag.Search " </b></h5>
+
     <form class="form-group row" action="@Url.Action("SearchIndex", "DashBoards" )" method="post" enctype="multipart/form-data">
         <button type="submit" class="btn btn-default" style="width:20%; text-align:left;"> @StaticResource.Resources.Search <b> " @ViewBag.Search " </b> </button>
         <input class="form-control" type="hidden" id="Search" name="search" value="@ViewBag.Search" />
@@ -65,14 +69,12 @@
 
             </tr>
         }
-
     </table>
-
 </div>
 
 @if (@ViewBag.Search != null)
 {
-    @StaticResource.Resources.AskSearchAdvantage;
+<p>&#10067; @StaticResource.Resources.AskSearchAdvantage @StaticResource.Resources.In @StaticResource.Resources.OtherSite</p>
     <br />
     var ulrA = "https://www.univie.ac.at/tocharian/?A_" + @ViewBag.Search;
     var ulrB = "https://www.univie.ac.at/tocharian/?B_" + @ViewBag.Search;
@@ -84,7 +86,6 @@
     <a href="@ulrG"> @StaticResource.Resources.Search <b> " @ViewBag.Search " @StaticResource.Resources.With Google</b></a>
 
 }
-
 
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")

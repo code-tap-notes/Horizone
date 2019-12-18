@@ -6,7 +6,7 @@
 
 <h2>@StaticResource.Resources.DictionaryTocharian - @StaticResource.Resources.OtherWords</h2>
 <div id="search">
-    <form class="form-group row" action="@Url.Action("SearchWord", "DashBoards")" method="post" enctype="multipart/form-data">
+    <form class="form-group row" action="@Url.Action("SearchOtherWord", "OtherWords")" method="post" enctype="multipart/form-data">
         <div>
             @{Html.RenderAction("SearchForm", "DashBoards"); }
         </div>
@@ -58,7 +58,7 @@
         <tr>
 
             <td>
-                @Html.DisplayFor(modelItem => item.TochWord)
+                <a href="@Url.Action("Details","OtherWords", new { id = item.Id })">&diams;  @item.TochWord </a>
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.TochLanguage.Language)
@@ -91,7 +91,6 @@
                 <td>
                     @Html.DisplayFor(modelItem => item.WordSubClass.SubClassEn)
                 </td>
-
             }
             @if (Session[Horizone.Common.CommonConstants.CurrentCulture].ToString() == "fr")
             {
@@ -101,7 +100,6 @@
                 <td>
                     @Html.DisplayFor(modelItem => item.WordSubClass.SubClassFr)
                 </td>
-
             }
             @if (Session[Horizone.Common.CommonConstants.CurrentCulture].ToString() == "zh")
             {
@@ -114,7 +112,6 @@
             }
             <td>
                 @Html.ActionLink(@StaticResource.Resources.Edit, "Edit", new { id = item.Id }, new { @class = "btn btn-info", style = "width:85px" })
-                @Html.ActionLink(@StaticResource.Resources.Details, "Details", new { id = item.Id }, new { @class = "btn btn-info", style = "width:85px" })
                 @Html.ActionLink(@StaticResource.Resources.Delete, "Delete", new { id = item.Id }, new { @class = "btn btn-info", style = "width:85px" })
             </td>
         </tr>

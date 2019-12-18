@@ -109,7 +109,6 @@ namespace Horizone.Areas.BackOffice.Controllers
             }
             return View(visualAid);
         }
-
         // POST: BackOffice/VisualAids/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
@@ -119,8 +118,6 @@ namespace Horizone.Areas.BackOffice.Controllers
             db.VisualAids.Remove(visualAid);
             db.SaveChanges();
             return RedirectToAction("Index");
-        }
-
-       
+        }      
     }
 }

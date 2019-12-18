@@ -922,6 +922,11 @@
     <Content Include="Areas\BackOffice\Views\DictionaryTocharians\UpdateDictionary.cshtml" />
     <Content Include="Areas\BackOffice\Views\ProperNouns\NameInStory.cshtml" />
     <Content Include="Areas\BackOffice\Views\NamePlaces\PlaceInStory.cshtml" />
+    <Content Include="Areas\BackOffice\Views\Pronouns\SearchPronoun.cshtml" />
+    <Content Include="Areas\BackOffice\Views\OtherWords\SearchOtherWord.cshtml" />
+    <Content Include="Areas\BackOffice\Views\Verbs\SearchVerb.cshtml" />
+    <Content Include="Areas\BackOffice\Views\NounAdjectives\SearchNounAdjective.cshtml" />
+    <Content Include="Areas\BackOffice\Views\DictionaryTocharians\SearchParallel.cshtml" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\cldr.js" />
     <Content Include="Scripts\cldr\event.js" />
