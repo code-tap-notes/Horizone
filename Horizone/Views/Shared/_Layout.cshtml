@@ -85,13 +85,11 @@
                             <li><a href="@Url.Action("AbbreviationGrammatical", "Vocabularies")">&diams; @StaticResource.Resources.GrammaticalAbbreviation</a></li>
                             <li><a href="@Url.Action("AbbreviationLanguage", "Vocabularies")">&diams; @StaticResource.Resources.Language - @StaticResource.Resources.Abbreviations</a></li>
                             <li><a href="@Url.Action("AbbreviationManuscript", "Vocabularies")">&diams; @StaticResource.Resources.Abbreviations - @StaticResource.Resources.Manuscript </a></li>
-
                             <li><a href="@Url.Action("Abbreviation", "Vocabularies")">&diams; @StaticResource.Resources.OtherAbbreviation</a></li>
                         </ul>
                     </li>
                     <li>@Html.ActionLink(@StaticResource.Resources.ReverseDictionary, "Reverse", "Vocabularies")</li>
                     <li>@Html.ActionLink(@StaticResource.Resources.ParallelDictionary, "Parallel", "Vocabularies")</li>
-
                 </ul>
             </li>
             <li class="dropdown">
@@ -142,24 +140,24 @@
                 <li>
                     @if (Session[Horizone.Common.CommonConstants.CurrentCulture].ToString() == "en")
                     {
-                        <p class= "flag-icon-background flag-icon-us">.</p>
+                        <p class="flag-icon-background flag-icon-us" style="color: palegreen;" >.</p>
                     }
                     @if (Session[Horizone.Common.CommonConstants.CurrentCulture].ToString() == "fr")
                     {
-                        <p class="flag-icon-background flag-icon-fr">.</p>
+                        <p class="flag-icon-background flag-icon-fr" style="color: palegreen;" >.</p>
                     }
                     @if (Session[Horizone.Common.CommonConstants.CurrentCulture].ToString() == "zh")
                     {
-                        <p class="flag-icon-background flag-icon-cn">.</p>
+                        <p class="flag-icon-background flag-icon-cn" style="color: palegreen;" >.</p>
                     }
                 </li>
-
             }
         </ul>
-     
-
-    </div><div class="navbar-collapse collapse">
-    </div><div class="container body-content">
+    </div>
+    <!--
+    <div class="navbar-collapse collapse">
+    </div> -->
+    <div class="container body-content">
         <hr />
         @RenderBody()
         <hr />
@@ -167,7 +165,6 @@
             <p>&copy; @DateTime.Now.Year - @StaticResource.Resources.Project</p>
         </footer>
     </div>
-
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
     @RenderSection("scripts", required: false)

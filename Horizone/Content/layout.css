@@ -61,7 +61,7 @@ ul.dropdown-menu {
     top: -20px;
     Left: 100%;
     margin-top: -1px;
-   
+    width: auto;
 }
 
     .dropdown-submenu .dropdown-menu {
@@ -70,7 +70,22 @@ ul.dropdown-menu {
         margin-top: -1px;
         display: none;
         color: slateblue !important;
+        min-width: 60px !important;
+        width: auto !important;
     }
+
+.dropdown-menu > li > a {
+    display: block;
+    padding: 3px 20px;
+    clear: both;
+    font-weight: normal;
+    line-height: 1.42857143;
+    color: #333;
+    white-space: nowrap;
+    width: auto;
+    min-width: 60px !important;
+    width: auto !important;
+}
 .newinputwidth {
     width: 2000px !important;
 }
@@ -113,14 +128,17 @@ ul.dropdown-menu {
     .learnmore:hover {
     color: #069;
 }
-.petitImage {width:60px;height:40px;}
+.petitImage {
+    width: 30%;
+    height: 20%;
+}
 .moyenImage {
-    width: 120px;
-    height: 90px;
+    width: 30%;
+    height: 20%;
 }
 .GrandImage {
-    width: 360px;
-    height: 300px;
+    width: 30%;
+    height: 20%;
 }
 
 #wrap-vp{ width:1000px; margin:15px auto}

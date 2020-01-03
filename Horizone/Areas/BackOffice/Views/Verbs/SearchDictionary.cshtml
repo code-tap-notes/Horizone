@@ -1,0 +1,115 @@
+﻿@model IEnumerable<Horizone.Models.Verb>
+@{
+    ViewBag.Title = @StaticResource.Resources.Search;
+}
+
+<h2>@StaticResource.Resources.SearchResult</h2>
+&#10063; @Model.Count() @StaticResource.Resources.SearchResult <b> " @ViewBag.Search " </b> @StaticResource.Resources.Found
+<br />
+@if (Model.Count() == 0)
+{
+    @StaticResource.Resources.AskSearchAdvantage;
+    <form class="form-group row" action="@Url.Action("SearchIndex", "DashBoards" )" method="post" enctype="multipart/form-data">
+        <button type="submit" class="btn btn-default" style="width:20%; text-align:left;"> @StaticResource.Resources.Search <b> " @ViewBag.Search " </b> </button>
+        <input class="form-control" type="hidden" id="Search" name="search" value="@ViewBag.Search" />
+    </form>
+}
+<br />
+@Html.ActionLink(StaticResource.Resources.Return, "Index", null, new { @class = "btn btn-primary", style = "width:90px" })
+<br />
+
+<table class="table">
+    <tr>
+        <th>
+            @StaticResource.Resources.Words
+        </th>
+        <th>
+            @StaticResource.Resources.Language
+        </th>
+        <th>
+            @StaticResource.Resources.Meaning @StaticResource.Resources.Sanskrit
+        </th>
+        <th>
+            @StaticResource.Resources.Meaning @StaticResource.Resources.English
+        </th>
+        <th>
+            @StaticResource.Resources.Meaning @StaticResource.Resources.French
+        </th>
+        <th>
+            @StaticResource.Resources.Meaning  @StaticResource.Resources.German
+        </th>
+        <th>
+            @StaticResource.Resources.Meaning  @StaticResource.Resources.Latin
+        </th>
+        <th>
+            @StaticResource.Resources.Meaning  @StaticResource.Resources.Chinese
+        </th>
+
+        <th>
+            @StaticResource.Resources.WordSubClass
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                <a href="@Url.Action("Details","Verbs", new { id = item.Id })">&diams;  @item.DictionaryTocharian.Word </a>
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DictionaryTocharian.TochLanguage.Language)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DictionaryTocharian.Sanskrit)
+            </td>
+
+            <td>
+                @Html.DisplayFor(modelItem => item.DictionaryTocharian.English)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DictionaryTocharian.Francaise)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DictionaryTocharian.German)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DictionaryTocharian.Latin)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DictionaryTocharian.Chinese)
+            </td>
+
+            @if (Session[Horizone.Common.CommonConstants.CurrentCulture].ToString() == "en")
+            {
+
+                <td>
+                    @Html.DisplayFor(modelItem => item.DictionaryTocharian.WordSubClass.SubClassEn)
+                </td>
+
+            }
+            @if (Session[Horizone.Common.CommonConstants.CurrentCulture].ToString() == "fr")
+            {
+
+                <td>
+                    @Html.DisplayFor(modelItem => item.DictionaryTocharian.WordSubClass.SubClassFr)
+                </td>
+
+            }
+            @if (Session[Horizone.Common.CommonConstants.CurrentCulture].ToString() == "zh")
+            {
+
+                <td>
+                    @Html.DisplayFor(modelItem => item.DictionaryTocharian.WordSubClass.SubClassZh)
+                </td>
+
+            }
+            <td>
+
+                @Html.ActionLink(@StaticResource.Resources.Edit, "Edit", new { id = item.Id }, new { @class = "btn btn-info", style = "width:85px" })
+                @Html.ActionLink(@StaticResource.Resources.Delete, "Delete", new { id = item.Id }, new { @class = "btn btn-info", style = "width:85px" })
+            </td>
+        </tr>
+    }
+
+</table>

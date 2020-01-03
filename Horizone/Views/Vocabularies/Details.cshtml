@@ -73,16 +73,28 @@
             <dd>
                 @Html.DisplayFor(model => model.WordSubClass.SubClassEn)
             </dd>
+            <dt>
+                @StaticResource.Resources.Number
+            </dt>
+            <dd>
+                <table class="table table-striped">
+                    @foreach (var item in Model.Numbers)
+                    {
+                        <tr><td>@item.WordNumberZh</td></tr>
+                    }
+
+                </table>
+            </dd>
             if (Model.WordClass.ClassEn == "Verb")
             {
-                
+
             }
             if (Model.WordClass.ClassEn == "Noun" || Model.WordClass.ClassEn == "Adjective")
             {
 
 
             }
-            
+
 
         }
 
@@ -100,17 +112,29 @@
             <dd>
                 @Html.DisplayFor(model => model.WordSubClass.SubClassFr)
             </dd>
+            <dt>
+                @StaticResource.Resources.Number
+            </dt>
+            <dd>
+                <table class="table table-striped">
+                    @foreach (var item in Model.Numbers)
+                    {
+                        <tr><td>@item.WordNumberFr</td></tr>
+                    }
+
+                </table>
+            </dd>
             if (Model.WordClass.ClassEn == "Verb")
             {
-                
+
             }
             if (Model.WordClass.ClassEn == "Noun" || Model.WordClass.ClassEn == "Adjective")
             {
 
-              
+
 
             }
-           
+
         }
 
         @if (Session[Horizone.Common.CommonConstants.CurrentCulture].ToString() == "zh")
@@ -127,17 +151,29 @@
             <dd>
                 @Html.DisplayFor(model => model.WordSubClass.SubClassZh)
             </dd>
+            <dt>
+                @StaticResource.Resources.Number
+            </dt>
+            <dd>
+                <table class="table table-striped">
+                    @foreach (var item in Model.Numbers)
+                    {
+                        <tr><td>@item.WordNumberZh</td></tr>
+                    }
+
+                </table>
+            </dd>
             if (Model.WordClass.ClassEn == "Verb")
             {
-                
+
             }
             if (Model.WordClass.ClassEn == "Noun" || Model.WordClass.ClassEn == "Adjective")
             {
 
-               
+
 
             }
-            
+
 
         }
         <dt>
@@ -180,11 +216,20 @@
         <dd>
             @Html.DisplayFor(model => model.Chinese)
         </dd>
-                   
-        
-        
+
     </dl>
 </div>
 <p>
-    @Html.ActionLink(StaticResource.Resources.Return, "Vocabulaire", null, new { @class = "btn btn-primary", style = "width:85px" }) |
+    @Html.ActionLink(StaticResource.Resources.Return, "Vocabulaire", null, new { @class = "btn btn-primary", style = "width:85px" })
+    @if (Model.TochLanguageId == 1)
+    {
+
+        var ulrA = "https://www.univie.ac.at/tocharian/?E_A_" + @Model.Word.Trim();
+        <a href="@ulrA" class="btn btn-primary"> @StaticResource.Resources.LearnMore @StaticResource.Resources.In CETOM </a>
+    }
+    @if (Model.TochLanguageId == 2)
+    {
+        var ulrB = "https://www.univie.ac.at/tocharian/?E_B_" + @Model.Word.Trim();
+        <a href="@ulrB" class="btn btn-primary"> @StaticResource.Resources.LearnMore @StaticResource.Resources.In CETOM </a>
+    }
 </p>

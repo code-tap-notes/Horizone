@@ -4,6 +4,7 @@
 }
 
 <h2>@StaticResource.Resources.SourceStory</h2>
+<h5>&#9658; @StaticResource.Resources.ClickButton @StaticResource.Resources.SearchBy @StaticResource.Resources.SourceStory @StaticResource.Resources.In @StaticResource.Resources.TochStory</h5>
 
 <p>
     @Html.ActionLink(@StaticResource.Resources.Add, "Create", null, new { @class = "btn btn-primary" })
@@ -13,56 +14,56 @@
 @if (Session[Horizone.Common.CommonConstants.CurrentCulture].ToString() == "en")
 {
     var source = Model.OrderBy(x => x.SourceEn).ToList();
-<div class="row">
-    @foreach (var item in source)
-    {
-        <div class="col-md-6">
-            <form class="form-group row" action="@Url.Action("SearchStory", "TochStories" )" method="post" enctype="multipart/form-data">
-                <button type="submit" class="btn btn-default" style="width:30%; text-align:left;">  @Html.DisplayFor(modelItem => item.SourceEn) </button>
-                <input class="form-control" type="hidden" id="Search" name="search" value="@item.SourceEn" />
+    <div class="row">
+        @foreach (var item in source)
+        {
+            <div class="col-md-6">
+                <form class="form-group row" action="@Url.Action("SearchStory", "TochStories" )" method="post" enctype="multipart/form-data">
+                    <button type="submit" class="btn btn-default" style="width:30%; text-align:left;">  @Html.DisplayFor(modelItem => item.SourceEn) </button>
+                    <input class="form-control" type="hidden" id="Search" name="search" value="@item.SourceEn" />
 
-                @Html.ActionLink(@StaticResource.Resources.Edit, "Edit", new { id = item.Id }, new { @class = "btn btn-info", style = "width:85px" })
-                @Html.ActionLink(@StaticResource.Resources.Delete, "Delete", new { id = item.Id }, new { @class = "btn btn-info", style = "width:85px" })
-            </form>
-        </div>
-    }
-</div>
+                    @Html.ActionLink(@StaticResource.Resources.Edit, "Edit", new { id = item.Id }, new { @class = "btn btn-info", style = "width:85px" })
+                    @Html.ActionLink(@StaticResource.Resources.Delete, "Delete", new { id = item.Id }, new { @class = "btn btn-info", style = "width:85px" })
+                </form>
+            </div>
+        }
+    </div>
 }
 @if (Session[Horizone.Common.CommonConstants.CurrentCulture].ToString() == "fr")
 {
     var source = Model.OrderBy(x => x.SourceFr).ToList();
-<div class="row">
-    @foreach (var item in source)
-    {
-        <div class="col-md-6">
-            <form class="form-group row" action="@Url.Action("SearchStory", "TochStories" )" method="post" enctype="multipart/form-data">
-                <button type="submit" class="btn btn-default" style="width:30%; text-align:left;">  @Html.DisplayFor(modelItem => item.SourceFr) </button>
-                <input class="form-control" type="hidden" id="Search" name="search" value="@item.SourceFr" />
+    <div class="row">
+        @foreach (var item in source)
+        {
+            <div class="col-md-6">
+                <form class="form-group row" action="@Url.Action("SearchStory", "TochStories" )" method="post" enctype="multipart/form-data">
+                    <button type="submit" class="btn btn-default" style="width:30%; text-align:left;">  @Html.DisplayFor(modelItem => item.SourceFr) </button>
+                    <input class="form-control" type="hidden" id="Search" name="search" value="@item.SourceFr" />
 
-                @Html.ActionLink(@StaticResource.Resources.Edit, "Edit", new { id = item.Id }, new { @class = "btn btn-info", style = "width:85px" })
-                @Html.ActionLink(@StaticResource.Resources.Delete, "Delete", new { id = item.Id }, new { @class = "btn btn-info", style = "width:85px" })
-            </form>
-        </div>
-    }
-</div>
+                    @Html.ActionLink(@StaticResource.Resources.Edit, "Edit", new { id = item.Id }, new { @class = "btn btn-info", style = "width:85px" })
+                    @Html.ActionLink(@StaticResource.Resources.Delete, "Delete", new { id = item.Id }, new { @class = "btn btn-info", style = "width:85px" })
+                </form>
+            </div>
+        }
+    </div>
 }
 @if (Session[Horizone.Common.CommonConstants.CurrentCulture].ToString() == "zh")
 {
     var source = Model.OrderBy(x => x.SourceZh).ToList();
-<div class="row">
-    @foreach (var item in source)
-    {
-        <div class="col-md-6">
-            <form class="form-group row" action="@Url.Action("SearchStory", "TochStories" )" method="post" enctype="multipart/form-data">
-                <button type="submit" class="btn btn-default" style="width:30%; text-align:left;">  @Html.DisplayFor(modelItem => item.SourceZh) </button>
-                <input class="form-control" type="hidden" id="Search" name="search" value="@item.SourceZh" />
+    <div class="row">
+        @foreach (var item in source)
+        {
+            <div class="col-md-6">
+                <form class="form-group row" action="@Url.Action("SearchStory", "TochStories" )" method="post" enctype="multipart/form-data">
+                    <button type="submit" class="btn btn-default" style="width:30%; text-align:left;">  @Html.DisplayFor(modelItem => item.SourceZh) </button>
+                    <input class="form-control" type="hidden" id="Search" name="search" value="@item.SourceZh" />
 
-                @Html.ActionLink(@StaticResource.Resources.Edit, "Edit", new { id = item.Id }, new { @class = "btn btn-info", style = "width:85px" })
-                @Html.ActionLink(@StaticResource.Resources.Delete, "Delete", new { id = item.Id }, new { @class = "btn btn-info", style = "width:85px" })
-            </form>
-        </div>
-    }
-</div>
+                    @Html.ActionLink(@StaticResource.Resources.Edit, "Edit", new { id = item.Id }, new { @class = "btn btn-info", style = "width:85px" })
+                    @Html.ActionLink(@StaticResource.Resources.Delete, "Delete", new { id = item.Id }, new { @class = "btn btn-info", style = "width:85px" })
+                </form>
+            </div>
+        }
+    </div>
 }
 
 

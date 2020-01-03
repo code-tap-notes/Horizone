@@ -1,15 +1,16 @@
 ﻿@model PagedList.IPagedList<Horizone.Models.OtherWord>
 @using PagedList.Mvc;
 @{
-    ViewBag.Title = @StaticResource.Resources.DictionaryTocharian;
+    ViewBag.Title = @StaticResource.Resources.OtherWord;
 }
 
-<h2>@StaticResource.Resources.DictionaryTocharian - @StaticResource.Resources.OtherWords</h2>
+<h2> @StaticResource.Resources.OtherWord </h2>
 <div id="search">
-    <form class="form-group row" action="@Url.Action("SearchOtherWord", "OtherWords")" method="post" enctype="multipart/form-data">
+    <form class="form-group row" action="@Url.Action("SearchWord", "DashBoards")" method="post" enctype="multipart/form-data">
         <div>
             @{Html.RenderAction("SearchForm", "DashBoards"); }
         </div>
+
     </form>
 
 </div>
@@ -18,31 +19,11 @@
     @Html.ActionLink(@StaticResource.Resources.Add, "Create", null, new { @class = "btn btn-primary" })
 </p>
 
+
 <table class="table">
     <tr>
         <th>
-            @StaticResource.Resources.Words
-        </th>
-        <th>
-            @StaticResource.Resources.Language
-        </th>
-        <th>
-            @StaticResource.Resources.Meaning  @StaticResource.Resources.Sanskrit
-        </th>
-        <th>
-            @StaticResource.Resources.Meaning  @StaticResource.Resources.English
-        </th>
-        <th>
-            @StaticResource.Resources.Meaning  @StaticResource.Resources.French
-        </th>
-        <th>
-            @StaticResource.Resources.Meaning  @StaticResource.Resources.German
-        </th>
-        <th>
-            @StaticResource.Resources.Meaning   @StaticResource.Resources.Latin
-        </th>
-        <th>
-            @StaticResource.Resources.Meaning  @StaticResource.Resources.Chinese
+            @StaticResource.Resources.Tocharian
         </th>
         <th>
             @StaticResource.Resources.WordClass
@@ -50,76 +31,85 @@
         <th>
             @StaticResource.Resources.WordSubClass
         </th>
+        <th>
+            @StaticResource.Resources.English
+        </th>
+        <th>
+            @StaticResource.Resources.French
+        </th>
+        <th>
+            @StaticResource.Resources.German
+        </th>
+        <th>
+            @StaticResource.Resources.Latin
+        </th>
+        <th>
+            @StaticResource.Resources.Chinese
+        </th>
         <th></th>
     </tr>
 
     @foreach (var item in Model)
     {
-        <tr>
+    <tr>
+        <td>
+            <a href="@Url.Action("Details","OtherWords", new { id = item.Id })">&diams;  @item.DictionaryTocharian.Word </a>
+        </td>
 
+        @if (Session[Horizone.Common.CommonConstants.CurrentCulture].ToString() == "en")
+        {
             <td>
-                <a href="@Url.Action("Details","OtherWords", new { id = item.Id })">&diams;  @item.TochWord </a>
+                @Html.DisplayFor(modelItem => item.DictionaryTocharian.WordClass.ClassEn)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.TochLanguage.Language)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Sanskrit)
-            </td>
-
-            <td>
-                @Html.DisplayFor(modelItem => item.English)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Francaise)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.German)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Latin)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Chinese)
+                @Html.DisplayFor(modelItem => item.DictionaryTocharian.WordSubClass.SubClassEn)
             </td>
 
-            @if (Session[Horizone.Common.CommonConstants.CurrentCulture].ToString() == "en")
-            {
-                <td>
-                    @Html.DisplayFor(modelItem => item.WordClass.ClassEn)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.WordSubClass.SubClassEn)
-                </td>
-            }
-            @if (Session[Horizone.Common.CommonConstants.CurrentCulture].ToString() == "fr")
-            {
-                <td>
-                    @Html.DisplayFor(modelItem => item.WordClass.ClassFr)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.WordSubClass.SubClassFr)
-                </td>
-            }
-            @if (Session[Horizone.Common.CommonConstants.CurrentCulture].ToString() == "zh")
-            {
-                <td>
-                    @Html.DisplayFor(modelItem => item.WordClass.ClassZh)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.WordSubClass.SubClassZh)
-                </td>
-            }
+        }
+        @if (Session[Horizone.Common.CommonConstants.CurrentCulture].ToString() == "fr")
+        {
             <td>
-                @Html.ActionLink(@StaticResource.Resources.Edit, "Edit", new { id = item.Id }, new { @class = "btn btn-info", style = "width:85px" })
-                @Html.ActionLink(@StaticResource.Resources.Delete, "Delete", new { id = item.Id }, new { @class = "btn btn-info", style = "width:85px" })
+                @Html.DisplayFor(modelItem => item.DictionaryTocharian.WordClass.ClassFr)
             </td>
-        </tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.DictionaryTocharian.WordSubClass.SubClassFr)
+            </td>
+
+        }
+        @if (Session[Horizone.Common.CommonConstants.CurrentCulture].ToString() == "zh")
+        {
+            <td>
+                @Html.DisplayFor(modelItem => item.DictionaryTocharian.WordClass.ClassZh)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DictionaryTocharian.WordSubClass.SubClassZh)
+            </td>
+        }
+       
+        <td>
+            @Html.DisplayFor(modelItem => item.DictionaryTocharian.English)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DictionaryTocharian.Francaise)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DictionaryTocharian.German)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DictionaryTocharian.Latin)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DictionaryTocharian.Chinese)
+        </td>
+        <td>
+            <a href="@Url.Action("Edit","DictionaryTocharians",new { id = item.DictionaryId })" class="btn btn-info" , style="width:85px">@StaticResource.Resources.Edit</a>
+            @Html.ActionLink(@StaticResource.Resources.Delete, "Delete", new { id = item.Id }, new { @class = "btn btn-info", style = "width:85px" })
+        </td>
+    </tr>
     }
 
 </table>
 @Html.PagedListPager(Model, page => Url.Action("Index", new { page }))
-
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")
     <script>

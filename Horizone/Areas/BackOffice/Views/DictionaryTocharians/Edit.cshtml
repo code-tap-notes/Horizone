@@ -1,14 +1,7 @@
-﻿@model Horizone.Models.OtherWord
-
+﻿@model Horizone.Models.DictionaryTocharian
 
 @{
     ViewBag.Title = @StaticResource.Resources.Edit;
-}
-@using (Html.BeginForm())
-{
-    <div class="row">
-        @{Html.RenderAction("SpecialCharacter", "DashBoards"); }
-    </div>
 }
 
 <h2>@StaticResource.Resources.Edit</h2>
@@ -18,90 +11,44 @@
     @Html.AntiForgeryToken()
 
 <div class="form-horizontal">
-    <h4>@StaticResource.Resources.OtherWord</h4>
+    <h4>@StaticResource.Resources.DictionaryTocharian</h4>
     <hr />
     @Html.ValidationSummary(true, "", new { @class = "text-danger" })
     @Html.HiddenFor(model => model.Id)
 
     <div class="form-group">
-        @Html.LabelFor(model => model.TochWord, htmlAttributes: new { @class = "control-label col-md-2" })
+        @Html.LabelFor(model => model.Word, htmlAttributes: new { @class = "control-label col-md-2" })
         <div class="col-md-10">
             <label for="search">@StaticResource.Resources.Insert @StaticResource.Resources.SpecialCharacter : </label>
-            <a onclick="insertText('TochWord','ā');" href="#" style="background-color: blanchedalmond; padding:5px"> ā  </a>
-            <a onclick="insertText('TochWord','ä');" href="#" style="background-color: blanchedalmond; padding:5px"> ä  </a>
-            <a onclick="insertText('TochWord','ī');" href="#" style="background-color: blanchedalmond; padding:5px"> ī  </a>
-            <a onclick="insertText('TochWord','ö');" href="#" style="background-color: blanchedalmond; padding:5px"> ö  </a>
-            <a onclick="insertText('TochWord','ū');" href="#" style="background-color: blanchedalmond; padding:5px"> ū  </a>
-            <a onclick="insertText('TochWord','ü');" href="#" style="background-color: blanchedalmond; padding:5px"> ü  </a>
-            <a onclick="insertText('TochWord','ṅ');" href="#" style="background-color: blanchedalmond; padding:5px"> ṅ  </a>
-            <a onclick="insertText('TochWord','ñ');" href="#" style="background-color: blanchedalmond; padding:5px"> ñ  </a>
-            <a onclick="insertText('TochWord','ṇ');" href="#" style="background-color: blanchedalmond; padding:5px"> ṇ  </a>
-            <a onclick="insertText('TochWord','ṃ');" href="#" style="background-color: blanchedalmond; padding:5px"> ṃ  </a>
-            <a onclick="insertText('TochWord','ś');" href="#" style="background-color: blanchedalmond; padding:5px"> ś  </a>
-            <a onclick="insertText('TochWord','ṣ');" href="#" style="background-color: blanchedalmond; padding:5px"> ṣ  </a>
-            <a onclick="insertText('TochWord','ṛ');" href="#" style="background-color: blanchedalmond; padding:5px"> ṛ  </a>
-            <a onclick="insertText('TochWord','ṭ');" href="#" style="background-color: blanchedalmond; padding:5px"> ṭ  </a>
-            <a onclick="insertText('TochWord','š');" href="#" style="background-color: blanchedalmond; padding:5px"> š  </a>
-            <a onclick="insertText('TochWord','ß');" href="#" style="background-color: blanchedalmond; padding:5px"> ß  </a>
-            <a onclick="insertText('TochWord','ḍ');" href="#" style="background-color: blanchedalmond; padding:5px"> ḍ  </a>
-            <a onclick="insertText('TochWord','Ā');" href="#" style="background-color: blanchedalmond; padding:5px"> Ā  </a>
-            <a onclick="insertText('TochWord','Ū');" href="#" style="background-color: blanchedalmond; padding:5px"> Ū  </a>
-            <a onclick="insertText('TochWord','Ṃ');" href="#" style="background-color: blanchedalmond; padding:5px"> Ṃ  </a>
-            <a onclick="insertText('TochWord','Ṇ');" href="#" style="background-color: blanchedalmond; padding:5px"> Ṇ  </a>
-            <a onclick="insertText('TochWord','Ñ');" href="#" style="background-color: blanchedalmond; padding:5px"> Ñ  </a>
+            <a onclick="insertText('Word','ā');" href="#" style="background-color: blanchedalmond; padding:5px"> ā  </a>
+            <a onclick="insertText('Word','ä');" href="#" style="background-color: blanchedalmond; padding:5px"> ä  </a>
+            <a onclick="insertText('Word','ī');" href="#" style="background-color: blanchedalmond; padding:5px"> ī  </a>
+            <a onclick="insertText('Word','ö');" href="#" style="background-color: blanchedalmond; padding:5px"> ö  </a>
+            <a onclick="insertText('Word','ū');" href="#" style="background-color: blanchedalmond; padding:5px"> ū  </a>
+            <a onclick="insertText('Word','ü');" href="#" style="background-color: blanchedalmond; padding:5px"> ü  </a>
+            <a onclick="insertText('Word','ṅ');" href="#" style="background-color: blanchedalmond; padding:5px"> ṅ  </a>
+            <a onclick="insertText('Word','ñ');" href="#" style="background-color: blanchedalmond; padding:5px"> ñ  </a>
+            <a onclick="insertText('Word','ṇ');" href="#" style="background-color: blanchedalmond; padding:5px"> ṇ  </a>
+            <a onclick="insertText('Word','ṃ');" href="#" style="background-color: blanchedalmond; padding:5px"> ṃ  </a>
+            <a onclick="insertText('Word','ś');" href="#" style="background-color: blanchedalmond; padding:5px"> ś  </a>
+            <a onclick="insertText('Word','ṣ');" href="#" style="background-color: blanchedalmond; padding:5px"> ṣ  </a>
+            <a onclick="insertText('Word','ṛ');" href="#" style="background-color: blanchedalmond; padding:5px"> ṛ  </a>
+            <a onclick="insertText('Word','ṭ');" href="#" style="background-color: blanchedalmond; padding:5px"> ṭ  </a>
+            <a onclick="insertText('Word','š');" href="#" style="background-color: blanchedalmond; padding:5px"> š  </a>
+            <a onclick="insertText('Word','ß');" href="#" style="background-color: blanchedalmond; padding:5px"> ß  </a>
+            <a onclick="insertText('Word','ḍ');" href="#" style="background-color: blanchedalmond; padding:5px"> ḍ  </a>
+            <a onclick="insertText('Word','Ā');" href="#" style="background-color: blanchedalmond; padding:5px"> Ā  </a>
+            <a onclick="insertText('Word','Ū');" href="#" style="background-color: blanchedalmond; padding:5px"> Ū  </a>
+            <a onclick="insertText('Word','Ṃ');" href="#" style="background-color: blanchedalmond; padding:5px"> Ṃ  </a>
+            <a onclick="insertText('Word','Ṇ');" href="#" style="background-color: blanchedalmond; padding:5px"> Ṇ  </a>
+            <a onclick="insertText('Word','Ñ');" href="#" style="background-color: blanchedalmond; padding:5px"> Ñ  </a>
 
-            @Html.EditorFor(model => model.TochWord, new { htmlAttributes = new { @class = "form-control" } })
-            @Html.ValidationMessageFor(model => model.TochWord, "", new { @class = "text-danger" })
+            @Html.EditorFor(model => model.Word, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.Word, "", new { @class = "text-danger" })
         </div>
+
     </div>
 
-    <div class="form-group">
-        @Html.LabelFor(model => model.TochLanguageId, "TochLanguageId", htmlAttributes: new { @class = "control-label col-md-2" })
-        <div class="col-md-10">
-
-            @Html.DropDownList("TochLanguageId", (SelectList)ViewBag.TochLanguageId, htmlAttributes: new { @class = "form-control" })
-            @Html.ValidationMessageFor(model => model.TochLanguageId, "", new { @class = "text-danger" }) (<label style="color:red;">*  @StaticResource.Resources.Required </label>)
-        </div>
-    </div>
-
-
-    <div class="form-group">
-        @Html.LabelFor(model => model.EquivalentTA, htmlAttributes: new { @class = "control-label col-md-2" })
-        <div class="col-md-10">
-            @Html.EditorFor(model => model.EquivalentTA, new { htmlAttributes = new { @class = "form-control" } })
-            @Html.ValidationMessageFor(model => model.EquivalentTA, "", new { @class = "text-danger" })
-        </div>
-    </div>
-
-    <div class="form-group">
-        @Html.LabelFor(model => model.EquivalentTB, htmlAttributes: new { @class = "control-label col-md-2" })
-        <div class="col-md-10">
-            @Html.EditorFor(model => model.EquivalentTB, new { htmlAttributes = new { @class = "form-control" } })
-            @Html.ValidationMessageFor(model => model.EquivalentTB, "", new { @class = "text-danger" })
-        </div>
-    </div>
-    <div class="form-group">
-        @Html.LabelFor(model => model.TochCommon, htmlAttributes: new { @class = "control-label col-md-2" })
-        <div class="col-md-10">
-            @Html.EditorFor(model => model.TochCommon, new { htmlAttributes = new { @class = "form-control" } })
-            @Html.ValidationMessageFor(model => model.TochCommon, "", new { @class = "text-danger" })
-        </div>
-    </div>
-    <div class="form-group">
-        @Html.LabelFor(model => model.TochCorrespondence, htmlAttributes: new { @class = "control-label col-md-2" })
-        <div class="col-md-10">
-            @Html.EditorFor(model => model.TochCorrespondence, new { htmlAttributes = new { @class = "form-control" } })
-            @Html.ValidationMessageFor(model => model.TochCorrespondence, "", new { @class = "text-danger" })
-        </div>
-    </div>
-
-    <div class="form-group">
-        @Html.LabelFor(model => model.EquivalentInOther, htmlAttributes: new { @class = "control-label col-md-2" })
-        <div class="col-md-10">
-            @Html.EditorFor(model => model.EquivalentInOther, new { htmlAttributes = new { @class = "form-control" } })
-            @Html.ValidationMessageFor(model => model.EquivalentInOther, "", new { @class = "text-danger" })
-        </div>
-    </div>
     <div class="form-group">
         @Html.LabelFor(model => model.Sanskrit, htmlAttributes: new { @class = "control-label col-md-2" })
         <div class="col-md-10">
@@ -109,6 +56,7 @@
             @Html.ValidationMessageFor(model => model.Sanskrit, "", new { @class = "text-danger" })
         </div>
     </div>
+
     <div class="form-group">
         @Html.LabelFor(model => model.English, htmlAttributes: new { @class = "control-label col-md-2" })
         <div class="col-md-10">
@@ -149,7 +97,7 @@
         </div>
     </div>
 
-    @if (Session[Horizone.Common.CommonConstants.CurrentCulture].ToString() == "en")
+     @if (Session[Horizone.Common.CommonConstants.CurrentCulture].ToString() == "en")
     {
         <div class="form-group">
             @Html.LabelFor(model => model.WordClassId, @StaticResource.Resources.WordClass, htmlAttributes: new { @class = "control-label col-md-2" })
@@ -164,16 +112,9 @@
             @Html.LabelFor(model => model.WordSubClassId, @StaticResource.Resources.WordSubClass, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 @Html.DropDownList("WordSubClassId", (SelectList)ViewBag.WordSubClassEnId, htmlAttributes: new { @class = "form-control" })
-                @Html.ValidationMessageFor(model => model.WordSubClassId, "", new { @class = "text-danger" })
             </div>
         </div>
 
-        <div class="form-group">
-            <label class="control-label col-md-2">@StaticResource.Resources.Number</label>
-            <div class="col-md-10">
-                @Html.ListBox("NumberId", (MultiSelectList)ViewBag.NumbersEn, new { @class = "form-control" })
-            </div>
-        </div>
     }
     @if (Session[Horizone.Common.CommonConstants.CurrentCulture].ToString() == "fr")
     {
@@ -190,16 +131,6 @@
             @Html.LabelFor(model => model.WordSubClassId, @StaticResource.Resources.WordSubClass, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 @Html.DropDownList("WordSubClassId", (SelectList)ViewBag.WordSubClassFrId, htmlAttributes: new { @class = "form-control" })
-                @Html.ValidationMessageFor(model => model.WordSubClassId, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            <label class="control-label col-md-2">@StaticResource.Resources.Number</label>
-            <div class="col-md-10">
-                @Html.ListBox("NumberId", (MultiSelectList)ViewBag.NumbersFr, new { @class = "form-control" })
-                @Html.ValidationMessageFor(model => model.WordSubClassId, "", new { @class = "text-danger" })
-
             </div>
         </div>
 
@@ -222,17 +153,83 @@
             </div>
         </div>
 
+    }
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.TochLanguageId, "TochLanguageId", htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.DropDownList("TochLanguageId", null, htmlAttributes: new { @class = "form-control" })
+            @Html.ValidationMessageFor(model => model.TochLanguageId, "", new { @class = "text-danger" })
+        </div>
+    </div>
+    @if (Session[Horizone.Common.CommonConstants.CurrentCulture].ToString() == "en")
+    {
+
+        <div class="form-group">
+            <label class="control-label col-md-2">@StaticResource.Resources.Number</label>
+            <div class="col-md-10">
+                @Html.ListBox("NumberId", (MultiSelectList)ViewBag.NumbersEn, new { @class = "form-control" })
+            </div>
+        </div>
+    }
+    @if (Session[Horizone.Common.CommonConstants.CurrentCulture].ToString() == "fr")
+    {
+
+        <div class="form-group">
+            <label class="control-label col-md-2">@StaticResource.Resources.Number</label>
+            <div class="col-md-10">
+                @Html.ListBox("NumberId", (MultiSelectList)ViewBag.NumbersFr, new { @class = "form-control" })
+            </div>
+        </div>
+    }
+    @if (Session[Horizone.Common.CommonConstants.CurrentCulture].ToString() == "zh")
+    {
         <div class="form-group">
             <label class="control-label col-md-2">@StaticResource.Resources.Number</label>
             <div class="col-md-10">
                 @Html.ListBox("NumberId", (MultiSelectList)ViewBag.NumbersZh, new { @class = "form-control" })
             </div>
         </div>
-
-
-
     }
+    <div class="form-group">
+        @Html.LabelFor(model => model.EquivalentTA, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.EquivalentTA, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.EquivalentTA, "", new { @class = "text-danger" })
+        </div>
+    </div>
 
+    <div class="form-group">
+        @Html.LabelFor(model => model.EquivalentTB, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.EquivalentTB, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.EquivalentTB, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.TochCommon, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.TochCommon, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.TochCommon, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.TochCorrespondence, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.TochCorrespondence, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.TochCorrespondence, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.EquivalentInOther, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.EquivalentInOther, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.EquivalentInOther, "", new { @class = "text-danger" })
+        </div>
+    </div>
 
     <div class="form-group">
         @Html.LabelFor(model => model.DerivedFrom, htmlAttributes: new { @class = "control-label col-md-2" })
@@ -298,10 +295,8 @@
             @Html.ActionLink(@StaticResource.Resources.Return, "Index", null, new { @class = "btn btn-default", style = "width:85px" })
         </div>
     </div>
-
 </div>
 }
-
 
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")
@@ -309,8 +304,7 @@
     <script>
         function insertText(elemID, text) {
             document.getElementById(elemID).value += text;
-        };
-
+        }
         $(function () {
             tinymce.init({ selector: '#Description' });
             tinymce.init({ selector: '#Symbol' });

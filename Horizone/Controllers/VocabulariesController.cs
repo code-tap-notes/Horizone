@@ -20,54 +20,54 @@ namespace Horizone.Controllers
 
         public ActionResult Vocabulaire(int page = 1, int pageSize = 200)
         {
-            var dictionaryTocharians = db.DictionaryTocharians.Include(d => d.TochLanguage).Include(d => d.WordClass).Include(d => d.WordSubClass);
+            var dictionaryTocharians = db.DictionaryTocharians.Include(d => d.TochLanguage).Include(d => d.WordClass).Include(d => d.WordSubClass).Include("Numbers");
             return View(dictionaryTocharians.OrderBy(x => x.Word).ToPagedList(page, pageSize));
         }
         public ActionResult Parallel(int page = 1, int pageSize = 200)
         {
             var dictionaryTocharians = db.DictionaryTocharians.Include(d => d.TochLanguage).Include(d => d.WordClass).Include(d => d.WordSubClass);
-            return View(dictionaryTocharians.OrderBy(x => x.EquivalentTA).ToPagedList(page, pageSize));
+            return View(dictionaryTocharians.OrderBy(x => x.Word).ToPagedList(page, pageSize));
         }
         
         public ActionResult TocharianA(int page = 1, int pageSize = 200)
         {
             var dictionaryTocharians = db.DictionaryTocharians.Where(x =>x.TochLanguage.Language.Contains("TA")).Include(d => d.TochLanguage).Include(d => d.WordClass).Include(d => d.WordSubClass);
-            return View(dictionaryTocharians.OrderBy(x => x.Word).ToPagedList(page, pageSize));
+            return View(dictionaryTocharians.OrderBy(x => x.EquivalentTA).ToPagedList(page, pageSize));
         }
         public ActionResult TocharianB(int page = 1, int pageSize = 200)
         {
             var dictionaryTocharians = db.DictionaryTocharians.Where(x => x.TochLanguage.Language.Contains("TB")).Include(d => d.TochLanguage).Include(d => d.WordClass).Include(d => d.WordSubClass);
-            return View(dictionaryTocharians.OrderBy(x => x.Word).ToPagedList(page, pageSize));
+            return View(dictionaryTocharians.OrderBy(x => x.EquivalentTB).ToPagedList(page, pageSize));
         }
         public ActionResult Verb()
         {           
-            var verbs = db.Verbs.Include(d => d.TochLanguage).Include(d => d.WordClass).Include(d => d.WordSubClass).Include("Numbers").Include("Persons").Where(x => x.WordClass.ClassEn == "Verb");           
-            return View(verbs.OrderBy(x => x.TochWord).ToList());
+            var verbs = db.Verbs.Include(d => d.DictionaryTocharian.TochLanguage).Include(d => d.DictionaryTocharian.WordClass).Include(d => d.DictionaryTocharian.WordSubClass).Include(d => d.DictionaryTocharian.Numbers).Include("Persons").Where(x => x.DictionaryTocharian.WordClass.ClassEn == "Verb");           
+            return View(verbs.OrderBy(x => x.DictionaryTocharian.Word).ToList());
         }
         public ActionResult Adverb()
         {
-            var otherWords = db.OtherWords.Include(d => d.TochLanguage).Include(d => d.WordClass).Include(d => d.WordSubClass).Include("Numbers").Where(x => x.WordClass.ClassEn == "Adverb" || x.WordSubClass.SubClassEn == "Adverb");
-            return View(otherWords.OrderBy(x => x.TochWord).ToList());
+            var otherWords = db.OtherWords.Include(d => d.DictionaryTocharian).Include(d => d.DictionaryTocharian.WordClass).Include(d => d.DictionaryTocharian.WordSubClass).Include(d => d.DictionaryTocharian.TochLanguage).Include(d => d.DictionaryTocharian.Numbers).Where(x => x.DictionaryTocharian.WordClass.ClassEn == "Adverb" || x.DictionaryTocharian.WordSubClass.SubClassEn == "Adverb");
+            return View(otherWords.OrderBy(x => x.DictionaryTocharian.Word).ToList());
         }
         public ActionResult Noun()
         {
-            var nounAdjectives = db.NounAdjectives.Where(x => x.WordClass.ClassEn == "Noun").Include(d => d.TochLanguage).Include(d => d.WordClass).Include(d => d.WordSubClass).Include("Cases").Include("Numbers").Include("Genders");
-            return View(nounAdjectives.OrderBy(x => x.TochWord).ToList());
+            var nounAdjectives = db.NounAdjectives.Where(x => x.DictionaryTocharian.WordClass.ClassEn == "Noun").Include(d => d.DictionaryTocharian.TochLanguage).Include(d => d.DictionaryTocharian.WordClass).Include(d => d.DictionaryTocharian.WordSubClass).Include(d => d.DictionaryTocharian.Numbers).Include("Cases").Include("Genders");
+            return View(nounAdjectives.OrderBy(x => x.DictionaryTocharian.Word).ToList());
         }
         public ActionResult Pronoun()
         {
-            var pronouns = db.Pronouns.Include(d => d.TochLanguage).Include(d => d.WordClass).Include(d => d.WordSubClass).Include("Cases").Include("Numbers").Include("Genders").Include("Persons").Where(x => x.WordClass.ClassEn == "Pronoun");
-            return View(pronouns.OrderBy(x => x.TochWord).ToList());
+            var pronouns = db.Pronouns.Include(d => d.DictionaryTocharian).Include(d => d.DictionaryTocharian.TochLanguage).Include(d => d.DictionaryTocharian.WordClass).Include(d => d.DictionaryTocharian.WordSubClass).Include(d => d.DictionaryTocharian.Numbers).Include("Cases").Include("Genders").Include("Persons").Where(x => x.DictionaryTocharian.WordClass.ClassEn == "Pronoun");
+            return View(pronouns.OrderBy(x => x.DictionaryTocharian.Word).ToList());
         }
         public ActionResult Adjective()
         {
-            var nounAdjectives = db.NounAdjectives.Include(d => d.TochLanguage).Include(d => d.WordClass).Include(d => d.WordSubClass).Include("Cases").Include("Numbers").Include("Genders").Where(x => x.WordClass.ClassEn == "Adjective");
-            return View(nounAdjectives.OrderBy(x => x.TochWord).ToList());
+            var nounAdjectives = db.NounAdjectives.Include(d => d.DictionaryTocharian.TochLanguage).Include(d => d.DictionaryTocharian.WordClass).Include(d => d.DictionaryTocharian.WordSubClass).Include(d => d.DictionaryTocharian.Numbers).Include("Cases").Include("Genders").Where(x => x.DictionaryTocharian.WordClass.ClassEn == "Adjective");
+            return View(nounAdjectives.OrderBy(x => x.DictionaryTocharian.Word).ToList());
         }
         public ActionResult OtherWord()
         {
-            var otherWords = db.OtherWords.Include(d => d.TochLanguage).Include(d => d.WordClass).Include(d => d.WordSubClass).Include("Numbers");
-            return View(otherWords.OrderBy(x => x.TochWord).ToList());
+            var otherWords = db.OtherWords.Include(d => d.DictionaryTocharian.TochLanguage).Include(d => d.DictionaryTocharian.WordClass).Include(d => d.DictionaryTocharian.WordSubClass).Include(d => d.DictionaryTocharian.Numbers);
+            return View(otherWords.OrderBy(x => x.DictionaryTocharian.Word).ToList());
         }
         public ActionResult Abbreviation(int page = 1, int pageSize = 200)
         {
@@ -105,7 +105,7 @@ namespace Horizone.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            DictionaryTocharian dictionaryTocharian = db.DictionaryTocharians.Include(d => d.TochLanguage).Include(d => d.WordClass).Include(d => d.WordSubClass).SingleOrDefault(y => y.Id == id);
+            DictionaryTocharian dictionaryTocharian = db.DictionaryTocharians.Include(d => d.TochLanguage).Include(d => d.WordClass).Include(d => d.WordSubClass).Include("Numbers").SingleOrDefault(y => y.Id == id);
             if (dictionaryTocharian == null)
             {
                 return HttpNotFound();
@@ -118,7 +118,7 @@ namespace Horizone.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Verb verb = db.Verbs.Include(d => d.TochLanguage).Include(d => d.WordClass).Include(d => d.WordSubClass).Include("Numbers").Include("Persons").SingleOrDefault(y => y.Id == id);
+            Verb verb = db.Verbs.Include(d => d.DictionaryTocharian.TochLanguage).Include(d => d.DictionaryTocharian.WordClass).Include(d => d.DictionaryTocharian.WordSubClass).Include(d => d.DictionaryTocharian.Numbers).Include("Persons").SingleOrDefault(y => y.Id == id);
             if (verb == null)
             {
                 return HttpNotFound();
@@ -131,7 +131,7 @@ namespace Horizone.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            OtherWord otherWord  = db.OtherWords.Include(d => d.TochLanguage).Include(d => d.WordClass).Include(d => d.WordSubClass).Include("Numbers").SingleOrDefault(y => y.Id == id);
+            OtherWord otherWord  = db.OtherWords.Include(d => d.DictionaryTocharian.TochLanguage).Include(d => d.DictionaryTocharian.WordClass).Include(d => d.DictionaryTocharian.WordSubClass).Include(d => d.DictionaryTocharian.Numbers).SingleOrDefault(y => y.Id == id);
             if (otherWord == null)
             {
                 return HttpNotFound();
@@ -145,7 +145,7 @@ namespace Horizone.Controllers
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
 
-            NounAdjective nounAdjective = db.NounAdjectives.Include(d => d.TochLanguage).Include(d => d.WordClass).Include(d => d.WordSubClass).Include("Cases").Include("Numbers").Include("Genders").SingleOrDefault(y => y.Id == id);
+            NounAdjective nounAdjective = db.NounAdjectives.Include(d => d.DictionaryTocharian.TochLanguage).Include(d => d.DictionaryTocharian.WordClass).Include(d => d.DictionaryTocharian.WordSubClass).Include(d => d.DictionaryTocharian.Numbers).Include("Cases").Include("Genders").SingleOrDefault(y => y.Id == id);
             if (nounAdjective == null)
             {
                 return HttpNotFound();
@@ -159,7 +159,7 @@ namespace Horizone.Controllers
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
 
-            Pronoun pronoun = db.Pronouns.Include(d => d.TochLanguage).Include(d => d.WordClass).Include(d => d.WordSubClass).Include("Cases").Include("Numbers").Include("Genders").Include("Persons").SingleOrDefault(y => y.Id == id);
+            Pronoun pronoun = db.Pronouns.Include(d => d.DictionaryTocharian.TochLanguage).Include(d => d.DictionaryTocharian.WordClass).Include(d => d.DictionaryTocharian.WordSubClass).Include(d => d.DictionaryTocharian.Numbers).Include("Cases").Include("Genders").Include("Persons").SingleOrDefault(y => y.Id == id);
             if (pronoun == null)
             {
                 return HttpNotFound();
@@ -189,38 +189,7 @@ namespace Horizone.Controllers
                 || (x.German != null && x.German.Contains(search))
                 || (x.Latin != null && x.Latin.Contains(search))
                 || (x.Chinese != null && x.Chinese.Contains(search))); ;
-            IEnumerable<Verb> verbs = db.Verbs.Include("WordClass").Include("WordSubClass").Include("TochLanguage").Include("Voice").Include("Valency").Include("TenseAndAspect").Include(" Mood").Include("Persons").Where(x => x.TochWord.Contains(search)
-                || (x.Sanskrit != null && x.Sanskrit.Contains(search))
-                || (x.English != null && x.English.Contains(search))
-                || (x.Francaise != null && x.Francaise.Contains(search))
-                || (x.German != null && x.German.Contains(search))
-                || (x.Latin != null && x.Latin.Contains(search))
-                || (x.Chinese != null && x.Chinese.Contains(search))
-                ); ;
-            IEnumerable<NounAdjective> nounAdjectives = db.NounAdjectives.Include("WordClass").Include("WordSubClass").Include("TochLanguage").Include("Genders").Include("Cases").Where(x => x.TochWord.Contains(search)
-                || (x.Sanskrit != null && x.Sanskrit.Contains(search))
-                || (x.English != null && x.English.Contains(search))
-                || (x.Francaise != null && x.Francaise.Contains(search))
-                || (x.German != null && x.German.Contains(search))
-                || (x.Latin != null && x.Latin.Contains(search))
-                || (x.Chinese != null && x.Chinese.Contains(search))
-                ); ;
-            IEnumerable<Pronoun> pronouns = db.Pronouns.Include("WordClass").Include("WordSubClass").Include("TochLanguage").Include("Genders").Include("Cases").Include("Persons").Where(x => x.TochWord.Contains(search)
-                || (x.Sanskrit != null && x.Sanskrit.Contains(search))
-                || (x.English != null && x.English.Contains(search))
-                || (x.Francaise != null && x.Francaise.Contains(search))
-                || (x.German != null && x.German.Contains(search))
-                || (x.Latin != null && x.Latin.Contains(search))
-                || (x.Chinese != null && x.Chinese.Contains(search))
-              ); 
-            IEnumerable<OtherWord> otherWords = db.OtherWords.Include("WordClass").Include("WordSubClass").Include("TochLanguage").Where(x => x.TochWord.Contains(search)
-                || (x.Sanskrit != null && x.Sanskrit.Contains(search))
-                || (x.English != null && x.English.Contains(search))
-                || (x.Francaise != null && x.Francaise.Contains(search))
-                || (x.German != null && x.German.Contains(search))
-                || (x.Latin != null && x.Latin.Contains(search))
-                || (x.Chinese != null && x.Chinese.Contains(search))
-              ); ;
+                       
             IEnumerable<NamePlace> namePlaces = db.NamePlaces.Where(x => x.Place.Contains(search)); ;
             IEnumerable<ProperNoun> properNouns = db.ProperNouns.Where(x => x.Name.Contains(search));
             List<SearchResult> searchResults = new List<SearchResult>();
@@ -232,38 +201,6 @@ namespace Horizone.Controllers
                         searchResults.Add(new SearchResult() { NameTable = "ProperNouns", IdResult = item.Id, Summary = item.Name });
                     }
                 }
-                if (verbs.Count() != 0)
-                {
-                    foreach (var item in verbs)
-                    {
-                        string[] myStrings = new string[] { item.TochWord, item.TochLanguage.Language, item.WordClass.ClassEn, item.WordSubClass.SubClassEn, item.English, item.Francaise, item.German, item.Latin, item.Chinese };
-                        searchResults.Add(new SearchResult() { NameTable = "Verbs", IdResult = item.Id, Summary = string.Join(" - ", myStrings.Where(str => !string.IsNullOrEmpty(str))) });
-                    }
-                }
-                if (nounAdjectives.Count() != 0)
-                {
-                    foreach (var item in nounAdjectives)
-                    {
-                        string[] myStrings = new string[] { item.TochWord, item.TochLanguage.Language, item.WordClass.ClassEn, item.WordSubClass.SubClassEn, item.English, item.Francaise, item.German, item.Latin, item.Chinese };
-                        searchResults.Add(new SearchResult() { NameTable = "NounAdjectives", IdResult = item.Id, Summary = string.Join(" - ", myStrings.Where(str => !string.IsNullOrEmpty(str))) });
-                    }
-                }          
-                if (pronouns.Count() != 0)
-                {
-                    foreach (var item in pronouns)
-                    {
-                        string[] myStrings = new string[] { item.TochWord, item.TochLanguage.Language, item.WordClass.ClassEn, item.WordSubClass.SubClassEn, item.English, item.Francaise, item.German, item.Latin, item.Chinese };
-                        searchResults.Add(new SearchResult() { NameTable = "Pronouns", IdResult = item.Id, Summary = string.Join(" - ", myStrings.Where(str => !string.IsNullOrEmpty(str))) });
-                    }
-                }               
-                if (otherWords.Count() != 0)
-                {
-                    foreach (var item in otherWords)
-                    {
-                        string[] myStrings = new string[] { item.TochWord, item.TochLanguage.Language, item.WordClass.ClassEn, item.WordSubClass.SubClassEn, item.English, item.Francaise, item.German, item.Latin, item.Chinese };
-                        searchResults.Add(new SearchResult() { NameTable = "OtherWords", IdResult = item.Id, Summary = string.Join(" - ", myStrings.Where(str => !string.IsNullOrEmpty(str))) });
-                    }
-                }               
                 if (namePlaces.Count() != 0)
                 {
                     foreach (var item in namePlaces)
@@ -325,6 +262,64 @@ namespace Horizone.Controllers
             ViewBag.Search = search;
             return View("SearchAbbreviation", db.SearchResults.ToList());
         }
+        public ActionResult SearchNounAdjective(string search)
+        {
+            IEnumerable<NounAdjective> nounAdjectives = db.NounAdjectives.Include(d => d.DictionaryTocharian)
+                 .Include(d => d.DictionaryTocharian.TochLanguage)
+                 .Include(d => d.DictionaryTocharian.WordClass)
+                 .Include(d => d.DictionaryTocharian.WordSubClass)
+ ;
+            if (!string.IsNullOrWhiteSpace(search))
+            {
+                nounAdjectives = nounAdjectives.Where(x => x.DictionaryTocharian.Word.Contains(search));
+            }
+            if (nounAdjectives.Count() == 0)
+            {
+                Display("Aucun résultat");
+            }
+            ViewBag.Count = nounAdjectives.Count();
+            ViewBag.Search = search;
+            return View("SearchNounAdjective", nounAdjectives.ToList());
+        }
+        public ActionResult SearchPronoun(string search)
+        {
+            IEnumerable<Pronoun> pronouns = db.Pronouns.Include(d => d.DictionaryTocharian)
+                .Include(d => d.DictionaryTocharian.TochLanguage)
+                .Include(d => d.DictionaryTocharian.WordClass)
+                .Include(d => d.DictionaryTocharian.WordSubClass)
+;
+            if (!string.IsNullOrWhiteSpace(search))
+            {
+                pronouns = pronouns.Where(x => x.DictionaryTocharian.Word.Contains(search));
+            }
+            if (pronouns.Count() == 0)
+            {
+                Display("Aucun résultat");
+            }
+            ViewBag.Count = pronouns.Count();
+            ViewBag.Search = search;
+            return View("SearchPronoun", pronouns.ToList());
+        }
+        public ActionResult SearchVerb(string search)
+        {
+            IEnumerable<Verb> verbs = db.Verbs.Include(d => d.DictionaryTocharian)
+                .Include(d => d.DictionaryTocharian.TochLanguage)
+                .Include(d => d.DictionaryTocharian.WordClass)
+                .Include(d => d.DictionaryTocharian.WordSubClass)
+;
+            if (!string.IsNullOrWhiteSpace(search))
+            {
+                verbs = verbs.Where(x => x.DictionaryTocharian.Word.Contains(search));
+            }
+            if (verbs.Count() == 0)
+            {
+                Display("Aucun résultat");
+            }
+            ViewBag.Count = verbs.Count();
+            ViewBag.Search = search;
+            return View("SearchVerb", verbs.ToList());
+        }
+
         // GET: BackOffice/Verbs/Details/5
         public ActionResult DetailsAbbreviationDictionary(int? id)
         {

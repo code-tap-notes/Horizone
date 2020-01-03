@@ -71,16 +71,33 @@ namespace Horizone.Models
 
         [Display(Name = "EquivalentInOther", ResourceType = typeof(StaticResource.Resources))]
         public string EquivalentInOther { get; set; }
-              
+
+        [Display(Name = "DerivedFrom", ResourceType = typeof(StaticResource.Resources))]
+        public string DerivedFrom { get; set; }
+
+        [Display(Name = "RelatedLexemes", ResourceType = typeof(StaticResource.Resources))]
+        public string RelatedLexemes { get; set; }
+
+        [Display(Name = "RootCharacter", ResourceType = typeof(StaticResource.Resources))]
+        public string RootCharacter { get; set; }
+
+        [Display(Name = "InternalRootVowel", ResourceType = typeof(StaticResource.Resources))]
+        public string InternalRootVowel { get; set; }
+
+        [Display(Name = "Stem", ResourceType = typeof(StaticResource.Resources))]
+        public string Stem { get; set; }
+
+        [Display(Name = "StemClass", ResourceType = typeof(StaticResource.Resources))]
+        public string StemClass { get; set; }
+      
+        [Display(Name = "Number", ResourceType = typeof(StaticResource.Resources))]
+        public ICollection<Number> Numbers { get; set; }
+
         [Display(Name = "Bibliography", ResourceType = typeof(StaticResource.Resources))]
         public ICollection<Bibliography> Bibliographys { get; set; }
 
-        [Display(Name = "IndexSource", ResourceType = typeof(StaticResource.Resources))]
-        public int IdClassSource { get; set; }
-
-        [Display(Name = "Visible", ResourceType = typeof(StaticResource.Resources))]
-        public Boolean Visible { get; set; }
-      
+         [Display(Name = "Visible", ResourceType = typeof(StaticResource.Resources))]
+        public Boolean Visible { get; set; }    
     }
 
 }

@@ -23,41 +23,14 @@
 
 @foreach (var item in Model)
 {
-    if (item.NameTable == "Verbs")
-    {
-        <a href="@Url.Action("DetailsVerb", "vocabularies", new { id = item.IdResult })"><strong>" @ViewBag.Search " </strong>  @StaticResource.Resources.Found @StaticResource.Resources.In @StaticResource.Resources.Verb </a>
-        <br />
-        <p>@Html.DisplayFor(modelItem => item.Summary) ...</p>
-    }
-
-    if (item.NameTable == "DictionaryTocharians")
+       if (item.NameTable == "DictionaryTocharians")
     {
         <a href="@Url.Action("Details", "Vocabularies", new { id = item.IdResult })"><strong>" @ViewBag.Search " </strong> @StaticResource.Resources.Found @StaticResource.Resources.In @StaticResource.Resources.DictionaryTocharian </a>
         <br />
         <p>@Html.DisplayFor(modelItem => item.Summary)...</p>
 
     }
-    if (item.NameTable == "NounAdjectives")
-    {
-        <a href="@Url.Action("DetailsNoun", "Vocabularies", new { id = item.IdResult })"><strong>" @ViewBag.Search " </strong> @StaticResource.Resources.Found @StaticResource.Resources.In @StaticResource.Resources.Noun  - @StaticResource.Resources.Adjective  </a>
-        <br />
-        <p>@Html.DisplayFor(modelItem => item.Summary)...</p>
-
-    }
-    if (item.NameTable == "Pronouns")
-    {
-        <a href="@Url.Action("DetailsPronoun", "Vocabularies", new { id = item.IdResult })"><strong>" @ViewBag.Search " </strong>  @StaticResource.Resources.Found @StaticResource.Resources.In @StaticResource.Resources.Pronoun </a>
-        <br />
-        <p>@Html.DisplayFor(modelItem => item.Summary)...</p>
-
-    }
-    if (item.NameTable == "OtherWords")
-    {
-        <a href="@Url.Action("DetailsOtherWord", "Vocabularies", new { id = item.IdResult })"><strong>" @ViewBag.Search " </strong>  @StaticResource.Resources.Found @StaticResource.Resources.In @StaticResource.Resources.OtherWords </a>
-        <br />
-        <p>@Html.DisplayFor(modelItem => item.Summary)...</p>
-
-    }
+      
     if (item.NameTable == "ProperNouns")
     {
         <a href="#"><strong>" @ViewBag.Search " </strong> @StaticResource.Resources.Found @StaticResource.Resources.In @StaticResource.Resources.ProperNoun </a>
@@ -76,8 +49,8 @@
 {
     <b>&#10067; @StaticResource.Resources.AskSearchAdvantage @StaticResource.Resources.In @StaticResource.Resources.OtherSite  </b>
     <br />
-    var ulrA = "https://www.univie.ac.at/tocharian/?E_A_" + @ViewBag.Search;
-    var ulrB = "https://www.univie.ac.at/tocharian/?E_B_" + @ViewBag.Search;
+    var ulrA = "https://www.univie.ac.at/tocharian/?E_A_" + @ViewBag.Search.Trim();
+    var ulrB = "https://www.univie.ac.at/tocharian/?E_B_" + @ViewBag.Search.Trim();
     var ulrG = "https://www.google.com/search?q=" + @ViewBag.Search + "&rlz=1C1CHBF_frFR865FR865&oq=" + @ViewBag.Search + " &aqs=chrome..69i57j35i39j69i60l2.1406j0j8&sourceid=chrome&ie=UTF-8";
     <a href="@ulrA"> @StaticResource.Resources.Search @StaticResource.Resources.Tocharian A<b> " @ViewBag.Search " @StaticResource.Resources.With CETOM </b></a>
     <br />

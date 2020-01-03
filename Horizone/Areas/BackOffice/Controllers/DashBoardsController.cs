@@ -244,83 +244,9 @@ namespace Horizone.Areas.BackOffice.Controllers
                 || (x.German != null && x.German.Contains(search))
                 || (x.Latin != null && x.Latin.Contains(search))
                 || (x.Chinese != null && x.Chinese.Contains(search))); ;
-                IEnumerable<Verb> verbs = db.Verbs.Include("WordClass").Include("WordSubClass").Include("TochLanguage").Include("Voice").Include("Valency").Include("TenseAndAspect").Include(" Mood").Include("Persons").Where(x => x.TochWord.Contains(search)
-                    || (x.Sanskrit != null && x.Sanskrit.Contains(search))
-                    || (x.English != null && x.English.Contains(search))
-                    || (x.Francaise != null && x.Francaise.Contains(search))
-                    || (x.German != null && x.German.Contains(search))
-                    || (x.Latin != null && x.Latin.Contains(search))
-                    || (x.Chinese != null && x.Chinese.Contains(search))
-                    ); ;
-                IEnumerable<NounAdjective> nounAdjectives = db.NounAdjectives.Include("WordClass").Include("WordSubClass").Include("TochLanguage").Include("Genders").Include("Cases").Where(x => x.TochWord.Contains(search)
-                    || (x.Sanskrit != null && x.Sanskrit.Contains(search))
-                    || (x.English != null && x.English.Contains(search))
-                    || (x.Francaise != null && x.Francaise.Contains(search))
-                    || (x.German != null && x.German.Contains(search))
-                    || (x.Latin != null && x.Latin.Contains(search))
-                    || (x.Chinese != null && x.Chinese.Contains(search))
-                    ); ;
-                IEnumerable<Pronoun> pronouns = db.Pronouns.Include("WordClass").Include("WordSubClass").Include("TochLanguage").Include("Genders").Include("Cases").Include("Persons").Where(x => x.TochWord.Contains(search)
-                    || (x.Sanskrit != null && x.Sanskrit.Contains(search))
-                    || (x.English != null && x.English.Contains(search))
-                    || (x.Francaise != null && x.Francaise.Contains(search))
-                    || (x.German != null && x.German.Contains(search))
-                    || (x.Latin != null && x.Latin.Contains(search))
-                    || (x.Chinese != null && x.Chinese.Contains(search))
-                  );
-                IEnumerable<OtherWord> otherWords = db.OtherWords.Include("WordClass").Include("WordSubClass").Include("TochLanguage").Where(x => x.TochWord.Contains(search)
-                    || (x.Sanskrit != null && x.Sanskrit.Contains(search))
-                    || (x.English != null && x.English.Contains(search))
-                    || (x.Francaise != null && x.Francaise.Contains(search))
-                    || (x.German != null && x.German.Contains(search))
-                    || (x.Latin != null && x.Latin.Contains(search))
-                    || (x.Chinese != null && x.Chinese.Contains(search))
-                  ); ;
                 IEnumerable<NamePlace> namePlaces = db.NamePlaces.Where(x => x.Place.Contains(search)); ;
                 IEnumerable<ProperNoun> properNouns = db.ProperNouns.Where(x => x.Name.Contains(search));
-                List<SearchResult> searchResults = new List<SearchResult>();
-
-                if (properNouns.Count() != 0)
-                {
-                    foreach (var item in properNouns)
-                    {
-                        searchResults.Add(new SearchResult() { NameTable = "ProperNouns", IdResult = item.Id, Summary = item.Name });
-                    }
-                }
-                if (verbs.Count() != 0)
-                {
-                    foreach (var item in verbs)
-                    {
-                        string[] myStrings = new string[] { item.TochWord, item.TochLanguage.Language, item.WordClass.ClassEn, item.WordSubClass.SubClassEn, item.English, item.Francaise, item.German, item.Latin, item.Chinese };
-                        searchResults.Add(new SearchResult() { NameTable = "Verbs", IdResult = item.Id, Summary = string.Join(" - ", myStrings.Where(str => !string.IsNullOrEmpty(str))) });
-                    }
-                }
-                if (nounAdjectives.Count() != 0)
-                {
-                    foreach (var item in nounAdjectives)
-                    {
-                        string[] myStrings = new string[] { item.TochWord, item.TochLanguage.Language, item.WordClass.ClassEn, item.WordSubClass.SubClassEn, item.English, item.Francaise, item.German, item.Latin, item.Chinese };
-                        searchResults.Add(new SearchResult() { NameTable = "NounAdjectives", IdResult = item.Id, Summary = string.Join(" - ", myStrings.Where(str => !string.IsNullOrEmpty(str))) });
-                    }
-                }
-
-                if (pronouns.Count() != 0)
-                {
-                    foreach (var item in pronouns)
-                    {
-                        string[] myStrings = new string[] { item.TochWord, item.TochLanguage.Language, item.WordClass.ClassEn, item.WordSubClass.SubClassEn, item.English, item.Francaise, item.German, item.Latin, item.Chinese };
-                        searchResults.Add(new SearchResult() { NameTable = "Pronouns", IdResult = item.Id, Summary = string.Join(" - ", myStrings.Where(str => !string.IsNullOrEmpty(str))) });
-                    }
-                }
-
-                if (otherWords.Count() != 0)
-                {
-                    foreach (var item in otherWords)
-                    {
-                        string[] myStrings = new string[] { item.TochWord, item.TochLanguage.Language, item.WordClass.ClassEn, item.WordSubClass.SubClassEn, item.English, item.Francaise, item.German, item.Latin, item.Chinese };
-                        searchResults.Add(new SearchResult() { NameTable = "OtherWords", IdResult = item.Id, Summary = string.Join(" - ", myStrings.Where(str => !string.IsNullOrEmpty(str))) });
-                    }
-                }
+                List<SearchResult> searchResults = new List<SearchResult>();              
                 if (namePlaces.Count() != 0)
                 {
                     foreach (var item in namePlaces)
@@ -328,7 +254,6 @@ namespace Horizone.Areas.BackOffice.Controllers
                         searchResults.Add(new SearchResult() { NameTable = "NamePlaces", IdResult = item.Id, Summary = string.IsNullOrEmpty(item.DescriptionEn) ? item.Place : item.Place + " - " + item.DescriptionEn });
                     }
                 }
-
                 if (dictionaryTocharians.Count() != 0)
                 {
                     foreach (var item in dictionaryTocharians)
@@ -338,7 +263,6 @@ namespace Horizone.Areas.BackOffice.Controllers
                        
                     }
                 }
-
                 foreach (var item in searchResults)
                 {
                     db.SearchResults.Add(item);
@@ -419,8 +343,8 @@ namespace Horizone.Areas.BackOffice.Controllers
                 if (dictionaryTocharians.Count() != 0)
                 {
                     foreach (var item in dictionaryTocharians)
-                    {
-                        string[] myStrings = new string[] { item.Word, item.TochLanguage.Language, item.WordClass.ClassEn, item.WordSubClass.SubClassEn, item.English, item.Francaise, item.German, item.Latin, item.Chinese };
+                    {                       
+                        string[] myStrings = new string[] { item.WordClass.ClassEn, ":", item.WordSubClass.SubClassEn, item.Word, item.TochLanguage.Language,  item.English, item.Francaise, item.German, item.Latin, item.Chinese };
                         searchResults.Add(new SearchResult() { NameTable = "DictionaryTocharians", IdResult = item.Id, Summary = string.Join(" - ", myStrings.Where(str => !string.IsNullOrEmpty(str))) });
                     }
                 }
@@ -454,6 +378,29 @@ namespace Horizone.Areas.BackOffice.Controllers
             ViewBag.Search = search;
             return View("SearchIndex", db.SearchResults.ToList());          
         }
+        public ActionResult SearchDictionary(string search)
+        {
+            IEnumerable<DictionaryTocharian> dictionaryTocharians = db.DictionaryTocharians.Include("WordClass").Include("WordSubClass").Include("TochLanguage");
+            if (!string.IsNullOrWhiteSpace(search))
+            {
+                dictionaryTocharians = dictionaryTocharians.Where(x => x.Word.Contains(search)
+                     || (x.EquivalentTA != null && x.EquivalentTA.Contains(search))
+                     || (x.EquivalentTB != null && x.EquivalentTB.Contains(search))
+                     || (x.Sanskrit != null && x.Sanskrit.Contains(search))
+                     || (x.English != null && x.English.Contains(search))
+                     || (x.Francaise != null && x.Francaise.Contains(search))
+                     || (x.German != null && x.German.Contains(search))
+                     || (x.Latin != null && x.Latin.Contains(search))
+                     || (x.Chinese != null && x.Chinese.Contains(search))); ;               
+            }
+            if (dictionaryTocharians.Count() == 0)
+            {
+                Display("Aucun résultat");
+            }
+            ViewBag.Count = dictionaryTocharians.Count();
+            ViewBag.Search = search;
+            return View("SearchDictionary", dictionaryTocharians.OrderBy(x => x.Word.ToList()));
+        }
         //For edit and create
         [ChildActionOnly]
         public ActionResult SpecialCharacter()
@@ -466,5 +413,6 @@ namespace Horizone.Areas.BackOffice.Controllers
         {
             return PartialView();
         }
+
     }
 }

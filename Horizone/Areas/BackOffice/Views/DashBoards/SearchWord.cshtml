@@ -36,29 +36,8 @@
     else
     {
         <a href="@Url.Action("Details", item.NameTable, new { id = item.IdResult })">
-            @if (item.NameTable == "Verbs")
-            {
-                @StaticResource.Resources.Verb
-            }
-            @if (item.NameTable == "DictionaryTocharians")
-            {
-                @StaticResource.Resources.DictionaryTocharian
-            }
-            @if (item.NameTable == "NounAdjectives")
-            {
-                @StaticResource.Resources.Noun @StaticResource.Resources.Adjective
-            }
-            @if (item.NameTable == "Pronouns")
-            {
-                @StaticResource.Resources.Pronoun
-            }
-            @if (item.NameTable == "OtherWords")
-            {
-                @StaticResource.Resources.OtherWords
-            }
-            &raquo;
+          @StaticResource.Resources.DictionaryTocharian &raquo;
         </a>
-
         <br />
         <p>@Html.DisplayFor(modelItem => item.Summary) ...</p>
     }

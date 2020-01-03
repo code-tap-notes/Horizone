@@ -8,8 +8,18 @@ using System.Web.Mvc;
 
 namespace Horizone.Models
 {
-    public class Verb : Word
+    public class Verb 
     {
+        public int Id { get; set; }
+
+        [Display(Name = "DictionaryTocharian", ResourceType = typeof(StaticResource.Resources))]
+        public int DictionaryId { get; set; }
+
+        [ForeignKey("DictionaryId")]
+        public DictionaryTocharian DictionaryTocharian { get; set; }
+
+        [Display(Name = "Person", ResourceType = typeof(StaticResource.Resources))]
+        public ICollection<Person> Persons { get; set; }
 
         [Display(Name = "Voice", ResourceType = typeof(StaticResource.Resources))]
         public int VoiceId { get; set; }
@@ -35,12 +45,8 @@ namespace Horizone.Models
         [ForeignKey("MoodId")]
         public Mood Mood { get; set; }
 
-        [Display(Name = "Person", ResourceType = typeof(StaticResource.Resources))]
-        public ICollection<Person> Persons { get; set; }
-
         [AllowHtml]
         [Display(Name = "PronounSuffix", ResourceType = typeof(StaticResource.Resources))]
         public string PronounSuffix { get; set; }
-
     }
 }
