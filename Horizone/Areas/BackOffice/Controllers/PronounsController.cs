@@ -15,14 +15,17 @@ namespace Horizone.Areas.BackOffice.Controllers
     [Authorize(Roles = "Collaborator,Admin")]
     public class PronounsController : BaseController
     {
-
         // GET: BackOffice/Pronouns
-        public ActionResult Index(int page = 1, int pageSize = 50)
+        public ActionResult Index()
         {
-            var pronouns = db.Pronouns.Include(p => p.TochLanguage).Include(p => p.WordClass).Include(p => p.WordSubClass).Include("Cases").Include("Numbers").Include("Genders").Include("Persons"); ;
-            return View(pronouns.OrderBy(x => x.TochWord).ToPagedList(page, pageSize));
+            var pronouns = db.Pronouns.Include(p => p.DictionaryTocharian)
+                .Include(p=>p.DictionaryTocharian.TochLanguage)
+                .Include(n => n.DictionaryTocharian.WordClass)
+                .Include(n => n.DictionaryTocharian.WordSubClass)
+                .Include(d => d.DictionaryTocharian.Numbers)
+                .Include("Genders").Include("Persons").Include("Cases").OrderBy(x => x.DictionaryTocharian.Word);
+            return View(pronouns.ToList());
         }
-
         // GET: BackOffice/Pronouns/Details/5
         public ActionResult Details(int? id)
         {
@@ -30,134 +33,42 @@ namespace Horizone.Areas.BackOffice.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Pronoun pronoun = db.Pronouns.Include(p => p.TochLanguage).Include(p => p.WordClass).Include(p => p.WordSubClass).Include("Cases").Include("Numbers").Include("Genders").Include("Persons").SingleOrDefault(y => y.Id == id);
+            Pronoun pronoun = db.Pronouns.Include(p => p.DictionaryTocharian)
+                .Include(p => p.DictionaryTocharian.TochLanguage)
+                .Include(n => n.DictionaryTocharian.WordClass)
+                .Include(n => n.DictionaryTocharian.WordSubClass)
+                .Include(d => d.DictionaryTocharian.Numbers)
+                .Include("Genders").Include("Persons").Include("Cases")
+                .SingleOrDefault(p=>p.Id == id);
             if (pronoun.Cases.Count() == 0)
                 pronoun.Cases = db.Cases.Where(x => x.NameCaseEn == "No Case").ToList();
             if (pronoun.Genders.Count() == 0)
                 pronoun.Genders = db.Genders.Where(x => x.NameGenderEn == "No Gender").ToList();
-            if (pronoun.Numbers.Count() == 0)
-                pronoun.Numbers = db.Numbers.Where(x => x.WordNumberEn == "No Number").ToList();
             if (pronoun.Persons.Count() == 0)
                 pronoun.Persons = db.Persons.Where(x => x.ConjugatedPersonEn == "No Person").ToList();
-
             if (pronoun == null)
             {
                 return HttpNotFound();
             }
             return View(pronoun);
         }
-        //Add a new word to dictionary
-        public ActionResult AddDictionary(int? id)
-        {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            Pronoun pronoun = db.Pronouns.Include(n => n.TochLanguage).Include(n => n.WordClass).Include(n => n.WordSubClass).Include("Genders").SingleOrDefault(y => y.Id == id);
-            var dictionaryTocharian = new DictionaryTocharian();
-            if (pronoun == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            if (pronoun.TochWord != null)
-            {
-                IEnumerable<DictionaryTocharian> dictionaryTocharians = db.DictionaryTocharians.Where(x => x.Word == pronoun.TochWord);
-
-                if (dictionaryTocharians.Count() == 0)
-                {
-                    dictionaryTocharian.Word = pronoun.TochWord;
-                    dictionaryTocharian.Sanskrit = pronoun.Sanskrit;
-                    dictionaryTocharian.English = pronoun.English;
-                    dictionaryTocharian.Francaise = pronoun.Francaise;
-                    dictionaryTocharian.German = pronoun.German;
-                    dictionaryTocharian.Latin = pronoun.Latin;
-                    dictionaryTocharian.Chinese = pronoun.Chinese;
-                    dictionaryTocharian.Visible = true;
-                    dictionaryTocharian.EquivalentTA = pronoun.EquivalentTA;
-                    dictionaryTocharian.EquivalentTB = pronoun.EquivalentTB;
-                    dictionaryTocharian.TochCommon = pronoun.TochCommon;
-                    dictionaryTocharian.TochCorrespondence = pronoun.TochCorrespondence;
-                    dictionaryTocharian.EquivalentInOther = pronoun.EquivalentInOther;
-                    dictionaryTocharian.TochLanguageId = pronoun.TochLanguageId;
-                    dictionaryTocharian.WordClassId = pronoun.WordClassId;
-                    dictionaryTocharian.WordSubClassId = pronoun.WordSubClassId;
-                    db.DictionaryTocharians.Add(dictionaryTocharian);
-
-                }
-                else
-                {
-                    Display("Mots existé");
-                }
-
-                db.SaveChanges();
-                return RedirectToAction("index");
-            }
-            return View();
-        }
-        //Update a word in dictionary
-        public ActionResult EditDictionary(int? id)
-        {
-            Pronoun pronoun = db.Pronouns.Include("WordClass").Include("WordSubClass").Include("TochLanguage").SingleOrDefault(x => x.Id == id);
-            DictionaryTocharian dictionaryTocharian = db.DictionaryTocharians.Include("TochLanguage").Include("WordClass").Include("WordSubClass").SingleOrDefault(x => x.Word == pronoun.TochWord);
-            if (dictionaryTocharian == null)
-            {
-                AddDictionary(pronoun.Id);
-            }
-                if (dictionaryTocharian != null)
-            {
-
-                dictionaryTocharian.Sanskrit = pronoun.Sanskrit;
-                dictionaryTocharian.English = pronoun.English;
-                dictionaryTocharian.Francaise = pronoun.Francaise;
-                dictionaryTocharian.German = pronoun.German;
-                dictionaryTocharian.Latin = pronoun.Latin;
-                dictionaryTocharian.Chinese = pronoun.Chinese;
-                dictionaryTocharian.Visible = true;
-                dictionaryTocharian.EquivalentTA = pronoun.EquivalentTA;
-                dictionaryTocharian.EquivalentTB = pronoun.EquivalentTB;
-                dictionaryTocharian.TochCommon = pronoun.TochCommon;
-                dictionaryTocharian.TochCorrespondence = pronoun.TochCorrespondence;
-                dictionaryTocharian.EquivalentInOther = pronoun.EquivalentInOther;
-                dictionaryTocharian.TochLanguageId = pronoun.TochLanguageId;
-                dictionaryTocharian.WordClassId = pronoun.WordClassId;
-                dictionaryTocharian.WordSubClassId = pronoun.WordSubClassId;
-
-                db.SaveChanges();
-                return RedirectToAction("Index");
-            }
-
-            return View();
-        }
-
         // GET: BackOffice/Pronouns/Create
         public ActionResult Create()
         {
-            ViewBag.TochLanguageId = new SelectList(db.TochLanguages, "Id", "Language");
+            ViewBag.DictionaryId = new SelectList(db.DictionaryTocharians.Where(x => x.WordClassId == 3 || x.WordSubClassId == 80).OrderBy(x => x.Word), "Id", "Word");
 
-            ViewBag.WordClassEnId = new SelectList(db.WordClasses.Where(x => x.ClassEn == "Pronoun"), "Id", "ClassEn");
-            ViewBag.WordClassFrId = new SelectList(db.WordClasses.Where(x => x.ClassEn == "Pronoun"), "Id", "ClassFr");
-            ViewBag.WordClassZhId = new SelectList(db.WordClasses.Where(x => x.ClassEn == "Pronoun"), "Id", "ClassZh");
 
-            ViewBag.WordSubClassEnId = new SelectList(db.WordSubClasses.Where(x => x.WordClass.ClassEn == "Pronoun"), "Id", "SubClassEn");
-            ViewBag.WordSubClassFrId = new SelectList(db.WordSubClasses.Where(x => x.WordClass.ClassEn == "Pronoun"), "Id", "SubClassFr");
-            ViewBag.WordSubClassZhId = new SelectList(db.WordSubClasses.Where(x => x.WordClass.ClassEn == "Pronoun"), "Id", "SubClassZh");
+            ViewBag.CasesEn = new SelectList(db.Cases.OrderBy(x => x.NameCaseEn), "Id", "NameCaseEn");
+            ViewBag.CasesFr = new SelectList(db.Cases.OrderBy(x => x.NameCaseFr), "Id", "NameCaseFr");
+            ViewBag.CasesZh = new SelectList(db.Cases.OrderBy(x => x.NameCaseZh), "Id", "NameCaseZh");
 
-            ViewBag.CasesEn = new SelectList(db.Cases, "Id", "NameCaseEn");
-            ViewBag.CasesFr = new SelectList(db.Cases, "Id", "NameCaseFr");
-            ViewBag.CasesZh = new SelectList(db.Cases, "Id", "NameCaseZh");
+            ViewBag.GendersFr = new SelectList(db.Genders.OrderBy(x => x.NameGenderEn), "Id", "NameGenderFr");
+            ViewBag.GendersEn = new SelectList(db.Genders.OrderBy(x => x.NameGenderFr), "Id", "NameGenderEn");
+            ViewBag.GendersZh = new SelectList(db.Genders.OrderBy(x => x.NameGenderZh), "Id", "NameGenderZh");
 
-            ViewBag.GendersFr = new SelectList(db.Genders, "Id", "NameGenderFr");
-            ViewBag.GendersEn = new SelectList(db.Genders, "Id", "NameGenderEn");
-            ViewBag.GendersZh = new SelectList(db.Genders, "Id", "NameGenderZh");
-
-            ViewBag.NumbersEn = new SelectList(db.Numbers, "Id", "WordNumberEn");
-            ViewBag.NumbersFr = new SelectList(db.Numbers, "Id", "WordNumberFr");
-            ViewBag.NumbersZh = new SelectList(db.Numbers, "Id", "WordNumberZh");
-
-            ViewBag.PersonsEn = new SelectList(db.Persons, "Id", "ConjugatedPersonEn");
-            ViewBag.PersonsFr = new SelectList(db.Persons, "Id", "ConjugatedPersonFr");
-            ViewBag.PersonsZh = new SelectList(db.Persons, "Id", "ConjugatedPersonZh");
-
+            ViewBag.PersonsEn = new SelectList(db.Persons.OrderBy(x => x.ConjugatedPersonEn), "Id", "ConjugatedPersonEn");
+            ViewBag.PersonsFr = new SelectList(db.Persons.OrderBy(x => x.ConjugatedPersonEn), "Id", "ConjugatedPersonFr");
+            ViewBag.PersonsZh = new SelectList(db.Persons.OrderBy(x => x.ConjugatedPersonEn), "Id", "ConjugatedPersonZh");
             return View();
         }
 
@@ -166,11 +77,11 @@ namespace Horizone.Areas.BackOffice.Controllers
         // plus de détails, voir  https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,TochWord,English,Francaise,German,Latin,Chinese,TochLanguageId,WordClassId,WordSubClassId,EquivalentTA,EquivalentTB,TochCommon,TochCorrespondence,EquivalentInOther,DerivedFrom,RelatedLexemes,RootCharacter,InternalRootVowel,Stem,StemClass,Visible")] Pronoun pronoun, int[] CaseId, int[] GenderId, int[] NumberId, int[] PersonId)
+        public ActionResult Create([Bind(Include = "Id,DictionaryId")] Pronoun pronoun, int[] CaseId, int[] GenderId, int[] PersonId)
         {
             if (ModelState.IsValid)
             {
-
+               
                 if (CaseId.Count() == 0)
                 { pronoun.Cases = db.Cases.Where(x => x.Id == 1).ToList(); }
 
@@ -185,17 +96,7 @@ namespace Horizone.Areas.BackOffice.Controllers
                 else
                 {
                     pronoun.Genders = db.Genders.Where(x => GenderId.Contains(x.Id)).ToList();
-                }
-
-                if (NumberId.Count() == 0)
-                {
-                    pronoun.Numbers = db.Numbers.Where(x => x.Id == 1).ToList();
-                }
-               
-                else
-                {
-                    pronoun.Numbers = db.Numbers.Where(x => NumberId.Contains(x.Id)).ToList();
-                }
+                }                               
                 if (PersonId.Count() == 0)
                 {
                     pronoun.Persons = db.Persons.Where(x => x.Id == 1).ToList();
@@ -204,48 +105,24 @@ namespace Horizone.Areas.BackOffice.Controllers
                 {
                     pronoun.Persons = db.Persons.Where(x => PersonId.Contains(x.Id)).ToList();
                 }
-                
-                if (pronoun.TochLanguageId == 1)
-                {
-                    pronoun.EquivalentTA = pronoun.TochWord;
-                }
-                if (pronoun.TochLanguageId == 2)
-                {
-                    pronoun.EquivalentTB = pronoun.TochWord;
-                }
-                
-
                 db.Pronouns.Add(pronoun);
                 db.SaveChanges();
-                AddDictionary(pronoun.Id);
                 return RedirectToAction("Index");
             }
 
-            ViewBag.TochLanguageId = new SelectList(db.TochLanguages, "Id", "Language");
+            ViewBag.DictionaryId = new SelectList(db.DictionaryTocharians.Where(x => x.WordClassId == 3 || x.WordSubClassId == 80).OrderBy(x => x.Word), "Id", "Word", pronoun.DictionaryId);
 
-            ViewBag.WordClassEnId = new SelectList(db.WordClasses.Where(x => x.ClassEn == "Pronoun"), "Id", "ClassEn");
-            ViewBag.WordClassFrId = new SelectList(db.WordClasses.Where(x => x.ClassEn == "Pronoun"), "Id", "ClassFr");
-            ViewBag.WordClassZhId = new SelectList(db.WordClasses.Where(x => x.ClassEn == "Pronoun"), "Id", "ClassZh");
+            ViewBag.CasesEn = new SelectList(db.Cases.OrderBy(x => x.NameCaseEn), "Id", "NameCaseEn");
+            ViewBag.CasesFr = new SelectList(db.Cases.OrderBy(x => x.NameCaseFr), "Id", "NameCaseFr");
+            ViewBag.CasesZh = new SelectList(db.Cases.OrderBy(x => x.NameCaseZh), "Id", "NameCaseZh");
 
-            ViewBag.WordSubClassEnId = new SelectList(db.WordSubClasses.Where(x => x.WordClass.ClassEn == "Pronoun"), "Id", "SubClassEn");
-            ViewBag.WordSubClassFrId = new SelectList(db.WordSubClasses.Where(x => x.WordClass.ClassEn == "Pronoun"), "Id", "SubClassFr");
-            ViewBag.WordSubClassZhId = new SelectList(db.WordSubClasses.Where(x => x.WordClass.ClassEn == "Pronoun"), "Id", "SubClassZh");
+            ViewBag.GendersFr = new SelectList(db.Genders.OrderBy(x => x.NameGenderEn), "Id", "NameGenderFr");
+            ViewBag.GendersEn = new SelectList(db.Genders.OrderBy(x => x.NameGenderFr), "Id", "NameGenderEn");
+            ViewBag.GendersZh = new SelectList(db.Genders.OrderBy(x => x.NameGenderZh), "Id", "NameGenderZh");
 
-            ViewBag.CasesEn = new SelectList(db.Cases, "Id", "NameCaseEn");
-            ViewBag.CasesFr = new SelectList(db.Cases, "Id", "NameCaseFr");
-            ViewBag.CasesZh = new SelectList(db.Cases, "Id", "NameCaseZh");
-
-            ViewBag.GendersFr = new SelectList(db.Genders, "Id", "NameGenderFr");
-            ViewBag.GendersEn = new SelectList(db.Genders, "Id", "NameGenderEn");
-            ViewBag.GendersZh = new SelectList(db.Genders, "Id", "NameGenderZh");
-
-            ViewBag.NumbersEn = new SelectList(db.Numbers, "Id", "WordNumberEn");
-            ViewBag.NumbersFr = new SelectList(db.Numbers, "Id", "WordNumberFr");
-            ViewBag.NumbersZh = new SelectList(db.Numbers, "Id", "WordNumberZh");
-
-            ViewBag.PersonsEn = new SelectList(db.Persons, "Id", "ConjugatedPersonEn");
-            ViewBag.PersonsFr = new SelectList(db.Persons, "Id", "ConjugatedPersonFr");
-            ViewBag.PersonsZh = new SelectList(db.Persons, "Id", "ConjugatedPersonZh");
+            ViewBag.PersonsEn = new SelectList(db.Persons.OrderBy(x => x.ConjugatedPersonEn), "Id", "ConjugatedPersonEn");
+            ViewBag.PersonsFr = new SelectList(db.Persons.OrderBy(x => x.ConjugatedPersonEn), "Id", "ConjugatedPersonFr");
+            ViewBag.PersonsZh = new SelectList(db.Persons.OrderBy(x => x.ConjugatedPersonEn), "Id", "ConjugatedPersonZh");
             return View(pronoun);
         }
 
@@ -256,36 +133,31 @@ namespace Horizone.Areas.BackOffice.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Pronoun pronoun = db.Pronouns.Include(t => t.TochLanguage).Include(p => p.WordClass).Include(p => p.WordSubClass).Include("Cases").Include("Genders").Include("Numbers").Include("Persons").SingleOrDefault(x => x.Id == id);
+            Pronoun pronoun = db.Pronouns.Include(p => p.DictionaryTocharian)
+                .Include(p => p.DictionaryTocharian.TochLanguage)
+                .Include(n => n.DictionaryTocharian.WordClass)
+                .Include(n => n.DictionaryTocharian.WordSubClass)
+                .Include(d => d.DictionaryTocharian.Numbers)
+                .Include("Genders").Include("Persons").Include("Cases")
+                .SingleOrDefault(p => p.Id == id);
             if (pronoun == null)
             {
                 return HttpNotFound();
             }
-            ViewBag.TochLanguageId = new SelectList(db.TochLanguages, "Id", "Language");
+            ViewBag.DictionaryId = new SelectList(db.DictionaryTocharians.Where(x => x.WordClassId == 3 || x.WordSubClassId == 80).OrderBy(x => x.Word), "Id", "Word", pronoun.DictionaryId);
 
-            ViewBag.WordClassEnId = new SelectList(db.WordClasses.Where(x => x.ClassEn == "Pronoun"), "Id", "ClassEn");
-            ViewBag.WordClassFrId = new SelectList(db.WordClasses.Where(x => x.ClassEn == "Pronoun"), "Id", "ClassFr");
-            ViewBag.WordClassZhId = new SelectList(db.WordClasses.Where(x => x.ClassEn == "Pronoun"), "Id", "ClassZh");
 
-            ViewBag.WordSubClassEnId = new SelectList(db.WordSubClasses.Where(x => x.WordClass.ClassEn == "Pronoun"), "Id", "SubClassEn");
-            ViewBag.WordSubClassFrId = new SelectList(db.WordSubClasses.Where(x => x.WordClass.ClassEn == "Pronoun"), "Id", "SubClassFr");
-            ViewBag.WordSubClassZhId = new SelectList(db.WordSubClasses.Where(x => x.WordClass.ClassEn == "Pronoun"), "Id", "SubClassZh");
+            ViewBag.CasesEn = new SelectList(db.Cases.OrderBy(x => x.NameCaseEn), "Id", "NameCaseEn");
+            ViewBag.CasesFr = new SelectList(db.Cases.OrderBy(x => x.NameCaseFr), "Id", "NameCaseFr");
+            ViewBag.CasesZh = new SelectList(db.Cases.OrderBy(x => x.NameCaseZh), "Id", "NameCaseZh");
 
-            ViewBag.CasesEn = new SelectList(db.Cases, "Id", "NameCaseEn");
-            ViewBag.CasesFr = new SelectList(db.Cases, "Id", "NameCaseFr");
-            ViewBag.CasesZh = new SelectList(db.Cases, "Id", "NameCaseZh");
+            ViewBag.GendersFr = new SelectList(db.Genders.OrderBy(x => x.NameGenderEn), "Id", "NameGenderFr");
+            ViewBag.GendersEn = new SelectList(db.Genders.OrderBy(x => x.NameGenderFr), "Id", "NameGenderEn");
+            ViewBag.GendersZh = new SelectList(db.Genders.OrderBy(x => x.NameGenderZh), "Id", "NameGenderZh");
 
-            ViewBag.GendersFr = new SelectList(db.Genders, "Id", "NameGenderFr");
-            ViewBag.GendersEn = new SelectList(db.Genders, "Id", "NameGenderEn");
-            ViewBag.GendersZh = new SelectList(db.Genders, "Id", "NameGenderZh");
-
-            ViewBag.NumbersEn = new SelectList(db.Numbers, "Id", "WordNumberEn");
-            ViewBag.NumbersFr = new SelectList(db.Numbers, "Id", "WordNumberFr");
-            ViewBag.NumbersZh = new SelectList(db.Numbers, "Id", "WordNumberZh");
-
-            ViewBag.PersonsEn = new SelectList(db.Persons, "Id", "ConjugatedPersonEn");
-            ViewBag.PersonsFr = new SelectList(db.Persons, "Id", "ConjugatedPersonFr");
-            ViewBag.PersonsZh = new SelectList(db.Persons, "Id", "ConjugatedPersonZh");
+            ViewBag.PersonsEn = new SelectList(db.Persons.OrderBy(x => x.ConjugatedPersonEn), "Id", "ConjugatedPersonEn");
+            ViewBag.PersonsFr = new SelectList(db.Persons.OrderBy(x => x.ConjugatedPersonEn), "Id", "ConjugatedPersonFr");
+            ViewBag.PersonsZh = new SelectList(db.Persons.OrderBy(x => x.ConjugatedPersonEn), "Id", "ConjugatedPersonZh");
             return View(pronoun);
         }
 
@@ -294,69 +166,40 @@ namespace Horizone.Areas.BackOffice.Controllers
         // plus de détails, voir  https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,TochWord,English,Francaise,German,Latin,Chinese,TochLanguageId,WordClassId,WordSubClassId,EquivalentTA,EquivalentTB,TochCommon,TochCorrespondence,EquivalentInOther,DerivedFrom,RelatedLexemes,RootCharacter,InternalRootVowel,Stem,StemClass,Visible")] Pronoun pronoun, int[] CaseId, int[] GenderId, int[] NumberId, int[] PersonId)
+        public ActionResult Edit([Bind(Include = "Id,DictionaryId")] Pronoun pronoun, int[] CaseId, int[] GenderId, int[] PersonId)
         {
-            db.Entry(pronoun).State = EntityState.Modified;
-            db.Pronouns.Include(t => t.TochLanguage).Include(p => p.WordClass).Include(p => p.WordSubClass).Include("Cases").Include("Genders").Include("Numbers").Include("Persons").SingleOrDefault(x => x.Id == pronoun.Id);
-
             if (ModelState.IsValid)
             {
-                if (pronoun.TochLanguageId == 1 || pronoun.TochLanguageId == 3)
-                {
-                    pronoun.EquivalentTA = pronoun.TochWord;
-                }
-                if (pronoun.TochLanguageId == 2 || pronoun.TochLanguageId == 4)
-                {
-                    pronoun.EquivalentTB = pronoun.TochWord;
-                }
-
+                db.Entry(pronoun).State = EntityState.Modified;
                 if (CaseId != null)
                     pronoun.Cases = db.Cases.Where(x => CaseId.Contains(x.Id)).ToList();
                 if (GenderId != null)
                     pronoun.Genders = db.Genders.Where(x => GenderId.Contains(x.Id)).ToList();
-                if (NumberId != null)
-                    pronoun.Numbers = db.Numbers.Where(x => NumberId.Contains(x.Id)).ToList();
                 if (PersonId != null)
                     pronoun.Persons = db.Persons.Where(x => PersonId.Contains(x.Id)).ToList();
                 if (pronoun.Cases.Count() == 0)
                     pronoun.Cases = db.Cases.Where(x => x.NameCaseEn == "No Case").ToList();
                 if (pronoun.Genders.Count() == 0)
                     pronoun.Genders = db.Genders.Where(x => x.NameGenderEn == "No Gender").ToList();
-                if (pronoun.Numbers.Count() == 0)
-                    pronoun.Numbers = db.Numbers.Where(x => x.WordNumberEn == "No Number").ToList();
                 if (pronoun.Persons.Count() == 0)
                     pronoun.Persons = db.Persons.Where(x => x.ConjugatedPersonEn == "No Person").ToList();
 
-                EditDictionary(pronoun.Id);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-           
-            ViewBag.TochLanguageId = new SelectList(db.TochLanguages, "Id", "Language");
+            ViewBag.DictionaryId = new SelectList(db.DictionaryTocharians.Where(x => x.WordClassId == 3 || x.WordSubClassId == 80).OrderBy(x => x.Word), "Id", "Word", pronoun.DictionaryId);
 
-            ViewBag.WordClassEnId = new SelectList(db.WordClasses.Where(x => x.ClassEn == "Pronoun"), "Id", "ClassEn");
-            ViewBag.WordClassFrId = new SelectList(db.WordClasses.Where(x => x.ClassEn == "Pronoun"), "Id", "ClassFr");
-            ViewBag.WordClassZhId = new SelectList(db.WordClasses.Where(x => x.ClassEn == "Pronoun"), "Id", "ClassZh");
+            ViewBag.CasesEn = new SelectList(db.Cases.OrderBy(x => x.NameCaseEn), "Id", "NameCaseEn");
+            ViewBag.CasesFr = new SelectList(db.Cases.OrderBy(x => x.NameCaseFr), "Id", "NameCaseFr");
+            ViewBag.CasesZh = new SelectList(db.Cases.OrderBy(x => x.NameCaseZh), "Id", "NameCaseZh");
 
-            ViewBag.WordSubClassEnId = new SelectList(db.WordSubClasses.Where(x => x.WordClass.ClassEn == "Pronoun"), "Id", "SubClassEn");
-            ViewBag.WordSubClassFrId = new SelectList(db.WordSubClasses.Where(x => x.WordClass.ClassEn == "Pronoun"), "Id", "SubClassFr");
-            ViewBag.WordSubClassZhId = new SelectList(db.WordSubClasses.Where(x => x.WordClass.ClassEn == "Pronoun"), "Id", "SubClassZh");
+            ViewBag.GendersFr = new SelectList(db.Genders.OrderBy(x => x.NameGenderEn), "Id", "NameGenderFr");
+            ViewBag.GendersEn = new SelectList(db.Genders.OrderBy(x => x.NameGenderFr), "Id", "NameGenderEn");
+            ViewBag.GendersZh = new SelectList(db.Genders.OrderBy(x => x.NameGenderZh), "Id", "NameGenderZh");
 
-            ViewBag.CasesEn = new SelectList(db.Cases, "Id", "NameCaseEn");
-            ViewBag.CasesFr = new SelectList(db.Cases, "Id", "NameCaseFr");
-            ViewBag.CasesZh = new SelectList(db.Cases, "Id", "NameCaseZh");
-
-            ViewBag.GendersFr = new SelectList(db.Genders, "Id", "NameGenderFr");
-            ViewBag.GendersEn = new SelectList(db.Genders, "Id", "NameGenderEn");
-            ViewBag.GendersZh = new SelectList(db.Genders, "Id", "NameGenderZh");
-
-            ViewBag.NumbersEn = new SelectList(db.Numbers, "Id", "WordNumberEn");
-            ViewBag.NumbersFr = new SelectList(db.Numbers, "Id", "WordNumberFr");
-            ViewBag.NumbersZh = new SelectList(db.Numbers, "Id", "WordNumberZh");
-
-            ViewBag.PersonsEn = new SelectList(db.Persons, "Id", "ConjugatedPersonEn");
-            ViewBag.PersonsFr = new SelectList(db.Persons, "Id", "ConjugatedPersonFr");
-            ViewBag.PersonsZh = new SelectList(db.Persons, "Id", "ConjugatedPersonZh");
+            ViewBag.PersonsEn = new SelectList(db.Persons.OrderBy(x => x.ConjugatedPersonEn), "Id", "ConjugatedPersonEn");
+            ViewBag.PersonsFr = new SelectList(db.Persons.OrderBy(x => x.ConjugatedPersonEn), "Id", "ConjugatedPersonFr");
+            ViewBag.PersonsZh = new SelectList(db.Persons.OrderBy(x => x.ConjugatedPersonEn), "Id", "ConjugatedPersonZh");
             return View(pronoun);
         }
 
@@ -367,7 +210,7 @@ namespace Horizone.Areas.BackOffice.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Pronoun pronoun = db.Pronouns.Include("Cases").Include("Genders").Include("Numbers").Include("Persons").SingleOrDefault(x => x.Id == id);
+            Pronoun pronoun = db.Pronouns.Include(p => p.DictionaryTocharian).Include(p => p.DictionaryTocharian.TochLanguage).Include("Genders").Include("Persons").Include("Cases").SingleOrDefault(p => p.Id == id);
             if (pronoun == null)
             {
                 return HttpNotFound();
@@ -380,11 +223,29 @@ namespace Horizone.Areas.BackOffice.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            Pronoun pronoun = db.Pronouns.Include("Cases").Include("Genders").Include("Numbers").Include("Persons").SingleOrDefault(x => x.Id == id);
+            Pronoun pronoun = db.Pronouns.Include(p => p.DictionaryTocharian).Include(p => p.DictionaryTocharian.TochLanguage).Include("Genders").Include("Persons").Include("Cases").SingleOrDefault(p => p.Id == id);
             db.Pronouns.Remove(pronoun);
             db.SaveChanges();
             return RedirectToAction("Index");
         }
-       
+        public ActionResult SearchDictionary(string search)
+        {
+            IEnumerable<Pronoun> pronouns = db.Pronouns.Include(d => d.DictionaryTocharian)
+                .Include(d => d.DictionaryTocharian.TochLanguage)
+                .Include(d => d.DictionaryTocharian.WordClass)
+                .Include(d => d.DictionaryTocharian.WordSubClass)
+;
+            if (!string.IsNullOrWhiteSpace(search))
+            {
+                pronouns = pronouns.Where(x => x.DictionaryTocharian.Word.Contains(search));
+            }
+            if (pronouns.Count() == 0)
+            {
+                Display("Aucun résultat");
+            }
+            ViewBag.Count = pronouns.Count();
+            ViewBag.Search = search;
+            return View("SearchDictionary", pronouns.ToList());
+        }
     }
 }

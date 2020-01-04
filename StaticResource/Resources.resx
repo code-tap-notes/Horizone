@@ -1898,7 +1898,7 @@ TochPhase</value>
     <value>Voulez vous ajouter au dictionaire des noms propres?</value>
   </data>
   <data name="AskSearchAdvantage" xml:space="preserve">
-    <value>Voulez-vous rechercher un avantage?</value>
+    <value>Voulez-vous rechercher un avantage</value>
   </data>
   <data name="CheckDictionary" xml:space="preserve">
     <value>Vérifier mot dans dictionnaire</value>
@@ -1923,5 +1923,14 @@ TochPhase</value>
   </data>
   <data name="AskUpdate" xml:space="preserve">
     <value>Mettre à jour catégorie morpheme</value>
+  </data>
+  <data name="ClickButton" xml:space="preserve">
+    <value>Cliquez sur le bouton pour</value>
+  </data>
+  <data name="OtherSite" xml:space="preserve">
+    <value>Autre site</value>
+  </data>
+  <data name="SilkRoad" xml:space="preserve">
+    <value>Route de la soie</value>
   </data>
 </root>

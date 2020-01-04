@@ -12,7 +12,7 @@
     </p>
 </div>
 <div id="search">
-    <form class="form-group row" action="@Url.Action("SearchWord", "Vocabularies")" method="post" enctype="multipart/form-data">
+    <form class="form-group row" action="@Url.Action("SearchPronoun", "Vocabularies")" method="post" enctype="multipart/form-data">
         <div>
             @{Html.RenderAction("SearchForm", "Home"); }
         </div>
@@ -29,82 +29,82 @@
 <table class="table">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.TochLanguage.Language)
+            @Html.DisplayNameFor(model => model.DictionaryTocharian.TochLanguage.Language)
         </th>
         <th>
             @StaticResource.Resources.Tocharian
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Sanskrit)
+            @Html.DisplayNameFor(model => model.DictionaryTocharian.Sanskrit)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.English)
+            @Html.DisplayNameFor(model => model.DictionaryTocharian.English)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Francaise)
+            @Html.DisplayNameFor(model => model.DictionaryTocharian.Francaise)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.German)
+            @Html.DisplayNameFor(model => model.DictionaryTocharian.German)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Latin)
+            @Html.DisplayNameFor(model => model.DictionaryTocharian.Latin)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Chinese)
+            @Html.DisplayNameFor(model => model.DictionaryTocharian.Chinese)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.WordSubClass.SubClass)
+            @Html.DisplayNameFor(model => model.DictionaryTocharian.WordSubClass.SubClass)
         </th>
 
     </tr>
     @foreach (var item in Model)
     {
-        if (item.WordClass.ClassEn == "Pronoun")
+        if (item.DictionaryTocharian.WordClass.ClassEn == "Pronoun")
         {
             <tr>
                 <td>
-                    @Html.DisplayFor(modelItem => item.TochLanguage.Language)
+                    @Html.DisplayFor(modelItem => item.DictionaryTocharian.TochLanguage.Language)
                 </td>
                 <td>
-                    <a href="@Url.Action("DetailsPronoun", "Vocabularies", new { id = item.Id })">&diams;  @item.TochWord </a>
+                    <a href="@Url.Action("DetailsPronoun", "Vocabularies", new { id = item.Id })">&diams;  @item.DictionaryTocharian.Word </a>
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => item.Sanskrit)
+                    @Html.DisplayFor(modelItem => item.DictionaryTocharian.Sanskrit)
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => item.English)
+                    @Html.DisplayFor(modelItem => item.DictionaryTocharian.English)
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => item.Francaise)
+                    @Html.DisplayFor(modelItem => item.DictionaryTocharian.Francaise)
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => item.German)
+                    @Html.DisplayFor(modelItem => item.DictionaryTocharian.German)
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => item.Latin)
+                    @Html.DisplayFor(modelItem => item.DictionaryTocharian.Latin)
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => item.Chinese)
+                    @Html.DisplayFor(modelItem => item.DictionaryTocharian.Chinese)
                 </td>
                 @if (Session[Horizone.Common.CommonConstants.CurrentCulture].ToString() == "en")
                 {
                    
                     <td>
-                        @Html.DisplayFor(modelItem => item.WordSubClass.SubClassEn)
+                        @Html.DisplayFor(modelItem => item.DictionaryTocharian.WordSubClass.SubClassEn)
                     </td>
                 }
                 @if (Session[Horizone.Common.CommonConstants.CurrentCulture].ToString() == "fr")
                 {
                    
                     <td>
-                        @Html.DisplayFor(modelItem => item.WordSubClass.SubClassFr)
+                        @Html.DisplayFor(modelItem => item.DictionaryTocharian.WordSubClass.SubClassFr)
                     </td>
                 }
                 @if (Session[Horizone.Common.CommonConstants.CurrentCulture].ToString() == "zh")
                 {
                    
                     <td>
-                        @Html.DisplayFor(modelItem => item.WordSubClass.SubClassZh)
+                        @Html.DisplayFor(modelItem => item.DictionaryTocharian.WordSubClass.SubClassZh)
                     </td>
                 }
             </tr>

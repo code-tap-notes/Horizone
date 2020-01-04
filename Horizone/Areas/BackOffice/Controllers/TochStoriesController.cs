@@ -179,16 +179,25 @@ namespace Horizone.Areas.BackOffice.Controllers
         }
 
         // Search
-             
+                   
         public ActionResult SearchStory(string search)
         {
             IEnumerable<TochStory> tochStories = db.TochStorys.Include("SourceStory").Include("ThemeStory");
 
             if (!string.IsNullOrWhiteSpace(search))
             {
-                tochStories = tochStories.Where(x => x.English.Contains(search) || x.Francaise.Contains(search)
-                || x.Content.Contains(search) || x.SourceStory.SourceEn.Contains(search) || x.Name.Contains(search) || x.Description.Contains(search)
-                || x.ThemeStory.ThemeEn.Contains(search) || x.ThemeStory.ThemeFr.Contains(search) || x.ThemeStory.ThemeZn.Contains(search));
+                tochStories = tochStories.Where(x => (x.Content != null && x.Content.Contains(search))
+                || (x.English != null && x.English.Contains(search))
+                || (x.Francaise != null && x.Francaise.Contains(search))
+                || (x.Chinese != null && x.Chinese.Contains(search))
+                || (x.SourceStory.SourceEn != null && x.SourceStory.SourceEn.Contains(search))
+                || (x.SourceStory.SourceFr != null && x.SourceStory.SourceFr.Contains(search))
+                || (x.SourceStory.SourceZh != null && x.SourceStory.SourceZh.Contains(search))
+                || (x.Name != null && x.Name.Contains(search))
+                || (x.SourceStory.SourceEn != null && x.Description.Contains(search))
+                || (x.ThemeStory.ThemeEn != null && x.ThemeStory.ThemeEn.Contains(search))
+                || (x.ThemeStory.ThemeFr != null && x.ThemeStory.ThemeFr.Contains(search))
+                || (x.ThemeStory.ThemeZn != null && x.ThemeStory.ThemeZn.Contains(search)));
             }
             if (tochStories.Count() == 0)
             {
@@ -198,6 +207,5 @@ namespace Horizone.Areas.BackOffice.Controllers
 
             return View("SearchStory", tochStories.OrderBy(x => x.Name).ToList());
         }
-
     }
 }

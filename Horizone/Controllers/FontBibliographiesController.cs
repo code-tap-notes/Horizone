@@ -15,7 +15,7 @@ namespace Horizone.Controllers
     public class FontBibliographiesController : BaseController
     {  
         // GET: FontBibliographies       
-        public ActionResult Bibliographie(int page = 1, int pageSize = 20)
+        public ActionResult Bibliographie(int page = 1, int pageSize = 40)
         {
             var bibliographys = db.Bibliographys;
 
@@ -23,7 +23,7 @@ namespace Horizone.Controllers
                 if (!item.Book) bibliographys.Add(item);
             return View(bibliographys.OrderBy(x => x.Id).ToPagedList(page, pageSize));
         }
-        public ActionResult Abbreviation(int page = 1, int pageSize = 20)
+        public ActionResult Abbreviation(int page = 1, int pageSize = 40)
         {
             return View(db.Abreviations.OrderBy(x => x.Symbol).ToPagedList(page, pageSize));
         }

@@ -5,351 +5,358 @@
 }
 
 <h2>@StaticResource.Resources.Details</h2>
+
 <div>
-    <h4> @StaticResource.Resources.Noun - @StaticResource.Resources.Adjective</h4>
+    <h4>@StaticResource.Resources.Noun @StaticResource.Resources.And @StaticResource.Resources.Adjective</h4>
     <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.TochWord)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.TochWord)
-        </dd>
-        <dt>
-            @Html.DisplayNameFor(model => model.TochLanguage.Language)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.TochLanguage.Language)
-        </dd>
-        @if (Model.TochLanguageId == 1 || Model.TochLanguageId == 3)
-        {
+    <div class=" autocontents">
+        <p style="font-size: medium; font-weight:bold;">
+            <strong>&#10027; @StaticResource.Resources.DictionaryTocharian : </strong>
+        </p>
+        <dl class="dl-horizontal">
             <dt>
-                @Html.DisplayNameFor(model => model.EquivalentTB)
+                @Html.DisplayNameFor(model => model.DictionaryTocharian.Word)
             </dt>
 
-            <dd>
-                @Html.DisplayFor(model => model.EquivalentTB)
-            </dd>
-        }
-        @if (Model.TochLanguageId == 2 || Model.TochLanguageId == 4)
-        {
-            <dt>
-                @Html.DisplayNameFor(model => model.EquivalentTA)
-            </dt>
-
-            <dd>
-                @Html.DisplayFor(model => model.EquivalentTA)
-            </dd>
-        }
-
-        <dt>
-            @Html.DisplayNameFor(model => model.TochCommon)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.TochCommon)
-        </dd>
-        <dt>
-            @Html.DisplayNameFor(model => model.TochCorrespondence)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.TochCorrespondence)
-        </dd>
-        <dt>
-            @Html.DisplayNameFor(model => model.EquivalentInOther)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.EquivalentInOther)
-        </dd>
-        <dt>
-            @StaticResource.Resources.Meaning   @Html.DisplayNameFor(model => model.Sanskrit)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Sanskrit)
-        </dd>
-
-        <dt>
-            @StaticResource.Resources.Meaning   @Html.DisplayNameFor(model => model.English)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.English)
-        </dd>
-
-        <dt>
-            @StaticResource.Resources.Meaning   @Html.DisplayNameFor(model => model.Francaise)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Francaise)
-        </dd>
-
-        <dt>
-            @StaticResource.Resources.Meaning   @Html.DisplayNameFor(model => model.German)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.German)
-        </dd>
-
-        <dt>
-            @StaticResource.Resources.Meaning  @Html.DisplayNameFor(model => model.Latin)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Latin)
-        </dd>
-
-        <dt>
-            @StaticResource.Resources.Meaning  @Html.DisplayNameFor(model => model.Chinese)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Chinese)
-        </dd>
-
-
-        @if (Session[Horizone.Common.CommonConstants.CurrentCulture].ToString() == "en")
-        {
-            <dt>
-                @Html.DisplayNameFor(model => model.WordClass.Class)
-            </dt>
-            <dd>
-                @Html.DisplayFor(model => model.WordClass.ClassEn)
+            <dd style="font-size: medium; font-weight:bold;">
+                <strong>  @Html.DisplayFor(model => model.DictionaryTocharian.Word) </strong>
             </dd>
             <dt>
-                @Html.DisplayNameFor(model => model.WordSubClass.SubClass)
+                @Html.DisplayNameFor(model => model.DictionaryTocharian.TochLanguage.Language)
             </dt>
+
             <dd>
-                @Html.DisplayFor(model => model.WordSubClass.SubClassEn)
-            </dd>
-
-
-            <dt>
-                @StaticResource.Resources.Case
-            </dt>
-            <dd>
-                <table class="table table-striped">
-                    @foreach (var item in Model.Cases)
-                    {
-                        <tr><td>@item.NameCaseEn</td></tr>
-                    }
-
-                </table>
+                @Html.DisplayFor(model => model.DictionaryTocharian.TochLanguage.Language)
             </dd>
             <dt>
-                @StaticResource.Resources.Gender
+                @Html.DisplayNameFor(model => model.DictionaryTocharian.Sanskrit)
             </dt>
-            <dd>
-                <table class="table table-striped">
-                    @foreach (var item in Model.Genders)
-                    {
-                        <tr><td>@item.NameGenderEn</td></tr>
-                    }
 
-                </table>
-            </dd>
-            <dt>
-                @StaticResource.Resources.Number
-            </dt>
             <dd>
-                <table class="table table-striped">
-                    @foreach (var item in Model.Numbers)
-                    {
-                        <tr><td>@item.WordNumberEn</td></tr>
-                    }
-
-                </table>
+                @Html.DisplayFor(model => model.DictionaryTocharian.Sanskrit)
             </dd>
 
-        }
+            <dt>
+                @Html.DisplayNameFor(model => model.DictionaryTocharian.English)
+            </dt>
 
-        @if (Session[Horizone.Common.CommonConstants.CurrentCulture].ToString() == "fr")
-        {
-            <dt>
-                @Html.DisplayNameFor(model => model.WordClass.Class)
-            </dt>
             <dd>
-                @Html.DisplayFor(model => model.WordClass.ClassFr)
-            </dd>
-            <dt>
-                @Html.DisplayNameFor(model => model.WordSubClass.SubClass)
-            </dt>
-            <dd>
-                @Html.DisplayFor(model => model.WordSubClass.SubClassFr)
+                @Html.DisplayFor(model => model.DictionaryTocharian.English)
             </dd>
 
-
             <dt>
-                @StaticResource.Resources.Case
+                @Html.DisplayNameFor(model => model.DictionaryTocharian.Francaise)
             </dt>
-            <dd>
-                <table class="table table-striped">
-                    @foreach (var item in Model.Cases)
-                    {
-                        <tr><td>@item.NameCaseFr</td></tr>
-                    }
 
-                </table>
-            </dd>
-            <dt>
-                @StaticResource.Resources.Gender
-            </dt>
             <dd>
-                <table class="table table-striped">
-                    @foreach (var item in Model.Genders)
-                    {
-                        <tr><td>@item.NameGenderFr</td></tr>
-                    }
-
-                </table>
-            </dd>
-            <dt>
-                @StaticResource.Resources.Number
-            </dt>
-            <dd>
-                <table class="table table-striped">
-                    @foreach (var item in Model.Numbers)
-                    {
-                        <tr><td>@item.WordNumberFr</td></tr>
-                    }
-
-                </table>
+                @Html.DisplayFor(model => model.DictionaryTocharian.Francaise)
             </dd>
 
-        }
+            <dt>
+                @Html.DisplayNameFor(model => model.DictionaryTocharian.German)
+            </dt>
 
-        @if (Session[Horizone.Common.CommonConstants.CurrentCulture].ToString() == "zh")
-        {
-            <dt>
-                @Html.DisplayNameFor(model => model.WordClass.Class)
-            </dt>
             <dd>
-                @Html.DisplayFor(model => model.WordClass.ClassZh)
+                @Html.DisplayFor(model => model.DictionaryTocharian.German)
             </dd>
+
             <dt>
-                @Html.DisplayNameFor(model => model.WordSubClass.SubClass)
+                @Html.DisplayNameFor(model => model.DictionaryTocharian.Latin)
             </dt>
+
             <dd>
-                @Html.DisplayFor(model => model.WordSubClass.SubClassZh)
+                @Html.DisplayFor(model => model.DictionaryTocharian.Latin)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.DictionaryTocharian.Chinese)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.DictionaryTocharian.Chinese)
+            </dd>
+
+            @if (Model.DictionaryTocharian.TochLanguage.Language == "TA")
+            {
+                <dt>
+                    @Html.DisplayNameFor(model => model.DictionaryTocharian.EquivalentTB)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.DictionaryTocharian.EquivalentTB)
+                </dd>
+            }
+            @if (Model.DictionaryTocharian.TochLanguage.Language == "TB")
+            {
+                <dt>
+                    @Html.DisplayNameFor(model => model.DictionaryTocharian.EquivalentTA)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.DictionaryTocharian.EquivalentTA)
+                </dd>
+            }
+            <dt>
+                @Html.DisplayNameFor(model => model.DictionaryTocharian.TochCorrespondence)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.DictionaryTocharian.TochCorrespondence)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.DictionaryTocharian.EquivalentInOther)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.DictionaryTocharian.EquivalentInOther)
             </dd>
 
 
 
+            @if (Session[Horizone.Common.CommonConstants.CurrentCulture].ToString() == "en")
+            {
+                <dt>
+                    @Html.DisplayNameFor(model => model.DictionaryTocharian.WordClass.Class)
+                </dt>
+                <dd>
+                    @Html.DisplayFor(model => model.DictionaryTocharian.WordClass.ClassEn)
+                </dd>
+                <dt>
+                    @Html.DisplayNameFor(model => model.DictionaryTocharian.WordSubClass.SubClass)
+                </dt>
+                <dd>
+                    @Html.DisplayFor(model => model.DictionaryTocharian.WordSubClass.SubClassEn)
+                </dd>
+                <dt>
+                    @StaticResource.Resources.Number
+                </dt>
+                <dd>
+                    <table class="table table-striped">
+                        @foreach (var item in Model.DictionaryTocharian.Numbers)
+                        {
+                            <tr><td>@item.WordNumberEn</td></tr>
+                        }
+
+                    </table>
+                </dd>
+
+            }
+
+            @if (Session[Horizone.Common.CommonConstants.CurrentCulture].ToString() == "fr")
+            {
+                <dt>
+                    @Html.DisplayNameFor(model => model.DictionaryTocharian.WordClass.Class)
+                </dt>
+                <dd>
+                    @Html.DisplayFor(model => model.DictionaryTocharian.WordClass.ClassFr)
+                </dd>
+                <dt>
+                    @Html.DisplayNameFor(model => model.DictionaryTocharian.WordSubClass.SubClass)
+                </dt>
+                <dd>
+                    @Html.DisplayFor(model => model.DictionaryTocharian.WordSubClass.SubClassFr)
+                </dd>
+                <dt>
+                    @StaticResource.Resources.Number
+                </dt>
+                <dd>
+                    <table class="table table-striped">
+                        @foreach (var item in Model.DictionaryTocharian.Numbers)
+                        {
+                            <tr><td>@item.WordNumberFr</td></tr>
+                        }
+
+                    </table>
+                </dd>
+            }
+            @if (Session[Horizone.Common.CommonConstants.CurrentCulture].ToString() == "zh")
+            {
+                <dt>
+                    @Html.DisplayNameFor(model => model.DictionaryTocharian.WordClass.Class)
+                </dt>
+                <dd>
+                    @Html.DisplayFor(model => model.DictionaryTocharian.WordClass.ClassZh)
+                </dd>
+                <dt>
+                    @Html.DisplayNameFor(model => model.DictionaryTocharian.WordSubClass.SubClass)
+                </dt>
+                <dd>
+                    @Html.DisplayFor(model => model.DictionaryTocharian.WordSubClass.SubClassZh)
+                </dd>
+                <dt>
+                    @StaticResource.Resources.Number
+                </dt>
+                <dd>
+                    <table class="table table-striped">
+                        @foreach (var item in Model.DictionaryTocharian.Numbers)
+                        {
+                            <tr><td>@item.WordNumberZh</td></tr>
+                        }
+
+                    </table>
+                </dd>
+
+            }
+
             <dt>
-                @StaticResource.Resources.Case
+                @Html.DisplayNameFor(model => model.DictionaryTocharian.DerivedFrom)
             </dt>
-            <dd>
-                <table class="table table-striped">
-                    @foreach (var item in Model.Cases)
-                    {
-                        <tr><td>@item.NameCaseZh</td></tr>
-                    }
 
-                </table>
+            <dd>
+                @Html.DisplayFor(model => model.DictionaryTocharian.DerivedFrom)
             </dd>
+
             <dt>
-                @StaticResource.Resources.Gender
+                @Html.DisplayNameFor(model => model.DictionaryTocharian.RelatedLexemes)
             </dt>
-            <dd>
-                <table class="table table-striped">
-                    @foreach (var item in Model.Genders)
-                    {
-                        <tr><td>@item.NameGenderZh</td></tr>
-                    }
 
-                </table>
+            <dd>
+                @Html.DisplayFor(model => model.DictionaryTocharian.RelatedLexemes)
             </dd>
+
             <dt>
-                @StaticResource.Resources.Number
+                @Html.DisplayNameFor(model => model.DictionaryTocharian.RootCharacter)
             </dt>
-            <dd>
-                <table class="table table-striped">
-                    @foreach (var item in Model.Numbers)
-                    {
-                        <tr><td>@item.WordNumberZh</td></tr>
-                    }
 
-                </table>
+            <dd>
+                @Html.DisplayFor(model => model.DictionaryTocharian.RootCharacter)
             </dd>
 
-        }
+            <dt>
+                @Html.DisplayNameFor(model => model.DictionaryTocharian.InternalRootVowel)
+            </dt>
 
+            <dd>
+                @Html.DisplayFor(model => model.DictionaryTocharian.InternalRootVowel)
+            </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.DerivedFrom)
-        </dt>
+            <dt>
+                @Html.DisplayNameFor(model => model.DictionaryTocharian.Stem)
+            </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.DerivedFrom)
-        </dd>
+            <dd>
+                @Html.DisplayFor(model => model.DictionaryTocharian.Stem)
+            </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.RelatedLexemes)
-        </dt>
+            <dt>
+                @Html.DisplayNameFor(model => model.DictionaryTocharian.StemClass)
+            </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.RelatedLexemes)
-        </dd>
+            <dd>
+                @Html.DisplayFor(model => model.DictionaryTocharian.StemClass)
+            </dd>
+        </dl>
+        <a href="@Url.Action("Edit","DictionaryTocharians",new { id = Model.DictionaryId })" class="btn btn-info",  style = "width:85px">@StaticResource.Resources.Edit</a>
+    </div>
+    <div class=" autocontents">
+        <p style="font-size: medium; font-weight:bold;">
+            <strong>&#10027; @StaticResource.Resources.Noun - @StaticResource.Resources.Adjective : </strong>
+        </p>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.RootCharacter)
-        </dt>
+        <dl class="dl-horizontal">
+            @if (Session[Horizone.Common.CommonConstants.CurrentCulture].ToString() == "en")
+            {
 
-        <dd>
-            @Html.DisplayFor(model => model.RootCharacter)
-        </dd>
+                <dt>
+                    @StaticResource.Resources.Case
+                </dt>
+                <dd>
+                    <table class="table table-striped">
+                        @foreach (var item in Model.Cases)
+                        {
+                            <tr><td>@item.NameCaseEn</td></tr>
+                        }
 
-        <dt>
-            @Html.DisplayNameFor(model => model.InternalRootVowel)
-        </dt>
+                    </table>
+                </dd>
+                <dt>
+                    @StaticResource.Resources.Gender
+                </dt>
+                <dd>
+                    <table class="table table-striped">
+                        @foreach (var item in Model.Genders)
+                        {
+                            <tr><td>@item.NameGenderEn</td></tr>
+                        }
 
-        <dd>
-            @Html.DisplayFor(model => model.InternalRootVowel)
-        </dd>
+                    </table>
+                </dd>
+            }
+            @if (Session[Horizone.Common.CommonConstants.CurrentCulture].ToString() == "fr")
+            {
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Stem)
-        </dt>
+                <dt>
+                    @StaticResource.Resources.Case
+                </dt>
+                <dd>
+                    <table class="table table-striped">
+                        @foreach (var item in Model.Cases)
+                        {
+                            <tr><td>@item.NameCaseFr</td></tr>
+                        }
 
-        <dd>
-            @Html.DisplayFor(model => model.Stem)
-        </dd>
+                    </table>
+                </dd>
+                <dt>
+                    @StaticResource.Resources.Gender
+                </dt>
+                <dd>
+                    <table class="table table-striped">
+                        @foreach (var item in Model.Genders)
+                        {
+                            <tr><td>@item.NameGenderFr</td></tr>
+                        }
 
-        <dt>
-            @Html.DisplayNameFor(model => model.StemClass)
-        </dt>
+                    </table>
+                </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.StemClass)
-        </dd>
+            }
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Visible)
-        </dt>
+            @if (Session[Horizone.Common.CommonConstants.CurrentCulture].ToString() == "zh")
+            {
+                <dt>
+                    @StaticResource.Resources.Case
+                </dt>
+                <dd>
+                    <table class="table table-striped">
+                        @foreach (var item in Model.Cases)
+                        {
+                            <tr><td>@item.NameCaseZh</td></tr>
+                        }
 
-        <dd>
-            @Html.DisplayFor(model => model.Visible)
-        </dd>
+                    </table>
+                </dd>
+                <dt>
+                    @StaticResource.Resources.Gender
+                </dt>
+                <dd>
+                    <table class="table table-striped">
+                        @foreach (var item in Model.Genders)
+                        {
+                            <tr><td>@item.NameGenderZh</td></tr>
+                        }
 
-    </dl>
+                    </table>
+                </dd>
+
+            }
+
+        </dl>
+        <p>
+            @Html.ActionLink(StaticResource.Resources.Edit, "Edit", new { id = Model.Id }, new { @class = "btn btn-info", style = "width:85px" }) |
+            @Html.ActionLink(@StaticResource.Resources.Delete, "Delete", new { id = Model.Id }, new { @class = "btn btn-info", style = "width:85px" })
+
+            @if (Model.DictionaryTocharian.WordClass.ClassEn == "Noun")
+            {
+                @Html.ActionLink(@StaticResource.Resources.Return, "IndexNoun", null, new { @class = "btn btn-default", style = "width:85px" })
+            }
+            @if (Model.DictionaryTocharian.WordClass.ClassEn == "Adjective")
+            {
+                @Html.ActionLink(@StaticResource.Resources.Return, "IndexAdjective", null, new { @class = "btn btn-default", style = "width:85px" })
+            }
+
+        </p>
+    </div>
 </div>
-<p>
-    @Html.ActionLink(StaticResource.Resources.Edit, "Edit", new { id = Model.Id }, new { @class = "btn btn-info", style = "width:85px" }) |
-    @if (Model.WordClass.ClassEn == "Noun")
-    {
-        @Html.ActionLink(@StaticResource.Resources.Return, "IndexNoun", null, new { @class = "btn btn-default", style = "width:85px" })
-    }
-    @if (Model.WordClass.ClassEn == "Adjective")
-    {
-        @Html.ActionLink(@StaticResource.Resources.Return, "IndexAdjective", null, new { @class = "btn btn-default", style = "width:85px" })
-    }
 
-</p>
-<h5>@StaticResource.Resources.AskAddDic</h5>
-@Html.ActionLink(@StaticResource.Resources.Add, "AddDictionary", "NounAdjectives", new { id = Model.Id }, new { @class = "btn btn-default", style = "background-color: #A8A2CC; width:95px" }) 

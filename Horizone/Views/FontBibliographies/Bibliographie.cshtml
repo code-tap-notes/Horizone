@@ -41,7 +41,7 @@
     @foreach (var item in Model)
     {
         <li>
-            <a href=@item.UlrBibliography>@Html.DisplayFor(modelItem => item.Author) - @Html.DisplayFor(modelItem => item.PublicationDate)</a>
+            <a href=@item.UlrBibliography><b>@Html.DisplayFor(modelItem => item.Author) - @Html.DisplayFor(modelItem => item.PublicationDate)</b></a>
         </li>
         <li>
             @Html.DisplayFor(modelItem => item.Author) - @Html.DisplayFor(modelItem => item.PublicationDate) -  @Html.Raw(item.Title) -  @Html.Raw(item.Title) -  @Html.DisplayFor(modelItem => item.Journal)

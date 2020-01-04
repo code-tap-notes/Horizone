@@ -7,56 +7,93 @@
 <h3>@StaticResource.Resources.TochStory</h3>
 
 <h4>@StaticResource.Resources.SearchResult</h4>
+<div>
 
-@Model.Count() @StaticResource.Resources.SearchResult <b> " @ViewBag.Search " </b> @StaticResource.Resources.Found @StaticResource.Resources.In @StaticResource.Resources.TochStory
-<br />
-@if (Model.Count() == 0)
-{
-    @StaticResource.Resources.AskSearchAdvantage;
-    <form class="form-group row" action="@Url.Action("SearchIndex", "DashBoards" )" method="post" enctype="multipart/form-data">
-        <button type="submit" class="btn btn-default" style="width:20%; text-align:left;"> @StaticResource.Resources.Search <b> " @ViewBag.Search " </b> </button>
-        <input class="form-control" type="hidden" id="Search" name="search" value="@ViewBag.Search" />
-    </form>
-}
-
-@foreach (var item in Model)
-{
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.SourceStory.SourceEn)
-        </dt>
-        <dd>
-            @Html.DisplayFor(modelItem => item.SourceStory.SourceEn)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.ThemeStory.ThemeEn)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(modelItem => item.ThemeStory.ThemeEn)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Name)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(modelItem => item.Name)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Description)
-        </dt>
-        <dd>
-            @Html.Raw(item.Description)
-        </dd>
-        <dt></dt>
-        <dd>
-            @Html.ActionLink(@StaticResource.Resources.LearnMore, "Details", new { id = item.Id }, new { @class = "btn btn-info" })
-        </dd>
-    </dl>
-
-}
+    &#10063; @Model.Count() @StaticResource.Resources.SearchResult <b> " @ViewBag.Search " </b> @StaticResource.Resources.Found @StaticResource.Resources.In @StaticResource.Resources.TochStory
+    <br />
 
 
+    @if (Model.Count() == 0)
+    {
+        <div class="autocontents">
+            <p>
+                &#10067; @StaticResource.Resources.AskSearchAdvantage ?
+                <h5>&#9658; @StaticResource.Resources.ClickButton @StaticResource.Resources.Search <b> " @ViewBag.Search " </b> </h5>
+            </p>
+            <div class="row">
+                <div class="col-md-1">
+
+                </div>
+                <div class="col-md-3">
+                    <form class="form-group row" action="@Url.Action("SearchIndex", "DashBoards" )" method="post" enctype="multipart/form-data">
+                        <button type="submit" class="btn btn-default" style="width:75%; text-align:left;  padding:5px;"> @StaticResource.Resources.Search <b> " @ViewBag.Search " </b> </button>
+                        <input class="form-control" type="hidden" id="Search" name="search" value="@ViewBag.Search" />
+                    </form>
+                </div>
+            </div>
+        </div>
+    }
+    <br />
+
+
+    @foreach (var item in Model)
+    {
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.SourceStory.SourceEn)
+            </dt>
+            <dd>
+                @Html.DisplayFor(modelItem => item.SourceStory.SourceEn)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.ThemeStory.ThemeEn)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(modelItem => item.ThemeStory.ThemeEn)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Name)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(modelItem => item.Name)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Description)
+            </dt>
+            <dd>
+                @Html.Raw(item.Description)
+            </dd>
+            <dt></dt>
+            <dd>
+                @Html.ActionLink(@StaticResource.Resources.LearnMore, "DetailsStory", new { id = item.Id }, new { @class = "btn btn-info" })
+            </dd>
+        </dl>
+        <br />
+    }
+    @Html.ActionLink(StaticResource.Resources.Return, "Index", null, new { @class = "btn btn-primary", style = "width:90px" })
+    <br />
+
+    @if (@ViewBag.Search != null)
+    {
+        <br />
+        <p>
+            &#10067; @StaticResource.Resources.AskSearchAdvantage   @StaticResource.Resources.In  @StaticResource.Resources.OtherSite;
+        </p>
+        <br />
+        var ulrA = "https://www.univie.ac.at/tocharian/?A_" + @ViewBag.Search;
+        var ulrB = "https://www.univie.ac.at/tocharian/?B_" + @ViewBag.Search;
+        var ulrG = "https://www.google.com/search?q=" + @ViewBag.Search + "&rlz=1C1CHBF_frFR865FR865&oq=" + @ViewBag.Search + " &aqs=chrome..69i57j35i39j69i60l2.1406j0j8&sourceid=chrome&ie=UTF-8";
+        <a href="@ulrA"> @StaticResource.Resources.Search @StaticResource.Resources.Tocharian A<b> " @ViewBag.Search " @StaticResource.Resources.With CETOM </b></a>
+        <br />
+        <a href="@ulrB"> @StaticResource.Resources.Search @StaticResource.Resources.Tocharian B <b> " @ViewBag.Search " @StaticResource.Resources.With CETOM </b></a>
+        <br />
+        <a href="@ulrG"> @StaticResource.Resources.Search <b> " @ViewBag.Search " @StaticResource.Resources.With Google</b></a>
+
+    }
+
+</div>

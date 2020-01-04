@@ -1,13 +1,23 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Web;
 
 namespace Horizone.Models
 {
-    public class NounAdjective : Word
+    public class NounAdjective
     {
+        public int Id { get; set; }
+
+        [Display(Name = "DictionaryTocharian", ResourceType = typeof(StaticResource.Resources))]
+        public int DictionaryId { get; set; }
+
+        [ForeignKey("DictionaryId")]
+        public DictionaryTocharian DictionaryTocharian { get; set; }
+
+
         [Display(Name = "Case", ResourceType = typeof(StaticResource.Resources))]
         public ICollection<Case> Cases { get; set; }
 

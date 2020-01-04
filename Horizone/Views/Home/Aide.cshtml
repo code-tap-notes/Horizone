@@ -99,8 +99,7 @@
                           //  @Html.DropDownListFor(modelItem => item.Id, ViewBag.Aide as SelectList, @StaticResource.Resources.Question, new { @onChange = "selectedText(this)" })
                         <div>
                             <form class="form-group row" action="@Url.Action("SearchQuestion", "Home")" method="post" enctype="multipart/form-data">
-                                <button type="submit" class="btn btn-default" style="width:295px; text-align:center;"> @item.Aids </button>
-                                <input class="form-control"  type="hidden" id="Search" name="search" readonly="readonly" value="@item.Aids" />
+                                <input class="btn-default" type="submit" id="Search" style="width:295px; text-align:center;" name="search" readonly="readonly" value="@item.Aids" />
                             </form>
                         </div>
                     }

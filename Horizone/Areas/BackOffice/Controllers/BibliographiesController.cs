@@ -17,7 +17,7 @@ namespace Horizone.Areas.BackOffice.Controllers
     public class BibliographiesController : BaseController
     {        
         // GET: BackOffice/Bibliographies
-        public ActionResult Index(int page = 1, int pageSize = 30)
+        public ActionResult Index(int page = 1, int pageSize = 40)
         {
             return View(db.Bibliographys.OrderBy(x => x.Id).ToPagedList(page, pageSize));
         }

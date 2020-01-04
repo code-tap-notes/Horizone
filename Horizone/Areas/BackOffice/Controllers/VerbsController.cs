@@ -12,17 +12,22 @@ using PagedList;
 
 namespace Horizone.Areas.BackOffice.Controllers
 {
-    [Authorize(Roles = "Collaborator,Admin")]
     public class VerbsController : BaseController
     {
 
         // GET: BackOffice/Verbs
-        public ActionResult Index(int page = 1, int pageSize = 50)
+        public ActionResult Index()
         {
-            var verbs = db.Verbs.Include(v => v.Mood).Include(v => v.TenseAndAspect).Include(v => v.TochLanguage).Include(v => v.Valency).Include(v => v.Voice).Include(v => v.WordClass).Include(v => v.WordSubClass).Include("Numbers").Include("Persons"); ;
-            return View(verbs.OrderBy(x => x.TochWord).ToPagedList(page, pageSize));
+            var verbs = db.Verbs.Include(v => v.DictionaryTocharian)
+                .Include(v => v.DictionaryTocharian.TochLanguage)
+                .Include(v => v.DictionaryTocharian.WordClass)
+                .Include(v => v.DictionaryTocharian.WordSubClass)
+                .Include(v => v.DictionaryTocharian.Numbers)
+                .Include(v => v.Mood).Include(v => v.TenseAndAspect)
+                .Include(v => v.Valency).Include(v => v.Voice)               
+                .Include("Persons");
+            return View(verbs.OrderBy(x => x.DictionaryTocharian.Word).ToList());
         }
-
         // GET: BackOffice/Verbs/Details/5
         public ActionResult Details(int? id)
         {
@@ -30,141 +35,45 @@ namespace Horizone.Areas.BackOffice.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Verb verb = db.Verbs.Include(v => v.Mood).Include(v => v.TenseAndAspect).Include(v => v.TochLanguage).Include(v => v.Valency).Include(v => v.Voice).Include(v => v.WordClass).Include(v => v.WordSubClass).Include("Numbers").Include("Persons").SingleOrDefault(y => y.Id == id);
- 
-            if (verb.Numbers.Count() == 0)
-                verb.Numbers = db.Numbers.Where(x => x.WordNumberEn == "No Number").ToList();
-            if (verb.Persons.Count() == 0)
-                verb.Persons = db.Persons.Where(x => x.ConjugatedPersonEn == "No Person").ToList();
-
+            Verb verb = db.Verbs.Include(v => v.DictionaryTocharian)
+                .Include(p => p.DictionaryTocharian.TochLanguage)
+                .Include(n => n.DictionaryTocharian.WordClass)
+                .Include(n => n.DictionaryTocharian.WordSubClass)
+                .Include(d => d.DictionaryTocharian.Numbers)
+                .Include(v => v.Mood).Include(v => v.TenseAndAspect)
+                .Include(v => v.Valency).Include(v => v.Voice)                
+                .Include("Persons").SingleOrDefault(p => p.Id == id);
             if (verb == null)
             {
                 return HttpNotFound();
             }
             return View(verb);
         }
-        //Add a new word to dictionary
-        public ActionResult AddDictionary(int? id)
-        {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-           Verb verb = db.Verbs.Include(n => n.TochLanguage).Include(n => n.WordClass).Include(n => n.WordSubClass).SingleOrDefault(y => y.Id == id);
-            var dictionaryTocharian = new DictionaryTocharian();
-            if (verb == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            if (verb.TochWord != null)
-            {
-                IEnumerable<DictionaryTocharian> dictionaryTocharians = db.DictionaryTocharians.Where(x => x.Word == verb.TochWord);
 
-                if (dictionaryTocharians.Count() == 0)
-                {
-                    dictionaryTocharian.Word = verb.TochWord;
-                    dictionaryTocharian.Sanskrit = verb.Sanskrit;
-                    dictionaryTocharian.English = verb.English;
-                    dictionaryTocharian.Francaise = verb.Francaise;
-                    dictionaryTocharian.German = verb.German;
-                    dictionaryTocharian.Latin = verb.Latin;
-                    dictionaryTocharian.Chinese = verb.Chinese;
-                    dictionaryTocharian.Visible = true;
-                    dictionaryTocharian.EquivalentTA = verb.EquivalentTA;
-                    dictionaryTocharian.EquivalentTB = verb.EquivalentTB;
-                    dictionaryTocharian.TochCommon = verb.TochCommon;
-                    dictionaryTocharian.TochCorrespondence = verb.TochCorrespondence;
-                    dictionaryTocharian.EquivalentInOther = verb.EquivalentInOther;
-                    dictionaryTocharian.TochLanguageId = verb.TochLanguageId;
-                    dictionaryTocharian.WordClassId = verb.WordClassId;
-                    dictionaryTocharian.WordSubClassId = verb.WordSubClassId;
-                    db.DictionaryTocharians.Add(dictionaryTocharian);
-                }
-                else
-                {
-                    Display("Mots existé");
-                }
-
-                db.SaveChanges();
-                return RedirectToAction("index");
-            }
-            return View();
-        }
-
-        
-        //Update a word in dictionary
-        public ActionResult EditDictionary(int? id)
-        {
-            Verb verb = db.Verbs.Include("WordClass").Include("WordSubClass").Include("TochLanguage").SingleOrDefault(x => x.Id == id);
-            DictionaryTocharian dictionaryTocharian = db.DictionaryTocharians.Include("TochLanguage").Include("WordClass").Include("WordSubClass").SingleOrDefault(x => x.Word == verb.TochWord);
-            if (dictionaryTocharian == null)
-            {
-                AddDictionary(verb.Id);
-            }
-
-            if (dictionaryTocharian != null)
-            {
-
-                dictionaryTocharian.Sanskrit = verb.Sanskrit;
-                dictionaryTocharian.English = verb.English;
-                dictionaryTocharian.Francaise = verb.Francaise;
-                dictionaryTocharian.German = verb.German;
-                dictionaryTocharian.Latin = verb.Latin;
-                dictionaryTocharian.Chinese = verb.Chinese;
-                dictionaryTocharian.Visible = true;
-                dictionaryTocharian.EquivalentTA = verb.EquivalentTA;
-                dictionaryTocharian.EquivalentTB = verb.EquivalentTB;
-                dictionaryTocharian.TochCommon = verb.TochCommon;
-                dictionaryTocharian.TochCorrespondence = verb.TochCorrespondence;
-                dictionaryTocharian.EquivalentInOther = verb.EquivalentInOther;
-                dictionaryTocharian.TochLanguageId = verb.TochLanguageId;
-                dictionaryTocharian.WordClassId = verb.WordClassId;
-                dictionaryTocharian.WordSubClassId = verb.WordSubClassId;
-
-                db.SaveChanges();
-                return RedirectToAction("Index");
-            }
-
-            return View();
-        }        
         // GET: BackOffice/Verbs/Create
         public ActionResult Create()
         {
+            ViewBag.DictionaryId = new SelectList(db.DictionaryTocharians.Where(x => x.WordClassId == 10).OrderBy(x=>x.Word), "Id", "Word");
+ 
+            ViewBag.MoodEnId = new SelectList(db.Moods.OrderBy(x=>x.MoodEn), "Id", "MoodEn");
+            ViewBag.MoodFrId = new SelectList(db.Moods.OrderBy(x => x.MoodFr), "Id", "MoodFr");
+            ViewBag.MoodZhId = new SelectList(db.Moods.OrderBy(x => x.MoodZh), "Id", "MoodZh");
 
-            ViewBag.TochLanguageId = new SelectList(db.TochLanguages, "Id", "Language");
+            ViewBag.TenseAndAspectEnId = new SelectList(db.TenseAndAspects.OrderBy(x => x.TenseEn), "Id", "TenseEn");
+            ViewBag.TenseAndAspectFrId = new SelectList(db.TenseAndAspects.OrderBy(x => x.TenseFr), "Id", "TenseFr");
+            ViewBag.TenseAndAspectZhId = new SelectList(db.TenseAndAspects.OrderBy(x => x.TenseZh), "Id", "TenseZh");
 
-            ViewBag.WordClassEnId = new SelectList(db.WordClasses.Where(x => x.ClassEn == "Verb"), "Id", "ClassEn");
-            ViewBag.WordClassFrId = new SelectList(db.WordClasses.Where(x => x.ClassEn == "Verb"), "Id", "ClassFr");
-            ViewBag.WordClassZhId = new SelectList(db.WordClasses.Where(x => x.ClassEn == "Verb"), "Id", "ClassZh");
+            ViewBag.ValencyEnId = new SelectList(db.Valencies.OrderBy(x => x.ValencyEn), "Id", "ValencyEn");
+            ViewBag.ValencyFrId = new SelectList(db.Valencies.OrderBy(x => x.ValencyFr), "Id", "ValencyFr");
+            ViewBag.ValencyZhId = new SelectList(db.Valencies.OrderBy(x => x.ValencyZh), "Id", "ValencyZh");
 
-            ViewBag.WordSubClassEnId = new SelectList(db.WordSubClasses.Where(x => x.WordClass.ClassEn == "Verb"), "Id", "SubClassEn");
-            ViewBag.WordSubClassFrId = new SelectList(db.WordSubClasses.Where(x => x.WordClass.ClassEn == "Verb"), "Id", "SubClassFr");
-            ViewBag.WordSubClassZhId = new SelectList(db.WordSubClasses.Where(x => x.WordClass.ClassEn == "Verb"), "Id", "SubClassZh");
+            ViewBag.VoiceEnId = new SelectList(db.Voices.OrderBy(x => x.VoiceEn), "Id", "VoiceEn");
+            ViewBag.VoiceFrId = new SelectList(db.Voices.OrderBy(x => x.VoiceFr), "Id", "VoiceFr");
+            ViewBag.VoiceZhId = new SelectList(db.Voices.OrderBy(x => x.VoiceZh), "Id", "VoiceZh");
 
-            ViewBag.MoodEnId = new SelectList(db.Moods, "Id", "MoodEn");
-            ViewBag.MoodFrId = new SelectList(db.Moods, "Id", "MoodFr");
-            ViewBag.MoodZhId = new SelectList(db.Moods, "Id", "MoodZh");
-
-            ViewBag.TenseAndAspectEnId = new SelectList(db.TenseAndAspects, "Id", "TenseEn");
-            ViewBag.TenseAndAspectFrId = new SelectList(db.TenseAndAspects, "Id", "TenseFr");
-            ViewBag.TenseAndAspectZhId = new SelectList(db.TenseAndAspects, "Id", "TenseZh");
-
-            ViewBag.ValencyEnId = new SelectList(db.Valencies, "Id", "ValencyEn");
-            ViewBag.ValencyFrId = new SelectList(db.Valencies, "Id", "ValencyFr");
-            ViewBag.ValencyZhId = new SelectList(db.Valencies, "Id", "ValencyZh");
-
-            ViewBag.VoiceEnId = new SelectList(db.Voices, "Id", "VoiceEn");
-            ViewBag.VoiceFrId = new SelectList(db.Voices, "Id", "VoiceFr");
-            ViewBag.VoiceZhId = new SelectList(db.Voices, "Id", "VoiceZh");
-
-         
-            ViewBag.NumbersEn = new SelectList(db.Numbers, "Id", "WordNumberEn");
-            ViewBag.NumbersFr = new SelectList(db.Numbers, "Id", "WordNumberFr");
-            ViewBag.NumbersZh = new SelectList(db.Numbers, "Id", "WordNumberZh");
-
-            ViewBag.PersonsEn = new SelectList(db.Persons, "Id", "ConjugatedPersonEn");
-            ViewBag.PersonsFr = new SelectList(db.Persons, "Id", "ConjugatedPersonFr");
-            ViewBag.PersonsZh = new SelectList(db.Persons, "Id", "ConjugatedPersonZh");
+            ViewBag.PersonsEn = new SelectList(db.Persons.OrderBy(x => x.ConjugatedPersonEn), "Id", "ConjugatedPersonEn");
+            ViewBag.PersonsFr = new SelectList(db.Persons.OrderBy(x => x.ConjugatedPersonEn), "Id", "ConjugatedPersonFr");
+            ViewBag.PersonsZh = new SelectList(db.Persons.OrderBy(x => x.ConjugatedPersonEn), "Id", "ConjugatedPersonZh");
 
             return View();
         }
@@ -174,77 +83,46 @@ namespace Horizone.Areas.BackOffice.Controllers
         // plus de détails, voir  https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,VoiceId,ValencyId,TenseAndAspectId,MoodId,PronounSuffix,TochWord,English,Francaise,German,Latin,Chinese,TochLanguageId,WordClassId,WordSubClassId,EquivalentTA,EquivalentTB,TochCommon,TochCorrespondence,EquivalentInOther,DerivedFrom,RelatedLexemes,RootCharacter,InternalRootVowel,Stem,StemClass,Visible")] Verb verb, int[] NumberId, int[] PersonId)
+        public ActionResult Create([Bind(Include = "Id,DictionaryId,VoiceId,ValencyId,TenseAndAspectId,MoodId,PronounSuffix")] Verb verb, int[] PersonId)
         {
             if (ModelState.IsValid)
             {
-               
-                if (NumberId.Count() > 0)
-                {
-                    verb.Numbers = db.Numbers.Where(x => NumberId.Contains(x.Id)).ToList();
-                }
-                else
-                {
-                    verb.Numbers = db.Numbers.Where(x => x.Id == 1).ToList();
-                }
-                if (PersonId.Count() > 0)
-                {
-                    verb.Persons = db.Persons.Where(x => PersonId.Contains(x.Id)).ToList();
-                }
-                else
+                  if (PersonId.Count() == 0)
                 {
                     verb.Persons = db.Persons.Where(x => x.Id == 1).ToList();
                 }
-                if (verb.TochLanguageId == 1)
+                else
                 {
-                    verb.EquivalentTA = verb.TochWord;
+                    verb.Persons = db.Persons.Where(x => PersonId.Contains(x.Id)).ToList();
                 }
-                if (verb.TochLanguageId == 2)
-                {
-                    verb.EquivalentTB = verb.TochWord;
-                }
+
                 db.Verbs.Add(verb);
                 db.SaveChanges();
-                AddDictionary(verb.Id);
                 return RedirectToAction("Index");
             }
 
+            ViewBag.DictionaryId = new SelectList(db.DictionaryTocharians.Where(x => x.WordClassId == 10).OrderBy(x => x.Word), "Id", "Word");
 
-            ViewBag.TochLanguageId = new SelectList(db.TochLanguages, "Id", "Language");
+            ViewBag.MoodEnId = new SelectList(db.Moods.OrderBy(x => x.MoodEn), "Id", "MoodEn");
+            ViewBag.MoodFrId = new SelectList(db.Moods.OrderBy(x => x.MoodFr), "Id", "MoodFr");
+            ViewBag.MoodZhId = new SelectList(db.Moods.OrderBy(x => x.MoodZh), "Id", "MoodZh");
 
-            ViewBag.WordClassEnId = new SelectList(db.WordClasses.Where(x => x.ClassEn == "Verb"), "Id", "ClassEn");
-            ViewBag.WordClassFrId = new SelectList(db.WordClasses.Where(x => x.ClassEn == "Verb"), "Id", "ClassFr");
-            ViewBag.WordClassZhId = new SelectList(db.WordClasses.Where(x => x.ClassEn == "Verb"), "Id", "ClassZh");
+            ViewBag.TenseAndAspectEnId = new SelectList(db.TenseAndAspects.OrderBy(x => x.TenseEn), "Id", "TenseEn");
+            ViewBag.TenseAndAspectFrId = new SelectList(db.TenseAndAspects.OrderBy(x => x.TenseFr), "Id", "TenseFr");
+            ViewBag.TenseAndAspectZhId = new SelectList(db.TenseAndAspects.OrderBy(x => x.TenseZh), "Id", "TenseZh");
 
-            ViewBag.WordSubClassEnId = new SelectList(db.WordSubClasses.Where(x => x.WordClass.ClassEn == "Verb"), "Id", "SubClassEn");
-            ViewBag.WordSubClassFrId = new SelectList(db.WordSubClasses.Where(x => x.WordClass.ClassEn == "Verb"), "Id", "SubClassFr");
-            ViewBag.WordSubClassZhId = new SelectList(db.WordSubClasses.Where(x => x.WordClass.ClassEn == "Verb"), "Id", "SubClassZh");
+            ViewBag.ValencyEnId = new SelectList(db.Valencies.OrderBy(x => x.ValencyEn), "Id", "ValencyEn");
+            ViewBag.ValencyFrId = new SelectList(db.Valencies.OrderBy(x => x.ValencyFr), "Id", "ValencyFr");
+            ViewBag.ValencyZhId = new SelectList(db.Valencies.OrderBy(x => x.ValencyZh), "Id", "ValencyZh");
 
+            ViewBag.VoiceEnId = new SelectList(db.Voices.OrderBy(x => x.VoiceEn), "Id", "VoiceEn");
+            ViewBag.VoiceFrId = new SelectList(db.Voices.OrderBy(x => x.VoiceFr), "Id", "VoiceFr");
+            ViewBag.VoiceZhId = new SelectList(db.Voices.OrderBy(x => x.VoiceZh), "Id", "VoiceZh");
 
-            ViewBag.MoodEnId = new SelectList(db.Moods, "Id", "MoodEn");
-            ViewBag.MoodFrId = new SelectList(db.Moods, "Id", "MoodFr");
-            ViewBag.MoodZhId = new SelectList(db.Moods, "Id", "MoodZh");
+            ViewBag.PersonsEn = new SelectList(db.Persons.OrderBy(x => x.ConjugatedPersonEn), "Id", "ConjugatedPersonEn");
+            ViewBag.PersonsFr = new SelectList(db.Persons.OrderBy(x => x.ConjugatedPersonEn), "Id", "ConjugatedPersonFr");
+            ViewBag.PersonsZh = new SelectList(db.Persons.OrderBy(x => x.ConjugatedPersonEn), "Id", "ConjugatedPersonZh");
 
-            ViewBag.TenseAndAspectEnId = new SelectList(db.TenseAndAspects, "Id", "TenseEn");
-            ViewBag.TenseAndAspectFrId = new SelectList(db.TenseAndAspects, "Id", "TenseFr");
-            ViewBag.TenseAndAspectZhId = new SelectList(db.TenseAndAspects, "Id", "TenseZh");
-
-            ViewBag.ValencyEnId = new SelectList(db.Valencies, "Id", "ValencyEn");
-            ViewBag.ValencyFrId = new SelectList(db.Valencies, "Id", "ValencyFr");
-            ViewBag.ValencyZhId = new SelectList(db.Valencies, "Id", "ValencyZh");
-
-            ViewBag.VoiceEnId = new SelectList(db.Voices, "Id", "VoiceEn");
-            ViewBag.VoiceFrId = new SelectList(db.Voices, "Id", "VoiceFr");
-            ViewBag.VoiceZhId = new SelectList(db.Voices, "Id", "VoiceZh");
-
-
-            ViewBag.NumbersEn = new SelectList(db.Numbers, "Id", "WordNumberEn");
-            ViewBag.NumbersFr = new SelectList(db.Numbers, "Id", "WordNumberFr");
-            ViewBag.NumbersZh = new SelectList(db.Numbers, "Id", "WordNumberZh");
-
-            ViewBag.PersonsEn = new SelectList(db.Persons, "Id", "ConjugatedPersonEn");
-            ViewBag.PersonsFr = new SelectList(db.Persons, "Id", "ConjugatedPersonFr");
-            ViewBag.PersonsZh = new SelectList(db.Persons, "Id", "ConjugatedPersonZh");
             return View(verb);
         }
 
@@ -255,47 +133,38 @@ namespace Horizone.Areas.BackOffice.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Verb verb = db.Verbs.Include(t => t.TochLanguage).Include("Numbers").Include("Persons").SingleOrDefault(x => x.Id == id);
+            Verb verb = db.Verbs.Include(p => p.DictionaryTocharian)
+                .Include(p => p.DictionaryTocharian.TochLanguage)
+                .Include(n => n.DictionaryTocharian.WordClass)
+                .Include(n => n.DictionaryTocharian.WordSubClass)
+                .Include(d => d.DictionaryTocharian.Numbers)
+                .Include("Persons").SingleOrDefault(p => p.Id == id);
             if (verb == null)
             {
                 return HttpNotFound();
             }
+            ViewBag.DictionaryId = new SelectList(db.DictionaryTocharians.Where(x => x.WordClassId == 10).OrderBy(x => x.Word), "Id", "Word",verb.DictionaryId);
 
-            ViewBag.TochLanguageId = new SelectList(db.TochLanguages, "Id", "Language");
+            ViewBag.MoodEnId = new SelectList(db.Moods.OrderBy(x => x.MoodEn), "Id", "MoodEn");
+            ViewBag.MoodFrId = new SelectList(db.Moods.OrderBy(x => x.MoodFr), "Id", "MoodFr");
+            ViewBag.MoodZhId = new SelectList(db.Moods.OrderBy(x => x.MoodZh), "Id", "MoodZh");
 
-            ViewBag.WordClassEnId = new SelectList(db.WordClasses.Where(x => x.ClassEn == "Verb"), "Id", "ClassEn");
-            ViewBag.WordClassFrId = new SelectList(db.WordClasses.Where(x => x.ClassEn == "Verb"), "Id", "ClassFr");
-            ViewBag.WordClassZhId = new SelectList(db.WordClasses.Where(x => x.ClassEn == "Verb"), "Id", "ClassZh");
+            ViewBag.TenseAndAspectEnId = new SelectList(db.TenseAndAspects.OrderBy(x => x.TenseEn), "Id", "TenseEn");
+            ViewBag.TenseAndAspectFrId = new SelectList(db.TenseAndAspects.OrderBy(x => x.TenseFr), "Id", "TenseFr");
+            ViewBag.TenseAndAspectZhId = new SelectList(db.TenseAndAspects.OrderBy(x => x.TenseZh), "Id", "TenseZh");
 
-            ViewBag.WordSubClassEnId = new SelectList(db.WordSubClasses.Where(x => x.WordClass.ClassEn == "Verb"), "Id", "SubClassEn");
-            ViewBag.WordSubClassFrId = new SelectList(db.WordSubClasses.Where(x => x.WordClass.ClassEn == "Verb"), "Id", "SubClassFr");
-            ViewBag.WordSubClassZhId = new SelectList(db.WordSubClasses.Where(x => x.WordClass.ClassEn == "Verb"), "Id", "SubClassZh");
+            ViewBag.ValencyEnId = new SelectList(db.Valencies.OrderBy(x => x.ValencyEn), "Id", "ValencyEn");
+            ViewBag.ValencyFrId = new SelectList(db.Valencies.OrderBy(x => x.ValencyFr), "Id", "ValencyFr");
+            ViewBag.ValencyZhId = new SelectList(db.Valencies.OrderBy(x => x.ValencyZh), "Id", "ValencyZh");
 
+            ViewBag.VoiceEnId = new SelectList(db.Voices.OrderBy(x => x.VoiceEn), "Id", "VoiceEn");
+            ViewBag.VoiceFrId = new SelectList(db.Voices.OrderBy(x => x.VoiceFr), "Id", "VoiceFr");
+            ViewBag.VoiceZhId = new SelectList(db.Voices.OrderBy(x => x.VoiceZh), "Id", "VoiceZh");
 
-            ViewBag.MoodEnId = new SelectList(db.Moods, "Id", "MoodEn");
-            ViewBag.MoodFrId = new SelectList(db.Moods, "Id", "MoodFr");
-            ViewBag.MoodZhId = new SelectList(db.Moods, "Id", "MoodZh");
+            ViewBag.PersonsEn = new SelectList(db.Persons.OrderBy(x => x.ConjugatedPersonEn), "Id", "ConjugatedPersonEn");
+            ViewBag.PersonsFr = new SelectList(db.Persons.OrderBy(x => x.ConjugatedPersonEn), "Id", "ConjugatedPersonFr");
+            ViewBag.PersonsZh = new SelectList(db.Persons.OrderBy(x => x.ConjugatedPersonEn), "Id", "ConjugatedPersonZh");
 
-            ViewBag.TenseAndAspectEnId = new SelectList(db.TenseAndAspects, "Id", "TenseEn");
-            ViewBag.TenseAndAspectFrId = new SelectList(db.TenseAndAspects, "Id", "TenseFr");
-            ViewBag.TenseAndAspectZhId = new SelectList(db.TenseAndAspects, "Id", "TenseZh");
-
-            ViewBag.ValencyEnId = new SelectList(db.Valencies, "Id", "ValencyEn");
-            ViewBag.ValencyFrId = new SelectList(db.Valencies, "Id", "ValencyFr");
-            ViewBag.ValencyZhId = new SelectList(db.Valencies, "Id", "ValencyZh");
-
-            ViewBag.VoiceEnId = new SelectList(db.Voices, "Id", "VoiceEn");
-            ViewBag.VoiceFrId = new SelectList(db.Voices, "Id", "VoiceFr");
-            ViewBag.VoiceZhId = new SelectList(db.Voices, "Id", "VoiceZh");
-
-
-            ViewBag.NumbersEn = new SelectList(db.Numbers, "Id", "WordNumberEn");
-            ViewBag.NumbersFr = new SelectList(db.Numbers, "Id", "WordNumberFr");
-            ViewBag.NumbersZh = new SelectList(db.Numbers, "Id", "WordNumberZh");
-
-            ViewBag.PersonsEn = new SelectList(db.Persons, "Id", "ConjugatedPersonEn");
-            ViewBag.PersonsFr = new SelectList(db.Persons, "Id", "ConjugatedPersonFr");
-            ViewBag.PersonsZh = new SelectList(db.Persons, "Id", "ConjugatedPersonZh");
             return View(verb);
         }
 
@@ -304,65 +173,41 @@ namespace Horizone.Areas.BackOffice.Controllers
         // plus de détails, voir  https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,VoiceId,ValencyId,TenseAndAspectId,MoodId,PronounSuffix,TochWord,English,Francaise,German,Latin,Chinese,TochLanguageId,WordClassId,WordSubClassId,EquivalentTA,EquivalentTB,TochCommon,TochCorrespondence,EquivalentInOther,DerivedFrom,RelatedLexemes,RootCharacter,InternalRootVowel,Stem,StemClass,Visible")] Verb verb, int[] NumberId, int[] PersonId)
+        public ActionResult Edit([Bind(Include = "Id,DictionaryId,VoiceId,ValencyId,TenseAndAspectId,MoodId,PronounSuffix")] Verb verb, int[] PersonId)
         {
-            db.Entry(verb).State = EntityState.Modified;
-            db.Verbs.Include(t => t.TochLanguage).Include("Numbers").Include("Persons").SingleOrDefault(x => x.Id == verb.Id);
-
             if (ModelState.IsValid)
             {
-                if (verb.TochLanguageId == 1 || verb.TochLanguageId == 3)
-                {
-                    verb.EquivalentTA = verb.TochWord;
-                }
-                if (verb.TochLanguageId == 2 || verb.TochLanguageId == 4)
-                {
-                    verb.EquivalentTB = verb.TochWord;
-                }
-
-                if (NumberId != null)
-                    verb.Numbers = db.Numbers.Where(x => NumberId.Contains(x.Id)).ToList();
+                db.Entry(verb).State = EntityState.Modified;
+              
                 if (PersonId != null)
                     verb.Persons = db.Persons.Where(x => PersonId.Contains(x.Id)).ToList();
-                EditDictionary(verb.Id);
+                if (verb.Persons.Count() == 0)
+                    verb.Persons = db.Persons.Where(x => x.ConjugatedPersonEn == "No Person").ToList();
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-           
-            ViewBag.TochLanguageId = new SelectList(db.TochLanguages, "Id", "Language");
+            ViewBag.DictionaryId = new SelectList(db.DictionaryTocharians.Where(x => x.WordClassId == 10).OrderBy(x => x.Word), "Id", "Word",verb.DictionaryId);
 
-            ViewBag.WordClassEnId = new SelectList(db.WordClasses.Where(x => x.ClassEn == "Verb"), "Id", "ClassEn");
-            ViewBag.WordClassFrId = new SelectList(db.WordClasses.Where(x => x.ClassEn == "Verb"), "Id", "ClassFr");
-            ViewBag.WordClassZhId = new SelectList(db.WordClasses.Where(x => x.ClassEn == "Verb"), "Id", "ClassZh");
+            ViewBag.MoodEnId = new SelectList(db.Moods.OrderBy(x => x.MoodEn), "Id", "MoodEn");
+            ViewBag.MoodFrId = new SelectList(db.Moods.OrderBy(x => x.MoodFr), "Id", "MoodFr");
+            ViewBag.MoodZhId = new SelectList(db.Moods.OrderBy(x => x.MoodZh), "Id", "MoodZh");
 
-            ViewBag.WordSubClassEnId = new SelectList(db.WordSubClasses.Where(x => x.WordClass.ClassEn == "Verb"), "Id", "SubClassEn");
-            ViewBag.WordSubClassFrId = new SelectList(db.WordSubClasses.Where(x => x.WordClass.ClassEn == "Verb"), "Id", "SubClassFr");
-            ViewBag.WordSubClassZhId = new SelectList(db.WordSubClasses.Where(x => x.WordClass.ClassEn == "Verb"), "Id", "SubClassZh");
+            ViewBag.TenseAndAspectEnId = new SelectList(db.TenseAndAspects.OrderBy(x => x.TenseEn), "Id", "TenseEn");
+            ViewBag.TenseAndAspectFrId = new SelectList(db.TenseAndAspects.OrderBy(x => x.TenseFr), "Id", "TenseFr");
+            ViewBag.TenseAndAspectZhId = new SelectList(db.TenseAndAspects.OrderBy(x => x.TenseZh), "Id", "TenseZh");
 
-            ViewBag.MoodEnId = new SelectList(db.Moods, "Id", "MoodEn");
-            ViewBag.MoodFrId = new SelectList(db.Moods, "Id", "MoodFr");
-            ViewBag.MoodZhId = new SelectList(db.Moods, "Id", "MoodZh");
+            ViewBag.ValencyEnId = new SelectList(db.Valencies.OrderBy(x => x.ValencyEn), "Id", "ValencyEn");
+            ViewBag.ValencyFrId = new SelectList(db.Valencies.OrderBy(x => x.ValencyFr), "Id", "ValencyFr");
+            ViewBag.ValencyZhId = new SelectList(db.Valencies.OrderBy(x => x.ValencyZh), "Id", "ValencyZh");
 
-            ViewBag.TenseAndAspectEnId = new SelectList(db.TenseAndAspects, "Id", "TenseEn");
-            ViewBag.TenseAndAspectFrId = new SelectList(db.TenseAndAspects, "Id", "TenseFr");
-            ViewBag.TenseAndAspectZhId = new SelectList(db.TenseAndAspects, "Id", "TenseZh");
+            ViewBag.VoiceEnId = new SelectList(db.Voices.OrderBy(x => x.VoiceEn), "Id", "VoiceEn");
+            ViewBag.VoiceFrId = new SelectList(db.Voices.OrderBy(x => x.VoiceFr), "Id", "VoiceFr");
+            ViewBag.VoiceZhId = new SelectList(db.Voices.OrderBy(x => x.VoiceZh), "Id", "VoiceZh");
 
-            ViewBag.ValencyEnId = new SelectList(db.Valencies, "Id", "ValencyEn");
-            ViewBag.ValencyFrId = new SelectList(db.Valencies, "Id", "ValencyFr");
-            ViewBag.ValencyZhId = new SelectList(db.Valencies, "Id", "ValencyZh");
+            ViewBag.PersonsEn = new SelectList(db.Persons.OrderBy(x => x.ConjugatedPersonEn), "Id", "ConjugatedPersonEn");
+            ViewBag.PersonsFr = new SelectList(db.Persons.OrderBy(x => x.ConjugatedPersonEn), "Id", "ConjugatedPersonFr");
+            ViewBag.PersonsZh = new SelectList(db.Persons.OrderBy(x => x.ConjugatedPersonEn), "Id", "ConjugatedPersonZh");
 
-            ViewBag.VoiceEnId = new SelectList(db.Voices, "Id", "VoiceEn");
-            ViewBag.VoiceFrId = new SelectList(db.Voices, "Id", "VoiceFr");
-            ViewBag.VoiceZhId = new SelectList(db.Voices, "Id", "VoiceZh");
-
-
-            ViewBag.NumbersEn = new SelectList(db.Numbers, "Id", "WordNumberEn");
-            ViewBag.NumbersFr = new SelectList(db.Numbers, "Id", "WordNumberFr");
-            ViewBag.NumbersZh = new SelectList(db.Numbers, "Id", "WordNumberZh");
-
-            ViewBag.PersonsEn = new SelectList(db.Persons, "Id", "ConjugatedPersonEn");
-            ViewBag.PersonsFr = new SelectList(db.Persons, "Id", "ConjugatedPersonFr");
-            ViewBag.PersonsZh = new SelectList(db.Persons, "Id", "ConjugatedPersonZh");
             return View(verb);
         }
 
@@ -373,7 +218,7 @@ namespace Horizone.Areas.BackOffice.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Verb verb = db.Verbs.Include("Numbers").Include("Persons").SingleOrDefault(x => x.Id == id);
+            Verb verb = db.Verbs.Include(p => p.DictionaryTocharian).Include(p => p.DictionaryTocharian.TochLanguage).Include("Persons").SingleOrDefault(p => p.Id == id);
             if (verb == null)
             {
                 return HttpNotFound();
@@ -386,12 +231,29 @@ namespace Horizone.Areas.BackOffice.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            Verb verb = db.Verbs.Include("Numbers").Include("Persons").SingleOrDefault(x => x.Id == id);
+            Verb verb = db.Verbs.Include(p => p.DictionaryTocharian).Include(p => p.DictionaryTocharian.TochLanguage).Include("Persons").SingleOrDefault(p => p.Id == id);
             db.Verbs.Remove(verb);
             db.SaveChanges();
             return RedirectToAction("Index");
         }
-
-       
+        public ActionResult SearchDictionary(string search)
+        {
+            IEnumerable<Verb> verbs = db.Verbs.Include(d => d.DictionaryTocharian)
+                .Include(d => d.DictionaryTocharian.TochLanguage)
+                .Include(d => d.DictionaryTocharian.WordClass)
+                .Include(d => d.DictionaryTocharian.WordSubClass)
+;
+            if (!string.IsNullOrWhiteSpace(search))
+            {
+                verbs = verbs.Where(x => x.DictionaryTocharian.Word.Contains(search));
+            }
+            if (verbs.Count() == 0)
+            {
+                Display("Aucun résultat");
+            }
+            ViewBag.Count = verbs.Count();
+            ViewBag.Search = search;
+            return View("SearchDictionary", verbs.ToList());
+        }
     }
 }

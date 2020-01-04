@@ -4,8 +4,8 @@
     ViewBag.Title = @StaticResource.Resources.SourceStory;
 }
 
-<h3>@StaticResource.Resources.TochStory </h3>
-<h4>    @StaticResource.Resources.SearchBy :  @StaticResource.Resources.SourceStory</h4>
+<h3>@StaticResource.Resources.SourceStory </h3>
+<h5>&#9658; @StaticResource.Resources.ClickButton @StaticResource.Resources.SearchBy @StaticResource.Resources.SourceStory @StaticResource.Resources.In @StaticResource.Resources.TochStory</h5>
 
 @if (Session[Horizone.Common.CommonConstants.CurrentCulture].ToString() == "en")
 {
@@ -22,6 +22,7 @@
         }
     </div>
 }
+
 @if (Session[Horizone.Common.CommonConstants.CurrentCulture].ToString() == "fr")
 {
     var source = Model.OrderBy(x => x.SourceFr).ToList();

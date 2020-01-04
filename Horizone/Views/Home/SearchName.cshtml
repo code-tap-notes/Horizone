@@ -2,41 +2,47 @@
 
 @{
     ViewBag.Title = @StaticResource.Resources.Search;
-
 }
 <h2> @StaticResource.Resources.ProperNoun</h2>
 <h3>@StaticResource.Resources.SearchResult</h3>
-@Model.Count() @StaticResource.Resources.SearchResult <b> " @ViewBag.Search " </b> @StaticResource.Resources.Found
+&#10063; @Model.Count() @StaticResource.Resources.SearchResult <b> " @ViewBag.Search " </b> @StaticResource.Resources.Found @StaticResource.Resources.In @StaticResource.Resources.List @StaticResource.Resources.ProperNoun
 <br />
-
-@foreach (var item in Model)
+@if (Model.Count() != 0)
 {
-    <div class="col-md-3">
-        <form class="form-group row" action="@Url.Action("SearchStory", "Home" )" method="post" enctype="multipart/form-data">
-            <button type="submit" class="btn btn-default" style="width:95%; text-align:left;">  @Html.DisplayFor(modelItem => item.Name) </button>
-            <input class="form-control" type="hidden" id="Search" name="search" value="@item.Name" />
+    <h5>&#10148; @StaticResource.Resources.ClickButton @StaticResource.Resources.SearchBy @StaticResource.Resources.ProperNoun <b> " @ViewBag.Search " </b> @StaticResource.Resources.In @StaticResource.Resources.TochStory</h5>
+    foreach (var item in Model)
+    {
+        <div class="col-md-3">
+            <form class="form-group row" action="@Url.Action("SearchStory", "Home" )" method="post" enctype="multipart/form-data">
+                <button type="submit" class="btn btn-default" style="width:50%; text-align:left;">  @Html.DisplayFor(modelItem => item.Name) </button>
+                <input class="form-control" type="hidden" id="Search" name="search" value="@item.Name" />
 
-        </form>
-    </div>
+            </form>
+        </div>
+    }
 }
 <br />
 @if (Model.Count() == 0)
 {
-    @StaticResource.Resources.AskSearchAdvantage;
-
+    <p>
+        &#10067; @StaticResource.Resources.AskSearchAdvantage
+    </p>
+    <h5>&#10148; @StaticResource.Resources.ClickButton @StaticResource.Resources.SearchBy @StaticResource.Resources.ProperNoun <b> " @ViewBag.Search " </b> </h5>
     <br />
-    <form class="form-group row" action="@Url.Action("SearchIndex", "Home" )" method="post" enctype="multipart/form-data">
-        <button type="submit" class="btn btn-default" style="width:20%; text-align:left;"> @StaticResource.Resources.Search <b> " @ViewBag.Search " </b> </button>
-        <input class="form-control" type="hidden" id="Search" name="search" value="@ViewBag.Search" />
-    </form>
+    <div class="col-md-3">
+        <form class="form-group row"  action="@Url.Action("SearchIndex", "Home" )" method="post" enctype="multipart/form-data">
+            <button type="submit" class="btn btn-default" style="width:20%; text-align:left; padding:5px;"> @StaticResource.Resources.Search <b> " @ViewBag.Search " </b> </button>
+            <input class="form-control" type="hidden" id="Search" name="search" value="@ViewBag.Search" />
+        </form>
+    </div>
 }
-
 <br />
-
 @if (@ViewBag.Search != null)
 {
     <br />
-    @StaticResource.Resources.AskSearchAdvantage;
+    <p>
+        &#10067; @StaticResource.Resources.AskSearchAdvantage @StaticResource.Resources.In @StaticResource.Resources.OtherSite
+    </p>
     <br />
     var ulrA = "https://www.univie.ac.at/tocharian/?E_A_" + @ViewBag.Search;
     var ulrB = "https://www.univie.ac.at/tocharian/?E_B_" + @ViewBag.Search;
@@ -47,9 +53,6 @@
     <br />
     <a href="@ulrG"> @StaticResource.Resources.Search <b> " @ViewBag.Search " @StaticResource.Resources.With Google</b></a>
     <br />
-
 }
-
 <br />
-
 @Html.ActionLink(StaticResource.Resources.Return, "ProperNoun", null, new { @class = "btn btn-primary", style = "width:90px" })
