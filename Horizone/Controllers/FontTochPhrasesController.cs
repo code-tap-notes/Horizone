@@ -47,16 +47,21 @@ namespace Horizone.Controllers
 
             if (!string.IsNullOrWhiteSpace(search))
             {
-                tochPhrases = db.TochPhrases.Include("TochLanguage").Where(x => x.Phrase.Contains(search) ||x.English.Contains(search) || x.Francaise.Contains(search));
-            
+                tochPhrases = db.TochPhrases.Include("TochLanguage").Where(x => x.Phrase.Contains(search) 
+                || (x.English != null && x.English.Contains(search)) 
+                || (x.Francaise != null && x.Francaise.Contains(search))
+                || (x.Chinese !=null && x.Chinese.Contains(search)));
+             
             }
            
             if (tochPhrases.Count() == 0)
             {
                 Display("Aucun résultat");
             }
+            ViewBag.Search = search;
 
             return View("Search", tochPhrases.ToList());
         }
+
     }
 }

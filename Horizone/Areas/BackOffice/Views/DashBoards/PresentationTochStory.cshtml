@@ -1,0 +1,12 @@
+﻿@model IEnumerable<Horizone.Models.Presentation>
+
+
+<h4>    @StaticResource.Resources.TochStory </h4>
+@foreach (var item in Model)
+{
+    if (item.Language.Symbol == Session[Horizone.Common.CommonConstants.CurrentCulture].ToString())
+    {
+        @Html.Raw(item.TochStory);
+    }
+}
+

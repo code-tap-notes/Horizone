@@ -18,7 +18,7 @@ namespace Horizone.Areas.BackOffice.Controllers
         // GET: BackOffice/Collaborations
         public ActionResult Index()
         {
-            return View(db.Collaborations.OrderBy(x=>x.Order).ToList());
+            return View(db.Collaborations.Include("Publications").Include("ImageCollaborations").OrderBy(x=>x.Order).ToList());
         }
        
         // GET: BackOffice/Collaborations/Details/5
@@ -28,7 +28,7 @@ namespace Horizone.Areas.BackOffice.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Collaboration collaboration = db.Collaborations.Include("Publications").SingleOrDefault(x => x.Id == id);
+            Collaboration collaboration = db.Collaborations.Include("Publications").Include("ImageCollaborations").SingleOrDefault(x => x.Id == id);
             if (collaboration.Publications.Count() == 0)
                 collaboration.Publications = db.Publications.Where(x => x.Title == "No visible").ToList();
             if (collaboration == null)
@@ -142,21 +142,21 @@ namespace Horizone.Areas.BackOffice.Controllers
 
             foreach (var item in collaborations)                                       
                 if (item.Team) collaborations.Add(item);          
-            return View(collaborations.Include("Publications").OrderBy(x => x.Order).ToList());
+            return View(collaborations.Include("Publications").Include("ImageCollaborations").OrderBy(x => x.Order).ToList());
         }
         public ActionResult Collaboration()
         {
             var collaborations = db.Collaborations;
             foreach (var item in collaborations)           
                 if (item.Collaborator) collaborations.Add(item);            
-            return View(collaborations.Include("Publications").OrderBy(x => x.Order).ToList());
+            return View(collaborations.Include("Publications").Include("ImageCollaborations").OrderBy(x => x.Order).ToList());
         }
         public ActionResult AssociatedResearcher()
         {
             var collaborations = db.Collaborations;
             foreach (var item in collaborations)
                 if (item.AssociatedResearcher) collaborations.Add(item);
-            return View(collaborations.Include("Publications").OrderBy(x => x.Order).ToList());
+            return View(collaborations.Include("Publications").Include("ImageCollaborations").OrderBy(x => x.Order).ToList());
         }
 
         [HttpPost]

@@ -1694,7 +1694,7 @@ TochPhase</value>
     <value>Signification</value>
   </data>
   <data name="ReverseDictionary" xml:space="preserve">
-    <value>Dictionnaire inversé</value>
+    <value>Index inversé</value>
   </data>
   <data name="Required" xml:space="preserve">
     <value>Le champ est obligatoire.</value>
@@ -1878,5 +1878,50 @@ TochPhase</value>
   </data>
   <data name="TochCommon" xml:space="preserve">
     <value>Tokharien commun</value>
+  </data>
+  <data name="IndexSource" xml:space="preserve">
+    <value>Index Source</value>
+  </data>
+  <data name="Source" xml:space="preserve">
+    <value>Source</value>
+  </data>
+  <data name="Found" xml:space="preserve">
+    <value>Trouvé</value>
+  </data>
+  <data name="Update" xml:space="preserve">
+    <value>Mise à jour</value>
+  </data>
+  <data name="AddNP" xml:space="preserve">
+    <value>Ajouter Nom Propre</value>
+  </data>
+  <data name="AskAddNP" xml:space="preserve">
+    <value>Voulez vous ajouter au dictionaire des noms propres?</value>
+  </data>
+  <data name="AskSearchAdvantage" xml:space="preserve">
+    <value>Voulez-vous rechercher un avantage?</value>
+  </data>
+  <data name="CheckDictionary" xml:space="preserve">
+    <value>Vérifier mot dans dictionnaire</value>
+  </data>
+  <data name="OtherLanguage" xml:space="preserve">
+    <value>Autre langue</value>
+  </data>
+  <data name="Use" xml:space="preserve">
+    <value>Utilisation</value>
+  </data>
+  <data name="In" xml:space="preserve">
+    <value>Dans</value>
+  </data>
+  <data name="With" xml:space="preserve">
+    <value>Avec</value>
+  </data>
+  <data name="OtherWebPage" xml:space="preserve">
+    <value>Autre page Web</value>
+  </data>
+  <data name="UpdateDictionary" xml:space="preserve">
+    <value>Mise à jour Dictionaire</value>
+  </data>
+  <data name="AskUpdate" xml:space="preserve">
+    <value>Mettre à jour catégorie morpheme</value>
   </data>
 </root>

@@ -1,0 +1,42 @@
+﻿@model IEnumerable<Horizone.Models.TochStory>
+<div id="content-vp">
+    <div class="main-cat">
+        <h3 class="title">@StaticResource.Resources.TochStory  </h3>
+    </div>
+    <div class="clear"></div>
+</div>
+<div class="des">
+    <div class="row">
+
+        <div class="col-md-4">
+            <img class="moyenImage" src="~/Image/tarim.jpg" />
+
+        </div>
+        <div class="col-md-4">
+            <img class="moyenImage" src="~/Image/2.jpg" />
+
+        </div>
+        <div class="col-md-4">
+            <img class="moyenImage" src="~/Image/19.jpg" />
+
+        </div>
+    </div>
+    <div class="row">
+        @foreach (var item in Model)
+        {
+            <div class="col-md-4">
+                <h5>
+                    <b>&diams; @Html.DisplayFor(modelItem => item.Name)</b>
+                </h5>
+                <h7>
+                    <b> &#10063; @StaticResource.Resources.Summary </b>
+                </h7>
+                @Html.Raw(item.Description)
+                @Html.ActionLink(@StaticResource.Resources.LearnMore, "DetailsStory", new { id = item.Id }, new { @class = "btn btn-info", style = "width:90px" })
+
+            </div>
+        }
+    </div>
+</div>
+<div class="clear"></div>
+

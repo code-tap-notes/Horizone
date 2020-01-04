@@ -1,0 +1,106 @@
+﻿@model IEnumerable<Horizone.Models.DictionaryTocharian>
+
+@{
+    ViewBag.Title = @StaticResource.Resources.ParallelDictionary;
+}
+
+<h2>@StaticResource.Resources.ParallelDictionary</h2>
+
+<div id="search">
+    <form class="form-group row" action="@Url.Action("SearchWord", "DashBoards")" method="post" enctype="multipart/form-data">
+        <div>
+            @{Html.RenderAction("SearchForm", "DashBoards"); }
+        </div>
+    </form>
+
+</div>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Word)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.EquivalentTA)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.EquivalentTB)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TochCorrespondence)
+        </th>
+
+        <th>
+            @Html.DisplayNameFor(model => model.Sanskrit)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.English)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Francaise)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.German)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Latin)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Chinese)
+        </th>
+
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Word)
+            </td>
+            <td>
+                @if (item.TochLanguage.Language == "TA")
+                {
+                    @Html.DisplayFor(modelItem => item.Word)
+                }
+                else
+                {
+                    @Html.DisplayFor(modelItem => item.EquivalentTA)
+                }
+            </td>
+            <td>
+                @if (item.TochLanguage.Language == "TB")
+                {
+                    @Html.DisplayFor(modelItem => item.Word)
+                }
+                else
+                {
+                    @Html.DisplayFor(modelItem => item.EquivalentTB)
+                }
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TochCorrespondence)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Sanskrit)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.English)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Francaise)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.German)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Latin)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Chinese)
+            </td>
+
+
+        </tr>
+    }
+
+</table>

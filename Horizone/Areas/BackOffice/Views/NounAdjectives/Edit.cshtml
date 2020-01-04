@@ -326,6 +326,8 @@
 
     <div class="form-group">
         <div class="col-md-offset-2 col-md-10">
+            @*Html.ActionLink(@StaticResource.Resources.UpdateDictionary, "EditDictionary", new { id= Model.Id }, new { @class = "btn btn-default", style = "width:105px" })
+                *@
             <input type="submit" value=@StaticResource.Resources.Save class="btn btn-primary" style="width:85px" />
             @if (Model.WordClass.ClassEn == "Noun")
             {

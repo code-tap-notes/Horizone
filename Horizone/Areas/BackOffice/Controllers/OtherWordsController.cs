@@ -39,11 +39,106 @@ namespace Horizone.Areas.BackOffice.Controllers
             }
             return View(otherWord);
         }
+        //Add a new word to dictionary
+        public ActionResult AddDictionary(int? id)
+        {
 
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            OtherWord otherWord = db.OtherWords.Include(n => n.TochLanguage).Include(n => n.WordClass).Include(n => n.WordSubClass).SingleOrDefault(y => y.Id == id);
+            var dictionaryTocharian = new DictionaryTocharian();
+                      
+            if (otherWord == null)
+            {
+                return HttpNotFound();
+            }
+
+            if (otherWord.TochWord != null)
+            {
+
+                IEnumerable<DictionaryTocharian> dictionaryTocharians = db.DictionaryTocharians.Where(x => x.Word == otherWord.TochWord);
+
+                    if (dictionaryTocharians.Count() == 0)
+                    {
+                        dictionaryTocharian.Word = otherWord.TochWord;
+                        dictionaryTocharian.Sanskrit = otherWord.Sanskrit;
+                        dictionaryTocharian.English = otherWord.English ;
+                        dictionaryTocharian.Francaise = otherWord.Francaise;
+                        dictionaryTocharian.German = otherWord.German;
+                        dictionaryTocharian.Latin = otherWord.Latin;
+                        dictionaryTocharian.Chinese = otherWord.Chinese;
+                        dictionaryTocharian.Visible = true;
+                        dictionaryTocharian.EquivalentTA = otherWord.EquivalentTA;
+                        dictionaryTocharian.EquivalentTB = otherWord.EquivalentTB;
+                        dictionaryTocharian.TochCommon = otherWord.TochCommon;
+                        dictionaryTocharian.TochCorrespondence = otherWord.TochCorrespondence;
+                        dictionaryTocharian.EquivalentInOther = otherWord.EquivalentInOther;
+
+                        dictionaryTocharian.TochLanguageId = otherWord.TochLanguageId;
+                        dictionaryTocharian.WordClassId = otherWord.WordClassId;
+                        dictionaryTocharian.WordSubClassId = otherWord.WordSubClassId;
+                        db.DictionaryTocharians.Add(dictionaryTocharian);
+                    }
+                    else
+                    {
+                        Display("Mots existé");
+                    }
+                
+                db.SaveChanges();
+                return RedirectToAction("index");
+            }
+            ViewBag.NewwordId = dictionaryTocharian.Id;
+            return View();
+
+        }
+        //Update a word in dictionary
+        public ActionResult EditDictionary(int? id)
+        {
+            OtherWord otherWord = db.OtherWords.Include("WordClass").Include("WordSubClass").Include("TochLanguage").SingleOrDefault(x => x.Id == id);
+            DictionaryTocharian dictionaryTocharian = db.DictionaryTocharians.Include("TochLanguage").Include("WordClass").Include("WordSubClass").SingleOrDefault(x => x.Word == otherWord.TochWord);
+            if (dictionaryTocharian == null)
+            {
+                AddDictionary(otherWord.Id);
+            }
+
+            if (dictionaryTocharian != null)
+            {
+                dictionaryTocharian.Sanskrit = otherWord.Sanskrit;
+                dictionaryTocharian.English = otherWord.English;
+                dictionaryTocharian.Francaise = otherWord.Francaise;
+                dictionaryTocharian.German = otherWord.German;
+                dictionaryTocharian.Latin = otherWord.Latin;
+                dictionaryTocharian.Chinese = otherWord.Chinese;
+                dictionaryTocharian.Visible = true;
+                dictionaryTocharian.EquivalentTA = otherWord.EquivalentTA;
+                dictionaryTocharian.EquivalentTB = otherWord.EquivalentTB;
+                dictionaryTocharian.TochCommon = otherWord.TochCommon;
+                dictionaryTocharian.TochCorrespondence = otherWord.TochCorrespondence;
+                dictionaryTocharian.EquivalentInOther = otherWord.EquivalentInOther;
+                dictionaryTocharian.TochLanguageId = otherWord.TochLanguageId;
+                dictionaryTocharian.WordClassId = otherWord.WordClassId;
+                dictionaryTocharian.WordSubClassId = otherWord.WordSubClassId;
+
+                db.SaveChanges();
+                return RedirectToAction("Index");
+            }
+            return View();
+        }
         // GET: BackOffice/OtherWords/Create
         public ActionResult Create()
         {
             ViewBag.TochLanguageId = new SelectList(db.TochLanguages, "Id", "Language");
+
+            ViewBag.WordClassEnId = new SelectList(db.WordClasses.Where(x => x.ClassEn != "Noun" && x.ClassEn != "Adjective" && x.ClassEn != "Pronoun" && x.ClassEn != "Verb"), "Id", "ClassEn");
+            ViewBag.WordClassFrId = new SelectList(db.WordClasses.Where(x => x.ClassEn != "Noun" && x.ClassEn != "Adjective" && x.ClassEn != "Pronoun" && x.ClassEn != "Verb"), "Id", "ClassFr");
+            ViewBag.WordClassZhId = new SelectList(db.WordClasses.Where(x => x.ClassEn != "Noun" && x.ClassEn != "Adjective" && x.ClassEn != "Pronoun" && x.ClassEn != "Verb"), "Id", "ClassZh");
+
+            ViewBag.WordSubClassEnId = new SelectList(db.WordSubClasses.Where(x => x.WordClass.ClassEn != "Noun" && x.WordClass.ClassEn != "Adjective" && x.WordClass.ClassEn != "Pronoun" && x.WordClass.ClassEn != "Verb"), "Id", "SubClassEn");
+            ViewBag.WordSubClassFrId = new SelectList(db.WordSubClasses.Where(x => x.WordClass.ClassEn != "Noun" && x.WordClass.ClassEn != "Adjective" && x.WordClass.ClassEn != "Pronoun" && x.WordClass.ClassEn != "Verb"), "Id", "SubClassFr");
+            ViewBag.WordSubClassZhId = new SelectList(db.WordSubClasses.Where(x => x.WordClass.ClassEn != "Noun" && x.WordClass.ClassEn != "Adjective" && x.WordClass.ClassEn != "Pronoun" && x.WordClass.ClassEn != "Verb"), "Id", "SubClassZh");
+
 
             ViewBag.WordClassEnId = new SelectList(db.WordClasses, "Id", "ClassEn");
             ViewBag.WordClassFrId = new SelectList(db.WordClasses, "Id", "ClassFr");
@@ -88,22 +183,25 @@ namespace Horizone.Areas.BackOffice.Controllers
                 }
                 db.OtherWords.Add(otherWord);
                 db.SaveChanges();
+                AddDictionary(otherWord.Id);
                 return RedirectToAction("Index");
             }
 
             ViewBag.TochLanguageId = new SelectList(db.TochLanguages, "Id", "Language");
 
-            ViewBag.WordClassEnId = new SelectList(db.WordClasses, "Id", "ClassEn");
-            ViewBag.WordClassFrId = new SelectList(db.WordClasses, "Id", "ClassFr");
-            ViewBag.WordClassZhId = new SelectList(db.WordClasses, "Id", "ClassZh");
+            ViewBag.WordClassEnId = new SelectList(db.WordClasses.Where(x => x.ClassEn != "Noun" && x.ClassEn != "Adjective" && x.ClassEn != "Pronoun" && x.ClassEn != "Verb"), "Id", "ClassEn");
+            ViewBag.WordClassFrId = new SelectList(db.WordClasses.Where(x => x.ClassEn != "Noun" && x.ClassEn != "Adjective" && x.ClassEn != "Pronoun" && x.ClassEn != "Verb"), "Id", "ClassFr");
+            ViewBag.WordClassZhId = new SelectList(db.WordClasses.Where(x => x.ClassEn != "Noun" && x.ClassEn != "Adjective" && x.ClassEn != "Pronoun" && x.ClassEn != "Verb"), "Id", "ClassZh");
 
-            ViewBag.WordSubClassEnId = new SelectList(db.WordSubClasses, "Id", "SubClassEn");
-            ViewBag.WordSubClassFrId = new SelectList(db.WordSubClasses, "Id", "SubClassFr");
-            ViewBag.WordSubClassZhId = new SelectList(db.WordSubClasses, "Id", "SubClassZh");
+            ViewBag.WordSubClassEnId = new SelectList(db.WordSubClasses.Where(x => x.WordClass.ClassEn != "Noun" && x.WordClass.ClassEn != "Adjective" && x.WordClass.ClassEn != "Pronoun" && x.WordClass.ClassEn != "Verb"), "Id", "SubClassEn");
+            ViewBag.WordSubClassFrId = new SelectList(db.WordSubClasses.Where(x => x.WordClass.ClassEn != "Noun" && x.WordClass.ClassEn != "Adjective" && x.WordClass.ClassEn != "Pronoun" && x.WordClass.ClassEn != "Verb"), "Id", "SubClassFr");
+            ViewBag.WordSubClassZhId = new SelectList(db.WordSubClasses.Where(x => x.WordClass.ClassEn != "Noun" && x.WordClass.ClassEn != "Adjective" && x.WordClass.ClassEn != "Pronoun" && x.WordClass.ClassEn != "Verb"), "Id", "SubClassZh");
 
             ViewBag.NumbersEn = new SelectList(db.Numbers, "Id", "WordNumberEn");
             ViewBag.NumbersFr = new SelectList(db.Numbers, "Id", "WordNumberFr");
-            ViewBag.NumbersZh = new SelectList(db.Numbers, "Id", "WordNumberZh"); return View(otherWord);
+            ViewBag.NumbersZh = new SelectList(db.Numbers, "Id", "WordNumberZh");
+
+            return View(otherWord);
         }
 
         // GET: BackOffice/OtherWords/Edit/5
@@ -120,13 +218,13 @@ namespace Horizone.Areas.BackOffice.Controllers
             }
             ViewBag.TochLanguageId = new SelectList(db.TochLanguages, "Id", "Language");
 
-            ViewBag.WordClassEnId = new SelectList(db.WordClasses, "Id", "ClassEn");
-            ViewBag.WordClassFrId = new SelectList(db.WordClasses, "Id", "ClassFr");
-            ViewBag.WordClassZhId = new SelectList(db.WordClasses, "Id", "ClassZh");
+            ViewBag.WordClassEnId = new SelectList(db.WordClasses.Where(x => x.ClassEn != "Noun" && x.ClassEn != "Adjective" && x.ClassEn != "Pronoun" && x.ClassEn != "Verb"), "Id", "ClassEn");
+            ViewBag.WordClassFrId = new SelectList(db.WordClasses.Where(x => x.ClassEn != "Noun" && x.ClassEn != "Adjective" && x.ClassEn != "Pronoun" && x.ClassEn != "Verb"), "Id", "ClassFr");
+            ViewBag.WordClassZhId = new SelectList(db.WordClasses.Where(x => x.ClassEn != "Noun" && x.ClassEn != "Adjective" && x.ClassEn != "Pronoun" && x.ClassEn != "Verb"), "Id", "ClassZh");
 
-            ViewBag.WordSubClassEnId = new SelectList(db.WordSubClasses, "Id", "SubClassEn");
-            ViewBag.WordSubClassFrId = new SelectList(db.WordSubClasses, "Id", "SubClassFr");
-            ViewBag.WordSubClassZhId = new SelectList(db.WordSubClasses, "Id", "SubClassZh");
+            ViewBag.WordSubClassEnId = new SelectList(db.WordSubClasses.Where(x => x.WordClass.ClassEn != "Noun" && x.WordClass.ClassEn != "Adjective" && x.WordClass.ClassEn != "Pronoun" && x.WordClass.ClassEn != "Verb"), "Id", "SubClassEn");
+            ViewBag.WordSubClassFrId = new SelectList(db.WordSubClasses.Where(x => x.WordClass.ClassEn != "Noun" && x.WordClass.ClassEn != "Adjective" && x.WordClass.ClassEn != "Pronoun" && x.WordClass.ClassEn != "Verb"), "Id", "SubClassFr");
+            ViewBag.WordSubClassZhId = new SelectList(db.WordSubClasses.Where(x => x.WordClass.ClassEn != "Noun" && x.WordClass.ClassEn != "Adjective" && x.WordClass.ClassEn != "Pronoun" && x.WordClass.ClassEn != "Verb"), "Id", "SubClassZh");
 
             ViewBag.NumbersEn = new SelectList(db.Numbers, "Id", "WordNumberEn");
             ViewBag.NumbersFr = new SelectList(db.Numbers, "Id", "WordNumberFr");
@@ -156,31 +254,31 @@ namespace Horizone.Areas.BackOffice.Controllers
 
                 if (NumberId != null)
                     otherWord.Numbers = db.Numbers.Where(x => NumberId.Contains(x.Id)).ToList();
-
+                EditDictionary(otherWord.Id);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            if (ModelState.IsValid)
-            {
-                db.Entry(otherWord).State = EntityState.Modified;
-                db.SaveChanges();
-                return RedirectToAction("Index");
-            }
+            
             ViewBag.TochLanguageId = new SelectList(db.TochLanguages, "Id", "Language");
 
-            ViewBag.WordClassEnId = new SelectList(db.WordClasses, "Id", "ClassEn");
-            ViewBag.WordClassFrId = new SelectList(db.WordClasses, "Id", "ClassFr");
-            ViewBag.WordClassZhId = new SelectList(db.WordClasses, "Id", "ClassZh");
+            ViewBag.WordClassEnId = new SelectList(db.WordClasses.Where(x => x.ClassEn != "Noun" && x.ClassEn != "Adjective" && x.ClassEn != "Pronoun" && x.ClassEn != "Verb"), "Id", "ClassEn");
+            ViewBag.WordClassFrId = new SelectList(db.WordClasses.Where(x => x.ClassEn != "Noun" && x.ClassEn != "Adjective" && x.ClassEn != "Pronoun" && x.ClassEn != "Verb"), "Id", "ClassFr");
+            ViewBag.WordClassZhId = new SelectList(db.WordClasses.Where(x => x.ClassEn != "Noun" && x.ClassEn != "Adjective" && x.ClassEn != "Pronoun" && x.ClassEn != "Verb"), "Id", "ClassZh");
 
-            ViewBag.WordSubClassEnId = new SelectList(db.WordSubClasses, "Id", "SubClassEn");
-            ViewBag.WordSubClassFrId = new SelectList(db.WordSubClasses, "Id", "SubClassFr");
-            ViewBag.WordSubClassZhId = new SelectList(db.WordSubClasses, "Id", "SubClassZh");
+            ViewBag.WordSubClassEnId = new SelectList(db.WordSubClasses.Where(x => x.WordClass.ClassEn != "Noun" && x.WordClass.ClassEn != "Adjective" && x.WordClass.ClassEn != "Pronoun" && x.WordClass.ClassEn != "Verb"), "Id", "SubClassEn");
+            ViewBag.WordSubClassFrId = new SelectList(db.WordSubClasses.Where(x => x.WordClass.ClassEn != "Noun" && x.WordClass.ClassEn != "Adjective" && x.WordClass.ClassEn != "Pronoun" && x.WordClass.ClassEn != "Verb"), "Id", "SubClassFr");
+            ViewBag.WordSubClassZhId = new SelectList(db.WordSubClasses.Where(x => x.WordClass.ClassEn != "Noun" && x.WordClass.ClassEn != "Adjective" && x.WordClass.ClassEn != "Pronoun" && x.WordClass.ClassEn != "Verb"), "Id", "SubClassZh");
 
             ViewBag.NumbersEn = new SelectList(db.Numbers, "Id", "WordNumberEn");
             ViewBag.NumbersFr = new SelectList(db.Numbers, "Id", "WordNumberFr");
             ViewBag.NumbersZh = new SelectList(db.Numbers, "Id", "WordNumberZh");
 
             return View(otherWord);
+        }
+        public ActionResult Adverb()
+        {
+            var otherWords = db.OtherWords.Where(x => x.WordClass.ClassEn == "Adverb" || x.WordSubClass.SubClassEn == "Adverb").Include(d => d.TochLanguage).Include(d => d.WordClass).Include(d => d.WordSubClass).Include("Numbers");
+            return View(otherWords.OrderBy(x => x.TochWord).ToList());
         }
 
         // GET: BackOffice/OtherWords/Delete/5

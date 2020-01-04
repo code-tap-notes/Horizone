@@ -18,8 +18,9 @@ namespace Horizone.Areas.BackOffice.Controllers
             List<Client> clients = db.Clients.ToList();
             return View(clients);                      
         }
-        // GET: BackOffice/Clients/Details/5
-        public ActionResult Details(int? id)
+       
+        // GET: BackOffice/Topics/Delete/5
+        public ActionResult Delete(int? id)
         {
             if (id == null)
             {
@@ -31,6 +32,17 @@ namespace Horizone.Areas.BackOffice.Controllers
                 return HttpNotFound();
             }
             return View(client);
+        }
+
+        // POST: BackOffice/Topics/Delete/5
+        [HttpPost, ActionName("Delete")]
+        [ValidateAntiForgeryToken]
+        public ActionResult DeleteConfirmed(int id)
+        {
+            Client client = db.Clients.Find(id);
+            db.Clients.Remove(client);
+            db.SaveChanges();
+            return RedirectToAction("Index");
         }
     }  
 }

@@ -4,17 +4,37 @@
     ViewBag.Title = @StaticResource.Resources.ProperNoun;
 }
 
-<h2>@StaticResource.Resources.ProperNoun</h2>
-
+<h3>@StaticResource.Resources.TochStory </h3>
+<h4>   @StaticResource.Resources.SearchBy @StaticResource.Resources.ProperNoun</h4>
 <p>
     @Html.ActionLink(@StaticResource.Resources.Add, "Create", null, new { @class = "btn btn-primary" })
 </p>
+<div id="search">
+    <form class="form-group row" action="@Url.Action("SearchName", "TochStories")" method="post" enctype="multipart/form-data">
+        <div>
+            @{Html.RenderAction("SearchForm", "DashBoards"); }
+        </div>
+    </form>
 
+</div>
 <table class="table">
     <tr>
         <th>
             @Html.DisplayNameFor(model => model.Name)
         </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DescriptionEn)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DescriptionFr)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DescriptionZh)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.InStory)
+        </th>
+        <th></th>
         <th></th>
     </tr>
 
@@ -25,10 +45,28 @@
                 @Html.DisplayFor(modelItem => item.Name)
             </td>
             <td>
-                @Html.ActionLink(@StaticResource.Resources.Edit, "Edit", new { id = item.Id }, new { @class = "btn btn-info", style = "width:85px" })
-                 @Html.ActionLink(@StaticResource.Resources.Delete, "Delete", new { id = item.Id }, new { @class = "btn btn-info", style = "width:85px" })
+                @Html.DisplayFor(modelItem => item.DescriptionEn)
             </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DescriptionFr)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DescriptionZh)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.InStory)
+            </td>
+
+            <td>
+                @Html.ActionLink(@StaticResource.Resources.Edit, "Edit", new { id = item.Id }, new { @class = "btn btn-info", style = "width:85px;float:left; " })
+            </td>
+            <td>
+                @Html.ActionLink(@StaticResource.Resources.Delete, "Delete", new { id = item.Id }, new { @class = "btn btn-info", style = "width:85px;float:left;" })
+
+            </td>
+
         </tr>
     }
 
 </table>
+

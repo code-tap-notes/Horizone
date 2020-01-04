@@ -101,5 +101,34 @@ namespace Horizone.Areas.BackOffice.Controllers
             db.SaveChanges();
             return RedirectToAction("Index");
         }
+        
+        public ActionResult SearchTheme(string search)
+        {
+            IEnumerable<ThemeStory> themeStorys = db.ThemeStorys;
+
+            if (!string.IsNullOrWhiteSpace(search))
+            {
+                themeStorys = themeStorys.Where(x => x.ThemeEn.Contains(search) || x.ThemeFr.Contains(search) || x.ThemeZn.Contains(search));
+            }
+            if (themeStorys.Count() == 0)
+            {
+                Display("Aucun résultat");
+            }
+            ViewBag.Search = search;
+            if (Session[Horizone.Common.CommonConstants.CurrentCulture].ToString() == "en")
+            {
+                themeStorys.OrderBy(x => x.ThemeEn).ToList();
+            }
+            if (Session[Horizone.Common.CommonConstants.CurrentCulture].ToString() == "fr")
+            {
+                themeStorys.OrderBy(x => x.ThemeFr).ToList();
+            }
+            if (Session[Horizone.Common.CommonConstants.CurrentCulture].ToString() == "zh")
+            {
+                themeStorys.OrderBy(x => x.ThemeZn).ToList();
+            }
+
+            return View("SearchTheme", themeStorys);
+        }
     }
 }

@@ -10,6 +10,7 @@
     @Scripts.Render("~/bundles/modernizr")
     <link href="~/Content/layout.css" rel="stylesheet" />
     <link href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/2.3.1/css/flag-icon.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 
 <body style="background-color:antiquewhite; box-shadow:0 2px 2px rgba(0,0,0, .5);" class="parallax">
@@ -44,10 +45,10 @@
             <li class="dropdown">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">@StaticResource.Resources.TochStory <span class="caret"></span></a>
                 <ul class="dropdown-menu">
-                    <li><a href="@Url.Action("ThemeStory", "Home")"> @StaticResource.Resources.ThemeStory </a></li>
-                    <li><a href="@Url.Action("SourceStory", "Home")"> @StaticResource.Resources.SourceStory </a></li>
-                    <li><a href="@Url.Action("NamePlace", "Home")">@StaticResource.Resources.NamePlaces</a></li>
-                    <li><a href="@Url.Action("ProperNoun", "Home")">@StaticResource.Resources.ProperNoun</a></li>
+                    <li><a href="@Url.Action("ThemeStory", "Home")"> @StaticResource.Resources.SearchBy @StaticResource.Resources.ThemeStory </a></li>
+                    <li><a href="@Url.Action("SourceStory", "Home")"> @StaticResource.Resources.SearchBy @StaticResource.Resources.SourceStory </a></li>
+                    <li><a href="@Url.Action("PlaceInStory", "Home")"> @StaticResource.Resources.SearchBy @StaticResource.Resources.NamePlaces</a></li>
+                    <li><a href="@Url.Action("NameInStory", "Home")"> @StaticResource.Resources.SearchBy @StaticResource.Resources.ProperNoun</a></li>
                     <li><a href="@Url.Action("TochHistoire", "Home")">@StaticResource.Resources.All @StaticResource.Resources.TochStory</a></li>
                 </ul>
             </li>
@@ -59,7 +60,7 @@
                     <li><a href="@Url.Action("AnalyseMaterial", "FontManuscripts")">@StaticResource.Resources.AnalyseMicroscopic</a></li>
                 </ul>
             </li>
-                    <li class="dropdown">
+            <li class="dropdown">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">@StaticResource.Resources.DictionaryTocharian <span class="caret"></span></a>
                 <ul class="dropdown-menu">
                     <li class="dropdown-submenu">
@@ -69,6 +70,8 @@
                             <li><a href="@Url.Action("Adverb", "Vocabularies")">&diams; @StaticResource.Resources.Adverb</a></li>
                             <li><a href="@Url.Action("Noun", "Vocabularies")">&diams; @StaticResource.Resources.Noun</a></li>
                             <li><a href="@Url.Action("Pronoun", "Vocabularies")">&diams; @StaticResource.Resources.Pronoun</a></li>
+                            <li><a href="@Url.Action("NamePlace", "home")">&diams; @StaticResource.Resources.NamePlaces</a></li>
+                            <li><a href="@Url.Action("ProperNoun", "Home")">&diams; @StaticResource.Resources.ProperNoun</a></li>
                             <li><a href="@Url.Action("Adjective", "Vocabularies")">&diams; @StaticResource.Resources.Adjective</a></li>
                             <li><a href="@Url.Action("OtherWord", "Vocabularies")">&diams; @StaticResource.Resources.OtherWords</a></li>
                             <li><a href="@Url.Action("TocharianA", "Vocabularies")">&diams; @StaticResource.Resources.DictionaryTocharian A</a></li>
@@ -109,7 +112,7 @@
                 </ul>
             </li>
             <li class="dropdown">
-                @{Html.RenderAction("Mainmenu", "Home");}
+                @{Html.RenderAction("LinkMenu", "Home");}
             </li>
             <li class="dropdown">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">@StaticResource.Resources.References <span class="caret"></span></a>
@@ -125,23 +128,38 @@
             <!--Choice language-->
             @using (Html.BeginForm("ChangeCulture", "Base"))
             {
-                <li style="background-color: gray !important; color: darkgreen !important" class="flag-icon-background flag-icon-fr">
+                <li style="background-color: gray !important; color: darkgreen !important">
                     @Html.Hidden("returnUrl", Request.RawUrl)
                     @Html.DropDownList("ddlCulture", new SelectList(new[] {
-                        new {value="fr",text=StaticResource.Resources.French},
-                        new {value="en",text=StaticResource.Resources.English},
-                        new {value="zh",text=StaticResource.Resources.Chinese},
+                        new {value="fr",text=StaticResource.Resources.French },
+                        new {value="en",text=StaticResource.Resources.English  },
+                        new {value="zh",text=StaticResource.Resources.Chinese },
                        // new {value="vi",text=StaticResource.Resources.VietNamese},
                        // new {value="ja",text=StaticResource.Resources.Japanese},
                        // new {value="de",text=StaticResource.Resources.German},
                     }, "value", "text", Session[Horizone.Common.CommonConstants.CurrentCulture]),new { onchange="this.form.submit();"})
                 </li>
+                <li>
+                    @if (Session[Horizone.Common.CommonConstants.CurrentCulture].ToString() == "en")
+                    {
+                        <p class= "flag-icon-background flag-icon-us">.</p>
+                    }
+                    @if (Session[Horizone.Common.CommonConstants.CurrentCulture].ToString() == "fr")
+                    {
+                        <p class="flag-icon-background flag-icon-fr">.</p>
+                    }
+                    @if (Session[Horizone.Common.CommonConstants.CurrentCulture].ToString() == "zh")
+                    {
+                        <p class="flag-icon-background flag-icon-cn">.</p>
+                    }
+                </li>
+
             }
         </ul>
-    </div>
-    <div class="navbar-collapse collapse">
-    </div>
-    <div class="container body-content">
+     
+
+    </div><div class="navbar-collapse collapse">
+    </div><div class="container body-content">
         <hr />
         @RenderBody()
         <hr />
@@ -153,7 +171,7 @@
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
     @RenderSection("scripts", required: false)
- 
+
     <script>
         $(document).ready(function () {
             $('.dropdown-submenu a.test').on("click", function (e) {

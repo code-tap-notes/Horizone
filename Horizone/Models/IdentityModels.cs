@@ -45,6 +45,7 @@ namespace Horizone.Models
         public DbSet<Presentation> Presentations { get; set; }
         public DbSet<ImageMap> ImageMaps { get; set; }
         public DbSet<Map> Maps { get; set; }
+        public DbSet<SearchResult> SearchResults { get; set; }
 
         //Gestion Utilisateur et équipe
         public DbSet<Client> Clients { get; set; }

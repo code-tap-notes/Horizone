@@ -17,11 +17,45 @@ namespace Horizone.Areas.BackOffice.Controllers
     {
  
         // GET: BackOffice/AbbreviationDictionaries
-        public ActionResult Index(int page = 1, int pageSize = 20)
+        public ActionResult Index(int page = 1, int pageSize = 30)
         {
             return View(db.AbbreviationDictionaries.OrderBy(x=>x.Symbol).ToPagedList(page, pageSize));
         }
-  
+        public ActionResult OtherAbbreviation(int page = 1, int pageSize = 30)
+        {
+            var abbreviationDictionaries = db.AbbreviationDictionaries.Where(x => x.OtherAbbreviation == true);
+            return View(abbreviationDictionaries.OrderBy(x => x.Symbol).ToPagedList(page, pageSize));
+        }
+        public ActionResult AbbreviationGrammatical(int page = 1, int pageSize = 30)
+        {
+            var abbreviationDictionaries = db.AbbreviationDictionaries.Where(x => x.GrammaticalAbbreviation == true);
+            return View(abbreviationDictionaries.OrderBy(x => x.Symbol).ToPagedList(page, pageSize));
+        }
+        public ActionResult AbbreviationLanguage(int page = 1, int pageSize = 30)
+        {
+            var abbreviationDictionaries = db.AbbreviationDictionaries.Where(x => x.AbbreviationsLanguage == true);
+            return View(abbreviationDictionaries.OrderBy(x => x.Symbol).ToPagedList(page, pageSize));
+        }
+        public ActionResult AbbreviationManuscript(int page = 1, int pageSize = 30)
+        {
+            var abbreviationDictionaries = db.AbbreviationDictionaries.Where(x => x.AbbreviationManuscript == true);
+            return View(abbreviationDictionaries.OrderBy(x => x.Symbol).ToPagedList(page, pageSize));
+        }
+        // GET: BackOffice/Verbs/Details/5
+        public ActionResult Details(int? id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            AbbreviationDictionary abbreviationDictionary = db.AbbreviationDictionaries.SingleOrDefault(y => y.Id == id);
+
+            if (abbreviationDictionary == null)
+            {
+                return HttpNotFound();
+            }
+            return View(abbreviationDictionary);
+        }
         // GET: BackOffice/AbbreviationDictionaries/Create
         public ActionResult Create()
         {
@@ -101,6 +135,45 @@ namespace Horizone.Areas.BackOffice.Controllers
             db.SaveChanges();
             return RedirectToAction("Index");
         }
- 
+        public ActionResult SearchAbbreviation(string search)
+        {
+            IEnumerable<AbbreviationDictionary> abbreviationDictionarys = db.AbbreviationDictionaries;
+            IEnumerable<Abreviation> abbreviations = db.Abreviations;
+
+            List<SearchResult> searchResults = new List<SearchResult>();
+            foreach (var item in db.SearchResults)
+            {
+                db.SearchResults.Remove(item);
+            }
+            if (!string.IsNullOrWhiteSpace(search))
+            {
+
+                abbreviationDictionarys = db.AbbreviationDictionaries.Where(x => x.Symbol == search);
+                if (abbreviationDictionarys.Count() != 0)
+                {
+                    foreach (var item in abbreviationDictionarys)
+                    {
+                        searchResults.Add(new SearchResult() { NameTable = "AbbreviationDictionaries", IdResult = item.Id, Summary = item.Description });
+                    }
+                }
+                abbreviations = db.Abreviations.Where(x => x.Symbol == search);
+                if (abbreviations.Count() != 0)
+                {
+                    foreach (var item in abbreviations)
+                    {
+                        searchResults.Add(new SearchResult() { NameTable = "Abbreviations", IdResult = item.Id, Summary = (item.Symbol + " - " + item.Description) });
+                    }
+                }
+
+                foreach (var item in searchResults)
+                {
+                    db.SearchResults.Add(item);
+                    db.SaveChanges();
+                }
+            }
+            ViewBag.Search = search;
+            return View("SearchAbbreviation", db.SearchResults.ToList());
+        }
+
     }
 }

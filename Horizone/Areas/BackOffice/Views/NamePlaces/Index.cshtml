@@ -1,53 +1,57 @@
 ﻿@model IEnumerable<Horizone.Models.NamePlace>
 
 @{
-    ViewBag.Title = @StaticResource.Resources.Place;
+    ViewBag.Title = @StaticResource.Resources.NamePlaces;
 }
 
-<h2>@StaticResource.Resources.Place</h2>
-
+<h3>@StaticResource.Resources.TochStory </h3>
+<h4> @StaticResource.Resources.SearchBy : @StaticResource.Resources.NamePlaces</h4>
 <p>
     @Html.ActionLink(@StaticResource.Resources.Add, "Create", null, new { @class = "btn btn-primary" })
 </p>
-
-
 <table class="table">
     <tr>
         <th>
             @Html.DisplayNameFor(model => model.Place)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.DescriptionEn) @StaticResource.Resources.English
+            @Html.DisplayNameFor(model => model.DescriptionEn)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.DescriptionFr) @StaticResource.Resources.French
+            @Html.DisplayNameFor(model => model.DescriptionFr)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.DescriptionZh) @StaticResource.Resources.Chinese
+            @Html.DisplayNameFor(model => model.DescriptionZh)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.InStory)
         </th>
         <th></th>
     </tr>
 
     @foreach (var item in Model)
     {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.Place)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.DescriptionEn)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.DescriptionFr)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.DescriptionZh)
-        </td>
-        <td>
-            @Html.ActionLink(@StaticResource.Resources.Edit, "Edit", new { id = item.Id }, new { @class = "btn btn-info", style = "width:85px" })
-            @Html.ActionLink(@StaticResource.Resources.Delete, "Delete", new { id = item.Id }, new { @class = "btn btn-info", style = "width:85px" })
-        </td>
-    </tr>
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Place)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DescriptionEn)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DescriptionFr)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DescriptionZh)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.InStory)
+            </td>
+            <td>
+                @Html.ActionLink(@StaticResource.Resources.Edit, "Edit", new { id = item.Id }, new { @class = "btn btn-info", style = "width:85px" })
+                @Html.ActionLink(@StaticResource.Resources.Delete, "Delete", new { id = item.Id }, new { @class = "btn btn-info", style = "width:85px" })
+            </td>
+        </tr>
     }
 
 </table>

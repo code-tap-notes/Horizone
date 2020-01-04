@@ -21,7 +21,21 @@ namespace Horizone.Areas.BackOffice.Controllers
         {
             return View(db.Abreviations.OrderBy(x => x.Symbol).ToPagedList(page, pageSize));
         }
-       
+        // GET: BackOffice/Verbs/Details/5
+        public ActionResult Details(int? id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            Abreviation abbreviation = db.Abreviations.SingleOrDefault(y => y.Id == id);
+
+            if (abbreviation == null)
+            {
+                return HttpNotFound();
+            }
+            return View(abbreviation);
+        }
         // GET: BackOffice/Abreviations/Create
         public ActionResult Create()
         {

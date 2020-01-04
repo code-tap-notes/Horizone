@@ -1682,7 +1682,7 @@ TochPhase</value>
     <value>含义</value>
   </data>
   <data name="ReverseDictionary" xml:space="preserve">
-    <value>反向字典</value>
+    <value>倒排索引</value>
   </data>
   <data name="Required" xml:space="preserve">
     <value>字段是必需的。</value>
@@ -1866,5 +1866,47 @@ TochPhase</value>
   </data>
   <data name="TochCommon" xml:space="preserve">
     <value>Tocharian常见</value>
+  </data>
+  <data name="IndexSource" xml:space="preserve">
+    <value>來源索引</value>
+  </data>
+  <data name="Source" xml:space="preserve">
+    <value>源</value>
+  </data>
+  <data name="Found" xml:space="preserve">
+    <value>發現</value>
+  </data>
+  <data name="Update" xml:space="preserve">
+    <value>更新</value>
+  </data>
+  <data name="AddNP" xml:space="preserve">
+    <value>添加专有名词</value>
+  </data>
+  <data name="AskAddNP" xml:space="preserve">
+    <value>你想在字典中添加自己的名字吗？</value>
+  </data>
+  <data name="AskSearchAdvantage" xml:space="preserve">
+    <value>你想搜索优势吗？</value>
+  </data>
+  <data name="CheckDictionary" xml:space="preserve">
+    <value>检查字典中的单词</value>
+  </data>
+  <data name="OtherLanguage" xml:space="preserve">
+    <value>其他語言</value>
+  </data>
+  <data name="Use" xml:space="preserve">
+    <value>采用</value>
+  </data>
+  <data name="With" xml:space="preserve">
+    <value>用</value>
+  </data>
+  <data name="OtherWebPage" xml:space="preserve">
+    <value>其他网页</value>
+  </data>
+  <data name="UpdateDictionary" xml:space="preserve">
+    <value>更新字典</value>
+  </data>
+  <data name="AskUpdate" xml:space="preserve">
+    <value>更新词素类别</value>
   </data>
 </root>

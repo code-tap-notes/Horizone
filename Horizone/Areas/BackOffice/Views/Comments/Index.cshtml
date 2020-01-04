@@ -36,12 +36,12 @@
             @Html.DisplayFor(modelItem => item.News.Title)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.ApplicationUser.UserName)
+            @Html.DisplayFor(modelItem => item.Client.FirstName)
         </td>       
         <td>
-           
-            @Html.ActionLink(@StaticResource.Resources.Details, "Details", new { id=item.Id }) |
-            @Html.ActionLink(@StaticResource.Resources.Delete, "Delete", new { id=item.Id })
+
+            @Html.ActionLink(@StaticResource.Resources.Delete, "Delete", new { id = item.Id }, new { @class = "btn btn-default" })
+
         </td>
     </tr>
 }

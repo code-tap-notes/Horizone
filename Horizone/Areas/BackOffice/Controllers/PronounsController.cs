@@ -46,19 +46,101 @@ namespace Horizone.Areas.BackOffice.Controllers
             }
             return View(pronoun);
         }
+        //Add a new word to dictionary
+        public ActionResult AddDictionary(int? id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            Pronoun pronoun = db.Pronouns.Include(n => n.TochLanguage).Include(n => n.WordClass).Include(n => n.WordSubClass).Include("Genders").SingleOrDefault(y => y.Id == id);
+            var dictionaryTocharian = new DictionaryTocharian();
+            if (pronoun == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            if (pronoun.TochWord != null)
+            {
+                IEnumerable<DictionaryTocharian> dictionaryTocharians = db.DictionaryTocharians.Where(x => x.Word == pronoun.TochWord);
+
+                if (dictionaryTocharians.Count() == 0)
+                {
+                    dictionaryTocharian.Word = pronoun.TochWord;
+                    dictionaryTocharian.Sanskrit = pronoun.Sanskrit;
+                    dictionaryTocharian.English = pronoun.English;
+                    dictionaryTocharian.Francaise = pronoun.Francaise;
+                    dictionaryTocharian.German = pronoun.German;
+                    dictionaryTocharian.Latin = pronoun.Latin;
+                    dictionaryTocharian.Chinese = pronoun.Chinese;
+                    dictionaryTocharian.Visible = true;
+                    dictionaryTocharian.EquivalentTA = pronoun.EquivalentTA;
+                    dictionaryTocharian.EquivalentTB = pronoun.EquivalentTB;
+                    dictionaryTocharian.TochCommon = pronoun.TochCommon;
+                    dictionaryTocharian.TochCorrespondence = pronoun.TochCorrespondence;
+                    dictionaryTocharian.EquivalentInOther = pronoun.EquivalentInOther;
+                    dictionaryTocharian.TochLanguageId = pronoun.TochLanguageId;
+                    dictionaryTocharian.WordClassId = pronoun.WordClassId;
+                    dictionaryTocharian.WordSubClassId = pronoun.WordSubClassId;
+                    db.DictionaryTocharians.Add(dictionaryTocharian);
+
+                }
+                else
+                {
+                    Display("Mots existé");
+                }
+
+                db.SaveChanges();
+                return RedirectToAction("index");
+            }
+            return View();
+        }
+        //Update a word in dictionary
+        public ActionResult EditDictionary(int? id)
+        {
+            Pronoun pronoun = db.Pronouns.Include("WordClass").Include("WordSubClass").Include("TochLanguage").SingleOrDefault(x => x.Id == id);
+            DictionaryTocharian dictionaryTocharian = db.DictionaryTocharians.Include("TochLanguage").Include("WordClass").Include("WordSubClass").SingleOrDefault(x => x.Word == pronoun.TochWord);
+            if (dictionaryTocharian == null)
+            {
+                AddDictionary(pronoun.Id);
+            }
+                if (dictionaryTocharian != null)
+            {
+
+                dictionaryTocharian.Sanskrit = pronoun.Sanskrit;
+                dictionaryTocharian.English = pronoun.English;
+                dictionaryTocharian.Francaise = pronoun.Francaise;
+                dictionaryTocharian.German = pronoun.German;
+                dictionaryTocharian.Latin = pronoun.Latin;
+                dictionaryTocharian.Chinese = pronoun.Chinese;
+                dictionaryTocharian.Visible = true;
+                dictionaryTocharian.EquivalentTA = pronoun.EquivalentTA;
+                dictionaryTocharian.EquivalentTB = pronoun.EquivalentTB;
+                dictionaryTocharian.TochCommon = pronoun.TochCommon;
+                dictionaryTocharian.TochCorrespondence = pronoun.TochCorrespondence;
+                dictionaryTocharian.EquivalentInOther = pronoun.EquivalentInOther;
+                dictionaryTocharian.TochLanguageId = pronoun.TochLanguageId;
+                dictionaryTocharian.WordClassId = pronoun.WordClassId;
+                dictionaryTocharian.WordSubClassId = pronoun.WordSubClassId;
+
+                db.SaveChanges();
+                return RedirectToAction("Index");
+            }
+
+            return View();
+        }
 
         // GET: BackOffice/Pronouns/Create
         public ActionResult Create()
         {
             ViewBag.TochLanguageId = new SelectList(db.TochLanguages, "Id", "Language");
 
-            ViewBag.WordClassEnId = new SelectList(db.WordClasses, "Id", "ClassEn");
-            ViewBag.WordClassFrId = new SelectList(db.WordClasses, "Id", "ClassFr");
-            ViewBag.WordClassZhId = new SelectList(db.WordClasses, "Id", "ClassZh");
+            ViewBag.WordClassEnId = new SelectList(db.WordClasses.Where(x => x.ClassEn == "Pronoun"), "Id", "ClassEn");
+            ViewBag.WordClassFrId = new SelectList(db.WordClasses.Where(x => x.ClassEn == "Pronoun"), "Id", "ClassFr");
+            ViewBag.WordClassZhId = new SelectList(db.WordClasses.Where(x => x.ClassEn == "Pronoun"), "Id", "ClassZh");
 
-            ViewBag.WordSubClassEnId = new SelectList(db.WordSubClasses, "Id", "SubClassEn");
-            ViewBag.WordSubClassFrId = new SelectList(db.WordSubClasses, "Id", "SubClassFr");
-            ViewBag.WordSubClassZhId = new SelectList(db.WordSubClasses, "Id", "SubClassZh");
+            ViewBag.WordSubClassEnId = new SelectList(db.WordSubClasses.Where(x => x.WordClass.ClassEn == "Pronoun"), "Id", "SubClassEn");
+            ViewBag.WordSubClassFrId = new SelectList(db.WordSubClasses.Where(x => x.WordClass.ClassEn == "Pronoun"), "Id", "SubClassFr");
+            ViewBag.WordSubClassZhId = new SelectList(db.WordSubClasses.Where(x => x.WordClass.ClassEn == "Pronoun"), "Id", "SubClassZh");
 
             ViewBag.CasesEn = new SelectList(db.Cases, "Id", "NameCaseEn");
             ViewBag.CasesFr = new SelectList(db.Cases, "Id", "NameCaseFr");
@@ -88,35 +170,41 @@ namespace Horizone.Areas.BackOffice.Controllers
         {
             if (ModelState.IsValid)
             {
-                if (CaseId.Count() > 0)
+
+                if (CaseId.Count() == 0)
+                { pronoun.Cases = db.Cases.Where(x => x.Id == 1).ToList(); }
+
+                else
                 {
                     pronoun.Cases = db.Cases.Where(x => CaseId.Contains(x.Id)).ToList();
                 }
-                else { pronoun.Cases = db.Cases.Where(x => x.Id == 1).ToList(); }
-                if (GenderId.Count() > 0)
-                {
-                    pronoun.Genders = db.Genders.Where(x => GenderId.Contains(x.Id)).ToList();
-                }
-                else
+                if (GenderId.Count() == 0)
                 {
                     pronoun.Genders = db.Genders.Where(x => x.Id == 1).ToList();
                 }
-                if (NumberId.Count() > 0)
-                {
-                    pronoun.Numbers = db.Numbers.Where(x => NumberId.Contains(x.Id)).ToList();
-                }
                 else
+                {
+                    pronoun.Genders = db.Genders.Where(x => GenderId.Contains(x.Id)).ToList();
+                }
+
+                if (NumberId.Count() == 0)
                 {
                     pronoun.Numbers = db.Numbers.Where(x => x.Id == 1).ToList();
                 }
-                if (PersonId.Count() > 0)
-                {
-                    pronoun.Persons = db.Persons.Where(x => PersonId.Contains(x.Id)).ToList();
-                }
+               
                 else
+                {
+                    pronoun.Numbers = db.Numbers.Where(x => NumberId.Contains(x.Id)).ToList();
+                }
+                if (PersonId.Count() == 0)
                 {
                     pronoun.Persons = db.Persons.Where(x => x.Id == 1).ToList();
                 }
+                else
+                {
+                    pronoun.Persons = db.Persons.Where(x => PersonId.Contains(x.Id)).ToList();
+                }
+                
                 if (pronoun.TochLanguageId == 1)
                 {
                     pronoun.EquivalentTA = pronoun.TochWord;
@@ -125,20 +213,23 @@ namespace Horizone.Areas.BackOffice.Controllers
                 {
                     pronoun.EquivalentTB = pronoun.TochWord;
                 }
+                
+
                 db.Pronouns.Add(pronoun);
                 db.SaveChanges();
+                AddDictionary(pronoun.Id);
                 return RedirectToAction("Index");
             }
 
             ViewBag.TochLanguageId = new SelectList(db.TochLanguages, "Id", "Language");
 
-            ViewBag.WordClassEnId = new SelectList(db.WordClasses, "Id", "ClassEn");
-            ViewBag.WordClassFrId = new SelectList(db.WordClasses, "Id", "ClassFr");
-            ViewBag.WordClassZhId = new SelectList(db.WordClasses, "Id", "ClassZh");
+            ViewBag.WordClassEnId = new SelectList(db.WordClasses.Where(x => x.ClassEn == "Pronoun"), "Id", "ClassEn");
+            ViewBag.WordClassFrId = new SelectList(db.WordClasses.Where(x => x.ClassEn == "Pronoun"), "Id", "ClassFr");
+            ViewBag.WordClassZhId = new SelectList(db.WordClasses.Where(x => x.ClassEn == "Pronoun"), "Id", "ClassZh");
 
-            ViewBag.WordSubClassEnId = new SelectList(db.WordSubClasses, "Id", "SubClassEn");
-            ViewBag.WordSubClassFrId = new SelectList(db.WordSubClasses, "Id", "SubClassFr");
-            ViewBag.WordSubClassZhId = new SelectList(db.WordSubClasses, "Id", "SubClassZh");
+            ViewBag.WordSubClassEnId = new SelectList(db.WordSubClasses.Where(x => x.WordClass.ClassEn == "Pronoun"), "Id", "SubClassEn");
+            ViewBag.WordSubClassFrId = new SelectList(db.WordSubClasses.Where(x => x.WordClass.ClassEn == "Pronoun"), "Id", "SubClassFr");
+            ViewBag.WordSubClassZhId = new SelectList(db.WordSubClasses.Where(x => x.WordClass.ClassEn == "Pronoun"), "Id", "SubClassZh");
 
             ViewBag.CasesEn = new SelectList(db.Cases, "Id", "NameCaseEn");
             ViewBag.CasesFr = new SelectList(db.Cases, "Id", "NameCaseFr");
@@ -172,13 +263,13 @@ namespace Horizone.Areas.BackOffice.Controllers
             }
             ViewBag.TochLanguageId = new SelectList(db.TochLanguages, "Id", "Language");
 
-            ViewBag.WordClassEnId = new SelectList(db.WordClasses, "Id", "ClassEn");
-            ViewBag.WordClassFrId = new SelectList(db.WordClasses, "Id", "ClassFr");
-            ViewBag.WordClassZhId = new SelectList(db.WordClasses, "Id", "ClassZh");
+            ViewBag.WordClassEnId = new SelectList(db.WordClasses.Where(x => x.ClassEn == "Pronoun"), "Id", "ClassEn");
+            ViewBag.WordClassFrId = new SelectList(db.WordClasses.Where(x => x.ClassEn == "Pronoun"), "Id", "ClassFr");
+            ViewBag.WordClassZhId = new SelectList(db.WordClasses.Where(x => x.ClassEn == "Pronoun"), "Id", "ClassZh");
 
-            ViewBag.WordSubClassEnId = new SelectList(db.WordSubClasses, "Id", "SubClassEn");
-            ViewBag.WordSubClassFrId = new SelectList(db.WordSubClasses, "Id", "SubClassFr");
-            ViewBag.WordSubClassZhId = new SelectList(db.WordSubClasses, "Id", "SubClassZh");
+            ViewBag.WordSubClassEnId = new SelectList(db.WordSubClasses.Where(x => x.WordClass.ClassEn == "Pronoun"), "Id", "SubClassEn");
+            ViewBag.WordSubClassFrId = new SelectList(db.WordSubClasses.Where(x => x.WordClass.ClassEn == "Pronoun"), "Id", "SubClassFr");
+            ViewBag.WordSubClassZhId = new SelectList(db.WordSubClasses.Where(x => x.WordClass.ClassEn == "Pronoun"), "Id", "SubClassZh");
 
             ViewBag.CasesEn = new SelectList(db.Cases, "Id", "NameCaseEn");
             ViewBag.CasesFr = new SelectList(db.Cases, "Id", "NameCaseFr");
@@ -227,20 +318,29 @@ namespace Horizone.Areas.BackOffice.Controllers
                     pronoun.Numbers = db.Numbers.Where(x => NumberId.Contains(x.Id)).ToList();
                 if (PersonId != null)
                     pronoun.Persons = db.Persons.Where(x => PersonId.Contains(x.Id)).ToList();
+                if (pronoun.Cases.Count() == 0)
+                    pronoun.Cases = db.Cases.Where(x => x.NameCaseEn == "No Case").ToList();
+                if (pronoun.Genders.Count() == 0)
+                    pronoun.Genders = db.Genders.Where(x => x.NameGenderEn == "No Gender").ToList();
+                if (pronoun.Numbers.Count() == 0)
+                    pronoun.Numbers = db.Numbers.Where(x => x.WordNumberEn == "No Number").ToList();
+                if (pronoun.Persons.Count() == 0)
+                    pronoun.Persons = db.Persons.Where(x => x.ConjugatedPersonEn == "No Person").ToList();
 
+                EditDictionary(pronoun.Id);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
            
             ViewBag.TochLanguageId = new SelectList(db.TochLanguages, "Id", "Language");
 
-            ViewBag.WordClassEnId = new SelectList(db.WordClasses, "Id", "ClassEn");
-            ViewBag.WordClassFrId = new SelectList(db.WordClasses, "Id", "ClassFr");
-            ViewBag.WordClassZhId = new SelectList(db.WordClasses, "Id", "ClassZh");
+            ViewBag.WordClassEnId = new SelectList(db.WordClasses.Where(x => x.ClassEn == "Pronoun"), "Id", "ClassEn");
+            ViewBag.WordClassFrId = new SelectList(db.WordClasses.Where(x => x.ClassEn == "Pronoun"), "Id", "ClassFr");
+            ViewBag.WordClassZhId = new SelectList(db.WordClasses.Where(x => x.ClassEn == "Pronoun"), "Id", "ClassZh");
 
-            ViewBag.WordSubClassEnId = new SelectList(db.WordSubClasses, "Id", "SubClassEn");
-            ViewBag.WordSubClassFrId = new SelectList(db.WordSubClasses, "Id", "SubClassFr");
-            ViewBag.WordSubClassZhId = new SelectList(db.WordSubClasses, "Id", "SubClassZh");
+            ViewBag.WordSubClassEnId = new SelectList(db.WordSubClasses.Where(x => x.WordClass.ClassEn == "Pronoun"), "Id", "SubClassEn");
+            ViewBag.WordSubClassFrId = new SelectList(db.WordSubClasses.Where(x => x.WordClass.ClassEn == "Pronoun"), "Id", "SubClassFr");
+            ViewBag.WordSubClassZhId = new SelectList(db.WordSubClasses.Where(x => x.WordClass.ClassEn == "Pronoun"), "Id", "SubClassZh");
 
             ViewBag.CasesEn = new SelectList(db.Cases, "Id", "NameCaseEn");
             ViewBag.CasesFr = new SelectList(db.Cases, "Id", "NameCaseFr");

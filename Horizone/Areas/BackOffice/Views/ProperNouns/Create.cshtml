@@ -44,7 +44,37 @@
             @Html.ValidationMessageFor(model => model.Name, "", new { @class = "text-danger" })
         </div>
     </div>
-    
+    <div class="form-group">
+        @Html.LabelFor(model => model.DescriptionEn, htmlAttributes: new { @class = "control-label col-md-2" })  @StaticResource.Resources.English
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.DescriptionEn, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.DescriptionEn, "", new { @class = "text-danger" })
+        </div>
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(model => model.DescriptionFr, htmlAttributes: new { @class = "control-label col-md-2" })  @StaticResource.Resources.French
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.DescriptionFr, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.DescriptionFr, "", new { @class = "text-danger" })
+        </div>
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(model => model.DescriptionZh, htmlAttributes: new { @class = "control-label col-md-2" })  @StaticResource.Resources.Chinese
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.DescriptionZh, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.DescriptionZh, "", new { @class = "text-danger" })
+        </div>
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(model => model.InStory, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            <div class="checkbox">
+                @Html.EditorFor(model => model.InStory)
+                @Html.ValidationMessageFor(model => model.InStory, "", new { @class = "text-danger" })
+            </div>
+        </div>
+    </div>
+
     <div class="form-group">
         <div class="col-md-offset-2 col-md-10">
             <input type="submit" value=@StaticResource.Resources.Add class="btn btn-info" />

@@ -1,4 +1,8 @@
 ﻿@model Horizone.Models.AboutProject
+@{
+    ViewBag.Title = @StaticResource.Resources.Edit;
+}
+
 @using (Html.BeginForm())
 {
     <div class="row">
@@ -6,115 +10,118 @@
     </div>
 }
 
-<div class="detail">
-    <h2>@StaticResource.Resources.Edit</h2>
-    <div class="row container-fluid">
-        <div class="col-md-6">
+<h2>@StaticResource.Resources.Edit</h2>
+<hr />
+<h3>@StaticResource.Resources.Picture</h3>
 
-            @using (Html.BeginForm())
-            {
-                @Html.AntiForgeryToken()
+<form action="@Url.Action("AddPicture", "AboutProjects")" method="post" enctype="multipart/form-data">
 
-                <div class="form-horizontal">
-                    <h4>@StaticResource.Resources.AboutProject</h4>
-                    <hr />
-                    <hr />
-                    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-                    @Html.HiddenFor(model => model.Id)
+    @Html.HiddenFor(x => x.Id)
+    <div class="form-group">
+        <label for="if">@StaticResource.Resources.File</label>
+        <input type="file" id="if" name="picture" />
+    </div>
+    <button type="submit" class="btn btn-info">@StaticResource.Resources.Add</button>
+</form>
 
+<div class="row">
+    @if (Model.ImageProjects != null)
+    {
+        foreach (var picture in Model.ImageProjects)
+        {
+            <div class="col-md-2" id="@picture.Id">
+                <img src="data:@picture.ContentType;base64,@Convert.ToBase64String(picture.Content)" class="img-thumbnail" />
+                <p><a id="delete" class="delete" href="@Url.Action("DeletePicture", "AboutProjects", new {id=picture.Id, idProject=picture.AboutProjectId })"> <i class="glyphicon glyphicon-trash"></i> </a></p>
+            </div>
+        }
+    }
+</div>
 
-                    <div class="form-group">
-                        @Html.LabelFor(model => model.Aim, htmlAttributes: new { @class = "control-label col-md-2" })
-                        <div class="col-md-10">
-                            @Html.EditorFor(model => model.Aim, new { htmlAttributes = new { @class = "form-control" } })
-                            @Html.ValidationMessageFor(model => model.Aim, "", new { @class = "text-danger" })
-                        </div>
-                    </div>
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
 
-                    <div class="form-group">
-                        @Html.LabelFor(model => model.Funding, htmlAttributes: new { @class = "control-label col-md-2" })
-                        <div class="col-md-10">
-                            @Html.EditorFor(model => model.Funding, new { htmlAttributes = new { @class = "form-control" } })
-                            @Html.ValidationMessageFor(model => model.Funding, "", new { @class = "text-danger" })
-                        </div>
-                    </div>
+    <div class="form-horizontal">
+        <h4>@StaticResource.Resources.AboutProject</h4>
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        @Html.HiddenFor(model => model.Id)
 
-                    <div class="form-group">
-                        @Html.LabelFor(model => model.Programing, htmlAttributes: new { @class = "control-label col-md-2" })
-                        <div class="col-md-10">
-                            @Html.EditorFor(model => model.Programing, new { htmlAttributes = new { @class = "form-control" } })
-                            @Html.ValidationMessageFor(model => model.Programing, "", new { @class = "text-danger" })
-                        </div>
-                    </div>
-
-                    <div class="form-group">
-                        @Html.LabelFor(model => model.Feedback, htmlAttributes: new { @class = "control-label col-md-2" })
-                        <div class="col-md-10">
-                            @Html.EditorFor(model => model.Feedback, new { htmlAttributes = new { @class = "form-control" } })
-                            @Html.ValidationMessageFor(model => model.Feedback, "", new { @class = "text-danger" })
-                        </div>
-                    </div>
-
-                    <div class="form-group">
-                        @Html.LabelFor(model => model.Contact, htmlAttributes: new { @class = "control-label col-md-2" })
-                        <div class="col-md-10">
-                            @Html.EditorFor(model => model.Contact, new { htmlAttributes = new { @class = "form-control" } })
-                            @Html.ValidationMessageFor(model => model.Contact, "", new { @class = "text-danger" })
-                        </div>
-                    </div>
-
-                    <div class="form-group">
-                        @Html.LabelFor(model => model.LanguageId, "LanguageId", htmlAttributes: new { @class = "control-label col-md-2" })
-                        <div class="col-md-10">
-                            @Html.DropDownList("LanguageId", null, htmlAttributes: new { @class = "form-control" })
-                            @Html.ValidationMessageFor(model => model.LanguageId, "", new { @class = "text-danger" })
-                        </div>
-                    </div>
-
-                    <div class="form-group">
-                        <div class="col-md-offset-2 col-md-10">
-                            <input type="submit" value=@StaticResource.Resources.Save class="btn btn-primary" />
-                            @Html.ActionLink(@StaticResource.Resources.Return, "Index", null, new { @class = "btn btn-default" })
-                        </div>
-                    </div>
-                </div>
-            }
+        <div class="form-group">
+            @Html.LabelFor(model => model.LanguageId, "LanguageId", htmlAttributes: new { @class = "col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownList("LanguageId", null, htmlAttributes: new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.LanguageId, "", new { @class = "text-danger" })
+            </div>
         </div>
-        <div class="col-md-6">
-            <h3>@StaticResource.Resources.Picture</h3>
-            <form action="@Url.Action("AddPicture", "AboutProjects")" method="post" enctype="multipart/form-data">
 
-                @Html.HiddenFor(x => x.Id)
-                <div class="form-group">
-                    <label for="if">@StaticResource.Resources.File</label>
-                    <input type="file" id="if" name="picture" />
-                </div>
-                <button type="submit" class="btn btn-info">@StaticResource.Resources.Add</button>
-            </form>
-            <div class="row">
-                @if (Model.ImageProjects != null)
-                {
-                    foreach (var picture in Model.ImageProjects)
-                    {
-                        <div class="col-md-2" id="@picture.Id">
-                            <img src="data:@picture.ContentType;base64,@Convert.ToBase64String(picture.Content)" class="img-thumbnail" />
-                            <p><a id="delete" class="delete" href="@Url.Action("DeletePicture", "AboutProjects", new {id=picture.Id, idProject=picture.AboutProjectId })"> <i class="glyphicon glyphicon-trash"></i> </a></p>
-                        </div>
-                    }
-                }
+        @* cho nay chu y dung tiny*@
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Aim, htmlAttributes: new { @class = "col-md-2" })
+            <div class="col-md-12">
+                @Html.EditorFor(model => model.Aim, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Aim, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Funding, htmlAttributes: new { @class = "col-md-2" })
+            <div class="col-md-12">
+                @Html.EditorFor(model => model.Funding, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Funding, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Programing, htmlAttributes: new { @class = "col-md-2" })
+            <div class="col-md-12">
+                @Html.EditorFor(model => model.Programing, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Programing, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Feedback, htmlAttributes: new { @class = "col-md-2" })
+            <div class="col-md-12">
+                @Html.EditorFor(model => model.Feedback, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Feedback, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Contact, htmlAttributes: new { @class = "col-md-2" })
+            <div class="col-md-12">
+                @Html.EditorFor(model => model.Contact, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Contact, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value=@StaticResource.Resources.Save class="btn btn-primary" />
+                @Html.ActionLink(@StaticResource.Resources.Return, "Index", null, new { @class = "btn btn-default" })
             </div>
         </div>
     </div>
-</div>
+}
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")
     @Scripts.Render("~/bundles/jquery")
-
     <script>
-
+        function insertText(elemID, text) {
+            document.getElementById(elemID).value += text;
+        };
+        $(function () {
+            tinymce.init({ selector: '#Aim' });
+            tinymce.init({ selector: '#Funding' });
+            tinymce.init({ selector: '#Programing' });
+            tinymce.init({ selector: '#Feedback' });
+            tinymce.init({ selector: '#Contact' });
+        });
         const btn = document.querySelector('#delete');
         btn.addEventListener('click', ev => {
-            if (confirm(@StaticResource.Resources.AskDelete ) === false) {
+            if (confirm("Voulez-vous supprimer cette photo ?") === false) {
                 ev.preventDefault();
             }
         });
@@ -122,27 +129,57 @@
                 var idPicture = $(this).data("id");
                 //alert(idPicture);
                 $.ajax({
-                    url: '@Url.Action("deletePicture", "News")',
+                    url: '@Url.Action("deletePicture", "AboutProjects")',
                     type: 'POST',
                     dataType: 'json',
                     data: { id: idPicture },
                     success: function (obj) {
-                        alert(@StaticResource.Resources.Picture + obj.Name + @StaticResource.Resources.Del);
+                        alert("l'image " + obj.Name + " a été supprimée.");
                         $("#div-" + idPicture).fadeOut();
                     }
                 });
-        });
-        function insertText(elemID, text) {
-            document.getElementById(elemID).value += text;
-        };
-
-        $(function () {
-            tinymce.init({ selector: '#Aim' });
-            tinymce.init({ selector: '#Funding' });
-            tinymce.init({ selector: '#Programing' });
-            tinymce.init({ selector: '#Feedback' });
-            tinymce.init({ selector: '#Contact' });
-
-        });
+            });
     </script>
 }
+
+@*
+    @section Scripts {
+        @Scripts.Render("~/bundles/jqueryval")
+        @Scripts.Render("~/bundles/jquery")
+        <script>
+            function insertText(elemID, text) {
+                document.getElementById(elemID).value += text;
+            };
+
+            $(function () {
+                tinymce.init({ selector: '#Aim' });
+                tinymce.init({ selector: '#Funding' });
+                tinymce.init({ selector: '#Programing' });
+                tinymce.init({ selector: '#Feedback' });
+                tinymce.init({ selector: '#Contact' });
+            });
+            const btn = document.querySelector('#delete');
+            var ask = @StaticResource.Resources.AskDelete;
+            btn.addEventListener('click', ev => {
+                if (confirm("Voulez-vous supprimer cette photo ?" ) === false) {
+                    ev.preventDefault();
+                }
+            });
+              $('a.delete').click(function () {
+                    var idPicture = $(this).data("id");
+                    //alert(idPicture);
+                    $.ajax({
+                        url: '@Url.Action("deletePicture", "AboutProjects")',
+                        type: 'POST',
+                        dataType: 'json',
+                        data: { id: idPicture },
+                        success: function (obj) {
+                            alert("Picture " + obj.Name + "Deleted");
+                            $("#div-" + idPicture).fadeOut();
+                        }
+                    });
+            });
+        </script>
+    }
+*@
+

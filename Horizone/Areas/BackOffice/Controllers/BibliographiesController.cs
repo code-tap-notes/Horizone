@@ -17,7 +17,7 @@ namespace Horizone.Areas.BackOffice.Controllers
     public class BibliographiesController : BaseController
     {        
         // GET: BackOffice/Bibliographies
-        public ActionResult Index(int page = 1, int pageSize = 20)
+        public ActionResult Index(int page = 1, int pageSize = 30)
         {
             return View(db.Bibliographys.OrderBy(x => x.Id).ToPagedList(page, pageSize));
         }
@@ -113,29 +113,7 @@ namespace Horizone.Areas.BackOffice.Controllers
             return RedirectToAction("Index");
         }
         
-        public ActionResult Search(string search, string title, string journal)
-        {
-            IEnumerable<Bibliography> bibliographies = db.Bibliographys;
-
-            if (!string.IsNullOrWhiteSpace(search))
-            {
-                bibliographies = bibliographies.Where(x => x.Author.Contains(search));
-                //bibliographies = bibliographies.Where(x => x.PublicationDate.Contains(search));
-                //bibliographies = bibliographies.Where(x => x.Title.Contains(search));
-                //|| || (x=> x.PublicationDate.Contains(search)
-                //|| x.Journal.Contains(search)
-                //|| x.Title.Contains(search));
-            }
-            //if (!string.IsNullOrWhiteSpace(title))
-            //    bibliographies = bibliographies.Where(y => y.Title.Contains(title));
-            //if (!string.IsNullOrWhiteSpace(journal))
-            //    bibliographies = bibliographies.Where(y => y.Journal.Contains(journal));
-            if (bibliographies.Count() == 0)
-            {
-                Display("Aucun résultat");
-            }
-            return View("Search", bibliographies.ToList());
-        }
+      
         [HttpPost]
         public ActionResult AddPicture(HttpPostedFileBase picture, int id)
         {

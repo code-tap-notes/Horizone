@@ -9,8 +9,6 @@
         @{Html.RenderAction("SpecialCharacter", "DashBoards"); }
     </div>
 }
-
-
 <h4>@StaticResource.Resources.Edit</h4>
 
 @using (Html.BeginForm())
@@ -133,6 +131,7 @@
             tinymce.init({ selector: '#English' });
             tinymce.init({ selector: '#Francaise' });
             tinymce.init({ selector: '#Chinese' });
+            tinymce.init({ selector: '#Description' });
         });
     </script>
 }

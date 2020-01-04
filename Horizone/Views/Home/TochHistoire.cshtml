@@ -15,35 +15,8 @@
 <div id="search">
 
     <form class="form-group row" action="@Url.Action("SearchStory", "Home")" method="post" enctype="multipart/form-data">
-
-        <div class="form-group col-md-2">
-            <br />
-            <button type="submit" class="btn btn-info bigBtn"> @StaticResource.Resources.Search</button>
-        </div>
-
-        <div class="form-group col-md-4">
-            <label for="search">@StaticResource.Resources.SearchWord </label>
-            <input class="form-control" type="text" id="Search" name="search" />
-        </div>
-        <div class="form-group col-md-4">
-            <p><strong>Insert:  </strong> </p>
-            <a onclick="insertText('Search','ā');" href="#">ā  </a>
-            <a onclick="insertText('Search','ä');" href="#">ä  </a>
-            <a onclick="insertText('Search','ī');" href="#">ī  </a>
-            <a onclick="insertText('Search','ö');" href="#">ö  </a>
-            <a onclick="insertText('Search','ū');" href="#">ū  </a>
-            <a onclick="insertText('Search','ü');" href="#">ü  </a>
-            <a onclick="insertText('Search','ṅ');" href="#">ṅ  </a>
-            <a onclick="insertText('Search','ñ');" href="#">ñ  </a>
-            <a onclick="insertText('Search','ṇ');" href="#"> ṇ  </a>
-
-            <a onclick="insertText('Search','ṃ');" href="#">ṃ  </a>
-            <a onclick="insertText('Search','ś');" href="#">ś  </a>
-            <a onclick="insertText('Search','ṣ');" href="#">ṣ  </a>
-            <a onclick="insertText('Search','ṛ');" href="#"> ṛ  </a>
-            <a onclick="insertText('Search','ṭ');" href="#"> ṭ  </a>
-            <a onclick="insertText('Search','š');" href="#">š  </a>
-            <a onclick="insertText('Search','ß');" href="#">ß  </a>
+        <div>
+            @{Html.RenderAction("SearchForm", "Home"); }
         </div>
         
     </form>
@@ -51,7 +24,7 @@
 <table class="table">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.SourceStory.Source)
+            @Html.DisplayNameFor(model => model.SourceStory.SourceEn)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.ThemeStory.ThemeEn)
@@ -59,35 +32,21 @@
         <th>
             @Html.DisplayNameFor(model => model.Name)
         </th>
-        <th>
-            @Html.DisplayNameFor(model => model.PlasticRepresentation)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.MainFindSpot)
-        </th>
-        
+               
         <th></th>
     </tr>
-
     @foreach (var item in Model)
     {
         <tr>
             <td>
-                @Html.DisplayFor(modelItem => item.SourceStory.Source)
+                @Html.DisplayFor(modelItem => item.SourceStory.SourceEn)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.ThemeStory.ThemeEn)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Name)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.PlasticRepresentation)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.MainFindSpot)
-            </td>
-            
+            </td>          
             <td>
                 @Html.ActionLink(@StaticResource.Resources.Details, "DetailsStory", new { id = item.Id }, new { @class = "btn btn-info", style = "width:85px" })
             </td>

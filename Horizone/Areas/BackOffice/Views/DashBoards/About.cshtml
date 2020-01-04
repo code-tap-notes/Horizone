@@ -6,10 +6,10 @@
 
 <div class="content">
 
-    <h2> @StaticResource.Resources.AboutProject HISTOCHTEXT </h2>
+    <h2 class="main-cat"> @StaticResource.Resources.AboutProject HISTOCHTEXT </h2>
     <div class="autocontents">
         <p>
-            <b>@StaticResource.Resources.Content (s): </b>
+            <b>&#10027; @StaticResource.Resources.Content (s): </b>
         </p>
 
         <ul>
@@ -31,52 +31,72 @@
 
         </ul>
     </div>
+
     <div class="autocontents">
         <p>
-            <b> @StaticResource.Resources.SeeAlso : </b>
+            <b>&#10027; @StaticResource.Resources.SeeAlso : </b>
         </p>
         <ul>
-            <li>@Html.ActionLink(StaticResource.Resources.AboutUs, "AboutUs", "Dashboards")</li>
-            <li>@Html.ActionLink(StaticResource.Resources.Contact, "Contact", "Dashboards")</li>
+            <li>&#10063; @Html.ActionLink(StaticResource.Resources.AboutUs, "AboutUs", "DashBoards")</li>
+            <li>&#10063; @Html.ActionLink(StaticResource.Resources.AssociatedResearcher, "AssociatedResearcher", "Collaborations")</li>
+            <li>&#10063; @Html.ActionLink(StaticResource.Resources.Collaboration,"index","Collaboration")</li>
+            <li>&#10063; @Html.ActionLink(StaticResource.Resources.Partner, "Partner", "PartnerAndRelations")</li>
+            <li>&#10063; @Html.ActionLink(StaticResource.Resources.RelationInternational, "Relation", "PartnerAndRelations")</li>
+            <li>&#10063; @Html.ActionLink(StaticResource.Resources.Contact, "Contact", "DashBoards")</li>
         </ul>
 
     </div>
     <div class="autocontents">
 
-        <h2 id="Aim">@StaticResource.Resources.Aim</h2>
-        
-            @foreach (var item in Model)
+        <h4 id="Aim"><u>@StaticResource.Resources.Aim</u></h4>
+
+        @foreach (var item in Model)
+        {
+            if (item.Language.Symbol == Session[Horizone.Common.CommonConstants.CurrentCulture].ToString())
             {
-                @Html.Raw(item.Aim)
+                @Html.Raw(item.Aim);
             }
-       
-        <h2 id="Funding">@StaticResource.Resources.Funding</h2>
-        
-            @foreach (var item in Model)
+
+        }
+
+        <h4 id="Funding"><u>@StaticResource.Resources.Funding</u></h4>
+
+        @foreach (var item in Model)
+        {
+            if (item.Language.Symbol == Session[Horizone.Common.CommonConstants.CurrentCulture].ToString())
             {
                 @Html.Raw(item.Funding)
             }
-        
-        <h2 id="Programing">@StaticResource.Resources.Programing</h2>
-        
-            @foreach (var item in Model)
+
+        }
+
+        <h4 id="Programing"><u>@StaticResource.Resources.Programing</u></h4>
+
+        @foreach (var item in Model)
+        {
+            if (item.Language.Symbol == Session[Horizone.Common.CommonConstants.CurrentCulture].ToString())
             {
                 @Html.Raw(item.Programing)
             }
-       
-        <h2 id="Feedback">@StaticResource.Resources.Feedback</h2>
-       
-            @foreach (var item in Model)
+        }
+
+        <h4 id="Feedback"><u>@StaticResource.Resources.Feedback</u></h4>
+
+        @foreach (var item in Model)
+        {
+            if (item.Language.Symbol == Session[Horizone.Common.CommonConstants.CurrentCulture].ToString())
             {
                 @Html.Raw(item.Feedback)
             }
-       
-        <h2 id="HisTochTextPress">@StaticResource.Resources.HisTochTextPress</h2>
+        }
+        <h4 id="HisTochTextPress"><u>@StaticResource.Resources.HisTochTextPress</u></h4>
         <ul>
             <li>
                 @{Html.RenderAction("InPresse", "DashBoards");}
-            </li>           
+            </li>
         </ul>
     </div>
+
 </div>
+
 

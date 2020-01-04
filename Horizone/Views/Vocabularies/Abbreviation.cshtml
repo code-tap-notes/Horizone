@@ -10,33 +10,8 @@
 <h2>@StaticResource.Resources.AbbreviationDictionary</h2>
 <div id="search">
     <form class="form-group row" action="@Url.Action("SearchAbbreviation", "Vocabularies")" method="post" enctype="multipart/form-data">
-        <div class="form-group col-md-2">
-            <br />
-            <button type="submit" class="btn btn-info bigBtn"><span class="glyphicon glyphicon-search"></span> @StaticResource.Resources.Search </button>
-        </div>
-        <div class="form-group col-md-4">
-            <label for="Title"> @StaticResource.Resources.SearchWord </label>
-            <input class="form-control" type="text" id="Search" name="search" />
-        </div>
-        <div class="form-group col-md-4">
-            <p><strong>Insert:  </strong> </p>
-            <a onclick="insertText('Search','ā');" href="#" style="background-color: blanchedalmond; padding:5px"> ā  </a><a> </a>
-            <a onclick="insertText('Search','ä');" href="#" style="background-color: blanchedalmond; padding:5px"> ä  </a>
-            <a onclick="insertText('Search','ī');" href="#" style="background-color: blanchedalmond; padding:5px"> ī  </a>
-            <a onclick="insertText('Search','ö');" href="#" style="background-color: blanchedalmond; padding:5px"> ö  </a>
-            <a onclick="insertText('Search','ū');" href="#" style="background-color: blanchedalmond; padding:5px"> ū  </a>
-            <a onclick="insertText('Search','ü');" href="#" style="background-color: blanchedalmond; padding:5px"> ü  </a>
-            <a onclick="insertText('Search','ṅ');" href="#" style="background-color: blanchedalmond; padding:5px"> ṅ  </a>
-            <a onclick="insertText('Search','ñ');" href="#" style="background-color: blanchedalmond; padding:5px"> ñ  </a>
-            <a onclick="insertText('Search','ṇ');" href="#" style="background-color: blanchedalmond; padding:5px"> ṇ  </a>
-            <a onclick="insertText('Search','ṃ');" href="#" style="background-color: blanchedalmond; padding:5px"> ṃ  </a>
-            <a onclick="insertText('Search','ś');" href="#" style="background-color: blanchedalmond; padding:5px"> ś  </a>
-            <a onclick="insertText('Search','ṣ');" href="#" style="background-color: blanchedalmond; padding:5px"> ṣ  </a>
-            <a onclick="insertText('Search','ṛ');" href="#" style="background-color: blanchedalmond; padding:5px"> ṛ  </a>
-            <a onclick="insertText('Search','ṭ');" href="#" style="background-color: blanchedalmond; padding:5px"> ṭ  </a>
-
-            <a onclick="insertText('Search','š');" href="#" style="background-color: blanchedalmond; padding:5px"> š  </a>
-            <a onclick="insertText('Search','ß');" href="#" style="background-color: blanchedalmond; padding:5px"> ß  </a>
+        <div>
+            @{Html.RenderAction("SearchForm", "Home"); }
         </div>
     </form>
 </div>

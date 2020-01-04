@@ -71,68 +71,12 @@ namespace Horizone.Models
 
         [Display(Name = "EquivalentInOther", ResourceType = typeof(StaticResource.Resources))]
         public string EquivalentInOther { get; set; }
-
-        [Display(Name = "DerivedFrom", ResourceType = typeof(StaticResource.Resources))]
-        public string DerivedFrom { get; set; }
-
-        [Display(Name = "RelatedLexemes", ResourceType = typeof(StaticResource.Resources))]
-        public string RelatedLexemes { get; set; }
-
-        [Display(Name = "RootCharacter", ResourceType = typeof(StaticResource.Resources))]
-        public string RootCharacter { get; set; }
-
-        [Display(Name = "InternalRootVowel", ResourceType = typeof(StaticResource.Resources))]
-        public string InternalRootVowel { get; set; }
-
-        [Display(Name = "Case", ResourceType = typeof(StaticResource.Resources))]
-        public ICollection<Case> Cases { get; set; }
-     
-        [Display(Name = "Number", ResourceType = typeof(StaticResource.Resources))]
-        public ICollection<Number> Numbers { get; set; }
-       
-        [Display(Name = "Gender", ResourceType = typeof(StaticResource.Resources))]
-        public ICollection<Gender> Genders { get; set; }
-       
-        [Display(Name = "Person", ResourceType = typeof(StaticResource.Resources))]
-        public ICollection<Person> Persons { get; set; }
-                
-        //Verb and adj
-        [Display(Name = "Stem", ResourceType = typeof(StaticResource.Resources))]
-        public string Stem { get; set; }
-
-        [Display(Name = "StemClass", ResourceType = typeof(StaticResource.Resources))]
-        public string StemClass { get; set; }
-
-        [Display(Name = "Voice", ResourceType = typeof(StaticResource.Resources))]
-        public int VoiceId { get; set; }
-
-        [ForeignKey("VoiceId")]
-        public Voice Voice { get; set; }
-
-        [Display(Name = "Valency", ResourceType = typeof(StaticResource.Resources))]
-        public int ValencyId { get; set; }
-
-        [ForeignKey("ValencyId")]
-        public Valency Valency { get; set; }
-
-        [Display(Name = "TenseAndAspect", ResourceType = typeof(StaticResource.Resources))]
-        public int TenseAndAspectId { get; set; }
-
-        [ForeignKey("TenseAndAspectId")]
-        public TenseAndAspect TenseAndAspect { get; set; }
-
-        [Display(Name = "Mood", ResourceType = typeof(StaticResource.Resources))]
-        public int MoodId { get; set; }
-
-        [ForeignKey("MoodId")]
-        public Mood Mood { get; set; }
-
-        [AllowHtml]
-        [Display(Name = "PronounSuffix", ResourceType = typeof(StaticResource.Resources))]
-        public string PronounSuffix { get; set; }
               
         [Display(Name = "Bibliography", ResourceType = typeof(StaticResource.Resources))]
         public ICollection<Bibliography> Bibliographys { get; set; }
+
+        [Display(Name = "IndexSource", ResourceType = typeof(StaticResource.Resources))]
+        public int IdClassSource { get; set; }
 
         [Display(Name = "Visible", ResourceType = typeof(StaticResource.Resources))]
         public Boolean Visible { get; set; }

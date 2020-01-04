@@ -1,10 +1,17 @@
 ﻿@model PagedList.IPagedList<Horizone.Models.Manuscript>
 @using PagedList.Mvc;
 @{
-  ViewBag.Title = @StaticResource.Resources.Manuscript;
+    ViewBag.Title = @StaticResource.Resources.Manuscript;
 }
 
 <h2> @StaticResource.Resources.Manuscript</h2>
+<div class="autocontents">
+    <p>
+        <b> @StaticResource.Resources.Presentation @StaticResource.Resources.Manuscript </b>
+        @{Html.RenderAction("PresentationManuscript", "DashBoards"); }
+    </p>
+</div>
+
 
 <p>
     @Html.ActionLink(@StaticResource.Resources.Add, "Create", null, new { @class = "btn btn-primary" })

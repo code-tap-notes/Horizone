@@ -202,7 +202,8 @@ namespace Horizone.Controllers
 
             if (!string.IsNullOrWhiteSpace(search))
             {
-                manuscripts = db.Manuscripts.Include(m => m.AlignmentType).Include(m => m.DescriptionManuscript).Include(m => m.Format).Include(m => m.GenderManuscript).Include(m => m.LanguageDetail).Include(m => m.LanguageStage).Include(m => m.Material).Include(m => m.Metric).Include(m => m.PaperColor).Include(m => m.RemarkAdd).Include(m => m.Ruling).Include(m => m.RulingColor).Include(m => m.RulingDetail).Include(m => m.Script).Include(m => m.Script.ScriptType).Include(m => m.ScriptAdd).Include(m => m.State).Include(m => m.SubGenderManuscript).Include(m => m.TochLanguage).Include(m => m.WritingTool).Where(x => x.Transliteration.Contains(search));
+                manuscripts = db.Manuscripts.Include(m => m.AlignmentType).Include(m => m.DescriptionManuscript).Include(m => m.Format).Include(m => m.GenderManuscript).Include(m => m.LanguageDetail).Include(m => m.LanguageStage).Include(m => m.Material).Include(m => m.Metric).Include(m => m.PaperColor).Include(m => m.RemarkAdd).Include(m => m.Ruling).Include(m => m.RulingColor).Include(m => m.RulingDetail).Include(m => m.Script).Include(m => m.Script.ScriptType).Include(m => m.ScriptAdd).Include(m => m.State).Include(m => m.SubGenderManuscript).Include(m => m.TochLanguage).Include(m => m.WritingTool).Where(x => x.Transliteration.Contains(search) 
+                || x.Index.Contains(search) || x.Transcription.Contains(search) || x.TochLanguage.Language.Contains(search));
              
             }           
 
@@ -210,6 +211,7 @@ namespace Horizone.Controllers
             {
                 Display("Aucun résultat");
             }
+            ViewBag.Search = search;
 
             return View("Search", manuscripts.ToList());
         }

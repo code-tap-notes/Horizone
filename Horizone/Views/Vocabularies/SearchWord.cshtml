@@ -1,0 +1,88 @@
+﻿@model IEnumerable<Horizone.Models.SearchResult>
+@{
+    ViewBag.Title = @StaticResource.Resources.Search;
+}
+
+<h2>@StaticResource.Resources.SearchResult</h2>
+@Model.Count() @StaticResource.Resources.SearchResult <b> " @ViewBag.Search " </b> @StaticResource.Resources.Found
+<br />
+@if (Model.Count() == 0)
+{
+    @StaticResource.Resources.AskSearchAdvantage;
+    <form class="form-group row" action="@Url.Action("SearchIndex", "Home" )" method="post" enctype="multipart/form-data">
+        <button type="submit" class="btn btn-default" style="width:20%; text-align:left;"> @StaticResource.Resources.Search <b> " @ViewBag.Search " </b> </button>
+        <input class="form-control" type="hidden" id="Search" name="search" value="@ViewBag.Search" />
+    </form>
+}
+<br />
+@Html.ActionLink(StaticResource.Resources.Return, "Vocabulaire", null, new { @class = "btn btn-primary", style = "width:90px" })
+<br />
+
+@foreach (var item in Model)
+{
+    if (item.NameTable == "Verbs")
+    {
+<a href="@Url.Action("DetailsVerb", "vocabularies", new { id = item.IdResult })">" @ViewBag.Search "  @StaticResource.Resources.Found @StaticResource.Resources.In @StaticResource.Resources.Verb </a>
+        <br />
+        <p>@Html.DisplayFor(modelItem => item.Summary) ...</p>
+    }
+
+    if (item.NameTable == "DictionaryTocharians")
+    {
+        <a href="@Url.Action("Details", "Vocabularies", new { id = item.IdResult })">" @ViewBag.Search "  @StaticResource.Resources.Found @StaticResource.Resources.In @StaticResource.Resources.DictionaryTocharian </a>
+        <br />
+        <p>@Html.DisplayFor(modelItem => item.Summary)...</p>
+
+    }
+    if (item.NameTable == "NounAdjectives")
+    {
+        <a href="@Url.Action("DetailsNoun", "Vocabularies", new { id = item.IdResult })">" @ViewBag.Search "  @StaticResource.Resources.Found @StaticResource.Resources.In @StaticResource.Resources.Noun  - @StaticResource.Resources.Adjective  </a>
+        <br />
+        <p>@Html.DisplayFor(modelItem => item.Summary)...</p>
+
+    }
+    if (item.NameTable == "Pronouns")
+    {
+        <a href="@Url.Action("DetailsPronoun", "Vocabularies", new { id = item.IdResult })">" @ViewBag.Search "  @StaticResource.Resources.Found @StaticResource.Resources.In @StaticResource.Resources.Pronoun </a>
+        <br />
+        <p>@Html.DisplayFor(modelItem => item.Summary)...</p>
+
+    }
+    if (item.NameTable == "OtherWords")
+    {
+        <a href="@Url.Action("DetailsOtherWord", "Vocabularies", new { id = item.IdResult })">" @ViewBag.Search "  @StaticResource.Resources.Found @StaticResource.Resources.In @StaticResource.Resources.OtherWords </a>
+        <br />
+        <p>@Html.DisplayFor(modelItem => item.Summary)...</p>
+
+    }
+    if (item.NameTable == "ProperNouns")
+    {
+        <a href="#">" @ViewBag.Search "  @StaticResource.Resources.Found @StaticResource.Resources.In @StaticResource.Resources.ProperNoun </a>
+        <br />
+        <p>@Html.DisplayFor(modelItem => item.Summary)...</p>
+
+    }
+    if (item.NameTable == "NamePlaces")
+    {
+        <a href="#">" @ViewBag.Search "  @StaticResource.Resources.Found @StaticResource.Resources.In @StaticResource.Resources.NamePlaces </a>
+        <br />
+        <p>@Html.DisplayFor(modelItem => item.Summary)...</p>
+    }
+}
+@if (@ViewBag.Search != null)
+{
+    @StaticResource.Resources.AskSearchAdvantage;
+    <br />
+    var ulrA = "https://www.univie.ac.at/tocharian/?E_A_" + @ViewBag.Search;
+    var ulrB = "https://www.univie.ac.at/tocharian/?E_B_" + @ViewBag.Search;
+    var ulrG = "https://www.google.com/search?q=" + @ViewBag.Search + "&rlz=1C1CHBF_frFR865FR865&oq=" + @ViewBag.Search + " &aqs=chrome..69i57j35i39j69i60l2.1406j0j8&sourceid=chrome&ie=UTF-8";
+    <a href="@ulrA"> @StaticResource.Resources.Search @StaticResource.Resources.Tocharian A<b> " @ViewBag.Search " @StaticResource.Resources.With CETOM </b></a>
+    <br />
+    <a href="@ulrB"> @StaticResource.Resources.Search @StaticResource.Resources.Tocharian B <b> " @ViewBag.Search " @StaticResource.Resources.With CETOM </b></a>
+    <br />
+    <a href="@ulrG"> @StaticResource.Resources.Search <b> " @ViewBag.Search " @StaticResource.Resources.With Google</b></a>
+}
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

@@ -9,130 +9,107 @@
     </div>
 }
 
-<div class="detail">
-    <h2>@StaticResource.Resources.Edit</h2>
-    <div class="row container-fluid">
-        <div class="col-md-6">
+<h2>@StaticResource.Resources.Edit</h2>
 
-            @using (Html.BeginForm())
+    <h3>@StaticResource.Resources.Picture</h3>
+    <form action="@Url.Action("AddPicture", "News")" method="post" enctype="multipart/form-data">
+
+        @Html.HiddenFor(x => x.Id)
+        <div class="form-group">
+            <label for="if">@StaticResource.Resources.File</label>
+            <input type="file" id="if" name="picture" />
+        </div>
+        <button type="submit" class="btn btn-info">@StaticResource.Resources.Add</button>
+    </form>
+    <div class="row">
+        @if (Model.ImageNewses != null)
+        {
+            foreach (var picture in Model.ImageNewses)
             {
-                @Html.AntiForgeryToken()
-
-                <div class="form-horizontal">
-                    <h4>@StaticResource.Resources.News</h4>
-                    <hr />
-
-                    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-                    @Html.HiddenFor(model => model.Id)
-
-                    <div class="form-group">
-                        @Html.LabelFor(model => model.Title, htmlAttributes: new { @class = "control-label col-md-2" })
-                        <div class="col-md-10">
-                            @Html.EditorFor(model => model.Title, new { htmlAttributes = new { @class = "form-control" } })
-                            @Html.ValidationMessageFor(model => model.Title, "", new { @class = "text-danger" })
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        @Html.LabelFor(model => model.Summary, htmlAttributes: new { @class = "control-label col-md-2" })
-                        <div class="col-md-10">
-                            @Html.EditorFor(model => model.Summary, new { htmlAttributes = new { @class = "form-control" } })
-                            @Html.ValidationMessageFor(model => model.Summary, "", new { @class = "text-danger" })
-                        </div>
-                    </div>
-
-                    <div class="form-group">
-                        @Html.LabelFor(model => model.Content, htmlAttributes: new { @class = "control-label col-md-2" })
-                        <div class="col-md-10">
-                            @Html.EditorFor(model => model.Content, new { htmlAttributes = new { @class = "form-control" } })
-                            @Html.ValidationMessageFor(model => model.Content, "", new { @class = "text-danger" })
-                        </div>
-                    </div>
-
-                    <div class="form-group">
-                        @Html.LabelFor(model => model.View, htmlAttributes: new { @class = "control-label col-md-2" })
-                        <div class="col-md-10">
-                            @Html.EditorFor(model => model.View, new { htmlAttributes = new { @class = "form-control" } })
-                            @Html.ValidationMessageFor(model => model.View, "", new { @class = "text-danger" })
-                        </div>
-                    </div>
-
-                    <div class="form-group">
-
-                        @Html.LabelFor(model => model.TopicId, "TopicId", htmlAttributes: new { @class = "control-label col-md-2" })
-
-                        <div class="col-md-10">
-                            @Html.DropDownList("TopicId", null, htmlAttributes: new { @class = "form-control" })
-                            @Html.ValidationMessageFor(model => model.TopicId, "", new { @class = "text-danger" })
-                        </div>
-                    </div>
-
-                    <div class="form-group">
-                        <div class="col-md-2">
-                            @StaticResource.Resources.PublishedBy
-                        </div>
-                        <div class="col-md-10">
-                            @Html.DropDownList("CollaboratorId", null, htmlAttributes: new { @class = "form-control" })
-                            @Html.ValidationMessageFor(model => model.CollaboratorId, "", new { @class = "text-danger" })
-                        </div>
-                    </div>
-
-                    <div class="form-group">
-                        @Html.LabelFor(model => model.LanguageId, "LanguageId", htmlAttributes: new { @class = "control-label col-md-2" })
-                        <div class="col-md-10">
-                            @Html.DropDownList("LanguageId", null, htmlAttributes: new { @class = "form-control" })
-                            @Html.ValidationMessageFor(model => model.LanguageId, "", new { @class = "text-danger" })
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <div class="col-md-offset-2 col-md-10">
-                            <input type="submit" value=@StaticResource.Resources.Save class="btn btn-primary" />
-                            @Html.ActionLink(@StaticResource.Resources.Return, "Index", null, new { @class = "btn btn-default" })
-                        </div>
-                    </div>
+                <div class="col-md-2" id="@picture.Id">
+                    <img src="data:@picture.ContentType;base64,@Convert.ToBase64String(picture.Content)" class="img-thumbnail" />
+                    <p><a id="delete" class="delete" href="@Url.Action("DeletePicture", "News", new {id=picture.Id, idnews=picture.NewsId })"> <i class="glyphicon glyphicon-trash"></i> </a></p>
                 </div>
             }
-        </div>
-        <div class="col-md-6">
-            <h3>@StaticResource.Resources.Picture</h3>
-            <form action="@Url.Action("AddPicture", "News")" method="post" enctype="multipart/form-data">
+        }
+    </div>
 
-                @Html.HiddenFor(x => x.Id)
-                <div class="form-group">
-                    <label for="if">@StaticResource.Resources.File</label>
-                    <input type="file" id="if" name="picture" />
-                </div>
-                <button type="submit" class="btn btn-info">@StaticResource.Resources.Add</button>
-            </form>
-            <div class="row">
-                @if (Model.ImageNewses != null)
-                {
-                    foreach (var picture in Model.ImageNewses)
-                    {
-                        <div class="col-md-2" id="@picture.Id">
-                            <img src="data:@picture.ContentType;base64,@Convert.ToBase64String(picture.Content)" class="img-thumbnail" />
-                            <p><a id="delete" class="delete" href="@Url.Action("DeletePicture", "News", new {id=picture.Id, idnews=picture.NewsId })"> <i class="glyphicon glyphicon-trash"></i> </a></p>
-                        </div>
-                    }
-                }
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    <div class="form-horizontal">
+        <h3>@StaticResource.Resources.News</h3>
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        @Html.HiddenFor(model => model.Id)
+        <div class="form-group">
+            @Html.LabelFor(model => model.Title, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Title, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Title, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(model => model.TopicId, "TopicId", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownList("TopicId", null, htmlAttributes: new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.TopicId, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="control-label col-md-2">
+                @StaticResource.Resources.PublishedBy
+            </div>
+            <div class="col-md-10">
+                @Html.DropDownList("CollaboratorId", null, htmlAttributes: new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.CollaboratorId, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(model => model.LanguageId, "LanguageId", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownList("LanguageId", null, htmlAttributes: new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.LanguageId, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(model => model.Summary, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Summary, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Summary, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(model => model.Content, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Content, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Content, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value=@StaticResource.Resources.Save class="btn btn-primary" />
+                @Html.ActionLink(@StaticResource.Resources.Return, "Index", null, new { @class = "btn btn-default" })
             </div>
         </div>
     </div>
-</div>
+}
+
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")
     @Scripts.Render("~/bundles/jquery")
-
     <script>
         function insertText(elemID, text) {
             document.getElementById(elemID).value += text;
         };
+
         $(function () {
             tinymce.init({ selector: '#Summary' });
             tinymce.init({ selector: '#Content' });
         });
-        const btn = document.querySelector('#delete');
+         const btn = document.querySelector('#delete');
         btn.addEventListener('click', ev => {
-            if (confirm(@StaticResource.Resources.AskDelete ) === false) {
+            if (confirm("Voulez-vous supprimer cette photo ?") === false) {
                 ev.preventDefault();
             }
         });
@@ -145,7 +122,7 @@
                     dataType: 'json',
                     data: { id: idPicture },
                     success: function (obj) {
-                        alert(@StaticResource.Resources.Picture + obj.Name + @StaticResource.Resources.Del);
+                        alert("l'image " + obj.Name + " a été supprimée.");
                         $("#div-" + idPicture).fadeOut();
                     }
                 });
@@ -153,4 +130,32 @@
     </script>
 }
 
+@*
+    @section Scripts {
+        @Scripts.Render("~/bundles/jqueryval")
+        @Scripts.Render("~/bundles/jquery")
+        <script>
+            const btn = document.querySelector('#delete');
+            btn.addEventListener('click', ev => {
+                if (confirm(@StaticResource.Resources.AskDelete ) === false) {
+                    ev.preventDefault();
+                }
+            });
 
+              $('a.delete').click(function () {
+                    var idPicture = $(this).data("id");
+                    //alert(idPicture);
+                    $.ajax({
+                        url: '@Url.Action("deletePicture", "News")',
+                        type: 'POST',
+                        dataType: 'json',
+                        data: { id: idPicture },
+                        success: function (obj) {
+                            alert(@StaticResource.Resources.Picture + obj.Name + @StaticResource.Resources.Del);
+                            $("#div-" + idPicture).fadeOut();
+                        }
+                    });
+            });
+        </script>
+    }
+*@

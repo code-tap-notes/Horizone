@@ -1,25 +1,132 @@
-﻿
+﻿@model IEnumerable<Horizone.Models.VisualAid>
 @{
     ViewBag.Title = @StaticResource.Resources.Help;
 }
 
-<h2>@StaticResource.Resources.Help</h2>
-<div class="autocontents">
-    <ul>
-        <li>
-            <a onclick="insertImage('imageCarte','https://www.researchgate.net/publication/307765410/figure/fig1/AS:405838004015104@1473770728188/Geographic-position-of-Aksu-City-in-the-Tarim-Basin-northwest-China-adapted-from.png');">@StaticResource.Resources.Maps</a>
-        </li>
-        <li>@Html.ActionLink(StaticResource.Resources.Photographs, "Index", "Maps")</li>
-        <li>@Html.ActionLink(StaticResource.Resources.Glossary, "Index", "VisualAids")</li>
-    </ul>
+<div class="content">
+    <div class="autocontents">
+        <p>
+            <b> @StaticResource.Resources.Presentation </b>
+            @{Html.RenderAction("PresentationVisualAid", "DashBoards"); }
+        </p>
+    </div>
+    <h2 class="main-cat"> @StaticResource.Resources.Help </h2>
+    <div class="autocontents">
+        <p>
+            <b>@StaticResource.Resources.Content (s): </b>
+        </p>
 
-</div>
-<div class="row">
-    <img style="width: 900px" id="imageCarte" src="" />
+        <ul>
+            <li>
+                <a href="#Glossary">&diams; @StaticResource.Resources.Glossary </a>
+            </li>
+            <li>
+                <a href="#Photography">&diams; @StaticResource.Resources.Photography       </a>
+            </li>
+            <li>
+                <a href="#Question">&diams; @StaticResource.Resources.Question</a>
+            </li>
+            <li>
+                <a href="#Map">&diams; @StaticResource.Resources.Maps</a>
+            </li>
+
+        </ul>
+    </div>
+
+    <div class="autocontents">
+        <p>
+            <b> @StaticResource.Resources.SiteMap : </b>
+        </p>
+        <ul>
+
+            <li><a href="@Url.Action("Index", "Manuscripts")">&#9733; @StaticResource.Resources.Manuscript</a></li>
+            <li><a href="@Url.Action("Index", "Publications")">&#9733; @StaticResource.Resources.Publications</a></li>
+            <li><a href="@Url.Action("Index", "Dictionarytocharians")">&#9733; @StaticResource.Resources.Words</a></li>
+            <li><a href="@Url.Action("Index", "TochStories")">&#9733; @StaticResource.Resources.TochStory</a></li>
+            <li><a href="@Url.Action("Index", "TochPhrases")">&#9733; @StaticResource.Resources.TochPhrase</a></li>
+            <li><a href="@Url.Action("Index", "Bibliographies")">&#9733; @StaticResource.Resources.Bibliography</a></li>
+        </ul>
+    </div>
+    <div class="autocontents">
+
+        <h4 id="Glossary"><b><u>@StaticResource.Resources.Glossary</u></b></h4>
+
+        @foreach (var item in Model)
+        {
+            if (item.Language.Symbol == Session[Horizone.Common.CommonConstants.CurrentCulture].ToString())
+            {
+                if (@item.Glosary)
+                {
+                    <div class="col-md-3">
+                        @Html.Raw(item.Aids)
+                    </div>
+                    <div class="col-md-9">
+                        @Html.Raw(item.Description)
+                    </div>
+                }
+            }
+
+        }
+
+        <h4 id="Photography"><b><u>@StaticResource.Resources.Photography</u></b></h4>
+
+        @foreach (var item in Model)
+        {
+            if (item.Language.Symbol == Session[Horizone.Common.CommonConstants.CurrentCulture].ToString())
+            {
+                if (@item.Photography)
+                {
+                    <div class="col-md-3">
+                        @Html.Raw(item.Aids);
+                    </div>
+                    <div class="col-md-9">
+
+                        <a href=@item.Description>@StaticResource.Resources.LearnMore &raquo;</a>
+
+                    </div>
+                }
+            }
+        }
+
+        <h4 id="Question"><b><u>@StaticResource.Resources.Question</u></b></h4>
+        <div class="row" style="padding: 30px;">
+            @foreach (var item in Model)
+            {
+                if (Session[Horizone.Common.CommonConstants.CurrentCulture].ToString() == item.Language.Symbol)
+                {
+                    if (@item.Question)
+                    {
+                        //<div class="form-group row">
+                        //    @Html.DropDownListFor(modelItem => item.Id, ViewBag.Aide as SelectList, @StaticResource.Resources.Question, new { @onChange = "selectedText(this)" })
+                        // </div>
+                        <div>
+                            <form class="form-group row" action="@Url.Action("SearchQuestion", "DashBoards")" method="post" enctype="multipart/form-data">
+                                <button type="submit" class="btn btn-default" style="width:295px; text-align:center;"> @item.Aids </button>
+                                <input class="form-control" type="hidden" id="Search" name="search" readonly="readonly" value="@item.Aids" />
+                            </form>
+                        </div>
+                    }
+                }
+            }
+        </div>
+        <h4 id="Map"><b><u>@StaticResource.Resources.Maps</u></b></h4>
+        <div class="row">
+            @{Html.RenderAction("Map", "DashBoards"); }
+            <img style="width: 400px" id="imageCarte" src="" />
+        </div>
+    </div>
 </div>
 
+@Scripts.Render("~/bundles/jquery")
+@Scripts.Render("~/bundles/bootstrap")
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script>
     function insertImage(imageCarte, ulr) {
         document.getElementById(imageCarte).src = ulr;
+    }
+    function selectedText(dropListItem) {
+        var selectValue = dropListItem.value;
+        var selectText = dropListItem.option[dropListItem.selectedIndex].innerHTML;
+        $('#Search').val(selectText);
     }
 </script>

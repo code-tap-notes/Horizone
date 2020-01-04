@@ -9,7 +9,7 @@ using System.Web;
 using System.Web.Mvc;
 using Horizone.Controllers;
 using Horizone.Models;
-
+using Microsoft.AspNet.Identity;
 
 namespace Horizone.Areas.BackOffice.Controllers
 {
@@ -115,6 +115,36 @@ namespace Horizone.Areas.BackOffice.Controllers
             }
             return View(news);
         }
+        [ChildActionOnly]
+        public ActionResult ListComment(int? id)
+        {
+            var comments = db.Comments.Include("News").Include("Client").Where(x => x.NewsId == id);
+            ViewBag.NewsId = id;
+
+            return PartialView(comments.OrderByDescending(x => x.Id).ToList());
+        }
+
+        public ActionResult NewComment(string search, int id)
+        { string userId = User.Identity.GetUserId();
+            var comment = new Comment();
+            Client client = db.Clients.Include("ApplicationUser").SingleOrDefault(x => x.UserId == userId);
+            if (id != 0)
+            {
+                comment.Content = search;
+                comment.Date = DateTime.Now;
+                comment.NewsId = id;
+                comment.ClientId = client.Id;
+            }
+
+            if (ModelState.IsValid)
+            {
+                db.Comments.Add(comment);
+                db.SaveChanges();
+                return RedirectToAction("Index", "Home");
+            }
+            return View(comment);
+        }
+
         // POST: BackOffice/News/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
