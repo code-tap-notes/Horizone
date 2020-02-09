@@ -7,13 +7,13 @@ namespace Horizone.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.2.0-61023")]
-    public sealed partial class changeResearch : IMigrationMetadata
+    public sealed partial class somechange : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(changeResearch));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(somechange));
         
         string IMigrationMetadata.Id
         {
-            get { return "201909110852554_changeResearch"; }
+            get { return "201912022031279_somechange"; }
         }
         
         string IMigrationMetadata.Source

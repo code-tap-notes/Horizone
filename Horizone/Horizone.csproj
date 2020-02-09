@@ -286,37 +286,9 @@
     <Compile Include="Migrations\201906190735271_init.Designer.cs">
       <DependentUpon>201906190735271_init.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201908261338263_changsomething.cs" />
-    <Compile Include="Migrations\201908261338263_changsomething.Designer.cs">
-      <DependentUpon>201908261338263_changsomething.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201909100926470_searchResult.cs" />
-    <Compile Include="Migrations\201909100926470_searchResult.Designer.cs">
-      <DependentUpon>201909100926470_searchResult.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201909110852554_changeResearch.cs" />
-    <Compile Include="Migrations\201909110852554_changeResearch.Designer.cs">
-      <DependentUpon>201909110852554_changeResearch.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201909130925295_changDic.cs" />
-    <Compile Include="Migrations\201909130925295_changDic.Designer.cs">
-      <DependentUpon>201909130925295_changDic.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201909131003389_changDic2.cs" />
-    <Compile Include="Migrations\201909131003389_changDic2.Designer.cs">
-      <DependentUpon>201909131003389_changDic2.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201910011033540_changeDateComment.cs" />
-    <Compile Include="Migrations\201910011033540_changeDateComment.Designer.cs">
-      <DependentUpon>201910011033540_changeDateComment.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201910011418266_changeUserComment.cs" />
-    <Compile Include="Migrations\201910011418266_changeUserComment.Designer.cs">
-      <DependentUpon>201910011418266_changeUserComment.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201911041518127_changeName.cs" />
-    <Compile Include="Migrations\201911041518127_changeName.Designer.cs">
-      <DependentUpon>201911041518127_changeName.cs</DependentUpon>
+    <Compile Include="Migrations\201912022031279_somechange.cs" />
+    <Compile Include="Migrations\201912022031279_somechange.Designer.cs">
+      <DependentUpon>201912022031279_somechange.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\201912180824559_changeOtherWord.cs" />
     <Compile Include="Migrations\201912180824559_changeOtherWord.Designer.cs">
@@ -1349,29 +1321,8 @@
     <EmbeddedResource Include="Migrations\201906190735271_init.resx">
       <DependentUpon>201906190735271_init.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201908261338263_changsomething.resx">
-      <DependentUpon>201908261338263_changsomething.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201909100926470_searchResult.resx">
-      <DependentUpon>201909100926470_searchResult.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201909110852554_changeResearch.resx">
-      <DependentUpon>201909110852554_changeResearch.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201909130925295_changDic.resx">
-      <DependentUpon>201909130925295_changDic.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201909131003389_changDic2.resx">
-      <DependentUpon>201909131003389_changDic2.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201910011033540_changeDateComment.resx">
-      <DependentUpon>201910011033540_changeDateComment.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201910011418266_changeUserComment.resx">
-      <DependentUpon>201910011418266_changeUserComment.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201911041518127_changeName.resx">
-      <DependentUpon>201911041518127_changeName.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201912022031279_somechange.resx">
+      <DependentUpon>201912022031279_somechange.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201912180824559_changeOtherWord.resx">
       <DependentUpon>201912180824559_changeOtherWord.cs</DependentUpon>
