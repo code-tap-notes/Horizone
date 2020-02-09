@@ -6,55 +6,60 @@
 
 <h2>@StaticResource.Resources.Conferences - @StaticResource.Resources.Seminars</h2>
 
-<table class="table">
-    <tr>
-         
-        <th>
-            @Html.DisplayNameFor(model => model.Topic.TopicEn)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.DateofActivity)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Place)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.NameActivity)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Description)
-        </th>
-        <th>
-            @StaticResource.Resources.LearnMore
-        </th>
-        
-        <th></th>
-    </tr>
 
-@foreach (var item in Model) {
-    <tr>
+@foreach (var item in Model)
+{
+    <div class="row">
+        <div class="col-lg-2">
+            <ul>
+                <li>
+                    <img class="moyenImage" alt="" src="~/Image/Activity/@item.Picture" />
+                </li>
+            </ul>
 
-        <td>
-            @Html.DisplayFor(modelItem => item.Topic.TopicEn)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.DateofActivity)
-        </td>
-        <td>
-            @Html.Raw(item.Place)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.NameActivity)
-        </td>
-        <td>
-            @Html.Raw(item.Description)
-        </td>
-        <td>
-            <a href=@item.UlrActivity class="btn btn-info">@StaticResource.Resources.LearnMore &raquo;</a>
-        </td>
-        
+        </div>
+        <div class="col-lg-8">
+            <dl class="dl-horizontal">
 
-    </tr>
+                <dt>
+                    @StaticResource.Resources.DateActivity
+
+                </dt>
+                <dd>
+                    @Html.DisplayFor(modelItem => item.DateofActivity)
+                </dd>
+                <dt>
+                    @StaticResource.Resources.Place
+
+                </dt>
+                <dd>
+                    @Html.Raw(item.Place)
+
+                </dd>
+                <dt>
+                    @StaticResource.Resources.NameActivity
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(modelItem => item.NameActivity)
+
+                </dd>
+                <dt>
+                    @StaticResource.Resources.Description
+
+                </dt>
+                <dd>
+                    @Html.Raw(item.Description)
+
+                </dd>
+                <dt>
+
+                </dt>
+                <dd>
+                    <a href=@(item.UlrActivity) class="btn btn-info">  @StaticResource.Resources.LearnMore &raquo;</a>
+                </dd>
+            </dl>
+        </div>
+    </div>
+
 }
-
-</table>

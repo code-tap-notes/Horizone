@@ -469,7 +469,7 @@ namespace Horizone.Controllers
         public ActionResult PageActivity()
         {
             var activitys = db.Activitys.Include("Language").Include("Topic");
-            return PartialView(activitys.OrderByDescending(x => x.Id).Take(5).ToList());
+            return PartialView(activitys.OrderByDescending(x => x.Id).Take(3).ToList());
         }
         public ActionResult Symposia()
         {
@@ -483,7 +483,7 @@ namespace Horizone.Controllers
         [ChildActionOnly]
         public ActionResult PagePublication()
         {
-            return PartialView(db.Publications.OrderByDescending(x => x.Id).Take(5).ToList());
+            return PartialView(db.Publications.OrderByDescending(x => x.Id).Take(3).ToList());
         }
        
         public ActionResult ConferencesAndSeminar()

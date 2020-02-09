@@ -461,6 +461,14 @@
     <Content Include="Image\15.jpg" />
     <Content Include="Image\19.jpg" />
     <Content Include="Image\2.jpg" />
+    <Content Include="Image\Activity\activity10.jpg" />
+    <Content Include="Image\Activity\activity11.JPG" />
+    <Content Include="Image\Activity\activity12.jpg" />
+    <Content Include="Image\Activity\activity13.JPG" />
+    <Content Include="Image\Activity\activity6.jpg" />
+    <Content Include="Image\Activity\activity7.jpg" />
+    <Content Include="Image\Activity\activity8.jpg" />
+    <Content Include="Image\Activity\activity9.jpg" />
     <Content Include="Image\bar.jpg" />
     <Content Include="Image\bar1.jpg" />
     <Content Include="Image\bar2.jpg" />
@@ -1315,7 +1323,6 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Areas\BackOffice\Models\" />
-    <Folder Include="Image\Activity\" />
     <Folder Include="Image\Map\" />
     <Folder Include="Image\Projet\" />
   </ItemGroup>

@@ -108,7 +108,7 @@ namespace Horizone.Areas.BackOffice.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            News news = db.Newses.Include("ImageNewses").SingleOrDefault(x => x.Id == id);
+            News news = db.Newses.Include("ImageNewses").Include("Comments").SingleOrDefault(x => x.Id == id);
             if (news == null)
             {
                 return HttpNotFound();
@@ -144,18 +144,16 @@ namespace Horizone.Areas.BackOffice.Controllers
             }
             return View(comment);
         }
-
         // POST: BackOffice/News/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            News news = db.Newses.Include("ImageNewses").SingleOrDefault(x => x.Id == id);
+            News news = db.Newses.Include("ImageNewses").Include("Comments").SingleOrDefault(x => x.Id == id);
             db.Newses.Remove(news);
             db.SaveChanges();
             return RedirectToAction("Index");
         }
-
         [HttpPost]
         public ActionResult AddPicture(HttpPostedFileBase picture, int id)
         {
@@ -178,7 +176,6 @@ namespace Horizone.Areas.BackOffice.Controllers
             // return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             return RedirectToAction("edit", "News", new { id = id });
         }
-
         // GET
         public ActionResult DeletePicture(int id, int idnews)
         {
@@ -188,7 +185,6 @@ namespace Horizone.Areas.BackOffice.Controllers
             db.SaveChanges();
             // return Json(image);
             return RedirectToAction("Edit", "News", new { id = idnews });
-        }
-       
+        }      
     }
 }
